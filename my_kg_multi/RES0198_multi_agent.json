@@ -1,0 +1,202 @@
+{
+  "nodes": [
+    {
+      "id": "N_001",
+      "text": "stuffy nose",
+      "type": "SYMPTOM",
+      "evidence": "stuffy nose",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_002",
+      "text": "runny nose",
+      "type": "SYMPTOM",
+      "evidence": "runny nose",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_003",
+      "text": "fatigue",
+      "type": "SYMPTOM",
+      "evidence": "A little bit",
+      "turn_id": "P-15"
+    },
+    {
+      "id": "N_004",
+      "text": "fever",
+      "type": "SYMPTOM",
+      "evidence": "no",
+      "turn_id": "P-7"
+    },
+    {
+      "id": "N_005",
+      "text": "cough",
+      "type": "SYMPTOM",
+      "evidence": "no",
+      "turn_id": "P-4"
+    },
+    {
+      "id": "N_006",
+      "text": "viral infection",
+      "type": "DIAGNOSIS",
+      "evidence": "viral infection",
+      "turn_id": "D-39"
+    },
+    {
+      "id": "N_007",
+      "text": "COVID-19",
+      "type": "DIAGNOSIS",
+      "evidence": "covid",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_008",
+      "text": "decongestants",
+      "type": "TREATMENT",
+      "evidence": "decongestants",
+      "turn_id": "P-10"
+    },
+    {
+      "id": "N_009",
+      "text": "Tylenol Cold",
+      "type": "TREATMENT",
+      "evidence": "Tylenol cold",
+      "turn_id": "D-39"
+    },
+    {
+      "id": "N_010",
+      "text": "hydration",
+      "type": "TREATMENT",
+      "evidence": "hydration",
+      "turn_id": "D-39"
+    },
+    {
+      "id": "N_011",
+      "text": "COVID swab",
+      "type": "PROCEDURE",
+      "evidence": "a swab done",
+      "turn_id": "D-39"
+    },
+    {
+      "id": "N_012",
+      "text": "nose",
+      "type": "LOCATION",
+      "evidence": "nose",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_013",
+      "text": "throat",
+      "type": "LOCATION",
+      "evidence": "back of your throat",
+      "turn_id": "D-6"
+    },
+    {
+      "id": "N_014",
+      "text": "type 1 diabetes",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "type one diabetes",
+      "turn_id": "P-23"
+    },
+    {
+      "id": "N_015",
+      "text": "insulin",
+      "type": "TREATMENT",
+      "evidence": "insulin medication",
+      "turn_id": "D-25"
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "N_001",
+      "target_id": "N_006",
+      "type": "INDICATES",
+      "evidence": "stuffy nose",
+      "turn_id": "P-1"
+    },
+    {
+      "source_id": "N_002",
+      "target_id": "N_006",
+      "type": "INDICATES",
+      "evidence": "runny nose",
+      "turn_id": "P-1"
+    },
+    {
+      "source_id": "N_003",
+      "target_id": "N_006",
+      "type": "INDICATES",
+      "evidence": "fatigue",
+      "turn_id": "P-15"
+    },
+    {
+      "source_id": "N_011",
+      "target_id": "N_007",
+      "type": "RULES_OUT",
+      "evidence": "covid",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_008",
+      "target_id": "N_001",
+      "type": "TAKEN_FOR",
+      "evidence": "decongestants",
+      "turn_id": "P-10"
+    },
+    {
+      "source_id": "N_009",
+      "target_id": "N_001",
+      "type": "TAKEN_FOR",
+      "evidence": "Tylenol cold",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_010",
+      "target_id": "N_001",
+      "type": "TAKEN_FOR",
+      "evidence": "hydration",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_001",
+      "target_id": "N_012",
+      "type": "LOCATED_AT",
+      "evidence": "stuffy nose",
+      "turn_id": "P-1"
+    },
+    {
+      "source_id": "N_002",
+      "target_id": "N_012",
+      "type": "LOCATED_AT",
+      "evidence": "runny nose",
+      "turn_id": "P-1"
+    },
+    {
+      "source_id": "N_014",
+      "target_id": "N_006",
+      "type": "CAUSES",
+      "evidence": "type one diabetes",
+      "turn_id": "P-23"
+    }
+  ],
+  "_meta": {
+    "method": "multi_agent",
+    "agents": {
+      "agent1": "deepseek/deepseek-r1-distill-qwen-32b",
+      "agent2": "qwen/qwen3-14b"
+    },
+    "pass1": {
+      "nodes": 15,
+      "edges": 10
+    },
+    "usage": {
+      "agent1": {
+        "prompt_tokens": 2623,
+        "completion_tokens": 2012
+      },
+      "agent2": {
+        "prompt_tokens": 2543,
+        "completion_tokens": 6099
+      }
+    }
+  }
+}
