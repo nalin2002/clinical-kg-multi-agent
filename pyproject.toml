@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project]
+name = "Clinical_KG_OS_LLM"
+version = "0.1.0"
+description = "Extract meaningful information from transcripts of doctor-patient conversations. Leveraging Multi-Agent Frameworks to Extract Clinical Information from Medical Transcripts"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "anthropic>=0.81.0",
+    "google-genai>=1.63.0",
+    "llama-index-embeddings-huggingface>=0.6.1",
+    "llama-index-llms-ollama>=0.9.1",
+    "matplotlib>=3.10.8",
+    "networkx>=3.0",
+    "numpy>=2.4.2",
+    "openai>=2.21.0",
+    "pydantic>=2.12.5",
+    "requests>=2.32.5",
+    "scipy>=1.17.0",
+    "xai-sdk>=1.6.1",
+]
+
+[project.optional-dependencies]
+jupyter = [
+    "jupyterlab>=4.0.0",
+]
