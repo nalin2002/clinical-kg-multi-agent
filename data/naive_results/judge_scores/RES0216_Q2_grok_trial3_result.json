@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer accurately lists salbutamol, Ramipril for high blood pressure, and occasional Tylenol for headaches, with detailed adherence changes: prescribed twice-daily maintenance inhaler but patient self-reduced to morning-only over time, no issues noted, and no refill of rescue inhaler for couple years. Generated Answer correctly identifies the three medications and their conditions (minor quibble on 'asthma reoccurring' vs. asthma), but significantly errs on adherence by claiming 'consistent daily dosing frequency' (contradicts P-19 where patient admits skipping night dose and now takes only morning), partially misrepresenting transcript quotes. Introduces non-existent 'knowledge graph [KG]' as source. Core facts on meds correct, but major contradiction on dosing adherence.",
+    "completeness": "Gold key points: meds (salbutamol, Ramipril/HBP, Tylenol/headaches); maintenance inhaler prescribed morning/night but reduced to morning-only (P-19), justified no problems (P-20); no rescue refill couple years (P-17/18); not stopped recently; limiting meds summary; gaps in halving maintenance and no rescue. Generated covers all three meds/conditions fully; covers rescue unavailability correctly; misses entirely the dosing frequency reduction (prescribed BID to QD), justification, recent confirmation of continued use. Covers meds (100%) + rescue gap (~50% of adherence), misses key dosing change: ~60% overall, but since adherence is half the question and major miss, closer to 50-79%.",
+    "faithfulness": "Claims grounded: meds from P-25-27 correct. Adherence: 'consistent daily' misquotes P-17 (ignores P-19 skipping night); rescue correct from P-17/18. Hallucinates 'knowledge graph [KG]' repeatedly (no KG in transcript); 'asthma reoccurring' infers from clinician suspicion (D-35) but not patient diagnosis. Multiple unverifiable/hallucinated elements (KG, consistent dosing misrepresentation).",
+    "relevance": "Directly structures response around current meds/conditions and asthma adherence changes (dosing/rescue), using bullet points matching question; no tangents or off-topic content, fully focused despite inaccuracies."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 3,
+    "faithfulness": 2,
+    "relevance": 5
+  },
+  "average_score": 3.0,
+  "summary": "The Generated Answer correctly identifies medications and conditions but significantly underreports key adherence changes to maintenance dosing and hallucinates a non-existent knowledge graph, leading to moderate overall quality."
+}

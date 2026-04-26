@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Generated Answer incorrectly states that the patient 'did not provide a response' for all four questions (weight loss, travel, sick contacts, chemical exposure), directly contradicting the transcript (P-22: 'No, not really'; P-23: travel to Sarnia; P-24: 'Nope'; P-34: limited exposure). While some differentials overlap (e.g., lung cancer/TB for weight loss, TB/Legionella for travel), it misses specifics like family history relevance, Sarnia details, and inaccurately assesses response impacts (claims no narrowing due to no responses, vs Gold's nuanced narrowing). Significant factual errors and contradictions with Gold.",
+    "completeness": "Gold covers differentials for each (weight: lung ca/TB; travel: Legionella/fungal; sick: person-to-person/TB; chem: pneumonitis/occ dz) and precise response impacts (denials make less likely but not exclude; Sarnia timing; etc.). Generated partially lists similar differentials but misses key details (e.g., constitutional symptoms, endemic infections specifics) and entirely fails to cover actual response narrowing/maintenance, instead fabricating no responses. Covers ~30-40% superficially.",
+    "faithfulness": "Major hallucinations: claims no patient responses despite clear transcript evidence (P-22/23/24/34). Cites some symptoms correctly (e.g., red spots P-4, chest pain P-19) but fabricates absence of key responses central to question. References non-existent 'Symptoms Knowledge Graph'. Adds ungrounded contrasts (chest pain, red spots narrowing). Largely not grounded, multiple fabrications.",
+    "relevance": "Directly structures response around the four questions with differentials and response impacts (albeit wrongly), addressing the core query. Minor tangents in summary (actual narrowing factors, contrasts) but mostly focused."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 1,
+    "relevance": 4
+  },
+  "average_score": 2.25,
+  "summary": "The Generated Answer has critical factual errors and hallucinations about patient responses, failing to accurately reflect transcript or Gold Answer while partially addressing structure."
+}

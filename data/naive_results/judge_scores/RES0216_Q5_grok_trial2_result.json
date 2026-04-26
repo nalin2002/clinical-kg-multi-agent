@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer correctly identifies the patient's asthma history [P-16], lack of rescue inhaler [P-17], and links it to current symptoms and doctor's hypothesis of recurrence, aligning with Gold's core idea. However, it completely omits the key self-directed reduction in maintenance inhaler dosing (skipping evenings [P-19, P-20]), which is central to the question and explicitly noted in Gold and D-34. It also introduces non-existent 'Knowledge Graph' [KG] references, creating factual discrepancies. Main point partially correct but significant omissions.",
+    "completeness": "Gold key points: asthma history well-controlled [partial cover]; maintenance dose reduction to mornings only [missed]; skipping evenings felt fine [missed]; no rescue refill for years [covered]; doctor summarizes limiting meds [missed]; symptoms (tightness, exertion, phlegm) [partial tightness/exertion]; recurring asthma assessment [covered]; feels different [missed]; lacks relief/proposed rescue [implied/covered]. Covers ~40% (asthma, rescue lack, partial symptoms, recurrence).",
+    "faithfulness": "Claims grounded where citing transcript (P-16, P-17, P-1 accurate). However, multiple [KG] references to 'Knowledge Graph' not present in transcript, hallucinated links (e.g., pathophysiology, salbutamol treatment). Salbutamol noted [P-25] but contextually rescue not currently used. Multiple hallucinated elements.",
+    "relevance": "Directly addresses relation of asthma history and medication issues (focus on rescue) to symptoms as recurrence without relief, matching question intent. Minor tangents via [KG], but focused on clinical relation."
+  },
+  "scores": {
+    "correctness": 3,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 2.75,
+  "summary": "The Generated Answer partially captures the asthma-symptom relation via lack of rescue inhaler but omits the maintenance dose skipping, introduces transcript-irrelevant hallucinations, resulting in moderate-low quality."
+}

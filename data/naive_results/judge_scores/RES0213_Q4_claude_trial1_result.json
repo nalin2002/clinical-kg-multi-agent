@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer is factually incorrect. It claims the transcript contains only patient responses ([P-1] through [P-28]) and no doctor dialogue, when in fact the transcript clearly shows doctor turns labeled [D-1] through [D-33]. The Gold Answer correctly identifies multiple conditions screened for with specific doctor questions (trauma [D-5], cardiac [D-10, D-20], infections [D-12, D-27], asthma [D-23, D-24], dyspnea [D-19], arrhythmias [D-31, D-32]). The Generated Answer's premise is entirely wrong, leading to a complete failure to answer the question.",
+    "completeness": "The Generated Answer covers 0% of the key points from the Gold Answer. It identifies none of the six conditions screened for (traumatic injury, cardiac disease, infectious illness, asthma, dyspnea, inherited arrhythmias) and none of the specific questions used to rule them out. Instead of providing the requested information, it incorrectly states the information cannot be provided due to missing doctor dialogue.",
+    "faithfulness": "The Generated Answer contains a major hallucination. It falsely claims the transcript lacks doctor dialogue (turns labeled [D-...]), when the source transcript clearly contains 33 doctor turns from [D-1] to [D-33]. This is a fundamental misreading of the provided material. While it correctly notes some patient responses, the core claim that prevents answering the question is fabricated.",
+    "relevance": "The Generated Answer does not address the question at all. The question asks what conditions were ruled out and what questions were used to exclude them. Instead of providing this information, the response claims it cannot answer due to missing data. This is completely off-topic and unhelpful, as the required information is present in the transcript."
+  },
+  "scores": {
+    "correctness": 1,
+    "completeness": 1,
+    "faithfulness": 1,
+    "relevance": 1
+  },
+  "average_score": 1.0,
+  "summary": "The Generated Answer fundamentally fails on all evaluation dimensions. It contains a critical factual error by claiming the transcript lacks doctor dialogue when 33 doctor turns ([D-1] to [D-33]) are clearly present. This hallucination prevents any attempt to answer the question. The response covers none of the six conditions systematically screened for in the Gold Answer (trauma, cardiac disease, infections, asthma, dyspnea, arrhythmias) and provides zero information about the screening questions used. It is completely irrelevant to the question asked and demonstrates poor comprehension of the source material."
+}

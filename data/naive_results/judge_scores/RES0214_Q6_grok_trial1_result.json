@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer correctly identifies the COVID swab order [D-53] and self-isolation for patient and husband [D-53, D-54], matching Gold. However, it inaccurately frames next steps: flu shot question [D-53] was not the conclusion (occurred mid-discussion), omits physical exam [D-52] and consulting supervising doctor/returning [D-55], and adds unverified 'ongoing plan depends on swab outcome and subsequent investigation' not explicitly stated. Some factual errors in next steps but core test/precautions correct.",
+    "completeness": "Gold key points: 1. COVID swab (covered), 2. Self-isolation for patient/husband with quotes (covered), 3. Physical exam next (missed), 4. Consult supervising doctor and return (missed), 5. Patient agreement (missed). Covers ~50% (test + precautions).",
+    "faithfulness": "Claims verifiable: COVID swab [D-53], self-isolate [D-53/D-54], flu shot [D-53]. Framing of flu shot as 'concluding' and 'ongoing plan depends on swab/subsequent investigation' interpretive/plausible but not verbatim; no outright hallucinations, mostly grounded.",
+    "relevance": "Perfectly structured around question's elements (test, precautions, next steps); no tangents or off-topic content."
+  },
+  "scores": {
+    "correctness": 3,
+    "completeness": 3,
+    "faithfulness": 4,
+    "relevance": 5
+  },
+  "average_score": 3.75,
+  "summary": "The Generated Answer is strong on test and precautions but misses key next steps like physical exam and physician consultation, leading to incomplete coverage."
+}

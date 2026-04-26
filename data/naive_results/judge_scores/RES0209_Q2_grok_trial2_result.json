@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer identifies the bronchodilator as the sole medication, administered via 'puffer' (inhaler), with the doctor asking about a daily 'every day no matter what' medication (controller) that the patient lacks (D-4 to D-6, P-4 to P-6). Generated Answer correctly notes bronchodilator but claims administration is unspecified (contradicts D-7/P-7 'puffer'), denies specific daily controller question exists (contradicts D-5/P-5), and references non-existent 'knowledge graph'. Significant contradictions on core facts.",
+    "completeness": "Gold key points: (1) bronchodilator/rescue inhaler only; (2) as-needed; (3) via puffer; (4) no other meds; (5) doctor asked about daily controller ('every day no matter what'), patient denies having it; (6) clinical context. Generated covers ~1 (bronchodilator partially), misses 2-6 entirely or incorrectly denies, covers <50%.",
+    "faithfulness": "Claims like bronchodilator verifiable (P-1). But 'administration not specified' false (D-7/P-7 puffer); 'no specific daily controller question' false (D-5 explicit); misattributes D-29; 'knowledge graph' hallucinated (absent from transcript). Multiple unverifiable/incorrect claims about transcript content.",
+    "relevance": "Directly structures response around question's three parts (med, admin, daily controller), despite errors; minor tangent on knowledge graph and wrong D-29 cite, but focused on query."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 2.5,
+  "summary": "Generated Answer partially identifies the medication but contains significant factual errors and omissions by denying clear transcript evidence on administration and the daily controller question."
+}

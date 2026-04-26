@@ -1,0 +1,339 @@
+{
+  "nodes": [
+    {
+      "id": "N_001",
+      "text": "dry cough",
+      "type": "SYMPTOM",
+      "evidence": "Is your cough and a dry cough?",
+      "turn_id": "P-14"
+    },
+    {
+      "id": "N_002",
+      "text": "shortness of breath",
+      "type": "SYMPTOM",
+      "evidence": "feeling very short of breath",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_003",
+      "text": "wheezing",
+      "type": "SYMPTOM",
+      "evidence": "I've been wheezing a lot",
+      "turn_id": "P-15"
+    },
+    {
+      "id": "N_004",
+      "text": "chest tightness",
+      "type": "SYMPTOM",
+      "evidence": "feel it gets tight in your chest",
+      "turn_id": "P-20"
+    },
+    {
+      "id": "N_005",
+      "text": "chest",
+      "type": "LOCATION",
+      "evidence": "tight in your chest",
+      "turn_id": "P-20"
+    },
+    {
+      "id": "N_006",
+      "text": "asthma",
+      "type": "DIAGNOSIS",
+      "evidence": "I was diagnosed when I was eight",
+      "turn_id": "P-2"
+    },
+    {
+      "id": "N_007",
+      "text": "allergies",
+      "type": "DIAGNOSIS",
+      "evidence": "so you have allergies too?",
+      "turn_id": "D-11"
+    },
+    {
+      "id": "N_008",
+      "text": "bronchodilator",
+      "type": "TREATMENT",
+      "evidence": "my bronchodilator helps",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_009",
+      "text": "family history of asthma",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "my sister has asthma too",
+      "turn_id": "D-32"
+    },
+    {
+      "id": "N_010",
+      "text": "absent fever",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "Have you had any fevers?",
+      "turn_id": "D-26"
+    },
+    {
+      "id": "N_011",
+      "text": "absent abdominal pain",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "Any belly pain?",
+      "turn_id": "D-28"
+    },
+    {
+      "id": "N_012",
+      "text": "absent travel",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "Have you traveled anywhere?",
+      "turn_id": "D-24"
+    },
+    {
+      "id": "N_013",
+      "text": "absent allergies",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "Do you have allergies to anything else that you know?",
+      "turn_id": "D-31"
+    },
+    {
+      "id": "N_014",
+      "text": "covid swab",
+      "type": "PROCEDURE",
+      "evidence": "[D-29] D: We probably will do a covid swab just because of the times that we're living in right now...",
+      "turn_id": "D-29"
+    },
+    {
+      "id": "N_015",
+      "text": "goldfish",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "[D-39] P: No pets, we have just like well I guess we have goldfish.",
+      "turn_id": "D-39"
+    },
+    {
+      "id": "N_016",
+      "text": "absent household smoking",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "[D-40] D: Does anyone in the house smoke? [P-40] P: No.",
+      "turn_id": "D-40"
+    },
+    {
+      "id": "N_NEW_001",
+      "text": "pollen",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "spring with like pollen and stuff like that",
+      "turn_id": "P-11"
+    },
+    {
+      "id": "N_NEW_002",
+      "text": "cold air",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "the cold also makes it worse",
+      "turn_id": "P-9"
+    },
+    {
+      "id": "N_NEW_003",
+      "text": "exercise",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "run around after gym",
+      "turn_id": "P-9"
+    },
+    {
+      "id": "N_NEW_004",
+      "text": "gym",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "after gym",
+      "turn_id": "P-9"
+    },
+    {
+      "id": "N_ADD_001",
+      "text": "absent cold",
+      "type": "SYMPTOM",
+      "evidence": "P: Uh no, nothing like that.",
+      "turn_id": "P-21"
+    },
+    {
+      "id": "N_ADD_002",
+      "text": "absent infection",
+      "type": "SYMPTOM",
+      "evidence": "P: Uh no, nothing like that.",
+      "turn_id": "P-21"
+    },
+    {
+      "id": "N_ADD_003",
+      "text": "absent loss of taste or smell",
+      "type": "SYMPTOM",
+      "evidence": "P: No.",
+      "turn_id": "P-25"
+    },
+    {
+      "id": "N_ADD_004",
+      "text": "absent nausea",
+      "type": "SYMPTOM",
+      "evidence": "P: No.",
+      "turn_id": "P-27"
+    },
+    {
+      "id": "N_ADD_005",
+      "text": "absent vomiting",
+      "type": "SYMPTOM",
+      "evidence": "P: No.",
+      "turn_id": "P-27"
+    },
+    {
+      "id": "N_ADD_006",
+      "text": "living with family",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "P: Yep, that's right.",
+      "turn_id": "P-35"
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "N_001",
+      "target_id": "N_006",
+      "type": "INDICATES",
+      "evidence": "Is your cough and a dry cough? Yes",
+      "turn_id": "P-14"
+    },
+    {
+      "source_id": "N_002",
+      "target_id": "N_006",
+      "type": "INDICATES",
+      "evidence": "feeling very short of breath",
+      "turn_id": "P-1"
+    },
+    {
+      "source_id": "N_003",
+      "target_id": "N_006",
+      "type": "INDICATES",
+      "evidence": "I've been wheezing a lot",
+      "turn_id": "P-15"
+    },
+    {
+      "source_id": "N_004",
+      "target_id": "N_006",
+      "type": "INDICATES",
+      "evidence": "feel it gets tight in your chest",
+      "turn_id": "P-20"
+    },
+    {
+      "source_id": "N_001",
+      "target_id": "N_007",
+      "type": "INDICATES",
+      "evidence": "that would make sense",
+      "turn_id": "D-11"
+    },
+    {
+      "source_id": "N_008",
+      "target_id": "N_006",
+      "type": "TAKEN_FOR",
+      "evidence": "my bronchodilator helps",
+      "turn_id": "P-1"
+    },
+    {
+      "source_id": "N_008",
+      "target_id": "N_007",
+      "type": "TAKEN_FOR",
+      "evidence": "use it more... when it's cold",
+      "turn_id": "P-9"
+    },
+    {
+      "source_id": "N_008",
+      "target_id": "N_001",
+      "type": "TAKEN_FOR",
+      "evidence": "Is your cough... dry? Yeah",
+      "turn_id": "P-14"
+    },
+    {
+      "source_id": "N_009",
+      "target_id": "N_006",
+      "type": "CAUSES",
+      "evidence": "my sister has asthma too",
+      "turn_id": "D-32"
+    },
+    {
+      "source_id": "N_003",
+      "target_id": "N_007",
+      "type": "INDICATES",
+      "evidence": "[D-15] D: Have you noticed any wheezing? [P-15] P: Oh yeah, I've been wheezing a lot, actually.",
+      "turn_id": "D-15"
+    },
+    {
+      "source_id": "N_008",
+      "target_id": "N_002",
+      "type": "TAKEN_FOR",
+      "evidence": "[D-16] D: Do you use your bronchodilator every time that you're wheezing? [P-16] P: When it gets really bad, like when I get so easy that I find it hard to breathe.",
+      "turn_id": "D-16"
+    },
+    {
+      "source_id": "N_008",
+      "target_id": "N_003",
+      "type": "TAKEN_FOR",
+      "evidence": "[D-16] D: Do you use your bronchodilator every time that you're wheezing? [P-16] P: When it gets really bad, like when I get so easy that I find it hard to breathe.",
+      "turn_id": "D-16"
+    },
+    {
+      "source_id": "N_008",
+      "target_id": "N_004",
+      "type": "TAKEN_FOR",
+      "evidence": "[D-20] D: Do you feel it gets tight in your chest? [P-20] P: Yes.",
+      "turn_id": "D-20"
+    },
+    {
+      "source_id": "N_004",
+      "target_id": "N_005",
+      "type": "LOCATED_AT",
+      "evidence": "[D-20] D: Do you feel it gets tight in your chest? [P-20] P: Yes.",
+      "turn_id": "D-20"
+    },
+    {
+      "source_id": "N_002",
+      "target_id": "N_007",
+      "type": "INDICATES",
+      "evidence": "[P-1] P: ...my bronchodilator helps... triggers like pollen.",
+      "turn_id": "P-1"
+    },
+    {
+      "source_id": "N_NEW_001",
+      "target_id": "N_007",
+      "type": "CAUSES",
+      "evidence": "spring with like pollen and stuff like that",
+      "turn_id": "P-11"
+    },
+    {
+      "source_id": "N_ADD_001",
+      "target_id": "N_006",
+      "type": "INDICATES",
+      "evidence": "D: So you have asthma for?",
+      "turn_id": "D-2"
+    },
+    {
+      "source_id": "N_ADD_002",
+      "target_id": "N_006",
+      "type": "INDICATES",
+      "evidence": "D: So you have asthma for?",
+      "turn_id": "D-2"
+    },
+    {
+      "source_id": "N_ADD_003",
+      "target_id": "N_006",
+      "type": "INDICATES",
+      "evidence": "D: So you have asthma for?",
+      "turn_id": "D-2"
+    },
+    {
+      "source_id": "N_ADD_004",
+      "target_id": "N_006",
+      "type": "INDICATES",
+      "evidence": "D: So you have asthma for?",
+      "turn_id": "D-2"
+    },
+    {
+      "source_id": "N_ADD_005",
+      "target_id": "N_006",
+      "type": "INDICATES",
+      "evidence": "D: So you have asthma for?",
+      "turn_id": "D-2"
+    }
+  ],
+  "_usage": {
+    "prompt_tokens": 17106,
+    "completion_tokens": 50173
+  }
+}

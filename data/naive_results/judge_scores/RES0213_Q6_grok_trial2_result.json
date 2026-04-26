@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer incorrectly states that there are no doctor's concluding remarks or stated plan because the transcript ends at [P-28], but the transcript includes [D-33] where the doctor explicitly states the plan to pass information to another doctor for evaluation—this is a major factual contradiction with the Gold Answer. For key clinical information, it covers some symptom details (sharp pain, deep breath, 20 min), OTC failures, family history (dad's MI), smoking, stress, and meds, but inaccurately attributes past doctor visit to 'this issue' (chest pain) instead of anxiety, omits duration (1.5 weeks), rest/alone/distraction relief/not exercise, most pertinent negatives (trauma, fevers, asthma, dyspnea, palpitations, family sudden death), thesis stress, lives alone. Adds hallucinated 'Knowledge Graph'. Significant errors.",
+    "completeness": "Gold Answer covers plan explicitly from [D-33] (0% covered—entirely missed) and 5 categories of key info: (1) symptoms fully detailed (partially covered: sharp, deep breath, 20min, some triggers; misses 1.5wks, rest/alone, distraction relief, not exercise); (2) OTC full (covered); (3) pertinent negatives (mostly missed); (4) relevant hx (partial: smoking, dad MI, teen anxiety; misses details); (5) psychosocial (partial: stress; misses thesis, alone). Covers ~30-40% overall, dominated by missing plan half of question.",
+    "faithfulness": "Claims unverifiable: transcript ends at [P-28] (false, goes to [D-33]/[P-33]); 'Knowledge Graph confirms' (hallucinated, not in transcript); past doctor visit mislinked to chest pain vs anxiety [P-21]; most citations accurate (e.g., [P-3],[P-6],[P-8],[P-14],[P-25]). Multiple hallucinations/misreads on structure and details.",
+    "relevance": "Directly addresses key clinical info with structured list (relevant), but denies/ignores plan part of question claiming transcript incomplete (off-topic deflection); minor tangent with KG note. Partially relevant due to missing core question element."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 3
+  },
+  "average_score": 2.25,
+  "summary": "The Generated Answer significantly errs by missing the concluding plan in [D-33] and claiming transcript incompleteness, partially covers but inaccurately summarizes key info with hallucinations."
+}

@@ -1,0 +1,185 @@
+{
+  "nodes": [
+    {
+      "id": "N_001",
+      "text": "copd",
+      "type": "DIAGNOSIS",
+      "evidence": "i have copd",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_002",
+      "text": "cough",
+      "type": "SYMPTOM",
+      "evidence": "i feel like i'm coughing more often",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_003",
+      "text": "dyspnea",
+      "type": "SYMPTOM",
+      "evidence": "harder to breathe than usual",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_004",
+      "text": "copd exacerbation",
+      "type": "DIAGNOSIS",
+      "evidence": "copd been made worse by being sick",
+      "turn_id": "P-3"
+    },
+    {
+      "id": "N_005",
+      "text": "fever",
+      "type": "SYMPTOM",
+      "evidence": "felt a fever last night",
+      "turn_id": "P-9"
+    },
+    {
+      "id": "N_006",
+      "text": "absent nausea",
+      "type": "SYMPTOM",
+      "evidence": "no",
+      "turn_id": "P-15"
+    },
+    {
+      "id": "N_007",
+      "text": "absent vomiting",
+      "type": "SYMPTOM",
+      "evidence": "no",
+      "turn_id": "P-15"
+    },
+    {
+      "id": "N_008",
+      "text": "absent diarrhea",
+      "type": "SYMPTOM",
+      "evidence": "no",
+      "turn_id": "P-16"
+    },
+    {
+      "id": "N_009",
+      "text": "absent constipation",
+      "type": "SYMPTOM",
+      "evidence": "no",
+      "turn_id": "P-16"
+    },
+    {
+      "id": "N_010",
+      "text": "absent abdominal pain",
+      "type": "SYMPTOM",
+      "evidence": "no",
+      "turn_id": "P-17"
+    },
+    {
+      "id": "N_011",
+      "text": "absent sore throat",
+      "type": "SYMPTOM",
+      "evidence": "oh no",
+      "turn_id": "P-13"
+    },
+    {
+      "id": "N_012",
+      "text": "absent confusion",
+      "type": "SYMPTOM",
+      "evidence": "nope",
+      "turn_id": "P-34"
+    },
+    {
+      "id": "N_013",
+      "text": "physical exam",
+      "type": "PROCEDURE",
+      "evidence": "do it physical exam",
+      "turn_id": "D-43"
+    },
+    {
+      "id": "N_014",
+      "text": "covid swab",
+      "type": "PROCEDURE",
+      "evidence": "doing a covid swab",
+      "turn_id": "D-43"
+    },
+    {
+      "id": "N_015",
+      "text": "infection",
+      "type": "DIAGNOSIS",
+      "evidence": "an infection that you got",
+      "turn_id": "D-43"
+    },
+    {
+      "id": "N_NEW_001",
+      "text": "high blood pressure",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "[P-22] Yeah I have a high blood pressure.",
+      "turn_id": "D-22/P-22"
+    },
+    {
+      "id": "N_NEW_002",
+      "text": "smoking history",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "[P-40] I smoked 1/2 pack a day for probably 20 years.",
+      "turn_id": "D-40/P-40"
+    },
+    {
+      "id": "N_NEW_003",
+      "text": "temperature measurement",
+      "type": "PROCEDURE",
+      "evidence": "[D-11] We can now check your temperature. [P-11] Here by the bed.",
+      "turn_id": "D-11"
+    },
+    {
+      "id": "N_NEW_004",
+      "text": "covid",
+      "type": "DIAGNOSIS",
+      "evidence": "[D-43] rule out covid, so we'll be doing a covid swab.",
+      "turn_id": "D-43"
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "N_002",
+      "target_id": "N_001",
+      "type": "INDICATES",
+      "evidence": "i feel like i'm coughing more often",
+      "turn_id": "P-1"
+    },
+    {
+      "source_id": "N_003",
+      "target_id": "N_001",
+      "type": "INDICATES",
+      "evidence": "harder to breathe than usual",
+      "turn_id": "P-1"
+    },
+    {
+      "source_id": "N_005",
+      "target_id": "N_015",
+      "type": "INDICATES",
+      "evidence": "felt a fever last night",
+      "turn_id": "P-9"
+    },
+    {
+      "source_id": "N_013",
+      "target_id": "N_015",
+      "type": "RULES_OUT",
+      "evidence": "do it physical exam",
+      "turn_id": "D-43"
+    },
+    {
+      "source_id": "N_NEW_002",
+      "target_id": "N_001",
+      "type": "CAUSES",
+      "evidence": "[P-40] I smoked 1/2 pack a day for probably 20 years. [P-7] Uhm 4, 5 years ago [diagnosed with COPD].",
+      "turn_id": "D-40/P-40"
+    },
+    {
+      "source_id": "N_014",
+      "target_id": "N_NEW_004",
+      "type": "RULES_OUT",
+      "evidence": "[D-43] rule out covid, so we'll be doing a covid swab.",
+      "turn_id": "D-43"
+    }
+  ],
+  "_usage": {
+    "prompt_tokens": 18544,
+    "completion_tokens": 57483
+  }
+}

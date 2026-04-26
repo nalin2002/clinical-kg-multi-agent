@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Step-by-step: Gold specifies initial symptom as scratchy throat first [P-4], followed by dry cough; Generated bundles them as 'dry cough and scratchy throat' without order, listing cough first, which is a factual discrepancy. Headache is presented as 'shortly after' but mentioned simultaneously in P-1 with others. Feeling hot is claimed to 'begin alongside' with inference of concurrency, but Gold and transcript do not specify exact timing relative to onset, noting it as part of the same illness. Core facts like 3-4 day duration and symptoms are consistent, but order and timing details have errors. Score: 3.",
+    "completeness": "Gold key points: 3-4 days; throat first then cough; headache, malaise, fatigue; hot persistent/no exact timing/doc's fever summary; upper to systemic progression. Generated covers: 3-4 days, bundled initial throat/cough, headache progression, hot concurrent with citations. Misses: precise throat-then-cough order, malaise ('crappy'), fatigue, doctor's summary [D-58], systemic progression summary. Covers ~60-70% of points. Score: 3.",
+    "faithfulness": "All claims cite transcript accurately (P-1, P-7, P-9). Bundled initial symptoms grounded in P-1 but overlooks clarifying P-4 order. 'Shortly after' for headache is conversational but not sequential in report. 'Concurrent/began alongside' is plausible inference from 'have felt' and constant description, not hallucinated but not explicitly verifiable for exact onset. No fabricated facts. Score: 4.",
+    "relevance": "Generated directly lists symptom order/progression numerically, addresses hot sensation relation explicitly with subheading, perfectly matches question focus without tangents. Score: 5."
+  },
+  "scores": {
+    "correctness": 3,
+    "completeness": 3,
+    "faithfulness": 4,
+    "relevance": 5
+  },
+  "average_score": 3.75,
+  "summary": "The Generated Answer is mostly relevant and grounded but has factual inaccuracies in symptom order and timing inferences, with partial coverage of Gold key points."
+}

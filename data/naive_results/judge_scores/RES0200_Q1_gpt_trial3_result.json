@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer contains several factual errors versus the Gold Answer/transcript: (1) It states the transcript does not describe sputum changes, but the patient clearly reports baseline clear-to-white sputum changing to more yellow over the past week [P-6]. (2) It states hemoptysis is not mentioned, but it is explicitly asked and denied [P-7]. (3) It claims the patient did not explicitly endorse systemic symptoms such as chills, but the patient did report feeling chilly over the last couple of days [P-29] and also noted no measured temperature [P-29–P-30]. (4) It omits endorsed chest discomfort with coughing fits [P-13] and the exertional nature/severity of dyspnea and cough (e.g., needing to stop after minimal activity) [P-5, P-8]. While it correctly identifies dyspnea and increased cough and correctly lists key denied symptoms (orthopnea, PND, palpitations, hemoptysis), the major inaccuracies around sputum and chills materially reduce correctness.",
+    "completeness": "Key Gold Answer points missing or inadequately captured include: sputum color change (clear/white to yellow) [P-6]; chills and the nuance of no measured fever [P-29–P-30]; chest discomfort during coughing [P-13]; exertional trigger/severity (walking downstairs, minimal exertion causing cough/SOB) [P-5, P-8]. It also does not include the broader set of pertinent negatives listed in the Gold Answer (e.g., dizziness/syncope, calf pain, GI/GU, URI symptoms, neuro symptoms, rash, fatigue, weight loss, etc.). It includes only a small subset of negatives and misses multiple endorsed symptoms/qualifiers, so coverage is well below 50%.",
+    "faithfulness": "Multiple statements are not grounded in (and in fact contradict) the transcript: claiming no sputum character description and no mention of hemoptysis directly conflicts with [P-6] and [P-7]. It also asserts no explicit systemic symptoms like chills, contradicting [P-29]. Although some cited dyspnea/cough content is grounded in [P-1], the presence of several clear contradictions indicates low faithfulness.",
+    "relevance": "The response is generally on-topic (respiratory/systemic symptoms, sputum change, and denied screened symptoms). However, it fails to answer key parts of the question accurately (especially sputum change and systemic symptoms) and understates/omits important endorsed symptoms; thus it is only partially responsive."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 3
+  },
+  "average_score": 2.25,
+  "summary": "Partially on-topic but contains major contradictions to the transcript (notably sputum change, hemoptysis mention, and chills) and omits several key endorsed symptoms and pertinent negatives from the Gold Answer."
+}

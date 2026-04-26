@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer lists key symptoms as sore throat, worsening difficulty breathing, reduced taste (no smell loss), fatigue/muscle aches, with citations; Generated Answer incorrectly narrows suspicion to only sore throat and difficulty swallowing (not explicitly cited by doctor), ignores breathing difficulty and fatigue, misstates patient's smell as 'lost' (contradicts P-19: 'not smell'), and attributes specific doctor citation to sore throat (doctor said 'some symptoms' [D-43]); introduces non-existent Knowledge Graph; significant contradictions on symptom combination and sensory details vs Gold.",
+    "completeness": "Gold key points: sore throat [P-2,P-4], breathing difficulty [P-8-10], reduced taste [P-19-21], fatigue/aches [P-25-26], screening [D-19], exposure [P-12-13], immunizations [P-14], testing plan [D-43]; Generated covers sore throat/dysphagia partially (~25%), mentions taste/smell but inaccurately, ignores breathing, fatigue, exposure history; covers <50% (20-49%).",
+    "faithfulness": "Transcript-grounded elements: sore throat [P-2], taste report [P-19], doctor's general statement [D-43], swab/xray [D-43]; ungrounded/hallucinated: Knowledge Graph references (absent), doctor 'citing these specific symptoms' (doctor nonspecific), misinterpretation of P-19 as smell lost (patient said 'not smell'), COVID typically with loss of smell/taste despite patient's profile; multiple hallucinations.",
+    "relevance": "Directly attempts to identify symptom combination for COVID suspicion and role of taste/smell changes, addressing core question; minor off-topic via hallucinated KG, but focused on clinical reasoning despite errors."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 2.5,
+  "summary": "The Generated Answer has significant factual errors, incomplete coverage of symptoms, multiple hallucinations including Knowledge Graph and misstated smell loss, but remains mostly relevant to the question."
+}

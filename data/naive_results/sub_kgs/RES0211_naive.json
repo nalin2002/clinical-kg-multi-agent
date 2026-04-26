@@ -1,0 +1,201 @@
+{
+  "nodes": [
+    {
+      "id": "N_001",
+      "text": "Dry Cough",
+      "type": "SYMPTOM",
+      "evidence": "I’ve been having this really dry cough",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_002",
+      "text": "Scratchy Throat",
+      "type": "SYMPTOM",
+      "evidence": "my throat feels really scratchy",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_003",
+      "text": "Headache",
+      "type": "SYMPTOM",
+      "evidence": "head’s pounding",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_004",
+      "text": "Fever",
+      "type": "SYMPTOM",
+      "evidence": "running a temperature",
+      "turn_id": "P-7"
+    },
+    {
+      "id": "N_005",
+      "text": "Night Sweats",
+      "type": "SYMPTOM",
+      "evidence": "night sweats",
+      "turn_id": "P-9"
+    },
+    {
+      "id": "N_006",
+      "text": "Post Nasal Drip",
+      "type": "SYMPTOM",
+      "evidence": "post nasal drip",
+      "turn_id": "P-18"
+    },
+    {
+      "id": "N_007",
+      "text": "Allergies",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "I have allergies",
+      "turn_id": "P-15"
+    },
+    {
+      "id": "N_008",
+      "text": "Claritin",
+      "type": "TREATMENT",
+      "evidence": "take like Claritin for allergies",
+      "turn_id": "P-16"
+    },
+    {
+      "id": "N_009",
+      "text": "Allergy Shots",
+      "type": "PROCEDURE",
+      "evidence": "allergy shots",
+      "turn_id": "P-16"
+    },
+    {
+      "id": "N_010",
+      "text": "Stuffy Nose",
+      "type": "SYMPTOM",
+      "evidence": "stuffy",
+      "turn_id": "P-19"
+    },
+    {
+      "id": "N_011",
+      "text": "Birth Control",
+      "type": "TREATMENT",
+      "evidence": "I take birth control",
+      "turn_id": "P-25"
+    },
+    {
+      "id": "N_012",
+      "text": "Deyo",
+      "type": "TREATMENT",
+      "evidence": "Deyo",
+      "turn_id": "P-26"
+    },
+    {
+      "id": "N_013",
+      "text": "Asthma",
+      "type": "DIAGNOSIS",
+      "evidence": "I have never had asthma",
+      "turn_id": "P-29"
+    },
+    {
+      "id": "N_014",
+      "text": "Common Cold",
+      "type": "DIAGNOSIS",
+      "evidence": "common cold",
+      "turn_id": "P-59"
+    },
+    {
+      "id": "N_015",
+      "text": "Eczema",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "heard of it",
+      "turn_id": "P-32"
+    },
+    {
+      "id": "N_016",
+      "text": "No Asthma",
+      "type": "DIAGNOSIS",
+      "evidence": "You don't have asthma",
+      "turn_id": "P-29"
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "N_001",
+      "target_id": "N_014",
+      "type": "INDICATES",
+      "evidence": "three to four day dry cough",
+      "turn_id": "D-59"
+    },
+    {
+      "source_id": "N_002",
+      "target_id": "N_014",
+      "type": "INDICATES",
+      "evidence": "throat feels really scratchy",
+      "turn_id": "D-4"
+    },
+    {
+      "source_id": "N_003",
+      "target_id": "N_014",
+      "type": "INDICATES",
+      "evidence": "headache",
+      "turn_id": "D-2"
+    },
+    {
+      "source_id": "N_004",
+      "target_id": "N_014",
+      "type": "INDICATES",
+      "evidence": "running a temperature",
+      "turn_id": "D-7"
+    },
+    {
+      "source_id": "N_005",
+      "target_id": "N_014",
+      "type": "INDICATES",
+      "evidence": "night sweats",
+      "turn_id": "D-9"
+    },
+    {
+      "source_id": "N_007",
+      "target_id": "N_008",
+      "type": "TAKEN_FOR",
+      "evidence": "take like Claritin for allergies",
+      "turn_id": "P-16"
+    },
+    {
+      "source_id": "N_007",
+      "target_id": "N_009",
+      "type": "TAKEN_FOR",
+      "evidence": "allergy shots",
+      "turn_id": "P-16"
+    },
+    {
+      "source_id": "N_007",
+      "target_id": "N_010",
+      "type": "CAUSES",
+      "evidence": "stuffy",
+      "turn_id": "P-19"
+    },
+    {
+      "source_id": "N_007",
+      "target_id": "N_006",
+      "type": "CAUSES",
+      "evidence": "post nasal drip",
+      "turn_id": "P-18"
+    },
+    {
+      "source_id": "N_012",
+      "target_id": "N_011",
+      "type": "TAKEN_FOR",
+      "evidence": "Deyo... birth control",
+      "turn_id": "P-26"
+    },
+    {
+      "source_id": "N_016",
+      "target_id": "N_013",
+      "type": "RULES_OUT",
+      "evidence": "You don't have asthma",
+      "turn_id": "P-29"
+    }
+  ],
+  "_usage": {
+    "prompt_tokens": 2606,
+    "completion_tokens": 6723,
+    "reasoning_tokens": 4381,
+    "cost": 0.00315149
+  }
+}

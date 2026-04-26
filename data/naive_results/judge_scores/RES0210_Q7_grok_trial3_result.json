@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer specifies: raspy cough on Friday (✓ matched); yellow sputum with red spots both starting Sunday simultaneously (Generated mentions only 'red spots in sputum' on Sunday, missing explicit yellow sputum); fever on Monday (✓ matched via P-5, consistent with Gold's P-8); chills 'especially last two days' (Tuesday-Wednesday per Gold, but Generated incorrectly assigns Monday-Tuesday); right-sided chest pain noticed 'over the last day' (~Tuesday per Gold [P-20], but Generated places onset on Wednesday). Overall progression partially matches but has day discrepancies for chills and chest pain, and omits yellow sputum detail. Some factual errors but core timeline points mostly correct.",
+    "completeness": "Key points from Gold covered: consultation Wednesday (implied), Friday raspy cough (✓), Sunday worsening cough and red sputum (partial, misses yellow sputum start), Monday fever (✓), chills last two days (partial/misdated), chest pain recent (partial/misdated), worsening to include dyspnea by Wednesday. Missed: runny nose ~1 week ago, explicit yellow sputum onset Sunday with red, cough 'really bad' Sunday, sputum persistence Monday, precise chills Tuesday-Wednesday, chest pain ~Tuesday onset, sore throat from coughing, full list of Wednesday symptoms. Covers ~60-70% of key points.",
+    "faithfulness": "Most claims verifiable in transcript with accurate citations (e.g., P-3 cough Friday, P-4 red spots Sunday, P-5 fever Monday, P-9 chills last two days, P-17/P-19 chest pain). Minor misinterpretation of 'last two days' as Monday-Tuesday instead of Tuesday-Wednesday. Hallucination: references to 'knowledge graph provided' and 'knowledge graph indicators' (e.g., cough indicates chest pain/harder to breathe)—no such graph or correlations in transcript. Some unverifiable/hallucinated details but mostly grounded.",
+    "relevance": "Directly addresses timeline of symptom onsets (cough, sputum/red spots, fever, chills, chest pain) and clinical worsening progression, structured clearly by day. Minor tangent with irrelevant knowledge graph references at end, but core content focused on question."
+  },
+  "scores": {
+    "correctness": 3,
+    "completeness": 3,
+    "faithfulness": 3,
+    "relevance": 4
+  },
+  "average_score": 3.25,
+  "summary": "The Generated Answer provides a mostly accurate but incomplete timeline with some factual errors on symptom onset days and minor hallucinations regarding a non-existent knowledge graph, while remaining largely relevant."
+}

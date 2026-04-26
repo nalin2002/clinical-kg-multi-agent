@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer lists multiple denied symptoms (cough, runny nose, headaches, chest pain, loss of smell, fever, chills/night sweats) with citations, plus other negatives like prior breathing issues, contacts, travel. Generated Answer only mentions loss of smell (correctly cited) and partial taste, ignoring all others. It incorrectly claims these exclude/distinguish from COVID-19 (Gold notes doctor still suspects COVID and tests despite negatives; negatives narrow other possibilities like URI). References non-existent 'Knowledge Graph'. Significant errors and contradictions.",
+    "completeness": "Gold key points: comprehensive list of 7+ denied symptoms with citations, additional negatives, no explicit differentials but implications (e.g., not URI, chest pain relevant, fever/chills don't rule out COVID). Generated covers only loss of smell (~1/10 key points, <20%). Misses cough, runny nose, headaches, chest pain, fever, chills, etc., and misstates implications.",
+    "faithfulness": "Loss of smell denial verifiable [P-19]. Partial taste mentioned but transcript has 'maybe taste a little bit' [P-19], not 'contrasts with complete loss'. 'Knowledge Graph' and its links to COVID symptoms entirely hallucinated (no graph in transcript). Claim that negatives exclude COVID not grounded (transcript suspects COVID [D-43]). Multiple hallucinations.",
+    "relevance": "Addresses denied symptoms (narrowly, only smell) and implications for COVID, but misses most symptoms and reverses implication (excludes vs. still suspected). Tangents to non-existent graph make it partially off-topic."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 1,
+    "faithfulness": 2,
+    "relevance": 3
+  },
+  "average_score": 2.0,
+  "summary": "The Generated Answer is significantly incomplete, factually incorrect in implications, and introduces hallucinations like a non-existent Knowledge Graph, poorly addressing the question."
+}

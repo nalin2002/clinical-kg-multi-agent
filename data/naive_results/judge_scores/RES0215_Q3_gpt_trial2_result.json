@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer’s main diagnosis of asthma aligns with the Gold Answer’s conclusion of pediatric asthma (with exercise-induced bronchoconstriction). However, it labels this as an “acute exacerbation,” which is not explicitly supported by the transcript or Gold Answer (the pattern described is episodic/exertional rather than clearly an acute flare). It also omits the more specific framing of exercise-induced bronchoconstriction/atopic predisposition emphasized in the Gold Answer, though this is more a specificity issue than a direct contradiction.",
+    "completeness": "Covered key Gold Answer supports: (1) exercise-triggered symptoms [P-3], (2) cold-weather worsening [P-38], (3) multiple settings [P-38], (4) seasonal allergies/Reactine [P-35, P-36].\nMissed key supports from Gold Answer: (5) episodic/reversible nature with rest and spontaneous resolution (“when she rests then it goes away” [P-6]; recovers on own [P-33]), (6) nocturnal wheezy episode/trouble falling asleep [P-43, P-44], (7) pertinent infectious negatives (no fever [P-7], no runny nose [P-8], no sick contacts [P-10], no phlegm [P-31]) that argue against infection. Overall, it captures a majority but not all important supporting findings.",
+    "faithfulness": "Several claims are not grounded in the transcript: references to a “Knowledge Graph,” including that cold weather is a cause of wheeze and that wheeze is linked to being out of breath, are not present in the transcript and therefore constitute hallucinated support. The transcript-based points it does cite (exercise trigger, cold worsening, multiple settings, seasonal allergies/Reactine) are faithful.",
+    "relevance": "The response directly addresses the question by naming a respiratory diagnosis (asthma) and listing transcript findings supporting it. No major irrelevant tangents, though the “Knowledge Graph” discussion is unnecessary and detracts slightly from transcript-grounded justification."
+  },
+  "scores": {
+    "correctness": 4,
+    "completeness": 3,
+    "faithfulness": 3,
+    "relevance": 5
+  },
+  "average_score": 3.75,
+  "summary": "The answer correctly identifies asthma and cites several key supporting features, but it misses multiple important supporting findings from the Gold Answer and includes non-transcript “Knowledge Graph” justifications that reduce faithfulness."
+}

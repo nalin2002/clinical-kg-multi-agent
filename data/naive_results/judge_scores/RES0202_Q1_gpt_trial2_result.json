@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer contains major factual errors compared with the Gold Answer and transcript. Most importantly, it incorrectly states that wheezing, sore throat, chest pain, chills, and GI complaints were not explicitly asked about or denied. In the transcript, the doctor explicitly asked about and the mother denied: wheezing [D-7/P-7], chest pain/heart racing [D-13/P-13], sore throat [D-14/P-14], chills/night sweats [D-19/P-19], bowel changes/diarrhea/constipation/blood in stool [D-21/D-22/P-22], and nausea/vomiting [D-23/P-23]. The answer also mischaracterizes parts of the visit by tying symptom review to [D-44], which is actually counseling about COVID testing/isolation and ER precautions, not the ROS where denials occurred. While it correctly reports dry cough, fever, fatigue, decreased appetite, and possible loss of taste, the core ‘denied symptoms explicitly asked about’ portion is largely wrong.",
+    "completeness": "Reported symptoms: partially covered (dry cough, fever, fatigue, decreased appetite, possible loss of taste). Missing key reported items from Gold Answer: mild runny nose [P-16] and the nuance that shortness of breath was uncertain [P-8]. Denied/asked symptoms: largely missing/incorrect—fails to list sputum/blood denial [P-6], wheeze denial [P-7], chest pain/heart racing denial [P-13], sore throat denial [P-14], chills/night sweats denial [P-19], rash/skin changes denial [P-20], GI denials (diarrhea/constipation/blood in stool) [P-22], nausea/vomiting denial [P-23], urinary changes denial [P-24], dizziness/fainting denial [P-25], confusion/memory loss denial [P-26], and vision/hearing ‘fine’ [P-18]. Also does not clearly capture that swallowing difficulty was uncertain rather than denied [P-15] (it mentions it but muddles context). Overall, far below 50% coverage of Gold Answer key points.",
+    "faithfulness": "Multiple statements are not faithful to the transcript: claiming none of the listed symptoms (wheezing, sore throat, chest pain, chills, GI complaints) were asked/denied directly contradicts the transcript. The reference to [D-44] as the location where the doctor ‘explicitly asked about several symptoms’ is misleading (the symptom questioning occurred earlier; D-44 is guidance/return precautions). Although some reported symptoms are grounded in the transcript, the answer includes several major ungrounded/incorrect assertions about what was or wasn’t asked/denied.",
+    "relevance": "It attempts to address the question by listing reported symptoms and denied symptoms, but the denied-symptoms section directly fails the question (it asserts the opposite of what the doctor asked and the mother denied). Most content is on-topic, but because the key requested component is wrong, relevance is limited."
+  },
+  "scores": {
+    "correctness": 1,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 2
+  },
+  "average_score": 1.75,
+  "summary": "The response captures a few reported symptoms but is largely incorrect and unfaithful regarding the explicitly asked-about-and-denied symptoms, omitting many key negatives and misrepresenting the transcript."
+}

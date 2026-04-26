@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer identifies onset symptoms as shortness of breath, fatigue/rundown/tired, weakness, reduced appetite, laborious breathing, and generalized body aches (onset unspecified but grouped there). Generated covers only SOB and fatigue accurately for onset, missing weakness, appetite, breathing description, and body aches. Recent symptoms match fever (yesterday) and loss of taste (morning), but miss diminished smell (morning). Emerging: Gold has cough and sore throat; Generated adds headaches (P-11), which Gold notes as mild and similar to baseline, not clearly emerging. Main timeline structure correct, but significant omissions and one misplacement (headaches). Score: 3.",
+    "completeness": "Key points from Gold: Onset (SOB, fatigue/rundown/tired, weakness, reduced appetite, laborious breathing, body aches) - Generated covers SOB, fatigue (2/6). Recent (fever yesterday, loss of taste morning, diminished smell) - covers fever, taste (2/3). Emerging (dry cough, sore throat) - covers cough, sore throat (2/2), but adds headaches extra. Misses ~50% including weakness, appetite, aches, smell, details like new-onset sensory, laborious breathing. Score: 3.",
+    "faithfulness": "All timeline claims verifiable: P-1 (SOB/fatigue), P-4 (fever/taste), P-7/8 (cough), P-9 (throat), P-11 (headache). Loss of smell mentioned in clinical context (verifiable P-6) but not cited. 'Knowledge graph' and COVID diagnosis not in transcript (hallucination/plausible inference). Citations accurate where provided, minor unverifiable addition. Score: 4.",
+    "relevance": "Directly reconstructs timeline in three matching phases (onset couple days, recent day before/morning, emerging at consultation), with evidence citations. Clinical context/COVID minor tangent but does not detract from focus on question. Score: 4."
+  },
+  "scores": {
+    "correctness": 3,
+    "completeness": 3,
+    "faithfulness": 4,
+    "relevance": 4
+  },
+  "average_score": 3.5,
+  "summary": "The Generated Answer captures the core timeline structure with accurate citations but omits several key symptoms from the Gold Answer and includes minor extraneous clinical context."
+}

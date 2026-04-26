@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer incorrectly asserts multiple times that the transcript lacks information on symptom chronology (e.g., cough first), durations (cough 4-5 days [P-2,P-4], runny nose couple days [P-11]), severity changes (stayed the same [P-7]), and prior history (never had dry cough like this, past runny noses shorter [P-24]), which directly contradicts the Gold Answer and explicit transcript evidence, representing mostly incorrect content with contradictions.",
+    "completeness": "Gold Answer key points: cough onset 4-5 days prior as first symptom [P-2,P-4]; dry/non-productive [P-5,P-6]; severity unchanged [P-7]; runny nose later (couple days) with clear discharge [P-11,P-12]; novel dry cough, prior runny noses shorter [P-24]. Generated Answer covers 0% of these, instead denying their presence.",
+    "faithfulness": "Generated claims (no timing, no durations, no severity changes, no prior comparisons) are not verifiable and false as they contradict transcript (e.g., P-2/P-4 durations, P-11 runny nose timing, P-7 severity, P-24 history); citations misused (e.g., D-1,D-11 not for onset); largely fabricated absences where evidence exists.",
+    "relevance": "Generated Answer directly structures response around the question's elements (development/timing/duration of cough vs runny nose, severity changes, prior comparisons), with no irrelevant content or tangents, perfectly focused despite inaccuracies."
+  },
+  "scores": {
+    "correctness": 1,
+    "completeness": 1,
+    "faithfulness": 1,
+    "relevance": 5
+  },
+  "average_score": 2.0,
+  "summary": "The Generated Answer fails severely on correctness, completeness, and faithfulness by hallucinating the absence of explicit transcript details on symptom progression, while remaining highly relevant in its structure."
+}

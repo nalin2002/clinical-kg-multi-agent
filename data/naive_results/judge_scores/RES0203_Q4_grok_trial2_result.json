@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer incorrectly claims there are 'no documented negative findings' for symptoms like fever, dyspnea, or sore throat, directly contradicting the Gold Answer and transcript which explicitly document patient denials (e.g., [D-10/P-10] no fever, [D-11/P-11] no difficulty breathing, [D-13/P-13] no sore throat). It ignores all listed negatives such as no headaches, no chills, no muscle aches, no chest pain, no sputum, and no triggers, as well as the explanatory analysis of how these inform the clinical picture. This is a complete factual reversal of the Gold Answer.",
+    "completeness": "Gold Answer key points: lists 9 specific negative findings with citations (fever, dyspnea, headaches, sore throat, chills/night sweats, muscle aches/weakness, chest pain, sputum/blood, cough triggers), D-16 summary, explanation of clinical implications, and additional negatives (no PMH, meds, etc.). Generated Answer covers 0% of these, instead listing only positive findings (anosmia, ageusia, dry cough) and denying negatives exist.",
+    "faithfulness": "Generated Answer hallucinates that the transcript lacks patient answers on fever, dyspnea, sore throat, etc., despite verbatim denials in [D-10] to [D-15], [D-22], [D-7], [D-21]. Positives are accurately cited (e.g., [P-1]), but core claim of no negative screens is fabricated, with no verifiable basis in transcript.",
+    "relevance": "Question requires listing negative findings from review of systems and explaining their clinical impact; Generated Answer denies any negatives exist, pivots to positive findings and COVID alignment, failing to address the requested negatives or their implications, making it largely off-topic."
+  },
+  "scores": {
+    "correctness": 1,
+    "completeness": 1,
+    "faithfulness": 1,
+    "relevance": 2
+  },
+  "average_score": 1.25,
+  "summary": "The Generated Answer is fundamentally incorrect, incomplete, and unfaithful to the transcript by denying the existence of clearly documented negative findings central to the Gold Answer."
+}

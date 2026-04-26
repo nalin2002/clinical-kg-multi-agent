@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer incorrectly identifies fatigue and sleep disturbance as constitutional symptoms the doctor screened for that were denied, but the patient actually reported them (P-19, P-20, P-21); it also lists eczema as an exposure risk, which is a past medical history the patient affirmed, not denied. Gold Answer correctly lists denied symptoms (night sweats D-5/P-5, weight loss D-6-8/P-6-8, hemoptysis D-10/P-10) and exposures (sick contacts D-14/P-14, D-15/P-15, D-32/P-32; travel D-33-34/P-33-34; IV drug use D-40/P-40, cocaine/heroin D-39/P-39), with accurate TB exclusion rationale. This represents significant factual contradictions and errors.",
+    "completeness": "Key points from Gold Answer missed entirely: denied night sweats, weight loss, hemoptysis, sick contacts (multiple), travel, IVDU/cocaine/heroin, stiff neck/nausea/pain, and TB exclusion via classic triad (night sweats, weight loss, chronic cough). Generated covers none of these, instead focusing on reported symptoms (fatigue/sleep) and eczema (0% coverage).",
+    "faithfulness": "Claims about patient-reported fatigue/sleep (P-19) and eczema (P-22/23) are verifiable with accurate citations, but misrepresents them as 'screened for and denied' (they were affirmed); adds ungrounded 'knowledge graph' reference and incorrect exclusion logic linking present symptoms to TB rule-out (hallucinated purpose); plausible but not transcript-grounded.",
+    "relevance": "Generated Answer fails to address denied symptoms/exposures or TB exclusion via those specifics, instead discussing affirmed symptoms/history; partially mentions TB but incorrectly attributes to wrong symptoms, making it largely off-topic for the question."
+  },
+  "scores": {
+    "correctness": 1,
+    "completeness": 1,
+    "faithfulness": 2,
+    "relevance": 2
+  },
+  "average_score": 1.5,
+  "summary": "The Generated Answer is factually incorrect, incomplete, and irrelevant as it focuses on affirmed rather than denied symptoms/exposures, missing all key Gold points."
+}

@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer misses critical reported symptoms like difficulty breathing (P-7 to P-11), reduced sense of taste (P-19 to P-22), and details such as sore throat worsening (P-4) and fatigue/muscle aches timing (P-26); it incorrectly treats past mono sore throat as a current symptom detail; for denials, it only lists loss of smell and falsely claims other screened symptoms (cough P-15 'No', runny nose P-16 'No', headaches P-17 'No', chest pain P-18 'No', fever P-23 'I don't think so') were not explicitly denied, contradicting the Gold Answer and transcript.",
+    "completeness": "Key points from Gold covered partially: sore throat onset and severity (partial), difficulty swallowing food (yes), fatigue and muscle aches (yes); completely misses difficulty breathing, reduced taste, sore throat progression, symptom timings/details, and all but one denial (loss of smell); covers ~30% of Gold key points.",
+    "faithfulness": "Reported symptoms and citations (P-2, P-5, P-25) are verifiable in transcript; loss of smell denial (P-19) accurate; however, the note hallucinates that cough/runny nose/etc. were not explicitly denied despite direct 'No' responses in transcript (P-15 to P-18), introducing erroneous interpretation.",
+    "relevance": "The answer directly structures response around reported symptoms and explicitly denied commonly screened symptoms, matching the question's two parts with no off-topic content aside from minor past history mention."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 3,
+    "relevance": 5
+  },
+  "average_score": 3.0,
+  "summary": "The Generated Answer is relevant and mostly grounded but suffers from significant omissions of key symptoms like breathing difficulty and taste changes, incomplete denial list, and factual errors on explicit denials."
+}

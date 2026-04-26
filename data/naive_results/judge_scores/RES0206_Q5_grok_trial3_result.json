@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Generated Answer incorrectly states that the 20-year smoking history and sick contact exposure details are not in the provided text, directly contradicting the Gold Answer and transcript evidence [P-40 for smoking half pack/day for 20 years and quitting upon COPD diagnosis; P-20 for sick friend during dog walks, walking too close]. It fails to explain smoking as the primary risk factor for COPD or the persistent airway damage. While it notes infection causing COPD exacerbation (consistent with Gold [D-43]), it attributes this to a non-existent 'knowledge graph' and ignores the full chain from sick contact to infection to exacerbation. Additional errors include claiming a current lung specialist referral [D-43], which is not present (past referral only in P-8). Overall, mostly incorrect with contradictions.",
+    "completeness": "Gold key points: smoking history details and link to COPD (quit 4-5y ago, persistent damage, inhalers); sick contact (dog walks, sick friend, proximity); infection symptoms (sputum, sinus, headache, fever); patient recognition of pattern; doctor corroboration; 3-day timeline. Generated covers only infection -> exacerbation vaguely and some symptoms (harder to breathe, sputum), missing 80%+ including all smoking relation, sick contact chain, timeline, pattern. Covers <20%.",
+    "faithfulness": "Claims smoking/sick contact not in transcript (false, cited in Gold from P-40/P-20). Hallucinates 'knowledge graph' relationships not in transcript. Misattributes current lung specialist referral to [D-43] (absent). Accurate cites like [P-1] sputum, [D-43] exacerbation/infection, [P-9] fever, but overall multiple fabrications and unverifiable additions. Largely not grounded.",
+    "relevance": "Question requires explaining smoking -> COPD and sick contact chain -> exacerbation. Generated denies key transcript facts, ignores smoking entirely, skips sick contact chain, and diverts to symptom pathways via hallucinated KG and treatment (COVID swab, referral), making it largely off-topic despite partial overlap on exacerbation cause."
+  },
+  "scores": {
+    "correctness": 1,
+    "completeness": 1,
+    "faithfulness": 1,
+    "relevance": 2
+  },
+  "average_score": 1.25,
+  "summary": "The Generated Answer is fundamentally flawed, denying transcript evidence, hallucinating external sources, omitting core explanations, and providing minimal relevant content."
+}

@@ -1,0 +1,122 @@
+{
+  "nodes": [
+    {
+      "id": "N_001",
+      "text": "wheeze",
+      "type": "SYMPTOM",
+      "evidence": "[P-1]",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_002",
+      "text": "cough",
+      "type": "SYMPTOM",
+      "evidence": "[P-1]",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_003",
+      "text": "shortness of breath",
+      "type": "SYMPTOM",
+      "evidence": "[P-1]",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_004",
+      "text": "insomnia",
+      "type": "SYMPTOM",
+      "evidence": "[P-44]",
+      "turn_id": "P-44"
+    },
+    {
+      "id": "N_005",
+      "text": "air filters",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "[P-57]",
+      "turn_id": "P-57"
+    },
+    {
+      "id": "N_006",
+      "text": "viral infections",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "[P-15]",
+      "turn_id": "P-15"
+    },
+    {
+      "id": "N_007",
+      "text": "seasonal allergies",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "[P-35]",
+      "turn_id": "P-35"
+    },
+    {
+      "id": "N_008",
+      "text": "cetirizine",
+      "type": "TREATMENT",
+      "evidence": "[P-36]",
+      "turn_id": "P-36"
+    },
+    {
+      "id": "N_009",
+      "text": "physical examination",
+      "type": "PROCEDURE",
+      "evidence": "physical exam",
+      "turn_id": "D-58"
+    },
+    {
+      "id": "N_010",
+      "text": "vaginal delivery",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "vaginal delivery",
+      "turn_id": "P-23"
+    },
+    {
+      "id": "N_011",
+      "text": "kindergarten teacher",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "kindergarten teacher",
+      "turn_id": "P-51"
+    },
+    {
+      "id": "N_NEW_001",
+      "text": "chest",
+      "type": "LOCATION",
+      "evidence": "difficulty taking in deep breaths, hard time catching her breath",
+      "turn_id": "[P-2]"
+    },
+    {
+      "id": "N_NEW_002",
+      "text": "cold weather",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "it's worse when... there's colder weather",
+      "turn_id": "[P-38]"
+    },
+    {
+      "id": "N_NEW_003",
+      "text": "new carpets",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "We have carpets, but they're new carpets",
+      "turn_id": "[P-54]"
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "N_001",
+      "target_id": "N_NEW_001",
+      "type": "LOCATED_AT",
+      "evidence": "She's been quite wheezy, difficulty taking in deep breaths",
+      "turn_id": "[P-2]"
+    },
+    {
+      "source_id": "N_003",
+      "target_id": "N_NEW_001",
+      "type": "LOCATED_AT",
+      "evidence": "out of breath, catching her breath",
+      "turn_id": "[P-2]"
+    }
+  ],
+  "_usage": {
+    "prompt_tokens": 19856,
+    "completion_tokens": 42094
+  }
+}

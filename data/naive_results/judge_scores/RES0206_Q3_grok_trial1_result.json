@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer lists specific symptoms for COPD exacerbation (increased dyspnea, cough frequency, sputum volume [P-1], decreased exercise tolerance [P-4]) and infection (green-yellow sputum [P-1], fever [P-9], sinus pressure [P-12], headache [P-14], sick contact [P-20]), with explanations of distinctions, exclusions, and doctor's framing. Generated Answer correctly identifies worsening dyspnea [P-1] for COPD, green-yellow sputum [P-1] and fever [P-9] for infection, and doctor's quote [D-43], and addresses distinctions, but misses several symptoms (cough frequency, sputum volume separately, exercise tolerance, sinus, headache, contact), adds unmentioned 'dry COPD exacerbation' and plausible but unsubstantiated claims about hallmarks, and fabricates KG references not aligning with Gold's transcript grounding—some factual errors but main points correct.",
+    "completeness": "Gold key points: COPD sym (4 points), infection sym (5 points), distinctions for sputum/fever, exclusions (env exp [P-38], inhaler [P-26]), patient history [P-3], no findings/labs plan [D-43]. Generated covers dyspnea [P-1], more sputum/colored [P-1], fever [P-9], doctor's quote [D-43], distinctions partially; misses cough freq, exercise tol [P-4], sinus/HA/contact, all exclusions, patient recognition, labs plan—covers ~50-60% of key points.",
+    "faithfulness": "Claims grounded: worsening dyspnea/sputum/fever with correct citations [P-1,P-9,D-43]. Hallucinations: multiple [KG] references (links, causal connections, symptoms) not in transcript; 'dry COPD exacerbation', 'wheezing', 'hallmark bacterial' plausible but unverifiable/extrapolated beyond transcript; doctor's hypothesis accurate but KG fabrications indicate multiple hallucinated facts.",
+    "relevance": "Directly addresses symptoms supporting dual diagnosis (COPD worsening and infection signs) and how sputum/fever distinguish (infectious vs non-infectious exacerbation), with structure matching question; minor irrelevance via KG tangents but core focused."
+  },
+  "scores": {
+    "correctness": 3,
+    "completeness": 3,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 3.0,
+  "summary": "The Generated Answer partially covers the key symptoms and distinctions from the Gold Answer with correct transcript citations but is undermined by multiple hallucinations referencing a non-existent Knowledge Graph and omissions of several supporting details."
+}

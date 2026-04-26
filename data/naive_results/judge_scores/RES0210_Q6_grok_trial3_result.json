@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer incorrectly claims the transcript (limited to [P-1] to [P-42]) lacks doctor's dialogue and any stated plan, directly contradicting the Gold Answer and transcript which includes [D-43] explicitly stating the plan to consult the supervising physician and return; it partially covers self-care (exertion avoidance) but omits Tylenol and expectoration; aggravating factors partially match (coughing, deep breathing) but miss exertion; alleviating factors are wrongly stated as absent and hallucinates 'back pain' from [P-16] (runny nose); overall significant factual errors and contradictions with Gold.",
+    "completeness": "Covered: partial self-care (taking it easy [P-10]); aggravating (coughing [P-15,P-19], deep breathing [P-19]). Missed: doctor's full plan [D-43]; self-care Tylenol [P-14] and expectoration relief [P-13]; aggravating exertion/stairs [P-10,P-11]; alleviating Tylenol [P-14], expectoration [P-13], resting [P-10]; clinical management implications. Covers ~25% of key points.",
+    "faithfulness": "Claims unverifiable: no doctor's plan/response (falsely limits to P-only, ignores D lines like [D-43]); correct citations for some aggravating [P-15,P-19]; hallucinates 'back pain' from [P-16] (runny nose); exertion avoidance grounded [P-10] but incomplete; multiple inaccuracies in transcript representation.",
+    "relevance": "Directly structures response around question components (doctor's plan, self-care, agg/alle factors); minor irrelevant tangent on runny nose as alleviating; mostly on-topic despite incompleteness."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 2.5,
+  "summary": "The Generated Answer has significant factual errors, particularly missing the doctor's plan and key self-care/alleviating factors while hallucinating details, resulting in low correctness, completeness, and faithfulness despite good relevance."
+}

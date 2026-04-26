@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer specifies chronic cough for ~10 years [P-3], COPD diagnosis clarified to ~5 years ago [P-2]; Generated uses only initial 'couple years' [P-1] for COPD and no duration for chronic cough. Gold notes cough worsening and sputum change (clear/white to yellow) over the last week [P-5, P-6]; Generated correctly notes cough worsening last week but incorrectly states no sputum info (direct contradiction to [P-6]). SOB intensification last few days matches [P-1, P-8]. Significant factual errors on cough onset, diagnosis timing, and sputum change.",
+    "completeness": "Gold key points: cough ~10y, COPD ~5y (noting initial estimate), baseline intermittent SOB, cough worsen 1wk, sputum change 1wk, SOB intensify few days, chills couple days. Generated covers: COPD (inaccurate), chronic cough (no timing), cough worsen 1wk, SOB few days. Misses: 10y cough timing, accurate 5y COPD, baseline SOB, sputum change entirely, chills. Covers ~25% of key points.",
+    "faithfulness": "Most claims grounded: COPD [P-1], chronic cough [P-1], worsen cough [P-1], SOB [P-1], exacerbation [D-52]. However, 'no specific information' on sputum is hallucinated/contradicted by [P-6] which explicitly describes change to yellow past week. References 'knowledge graph' not in input. Minor unverifiable details but one major fabrication of absence.",
+    "relevance": "Generated uses bullet-point timeline directly addressing question elements (diagnosis, chronic cough, worsening cough, sputum, SOB onset, current presentation). Structured response focused on query despite gaps; no off-topic content."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 3,
+    "relevance": 4
+  },
+  "average_score": 2.75,
+  "summary": "The Generated Answer partially traces the timeline with correct recent worsening events but has significant errors omitting cough duration, accurate diagnosis timing, and denying sputum changes present in transcript."
+}

@@ -1,0 +1,278 @@
+{
+  "nodes": [
+    {
+      "id": "N_001",
+      "text": "Shortness of breath",
+      "type": "SYMPTOM",
+      "evidence": "feeling really short of breath",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_002",
+      "text": "Fatigue",
+      "type": "SYMPTOM",
+      "evidence": "really tired",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_003",
+      "text": "Difficulty breathing",
+      "type": "SYMPTOM",
+      "evidence": "difficulty with breathing",
+      "turn_id": "D-3"
+    },
+    {
+      "id": "N_004",
+      "text": "Fever",
+      "type": "SYMPTOM",
+      "evidence": "felt really hot",
+      "turn_id": "P-4"
+    },
+    {
+      "id": "N_005",
+      "text": "Loss of taste",
+      "type": "SYMPTOM",
+      "evidence": "couldn't really taste",
+      "turn_id": "P-4"
+    },
+    {
+      "id": "N_006",
+      "text": "Loss of smell",
+      "type": "SYMPTOM",
+      "evidence": "not able to smell well",
+      "turn_id": "D-6"
+    },
+    {
+      "id": "N_007",
+      "text": "Cough",
+      "type": "SYMPTOM",
+      "evidence": "cough",
+      "turn_id": "P-7"
+    },
+    {
+      "id": "N_008",
+      "text": "Dry cough",
+      "type": "SYMPTOM",
+      "evidence": "dry like it's on its way",
+      "turn_id": "P-8"
+    },
+    {
+      "id": "N_009",
+      "text": "Sore throat",
+      "type": "SYMPTOM",
+      "evidence": "sore throat",
+      "turn_id": "P-9"
+    },
+    {
+      "id": "N_010",
+      "text": "Headache",
+      "type": "SYMPTOM",
+      "evidence": "headaches",
+      "turn_id": "P-11"
+    },
+    {
+      "id": "N_011",
+      "text": "Muscle ache",
+      "type": "SYMPTOM",
+      "evidence": "muscle aches",
+      "turn_id": "P-20"
+    },
+    {
+      "id": "N_012",
+      "text": "Reflux",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "reflux",
+      "turn_id": "P-25"
+    },
+    {
+      "id": "N_013",
+      "text": "Prostate enlargement",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "my prostate's a little big",
+      "turn_id": "P-25"
+    },
+    {
+      "id": "N_014",
+      "text": "Dutasteride",
+      "type": "TREATMENT",
+      "evidence": "avodart",
+      "turn_id": "P-26"
+    },
+    {
+      "id": "N_015",
+      "text": "Calcium Carbonate",
+      "type": "TREATMENT",
+      "evidence": "tums",
+      "turn_id": "P-27"
+    },
+    {
+      "id": "N_016",
+      "text": "COVID-19",
+      "type": "DIAGNOSIS",
+      "evidence": "covid",
+      "turn_id": "D-36"
+    },
+    {
+      "id": "N_017",
+      "text": "Chest X-ray",
+      "type": "PROCEDURE",
+      "evidence": "chest X Ray",
+      "turn_id": "D-37"
+    },
+    {
+      "id": "N_018",
+      "text": "Covid swab",
+      "type": "PROCEDURE",
+      "evidence": "covid swab",
+      "turn_id": "D-37"
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "N_001",
+      "target_id": "N_016",
+      "type": "INDICATES",
+      "evidence": "feeling really short of breath",
+      "turn_id": "P-1"
+    },
+    {
+      "source_id": "N_002",
+      "target_id": "N_016",
+      "type": "INDICATES",
+      "evidence": "really tired",
+      "turn_id": "P-1"
+    },
+    {
+      "source_id": "N_003",
+      "target_id": "N_016",
+      "type": "INDICATES",
+      "evidence": "difficulty breathing",
+      "turn_id": "D-3"
+    },
+    {
+      "source_id": "N_004",
+      "target_id": "N_016",
+      "type": "INDICATES",
+      "evidence": "felt really hot",
+      "turn_id": "P-4"
+    },
+    {
+      "source_id": "N_005",
+      "target_id": "N_016",
+      "type": "INDICATES",
+      "evidence": "couldn't really taste",
+      "turn_id": "P-4"
+    },
+    {
+      "source_id": "N_006",
+      "target_id": "N_016",
+      "type": "INDICATES",
+      "evidence": "not able to smell well",
+      "turn_id": "D-6"
+    },
+    {
+      "source_id": "N_007",
+      "target_id": "N_016",
+      "type": "INDICATES",
+      "evidence": "cough",
+      "turn_id": "P-7"
+    },
+    {
+      "source_id": "N_008",
+      "target_id": "N_016",
+      "type": "INDICATES",
+      "evidence": "dry like it's on its way",
+      "turn_id": "P-8"
+    },
+    {
+      "source_id": "N_009",
+      "target_id": "N_016",
+      "type": "INDICATES",
+      "evidence": "sore throat",
+      "turn_id": "P-9"
+    },
+    {
+      "source_id": "N_010",
+      "target_id": "N_016",
+      "type": "INDICATES",
+      "evidence": "headaches",
+      "turn_id": "P-11"
+    },
+    {
+      "source_id": "N_011",
+      "target_id": "N_016",
+      "type": "INDICATES",
+      "evidence": "muscle aches",
+      "turn_id": "P-20"
+    },
+    {
+      "source_id": "N_016",
+      "target_id": "N_001",
+      "type": "CAUSES",
+      "evidence": "sounds like you have some sort of an infection... covid",
+      "turn_id": "D-36"
+    },
+    {
+      "source_id": "N_016",
+      "target_id": "N_002",
+      "type": "CAUSES",
+      "evidence": "sounds like you have some sort of an infection... covid",
+      "turn_id": "D-36"
+    },
+    {
+      "source_id": "N_016",
+      "target_id": "N_003",
+      "type": "CAUSES",
+      "evidence": "sounds like you have some sort of an infection... covid",
+      "turn_id": "D-36"
+    },
+    {
+      "source_id": "N_014",
+      "target_id": "N_013",
+      "type": "TAKEN_FOR",
+      "evidence": "I take avodart",
+      "turn_id": "P-26"
+    },
+    {
+      "source_id": "N_015",
+      "target_id": "N_012",
+      "type": "TAKEN_FOR",
+      "evidence": "take a tums here and there",
+      "turn_id": "P-27"
+    },
+    {
+      "source_id": "N_017",
+      "target_id": "N_016",
+      "type": "CONFIRMS",
+      "evidence": "do a chest X Ray... to see if there's anything a infection... in your chest",
+      "turn_id": "D-37"
+    },
+    {
+      "source_id": "N_018",
+      "target_id": "N_016",
+      "type": "CONFIRMS",
+      "evidence": "and a covid swab",
+      "turn_id": "D-37"
+    },
+    {
+      "source_id": "N_017",
+      "target_id": "N_016",
+      "type": "TAKEN_FOR",
+      "evidence": "do a chest X Ray... to see if there's anything a infection",
+      "turn_id": "D-37"
+    },
+    {
+      "source_id": "N_018",
+      "target_id": "N_016",
+      "type": "TAKEN_FOR",
+      "evidence": "and a covid swab",
+      "turn_id": "D-37"
+    }
+  ],
+  "_usage": {
+    "prompt_tokens": 2199,
+    "completion_tokens": 7887,
+    "reasoning_tokens": 4722,
+    "cost": 0.00330855
+  }
+}

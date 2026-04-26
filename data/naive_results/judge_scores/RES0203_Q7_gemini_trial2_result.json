@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The generated answer contains several factual errors compared to the Gold Answer and the source transcript. Specifically, it incorrectly states that the transcript does not provide information regarding whether symptoms worsened or fluctuated, whereas the patient explicitly states they were 'pretty consistent' [P-5, P-8]. It also claims there is no mention of prior history, but the patient clearly denies having experienced similar symptoms previously in [P-3].",
+    "completeness": "The generated answer misses several key points from the Gold Answer. While it identifies the onset timing correctly, it fails to capture the 'consistency' of symptoms and the specific denial of prior history, both of which were explicitly requested in the prompt and present in the transcript. It also misses the detail about the partial nature of the sensory loss (salt vs. banana).",
+    "faithfulness": "The generated answer makes negative hallucinations by claiming information is missing from the transcript when it is actually present. It claims there is no information on progression or prior history, which contradicts the explicit dialogue at [P-3], [P-5], and [P-8].",
+    "relevance": "The answer attempts to address all parts of the question, but because it fails to find the relevant information in the text, it provides 'not mentioned' as an answer for most of the query, which is unhelpful for a clinical summary task where that data exists."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 3
+  },
+  "average_score": 2.25,
+  "summary": "The generated answer incorrectly claims that the transcript lacks information on symptom progression and history, which are explicitly discussed in the source text."
+}

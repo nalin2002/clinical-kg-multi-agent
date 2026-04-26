@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Generated Answer only mentions denial of loss of smell (correctly quoted from transcript) and partial taste loss, but Gold Answer lists many more denied symptoms (cough, runny nose, headaches, chest pain, fever, chills/night sweats, plus prior SOB, contacts, travel); crucially, it incorrectly claims these findings exclude/distinguish away from COVID-19, contradicting Gold's point that doctor still suspects COVID and proceeds with testing despite negatives, and introduces non-existent 'Knowledge Graph' facts.",
+    "completeness": "Key points from Gold: denied cough, runny nose, headaches, chest pain, loss of smell, fever, chills/night sweats (7 symptoms), plus prior breathing issues/contacts/travel; implications for excluding URI, relevance to SOB, not dissuading COVID, mono history. Generated covers only ~1 (loss of smell), misses 90%+ including all explanatory implications; <20% coverage.",
+    "faithfulness": "Quotes P-19 accurately for smell denial, notes taste issue from transcript; but hallucinates 'Knowledge Graph' linking COVID to complete smell/taste loss (not in transcript), claims screening based on KG, and infers exclusion of COVID contradicting doctor's suspicion [D-43]; multiple unverifiable/hallucinated elements.",
+    "relevance": "Addresses part of question by listing some denied symptoms (smell) and attempting differential implication, but focuses narrowly/wrongly on excluding COVID via KG (off-topic fabrication), ignoring broader screening and correct distinctions like URI."
+  },
+  "scores": {
+    "correctness": 1,
+    "completeness": 1,
+    "faithfulness": 1,
+    "relevance": 2
+  },
+  "average_score": 1.25,
+  "summary": "The Generated Answer is largely incorrect, incomplete, unfaithful to the transcript due to hallucinations, and only partially relevant with a misguided focus."
+}

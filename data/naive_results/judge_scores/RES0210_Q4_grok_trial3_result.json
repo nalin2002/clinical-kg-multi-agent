@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Generated Answer incorrectly claims the patient 'did not provide a response' for all four questions (weight loss, travel, sick contacts, chemical exposure), directly contradicting the transcript [P-22: 'No, not really'; P-23: 'Went to Sarnia...'; P-24: 'Nope...'; P-34: engineering side, limited exposure]. DDx partially align (e.g., lung cancer/TB for weight loss, Legionella/TB for travel) but miss specifics like fungal infections, chemical pneumonitis, and exact narrowing effects (e.g., denial makes less likely but doesn't exclude). Adds non-transcript 'Symptoms Knowledge Graph'. Significant factual errors vs Gold.",
+    "completeness": "Gold key points: DDx for each (lung ca/TB; endemic inf like Legionella/fungal; person-to-person/TB; chem pneumonitis/occ lung dz), cited responses, narrowing effects (less likely but not excluded; domestic/timing; reduces exposure; limited exp less likely), collective favor acute inf. Generated covers some DDx but misses all responses, all narrowing details, Sarnia context, and collective summary; adds irrelevant contrast factors. Covers ~30-40% of key points.",
+    "faithfulness": "Multiple claims unverifiable/contradicted: 'no response' for each question despite explicit [P-22/23/24/34]; 'Symptoms Knowledge Graph' absent; hallucinates no narrowing due to no answers. Other citations (e.g., [P-4], [P-19]) accurate but irrelevant to queried questions. Largely fabricated on core responses.",
+    "relevance": "Structures response around the four exact questions with DDx sections, addressing 'potential differential diagnoses'; attempts 'how responses help narrow' (though wrongly); minor tangents like extra summary contrasts and non-asked symptom narrowing."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 1,
+    "relevance": 4
+  },
+  "average_score": 2.25,
+  "summary": "The Generated Answer has major factual errors by fabricating absent patient responses, partially covers DDx but misses narrowing impacts and transcript details, shows significant hallucinations, though remains mostly relevant in structure."
+}

@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer correctly identifies Lipitor (prescribed for high cholesterol) as the only prescription medication [P-25-P-27] and Tylenol as OTC for symptom relief with partial effectiveness ('helps a little bit') [P-14]. Generated Answer accurately reports Lipitor and its use but incorrectly states no OTC medications are mentioned, missing Tylenol entirely despite clear transcript evidence [P-14], representing a significant factual contradiction on a core element of the question.",
+    "completeness": "Gold key points: (1) Lipitor for cholesterol (covered), (2) only prescribed med (implied/covered), (3) Tylenol OTC for symptoms (missed), (4) Tylenol effectiveness partial (missed), (5) no other meds (partially contradicted by omission), (6) non-med relief and extras (not covered). Covers ~30% (prescribed only), misses OTC entirely.",
+    "faithfulness": "Lipitor claims verifiable [P-25-P-26]; OTC absence claim not verifiable and contradicted by [P-14] ('haven't taken some Tylenol... helps a little bit'); references symptoms [P-15,P-17,P-19] but ignores Tylenol; mentions unprovided 'knowledge graph' (potential hallucination); multiple ungrounded denials.",
+    "relevance": "Generated Answer directly structures response around prescribed and OTC medications per question, with conditions and evidence; no off-topic content despite errors; minor extra re: knowledge graph."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 5
+  },
+  "average_score": 2.75,
+  "summary": "The Generated Answer is factually incorrect and incomplete by entirely omitting the clearly stated OTC Tylenol use and its reported effectiveness, despite accurately capturing the prescribed medication."
+}

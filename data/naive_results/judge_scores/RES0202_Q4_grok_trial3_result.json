@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer incorrectly identifies 'another viral illness' as the condition that would have been added to the differential if presentation differed, citing [D-44], but the Gold Answer correctly points to asthma from [D-45]. It misattributes the exclusion to the temperature being 'a little high' rather than 'really high' and absence of neuro symptoms, whereas Gold specifies fever presence excludes asthma, favoring infection. This is a complete factual contradiction with no alignment to Gold.",
+    "completeness": "Gold key points: condition=asthma; conditional presentation=just cough/SOB without fever; excluding finding=fever; citations [D-45]; supporting no wheezing/SOB uncertainty. Generated covers 0% of these, instead fabricating unrelated viral illness, wrong conditional symptoms (high temp/neuro), and wrong exclusion reason.",
+    "faithfulness": "Generated hallucinates that [D-44] discusses adding 'another viral illness' conditionally if presentation different—it does not; [D-44] mentions viral illness as possible if COVID negative, and lists ER warning signs (high temp, neuro symptoms) unrelated to differential addition. No verifiable basis in transcript for claims; entirely fabricated interpretation.",
+    "relevance": "Generated structures response to directly answer the question (names condition, conditional presentation, excluding finding with citations), with no tangents or off-topic content, despite factual errors."
+  },
+  "scores": {
+    "correctness": 1,
+    "completeness": 1,
+    "faithfulness": 1,
+    "relevance": 5
+  },
+  "average_score": 2.0,
+  "summary": "The Generated Answer completely misinterprets the transcript, fabricating an incorrect condition and reasoning that contradicts the Gold Answer on all factual aspects while maintaining structural relevance."
+}

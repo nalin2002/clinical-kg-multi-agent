@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer accurately captures endorsed symptoms like worsening cough (P-1,P-5), exertional trigger (P-5), increased SOB (P-1,P-8), sputum change from clear-white to yellow (P-6), chest discomfort (P-13), chills (P-29,P-30). Generated misses sputum change entirely (falsely claims no description despite explicit P-6), omits chest discomfort and chills, incorrectly states no systemic symptoms endorsed, partial denies only some (e.g., lists fever but Gold notes no measured fever with chills endorsed). Cites doctor's summary (D-52) as patient endorsement incorrectly. Significant factual errors and contradictions.",
+    "completeness": "Gold key points: endorsed - worsening cough over week beyond chronic baseline [P-1,P-5], triggered by stairs [P-5], SOB last few days severe [P-1,P-8], sputum clear-white to yellow [P-6], chest discomfort coughing [P-13], chills last couple days no measured fever [P-29,P-30]; negatives - hemoptysis [P-7], orthopnea [P-9], PND [P-10], palpitations [P-14], fever (unmeasured), and many others. Generated covers SOB and increased cough (~30%), partial denies (orthopnea, PND, hemoptysis, palpitations, fever); misses sputum change, chest discomfort, chills, most negatives. Covers 20-49%.",
+    "faithfulness": "Generated hallucinates absence of sputum details (P-6 explicitly describes usual clear-white vs recent yellow); claims no systemic like chills (P-29 'feeling a bit chilly'); misattributes D-52 (doctor's words) as patient endorsement; denies hemoptysis correctly (P-7) but ignores verifiable sputum change and chills; multiple ungrounded absences/claims of no details.",
+    "relevance": "Generated structures response around endorsed respiratory/systemic symptoms, sputum (though wrongly), and denied screened symptoms, directly mirroring question structure with sections; no major off-topic content, focused on query despite inaccuracies."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 2.5,
+  "summary": "The Generated Answer has significant factual omissions and errors, particularly missing key endorsed symptoms like sputum change and chills, while falsely claiming absence of sputum details, resulting in low correctness, completeness, and faithfulness despite good relevance."
+}

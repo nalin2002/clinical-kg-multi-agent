@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Generated Answer misses key reported symptoms like difficulty breathing (P-7-P-11), reduced sense of taste (P-19-P-22), and incomplete details on sore throat worsening (P-4) and fatigue/muscle aches timing (P-26). It incorrectly includes past mono (P-5) under current symptoms. For denials, it claims cough, runny nose, fever, headaches, chest pain were not explicitly denied, contradicting explicit 'No' responses in P-15-P-18, P-23-P-24; only lists loss of smell. Significant factual errors and contradictions with Gold.",
+    "completeness": "Gold key points: reported - sore throat (details), breathing (details), taste change, fatigue/muscles (details); denied - cough, runny nose, headaches, chest pain, loss of smell, fever, chills. Generated covers partial sore throat/swallowing, muscle ache, fatigue (~40% of reported, incomplete); only 1/7 denied (loss of smell). Misses breathing, taste, most denials, details. Covers 20-49%.",
+    "faithfulness": "Reported symptoms verifiable (P-2, P-25 citations accurate), but past mono misrepresented as current. Denied smell accurate (P-19). Note hallucinates that cough etc. 'not explicitly denied' despite direct 'No' answers (P-15-P-18 etc.); claims absent from list, but transcript shows screening questions with denials. Multiple interpretive hallucinations.",
+    "relevance": "Directly structures response around reported vs denied symptoms per question; no off-topic content, minor note tangent but focused."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 5
+  },
+  "average_score": 2.75,
+  "summary": "Generated Answer is significantly incomplete and factually inaccurate, missing major symptoms like breathing difficulty and most explicit denials, with hallucinations about denial explicitness."
+}

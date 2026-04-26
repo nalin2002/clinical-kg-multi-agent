@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Compared with the Gold Answer, the Generated Answer contains major errors/omissions. It correctly identifies sore throat (4 days, very sore) and difficulty swallowing food, and notes fatigue/tiredness and muscle aches. However, it fails to report the patient’s key symptom of difficulty breathing (started yesterday, constant, worsening) and fails to report the reduced sense of taste (started ~2 days ago, constant). It also incorrectly states that cough, runny nose, headaches, chest pain, and fever were not explicitly denied; in the transcript the patient explicitly denies each of these (P-15 through P-18 and P-23).",
+    "completeness": "Key positives in Gold: (1) sore throat + worsening + dysphagia (covered partially; missed worsening), (2) difficulty breathing details (missed entirely), (3) reduced taste details (missed entirely), (4) fatigue + myalgias with timing and “not weak” nuance (partially covered; missed timing and denial of weakness). Key negatives in Gold: cough, runny nose, headaches, chest pain, loss of smell, fever, chills/night sweats (only loss of smell covered; others missed and even incorrectly characterized). Also missed sick contacts and travel negatives. Overall coverage is well under 50%.",
+    "faithfulness": "Several statements are not grounded or are contradicted by the transcript. The note claiming cough/runny nose/fever/headache/chest pain were not explicitly denied is directly contradicted by explicit denials in the transcript (P-15–P-18, P-23). Otherwise, the items it does cite (sore throat, dysphagia, myalgias, tiredness, no smell loss) are supported.",
+    "relevance": "The response is aimed at listing reported symptoms and explicitly denied screened symptoms, which matches the question, but it omits major reported symptoms (dyspnea, taste loss) and misidentifies multiple explicit denials, reducing how well it answers the question."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 3
+  },
+  "average_score": 2.25,
+  "summary": "The answer is partially relevant but misses major reported symptoms and incorrectly claims several explicitly denied symptoms were merely absent, leading to low correctness, completeness, and faithfulness."
+}

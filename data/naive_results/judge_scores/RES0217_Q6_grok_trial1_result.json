@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer correctly identifies sending the tick to the lab [D-6] and prophylactic antibiotics due to >72-hour attachment [D-6], partially matches the physical exam (Gold specifies 'quick physical exam' [D-18], but Generated expands it to include ruling out systemic symptoms via exam, which were actually assessed verbally [D-7,D-8,D-19]). Major errors: omits blood work for titres/serology [D-18]; omits physician consultation [D-13,D-18,D-22]; incorrectly claims no specific preventive advice on garden/outdoor despite explicit details in [D-18] (ticks in long grass/woods-fields, waving legs, insecticide). Adds 'knowledge graph' not in transcript. Significant contradictions and omissions vs Gold.",
+    "completeness": "Key points from Gold covered: tick to lab for ID (100%), prophylactic antibiotics with reasons/no specifics (100%), physical exam (partial, ~70%). Missed entirely: blood work/serology [D-18] (0%), physician consultation/talk to doctor [D-13,D-22] (0%), preventive advice details (ticks habitat, waving motion, insecticide for garden [D-18]) (0%, and explicitly denied). Covers ~40-50% of key points.",
+    "faithfulness": "Tick lab verifiable [D-6,D-18]; antibiotics grounded [D-6,D-13,D-18]; physical exam mentioned [D-18] but Generated hallucinates scope (ruling out systemic symptoms via physical—actually verbal history) and wrong citations [D-5,D-6,P-1; D-5 is deer tick description]. 'Knowledge graph' hallucinated (no transcript basis). Denies preventive advice despite verbatim [D-18]. Multiple unverifiable/hallucinated claims.",
+    "relevance": "Answer structured directly around question's components (diagnostics, therapeutics, preventive), uses transcript citations, focused on clinical plan despite misses and errors—no major off-topic content."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 2.5,
+  "summary": "The Generated Answer is partially accurate on core diagnostics and treatment but significantly incomplete by omitting blood work, physician consultation, and preventive advice while denying the latter and introducing hallucinations."
+}

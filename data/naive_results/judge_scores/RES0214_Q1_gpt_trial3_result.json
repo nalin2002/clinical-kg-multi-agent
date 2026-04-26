@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The four reported symptoms (fever x3 days, stuffy nose preceding fever, persistent sore throat, muscle aches) match the Gold Answer and transcript. The denied symptom list includes the requested items (cough, headache, neck stiffness, nausea, difficulty swallowing), which are indeed denied in the transcript. However, the Generated Answer inaccurately explains the denials as being inferred from non-reporting rather than explicitly denied when asked, and it misattributes/cites denials to [P-1]. It also omits the key nuance for swallowing (\"it just hurts\" but able to swallow solids/liquids without coughing), which weakens accuracy around ‘difficulty swallowing.’",
+    "completeness": "Covers all four patient-reported symptoms from the Gold Answer. Includes all five clinically significant negatives the question asks about. It does not include the additional pertinent negatives mentioned in the Gold Answer (e.g., vomiting, abdominal pain, rashes, bowel changes), but those were not requested by the question; it also does not include the swallowing-detail (can swallow; no cough after swallowing). Overall coverage of requested elements is high.",
+    "faithfulness": "Several statements are not grounded as written: it claims she 'effectively denied' symptoms by not reporting them, whereas the transcript shows direct questioning with explicit denials. Citations for the denials are incorrect (they should cite [P-5], [P-7], [P-8], [P-10], [P-24–P-26], not [P-1]). While the denials themselves are true, the supporting rationale and references are not faithful to the transcript.",
+    "relevance": "Directly addresses the question by listing four reported symptoms and the specified denied symptoms. Minor irrelevant/incorrect commentary about inferring denials from lack of reporting, but still focused on the asked items."
+  },
+  "scores": {
+    "correctness": 4,
+    "completeness": 4,
+    "faithfulness": 3,
+    "relevance": 4
+  },
+  "average_score": 3.75,
+  "summary": "The symptom list is largely correct and relevant, but the answer is weakened by inaccurate characterization of ‘explicit denials’ and incorrect/unfaithful citation support for the denied symptoms."
+}

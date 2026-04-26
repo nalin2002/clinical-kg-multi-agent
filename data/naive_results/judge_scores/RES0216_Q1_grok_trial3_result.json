@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Generated Answer partially captures chest tightness and difficulty breathing but incorrectly adds irrelevant headache as a key symptom (not respiratory/chest-related per question), misses upper airway symptoms (hoarse, phlegm, throat clearing from P-11), omits key details like duration (3 days), diffuse nature (P-8), specific triggers (walks, deep breaths), and most explicitly denied symptoms (fevers P-12, night sweats P-13, chills P-14, weight loss P-15, cough P-11, anxiety/sweating P-6); chest pain denial is noted but sourced imprecisely (P-1 vs. clearer P-5). Significant errors and omissions contradict Gold Answer's comprehensive accuracy.",
+    "completeness": "Key points from Gold covered: chest tightness (partial), difficulty breathing (P-7); missed: 3-day history, diffuse/'all over' (P-8), specific triggers/worsening (P-9,P-10), upper airway (hoarse/phlegm/throat clearing P-11), all denials except partial chest pain (fevers, night sweats, chills, weight loss, cough, anxiety/sweating/impending doom). Covers ~25-30% of Gold's points.",
+    "faithfulness": "Claims on chest tightness and dyspnea verifiable [P-1,P-7]; headache verifiable but irrelevant [P-27]; however, note claiming 'no upper airway symptoms' contradicts P-11 (hoarse/phlegm/throat clearing); note claiming 'no information' on fevers/night sweats/chills/weight loss/cough/anxiety/sweating directly contradicts explicit denials [P-6,P-11-P-15]; multiple inaccuracies in assessing transcript content indicate hallucinated absences.",
+    "relevance": "Structure directly addresses reported symptoms and explicit denials from question, focusing on respiratory/chest issues initially, but includes off-topic headache and omits upper airway/denials, making it partially relevant with some extraneous content."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 3
+  },
+  "average_score": 2.25,
+  "summary": "The Generated Answer has significant factual errors, misses most key symptoms and denials from the Gold Answer, includes irrelevant details, and misrepresents transcript content despite a relevant structure."
+}

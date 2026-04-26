@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer diagnoses 'pediatric asthma with exercise-induced bronchoconstriction in the context of an atopic predisposition'; Generated Answer diagnoses 'Asthma (specifically, an acute exacerbation of asthma)'. Core diagnosis of asthma is consistent, but Generated's 'acute exacerbation' is a minor discrepancy as symptoms are episodic and self-resolving rather than a single acute event; 'pediatric', 'exercise-induced bronchoconstriction', and 'atopic predisposition' are implied but not explicitly stated, and no major contradictions.",
+    "completeness": "Gold key points: 1. Exercise-triggered [P-3,P-41,P-6]; 2. Episodic/reversible with rest [P-6,P-33]; 3. Cold weather trigger [P-38]; 4. Multiple settings [P-38]; 5. Seasonal allergies [P-35,P-36]; 6. Nocturnal episode [P-43,P-44]; 7. Pertinent negatives (fever [P-7], runny nose [P-8], contacts [P-10], phlegm [P-31]). Generated covers exercise [P-3], cold [P-38], allergies [P-35,36], settings [P-38] (4/7 ~57%), misses reversibility, nocturnal, negatives.",
+    "faithfulness": "Generated citations [P-3,P-38,P-35,P-36] are accurate and verifiable in transcript; however, multiple references to non-existent 'Knowledge Graph' (e.g., links between symptoms, treatments) are hallucinations not grounded in transcript.",
+    "relevance": "Directly names diagnosis (asthma) and lists supporting transcript findings with citations, addressing the question; minor off-topic tangents via Knowledge Graph mentions."
+  },
+  "scores": {
+    "correctness": 4,
+    "completeness": 3,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 3.25,
+  "summary": "The Generated Answer is mostly correct and relevant but incomplete in covering all Gold key points and unfaithful due to hallucinated Knowledge Graph references."
+}

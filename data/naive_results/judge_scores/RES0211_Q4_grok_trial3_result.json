@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer lists specific screened conditions: night sweats (D-9/P-9), productive cough (D-5/D-6/P-5/P-6), severe allergies/EpiPen (D-18/P-18/P-19/D-21/P-21), personal asthma (D-29/P-29), family asthma (P-30/P-31), family eczema (D-32/D-33/P-33), rashes (D-10/P-10), GI symptoms (D-11/D-12/P-11/P-12), joint pain (D-13/P-13). Generated Answer correctly identifies night sweats (D-9) and personal asthma denial (D-29/P-29), but incorrectly includes headache (D-2) as a screened condition (it's confirming the chief complaint), misattributes P-32 (eczema response) to asthma, and hallucinates a non-existent 'knowledge graph'. Misses productive cough, allergies/EpiPen details, family histories, rashes/GI/joints. Significant errors and omissions contradict Gold's focus.",
+    "completeness": "Key points from Gold covered: night sweats (partial), personal asthma (partial). Missed: productive cough, severe allergies details/EpiPen, family asthma, family eczema, rashes, GI symptoms, joint pain. Covers ~25% of key points (2 partial out of 9).",
+    "faithfulness": "Transcript-grounded elements: D-9, D-2, D-29, P-29, P-9, P-18/P-19 partially verifiable. Hallucinations: repeated 'knowledge graph' references ([DIAGNOSIS] links, [SYMPTOM] mappings) not in transcript; mislinks P-32 (eczema) to asthma; infers 'rules out' without transcript basis. Multiple unverifiable/hallucinated facts.",
+    "relevance": "Addresses screened conditions and responses narrowing diagnosis, lists some matching question examples (night sweats, asthma), but adds irrelevant headache screening and knowledge graph tangents; still mostly on-topic."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 2.5,
+  "summary": "The Generated Answer partially identifies some screened conditions like night sweats and asthma but misses most key points from the Gold Answer, introduces hallucinations via a non-existent knowledge graph, and includes irrelevant elements like headache screening."
+}

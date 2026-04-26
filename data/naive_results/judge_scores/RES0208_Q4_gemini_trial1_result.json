@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer is factually incorrect. It explicitly states that the transcript does not mention chest pain, palpitations, runny nose, or nausea, when in fact the doctor asks about all four: runny nose [D-10], nausea [D-15], chest pain [D-16], and palpitations/fast heart rate [D-17]. Furthermore, it identifies 'Cough' as the primary negated symptom, whereas the patient actually says they might be starting one [P-7] and it feels dry [P-8], which is a partial confirmation rather than a clear negation like the other symptoms.",
+    "completeness": "The Generated Answer misses almost all the negated symptoms listed in the Gold Answer, including changes in vision/hearing, abdominal pain, urinary symptoms, and numbness/tingling. It fails to explain how the absence of the specific symptoms listed in the prompt (chest pain, etc.) helps with the differential diagnosis, instead stating they were 'inferred' to be absent despite being explicitly discussed.",
+    "faithfulness": "The Generated Answer hallucinates that the requested symptoms are missing from the transcript. It also references a 'Knowledge Graph' that was not provided in the source context. It attributes reasoning to a knowledge graph rather than the provided text.",
+    "relevance": "While the Generated Answer attempts to address the prompt's structure, its reliance on the false premise that the symptoms were not mentioned makes the response largely irrelevant to the actual content of the clinical encounter described."
+  },
+  "scores": {
+    "correctness": 1,
+    "completeness": 1,
+    "faithfulness": 1,
+    "relevance": 2
+  },
+  "average_score": 1.25,
+  "summary": "The Generated Answer is highly inaccurate, incorrectly claiming the transcript lacks the symptoms mentioned in the prompt and hallucinating the existence of an external knowledge graph."
+}

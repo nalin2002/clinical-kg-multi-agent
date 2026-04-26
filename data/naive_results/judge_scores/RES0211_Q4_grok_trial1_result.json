@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer partially matches Gold on night sweats (correct cite D-9, similar response summary) and personal asthma denial (P-29), but errs by misattributing P-32 (eczema response) to asthma, fabricating 'knowledge graph' references not in transcript, adding unmentioned headache as a screened condition, and omitting key screenings like productive cough (D-5/D-6), severe allergies/EpiPen (D-18/D-21), family asthma/eczema, rashes/skin changes, GI symptoms, and joint pain; significant discrepancies and contradictions.",
+    "completeness": "Gold covers: night sweats, productive cough, severe allergies/EpiPen, personal/family asthma, family eczema, rashes, GI, joints. Generated covers ~25%: night sweats (partial), personal asthma (partial); misses productive cough, allergies/EpiPen details, family histories, eczema, rashes, GI, joints entirely.",
+    "faithfulness": "Claims grounded: night sweats cite accurate (D-9), asthma denial (P-29). Unverifiable/hallucinated: 'knowledge graph' and DIAGNOSIS links throughout (absent from transcript), P-32 wrongly tied to asthma (it's eczema), headache framed as systematic screening (D-2 is symptom confirmation); multiple fabrications.",
+    "relevance": "Addresses screening conditions/responses but focuses narrowly on night sweats/asthma/headache, ignores question examples like eczema/EpiPen, adds off-topic knowledge graph and cold confirmation; partially relevant with tangents."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 3
+  },
+  "average_score": 2.25,
+  "summary": "The Generated Answer has significant omissions, factual errors, and hallucinations compared to the Gold Answer, covering only a fraction of screened conditions while introducing extraneous elements."
+}

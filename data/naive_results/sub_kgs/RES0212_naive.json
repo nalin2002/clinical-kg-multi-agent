@@ -1,0 +1,89 @@
+{
+  "nodes": [
+    {
+      "id": "N_001",
+      "text": "Cough",
+      "type": "SYMPTOM",
+      "evidence": "I just had this cough that's been like really bothering me.",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_002",
+      "text": "Greenish sputum",
+      "type": "SYMPTOM",
+      "evidence": "It's kind of like greenish.",
+      "turn_id": "P-9"
+    },
+    {
+      "id": "N_003",
+      "text": "Fatigue",
+      "type": "SYMPTOM",
+      "evidence": "I'm just like tired. The cough has been waking me up a little bit so my my sleep hasn't been great.",
+      "turn_id": "P-19"
+    },
+    {
+      "id": "N_004",
+      "text": "Sleep disturbance",
+      "type": "SYMPTOM",
+      "evidence": "the cough does wake you up at night? Yeah, like pretty well, for like the last, not like all three months, but probably the last month.",
+      "turn_id": "P-21"
+    },
+    {
+      "id": "N_005",
+      "text": "Chest pain",
+      "type": "SYMPTOM",
+      "evidence": "kinda hurts when I cough now but not not like on its own.",
+      "turn_id": "P-3"
+    },
+    {
+      "id": "N_006",
+      "text": "Eczema",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "just like eczema.",
+      "turn_id": "P-22"
+    },
+    {
+      "id": "N_007",
+      "text": "Moisturizing creams",
+      "type": "TREATMENT",
+      "evidence": "Just like moisturizing creams.",
+      "turn_id": "P-23"
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "N_001",
+      "target_id": "N_003",
+      "type": "CAUSES",
+      "evidence": "the cough is like maybe for like a month, it's been kind of waking me up a little bit so my my sleep hasn't been great... I'm just like tired.",
+      "turn_id": "P-19"
+    },
+    {
+      "source_id": "N_001",
+      "target_id": "N_004",
+      "type": "CAUSES",
+      "evidence": "the cough does wake you up at night?",
+      "turn_id": "P-20"
+    },
+    {
+      "source_id": "N_001",
+      "target_id": "N_005",
+      "type": "CAUSES",
+      "evidence": "kinda hurts when I cough",
+      "turn_id": "P-3"
+    },
+    {
+      "source_id": "N_007",
+      "target_id": "N_006",
+      "type": "TAKEN_FOR",
+      "evidence": "family doctor back home said like, a couple times when it was really bad she would give me one like to go get at like shoppers, but right now it's not bad so I just have just like a regular cream.",
+      "turn_id": "P-23"
+    }
+  ],
+  "_usage": {
+    "prompt_tokens": 2348,
+    "completion_tokens": 7388,
+    "reasoning_tokens": 5738,
+    "cost": 0.00341164
+  }
+}

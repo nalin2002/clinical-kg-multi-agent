@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer explicitly cites D-43 for the clinician's suggestion of 'a little change to your medications' as part of the plan, noting its context with the patient's rescue-only regimen and increased use; Generated Answer incorrectly states that 'the specific instruction to change the medication regimen is not explicitly detailed,' misrepresenting the transcript and introducing a factual discrepancy on a core element of the plan, though COVID swab and consultation are accurately captured with correct citations.",
+    "completeness": "Gold key points: (1) multi-step plan structure; (2) COVID swab (D-29) despite negative screening; (3) explicit med change suggestion (D-43) with context of rescue-only/increased use and sports goal (D-42); (4) consultation details (D-43/D-29) indicating trainee status, presenting case, returning together. Generated covers COVID swab, consultation (partially), and med topic but misses explicit suggestion quote/context, trainee aspect, return together, sports goal, and plan structure depth—covers ~60% of key points.",
+    "faithfulness": "COVID swab verifiable [D-29]; consultation verifiable [D-29]; med regimen claim of 'not explicitly detailed' contradicts transcript [D-43: 'maybe all you need is a little change to your medications'], and inference of justification from symptoms [P-1] is plausible but secondary; calls clinician 'physician' unsupported (suggests trainee); minor hallucination in denying explicitness but mostly grounded otherwise.",
+    "relevance": "Generated Answer directly structures response around the three specified elements (diagnostic test, med regimen suggestion, consultation next steps) with bullet points mirroring the question's focus, containing no off-topic content."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 3,
+    "faithfulness": 3,
+    "relevance": 5
+  },
+  "average_score": 3.25,
+  "summary": "The Generated Answer identifies the core plan elements but significantly errs by denying the explicit medication change suggestion present in the transcript, reducing correctness, completeness, and faithfulness while remaining highly relevant."
+}

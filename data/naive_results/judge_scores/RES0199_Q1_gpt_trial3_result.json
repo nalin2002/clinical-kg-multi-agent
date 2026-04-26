@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer correctly notes onset of cough and headache at ~4 days ago and that the patient had GI symptoms (nausea/vomiting/diarrhea). However, it incorrectly states that key characteristics were “not described” or “not specified” when they are explicitly provided in the transcript: cough was mostly dry with no sputum/blood and stable over 4 days; diarrhea was liquid stools 5–6 times/day; vomiting occurred twice yesterday, non-bloody and consisted of food contents; headache severity was rated 7/10. These are major factual errors relative to the Gold Answer.",
+    "completeness": "It captures only a small subset of the Gold Answer (presence of cough/diarrhea/vomiting/nausea and rough onset). It misses nearly all requested specifics: dry nature of cough and lack of sputum/blood, stability of cough; diarrhea frequency (5–6/day) and liquid stools; vomiting episode count (2) and characteristics (food contents, no blood); headache severity (7/10). It also omits relevant associated negatives (e.g., no SOB/wheeze/chest pain; no blood in stool; no appetite change) and other noted symptoms (loss of smell, mild fatigue).",
+    "faithfulness": "The answer does not add new symptoms not in the transcript, but it repeatedly claims that specific details were not provided when they clearly are. These contradictions indicate poor grounding in the transcript content, even though there is little outright fabrication.",
+    "relevance": "The response stays on the question’s topic (GI and respiratory symptoms and requested characteristics), but fails to supply the specific characteristics asked for."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 2.5,
+  "summary": "The answer is on-topic but largely incorrect and incomplete because it repeatedly denies the presence of specific symptom details that are explicitly stated in the transcript."
+}

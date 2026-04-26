@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer accurately details both tick attachment duration (>72 hours based on Friday hiking [P-1], Saturday gardening [P-1], removal today [D-1], doctor's calculation [D-6]) and geographic risk (Strathroy hiking [P-12], Lyme map assessment [D-13]). Generated Answer correctly captures duration reasoning with accurate citations [P-1, D-6] and prophylactic need. However, it incorrectly claims no information on Strathroy or Ontario Lyme map in the transcript (falsely citing limited segments [D-5, D-6, D-17]), directly contradicting [P-12] and [D-13] which are present. This introduces significant factual errors on the second half of the question.",
+    "completeness": "Key points from Gold: Duration - activities Fri/Sat [P-1], uncertainty [P-1], removal today [D-1], time since outdoors [D-2], >72h [D-6], prophylactic [D-6]; Geography - Strathroy [P-12], map 'concerning' [D-13], antibiotics [D-13]. Generated covers activities [P-1], >72h [D-6], prophylactic [D-6] (~40% coverage); misses uncertainty, [D-1/D-2], and entire geography section (50% of question).",
+    "faithfulness": "Duration claims verifiable: [P-1, D-6] accurate. But hallucinates absence of Strathroy/map info despite [P-12: 'Strathroy along the creek'], [D-13: 'Lyme disease distribution map... Strathroy is close enough... concerning']. Introduces unmentioned 'knowledge graph'. Cites irrelevant [D-5, D-6, D-17] to deny facts. Multiple hallucinations via false denial and extraneous elements.",
+    "relevance": "Directly addresses first part (duration from Fri/Sat activities) with focus. Partially addresses second by denying info and pivoting to timeline-only justification, but question explicitly asks about Strathroy/map role. Minor off-topic via 'knowledge graph' and incomplete citations."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 3
+  },
+  "average_score": 2.25,
+  "summary": "Generated Answer accurately handles tick attachment duration but fabricates a denial of the transcript's Strathroy and Lyme map details, leading to incompleteness and unfaithfulness on the geographic justification."
+}

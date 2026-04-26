@@ -1,0 +1,248 @@
+{
+  "nodes": [
+    {
+      "id": "N_001",
+      "text": "dry cough",
+      "type": "SYMPTOM",
+      "evidence": "[P-1] P: ... I've been having this really dry cough...",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_002",
+      "text": "headache",
+      "type": "SYMPTOM",
+      "evidence": "[P-1] P: ... And my head's pounding",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_003",
+      "text": "scratchy throat",
+      "type": "SYMPTOM",
+      "evidence": "[P-1] P: ... my throat feels really scratchy.",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_004",
+      "text": "fever",
+      "type": "SYMPTOM",
+      "evidence": "[P-7] P: I have felt really hot.",
+      "turn_id": "P-7"
+    },
+    {
+      "id": "N_005",
+      "text": "night sweats",
+      "type": "SYMPTOM",
+      "evidence": "[P-9] P: ... I feel hot but during the day too... night. I feel hot...",
+      "turn_id": "P-9"
+    },
+    {
+      "id": "N_006",
+      "text": "absent nausea",
+      "type": "SYMPTOM",
+      "evidence": "[P-11] P: No, not that. No, nothing like that.",
+      "turn_id": "P-11"
+    },
+    {
+      "id": "N_007",
+      "text": "absent vomiting",
+      "type": "SYMPTOM",
+      "evidence": "[P-11] P: No, not that. No, nothing like that.",
+      "turn_id": "P-11"
+    },
+    {
+      "id": "N_008",
+      "text": "absent diarrhea",
+      "type": "SYMPTOM",
+      "evidence": "[P-12] P: No no.",
+      "turn_id": "P-12"
+    },
+    {
+      "id": "N_009",
+      "text": "absent joint ache",
+      "type": "SYMPTOM",
+      "evidence": "[P-13] P: No. I mean, I'm I'm tired, but I don't think they're not like hurting.",
+      "turn_id": "P-13"
+    },
+    {
+      "id": "N_010",
+      "text": "malaise",
+      "type": "SYMPTOM",
+      "evidence": "[P-14] P: Yeah, just like I just feel crappy like. Yeah, I really.",
+      "turn_id": "P-14"
+    },
+    {
+      "id": "N_011",
+      "text": "head",
+      "type": "LOCATION",
+      "evidence": "[P-1] P: ... And my head's pounding",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_012",
+      "text": "throat",
+      "type": "LOCATION",
+      "evidence": "[P-1] P: ... my throat feels really scratchy.",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_013",
+      "text": "common cold",
+      "type": "DIAGNOSIS",
+      "evidence": "[D-58] D: ... you kind of had a three to four day dry cough... common cold",
+      "turn_id": "D-58"
+    },
+    {
+      "id": "N_014",
+      "text": "allergies",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "[P-16] P: I have I have allergies. Usually in like the spring in the fall.",
+      "turn_id": "P-16"
+    },
+    {
+      "id": "N_015",
+      "text": "alcohol use",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "[P-55] P: Like before Covid, when I saw my friends like sometimes a little bit but like not really anymore.",
+      "turn_id": "P-55"
+    },
+    {
+      "id": "N_016",
+      "text": "marijuana use",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "[P-57] P: Like I tried marijuana once at a party like a couple years ago, but like I had, I never did it again.",
+      "turn_id": "P-57"
+    },
+    {
+      "id": "N_017",
+      "text": "loratadine",
+      "type": "TREATMENT",
+      "evidence": "[P-16] P: ... Otherwise, I'll take like Claritin.",
+      "turn_id": "P-16"
+    },
+    {
+      "id": "N_018",
+      "text": "oral contraceptive",
+      "type": "TREATMENT",
+      "evidence": "[P-25] P: I take birth control.",
+      "turn_id": "P-25"
+    },
+    {
+      "id": "N_019",
+      "text": "family history of asthma",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "Like my cousin",
+      "turn_id": "P-30"
+    },
+    {
+      "id": "N_020",
+      "text": "nose",
+      "type": "LOCATION",
+      "evidence": "stuffy",
+      "turn_id": "P-18"
+    },
+    {
+      "id": "N_021",
+      "text": "arms",
+      "type": "LOCATION",
+      "evidence": "arms",
+      "turn_id": "D-10"
+    },
+    {
+      "id": "N_022",
+      "text": "legs",
+      "type": "LOCATION",
+      "evidence": "legs",
+      "turn_id": "D-10"
+    },
+    {
+      "id": "N_NEW_001",
+      "text": "allergy shot",
+      "type": "PROCEDURE",
+      "evidence": "P20: Those are the ones that I'd have like once. Usually like once a week for a little while, like in the winter before.",
+      "turn_id": "[P-20]"
+    },
+    {
+      "id": "N_NEW_002",
+      "text": "stuffy",
+      "type": "SYMPTOM",
+      "evidence": "P18: It's just like a little stuffy.",
+      "turn_id": "[P-18]"
+    },
+    {
+      "id": "N_NEW_003",
+      "text": "farm",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "P42: my dad just works like on the farm. [D-43] D: OK. So you live on a farm? [P-43] P: Yeah",
+      "turn_id": "[P-43]"
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "N_002",
+      "target_id": "N_011",
+      "type": "LOCATED_AT",
+      "evidence": "[D-2] D: Your heads pounding. You have a headache right now?",
+      "turn_id": "D-2"
+    },
+    {
+      "source_id": "N_001",
+      "target_id": "N_012",
+      "type": "LOCATED_AT",
+      "evidence": "[P-1] P: ... I've been having this really dry cough and my throat feels really scratchy.",
+      "turn_id": "P-1"
+    },
+    {
+      "source_id": "N_003",
+      "target_id": "N_012",
+      "type": "LOCATED_AT",
+      "evidence": "[P-1] P: ... my throat feels really scratchy.",
+      "turn_id": "P-1"
+    },
+    {
+      "source_id": "N_004",
+      "target_id": "N_013",
+      "type": "INDICATES",
+      "evidence": "[D-58] D: ... you kind of had a three to four day dry cough with a little bit of fever... common cold",
+      "turn_id": "D-58"
+    },
+    {
+      "source_id": "N_001",
+      "target_id": "N_013",
+      "type": "INDICATES",
+      "evidence": "[D-58] D: ... you kind of had a three to four day dry cough with a little bit of fever... common cold",
+      "turn_id": "D-58"
+    },
+    {
+      "source_id": "N_002",
+      "target_id": "N_013",
+      "type": "INDICATES",
+      "evidence": "[D-58] D: ... you kind of had a three to four day dry cough with a little bit of fever... common cold",
+      "turn_id": "D-58"
+    },
+    {
+      "source_id": "N_010",
+      "target_id": "N_013",
+      "type": "INDICATES",
+      "evidence": "[D-58] D: ... you kind of had a three to four day dry cough with a little bit of fever... common cold",
+      "turn_id": "D-58"
+    },
+    {
+      "source_id": "N_005",
+      "target_id": "N_013",
+      "type": "INDICATES",
+      "evidence": "[D-58] D: ... you kind of had a three to four day dry cough with a little bit of fever... common cold",
+      "turn_id": "D-58"
+    },
+    {
+      "source_id": "N_009",
+      "target_id": "N_020",
+      "type": "LOCATED_AT",
+      "evidence": "[D-13]",
+      "turn_id": "D-13"
+    }
+  ],
+  "_usage": {
+    "prompt_tokens": 16371,
+    "completion_tokens": 47005
+  }
+}

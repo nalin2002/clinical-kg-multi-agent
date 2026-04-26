@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer correctly notes the cough and headache started four days ago per [P-1], and mentions diarrhea, vomiting, and nausea, aligning with Gold. However, it inaccurately claims the nature of the cough (dry, [P-12]), frequency of diarrhea (5-6 times/day, [P-28]), number of vomiting episodes (two, [P-32]), and headache severity (7/10, [P-8]) are not described in the transcript, directly contradicting the Gold Answer and transcript details. These are significant factual errors and contradictions on core specifics requested by the question.",
+    "completeness": "Key points from Gold Answer: dry cough (nature), no sputum/blood, stable severity; resp negatives (SOB, wheezing, chest pain); diarrhea onset (2 days), liquid stools, 5-6x/day, no blood; nausea today, vomiting yesterday 2x food contents no blood; GI negatives; headache persistent bilateral location, 7/10, no radiation/stiffness, unusual; loss of smell, fatigue. Generated covers only basic symptom mentions (cough, diarrhea, vomiting, nausea, headache start) without any specifics or negatives, explicitly noting key requested details as missing—covers <20% of key points.",
+    "faithfulness": "Generated correctly cites [P-1] for symptom onsets but hallucinates absences: cough nature not dry ([P-12] 'mostly a dry cough'); diarrhea frequency not 5-6x ([P-28]); vomiting episodes not two ([P-32]); headache severity not 7/10 ([P-8]). No unverifiable additions beyond these false claims of absence; multiple hallucinated negations contradict transcript directly.",
+    "relevance": "Generated Answer is structured directly around respiratory (cough) and GI (diarrhea, vomiting, nausea) symptoms, plus headache severity/frequency details as specified in the question, with no off-topic content or tangents—perfectly focused despite inaccuracies."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 1,
+    "faithfulness": 2,
+    "relevance": 5
+  },
+  "average_score": 2.5,
+  "summary": "The Generated Answer is relevant and identifies main symptoms but significantly fails in correctness, completeness, and faithfulness by falsely claiming key specific characteristics are absent from the transcript despite clear evidence."
+}

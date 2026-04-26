@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer correctly reports the core acute respiratory symptoms from the Gold Answer: increased cough, increased green/yellow sputum, small amounts of blood with hard coughing (hemoptysis), and worsened shortness of breath. It also correctly includes systemic symptoms of possible fever/feeling hot and sinus pressure, and correctly identifies cough as the most bothersome symptom.\n\nHowever, it incorrectly lists “high blood pressure” as a systemic symptom of the *acute 3-day worsening*. Hypertension is a pre-existing condition mentioned in the history, not a symptom of the acute exacerbation. This is a clinically meaningful categorization error, though it does not negate the otherwise correct symptom list.",
+    "completeness": "Key Gold Answer items covered: increased cough, increased green/yellow sputum, hemoptysis, worsened dyspnea, possible fever/feeling hot, sinus pressure, and cough as most bothersome.\n\nKey Gold Answer items missed: reduced exercise tolerance/functional decline (harder to walk dog / around the block) and mild headache. The Generated Answer also omits the Gold Answer’s pertinent negatives (not strictly required by the question, but included in the Gold Answer). Overall, it captures most—but not all—of the key acute symptoms.",
+    "faithfulness": "Most statements are directly supported by the transcript with appropriate references (P-1, P-9, P-12). The inclusion of high blood pressure is grounded in the transcript (P-22), but it is not faithful to the *question’s timeframe/context* (acute 3-day worsening symptoms), representing an interpretation/attribution issue rather than a fabricated fact.",
+    "relevance": "The response is largely focused on the requested acute respiratory and systemic symptoms and identifies the most bothersome symptom. The mention of high blood pressure as a systemic symptom is a minor but clear irrelevant addition for this specific question."
+  },
+  "scores": {
+    "correctness": 4,
+    "completeness": 3,
+    "faithfulness": 4,
+    "relevance": 4
+  },
+  "average_score": 3.75,
+  "summary": "Captures the main acute COPD exacerbation symptoms and correctly identifies cough as most bothersome, but misses exercise intolerance and headache and inappropriately includes chronic hypertension as an acute systemic symptom."
+}

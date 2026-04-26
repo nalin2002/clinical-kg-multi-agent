@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer details: stuffy nose first (just before fever), sore throat around fever onset and ongoing, fever for 3 days, muscle aches concurrent with fever (past 2-3 days). Husband symptoms for past week (~4 days before patient's fever), staggered onset. Generated Answer: Correctly identifies stuffy nose first, sore throat alongside fever, fever 3 days. Errors: muscle aches listed as 'following' fever (transcript indicates concurrent, past 2-3 days [P-14, P-15]); husband timeline wrongly stated as 'not provided' and 'concurrent' (directly contradicts [P-19] 'past week', a key comparison point). Significant contradictions on muscle timing (minor) and husband timeline (major).",
+    "completeness": "Gold key points: 1. Stuffy nose first [P-1,D-2-P-3]; 2. Sore throat around fever [P-1]; 3. Fever 3 days [P-1]; 4. Muscle aches concurrent 2-3 days [P-13-P-16]; 5. Husband past week [P-19]; 6. ~4 days earlier, similar/ongoing [P-20]; 7. Staggered household transmission [D-51,D-53]. Generated covers 1-3 fully, partial 4 (timing wrong), misses 5-7 entirely (wrongly says no timeline). Covers ~50-60% of key points.",
+    "faithfulness": "Stuffy nose, sore throat, fever grounded in [P-1]. Muscle ache in [P-13] but timing 'following fever' not supported (transcript [P-14-P-16] concurrent). Husband: cites [D-53] (doctor's inference) but claims 'timeline not provided'—directly ignores [P-19] 'past week'; infers 'concurrent' not verifiable/contradicts transcript. Multiple inaccurate claims and hallucinated absence of husband's timeline.",
+    "relevance": "Generated Answer structures response with numbered symptom progression and dedicated husband comparison section, directly mirroring question's request for chronology (first symptom, sequence) and timeline comparison; no off-topic content."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 3,
+    "faithfulness": 2,
+    "relevance": 5
+  },
+  "average_score": 3.0,
+  "summary": "The Generated Answer captures the basic patient symptom progression but has significant errors in muscle ache timing and completely mishandles the husband's timeline comparison, leading to low correctness and faithfulness."
+}

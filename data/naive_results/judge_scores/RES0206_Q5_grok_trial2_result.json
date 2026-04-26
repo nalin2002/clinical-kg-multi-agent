@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer incorrectly states that the 20-year smoking history and sick contact details are not in the transcript, directly contradicting the Gold Answer and transcript evidence [P-40 for smoking half pack/day for 20 years; P-20 for sick friend during dog walks]. It fails to link smoking as the primary risk factor for COPD or detail the full chain from sick contact exposure to infection (green sputum [P-1], sinus pressure [P-12], etc.) to exacerbation, instead hallucinating a 'knowledge graph' and superficial mechanisms. Significant contradictions and errors.",
+    "completeness": "Key Gold points missed: smoking as primary COPD risk factor and details [P-40, P-7]; quit upon diagnosis; persistent damage needing inhalers [P-26]; sick contact specifics (dog walks, sick friend, too close [P-20]); infection signs (sputum, sinus, headache [P-12/14], fever [P-9], patient suggestion [P-23]); past pattern [P-3]; doctor confirmation [D-43]. Covers only ~10%: infection worsens COPD [D-43], some symptoms [P-1, P-9].",
+    "faithfulness": "Multiple hallucinations: 'knowledge graph' relationships not in transcript; claims smoking/sick contact details absent despite [P-40, P-20]; misstates current lung specialist referral (past diagnosis [P-8]); unverifiable pathways. Few claims verifiable, e.g., exacerbation [D-43], symptoms [P-1]. Largely ungrounded.",
+    "relevance": "Ignores smoking-COPD relation (denies details); partially addresses exacerbation chain via infection but omits sick contact exposure link, adds irrelevant knowledge graph, symptoms-treatment tangents. Largely off-topic from core question."
+  },
+  "scores": {
+    "correctness": 1,
+    "completeness": 1,
+    "faithfulness": 1,
+    "relevance": 2
+  },
+  "average_score": 1.25,
+  "summary": "The Generated Answer is mostly incorrect, incomplete, unfaithful with hallucinations, and poorly relevant, failing to address key transcript facts on smoking and sick contact while inventing external elements."
+}

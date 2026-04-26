@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer accurately details COPD inhalers (maintenance daily, rescue ~every 2 weeks), no home oxygen, no specific names, hypertension diagnosis with no meds due to patient choice of lifestyle modifications (weight loss, walking, BP OK, doctor support), plus additional lifestyle factors. Generated Answer correctly identifies two inhalers and frequencies (though cites P-1 incorrectly for rescue frequency, as P-26 is the source), notes no antihypertensive meds, but significantly errs by claiming no specific reason for not using them in transcript (contradicting P-23/P-24 details in Gold) and adds past referral to lung specialist [P-8] as current strategy (not emphasized in Gold). Core inhaler facts match, but key hypertension reason is contradicted and misrepresented. Score: 2.",
+    "completeness": "Gold key points: COPD - two puffers w/ frequencies [P-26], no O2 [P-1]; HTN - no meds [P-23], reason lifestyle first incl. weight loss/walking [P-23/24], BP OK, doc support [D-25]; lifestyle (quit smoking, rare alcohol), well-managed baseline. Generated covers inhaler types/freqs well, HTN diagnosis/no meds, but misses no O2, exact reason for no HTN meds, lifestyle details for management, quit smoking, etc.; adds irrelevant referral. Covers ~40-50% of key points, missing critical 'why no antiHTN' and several management strategies. Score: 2.",
+    "faithfulness": "Claims mostly grounded: puffers/inhaler freqs verifiable in P-26 (but erroneous P-1 citation for rescue); HTN in P-22; no meds inferred from P-23. However, falsely claims 'transcript does not provide specific reason' for no antiHTN (directly contradicted by P-23: discussed but chose lifestyle); referral [P-8] is past, presented as current strategy. Multiple inaccuracies including hallucinated absence of reason and wrong citation. Score: 2.",
+    "relevance": "Generated Answer is structured directly around COPD meds/strategies/inhaler freqs and HTN/no meds/reason, perfectly matching question foci with no off-topic content. Score: 5."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 5
+  },
+  "average_score": 2.75,
+  "summary": "The Generated Answer accurately captures inhaler details but significantly fails on completeness, correctness, and faithfulness by missing/contradicting the explicit reason for no antihypertensive meds and adding extraneous details."
+}

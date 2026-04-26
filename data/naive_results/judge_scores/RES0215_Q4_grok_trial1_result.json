@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer details specific conditions screened by each listed question (fever: pneumonia/bronchitis; runny nose: URI/viral wheeze; sick contacts: contagious infections; travel: exposure infections; rashes: systemic/allergic/viral; phlegm: productive infection). Generated Answer only partially covers fever and runny nose correctly, attributes phlegm differently, incorrectly claims sick contacts/travel/rashes absent from transcript (they exist at [D-10/11/13]), adds unmentioned 'knowledge graph', and concludes 'asthmatic' vs Gold's 'reactive airway'. Significant contradictions and omissions make core facts inconsistent.",
+    "completeness": "Gold key points: 6 specific screenings with citations/responses (fever[P7], runny[P8], sick[P10], travel[P11], rashes[P13], phlegm[P31]), plus pain/looks fine/past virals narrowing to reactive airway. Generated covers fever/runny/phlegm partially (~3/8 points), misses sick/travel/rashes entirely, omits pain/fine/past details as narrowing factors. Covers ~30-40% of key points.",
+    "faithfulness": "Generated hallucinates absence of sick contacts[D10]/travel[D11]/rashes[D13] questions despite clear transcript presence; invents 'knowledge graph' links/verifications not in transcript; correctly cites some (fever[D7], runny[D8], phlegm[P31]) but extrapolates allergies[P35/36]/exertion[P2/3] beyond focused questions. Multiple unverifiable/hallucinated claims.",
+    "relevance": "Directly addresses fever/runny/phlegm from question but ignores/denies sick contacts/travel/rashes (core to query); diverts to extras like allergies/history/exertion/duration/conclusion, diluting focus on specified questions and responses narrowing differential."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 3
+  },
+  "average_score": 2.25,
+  "summary": "Generated Answer has significant factual errors including denying transcript questions, partial coverage with hallucinations, and off-topic additions, resulting in low overall quality."
+}

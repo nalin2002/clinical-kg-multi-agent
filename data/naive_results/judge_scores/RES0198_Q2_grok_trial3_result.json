@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Generated Answer incorrectly claims no information on prior medication tried, directly contradicting Gold Answer and transcript [P-10] where patient reports trying decongestants; assessment of effectiveness is wrongly attributed to [P-1] and misstates it as 'not improving' instead of 'worked a little bit' per [P-10]; recommendation partially correct on Tylenol Cold but omits hydration and viral context, leading to significant factual errors.",
+    "completeness": "Key points from Gold: (1) tried decongestants [P-10]; (2) assessment 'worked a little bit' with reasoning about runny nose [P-10]; (3) hydrated + Tylenol Cold + few weeks viral [D-39]. Generated covers only Tylenol Cold (~10-20% coverage), misses prior trial entirely and full recommendation details.",
+    "faithfulness": "Claims 'transcript does not contain any information' on medication tried, but [P-10] explicitly states 'I've tried like decongestants'; assessment not verifiable in cited [P-1], actual source [P-10] contradicted; Tylenol citation [D-39] accurate, but overall multiple hallucinations of absence/misattribution.",
+    "relevance": "Perfectly structured to address the three-part question directly (medication tried, assessment, recommendation) with no off-topic content."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 1,
+    "faithfulness": 2,
+    "relevance": 5
+  },
+  "average_score": 2.5,
+  "summary": "The Generated Answer is significantly incorrect and incomplete by denying and missing the patient's report of trying decongestants with partial effectiveness, though it relevantly structures the response and partially captures the recommendation."
+}

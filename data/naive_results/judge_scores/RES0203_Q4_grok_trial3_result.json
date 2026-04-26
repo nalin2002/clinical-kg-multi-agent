@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Gold Answer accurately lists multiple specific negative findings from the transcript (e.g., no fever [D-10/P-10], no difficulty breathing [D-11/P-11], no headaches [D-12/P-12], no sore throat [D-13/P-13], no chills/night sweats [D-14/P-14], no muscle aches/weakness [D-15/P-15], no chest pain [D-22/P-22], no sputum/blood [D-7/P-7], no cough triggers [D-21/P-21]), with explanations and additional negatives. The Generated Answer falsely claims 'no documented negative findings' for these symptoms and asserts the transcript lacks patient answers, directly contradicting the Gold Answer and the transcript evidence. This is a complete factual reversal, warranting score 1.",
+    "completeness": "Gold Answer key points include: 9 specific ROS negatives with citations, doctor's summary [D-16], explanation of how absences inform clinical picture (e.g., not acutely unwell, generally well), and additional negatives (no chronic conditions [P-23], etc.). Generated Answer covers 0% of these, instead listing only positive findings (loss of taste/smell, dry cough) and denying negatives exist. Score 1.",
+    "faithfulness": "Generated Answer hallucinates that negatives like fever, dyspnea (difficulty breathing), sore throat are not documented and patient answers are absent, despite explicit transcript evidence (e.g., [D-10 to D-15], [D-22] with 'No' responses). It cites only positives ([P-1]) and fabricates absence of screening data, with no verifiable support for claims of no negatives. Multiple hallucinations confirm score 1.",
+    "relevance": "Question requires listing screened/absent symptoms (negatives from ROS), with explanation of clinical implications. Generated Answer ignores this, denies negatives exist, lists positives instead, and reframes around COVID positives only, failing to address the core query. Score 1."
+  },
+  "scores": {
+    "correctness": 1,
+    "completeness": 1,
+    "faithfulness": 1,
+    "relevance": 1
+  },
+  "average_score": 1.0,
+  "summary": "The Generated Answer is factually incorrect, ungrounded in the transcript, incomplete, and irrelevant, as it hallucinates the absence of clearly documented negative findings and fails to address the question."
+}

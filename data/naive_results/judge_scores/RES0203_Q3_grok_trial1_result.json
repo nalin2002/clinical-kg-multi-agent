@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Gold Answer identifies three key symptoms (loss of smell, loss of taste, and dry cough) as the basis for suspicion, while the Generated Answer only lists two (loss of taste and dry cough), omitting loss of smell which is prominently featured in the patient's initial report (P-1, P-4) and central to COVID-19 association; additionally, the Generated Answer references a non-existent 'knowledge graph,' contradicting the Gold Answer and transcript; core connection to diagnosis and test is correct, but these omissions and additions represent significant factual discrepancies.",
+    "completeness": "Gold Answer key points: (1) three symptoms (smell, taste, cough), (2) patient raised COVID concern (P-1), (3) doctor connection (D-39), (4) swab test ordered (D-39), (5) absence of other symptoms confirmed (e.g., no fever P-10, no dyspnea P-11, 'pretty well' D-16), (6) narrow profile supports testing/isolation; Generated covers (3), (4), partially (1) via quote but lists only two symptoms, misses (2), (5), (6) entirely; covers ~50-60% of key points.",
+    "faithfulness": "Claims about symptoms verifiable but incompletely presented (taste/cough yes, but omits smell despite quoting P-1 which includes it); D-39 citations accurate; however, 'knowledge graph provided' is entirely hallucinated (absent from transcript); selective omission of smell as part of 'combination' introduces ungrounded narrowing; multiple issues with verifiability.",
+    "relevance": "Directly addresses question by identifying symptoms, quoting doctor's connection (D-39), and specifying swab test; minor tangent via irrelevant 'knowledge graph' mention, but overall focused on symptom-diagnosis-test linkage."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 3,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 2.75,
+  "summary": "The Generated Answer partially addresses the question with relevant citations but significantly understates the symptom combination, hallucinates a knowledge graph, and misses key differential details from the Gold Answer."
+}

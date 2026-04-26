@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer details COPD inhalers (maintenance daily, rescue ~every 2 weeks), no oxygen, no names; HTN diagnosis, no meds due to choosing lifestyle changes first (weight loss, walking), BP OK, doctor support, plus lifestyle (quit smoking, rare alcohol), well-managed baseline, no allergies. Generated correctly identifies two inhalers and frequencies but wrongly cites [P-1] for rescue frequency (actual [P-26]); adds past referral as strategy (minor); for HTN correctly notes no meds but erroneously claims no specific reason in transcript, contradicting Gold's extraction from [P-23,P-24]; misses many details like no O2, lifestyle factors. Significant contradictions on HTN reason and citation error warrant score of 2.",
+    "completeness": "Key Gold points covered: two inhalers, daily maintenance [P-26], rescue every 2 weeks [P-26]. Missed: no home oxygen [P-1], no med names, HTN reason (lifestyle trial [P-23,P-24]), BP OK [P-23], doctor support [D-25], quit smoking [P-40], rare alcohol [P-39], well-managed [P-28], exacerbations when sick [P-27], no allergies [P-29,30]. Covers ~30-40% of points (mainly inhalers), so score 2.",
+    "faithfulness": "Most claims grounded: puffers [P-1,P-26], inhaler details [P-26], HTN [P-22], no meds implied [P-23], referral [P-8]. Issues: cites [P-1] inaccurately for rescue frequency (not there); claims 'transcript does not provide specific reason' for no HTN meds, but [P-23] explicitly states lifestyle choice—this is a hallucinated absence/misinterpretation. Minor hallucination and citation errors, plausible but not fully verifiable, score 3.",
+    "relevance": "Generated uses clear headings for COPD (meds, strategies, frequencies) and HTN (status, meds, reason), directly mirroring question components with no off-topic content or tangents; perfectly focused despite gaps, score 5."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 3,
+    "relevance": 5
+  },
+  "average_score": 3.0,
+  "summary": "The Generated Answer accurately captures inhaler details but significantly underperforms on completeness and correctness by omitting the explicit reason for no antihypertensive medication and other key management strategies from the Gold Answer."
+}

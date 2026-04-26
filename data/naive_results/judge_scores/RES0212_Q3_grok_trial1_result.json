@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer diagnoses acute lower respiratory tract infection, likely acute bronchitis with possible bacterial superinfection or early community-acquired pneumonia on chronic cough. Generated Answer diagnoses pneumonia (bacterial LRTI), which partially aligns as a possibility but overstates pneumonia as primary without noting bronchitis or chronic context. Productive cough explanation misses 3-day acute on 3-month chronic (cites wrong refs P-1/P-3 instead of P-2/P-12). Green sputum similar but Gold more cautious ('raises concern' vs 'hallmark'). Fever severely misrepresented: Gold cites P-4 'hot at night'; Generated falsely claims no explicit fever, wrongly links to P-19 tiredness/sleep (patient denied night sweats P-5). Some errors but core infectious LRTI point similar.",
+    "completeness": "Gold key points: specific diagnosis nuance (bronchitis +/- pneumonia on chronic), productive cough as 3-day acute on 3-mo (P-2/P-12), green sputum suggestive (P-9), subjective fevers (P-4), doctor's synthesis (D-47), no other symptoms/no vitals. Generated covers three features and LRTI diagnosis but misses chronic context, doctor's summary, absences; wrong fever evidence/cites. Covers ~60% (features + broad diagnosis).",
+    "faithfulness": "Productive cough verifiable (though suboptimal cites). Green sputum accurate (P-9). Fever: hallucinates lack of explicit fever (P-4 directly states 'feeling hot at night' after fever Q); fabricates link to P-19 tiredness/sleep disturbance as 'fevers/night sweats' proxy despite P-5 denial. 'Hallmark' bacterial claim plausible but overstated. Multiple ungrounded claims on fever.",
+    "relevance": "Directly names diagnosis and bullets each of three features' contributions with transcript support (despite errors), perfectly structured to question; no tangents."
+  },
+  "scores": {
+    "correctness": 3,
+    "completeness": 3,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 3.0,
+  "summary": "The Generated Answer partially captures the infectious LRTI theme but has significant inaccuracies in diagnosis nuance, chronic context, and especially fever evidence with hallucinations, reducing overall quality."
+}

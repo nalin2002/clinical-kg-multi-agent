@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer incorrectly states that the transcript does not explicitly mention chest pain, palpitations, runny nose, and nausea, despite clear evidence in [D-10/P-10], [D-15/P-15], [D-16/P-16], [D-17/P-17] where these are directly asked and denied. It wrongly identifies 'cough' as explicitly negated (patient actually reports possibly starting a dry cough in [P-7/P-8]), misattributes citations (e.g., cough to [D-36]), and ignores the full list of pertinent negatives from the Gold Answer (runny nose, vision/hearing changes, nausea/vomiting, chest pain, palpitations, abdominal pain, urinary symptoms, numbness/tingling). Differentiation explanations contradict Gold by fabricating inferences and referencing a non-existent 'knowledge graph'. Overall, mostly incorrect and contradictory to Gold Answer.",
+    "completeness": "Gold Answer key points: lists 8 specific denied symptoms with citations (runny nose [D-10/P-10], vision/hearing [D-14/P-14], nausea/vomiting [D-15/P-15], chest pain [D-16/P-16], palpitations [D-17/P-17], abdominal pain [D-18/P-18], urinary [D-19/P-19], numbness [D-22/P-22]); explains differentiation (excludes cardiac via chest pain/palpitations, GI via nausea/abdominal, cold via runny nose, neuro via others; supports respiratory infection/COVID [D-36]). Generated covers 0% of these: lists wrong symptom (cough, not negated), ignores all listed pertinent negatives, partial vague differentiation without matching specifics. <20% coverage.",
+    "faithfulness": "Generated hallucinates absence of explicit questions on chest pain, palpitations, runny nose, nausea (directly in transcript); fabricates 'explicit denial of significant coughing' (patient ambiguous [P-8]); wrong citations (cough question [D-7], not [D-36]; smell [P-6], not [P-9]); invents 'knowledge graph' not in transcript; infers non-existent COVID symptom cluster exclusions. Multiple ungrounded claims contradict transcript.",
+    "relevance": "Question asks for specific negated symptoms (e.g., chest pain, palpitations, runny nose, nausea) from review of systems and how absences differentiate working diagnosis (respiratory infection/COVID) from other respiratory distress causes. Generated addresses structure but uses fabricated/wrong symptoms (cough), denies existence of queried ones, vaguely discusses differentiation with COVID focus but off-topic due to factual errors; largely misses direct question elements."
+  },
+  "scores": {
+    "correctness": 1,
+    "completeness": 1,
+    "faithfulness": 1,
+    "relevance": 2
+  },
+  "average_score": 1.25,
+  "summary": "The Generated Answer is largely inaccurate, hallucinatory, and fails to cover or ground in the transcript's explicit pertinent negatives, contradicting the Gold Answer."
+}

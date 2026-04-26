@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Step-by-step: Gold Answer accurately lists nasal symptoms (stuffy/runny nose, progression, duration), clear discharge, and explicit denials (cough [P-4], post-nasal drip [P-6], sore throat/SOB/fevers/chills [P-7], loss of taste/smell [P-16]). Generated Answer correctly identifies stuffy/runny nose and clear discharge but incorrectly states no explicit denials of the listed related symptoms (directly contradicting transcript and Gold with examples like P-4, P-6, P-7, P-16) and fabricates that the only denial is about diabetes medications [P-27], which is unrelated. This introduces significant factual contradictions on the core denial aspect of the question.",
+    "completeness": "Key points from Gold: 1) stuffy nose on/off + runny nose x1 week [P-1/2]; 2) stuffy first, now mostly running [P-3]; 3) clear discharge [P-5]; 4) denials of cough [P-4], post-nasal [P-6], sore throat/etc [P-7], taste/smell [P-16]. Generated covers nasal symptoms partially (points 1,3 but misses 2 and precise duration) and discharge (point 3), but covers 0% of denial key points (central to question), equating to ~25-30% coverage overall.",
+    "faithfulness": "Claims on nasal symptoms and clear discharge verifiable [P-1,P-3,P-5]. However, assertion of 'did not explicitly deny any... sore throat, cough, post-nasal drip, loss of taste/smell' is false (verifiable denials at [P-4,6,7,16]); hallucinates 'only explicit denial' as diabetes-related [P-27], which is incorrect and not respiratory; mentions non-existent 'knowledge graph'. Multiple ungrounded/hallucinated claims.",
+    "relevance": "Generated Answer directly structures response to match question parts (nasal symptoms, discharge character, denied symptoms) with bullet points, no off-topic content beyond minor unprompted 'knowledge graph' reference; fully addresses query structure despite factual errors."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 5
+  },
+  "average_score": 2.75,
+  "summary": "The Generated Answer partially covers nasal symptoms correctly but fails catastrophically on explicit denials by denying their existence, leading to low scores in correctness, completeness, and faithfulness despite strong relevance."
+}

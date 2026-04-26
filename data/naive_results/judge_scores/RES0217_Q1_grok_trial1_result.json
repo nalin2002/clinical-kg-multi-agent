@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer correctly identifies key local symptoms (redness, tenderness, soreness at the site behind the left knee, skin not joint, stuck pretty good) matching Gold Answer from [P-1] and partially [P-6]. However, it significantly errs on systemic symptoms: incorrectly claims screening for drug allergies with misattributed citations [P-7, P-8, P-19] (these actually respond to joint pain [D-7/P-7], feverish [D-8/P-8], headaches [D-19/P-19]); falsely states no evidence for fever, joint pain, headaches screenings despite explicit transcript evidence; contradicts Gold Answer entirely on systemic points. Significant factual errors and contradictions warrant score 2.",
+    "completeness": "Local: Covers redness, tenderness, soreness, precise location, skin vs joint, stuck good (~70-80% of Gold's local points like [P-1], [P-6]); misses explicit denial of bullseye/target rash [P-3, P-6] and statements of being totally fine/pretty healthy [P-13, P-18]. Systemic: Covers 0% of Gold's key points (joint pain denied [D-7/P-7], fever/ill denied [D-8/P-8], headaches denied [D-19/P-19]); instead adds irrelevant drug allergies. Overall covers 20-49% of key points. Score 2.",
+    "faithfulness": "Local claims fully verifiable in [P-1], [P-6]. Systemic: Hallucinates [P-7, P-8, P-19] as drug allergy denials (actual drug allergy is [D-17/P-17]); fabricates absence of fever ([D-8]), joint pain ([D-7]), headaches ([D-19]) screenings; references non-existent 'Knowledge Graph'. Multiple misattributions and hallucinations. Score 2.",
+    "relevance": "Directly addresses local symptoms at tick site. Addresses systemic screening but deviates by focusing on irrelevant drug allergies, denying the specific symptoms (fever, joint pain, headaches) in the question, introducing partial off-topic content. Score 3."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 3
+  },
+  "average_score": 2.25,
+  "summary": "The Generated Answer is partially correct and relevant on local symptoms but contains major factual errors, hallucinations, and omissions regarding the systemic symptoms screening, leading to low overall quality."
+}

@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer accurately lists specific denied symptoms (chest pain, feeling faint, loss of taste/smell, sore throat, runny nose, sick contacts, travel, nausea/vomiting, belly pain, diarrhea, sputum production, prior SOB) and links them to cardiac, infectious, GI differentials. Generated Answer incorrectly focuses on seizure causality denial (misinterpreted from P-8 'I don't know if related') and medication compliance, ignoring the listed denied symptoms; it treats positives (fever, seizure) as key, contradicting Gold's emphasis on negatives ruling out differentials. Significant factual errors and contradictions.",
+    "completeness": "Gold key points: denied chest pain[P-7], faint[P-8], taste/smell[P-19], sore throat[P-20], runny nose[P-21], sick contacts[P-16], travel[P-17], nausea[P-13], belly pain[P-14], diarrhea[P-15], sputum/dry cough[P-4], prior episodes[P-3]; links to cardiac/infectious/GI. Generated covers none of these, instead discussing seizure link and meds (0% coverage).",
+    "faithfulness": "Generated cites transcript (P-1,5,8,9,23) but misinterprets P-8 as 'denial of causal link' (patient uncertain), fabricates 'clinical documentation would screen' outside transcript, adds ungrounded 'knowledge graph' and speculative differentials based on positives not negatives; multiple hallucinations and twisted claims.",
+    "relevance": "Question asks for specific denied symptoms/exposures and differentials they address (e.g., cardiac via no chest pain); Generated shifts to positives (fever, seizure), epilepsy non-compliance, and unrelated differentials, largely ignoring denied screenings and their ruling-out purpose."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 1,
+    "faithfulness": 2,
+    "relevance": 2
+  },
+  "average_score": 1.75,
+  "summary": "The Generated Answer is largely incorrect, incomplete, and unfaithful by misfocusing on positive findings and seizure history instead of the specific denied symptoms screening for cardiac, infectious, and GI differentials as detailed in the Gold Answer."
+}

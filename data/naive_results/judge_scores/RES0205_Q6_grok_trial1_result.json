@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer falsely claims the transcript contains only patient statements from [P-2] to [P-35] with no doctor turns, but the full transcript includes numerous [D-x] utterances, especially [D-37] which explicitly states the plan matching the Gold Answer. It contradicts all facts in the Gold Answer by denying the existence of the doctor's plan, physical exam details (heart/lungs auscultation), and collaborative process with supervising physician.",
+    "completeness": "Gold Answer key points: multi-step plan from [D-37] (physical exam of heart/lungs and quick exam), consult supervising doctor, review discussion, reconvene for next steps; foreshadowed in [D-1]; patient agreement [P-37]; no diagnosis/meds. Generated Answer covers 0% of these, instead discussing irrelevant patient details like diet and COVID test.",
+    "faithfulness": "Generated Answer hallucinates that the transcript lacks doctor statements and cites only [P-25]/[P-35] irrelevantly; [D-37] directly contradicts its claim of no doctor input on the plan, making it largely ungrounded and fabricated regarding transcript content.",
+    "relevance": "Question asks specifically for doctor's stated plan, exam components, and next-steps process; Generated Answer refuses to answer based on false premise and diverts to patient history, failing to address the question entirely."
+  },
+  "scores": {
+    "correctness": 1,
+    "completeness": 1,
+    "faithfulness": 1,
+    "relevance": 1
+  },
+  "average_score": 1.0,
+  "summary": "The Generated Answer is entirely inaccurate, hallucinates transcript content, ignores the doctor's explicit plan in [D-37], and fails to address the question."
+}

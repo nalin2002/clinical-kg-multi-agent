@@ -1,0 +1,222 @@
+{
+  "nodes": [
+    {
+      "id": "N_001",
+      "text": "Redness (leg)",
+      "type": "SYMPTOM",
+      "evidence": "it's still kind of red and tender there",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_002",
+      "text": "Tenderness (behind knee)",
+      "type": "SYMPTOM",
+      "evidence": "it's still kind of red and tender there",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_003",
+      "text": "Soreness (skin)",
+      "type": "SYMPTOM",
+      "evidence": "the whole area back there... sore",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_004",
+      "text": "Bullseye rash",
+      "type": "SYMPTOM",
+      "evidence": "that kind of target rash thing that they talk about",
+      "turn_id": "P-3"
+    },
+    {
+      "id": "N_005",
+      "text": "Joint pain",
+      "type": "SYMPTOM",
+      "evidence": "any other joint pain?",
+      "turn_id": "P-7"
+    },
+    {
+      "id": "N_006",
+      "text": "Fever",
+      "type": "SYMPTOM",
+      "evidence": "feverish",
+      "turn_id": "P-8"
+    },
+    {
+      "id": "N_007",
+      "text": "Headache",
+      "type": "SYMPTOM",
+      "evidence": "So no headaches?",
+      "turn_id": "P-19"
+    },
+    {
+      "id": "N_008",
+      "text": "Tick bite",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "removed insects from your leg... found this tick",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_009",
+      "text": "Lyme disease",
+      "type": "DIAGNOSIS",
+      "evidence": "disease called Lyme disease",
+      "turn_id": "D-5"
+    },
+    {
+      "id": "N_010",
+      "text": "Deer tick",
+      "type": "DIAGNOSIS",
+      "evidence": "It's called a deer tick",
+      "turn_id": "D-5"
+    },
+    {
+      "id": "N_011",
+      "text": "Antibiotics",
+      "type": "TREATMENT",
+      "evidence": "put you on antibiotics just as kind of a prophylactic... for Lyme disease",
+      "turn_id": "D-6"
+    },
+    {
+      "id": "N_012",
+      "text": "Statin",
+      "type": "TREATMENT",
+      "evidence": "I take a uh statin",
+      "turn_id": "P-15"
+    },
+    {
+      "id": "N_013",
+      "text": "Cholesterol",
+      "type": "DIAGNOSIS",
+      "evidence": "just for my cholesterol",
+      "turn_id": "P-14"
+    },
+    {
+      "id": "N_014",
+      "text": "Sending tick to lab",
+      "type": "PROCEDURE",
+      "evidence": "send this tick off to the lab",
+      "turn_id": "D-17"
+    },
+    {
+      "id": "N_015",
+      "text": "Blood work",
+      "type": "PROCEDURE",
+      "evidence": "send some blood work",
+      "turn_id": "D-17"
+    },
+    {
+      "id": "N_016",
+      "text": "Physical exam",
+      "type": "PROCEDURE",
+      "evidence": "do a quick physical exam",
+      "turn_id": "D-17"
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "N_008",
+      "target_id": "N_001",
+      "type": "CAUSES",
+      "evidence": "it's still kind of red and tender there",
+      "turn_id": "P-1"
+    },
+    {
+      "source_id": "N_008",
+      "target_id": "N_002",
+      "type": "CAUSES",
+      "evidence": "it's still kind of red and tender there",
+      "turn_id": "P-1"
+    },
+    {
+      "source_id": "N_008",
+      "target_id": "N_003",
+      "type": "CAUSES",
+      "evidence": "the whole area back there... sore",
+      "turn_id": "P-1"
+    },
+    {
+      "source_id": "N_004",
+      "target_id": "N_009",
+      "type": "INDICATES",
+      "evidence": "that kind of target rash thing that they talk about",
+      "turn_id": "P-3"
+    },
+    {
+      "source_id": "N_010",
+      "target_id": "N_009",
+      "type": "CAUSES",
+      "evidence": "one type of tick predominantly is a transmission agent for [Lyme disease]",
+      "turn_id": "D-5"
+    },
+    {
+      "source_id": "N_011",
+      "target_id": "N_009",
+      "type": "TAKEN_FOR",
+      "evidence": "put you on antibiotics just as kind of a prophylactic... for Lyme disease",
+      "turn_id": "D-6"
+    },
+    {
+      "source_id": "N_011",
+      "target_id": "N_004",
+      "type": "TAKEN_FOR",
+      "evidence": "I had to take antibiotics for a bit",
+      "turn_id": "P-3"
+    },
+    {
+      "source_id": "N_012",
+      "target_id": "N_013",
+      "type": "TAKEN_FOR",
+      "evidence": "just for my cholesterol",
+      "turn_id": "P-15"
+    },
+    {
+      "source_id": "N_005",
+      "target_id": "N_009",
+      "type": "RULES_OUT",
+      "evidence": "No",
+      "turn_id": "P-7"
+    },
+    {
+      "source_id": "N_006",
+      "target_id": "N_009",
+      "type": "RULES_OUT",
+      "evidence": "No",
+      "turn_id": "P-8"
+    },
+    {
+      "source_id": "N_007",
+      "target_id": "N_009",
+      "type": "RULES_OUT",
+      "evidence": "No",
+      "turn_id": "P-19"
+    },
+    {
+      "source_id": "N_014",
+      "target_id": "N_010",
+      "type": "INDICATES",
+      "evidence": "send this tick off to the lab and they'll be able to identify the species",
+      "turn_id": "D-17"
+    },
+    {
+      "source_id": "N_015",
+      "target_id": "N_009",
+      "type": "INDICATES",
+      "evidence": "send some blood work just to see if there's any titres or any serology that would make us a little bit more concerned for Lyme disease",
+      "turn_id": "D-17"
+    },
+    {
+      "source_id": "N_016",
+      "target_id": "N_009",
+      "type": "INDICATES",
+      "evidence": "do a quick physical exam",
+      "turn_id": "D-17"
+    }
+  ],
+  "_usage": {
+    "prompt_tokens": 2209,
+    "completion_tokens": 7945,
+    "reasoning_tokens": 5037,
+    "cost": 0.004248625
+  }
+}

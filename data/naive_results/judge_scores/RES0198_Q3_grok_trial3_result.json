@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer details specific evidence: symptom types (congestion/rhinorrhea without cough [P-4], sore throat/SOB/fever/chills [P-7], post-nasal drip [P-6]), clear discharge [P-5], 1-week duration [P-2/P-8], progression [P-3], against allergic (no exposures [P-22], no allergies [P-28], no recent priors [P-9]), against bacterial (no fever/headache [P-7/P-14], clear discharge), daycare exposure [P-11]. Generated correctly notes stuffy/runny nose [P-1], clear discharge [P-5], 1-week duration [P-1], doctor's statement [D-39], but omits most absent features, progression, differentiators vs allergic/bacterial, exposure; hallucinates 'knowledge graph'; mischaracterizes 1-week as 'chronic' vs 'sudden acute allergic' (allergies can be acute/seasonal); implies absence of severe symptoms without citations. Some factual errors/omissions but core symptoms match.",
+    "completeness": "Key Gold points covered: basic symptom type (stuffy/runny), discharge quality (clear), duration (1 week); missed: detailed absent features (cough, sore throat etc.), symptom progression, all against-allergic points (exposures, allergies, priors), against-bacterial specifics (fever, headache), daycare exposure, doctor's relief timeline context. Covers ~25% of key points.",
+    "faithfulness": "Verifiable claims: stuffy/runny [P-1], clear discharge [P-5], duration [P-1], doctor's quote [D-39], supportive care/swab [D-39]. Unverifiable/hallucinated: 'knowledge graph' (absent from transcript), 'chronic nature' distinction vs allergic (not stated), 'absence of severe/systemic symptoms typically associated with bacterial/COVID' (plausible inference but no direct citations to denials like [P-4/7]). Some hallucinated facts/details.",
+    "relevance": "Directly lists evidence for viral (symptoms, discharge, duration) per question's focus on characteristics; weakly addresses vs allergic/bacterial (implicitly via duration/context); minor tangents (knowledge graph, COVID swab emphasis, not core to viral vs allergic/bacterial). Mostly on-topic."
+  },
+  "scores": {
+    "correctness": 3,
+    "completeness": 2,
+    "faithfulness": 3,
+    "relevance": 4
+  },
+  "average_score": 3.0,
+  "summary": "The Generated Answer partially captures core symptom evidence for viral infection but misses key differentiators against allergic/bacterial causes, includes hallucinations, and lacks completeness."
+}

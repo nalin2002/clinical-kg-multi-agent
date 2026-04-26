@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer incorrectly identifies key clinical findings from early dialogue (headache in D-2, fever in D-7, night sweats in D-9) rather than the doctor's actual end-of-visit summary in D-58, which recaps dry cough for 3-4 days, fever, headache, no sputum, no recent sick contacts except brother 2 weeks ago, no asthma, and Claritin only; it also misstates Jessica's goal as concluding the appointment (citing wrong P-59), contradicting Gold's accurate recap of her wanting to know if she needs medicine (P-60). Major factual errors throughout.",
+    "completeness": "Gold Answer covers 5 specific recap points from D-58 plus Jessica's goal (needs medicine?, go home/lay down); Generated covers none of these, instead listing unrelated early symptoms and fabricating a different goal, achieving <20% coverage.",
+    "faithfulness": "Claims about headache, fever, night sweats are from early questions, not D-58 summary; 'knowledge graph' is hallucinated (absent from transcript); Jessica's goal mis-cited (P-59 is unrelated 'No' to drugs); largely fabricated, not grounded in transcript.",
+    "relevance": "Attempts to address doctor's recap and Jessica's goal but focuses on wrong transcript sections (early symptoms, end questions) and invents unrelated elements like knowledge graph, making it largely off-topic for the specific 'end-of-visit summary' and 'primary goal for next steps'."
+  },
+  "scores": {
+    "correctness": 1,
+    "completeness": 1,
+    "faithfulness": 1,
+    "relevance": 2
+  },
+  "average_score": 1.25,
+  "summary": "The Generated Answer is factually inaccurate, incomplete, unfaithful to the transcript, and poorly relevant by ignoring the doctor's explicit end-of-visit summary in D-58 and Jessica's stated goal in P-60."
+}

@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer incorrectly narrows suspicion to only sore throat and difficulty swallowing, ignoring key symptoms like difficulty breathing, fatigue, and muscle aches highlighted in Gold. It misrepresents D-43 as citing specific symptoms rather than 'some symptoms.' Critically, it fabricates that the patient reported smell loss ('smell lost'), contradicting P-19 ('maybe taste a little bit but not smell') and Gold's emphasis on reduced taste WITHOUT smell loss. References to a non-existent 'Knowledge Graph' introduce factual errors. Significant contradictions vs Gold.",
+    "completeness": "Gold key points: worsening sore throat [P-2,P-4], worsening dyspnea [P-8-10], reduced taste (no smell loss) [P-19-21], fatigue/muscle aches [P-25-26], doctor's screening [D-19], D-43 statement, exposure context [P-12-14]. Generated covers sore throat partially, taste/smell quote (but misinterpreted), D-43 plan; misses dyspnea entirely, fatigue/aches, exposure details, full reasoning. Covers ~30% of points.",
+    "faithfulness": "Claims grounded in transcript for sore throat [P-2], taste quote [P-19], D-43. But hallucinates Knowledge Graph links (e.g., COVID indicates sore throat, loss of smell/taste) not in transcript. Misstates patient symptoms as 'smell lost' (opposite of P-19). Claims doctor 'cited these specific symptoms' unfounded. Multiple unverifiable/hallucinated elements.",
+    "relevance": "Addresses question by discussing symptom combination for COVID suspicion and taste/smell role, but derailed by fabrications and omissions (e.g., no dyspnea mention despite relevance). Mostly on-topic with tangents to non-existent KG."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 2.5,
+  "summary": "The Generated Answer has significant factual errors, hallucinations including a fabricated Knowledge Graph and reversed smell symptom, omits critical symptoms like dyspnea, resulting in low correctness, completeness, and faithfulness despite decent relevance."
+}

@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer specifies 'fevers and fatigue and muscle aches' strictly as evidence of general infectious process, with 'difficulty breathing' as part of additional distinct symptoms for COVID concern alongside sore throat and cough. Generated Answer incorrectly includes 'difficulty breathing' in the general infectious symptoms and omits it from COVID-specific reasons, creating a factual misattribution of the doctor's cited evidence. Core symptoms are correct, but grouping contradicts Gold's precise parsing of D-36.",
+    "completeness": "Gold key points: general infectious (fevers, fatigue, muscle aches); additional COVID (difficulty breathing + sore throat/cough as respiratory features); taste/smell elicited but not cited in D-36; focus on respiratory leading to swab/isolation. Generated covers symptoms for both categories (~70%) but misses difficulty breathing in COVID, taste/smell nuance, and contextual explanation.",
+    "faithfulness": "All listed symptoms (fevers, fatigue, muscle aches, difficulty breathing, sore throat, cough) directly verifiable in D-36 of transcript with accurate citation; no hallucinated facts or unverifiable claims.",
+    "relevance": "Directly addresses question by separating symptoms into 'general infectious process' and 'additional distinct symptoms for COVID not ruled out,' with citations; no off-topic content."
+  },
+  "scores": {
+    "correctness": 3,
+    "completeness": 3,
+    "faithfulness": 5,
+    "relevance": 5
+  },
+  "average_score": 4.0,
+  "summary": "Generated Answer is grounded and relevant but moderately reduces correctness and completeness by misgrouping 'difficulty breathing' away from COVID-specific concerns as per Gold Answer."
+}

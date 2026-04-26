@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer lists respiratory symptoms: increased cough [P-1], increased green-yellow sputum [P-1], hemoptysis [P-1], worsened dyspnea [P-1], reduced exercise tolerance [P-4]. Systemic: possible fever [P-9-11], sinus pressure [P-12], mild headache [P-14]. Most bothersome: cough [P-12]. Generated covers all respiratory except explicitly missing reduced exercise tolerance (though dyspnea is related), covers fever and sinus pressure but misses headache, incorrectly includes high blood pressure as a systemic symptom of acute worsening (it's a chronic condition mentioned in [P-22], not acute). Citations accurate. Minor discrepancies with addition of non-acute symptom and omissions.",
+    "completeness": "Key points covered: increased cough, sputum, hemoptysis, dyspnea [P-1]; fever [P-9], sinus pressure [P-12], most bothersome cough [P-12]. Missed: reduced exercise tolerance [P-4], headache [P-14]. Extra: high BP (not acute). Covers ~80% of key points (8/10 considering details).",
+    "faithfulness": "All claims directly verifiable in transcript with accurate citations: dyspnea/cough/sputum/hemoptysis [P-1], fever [P-9], sinus [P-12], high BP [P-22], cough most bothersome [P-12]. No hallucinations or fabrications.",
+    "relevance": "Directly structures answer into respiratory/systemic symptoms and most bothersome, perfectly matching question focus; minor inclusion of chronic high BP does not detract significantly."
+  },
+  "scores": {
+    "correctness": 4,
+    "completeness": 4,
+    "faithfulness": 5,
+    "relevance": 5
+  },
+  "average_score": 4.5,
+  "summary": "The Generated Answer is highly accurate and relevant, covering most key symptoms from the Gold Answer with proper transcript grounding, but has minor incompleteness and an incorrect inclusion of chronic high blood pressure as an acute systemic symptom."
+}

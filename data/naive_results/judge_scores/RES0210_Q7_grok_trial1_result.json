@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer specifies: runny nose ~1 week ago (missed); raspy cough Friday [P-3] (correct); cough worsens Sunday, yellow sputum + red spots start simultaneously Sunday [P-4,P-6,P-7] (Generated only notes red spots Sunday, misses yellow sputum onset and simultaneous start, implies sputum pre-Sunday via 'gunk'); fever Monday [P-8,P-5] (correct); chills Tuesday-Wednesday/'last two days' from Wednesday [P-9] (Generated shifts to Monday-Tuesday, minor discrepancy); right chest pain onset ~Tuesday/'over last day' [P-20] (Generated places first on Wednesday via [P-17], incorrect); progression to exertional dyspnea, sore throat by Wednesday (partially covered as windedness). Some factual errors in exact symptom onsets and misses yellow sputum, but core timeline structure aligns.",
+    "completeness": "Key Gold points covered: Friday cough (✓), Sunday red sputum (partial ✓), Monday fever (✓), recent chills (partial), recent chest pain (wrong day), progression summary (partial). Missed: runny nose, explicit yellow sputum Sunday onset, cough worsening Sunday, continued sputum Monday, precise chills Tue-Wed, chest pain ~Tue, sore throat, full symptom list by Wed. Covers ~60% of key points (main symptoms but incomplete details and days).",
+    "faithfulness": "Most claims verifiable: cough [P-3], red spots [P-4], fever [P-5], chills [P-9], pain [P-17,P-19], dyspnea [P-10]. Accurate citations. However, 'knowledge graph' and symptom correlations (e.g., cough --[INDICATES]--> chest pain) entirely absent from transcript (hallucinated); chills days interpreted as Mon-Tue (plausible but not exact); chest pain onset Wednesday unsubstantiated (contradicts [P-20] 'last day'). Multiple hallucinated elements.",
+    "relevance": "Directly provides timeline for specified symptoms (raspy cough, sputum/red, fever, chills, chest pain) with days and progression section addressing worsening; minor tangent on knowledge graph but focused on question."
+  },
+  "scores": {
+    "correctness": 3,
+    "completeness": 3,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 3.0,
+  "summary": "The Generated Answer captures the main timeline and progression but has factual errors in symptom onset days, misses yellow sputum onset, and includes transcript-unsupported knowledge graph references."
+}

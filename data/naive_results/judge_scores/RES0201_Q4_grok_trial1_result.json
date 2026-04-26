@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer lists multiple denied symptoms (cough, runny nose, headaches, chest pain, loss of smell, fever, chills/night sweats) with citations, plus other negatives like prior breathing issues, sick contacts, travel; interprets them as narrowing differentials (e.g., not URI) but not excluding COVID as doctor still suspects it [D-43]. Generated Answer only mentions loss of smell (partial taste), ignores most symptoms, references non-existent 'Knowledge Graph', and incorrectly claims it excludes/distinguishes COVID (contradicting Gold and transcript where doctor proceeds with COVID testing despite negatives). Significant errors and contradictions warrant score 2.",
+    "completeness": "Gold key points: comprehensive list of 7+ denied symptoms with citations, additional negatives, no explicit differentials but interpretations (e.g., not URI, chest pain relevant, fever absence doesn't rule out COVID, mono history). Generated covers only loss of smell/taste (~1/10+ points, <20%), misses vast majority including cough, runny nose, etc., and misinterprets COVID exclusion. Score 1.",
+    "faithfulness": "Transcript supports denial of loss of smell [P-19], but Generated hallucinates 'Knowledge Graph' (absent), claims contradiction with 'typical COVID' via graph (transcript has doctor affirming alignment [D-43]), ignores other screened symptoms, fabricates exclusion logic not grounded in transcript. Multiple hallucinations. Score 2.",
+    "relevance": "Addresses part of question (one negative symptom and COVID distinction) but narrowly, incorrectly (says excludes suspected COVID), adds off-topic KG references; misses full symptom list and proper differential discussion. Partially relevant. Score 3."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 1,
+    "faithfulness": 2,
+    "relevance": 3
+  },
+  "average_score": 2.0,
+  "summary": "The Generated Answer is significantly incomplete, factually inaccurate in interpretation, introduces hallucinations about a non-existent Knowledge Graph, and only partially addresses the question by focusing narrowly on one symptom while mishandling the differential diagnosis aspect."
+}

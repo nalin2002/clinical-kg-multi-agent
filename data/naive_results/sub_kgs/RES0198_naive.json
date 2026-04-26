@@ -1,0 +1,167 @@
+{
+  "nodes": [
+    {
+      "id": "N_001",
+      "text": "stuffy nose",
+      "type": "SYMPTOM",
+      "evidence": "I've had the stuffy nose um that's been on and off",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_002",
+      "text": "runny nose",
+      "type": "SYMPTOM",
+      "evidence": "as well as a runny nose for the past week",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_003",
+      "text": "clear nasal discharge",
+      "type": "SYMPTOM",
+      "evidence": "It's mostly clear",
+      "turn_id": "P-5"
+    },
+    {
+      "id": "N_004",
+      "text": "fatigue",
+      "type": "SYMPTOM",
+      "evidence": "A little bit",
+      "turn_id": "P-15"
+    },
+    {
+      "id": "N_005",
+      "text": "Type one diabetes",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "Um I have type one diabetes",
+      "turn_id": "P-23"
+    },
+    {
+      "id": "N_006",
+      "text": "Insulin",
+      "type": "TREATMENT",
+      "evidence": "your insulin medication",
+      "turn_id": "P-27"
+    },
+    {
+      "id": "N_007",
+      "text": "Tylenol cold",
+      "type": "TREATMENT",
+      "evidence": "over the counter medications uh like Tylenol cold",
+      "turn_id": "D-39"
+    },
+    {
+      "id": "N_008",
+      "text": "supportive care",
+      "type": "TREATMENT",
+      "evidence": "there's not much that we can do besides supportive care",
+      "turn_id": "D-39"
+    },
+    {
+      "id": "N_009",
+      "text": "hydration",
+      "type": "TREATMENT",
+      "evidence": "make sure you get you stay well hydrated",
+      "turn_id": "D-39"
+    },
+    {
+      "id": "N_010",
+      "text": "swab",
+      "type": "PROCEDURE",
+      "evidence": "we will also get a swab done for you today",
+      "turn_id": "D-39"
+    },
+    {
+      "id": "N_011",
+      "text": "viral infection / common cold",
+      "type": "DIAGNOSIS",
+      "evidence": "just a stuffy nose in the runny nose it seems like it's most likely a viral infection like the common cold",
+      "turn_id": "D-39"
+    },
+    {
+      "id": "N_012",
+      "text": "COVID-19",
+      "type": "DIAGNOSIS",
+      "evidence": "since right now we're in a pandemic, some of these symptoms can also be seen in covid patients",
+      "turn_id": "D-39"
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "N_001",
+      "target_id": "N_011",
+      "type": "INDICATES",
+      "evidence": "just a stuffy nose in the runny nose it seems like it's most likely a viral infection like the common cold",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_002",
+      "target_id": "N_011",
+      "type": "INDICATES",
+      "evidence": "just a stuffy nose in the runny nose it seems like it's most likely a viral infection like the common cold",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_003",
+      "target_id": "N_011",
+      "type": "INDICATES",
+      "evidence": "just a stuffy nose in the runny nose it seems like it's most likely a viral infection like the common cold",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_004",
+      "target_id": "N_011",
+      "type": "INDICATES",
+      "evidence": "just a stuffy nose in the runny nose it seems like it's most likely a viral infection like the common cold",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_001",
+      "target_id": "N_012",
+      "type": "INDICATES",
+      "evidence": "since right now we're in a pandemic, some of these symptoms can also be seen in covid patients",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_002",
+      "target_id": "N_012",
+      "type": "INDICATES",
+      "evidence": "since right now we're in a pandemic, some of these symptoms can also be seen in covid patients",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_008",
+      "target_id": "N_011",
+      "type": "TAKEN_FOR",
+      "evidence": "there's not much that we can do besides supportive care",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_009",
+      "target_id": "N_011",
+      "type": "TAKEN_FOR",
+      "evidence": "make sure you get you stay well hydrated",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_007",
+      "target_id": "N_001",
+      "type": "TAKEN_FOR",
+      "evidence": "over the counter medications uh like Tylenol cold",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_006",
+      "target_id": "N_005",
+      "type": "TAKEN_FOR",
+      "evidence": "you have your insulin medication",
+      "turn_id": "P-27"
+    },
+    {
+      "source_id": "N_010",
+      "target_id": "N_012",
+      "type": "TAKEN_FOR",
+      "evidence": "we will also get a swab done for you today",
+      "turn_id": "D-39"
+    }
+  ]
+}

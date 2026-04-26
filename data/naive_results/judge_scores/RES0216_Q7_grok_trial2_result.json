@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer correctly identifies the onset three days ago [P-1] and first notice during a walk [though cites P-1 instead of P-4], tightness on inhalation [P-1, P-5], and exacerbation with walking [P-1, P-9]. However, it inaccurately states that the transcript 'does not explicitly state' progression (better/worse/same), contradicting P-2 ('staying the same') and P-3 ('pretty steady'). It misrepresents symptoms as appearing 'specifically' during walking rather than baseline presence worsening with activity [P-9, P-10], omits other exacerbators (chair, big breath [P-9]), and vaguely describes impact on walking routine without the specific reduction from multiple to one walk daily [P-22]. These are significant factual errors and contradictions with Gold Answer.",
+    "completeness": "Key Gold points covered: onset 3 days [P-1], first on dog walk [P-4], tightness on inspiration [P-1, P-5], exacerbation with walking [P-9, P-10]. Missed: no specific trigger/just came on [P-3]; staying the same/steady [P-2, P-3]; baseline always there, exacerbated by getting up from chair/big breath [P-9]; precise impact (usually couple walks/day now typically one [P-22]); no work missed [P-21, P-22]; noticeably limiting activity [P-22, P-23]. Covers ~30-40% of key points.",
+    "faithfulness": "Claims grounded where cited (e.g., 3 days, walking [P-1]), but multiple inaccuracies: progression not stated (false, P-2/P-3 contradict); symptoms 'appear...specifically when walking' (hallucinates, ignores P-9 'always there, worse on walk'); impact details from P-22 not cited or detailed; introduces 'knowledge graph' not in transcript (hallucination); tangential asthma [P-16] plausible but adds unverifiable emphasis. Multiple hallucinated or distorted facts.",
+    "relevance": "Answer structures response directly around question elements (development, triggering activity, exacerbating factors, impact on routine, status), using bullet points matching query aspects; minor tangent on asthma history [P-16], but overall focused with no major off-topic content."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 2.5,
+  "summary": "The Generated Answer has significant factual errors (e.g., denying explicit progression info), incomplete coverage of exacerbators and functional impacts, multiple distortions from transcript, but remains mostly relevant to the question."
+}

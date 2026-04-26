@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer incorrectly identifies the infectious screening as primarily the question 'besides your asthma, do you have any health problems?' [D-29], which is a general health question post-screening, not the specific infectious symptoms/exposures (e.g., colds [D-21], sick contacts [D-22-23], travel [D-24], loss of taste/smell [D-25], fevers [D-26], nausea/vomiting [D-27], belly pain [D-28]). It misattributes the patient's response as 'I was diagnosed when I was eight' [P-2], which pertains to asthma history, not infection screening. Cough being dry is partially accurate but not framed as screening. COVID swab plan is correct, but overall significant factual errors contradict the Gold Answer's detailed list.",
+    "completeness": "Gold Answer key points: symptoms screened (colds/infections, loss of taste/smell, fevers, nausea/vomiting, belly pain, dry cough) with denials and citations; exposures (sick at home/frequent contacts, outside home, travel) with denials; explanation [D-29]; COVID swab planned despite negatives. Generated covers only dry cough partially, wheezing (not a screened infection symptom), and COVID swab plan; misses all specific infection symptoms/exposures, patient denials, and citations for those — covers <20%.",
+    "faithfulness": "Claims about screening via 'other health problems' [D-29] misrepresent transcript, as true screening is D-21-D-28; P-2 response is unrelated to infection screening (hallucinated connection); dry cough [P-1,P-14] and wheezing [P-15] verifiable; COVID swab [D-29] accurate. Multiple misinterpretations and unsupported attributions indicate hallucinated framing of screening.",
+    "relevance": "Generated attempts to address screening symptoms, responses, and planned test but focuses on irrelevant/wrong questions (e.g., general health, asthma history) and omits core infectious screenings/exposures, making it partially relevant with significant off-topic inaccuracies."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 1,
+    "faithfulness": 2,
+    "relevance": 3
+  },
+  "average_score": 2.0,
+  "summary": "The Generated Answer has significant factual inaccuracies, misses nearly all key screening details from the Gold Answer, includes misattributed transcript citations, and only partially addresses the question."
+}

@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "- Raspy cough onset Friday: matches Gold/Transcript (P-3).\n- Sputum: Gold specifies yellow sputum with red spots began Sunday and started simultaneously (P-4, P-6, P-7). Generated answer mentions only “red spots in sputum” and does not state yellow sputum onset, so it is partially incorrect/incomplete.\n- Fever: Correct day (Monday), but the best supporting line is P-8; Generated cites P-5. Net: mostly correct.\n- Chills: Gold places onset Tuesday–Wednesday (“especially last two days” on Wednesday) (P-9). Generated interprets as Monday–Tuesday, shifting onset ~1 day early.\n- Right-sided chest pain: Gold places onset around Tuesday (“especially notice over the last day”) (P-20). Generated places it on Wednesday, which is not supported and likely incorrect.\n- Worsening course: Captures general progression from cough → hemoptysis/sputum → fever/chills → pleuritic pain/dyspnea, but misses the explicit Sunday worsening of cough (“really bad”) and persistence details.",
+    "completeness": "Key Gold elements covered:\n- Friday raspy cough.\n- Sunday blood-tinged sputum.\n- Monday fever.\n- Chills near end of week.\n- Right-sided chest pain present by visit and pleuritic component.\n\nKey Gold elements missed or insufficiently specified:\n- Yellow sputum beginning Sunday along with red spots (and that both started at once).\n- The cough becoming “really bad” on Sunday (worsening trigger for concern).\n- Chest pain onset around Tuesday (“over the last day”), not just presence on Wednesday.\n- Runny nose about a week prior that resolved.\n- Fever persistence until Wednesday and sputum persistence into Monday.\n- Sore throat from coughing and exertional dyspnea context as part of overall picture (dyspnea is mentioned but not well placed in the timeline).",
+    "faithfulness": "- Most statements are traceable to transcript quotes.\n- However, several time inferences are not supported or are mis-grounded: chills being Monday–Tuesday (transcript supports mainly Tuesday–Wednesday), and chest pain onset being Wednesday (transcript suggests noticed over the last day).\n- Mentions a “knowledge graph” and draws ‘align with indicators’ statements that are not in the transcript, adding unverifiable content.",
+    "relevance": "- Largely answers the question by attempting a day-by-day symptom timeline and describing clinical worsening.\n- Minor off-focus content about a “knowledge graph” and added dyspnea framing, but still broadly related to illness progression."
+  },
+  "scores": {
+    "correctness": 3,
+    "completeness": 3,
+    "faithfulness": 3,
+    "relevance": 4
+  },
+  "average_score": 3.25,
+  "summary": "The answer is generally on-topic and captures some correct onset dates (notably Friday cough and Monday fever) but misdates chills and chest-pain onset, omits the yellow sputum onset and Sunday cough worsening, and includes some unverifiable ‘knowledge graph’ content."
+}

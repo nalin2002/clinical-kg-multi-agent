@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer fundamentally misrepresents the content of the Gold Answer and transcript by focusing primarily on the patient's seizure history, medication non-compliance, and a supposed 'denial of causal link' between seizure and shortness of breath (which the patient actually said 'I don't know if related' [P-8], not a denial), while completely ignoring the specific denied symptoms listed in the Gold Answer such as chest pain [D-7/P-7], feeling faint [D-8/P-8 wait no P-8 is seizure reveal], loss of taste/smell [D-19/P-19], sore throat [D-20/P-20], runny nose [D-21/P-21], sick contacts [D-16/P-16], travel [D-17/P-17], nausea/vomiting [D-13/P-13], belly pain [D-14/P-14], diarrhea [D-15/P-15], sputum [D-4/P-4], and prior episodes [D-3/P-3]. It contradicts the Gold by not addressing these negatives and their implied differentials (cardiac, infectious, GI), instead speculating on positives like fever driving infection without tying to screened negatives. Introduces unsubstantiated 'clinical documentation' and Knowledge Graph not in transcript.",
+    "completeness": "Gold Answer key points: detailed list of denied symptoms/exposures grouped by category (cardiac: chest pain, faintness; infectious: taste/smell, sore throat, runny nose, contacts, travel; GI: nausea, belly pain, diarrhea; other: dry cough, no prior SOB) with citations, and inference that these address cardiac/pulmonary, infectious, GI differentials. Generated covers <20%: mentions vague 'relationship to seizure' and meds (not key screened denials), misses all major listed items, no grouping or citations matching Gold.",
+    "faithfulness": "Generated claims unverifiable 'denial of causal link' ([P-8] is uncertainty, not denial) and 'screened regarding treatment regimen' implying compliance denial, but patient admitted missing dose [P-9/P-24]; fabricates that transcript 'primarily contains active symptoms' while ignoring explicit negative screens; adds hallucinated 'Knowledge Graph' and speculative differentials (e.g., infection lowering seizure threshold) not grounded in transcript; cites some parts like [P-1],[P-5] but for positives, not negatives screened.",
+    "relevance": "Question asks for specific denied symptoms/exposures screened by doctor and differentials those negatives address (e.g., infectious, cardiac, GI); Generated largely off-topic, pivoting to patient's positives (SOB, fever, seizure, meds) and new differentials (neurological, infectious from fever not negatives), minimally touching denials but incorrectly framing seizure link as primary screen."
+  },
+  "scores": {
+    "correctness": 1,
+    "completeness": 1,
+    "faithfulness": 2,
+    "relevance": 2
+  },
+  "average_score": 1.5,
+  "summary": "The Generated Answer is largely inaccurate, incomplete, and unfaithful to both the Gold Answer and transcript, failing to identify or address the key denied symptoms and their implied differentials while hallucinating unrelated content."
+}

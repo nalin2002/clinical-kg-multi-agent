@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer identifies the nephew attending daycare (from social history [P-11]) as the potential infectious exposure source, noting daycare as a common source of respiratory viruses despite the nephew not being sick [P-12]; Generated Answer incorrectly states no specific source was identified through social history and instead attributes exposure to the general 'pandemic' context [D-39], which is not from social history. Gold notes no explicit link in transcript between diabetes and immune risk or infection; Generated fabricates that diabetes influenced the swab/isolation due to immune compromise [citing KG, not transcript], contradicting Gold's emphasis on lack of explicit linkage. Significant contradictions on core exposure source and diabetes relation.",
+    "completeness": "Gold key points: nephew/daycare exposure [P-11, P-12] as plausible source consistent with URI [D-39]; diabetes details [P-23-26]; no explicit doctor linkage to immune risk; additional patient history (meds, allergies); symptom duration. Generated covers diabetes [P-23] and some relation to presentation via pandemic/swab [D-39], but entirely misses nephew/daycare (core exposure from social history), explicit non-linkage of diabetes to risk, and symptom persistence prompting visit. Covers ~20-30% (diabetes mention, swab/management).",
+    "faithfulness": "Generated verifiable claims: patient suspects COVID [P-1], diabetes [P-23], pandemic/swab/isolation [D-39]. Unverifiable/hallucinated: 'knowledge graph/KG' links (diabetes treatment, immune effect); causal link that diabetes prompted swab/isolation due to vulnerability (transcript attributes to pandemic/symptom overlap, no diabetes mention); no specific social history exposure identified (contradicts [P-11]). Multiple hallucinations on reasoning/causation beyond transcript.",
+    "relevance": "Question asks for exposure source from social history and relation to presentation given diabetes/immune function. Generated addresses exposure (pandemic) and diabetes relation to management/swab, but deviates by ignoring social history's nephew/daycare and adding extraneous KG details; partially on-topic but with off-focus elements."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 3
+  },
+  "average_score": 2.25,
+  "summary": "The Generated Answer significantly errs by missing the key social history exposure (nephew/daycare), fabricating diabetes-clinical decision links absent from the transcript, resulting in low factual accuracy and completeness."
+}

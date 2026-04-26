@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer correctly identifies Keppra as the medication for epilepsy, matching the Gold Answer [P-23, P-8]. It accurately notes the patient forgot the dose [P-9], consistent with Gold. However, it omits the specific circumstance (daughter's birthday celebration, altered dinner routine [P-24]) and adds an unmentioned 'knowledge graph,' which is a minor extraneous claim. Core facts are accurate with minor discrepancies.",
+    "completeness": "Gold key points: Keppra for epilepsy [P-23,P-8]; forgot med [P-9]; specific circumstance daughter's birthday, usually with dinner but celebration earlier, did things differently, no later dinner, completely forgot [P-24]; doctor's acknowledgment of common lapse [D-25]; isolated not persistent [D-24,P-24]; link to seizure [P-9]. Generated covers Keppra/epilepsy and forgot [P-9] (~25% coverage), misses all details on specific circumstance, doctor's comments, and seizure link.",
+    "faithfulness": "All main claims (Keppra [P-23], epilepsy context, forgot [P-9]) verifiable in transcript. Minor hallucination: 'knowledge graph' not in transcript, unverifiable. No other fabrications; mostly grounded.",
+    "relevance": "Directly addresses medication (Keppra for epilepsy) and missed dose (forgot), structured response matches question. Knowledge graph mention is minor irrelevant addition; no off-topic content."
+  },
+  "scores": {
+    "correctness": 4,
+    "completeness": 2,
+    "faithfulness": 4,
+    "relevance": 4
+  },
+  "average_score": 3.5,
+  "summary": "The Generated Answer is factually accurate and relevant but significantly incomplete in detailing the specific circumstance of the missed dose and includes a minor hallucinated reference."
+}

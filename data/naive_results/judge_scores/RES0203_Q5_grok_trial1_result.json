@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer claims the patient 'did not identify a specific external event (such as a travel history or contact with a known infected individual)', but this directly contradicts the Gold Answer and transcript [P-18], where the patient explicitly identifies the hiking trip two weeks ago with their partner, during which 'some people kind of brushed by us', as a potential exposure, stating 'I don't see where else I could have gotten this from'. This is a major factual contradiction, making the Generated Answer mostly incorrect.",
+    "completeness": "Key points from Gold Answer: patient in last year high school online [P-36/37], staying home [D-38/P-38], specific exposure hiking two weeks ago with partner [P-18], people brushed by [P-18], local (half hour away [P-19]), no other exposures or sick contacts [P-17/P-18], lives with parents/sibling no illness [P-29], immunizations up to date [P-20], doctor tests for COVID [D-39]. Generated Answer covers 0% of these, focusing instead on symptoms [P-1] and doctor's confirmation [D-39], completely missing the exposure event.",
+    "faithfulness": "The claim of no specific external exposure event is a hallucination, directly contradicted by [P-18] in the transcript. While symptom descriptions [P-1] and doctor's statements [D-39] are accurately cited and verifiable, the core assertion about exposure is fabricated and not grounded in the transcript, with multiple erroneous interpretations (e.g., symptoms as 'exposure/condition').",
+    "relevance": "The question specifically asks for the 'specific potential exposure event' identified by the patient (hiking) and its connection to COVID-19 diagnosis; the Generated Answer addresses 'exposure' by denying any event exists and pivots to symptoms and doctor's confirmation instead, making it partially relevant but largely off-topic from the required exposure history."
+  },
+  "scores": {
+    "correctness": 1,
+    "completeness": 1,
+    "faithfulness": 1,
+    "relevance": 2
+  },
+  "average_score": 1.25,
+  "summary": "The Generated Answer fabricates the absence of a specific exposure event despite clear evidence in the transcript and Gold Answer, failing to address the question's focus on the hiking incident and resulting in critically low performance across all dimensions."
+}

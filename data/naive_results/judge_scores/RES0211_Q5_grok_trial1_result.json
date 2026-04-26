@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer falsely claims there is no information in the transcript about Jessica's family history (father's allergies [P-33], cousin's asthma [P-30]), brother's cold [P-39, D-58], or farm living situation with home-schooling [P-41-48], directly contradicting the Gold Answer and transcript facts. It also introduces a 'Knowledge Graph' and 'common cold' diagnosis not present in the source, while misattributing post-nasal drip solely to allergies despite Gold noting difference from typical season. Overall, mostly incorrect and contradictory to Gold.",
+    "completeness": "Gold Answer covers: family allergies/asthma (father [P-33], cousin [P-30]), allergies not in season [P-16,17], brother's cold ~2 weeks ago [P-39,D-58], farm life [P-43,44], home-schooling/COVID isolation [P-41,42,45,46], only dog [P-48], pointing to household transmission. Generated covers 0% of these key points, instead denying their existence and shifting to symptoms/history.",
+    "faithfulness": "Generated hallucinates absence of explicit transcript details (e.g., P-30 asthma, P-33 father allergies, P-39 brother cold, P-41-48 farm/home situation), invents 'Knowledge Graph' and 'DIAGNOSIS common cold' (transcript has no diagnosis), and loosely references symptoms like night sweats (P-9 mentions heat but not soaked sheets as queried in D-9). Largely fabricated by denying verifiable transcript content.",
+    "relevance": "The question specifically asks how listed factors (family history, brother cold, farm/home situation) relate to symptoms; Generated dismisses them as absent and pivots to general symptoms and her own allergies/diagnosis, largely failing to address the core query."
+  },
+  "scores": {
+    "correctness": 1,
+    "completeness": 1,
+    "faithfulness": 1,
+    "relevance": 2
+  },
+  "average_score": 1.25,
+  "summary": "The Generated Answer is fundamentally flawed by denying verifiable transcript details central to the Gold Answer, hallucinating external sources, and failing to address the question's focus on specified contextual factors."
+}

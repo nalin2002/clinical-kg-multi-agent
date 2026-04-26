@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Step-by-step: Gold states symptoms began 3 days ago on a walk (P-4), no specific trigger (P-3), staying the same/steady (P-2/P-3), always there but worse with walks/getting up/big breaths (P-9/P-10), noticeable on inspiration (P-1/P-5), reduced walks from 2/day to 1 (P-22), not missing work (P-22). Gen correctly notes 3-day onset (P-1), first noticed on dog walk (via P-1), worsens on walks (P-1), on inhalation, affects walks. Errors: wrongly claims transcript 'does not explicitly state' progression (contradicts P-2/P-3 'staying the same/steady'); misses no trigger, other exacerbators (chair/big breath), specific walk reduction/no work miss; adds unverified KG and asthma difference (tangential). Significant factual errors/omissions vs Gold.",
+    "completeness": "Key Gold points: 1. 3 days ago (covered); 2. first on dog walk (covered); 3. no trigger/just came on (missed); 4. staying same/steady (missed, falsely denied); 5. always there, worse walks/chair/breath (partial: walks only); 6. inspiration (covered); 7. walks reduced 2->1 (missed); 8. no work miss (missed); 9. limiting but not dramatic (partial). Covers ~30-40% (onset, first activity, partial exacerbators/impact).",
+    "faithfulness": "Claims verifiable except: 'transcript does not explicitly state' progression (false, directly in P-2/P-3); 'provided knowledge graph' (absent from transcript/input); asthma 'different' ok (P-16); all other claims (tightness on inhale P-1/P-5, walks P-1/P-4/P-9) grounded. Multiple hallucinations/false claims.",
+    "relevance": "Gen structures response around development, triggering activity, exacerbators, impact on routine, status—directly matching question elements; minor extras (asthma, KG) are tangents but not majorly off-topic."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 2.5,
+  "summary": "The Generated Answer covers core onset and walk association but has significant errors like denying stated progression status, misses key details/exacerbators/impacts, and includes hallucinations, resulting in low overall quality."
+}

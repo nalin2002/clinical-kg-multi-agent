@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer incorrectly identifies fatigue and sleep disturbance as screened constitutional symptoms, but these were reported by the patient (P-19, P-20, P-21), not denied; it ignores the denied symptoms like night sweats (D-5/P-5), unexplained weight loss (D-6-D8/P-6-P-8), and hemoptysis (D-10/P-10) emphasized in the Gold Answer. It mischaracterizes eczema as an exposure risk (it's past medical history affirmed in P-22/P-23), omitting denied exposures like sick contacts (D-14/P-14, D-15/P-15, D-32/P-32), travel (D-33-D34/P-33-P-34), and IV drug use (D-40/P-40). Links to TB exclusion are superficial and tied to wrong symptoms, contradicting Gold's accurate mapping. Overall, mostly incorrect and contradictory to Gold.",
+    "completeness": "Gold key points: denied constitutional symptoms (night sweats, weight loss, hemoptysis with citations); denied exposures (sick contacts x3, travel, IV drugs/cocaine/heroin with citations); exclusions for TB, malignancy, endemic infections via these specifics; additional denials (stiff neck, N/V, pain); doctor's summary. Generated covers 0% of these, instead listing affirmed symptoms (fatigue, sleep) and eczema; vague TB mention without proper linkage. <20% coverage.",
+    "faithfulness": "Fatigue/sleep claims verifiable in P-19-P-21 (patient self-reports); eczema verifiable in P-22-P-23. However, 'screened for' fatigue/sleep is a stretch (doctor inquired about cough waking at night, patient volunteered tiredness); eczema not an 'exposure risk.' Introduces unverified 'knowledge graph' and misattributes these as denied constitutional symptoms/exposures. TB symptoms listed (fever, night sweats, fatigue) partially mismatch transcript (night sweats denied, no fever confirmed beyond feeling hot). Multiple interpretive hallucinations and misapplications.",
+    "relevance": "Question focuses on patient-denied constitutional symptoms/exposure risks and their role in excluding TB/chronic infections; Generated lists patient-affirmed symptoms (fatigue/sleep) and irrelevant eczema as 'exposure risk,' vaguely mentions TB but without addressing denials or specifics, making it largely off-topic."
+  },
+  "scores": {
+    "correctness": 1,
+    "completeness": 1,
+    "faithfulness": 2,
+    "relevance": 2
+  },
+  "average_score": 1.5,
+  "summary": "The Generated Answer is fundamentally incorrect, incomplete, and irrelevant by focusing on affirmed rather than denied symptoms/exposures, failing to address the question or align with the Gold Answer."
+}

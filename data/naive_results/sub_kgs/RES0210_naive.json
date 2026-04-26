@@ -1,0 +1,145 @@
+{
+  "nodes": [
+    {
+      "id": "N_001",
+      "text": "Cough",
+      "type": "SYMPTOM",
+      "evidence": "noticed I've had this pretty bad cough",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_002",
+      "text": "Raspy cough",
+      "type": "SYMPTOM",
+      "evidence": "I had like a bit of like a raspy cough",
+      "turn_id": "P-3"
+    },
+    {
+      "id": "N_003",
+      "text": "Red spots in sputum",
+      "type": "SYMPTOM",
+      "evidence": "little spots of red kind of the the gunk I was bringing up... yellow custard",
+      "turn_id": "P-4"
+    },
+    {
+      "id": "N_004",
+      "text": "Fever",
+      "type": "SYMPTOM",
+      "evidence": "started getting fever",
+      "turn_id": "P-5"
+    },
+    {
+      "id": "N_005",
+      "text": "Chills",
+      "type": "SYMPTOM",
+      "evidence": "I've been getting the chills",
+      "turn_id": "P-9"
+    },
+    {
+      "id": "N_006",
+      "text": "Difficulty breathing",
+      "type": "SYMPTOM",
+      "evidence": "I feel a little bit winded doing things",
+      "turn_id": "P-10"
+    },
+    {
+      "id": "N_007",
+      "text": "Sore throat",
+      "type": "SYMPTOM",
+      "evidence": "feel a sore throat",
+      "turn_id": "P-15"
+    },
+    {
+      "id": "N_008",
+      "text": "Runny nose",
+      "type": "SYMPTOM",
+      "evidence": "have you had a runny nose",
+      "turn_id": "P-16"
+    },
+    {
+      "id": "N_009",
+      "text": "Chest pain",
+      "type": "SYMPTOM",
+      "evidence": "got pain kinda on the right",
+      "turn_id": "P-17"
+    },
+    {
+      "id": "N_010",
+      "text": "High Cholesterol",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "pill for a cholesterol... Lipitor",
+      "turn_id": "P-25"
+    },
+    {
+      "id": "N_011",
+      "text": "Lipitor",
+      "type": "TREATMENT",
+      "evidence": "Lipitor",
+      "turn_id": "P-26"
+    },
+    {
+      "id": "N_012",
+      "text": "Wisdom teeth extraction",
+      "type": "PROCEDURE",
+      "evidence": "wisdom teeth out",
+      "turn_id": "P-28"
+    },
+    {
+      "id": "N_013",
+      "text": "Lung cancer",
+      "type": "DIAGNOSIS",
+      "evidence": "grandpa died of lung cancer",
+      "turn_id": "P-42"
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "N_001",
+      "target_id": "N_003",
+      "type": "INDICATES",
+      "evidence": "bringing up the the gunk I was bringing up",
+      "turn_id": "P-4"
+    },
+    {
+      "source_id": "N_003",
+      "target_id": "N_004",
+      "type": "INDICATES",
+      "evidence": "next day they were still there. I started getting fever",
+      "turn_id": "P-5"
+    },
+    {
+      "source_id": "N_001",
+      "target_id": "N_007",
+      "type": "CAUSES",
+      "evidence": "After an awful lot of coughing",
+      "turn_id": "P-15"
+    },
+    {
+      "source_id": "N_001",
+      "target_id": "N_006",
+      "type": "INDICATES",
+      "evidence": "I feel a little bit winded doing things",
+      "turn_id": "P-10"
+    },
+    {
+      "source_id": "N_011",
+      "target_id": "N_010",
+      "type": "TAKEN_FOR",
+      "evidence": "Lipitor",
+      "turn_id": "P-26"
+    },
+    {
+      "source_id": "N_001",
+      "target_id": "N_009",
+      "type": "INDICATES",
+      "evidence": "pain kinda on the right... worse with coughing",
+      "turn_id": "P-19"
+    }
+  ],
+  "_usage": {
+    "prompt_tokens": 2045,
+    "completion_tokens": 5568,
+    "reasoning_tokens": 3591,
+    "cost": 0.00237017
+  }
+}

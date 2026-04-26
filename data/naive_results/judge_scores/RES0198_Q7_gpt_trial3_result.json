@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer contains multiple factual inaccuracies relative to the Gold Answer and transcript. It incorrectly states the transcript does not specify which symptom started first, despite the patient clearly saying it was “pretty stuffy at first” [P-3]. It incorrectly claims there was “no shift in predominance,” while the patient explicitly reports a shift to “now it’s mostly running” [P-3]. It incorrectly characterizes the overall course as intermittent and “on and off,” ignoring the patient’s later clarification that symptoms have been “pretty constant for the past week” [P-8]. It also misattributes “a little bit” to nasal discharge and cites [P-15], but [P-15] refers to fatigue (“A little bit”), not nasal discharge. These errors contradict core elements of the Gold Answer.",
+    "completeness": "Key Gold Answer points missed or incorrectly represented: (1) congestion started first [P-3] (missed/denied), (2) predominant symptom shifted from congestion to rhinorrhea over the week [P-3] (missed/denied), (3) intermittent vs constant nuance—initially “on and off” [P-1] but clarified as “pretty constant” [P-8] (missed/contradicted), (4) mention that symptoms had not improved prompting visit [P-1] (partially included), (5) possible influence of decongestants [P-10] (omitted). Overall, less than half of the key points are correctly covered.",
+    "faithfulness": "Several statements are not grounded or are mis-cited: it cites [P-15] as discharge description (“a little bit”), but [P-15] is fatigue; it asserts “no shift in predominance,” contradicting [P-3]; and it states symptoms are intermittent rather than constant, contradicting [P-8]. These are multiple unfaithful claims and citation errors.",
+    "relevance": "The answer attempts to address onset, first symptom, change in predominant symptom, and constant vs intermittent pattern, which are the exact elements asked. However, it includes some irrelevant/misleading content (e.g., incorrect note about discharge being ‘a little bit’ tied to fatigue), and its main statements are wrong. Still, it is on-topic."
+  },
+  "scores": {
+    "correctness": 1,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 2.25,
+  "summary": "The response is on-topic but contradicts the transcript on key timeline elements (first symptom, shift to rhinorrhea, and constant vs intermittent pattern) and includes mis-citations, resulting in low correctness, completeness, and faithfulness."
+}

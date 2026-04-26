@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer correctly identifies 'asthma' from [D-45] as the condition that would be added if presentation was just cough/shortness of breath without fever, excluded due to presence of fever indicating infection. Generated Answer incorrectly claims 'another viral illness' from [D-44] as the condition added if presentation different (linked to high temp/neuro symptoms), excluded due to temp only 'a little high' and no neuro symptoms. This is a complete factual contradiction with no alignment to Gold Answer's key facts.",
+    "completeness": "Gold key points: (1) Condition = asthma; (2) Hypothetical presentation = cough/SOB without fever; (3) Exclusion finding = fever present, sounds like infection; (4) Supporting details like no wheezing. Generated covers 0% of these: wrong condition ('another viral illness'), wrong hypothetical (high temp/neuro), wrong exclusion (temp not 'really high'). All points missed.",
+    "faithfulness": "Generated cites [D-44] but hallucinates: transcript [D-44] discusses possible 'another viral illness' as current alternative if COVID negative, and ER criteria for worsening (high temp/neuro), not a condition added if presentation different. No mention of adding/excluding based on temp severity; [D-45] explicitly mentions asthma conditionally, ignored. Claims unverifiable and fabricated connection to question.",
+    "relevance": "Generated Answer is structured to directly answer the question (names a condition, hypothetical presentation difference, specific finding excluding it), with no tangents or extraneous content, making it perfectly focused despite factual errors."
+  },
+  "scores": {
+    "correctness": 1,
+    "completeness": 1,
+    "faithfulness": 1,
+    "relevance": 5
+  },
+  "average_score": 2.0,
+  "summary": "The Generated Answer completely misidentifies the condition and clinical reasoning from the transcript, fabricating a false interpretation of [D-44] while ignoring the explicit mention of asthma in [D-45], resulting in total failure on accuracy, completeness, and faithfulness despite relevant structure."
+}

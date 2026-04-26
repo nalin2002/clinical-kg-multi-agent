@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer incorrectly claims that the transcript only contains patient's dialogue up to [P-23] with no doctor's responses, which is false as the full transcript includes [D-1] to [D-48]. It contradicts the Gold Answer by denying the existence of the doctor's summary assessment in [D-47] (cough for a little while, bad last 3 days, greenish sputum no blood, no constitutional symptoms), plan to review with doctors, and next steps guided by supervising physician. It also misstates patient symptoms (e.g., cough 'one month' vs. three months, incorrect chest pain association). All facts are erroneous compared to Gold.",
+    "completeness": "Gold key points: 1) Summary assessment of cough duration/history, greenish sputum no blood, no constitutional symptoms [D-47]; 2) Absence of serious illness indicators; 3) Plan to 'review your story with the doctors' [D-47]; 4) Next steps guided by supervising physician's review; 5) Patient's additional comment and doctor's 'We'll see what we can do' [D-48]. Generated covers 0%: claims impossible to answer, provides irrelevant wrong patient summary instead.",
+    "faithfulness": "Generated hallucinates that transcript lacks [D-X] segments (false, full transcript present); invents 'knowledge graph' not in source; fabricates cough duration as 'one month' [P-19 partial, contradicts [P-2/P-13] three months]; wrongly infers chest pain unrelated to cough trigger [P-3]; no verification to actual [D-47] summary. Largely fabricated.",
+    "relevance": "Question asks specifically for doctor's plan, summary assessment to patient, and info guiding next steps. Generated refuses to answer claiming missing data (false), derails into off-topic patient symptom summary and 'knowledge graph assessment', does not address question elements."
+  },
+  "scores": {
+    "correctness": 1,
+    "completeness": 1,
+    "faithfulness": 1,
+    "relevance": 1
+  },
+  "average_score": 1.0,
+  "summary": "The Generated Answer is entirely incorrect, hallucinatory, and irrelevant, falsely denying the presence of key doctor statements in the transcript while providing fabricated patient summaries."
+}

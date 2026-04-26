@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer details screening via specific questions (fever [D-7/P-7], runny nose [D-8/P-8], sick contacts [D-10/P-10], travel [D-11/P-11], rashes [D-13/P-13], phlegm [D-31/P-31]) for infections, URIs, contagious/exposure issues, systemic/allergic/viral conditions, and productive coughs, narrowing to reactive airway disease. Generated Answer correctly identifies purposes for fever, runny nose, and phlegm but falsely claims transcript lacks sick contacts, travel, and rashes (which are present), introduces unrelated 'knowledge graph', and shifts focus to asthma/allergies with extra details (e.g., viral history [P-15], Reactine [P-35/36]). Significant contradictions on transcript content and partial mismatch in narrowing (asthma vs. reactive airway).",
+    "completeness": "Gold key points: 6 specific questions/purposes/responses + pain [D-14/P-14], looks fine [P-9], past virals [P-16], narrowing to reactive. Generated covers fever, runny nose, phlegm (3/6, ~50%) but misses/denies sick contacts, travel, rashes, pain; adds unrelated allergies/exertion/duration. Covers 50-79% of core screening points but incomplete on listed questions.",
+    "faithfulness": "Generated verifiable on fever [D-7], runny nose [D-8], phlegm [P-31], viral history [P-15], allergies [P-35/36]. Hallucinates absence of sick contacts [D-10], travel [D-11], rashes [D-13]; invents 'knowledge graph' and Reactine links not in transcript context; adds unasked exertional details as primary narrowing. Multiple hallucinated absences and extras make it not fully grounded.",
+    "relevance": "Question focuses on specific 6 questions (fever, runny nose, sick contacts, travel, rashes, phlegm) and responses narrowing differential. Generated addresses 3/6 directly, denies 3 exist (off-topic deflection), adds asthma/allergies/exertion/viral history (tangential to question's scope), concludes on asthma. Partially on-topic but diluted by errors and extras."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 3,
+    "faithfulness": 2,
+    "relevance": 3
+  },
+  "average_score": 2.5,
+  "summary": "The Generated Answer has significant factual errors by denying key transcript elements, partial coverage of screening questions, hallucinations about missing content, and some irrelevant additions, leading to a middling evaluation."
+}

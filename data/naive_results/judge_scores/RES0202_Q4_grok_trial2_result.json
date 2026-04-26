@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Step-by-step: The Gold Answer correctly identifies 'asthma' from [D-45] as the condition that would be added to the differential if there was no fever (just cough or shortness of breath), and fever as the finding excluding it, leading to infection workup. The Generated Answer wrongly claims 'another viral illness' from [D-44] as the condition, linking it to severe symptoms like 'really high temperature' or neurological issues, excluded because temperature was only 'a little high' without neuro symptoms. This misinterprets [D-44] (which discusses post-COVID test possibilities and ER criteria for worsening, not differential changes based on presentation). No facts align; fully contradictory. Score: 1",
+    "completeness": "Gold key points: (1) Condition = asthma; (2) Added if just cough/SOB without fever ([D-45]); (3) Fever (>100°F, [P-1/P-2]) excludes it, favors infection ([D-45]); (4) Supporting: no wheezing ([P-7]), uncertain SOB ([P-8]). Generated covers none of these (wrong condition, wrong citation, wrong exclusion reason). 0% coverage. Score: 1",
+    "faithfulness": "Generated claims unverifiable in transcript: [D-44] mentions 'another viral illness' only if COVID negative, not as something 'added to differential if presentation different'; worsening signs (high temp, neuro) are ER triggers, not exclusion criteria for a differential condition. No mention of viral illness being conditionally added/excluded based on presentation. Citations inaccurate/misapplied; hallucinates conditional differential logic. Largely fabricated. Score: 1",
+    "relevance": "Generated structures response to directly name a 'condition' ('another viral illness') and 'specific clinical finding' (temp 'a little high' not 'really high', no neuro symptoms), attempting to address the question's two parts. However, pulls from irrelevant transcript section ([D-44] vs [D-45]), making content partially off-topic/misaligned with actual doctor statement. Some off-topic content due to misinterpretation. Score: 3"
+  },
+  "scores": {
+    "correctness": 1,
+    "completeness": 1,
+    "faithfulness": 1,
+    "relevance": 3
+  },
+  "average_score": 1.5,
+  "summary": "The Generated Answer fails across most dimensions by misidentifying the condition as 'another viral illness' from the wrong transcript section, hallucinating exclusion logic, and covering none of the Gold Answer's key points."
+}

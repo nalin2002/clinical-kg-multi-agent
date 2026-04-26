@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer accurately extracts nasal symptoms (stuffy/runny nose, initially stuffy then mostly running, 1 week duration), clear discharge, and explicit denials (cough [P-4], post-nasal drip [P-6], sore throat/SOB/fevers/chills [P-7], loss of taste/smell [P-16]). Generated Answer correctly identifies stuffy/runny nose and clear discharge but incompletely describes nasal symptoms (misses evolution and precise duration confirmation) and completely errs on denials, claiming none were explicit despite clear 'No' responses in transcript matching Gold. This introduces significant contradictions on a core question component.",
+    "completeness": "Gold key points: stuffy nose (initially prominent), runny nose, 1 week (on/off), evolution to mostly running, clear discharge, denials of cough, post-nasal drip, sore throat/SOB/fevers/chills, loss of taste/smell. Generated covers stuffy/runny (partial, misses details), clear discharge; misses all denial details and nasal evolution. Covers ~30% of key points (nasal basics + discharge, zero on denials).",
+    "faithfulness": "Generated claims verifiable for nasal symptoms [P-1, P-3 partial, P-5] and discharge [P-5]. However, asserts no explicit denials of listed symptoms despite direct transcript evidence ([P-4] 'No' to cough, [P-6] 'Uh no' to post-nasal, [P-7] 'No' to sore throat etc., [P-16] 'No' to taste/smell); misattributes only denial to unrelated [P-27] diabetes. Also references non-existent 'knowledge graph'. Multiple ungrounded/misread claims.",
+    "relevance": "Generated directly structures response to question components (nasal symptoms, discharge character, denied symptoms) with bullet points mirroring query; no off-topic content despite errors."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 2.5,
+  "summary": "The Generated Answer partially captures nasal symptoms and discharge accurately but fails completely on explicit denials, introducing major factual errors and misreadings of the transcript."
+}

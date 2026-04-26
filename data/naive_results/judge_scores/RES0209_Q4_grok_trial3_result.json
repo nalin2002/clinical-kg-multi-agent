@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Step-by-step: Gold Answer lists specific symptoms screened (colds/infections, loss of taste/smell, fevers, nausea/vomiting, belly pain, dry cough) and exposures (sick contacts at home/frequent, outside home, travel), all denied with citations, plus explanation and COVID swab plan. Generated Answer incorrectly identifies screening as only 'health problems besides asthma' (D-29, which is general not infectious-specific), mislinks patient response (P-2 is asthma history, not screening), mentions dry cough/wheezing (partial match but not framed as screening), and correctly notes COVID swab. Significant errors in identifying what was screened and responses; contradicts Gold by missing core screening elements.",
+    "completeness": "Key points from Gold: symptoms (colds/infections [D-21/P-21], taste/smell [D-25/P-25], fevers [D-26/P-26], nausea/vomiting [D-27/P-27], belly pain [D-28/P-28], dry cough [D-14/P-14]); exposures (home/frequent sick [D-22/P-22], outside sick [D-23/P-23], travel [D-24/P-24]); all denied; D-29 explanation; COVID swab planned. Generated covers dry cough partially and COVID swab; misses 90%+ (all specific denials, exposures, most symptoms). Covers <20%.",
+    "faithfulness": "Generated claims verifiable: D-29 question exists (but not infectious screening), P-1/P-15/D-14 correct for cough/wheeze, D-29 for swab. However, hallucinates/misapplies that D-29 'health problems' question is the infectious screening (actual screening D-21-D-28 explained in D-29), wrongly attributes P-2 as response to screening (it's asthma history). Multiple misinterpretations bordering on hallucination in context.",
+    "relevance": "Question asks for specific symptoms/exposures screened for infection/COVID, responses, planned test. Generated attempts to address screening/responses/test but selects irrelevant/wrong transcript sections (general health, asthma history), omits exposures entirely, includes off-topic asthma details; partially on-topic but largely misses core query elements."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 1,
+    "faithfulness": 2,
+    "relevance": 3
+  },
+  "average_score": 2.0,
+  "summary": "The Generated Answer significantly misidentifies the infectious screening questions and responses, covering only a tiny fraction of the Gold Answer's key points while remaining somewhat grounded but poorly relevant."
+}

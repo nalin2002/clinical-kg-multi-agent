@@ -1,0 +1,208 @@
+{
+  "nodes": [
+    {
+      "id": "N_001",
+      "text": "wheezy",
+      "type": "SYMPTOM",
+      "evidence": "she's been quite wheezy",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_002",
+      "text": "short of breath",
+      "type": "SYMPTOM",
+      "evidence": "sounds like she's a little short of breath",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_003",
+      "text": "cough",
+      "type": "SYMPTOM",
+      "evidence": "now she has a slight cough",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_004",
+      "text": "difficulty taking in deep breaths",
+      "type": "SYMPTOM",
+      "evidence": "difficulty taking in deep breaths",
+      "turn_id": "P-2"
+    },
+    {
+      "id": "N_005",
+      "text": "out of breath",
+      "type": "SYMPTOM",
+      "evidence": "quite out of breath after",
+      "turn_id": "P-3"
+    },
+    {
+      "id": "N_006",
+      "text": "fevers",
+      "type": "SYMPTOM",
+      "evidence": "Has she had any fevers",
+      "turn_id": "D-7"
+    },
+    {
+      "id": "N_007",
+      "text": "runny nose",
+      "type": "SYMPTOM",
+      "evidence": "Has she had a runny nose",
+      "turn_id": "D-8"
+    },
+    {
+      "id": "N_008",
+      "text": "phlegm",
+      "type": "SYMPTOM",
+      "evidence": "brought anything up",
+      "turn_id": "P-31"
+    },
+    {
+      "id": "N_009",
+      "text": "straining to breathe",
+      "type": "SYMPTOM",
+      "evidence": "really straining to breathe, really struggling",
+      "turn_id": "P-32"
+    },
+    {
+      "id": "N_010",
+      "text": "trouble sleeping",
+      "type": "SYMPTOM",
+      "evidence": "Trouble falling asleep",
+      "turn_id": "P-44"
+    },
+    {
+      "id": "N_011",
+      "text": "viral infection",
+      "type": "DIAGNOSIS",
+      "evidence": "some sort of viral infection",
+      "turn_id": "P-15"
+    },
+    {
+      "id": "N_012",
+      "text": "seasonal allergies",
+      "type": "DIAGNOSIS",
+      "evidence": "she has some seasonal allergies",
+      "turn_id": "P-35"
+    },
+    {
+      "id": "N_013",
+      "text": "reactine",
+      "type": "TREATMENT",
+      "evidence": "Reactive",
+      "turn_id": "P-36"
+    },
+    {
+      "id": "N_014",
+      "text": "ultrasound",
+      "type": "PROCEDURE",
+      "evidence": "ultrasound",
+      "turn_id": "P-51"
+    },
+    {
+      "id": "N_015",
+      "text": "antenatal care",
+      "type": "PROCEDURE",
+      "evidence": "saw doctor for ultrasounds and just for checkups",
+      "turn_id": "P-25"
+    },
+    {
+      "id": "N_016",
+      "text": "physical exam",
+      "type": "PROCEDURE",
+      "evidence": "going to do a physical exam",
+      "turn_id": "D-57"
+    },
+    {
+      "id": "N_017",
+      "text": "immunizations",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "up to date for immunizations",
+      "turn_id": "P-21"
+    },
+    {
+      "id": "N_018",
+      "text": "infections",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "couple of infections over the past two years",
+      "turn_id": "P-15"
+    },
+    {
+      "id": "N_019",
+      "text": "vaginal delivery",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "vaginal delivery",
+      "turn_id": "P-23"
+    },
+    {
+      "id": "N_020",
+      "text": "full term",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "full term",
+      "turn_id": "P-23"
+    },
+    {
+      "id": "N_021",
+      "text": "drink any alcohol",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "drink any alcohol",
+      "turn_id": "P-24"
+    },
+    {
+      "id": "N_022",
+      "text": "smoke at all",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "smoke at all",
+      "turn_id": "P-24"
+    },
+    {
+      "id": "N_023",
+      "text": "8 pounds",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "8 pounds",
+      "turn_id": "P-28"
+    },
+    {
+      "id": "N_024",
+      "text": "colder weather",
+      "type": "SYMPTOM",
+      "evidence": "worse when um when when there's colder weather",
+      "turn_id": "P-38"
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "N_001",
+      "target_id": "N_002",
+      "type": "INDICATES",
+      "evidence": "sounds like she's a little short of breath",
+      "turn_id": "P-1"
+    },
+    {
+      "source_id": "N_001",
+      "target_id": "N_004",
+      "type": "INDICATES",
+      "evidence": "difficulty taking in deep breaths",
+      "turn_id": "P-2"
+    },
+    {
+      "source_id": "N_013",
+      "target_id": "N_012",
+      "type": "TAKEN_FOR",
+      "evidence": "Sometimes she takes... for seasonal allergies",
+      "turn_id": "P-36"
+    },
+    {
+      "source_id": "N_024",
+      "target_id": "N_001",
+      "type": "CAUSES",
+      "evidence": "worse when um when when there's colder weather",
+      "turn_id": "P-38"
+    }
+  ],
+  "_usage": {
+    "prompt_tokens": 2621,
+    "completion_tokens": 8228,
+    "reasoning_tokens": 5997,
+    "cost": 0.00380014
+  }
+}

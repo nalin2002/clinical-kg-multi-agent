@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer fails to address the specific constraint of the question regarding symptoms and risks that the patient *denied*. Instead, it lists symptoms the patient *reported* (fatigue, sleep disturbance). Furthermore, it incorrectly classifies 'Eczema' as an 'exposure risk' when it is medical history. It correctly identifies Tuberculosis as a condition to exclude but omits the other details like lung malignancy or endemic infections mentioned in the Gold Answer.",
+    "completeness": "The Generated Answer misses almost all key points from the Gold Answer. Specifically, it misses the denied symptoms (night sweats, weight loss, hemoptysis, stiff neck, nausea, body pain) and the denied exposure risks (sick contacts, travel, IV drug use). It only covers the 'conditions to exclude' section partially.",
+    "faithfulness": "The symptoms and history mentioned (fatigue, sleep disturbance, eczema) are present in the transcript, but they are misapplied to the question's specific request for 'denied' items. The Generated Answer does not hallucinate facts outside the transcript, but it misinterprets the prompt's direction.",
+    "relevance": "The answer is largely irrelevant to the primary part of the question. By listing reported symptoms instead of denied ones, it fails to provide the information requested by the user."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 1,
+    "faithfulness": 4,
+    "relevance": 2
+  },
+  "average_score": 2.25,
+  "summary": "The Generated Answer fails to provide the list of denied symptoms and risks requested by the prompt, instead providing reported symptoms and misclassifying medical history."
+}

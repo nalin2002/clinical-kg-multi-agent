@@ -1,0 +1,283 @@
+{
+  "nodes": [
+    {
+      "id": "N_001",
+      "text": "nasal congestion",
+      "type": "SYMPTOM",
+      "evidence": "stuffy nose",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_002",
+      "text": "fatigue",
+      "type": "SYMPTOM",
+      "evidence": "a little bit",
+      "turn_id": "P-15"
+    },
+    {
+      "id": "N_003",
+      "text": "absent cough",
+      "type": "SYMPTOM",
+      "evidence": "No",
+      "turn_id": "P-4"
+    },
+    {
+      "id": "N_004",
+      "text": "absent sore throat",
+      "type": "SYMPTOM",
+      "evidence": "No",
+      "turn_id": "P-7"
+    },
+    {
+      "id": "N_005",
+      "text": "absent fever",
+      "type": "SYMPTOM",
+      "evidence": "No",
+      "turn_id": "P-7"
+    },
+    {
+      "id": "N_006",
+      "text": "absent chills",
+      "type": "SYMPTOM",
+      "evidence": "No",
+      "turn_id": "P-7"
+    },
+    {
+      "id": "N_007",
+      "text": "absent headache",
+      "type": "SYMPTOM",
+      "evidence": "Nope, nothing like that",
+      "turn_id": "P-14"
+    },
+    {
+      "id": "N_008",
+      "text": "absent nausea",
+      "type": "SYMPTOM",
+      "evidence": "Nope, nothing like that",
+      "turn_id": "P-14"
+    },
+    {
+      "id": "N_009",
+      "text": "absent vomiting",
+      "type": "SYMPTOM",
+      "evidence": "Nope, nothing like that",
+      "turn_id": "P-14"
+    },
+    {
+      "id": "N_010",
+      "text": "absent chest pain",
+      "type": "SYMPTOM",
+      "evidence": "No",
+      "turn_id": "P-17"
+    },
+    {
+      "id": "N_011",
+      "text": "absent palpitations",
+      "type": "SYMPTOM",
+      "evidence": "No",
+      "turn_id": "P-17"
+    },
+    {
+      "id": "N_012",
+      "text": "absent dysuria",
+      "type": "SYMPTOM",
+      "evidence": "Um no",
+      "turn_id": "P-19"
+    },
+    {
+      "id": "N_013",
+      "text": "absent weight loss",
+      "type": "SYMPTOM",
+      "evidence": "No, no, no, nothing like that",
+      "turn_id": "P-21"
+    },
+    {
+      "id": "N_014",
+      "text": "common cold",
+      "type": "DIAGNOSIS",
+      "evidence": "common cold",
+      "turn_id": "D-39"
+    },
+    {
+      "id": "N_015",
+      "text": "viral infection",
+      "type": "DIAGNOSIS",
+      "evidence": "viral infection",
+      "turn_id": "D-39"
+    },
+    {
+      "id": "N_016",
+      "text": "decongestant",
+      "type": "TREATMENT",
+      "evidence": "decongestants",
+      "turn_id": "P-10"
+    },
+    {
+      "id": "N_017",
+      "text": "insulin",
+      "type": "TREATMENT",
+      "evidence": "insulin",
+      "turn_id": "P-25"
+    },
+    {
+      "id": "N_018",
+      "text": "acetaminophen",
+      "type": "TREATMENT",
+      "evidence": "Tylenol cold",
+      "turn_id": "D-39"
+    },
+    {
+      "id": "N_019",
+      "text": "nose",
+      "type": "LOCATION",
+      "evidence": "nose",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_020",
+      "text": "throat",
+      "type": "LOCATION",
+      "evidence": "throat",
+      "turn_id": "P-6"
+    },
+    {
+      "id": "N_021",
+      "text": "type 1 diabetes",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "type one diabetes",
+      "turn_id": "P-23"
+    },
+    {
+      "id": "N_022",
+      "text": "nasal swab",
+      "type": "PROCEDURE",
+      "evidence": "[D-39] D: ...we will also get a swab done for you today...",
+      "turn_id": "D-39"
+    },
+    {
+      "id": "N_023",
+      "text": "covid-19",
+      "type": "DIAGNOSIS",
+      "evidence": "[P-1] P: ...in case I have covid.",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_NEW_001",
+      "text": "clear nasal discharge",
+      "type": "LAB_RESULT",
+      "evidence": "Patient states discharge is 'mostly clear'",
+      "turn_id": "[P-5]-[D-5]"
+    },
+    {
+      "id": "N_NEW_002",
+      "text": "marijuana use (edible, once per month)",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "Patient reports consuming an edible about once a month",
+      "turn_id": "[P-34]-[P-35]"
+    },
+    {
+      "id": "N_NEW_003",
+      "text": "daycare exposure",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "Patient lives with a nephew who goes to daycare",
+      "turn_id": "[P-11]-[P-12]"
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "N_001",
+      "target_id": "N_019",
+      "type": "LOCATED_AT",
+      "evidence": "stuffy nose",
+      "turn_id": "P-1"
+    },
+    {
+      "source_id": "N_018",
+      "target_id": "N_015",
+      "type": "TAKEN_FOR",
+      "evidence": "Tylenol cold",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_001",
+      "target_id": "N_014",
+      "type": "INDICATES",
+      "evidence": "[D-39] D: ...it seems like it's most likely a viral infection like the common cold.",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_001",
+      "target_id": "N_015",
+      "type": "INDICATES",
+      "evidence": "[D-39] D: ...it seems like it's most likely a viral infection like the common cold.",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_001",
+      "target_id": "N_023",
+      "type": "INDICATES",
+      "evidence": "[D-39] D: ...some of these symptoms can also be seen in covid patients...",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_016",
+      "target_id": "N_001",
+      "type": "TAKEN_FOR",
+      "evidence": "[P-10] P: Um I've tried like decongestants and.",
+      "turn_id": "P-10"
+    },
+    {
+      "source_id": "N_022",
+      "target_id": "N_023",
+      "type": "RULES_OUT",
+      "evidence": "[D-39] D: ...we will also get a swab done for you today...",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_018",
+      "target_id": "N_001",
+      "type": "TAKEN_FOR",
+      "evidence": "[D-39] D: ...use over the counter medications uh like Tylenol cold. now, if you to relieve some of your symptoms...",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_004",
+      "target_id": "N_020",
+      "type": "LOCATED_AT",
+      "evidence": "back of your throat as well",
+      "turn_id": "D-7"
+    },
+    {
+      "source_id": "N_002",
+      "target_id": "N_015",
+      "type": "INDICATES",
+      "evidence": "A little bit",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_016",
+      "target_id": "N_014",
+      "type": "TAKEN_FOR",
+      "evidence": "use over the counter medications ... to relieve some of your symptoms",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_018",
+      "target_id": "N_014",
+      "type": "TAKEN_FOR",
+      "evidence": "use over the counter medications ... to relieve some of your symptoms",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_003",
+      "target_id": "N_020",
+      "type": "LOCATED_AT",
+      "evidence": "Absence of cough located in the throat area",
+      "turn_id": "[D-4]-[P-6]"
+    }
+  ],
+  "_usage": {
+    "prompt_tokens": 12848,
+    "completion_tokens": 42118
+  }
+}

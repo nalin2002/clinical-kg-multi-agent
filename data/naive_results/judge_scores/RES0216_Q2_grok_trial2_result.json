@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer accurately lists salbutamol (inhaler taken), Ramipril for HBP, Tylenol occasional for headaches, and details adherence: daily inhaler prescribed twice daily but reduced to morning only for a while with no issues, no rescue refill for couple years. Generated Answer correctly lists the three meds but incorrectly specifies salbutamol for 'asthma reoccurring' (clinician suspicion, not patient prescription), claims 'consistent daily dosing frequency' contradicting P-19 (skipping night dose), cites non-existent KG; core meds list correct but adherence facts significantly wrong. Score: 2.",
+    "completeness": "Gold covers meds with citations/conditions; daily inhaler twice-daily prescribed but now only morning (P-19), justification (P-20), no rescue couple years (P-17/18), not stopped recently, clinician note, two gaps. Generated covers meds/conditions fully but adherence only partially: misses prescribed twice-daily vs now morning-only change, skipping history, justification; only notes 'consistent daily' (wrong) and rescue lapse. Covers ~60% key points. Score: 3.",
+    "faithfulness": "Generated cites transcript (P-25/26/27/17) but fabricates 'knowledge graph [KG]' citations not in source; 'asthma reoccurring' from clinician hypothesis (D-35) not patient prescription; 'consistent daily dosing' misreads P-17 ignoring P-19 contradiction; Tylenol 'prescribed' overstated (occasional PRN). Multiple hallucinations via KG and factual distortion. Score: 2.",
+    "relevance": "Generated directly structures response to meds/conditions and adherence (dosing frequency, rescue availability), no tangents, perfectly matches question focus despite errors. Score: 5."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 3,
+    "faithfulness": 2,
+    "relevance": 5
+  },
+  "average_score": 3.0,
+  "summary": "The Generated Answer accurately identifies medications and conditions but contains significant errors and hallucinations in describing asthma inhaler adherence changes, particularly falsely claiming consistent dosing while missing key reductions."
+}

@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer details family history (father's HA last year in 50s, sees heart doctors [P-8,P-30], scares patient [P-8], grandpa accident [P-30]), smoking (started 18, 10/day for 2 years, now 5/day, hard to quit [P-13,14,18]), stressors (thesis pressure [P-15,16], living alone [P-26,27], nervous running [P-28], links to stress [P-8], nervous breathing [P-19], past anxiety [P-22]). Generated covers core (FH scares via dad [P-8], smoking quit attempt [P-14], stress triggers [P-4]), but errors: attributes no doctor visit to family worry (P-21 is anxiety), misquotes P-28 (says 'school books' instead of non-school), infers running 'for anxiety' wrongly, adds unstated direct smoking-heart link, introduces external KG facts not in Gold/transcript. Main points align but discrepancies present.",
+    "completeness": "Covered: FH (dad 50s last year scares [P-8]); smoking (5/day quit [P-14]); stress (studying/walking [P-4], P-28 partial). Missed: FH details (heart doctors [P-30], grandpa [P-30]); full smoking hx (start 18, prior 10/day 2yrs [P-18]); stress specifics (thesis time crunch [P-15,16], alone [P-26,27], nervous running accurately [P-28], breathing [P-19], past anxiety [P-22]). Covers ~60% key points.",
+    "faithfulness": "Claims verifiable: FH/scare [P-8], smoking [P-14], pain triggers [P-4]. Inaccurate: P-28 inverted (relaxing books, not school), running 'for anxiety' (enjoys but nervous lately), no-dr visit due to family (P-21 anxiety), smoking->HA direct link/KG not in transcript, synthesis OTC failure not tied to concern in transcript. Multiple hallucinations/misquotes.",
+    "relevance": "Directly structures answer around the three factors (FH, smoking, stressors), their contributions/mechanisms to heart concern, interactions in synthesis, with transcript details cited; no off-topic content."
+  },
+  "scores": {
+    "correctness": 3,
+    "completeness": 3,
+    "faithfulness": 2,
+    "relevance": 5
+  },
+  "average_score": 3.25,
+  "summary": "The Generated Answer addresses the question structure well with relevant focus but suffers from factual inaccuracies, incomplete coverage of Gold details, and hallucinations/misquotes from the transcript."
+}

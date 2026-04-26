@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer accurately captures the doctor's assessment of asthma recurrence as the top differential [D-35], matching the Gold Answer. Physical exam (listening to lungs [D-35]) and first-step treatment (rescue puffers trial on walks [D-35]) are correctly stated. Contingency plan (reassess if no improvement [D-35]) aligns well. Minor discrepancies include specifying 'salbutamol' for rescue (patient's daily inhaler is salbutamol [P-25], but rescue is as-needed which patient lacks [P-17,P-18]) and omitting 'in some capacity' or pending findings; core facts are consistent.",
+    "completeness": "Key points covered: assessment (asthma top differential), phys exam (listen to lungs), first-step (rescue puffers on walks), contingency (back to table if no help). Missed or partially covered: 'in some capacity' phrasing, explicit pending exam/findings for assessment, patient lacks rescue inhaler, stepwise 'one thing at a time' [D-36], consult with supervising doc [D-35,D-37], further investigations depending on findings. Covers ~85-90% of Gold Answer points.",
+    "faithfulness": "Most claims grounded: assessment, exam, treatment, contingency all directly from [D-35] and verifiable. Patient takes salbutamol daily [P-25] supports naming, though context is daily not rescue. Hallucination: '[KG]' reference to knowledge graph not in transcript. No other fabrications; minor unverifiable detail.",
+    "relevance": "Generated Answer directly structures response around the question's elements (assessment, phys exam, first-step treatment, contingency), with no off-topic content or tangents."
+  },
+  "scores": {
+    "correctness": 4,
+    "completeness": 4,
+    "faithfulness": 4,
+    "relevance": 5
+  },
+  "average_score": 4.25,
+  "summary": "The Generated Answer is mostly accurate and complete, faithfully grounded in the transcript with strong relevance, marred only by minor hallucinations and omissions."
+}

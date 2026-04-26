@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer accurately identifies COVID-19 as the condition both patient (P-1) and doctor (D-39) wanted to rule out, matching Gold. Test is correctly 'swab' (D-39), turnaround '48 hours' (D-39), and main instruction 'stay isolated' (D-39). Minor omission of doctor's initial agreement (D-2) and 'further instructions from public health', but no factual errors or contradictions.",
+    "completeness": "Gold key points: condition COVID-19 by both (P-1, D-2, D-39); test swab today (D-39); TAT 48 hours (D-39); instructions stay isolated/not see others + public health follow-up (D-39). Generated covers condition (P-1, D-39), test, TAT, main isolation instruction. Misses D-2 cite, 'today', and public health part (~90% coverage).",
+    "faithfulness": "All claims directly verifiable: P-1 patient concern, D-39 doctor acknowledgment/test/TAT/instructions. Citations accurate to transcript. 'Knowledge graph' mention unverifiable but not central; no hallucinations in core facts.",
+    "relevance": "Generated Answer uses bullet structure directly mapping to question's four elements (condition, test, TAT, instructions), fully focused with no off-topic content."
+  },
+  "scores": {
+    "correctness": 5,
+    "completeness": 4,
+    "faithfulness": 5,
+    "relevance": 5
+  },
+  "average_score": 4.75,
+  "summary": "The Generated Answer is highly accurate, relevant, and faithful, with near-complete coverage of Gold Answer key points, missing only minor details."
+}

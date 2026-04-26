@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer is largely inconsistent with the Gold Answer.\n- It incorrectly states the doctor “confirmed the diagnosis of a common cold,” which is not stated in the transcript or Gold Answer.\n- It lists “night sweats” as a key finding and implies confirmation; in the transcript the doctor defines night sweats as soaked sheets and Jessica does not endorse that—she says she feels hot all the time.\n- It fails to report the doctor’s actual end-of-visit summary in D-58 (3–4 days dry cough, a little fever, headache, no sputum, limited sick contacts except brother 2 weeks prior, no asthma, only meds Claritin).\n- It misidentifies Jessica’s primary goal: per P-60 her goal is to know whether she needs to “take medicine or something,” not simply to end the visit or have no more questions (and it incorrectly cites P-59 for this).\nOverall, the core requested elements (doctor recap + Jessica’s next-step goal) are wrong or missing.",
+    "completeness": "Key Gold Answer points covered vs missed:\n- Covered (partially): mentions headache and fever in general terms.\n- Missed: 3–4 day duration; dry cough; no sputum production; sick contact detail (brother had a cold ~2 weeks ago); no asthma; meds only Claritin; the doctor’s framing of the visit purpose as “next steps and where to go from here”; Jessica’s stated goal of knowing if she needs medicine; Jessica’s desire to go home and rest.\nCoverage is well under half of the Gold Answer’s key points.",
+    "faithfulness": "Several statements are not supported by the transcript:\n- “Confirmed the diagnosis of a common cold” and references to a “knowledge graph” are not in the transcript.\n- “Night sweats” are not confirmed as a symptom in the transcript.\n- The claimed primary goal (“conclude the appointment without further inquiries,” citing P-59) is not what Jessica says in P-60/P-61.\nSome elements (that headache/fever were discussed) are grounded, but multiple major claims are hallucinated or misattributed.",
+    "relevance": "The response is generally on the topic of (1) clinical findings and (2) patient goal/next steps, which matches the question. However, it introduces an unsupported diagnosis and focuses on the wrong stated goal, reducing practical relevance to what was asked."
+  },
+  "scores": {
+    "correctness": 1,
+    "completeness": 1,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 2.0,
+  "summary": "The answer attempts to address the doctor’s recap and Jessica’s goal, but it omits most of the actual summarized findings and incorrectly states both a diagnosis and Jessica’s primary next-step goal."
+}

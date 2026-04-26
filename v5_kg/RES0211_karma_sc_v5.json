@@ -1,0 +1,234 @@
+{
+  "nodes": [
+    {
+      "id": "N_001",
+      "text": "dry cough",
+      "type": "SYMPTOM",
+      "evidence": "I just like for I don't know like three or four days I’ve been having this really dry cough",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_002",
+      "text": "headache",
+      "type": "SYMPTOM",
+      "evidence": "And my head’s pounding",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_003",
+      "text": "malaise",
+      "type": "SYMPTOM",
+      "evidence": "We called that Malays in general. Just feeling a little bit off",
+      "turn_id": "D-15"
+    },
+    {
+      "id": "N_004",
+      "text": "common cold",
+      "type": "DIAGNOSIS",
+      "evidence": "you kind of had a three to four day dry cough with a little bit of fever, some headache",
+      "turn_id": "D-58"
+    },
+    {
+      "id": "N_005",
+      "text": "throat",
+      "type": "LOCATION",
+      "evidence": "my throat feels really scratchy",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_006",
+      "text": "head",
+      "type": "LOCATION",
+      "evidence": "And my head’s pounding",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_007",
+      "text": "allergies",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "my dad has allergies too",
+      "turn_id": "P-33"
+    },
+    {
+      "id": "N_NEW_001",
+      "text": "seen an allergist",
+      "type": "PROCEDURE",
+      "evidence": "[P-16] I've seen an allergist",
+      "turn_id": "P-16"
+    },
+    {
+      "id": "N_NEW_002",
+      "text": "allergy shots",
+      "type": "PROCEDURE",
+      "evidence": "[P-16] some years I've gotten allergy shots",
+      "turn_id": "P-16"
+    },
+    {
+      "id": "N_NEW_003",
+      "text": "alcohol use",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "[P-55] Like before Covid, when I saw my friends like sometimes a little bit",
+      "turn_id": "P-55"
+    },
+    {
+      "id": "N_NEW_004",
+      "text": "marijuana use",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "[P-57] Like I tried marijuana once at a party like a couple years ago",
+      "turn_id": "P-57"
+    },
+    {
+      "id": "N_NEW_005",
+      "text": "farm environment",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "[P-43] Yeah, like I'm on a farm [P-44] OK, in London? Like just outside",
+      "turn_id": "P-43"
+    },
+    {
+      "id": "N_NEW_006",
+      "text": "birth control use",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "[P-25] I take birth control [P-27] yeah, it's just like the pill",
+      "turn_id": "P-25"
+    },
+    {
+      "id": "N_ADD_001",
+      "text": "absent expectoration",
+      "type": "SYMPTOM",
+      "evidence": "P: 'No, I haven't been bringing anything up with it?'",
+      "turn_id": "D-5"
+    },
+    {
+      "id": "N_ADD_002",
+      "text": "absent phlegm",
+      "type": "SYMPTOM",
+      "evidence": "P: 'no nothing.'",
+      "turn_id": "D-6"
+    },
+    {
+      "id": "N_ADD_003",
+      "text": "absent rash",
+      "type": "SYMPTOM",
+      "evidence": "P: 'I don't... I haven't really been looking, but you know.'",
+      "turn_id": "D-10"
+    },
+    {
+      "id": "N_ADD_004",
+      "text": "absent nausea",
+      "type": "SYMPTOM",
+      "evidence": "P: 'No, not that. No, nothing like that.'",
+      "turn_id": "D-11"
+    },
+    {
+      "id": "N_ADD_005",
+      "text": "absent diarrhea",
+      "type": "SYMPTOM",
+      "evidence": "P: 'No no.'",
+      "turn_id": "D-12"
+    },
+    {
+      "id": "N_ADD_006",
+      "text": "absent joint aches",
+      "type": "SYMPTOM",
+      "evidence": "P: 'No... I don't think they’re not like hurting.'",
+      "turn_id": "D-13"
+    },
+    {
+      "id": "N_ADD_007",
+      "text": "loratadine",
+      "type": "TREATMENT",
+      "evidence": "P: 'I take Claritin for allergies'",
+      "turn_id": "D-25"
+    },
+    {
+      "id": "N_ADD_008",
+      "text": "deyo",
+      "type": "TREATMENT",
+      "evidence": "P: 'Deyo'",
+      "turn_id": "D-26"
+    },
+    {
+      "id": "N_ADD_009",
+      "text": "exposure to sick family member",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "P: 'my brother we had like a cold a few weeks ago'",
+      "turn_id": "D-39"
+    },
+    {
+      "id": "N_ADD_010",
+      "text": "living with parents",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "P: 'I live with them right now'",
+      "turn_id": "D-36"
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "N_001",
+      "target_id": "N_004",
+      "type": "INDICATES",
+      "evidence": "you kind of had a three to four day dry cough with a little bit of fever, some headache",
+      "turn_id": "D-58"
+    },
+    {
+      "source_id": "N_002",
+      "target_id": "N_004",
+      "type": "INDICATES",
+      "evidence": "you kind of had a three to four day dry cough with a little bit of fever, some headache",
+      "turn_id": "D-58"
+    },
+    {
+      "source_id": "N_003",
+      "target_id": "N_004",
+      "type": "INDICATES",
+      "evidence": "you kind of had a three to four day dry cough with a little bit of fever, some headache",
+      "turn_id": "D-58"
+    },
+    {
+      "source_id": "N_001",
+      "target_id": "N_005",
+      "type": "LOCATED_AT",
+      "evidence": "I just like for I don't know like three or four days I’ve been having this really dry cough and my throat feels really scratchy",
+      "turn_id": "P-1"
+    },
+    {
+      "source_id": "N_002",
+      "target_id": "N_006",
+      "type": "LOCATED_AT",
+      "evidence": "And my head’s pounding",
+      "turn_id": "P-1"
+    },
+    {
+      "source_id": "N_ADD_001",
+      "target_id": "N_004",
+      "type": "INDICATES",
+      "evidence": "D: 'you have a common cold'",
+      "turn_id": "D-59"
+    },
+    {
+      "source_id": "N_ADD_002",
+      "target_id": "N_004",
+      "type": "INDICATES",
+      "evidence": "D: 'you have a common cold'",
+      "turn_id": "D-59"
+    },
+    {
+      "source_id": "N_ADD_003",
+      "target_id": "N_004",
+      "type": "INDICATES",
+      "evidence": "D: 'you have a common cold'",
+      "turn_id": "D-59"
+    },
+    {
+      "source_id": "N_ADD_009",
+      "target_id": "N_004",
+      "type": "CAUSES",
+      "evidence": "P: 'my brother we had like a cold a few weeks ago'",
+      "turn_id": "D-39"
+    }
+  ],
+  "_usage": {
+    "prompt_tokens": 19729,
+    "completion_tokens": 48764
+  }
+}

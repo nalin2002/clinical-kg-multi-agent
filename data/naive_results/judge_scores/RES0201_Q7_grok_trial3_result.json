@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer specifies precise chronology: sore throat Day 1 (4 days ago, progressively worsening, interferes with food), fatigue/muscle aches immediately after Day 1, taste Day 3 (2 days ago, constant, new), breathing Day 4 (yesterday, constant, worsening, new), failed treatments. Generated Answer correctly identifies sore throat onset 4 days ago and worsening but misplaces swallowing issues to Days 2-3 (transcript P-2 indicates from onset), places fatigue/muscles and taste/smell as 'current' (ignores P-26 'immediately after sore throat', P-20 'two days ago'), completely omits breathing difficulty (major symptom in P-7-P-11), misstates smell as 'loss (not really)' contradicting P-19 'not smell', and references non-existent 'knowledge graph'. Significant factual errors including omissions, wrong timelines, and contradictions.",
+    "completeness": "Gold key points: sore throat Day1/worsening/severity/swallowing; fatigue/muscles immediate post-Day1/details; taste Day3/details/no smell; breathing Day4/details; failed treatment; progressive worsening. Generated covers sore throat onset/worsening/swallowing/treatment (~full), taste reduced (~partial), fatigue/muscles (~partial, no timing), implies progression. Misses: all breathing details/timing, fatigue/taste precise timings, no smell unaffected confirmation, clear day-by-day accumulation and specifics like constant/worsening for each. Covers ~40% of key points.",
+    "faithfulness": "Claims mostly cite transcript accurately (P-2, P-6, P-19, P-25) but misinterprets P-19 as partial smell loss ('not really') when patient explicitly says 'not smell'; places swallowing as later progression contradicting P-2 (onset); no citation/timing for taste (hallucinated as current vs P-20); fabricates 'knowledge graph' reference not in transcript; omits verifiable breathing claims (P-7-P-11). Multiple hallucinations and misreads.",
+    "relevance": "Generated structures response around chronology (initial 4 days ago, Days 2-3 progression, current) and severity changes, directly addressing question on order from sore throat onset and changes over time; minor tangents like knowledge graph mention and sensory grouping but overall focused."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 2.5,
+  "summary": "The Generated Answer partially addresses chronology and severity but is significantly incomplete by omitting breathing difficulty, inaccurate on timelines and smell, with hallucinations like knowledge graph reference."
+}

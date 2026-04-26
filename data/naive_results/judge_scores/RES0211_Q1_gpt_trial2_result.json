@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer contains multiple factual errors compared with the Gold Answer and transcript. Correct: it identifies dry cough/scratchy throat and headache; it notes she felt hot and had general malaise; it notes sputum was denied (though the cited lines are wrong). Incorrect: it claims Jessica confirmed true night sweats with “sheets are soaked,” but she did not—she only reported feeling hot day and night. It also fabricates a sputum question at [D-33] and a denial at [P-29]; in the transcript [D-33] is about family eczema/allergies and [P-29] is a denial of asthma. It further states the transcript does not show inquiry/denial for nausea, joint pain, or rashes, which is directly contradicted by [D-10–D-13] and [P-10–P-13].",
+    "completeness": "Key reported symptoms missing or incompletely captured: it omits/does not clearly include “icky” feeling and tiredness as separate symptoms. Key explicitly denied symptoms largely missed: rashes/skin changes, nausea/vomiting, diarrhea, joint aches, and denial of breathing difficulty from allergies are all in the Gold Answer but not properly included. Only sputum/phlegm denial is mentioned (with incorrect citation). Overall coverage is well under 80%.",
+    "faithfulness": "Several statements are not grounded in the transcript: the invented sputum Q/A at [D-33]/[P-29], the assertion that she confirmed soaked-sheets night sweats, and the claim that the doctor did not ask about nausea/joint pain/rashes (he did). These constitute multiple hallucinations/unverifiable claims, although some symptom statements are supported by the transcript.",
+    "relevance": "The response is generally focused on the asked task (reported symptoms over 3–4 days and symptoms denied), but it includes a minor interpretive aside (“consistent with a common cold”) and is undermined by inaccurate assertions about what was/was not asked."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 2.5,
+  "summary": "The answer is on-topic but contains multiple transcript-contradicted claims and misses several key denied symptoms, resulting in low correctness, completeness, and faithfulness."
+}

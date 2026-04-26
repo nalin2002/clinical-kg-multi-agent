@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer accurately details local symptoms (redness, tenderness, soreness at specific site behind left knee, not joint, no bullseye rash) with correct citations [P-1, P-6, P-18, P-13] and systemic screenings (joint pain [D-7/P-7], fever/ill [D-8/P-8], headaches [D-19/P-19/P-20]). Generated Answer correctly captures core local symptoms (redness, tenderness, soreness, site details) from [P-1] and [P-6], but fabricates that systemic denials [P-7, P-8, P-19] relate to drug allergies (D-17, incorrect citations/attribution), and falsely claims no screening for fever, joint pain, or headaches despite explicit transcript evidence; this introduces significant contradictions on the key systemic component.",
+    "completeness": "Gold key points: Local (site/crease/stuck/sore skin not joint/red/tender/no bullseye/local only/totally fine/healthy); Systemic (joint pain denied, fever/ill denied, headaches denied). Generated covers local redness/tenderness/soreness/site/skin not joint (~60-70% of local points, misses no rash/healthy otherwise); covers 0% of systemic points (wrong allergies instead, denies screenings); overall ~30-40% coverage.",
+    "faithfulness": "Local claims verifiable in [P-1, P-6]; systemic claims hallucinate drug allergy screening tied to wrong [P-7/8/19] (actual joint/fever/headache denials), misrepresent D-17 context, and fabricate absence of fever/joint/headache screenings (directly contradicted by D-7/8/19); mentions non-existent 'Knowledge Graph'; multiple unverifiable/hallucinated elements.",
+    "relevance": "Addresses local symptoms directly and accurately; partially addresses systemic by discussing screenings/denials but focuses on irrelevant drug allergies and incorrectly denies the specified symptoms (fever/joint pain/headaches), introducing off-topic content and missing the question's core."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 3
+  },
+  "average_score": 2.25,
+  "summary": "The Generated Answer is mostly correct and relevant for local symptoms but significantly errs on systemic symptoms by hallucinating irrelevant drug allergy screening, mis-citing denials, and denying transcript evidence for the queried fever/joint pain/headache screenings."
+}

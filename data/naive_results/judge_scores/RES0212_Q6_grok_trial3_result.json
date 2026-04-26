@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer incorrectly claims the transcript contains only patient dialogue ([P-1] to [P-23]) with no doctor responses ([D-X]), making it impossible to answer; however, the full transcript includes doctor's statements up to [D-48], including [D-47] which directly provides the summary assessment, plan, and next steps as detailed in the Gold Answer. It also misstates symptom duration as 'one month' instead of three months and introduces unrelated 'knowledge graph' not present. This results in complete factual inaccuracy and contradiction with both transcript and Gold Answer.",
+    "completeness": "Gold Answer key points: doctor's summary in [D-47] (cough for ~3 months, worse last 3 days, nighttime awakening, greenish sputum no blood, no constitutional symptoms); plan to review story with supervising doctors [D-47]; next steps guided by supervising physician's assessment; no tests/treatments ordered. Generated Answer covers 0% of these, instead denying possibility and providing irrelevant patient symptom summary.",
+    "faithfulness": "Generated Answer hallucinates that no [D-X] segments exist (transcript has full [D-1] to [D-48]); fabricates transcript limitation to [P-23]; invents 'knowledge graph' and associations (e.g., cough duration 'one month', chest pain on coughing as general hurt); none verifiable in transcript, all claims largely fabricated.",
+    "relevance": "Question specifically asks for doctor's stated plan, summary assessment to patient, and info guiding next steps—all directly from doctor's words at end ([D-47/48]). Generated Answer refuses to answer claiming missing data (false), then provides off-topic patient symptom summary and non-existent knowledge graph, failing to address the question."
+  },
+  "scores": {
+    "correctness": 1,
+    "completeness": 1,
+    "faithfulness": 1,
+    "relevance": 1
+  },
+  "average_score": 1.0,
+  "summary": "The Generated Answer is entirely incorrect, incomplete, unfaithful, and irrelevant due to hallucinating the absence of doctor dialogue in the full transcript and providing fabricated, off-topic content instead of extracting the clear doctor's statements matching the Gold Answer."
+}

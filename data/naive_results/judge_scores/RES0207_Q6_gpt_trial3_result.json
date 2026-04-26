@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Gold Answer states the doctor said they would review the information with the doctor working today, then return shortly to discuss next steps, possibly including tests and how to move forward (D-37/D-38). The Generated Answer instead claims the next steps cannot be determined and incorrectly asserts the transcript ends at P-23. This directly contradicts the provided transcript, which clearly includes D-37 and D-38 outlining next steps. Therefore the Generated Answer is factually incorrect relative to the Gold Answer.",
+    "completeness": "Key Gold Answer points: (1) doctor will review with the doctor working today; (2) another physician involved in decision-making; (3) doctor will come back shortly; (4) possible tests; (5) plan to decide how to move forward; (6) no specific tests/treatments named; (7) patient agreed; (8) courteous close. The Generated Answer includes none of these substantive next-step details and instead claims the plan is not available. Coverage is essentially 0%.",
+    "faithfulness": "The Generated Answer is not grounded in the transcript: it claims the transcript ends at P-23 and that there are no subsequent doctor turns, which is demonstrably false because D-37 and D-38 are present and contain the relevant plan. This is a major unfaithful claim about the source content (effectively fabricating transcript incompleteness).",
+    "relevance": "It attempts to answer the question by stating the next steps are indeterminable, but it does not provide the requested next steps, involved decision-makers, or follow-up actions. Most of the response is meta-commentary about missing information rather than addressing the consultation ending. Thus it is only weakly responsive."
+  },
+  "scores": {
+    "correctness": 1,
+    "completeness": 1,
+    "faithfulness": 1,
+    "relevance": 2
+  },
+  "average_score": 1.25,
+  "summary": "The Generated Answer contradicts the transcript by claiming no end-of-consultation plan is available, missing all key next-step details and showing major unfaithfulness to the provided source."
+}

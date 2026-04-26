@@ -1,0 +1,234 @@
+{
+  "nodes": [
+    {
+      "id": "N_001",
+      "text": "shortness of breath",
+      "type": "SYMPTOM",
+      "evidence": "[P-1]",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_002",
+      "text": "cough",
+      "type": "SYMPTOM",
+      "evidence": "[P-2]",
+      "turn_id": "P-2"
+    },
+    {
+      "id": "N_003",
+      "text": "chest pain",
+      "type": "SYMPTOM",
+      "evidence": "[P-7]",
+      "turn_id": "P-7"
+    },
+    {
+      "id": "N_004",
+      "text": "syncope",
+      "type": "SYMPTOM",
+      "evidence": "[P-8]",
+      "turn_id": "P-8"
+    },
+    {
+      "id": "N_005",
+      "text": "nausea",
+      "type": "SYMPTOM",
+      "evidence": "[P-13]",
+      "turn_id": "P-13"
+    },
+    {
+      "id": "N_006",
+      "text": "vomiting",
+      "type": "SYMPTOM",
+      "evidence": "[P-13]",
+      "turn_id": "P-13"
+    },
+    {
+      "id": "N_007",
+      "text": "abdominal pain",
+      "type": "SYMPTOM",
+      "evidence": "[P-14]",
+      "turn_id": "P-14"
+    },
+    {
+      "id": "N_008",
+      "text": "diarrhea",
+      "type": "SYMPTOM",
+      "evidence": "[P-15]",
+      "turn_id": "P-15"
+    },
+    {
+      "id": "N_009",
+      "text": "levetiracetam",
+      "type": "TREATMENT",
+      "evidence": "[P-23]",
+      "turn_id": "P-23"
+    },
+    {
+      "id": "N_010",
+      "text": "epilepsy",
+      "type": "DIAGNOSIS",
+      "evidence": "[P-8]",
+      "turn_id": "P-8"
+    },
+    {
+      "id": "N_011",
+      "text": "family history of epilepsy",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "[P-26]",
+      "turn_id": "P-26"
+    },
+    {
+      "id": "N_012",
+      "text": "accountant",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "[P-32]",
+      "turn_id": "P-32"
+    },
+    {
+      "id": "N_013",
+      "text": "work from home",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "[P-33]",
+      "turn_id": "P-33"
+    },
+    {
+      "id": "N_014",
+      "text": "alcohol use",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "[P-35]",
+      "turn_id": "P-35"
+    },
+    {
+      "id": "N_015",
+      "text": "fever",
+      "type": "SYMPTOM",
+      "evidence": "fevers",
+      "turn_id": "P-5"
+    },
+    {
+      "id": "N_016",
+      "text": "temperature 37.4",
+      "type": "LAB_RESULT",
+      "evidence": "37.4",
+      "turn_id": "P-5"
+    },
+    {
+      "id": "N_017",
+      "text": "seizure",
+      "type": "SYMPTOM",
+      "evidence": "seizure",
+      "turn_id": "D-8"
+    },
+    {
+      "id": "N_ADD_001",
+      "text": "absent chest pain",
+      "type": "SYMPTOM",
+      "evidence": "P-7: No",
+      "turn_id": "P-7"
+    },
+    {
+      "id": "N_ADD_002",
+      "text": "absent nausea",
+      "type": "SYMPTOM",
+      "evidence": "P-13: No",
+      "turn_id": "P-13"
+    },
+    {
+      "id": "N_ADD_003",
+      "text": "absent abdominal pain",
+      "type": "SYMPTOM",
+      "evidence": "P-14: No",
+      "turn_id": "P-14"
+    },
+    {
+      "id": "N_ADD_004",
+      "text": "absent diarrhea",
+      "type": "SYMPTOM",
+      "evidence": "P-15: No",
+      "turn_id": "P-15"
+    },
+    {
+      "id": "N_ADD_005",
+      "text": "absent contact with sick",
+      "type": "SYMPTOM",
+      "evidence": "P-16: No",
+      "turn_id": "P-16"
+    },
+    {
+      "id": "N_ADD_006",
+      "text": "absent travel",
+      "type": "SYMPTOM",
+      "evidence": "P-17: No",
+      "turn_id": "P-17"
+    },
+    {
+      "id": "N_ADD_007",
+      "text": "absent loss of taste or smell",
+      "type": "SYMPTOM",
+      "evidence": "P-19: No",
+      "turn_id": "P-19"
+    },
+    {
+      "id": "N_ADD_008",
+      "text": "absent sore throat",
+      "type": "SYMPTOM",
+      "evidence": "P-20: No",
+      "turn_id": "P-20"
+    },
+    {
+      "id": "N_ADD_009",
+      "text": "absent runny nose",
+      "type": "SYMPTOM",
+      "evidence": "P-21: No",
+      "turn_id": "P-21"
+    },
+    {
+      "id": "N_ADD_010",
+      "text": "living with family",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "P-27: I live with my daughter and my wife",
+      "turn_id": "P-27"
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "N_009",
+      "target_id": "N_010",
+      "type": "TAKEN_FOR",
+      "evidence": "[P-23]",
+      "turn_id": "P-23"
+    },
+    {
+      "source_id": "N_011",
+      "target_id": "N_010",
+      "type": "CAUSES",
+      "evidence": "[P-26]",
+      "turn_id": "P-26"
+    },
+    {
+      "source_id": "N_017",
+      "target_id": "N_010",
+      "type": "INDICATES",
+      "evidence": "seizure disorder",
+      "turn_id": "D-8"
+    },
+    {
+      "source_id": "N_ADD_001",
+      "target_id": "N_010",
+      "type": "INDICATES",
+      "evidence": "Denial of chest pain in context of epilepsy history",
+      "turn_id": "P-7"
+    },
+    {
+      "source_id": "N_ADD_010",
+      "target_id": "N_010",
+      "type": "CAUSES",
+      "evidence": "P-26: My mom had epilepsy",
+      "turn_id": "P-26"
+    }
+  ],
+  "_usage": {
+    "prompt_tokens": 14916,
+    "completion_tokens": 32931
+  }
+}

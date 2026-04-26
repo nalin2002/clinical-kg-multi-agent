@@ -1,0 +1,178 @@
+{
+  "nodes": [
+    {
+      "id": "N_001",
+      "text": "acetaminophen",
+      "type": "TREATMENT",
+      "evidence": "[P-14]",
+      "turn_id": "P-14"
+    },
+    {
+      "id": "N_002",
+      "text": "atorvastatin",
+      "type": "TREATMENT",
+      "evidence": "[P-26]",
+      "turn_id": "P-26"
+    },
+    {
+      "id": "N_003",
+      "text": "chest pain",
+      "type": "SYMPTOM",
+      "evidence": "[P-17]",
+      "turn_id": "P-17"
+    },
+    {
+      "id": "N_004",
+      "text": "chills",
+      "type": "SYMPTOM",
+      "evidence": "[P-9]",
+      "turn_id": "P-9"
+    },
+    {
+      "id": "N_005",
+      "text": "dyspnea",
+      "type": "SYMPTOM",
+      "evidence": "[P-10]",
+      "turn_id": "P-10"
+    },
+    {
+      "id": "N_006",
+      "text": "fever",
+      "type": "SYMPTOM",
+      "evidence": "[P-5]",
+      "turn_id": "P-5"
+    },
+    {
+      "id": "N_007",
+      "text": "family history of lung cancer",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "[P-42]",
+      "turn_id": "P-42"
+    },
+    {
+      "id": "N_008",
+      "text": "hemoptysis",
+      "type": "SYMPTOM",
+      "evidence": "[P-4]",
+      "turn_id": "P-4"
+    },
+    {
+      "id": "N_009",
+      "text": "absent allergies",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "[P-29]",
+      "turn_id": "P-29"
+    },
+    {
+      "id": "N_010",
+      "text": "rhinorrhea",
+      "type": "SYMPTOM",
+      "evidence": "[P-16]",
+      "turn_id": "P-16"
+    },
+    {
+      "id": "N_011",
+      "text": "smoking",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "[P-36]",
+      "turn_id": "P-36"
+    },
+    {
+      "id": "N_012",
+      "text": "sore throat",
+      "type": "SYMPTOM",
+      "evidence": "[P-15]",
+      "turn_id": "P-15"
+    },
+    {
+      "id": "N_013",
+      "text": "wisdom teeth extraction",
+      "type": "PROCEDURE",
+      "evidence": "[P-28]",
+      "turn_id": "P-28"
+    },
+    {
+      "id": "N_014",
+      "text": "weight loss",
+      "type": "SYMPTOM",
+      "evidence": "[P-22]",
+      "turn_id": "P-22"
+    },
+    {
+      "id": "N_015",
+      "text": "cough",
+      "type": "SYMPTOM",
+      "evidence": "bad cough for like the last couple of days",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_016",
+      "text": "right chest",
+      "type": "LOCATION",
+      "evidence": "on the right",
+      "turn_id": "P-17"
+    },
+    {
+      "id": "N_017",
+      "text": "chemical plant worker",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "consultant for the chemical plant",
+      "turn_id": "P-33"
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "N_001",
+      "target_id": "N_006",
+      "type": "TAKEN_FOR",
+      "evidence": "[P-14]",
+      "turn_id": "P-14"
+    },
+    {
+      "source_id": "N_001",
+      "target_id": "N_003",
+      "type": "TAKEN_FOR",
+      "evidence": "[P-14]",
+      "turn_id": "P-14"
+    },
+    {
+      "source_id": "N_001",
+      "target_id": "N_014",
+      "type": "TAKEN_FOR",
+      "evidence": "[P-14]",
+      "turn_id": "P-14"
+    },
+    {
+      "source_id": "N_003",
+      "target_id": "N_016",
+      "type": "LOCATED_AT",
+      "evidence": "on the right",
+      "turn_id": "P-19"
+    },
+    {
+      "source_id": "N_001",
+      "target_id": "N_015",
+      "type": "TAKEN_FOR",
+      "evidence": "helps a little bit",
+      "turn_id": "P-14"
+    },
+    {
+      "source_id": "N_015",
+      "target_id": "N_016",
+      "type": "LOCATED_AT",
+      "evidence": "pain kinda on the right",
+      "turn_id": "P-17"
+    },
+    {
+      "source_id": "N_005",
+      "target_id": "N_016",
+      "type": "LOCATED_AT",
+      "evidence": "pain kinda on the right",
+      "turn_id": "P-17"
+    }
+  ],
+  "_usage": {
+    "prompt_tokens": 17044,
+    "completion_tokens": 39374
+  }
+}

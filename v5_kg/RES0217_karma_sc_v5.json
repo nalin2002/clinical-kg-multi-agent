@@ -1,0 +1,80 @@
+{
+  "nodes": [
+    {
+      "id": "N_001",
+      "text": "absent joint pain",
+      "type": "SYMPTOM",
+      "evidence": "[P-7] No",
+      "turn_id": "P-7"
+    },
+    {
+      "id": "N_002",
+      "text": "absent fever",
+      "type": "SYMPTOM",
+      "evidence": "[P-8] No, no, I've been fine.",
+      "turn_id": "P-8"
+    },
+    {
+      "id": "N_003",
+      "text": "lyme disease",
+      "type": "DIAGNOSIS",
+      "evidence": "[D-5] disease called Lyme disease",
+      "turn_id": "D-5"
+    },
+    {
+      "id": "N_004",
+      "text": "antibiotics",
+      "type": "TREATMENT",
+      "evidence": "[D-6] put you on antibiotics",
+      "turn_id": "D-6"
+    },
+    {
+      "id": "N_005",
+      "text": "statin",
+      "type": "TREATMENT",
+      "evidence": "[P-15] I take a uh statin",
+      "turn_id": "P-15"
+    },
+    {
+      "id": "N_006",
+      "text": "tick identification",
+      "type": "PROCEDURE",
+      "evidence": "[D-13] send this tick off to the lab and they'll be able to identify the species",
+      "turn_id": "D-13"
+    },
+    {
+      "id": "N_007",
+      "text": "blood work",
+      "type": "PROCEDURE",
+      "evidence": "[D-18] send some blood work",
+      "turn_id": "D-18"
+    },
+    {
+      "id": "N_008",
+      "text": "left knee",
+      "type": "LOCATION",
+      "evidence": "[P-1] behind my left uh knee",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_009",
+      "text": "cholesterol",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "[P-14] just for my cholesterol",
+      "turn_id": "P-14"
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "N_004",
+      "target_id": "N_003",
+      "type": "TAKEN_FOR",
+      "evidence": "[D-6] put you on antibiotics... avoid Lyme disease",
+      "turn_id": "D-6"
+    }
+  ],
+  "_usage": {
+    "prompt_tokens": 7860,
+    "completion_tokens": 20321
+  }
+}

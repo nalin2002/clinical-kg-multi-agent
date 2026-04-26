@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer correctly identifies the clinician’s assessment that the patient’s symptoms are consistent with common COVID-19 symptoms and accurately states the plan to do a COVID swab and a chest X-ray, plus isolation until results return and continued isolation if symptoms persist even with a negative result. A minor inaccuracy is the wording that tests were \"ordered\"; in the transcript the clinician says they will \"probably\" do a COVID swab and \"probably\" get a chest X-ray (i.e., anticipatory rather than definitively ordered). Otherwise, the content aligns with the Gold Answer.",
+    "completeness": "Covers the key required elements from the Gold Answer: (1) overall assessment of symptoms being in line with COVID-19, (2) both diagnostic tests (COVID swab and chest X-ray), (3) isolate until results return, and (4) continue isolation despite a negative test if symptoms persist. It omits the Gold Answer’s additional context that the clinician would consult with the supervising physician and return to discuss next steps, and it does not mention COPD/dyspnea as rationale for the chest X-ray (present in the Gold Answer).",
+    "faithfulness": "Most statements are grounded in the transcript, especially the COVID-likeness assessment, the two tests mentioned, and the isolation instructions including persistence of symptoms despite a negative result. The main faithfulness issue is the stronger claim that tests were \"ordered\" rather than presented as probable/anticipated. The added symptom list (sore throat, swallowing difficulty, muscle aches/fatigue) is supported by earlier patient history, so it is not hallucinated.",
+    "relevance": "Directly answers the question by summarizing assessment, listing the specific diagnostic tests, detailing isolation instructions, and specifying the condition (ongoing symptoms) requiring continued isolation even after a negative result. No meaningful off-topic content."
+  },
+  "scores": {
+    "correctness": 4,
+    "completeness": 4,
+    "faithfulness": 4,
+    "relevance": 5
+  },
+  "average_score": 4.25,
+  "summary": "The Generated Answer is highly relevant and largely accurate, capturing the tests and isolation requirements, with only minor overstatement (tests framed as ordered vs probable) and small omissions of contextual details from the Gold Answer."
+}

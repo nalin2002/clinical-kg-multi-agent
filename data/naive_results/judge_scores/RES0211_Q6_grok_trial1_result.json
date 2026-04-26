@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer incorrectly attributes key clinical findings to early dialogue turns (D-2, D-7, D-9) rather than the doctor's actual summary in D-58, which recaps: 3-4 day dry cough with fever/headache, no sputum, no recent sick contacts except brother 2 weeks ago, no asthma, Claritin only. It fabricates 'night sweats' as a key recapped finding (not in D-58), omits dry cough entirely, and misstates Jessica's goal as 'conclude without questions' (P-61) instead of inquiring about needing medicine (P-60). Significant factual errors and contradictions with Gold Answer.",
+    "completeness": "Gold key points: 5 specific D-58 recaps (dry cough 3-4 days + fever/headache, no sputum, sick contacts/brother cold, no asthma, Claritin only) + Jessica's goal (know if needs medicine, P-60) + desire to rest (P-61). Generated covers headache/fever vaguely (~2 partial matches) but misses dry cough, no sputum, contacts/asthma/meds, and states wrong goal; covers <20%.",
+    "faithfulness": "Claims cite early turns but not D-58 recap; 'night sweats' from D-9/P-9 query but not recapped or confirmed as soaked sheets; hallucinates 'knowledge graph' and 'common cold diagnosis'; Jessica's goal twists P-61 'no questions' but ignores P-60 medicine query and D-58 framing of next steps. Multiple ungrounded claims.",
+    "relevance": "Structure mirrors question (recap findings + Jessica's goal) but content focuses on wrong symptoms/turns and misinterprets goal, with tangents to knowledge graph; partially relevant but deviates significantly."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 1,
+    "faithfulness": 2,
+    "relevance": 3
+  },
+  "average_score": 2.0,
+  "summary": "The Generated Answer significantly deviates from the Gold by misidentifying the doctor's end-of-visit summary, hallucinating elements like a knowledge graph, omitting most key points, and incorrectly stating Jessica's primary goal."
+}

@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer correctly identifies that the clinician placed “asthma reoccurring”/asthma exacerbation at the top of the differential (matches D-35) and correctly ties this to exertional chest tightness/difficulty taking a full breath (P-1, P-7, P-9/10) and to de-emphasizing cardiac ischemia due to lack of chest pain (D-36). However, it inaccurately/insufficiently represents the medication story: the key rationale in the Gold Answer is *underuse/non-availability* of asthma therapy (skipping evening controller dose and not refilling the rescue inhaler), whereas the Generated Answer instead frames “current use of salbutamol” as supportive. While P-25 mentions salbutamol, the transcript overall emphasizes the patient *doesn’t have* the PRN inhaler available and has been skipping doses (P-17–P-20), which the Generated Answer fails to capture and partially conflicts with by implication.",
+    "completeness": "Covers: history of asthma; symptom pattern of chest tightness/dyspnea worse with walking; the clinician lowering cardiac ischemia due to lack of pain; plan for exam and a rescue-puffer trial.\nMisses key Gold points: (1) explicit linkage to medication reduction/nonadherence (skipping night maintenance dose, no rescue refill for years), (2) lack of identified environmental changes/triggers, (3) patient’s own statement that it felt different but could be related to asthma, (4) broader absence of systemic/infectious features as supportive context. Overall, it captures the main thread but omits several important connectors used in the Gold synthesis.",
+    "faithfulness": "Most statements are grounded in the transcript with appropriate references (D-35, D-36, P-1, P-7, P-16). The main faithfulness issue is the medication framing: it asserts/leans on “current use of salbutamol” as part of the reasoning, whereas the transcript’s narrative emphasizes lack of PRN inhaler availability and reduced controller dosing (P-17–P-20). This is more of an interpretive distortion/omission than a fully fabricated claim, since salbutamol is mentioned at P-25.",
+    "relevance": "The response stays focused on the asked elements (symptoms + history + clinical features leading to asthma as top differential, and how they were linked). It does not introduce major tangents."
+  },
+  "scores": {
+    "correctness": 4,
+    "completeness": 3,
+    "faithfulness": 4,
+    "relevance": 5
+  },
+  "average_score": 4.0,
+  "summary": "The Generated Answer captures the core rationale (asthma history + exertional chest tightness/dyspnea with low cardiac concern and a rescue-inhaler trial) but misses several key linking elements from the Gold Answer—especially the clinician’s emphasis on reduced/non-available asthma medications and lack of other triggers—making it only moderately complete."
+}

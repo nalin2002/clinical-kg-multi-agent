@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer incorrectly states that the patient 'did not provide a response' for all four questions (weight loss, travel, sick contacts, chemical exposure), despite clear responses in the transcript (P-22: 'No, not really'; P-23: 'Went to Sarnia...'; P-24: 'Nope...'; P-33/P-34: describes work and limited exposure). Differentials partially overlap (e.g., lung cancer for weight loss, TB) but include inaccuracies (e.g., travel for TB reactivation primarily, not highlighted in Gold). Hallucinates 'Symptoms Knowledge Graph'. Fails to describe how responses narrow/maintain differential as in Gold (e.g., denial makes less likely but not excluded). Significant contradictions.",
+    "completeness": "Gold key points: specific DDX per question (lung cancer/TB for weight loss; endemic infections/Legionella for travel; person-to-person/TB for sick contacts; chemical pneumonitis/occupational for exposure), transcript citations, response impacts (less likely but not excluded, domestic travel timing, no contacts reduces exposure, limited exposure less likely), collective favoring acute infection. Generated covers structure and some DDX but misses all response details/impacts, adds irrelevant contrasts (chest pain, red spots narrowing elsewhere). Covers ~30% (questions/DDX skeleton).",
+    "faithfulness": "Claims no patient responses for all questions are false (verifiable: P-22, P-23, P-24, P-33/34 contradict). Cites some symptoms (P-4, P-19, etc.) but misapplies. Hallucinates 'Symptoms Knowledge Graph'. Multiple ungrounded claims (no responses, specific DDX reasoning not tied tightly to transcript).",
+    "relevance": "Directly structures answer around the four questions and DDX, addressing core query. Tangents in summary (narrowing via chest pain/red spots, not asked) and conclusion on open differential are minor off-topic."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 2.5,
+  "summary": "The Generated Answer has major factual errors by denying patient responses present in the transcript, leading to incomplete and unfaithful coverage despite relevant structure."
+}

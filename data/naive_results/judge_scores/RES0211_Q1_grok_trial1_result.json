@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer correctly identifies some reported symptoms like dry cough, scratchy throat, headache, feeling hot, and general malaise/crappy, aligning with Gold. However, it inaccurately claims Jessica confirmed night sweats with 'sheets soaked' (P-9 only mentions feeling hot at night, not soaked sheets), adds post-nasal drip as a primary reported symptom (P-18 discusses allergies, not explicitly a 3-4 day symptom), misses tiredness and precise details like pounding/active headache and persistent heat in minimal clothing. For denials, it only covers sputum with completely wrong citations (D-33/P-29 unrelated; actual at D-5/P-5, D-6/P-6) and falsely claims no transcript evidence for nausea, vomiting, diarrhea, rashes, or joint pain (explicitly denied at P-10, P-11, P-12, P-13), contradicting Gold. Significant factual errors including hallucinations and contradictions.",
+    "completeness": "Gold reported symptoms (dry cough/scratchy throat, pounding/active headache, persistent hot flashes day/night in minimal clothes, crappy/icky/malaise, tired): covers ~60% (dry cough/scratchy, headache, hot, malaise; misses tiredness, precise headache/hot details). Gold denied (sputum/phlegm, skin changes/rashes, nausea/vomiting, diarrhea, joint aches, can't breathe): covers ~17% (only sputum). Overall covers 20-49% of key points.",
+    "faithfulness": "Multiple hallucinations: fabricates night sweats confirmation (P-9 doesn't say sheets soaked); adds post-nasal drip as key symptom (plausible but not primary); wrong sputum citations (D-33/P-29 discuss family allergies/asthma, not sputum; actual D-5/D-6); claims no inquiries about nausea/etc. despite clear transcript evidence (D-10-D-13); 'consistent with common cold' not grounded. Some claims verifiable, but multiple inaccuracies.",
+    "relevance": "Directly structures response around reported symptoms (3-4 days) and denied symptoms, addressing the question; minor irrelevancies like 'common cold' diagnosis and note on missing inquiries (which are present)."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 2.5,
+  "summary": "The Generated Answer partially covers main reported symptoms but includes hallucinations, wrong citations, misses most denials, and contradicts Gold on coverage of transcript evidence."
+}

@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer accurately cites doctor's inquiry [D-28], mother's disclosure of grandparents' asthma [P-28], doctor's summary [D-30], and mother's differentiation including prior workup and explicit absence of shortness of breath/wheezing even with activity [P-28], plus current dry cough, runny nose, and prior history [P-24]. Generated Answer correctly notes inquiry [D-28] and connection to asthma family history but introduces non-existent 'Knowledge Graph'; incorrectly claims transcript does not explicitly state absence of SOB/wheezing (contradicts explicit P-28); misattributes differentiation to doctor rather than mother; omits grandparents specificity, workup, activity tolerance, and prior history distinction. Significant contradictions and errors.",
+    "completeness": "Gold key points: doctor's inquiry [D-28]; grandparents asthma [P-28]; summary [D-30]; mother's differentiation (worked up, no SOB/wheezing/activity) [P-28]; dry cough citations; clear runny nose citations; no wheeze/SOB; prior shorter issues/no dry cough [P-24]; acute vs familial. Covered: inquiry connection, dry cough [D-5], runny nose [D-11/12]. Missed: grandparents detail, [D-30], full [P-28] differentiation (workup, SOB/wheeze absence/activity), [P-24], acute distinction. Covers ~30-40% of key points.",
+    "faithfulness": "Citations [D-28, D-5, D-11/12, D-37/39] accurate and verifiable. Hallucinations: 'Knowledge Graph' not in transcript; false claim 'transcript does not explicitly state absence of SOB/wheezing' (directly in P-28); implies doctor actively differentiates via symptoms/plan, but transcript shows mother provides differentiation info; clinical plan interpretation as distinction plausible but not explicit for asthma differentiation. Multiple unverifiable/hallucinated elements.",
+    "relevance": "Addresses connection of inquiry [D-28] to family asthma history; covers symptom-based differentiation (dry cough, runny nose) partially matching question's symptom profile focus. Tangents include extraneous 'Knowledge Graph', clinical plan emphasis, and omission of highlighted absence of SOB/wheezing. Mostly on-topic but incomplete."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 2.5,
+  "summary": "The Generated Answer has significant factual inaccuracies, hallucinations, and incompleteness in covering the mother's explicit differentiation of symptoms from familial asthma, despite partial relevance."
+}

@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer states symptoms began one week prior, initial symptom was stuffiness ('felt pretty stuffy at first' [P-3]), predominant symptom shifted to runny nose ('now it's mostly running' [P-3]), possibly influenced by decongestants [P-10], initially described as 'on and off' [P-1] but clarified as 'pretty constant' [P-8]. Generated Answer incorrectly claims both symptoms began together without specifying which first (contradicts P-3), denies any shift in predominance (contradicts P-3), misattributes 'a little bit' to discharge consistency citing [P-15] which is actually fatigue, and insists symptoms were intermittent citing only [P-1] while ignoring [P-8]. Significant contradictions on key chronological and pattern facts warrant score of 2.",
+    "completeness": "Gold key points: 1-week onset [P-1,P-2], first stuffy [P-3], shift to runny [P-3], decongestant influence [P-10], on/off to constant [P-1,P-8], no improvement [P-1]. Generated covers onset/duration and no improvement (~2 points), but misses or incorrectly states first symptom, shift, decongestants, and accurate pattern (covers ~20-30%). Score: 2.",
+    "faithfulness": "Generated misrepresents P-3 by claiming no specification of first symptom (directly stated as stuffy first); incorrectly cites [P-15] 'a little bit' for discharge (it's fatigue); ignores P-3 progression and P-8 'pretty constant'; bases intermittency solely on [P-1] without P-8 clarification. Multiple inaccuracies and hallucinated/mis-cited details. Score: 2.",
+    "relevance": "Generated structures response around onset, symptom order, predominance, and frequency, directly mirroring question elements (chronology, first symptom, change over week, constant/intermittent) with no off-topic content. Score: 4."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 2.5,
+  "summary": "The Generated Answer has significant factual errors and omissions regarding symptom onset order, progression, and constancy, resulting in low correctness, completeness, and faithfulness despite good relevance."
+}

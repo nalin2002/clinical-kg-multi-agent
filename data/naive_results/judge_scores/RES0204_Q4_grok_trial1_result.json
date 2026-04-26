@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer correctly identifies asthma as the respiratory condition considered, matching the Gold Answer. However, it incorrectly states that the transcript does not contain the mother's specific clinical findings (no shortness of breath or wheezing even during physical activity, prior workup, grandparents' history) to rule it out, despite these being explicitly in [P-28]. It fails to acknowledge that asthma was ruled out by the mother, introducing a factual contradiction with the Gold Answer's accurate citation and interpretation.",
+    "completeness": "Key points from Gold Answer: asthma; grandparents' family history [P-28]; doctor acknowledgment [D-30]; prior workup negative; no SOB/wheezing even with activity [P-28]; mother's conclusion 'doesn't have that'; patient healthy otherwise [P-24]. Generated covers only asthma and family history inquiry [D-28] (~20-25% coverage), misses all ruling-out details and citations.",
+    "faithfulness": "Claims unverifiable 'Knowledge Graph' not in transcript (hallucination). Correctly cites [D-28] for inquiry but falsely asserts mother's ruling-out findings absent, ignoring [P-28]. Lists unrelated symptoms (cough, runny nose) irrelevantly. Multiple hallucinations about transcript content.",
+    "relevance": "Directly names asthma and notes consideration via family history, addressing part of question. However, off-topic mention of KG, irrelevant symptoms, and denial of ruling-out evidence detract; partially relevant but evasive on full question."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 3
+  },
+  "average_score": 2.25,
+  "summary": "The Generated Answer partially identifies asthma but hallucinates the absence of key transcript evidence for ruling it out, resulting in low factual accuracy, completeness, and faithfulness."
+}

@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer identifies asthma as ruled out based on mother's report in [P-28] of grandparents' history and patient's lack of shortness of breath/wheezing even with activity; Generated Answer correctly identifies asthma as considered via [D-28] but falsely claims transcript lacks mother's specific findings (directly contradicting [P-28]), mentions non-existent Knowledge Graph, and does not note ruling out—significant factual errors.",
+    "completeness": "Gold key points: asthma, grandparents family history [P-28], acknowledged [D-30], worked up negative, no SOB/wheezing even with activity [P-28], doesn't have it [P-28], patient healthy [P-24]; Generated covers asthma and family history inquiry vaguely (~20-25%), misses all ruling-out details and specifics.",
+    "faithfulness": "Cites [D-28] accurately; lists some symptoms grounded (e.g., dry cough [D-5]); but hallucinates 'Knowledge Graph' (absent), claims absence of mother's findings despite verbatim [P-28], multiple unverifiable/contradictory claims.",
+    "relevance": "Directly names asthma and addresses consideration via family history; partially tackles findings but deflects claiming not in transcript and lists unrelated symptoms—some off-topic content."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 3
+  },
+  "average_score": 2.25,
+  "summary": "The Generated Answer partially identifies the condition but significantly errs by denying key transcript evidence for ruling it out, resulting in low correctness, completeness, and faithfulness."
+}

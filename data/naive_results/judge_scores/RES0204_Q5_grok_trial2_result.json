@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer accurately cites doctor's inquiry [D-28], mother's disclosure of grandparents' asthma [P-28], doctor's summary [D-30], and key differentiation via mother's report of prior workup and absence of SOB/wheezing even with activity [P-28], plus current dry cough, clear runny nose, and prior shorter symptoms [P-24]. Generated Answer correctly notes inquiry [D-28] links to familial asthma but hallucinates 'Knowledge Graph' reference, falsely claims transcript lacks explicit absence of SOB/wheezing (contradicting [P-28]), misattributes differentiation to doctor's symptom focus/clinical plan rather than mother's statement, and omits prior workup/history; significant errors/contradictions.",
+    "completeness": "Gold key points: inquiry inviting mom [D-28]; grandparents asthma [P-28]; doctor summary [D-30]; differentiation (worked up, no SOB/wheeze/activity) [P-28]; dry cough [D-5/6,P-5/6]; runny nose [D-11/12,P-11/12]; no wheeze/SOB; prior shorter issues/no dry cough [P-24]. Generated covers inquiry/asthma connection, dry cough [D-5], runny nose [D-11/12]; misses doctor summary, full differentiation details esp. absence SOB/wheeze/workup, prior history; covers ~30% (20-49%).",
+    "faithfulness": "Cites [D-28, D-5, D-11/12, D-37/39] accurately from transcript. Hallucinates 'Knowledge Graph'; incorrectly states no explicit SOB/wheezing absence (directly in [P-28]); fabricates doctor-led differentiation via plan/symptoms (actually mom's report [P-28]); multiple ungrounded claims.",
+    "relevance": "Addresses connection (inquiry to familial asthma) and differentiation via symptoms; minor off-topic elements like Knowledge Graph/clinical plan but largely on-question."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 2.5,
+  "summary": "The Generated Answer partially addresses the question but contains significant factual errors, hallucinations, and omissions compared to the Gold Answer, particularly mishandling the explicit evidence of absent SOB/wheezing and differentiation source."
+}

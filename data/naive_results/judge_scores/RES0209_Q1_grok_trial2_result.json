@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer has several factual inaccuracies compared to the Gold Answer and transcript: (1) Cough duration is stated as 'past week' citing P-1, but Gold Answer and P-13 confirm 'last two weeks'; (2) Chest sensations are incorrectly claimed as not explicitly reported, but P-20 confirms 'Yes' to chest tightness (D-20); (3) Nighttime symptoms are wrongly stated as having 'no information', but P-18 explicitly describes nighttime symptoms occurring 'every other day or so' and less than daytime; (4) References to knowledge graph [KG] introduce external facts not in transcript or Gold Answer. Core symptoms like dry cough, shortness of breath, and wheezing are mostly correct, but significant contradictions exist.",
+    "completeness": "Gold Answer key points: (1) persistent dry cough ~2 weeks, nonstop daytime (partially covered, misses full duration); (2) breathing difficulty/shortness of breath (covered); (3) wheezing a lot, more frequent than bronchodilator (wheezing covered, misses frequency detail); (4) chest tightness (completely missed, denied); (5) daytime vs nighttime frequency (daytime covered, nighttime and comparison completely missed). Covers about 50-60% of key points partially.",
+    "faithfulness": "Most claims grounded with citations (e.g., P-1 for cough, P-15 for wheezing), but hallucinations include: denying chest tightness despite P-20 'Yes'; claiming no nighttime info despite P-18; referencing [KG] for asthma knowledge and bronchodilator efficacy, which is not in transcript. Multiple unverifiable/wrong claims.",
+    "relevance": "Directly addresses symptoms (cough character, breathing difficulties, wheezing, chest sensations) and attempts frequency comparison, but includes irrelevant KG references and incorrectly dismisses parts of the question; mostly focused with minor off-topic elements."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 3,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 2.75,
+  "summary": "The Generated Answer covers some symptoms accurately but has significant errors in denying chest tightness and nighttime symptoms, reducing overall quality."
+}

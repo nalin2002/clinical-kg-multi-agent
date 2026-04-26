@@ -1,0 +1,152 @@
+{
+  "nodes": [
+    {
+      "id": "N_001",
+      "text": "Cough",
+      "type": "SYMPTOM",
+      "evidence": "I've had this cough for the past two weeks",
+      "turn_id": "P-2"
+    },
+    {
+      "id": "N_002",
+      "text": "Dry Cough",
+      "type": "SYMPTOM",
+      "evidence": "it's a dry cough",
+      "turn_id": "P-5"
+    },
+    {
+      "id": "N_003",
+      "text": "Mucus",
+      "type": "SYMPTOM",
+      "evidence": "There was some mucus",
+      "turn_id": "P-5"
+    },
+    {
+      "id": "N_004",
+      "text": "Sore Throat",
+      "type": "SYMPTOM",
+      "evidence": "any sore throat",
+      "turn_id": "P-13"
+    },
+    {
+      "id": "N_005",
+      "text": "Runny Nose",
+      "type": "SYMPTOM",
+      "evidence": "any runny nose",
+      "turn_id": "P-14"
+    },
+    {
+      "id": "N_006",
+      "text": "Chest Pain",
+      "type": "SYMPTOM",
+      "evidence": "chest hurts a little bit",
+      "turn_id": "P-15"
+    },
+    {
+      "id": "N_007",
+      "text": "Acid Reflux",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "I've got acid reflux",
+      "turn_id": "P-22"
+    },
+    {
+      "id": "N_008",
+      "text": "Anxiety",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "I also have anxiety",
+      "turn_id": "P-22"
+    },
+    {
+      "id": "N_009",
+      "text": "Hay Fever",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "Just hay fever",
+      "turn_id": "P-27"
+    },
+    {
+      "id": "N_010",
+      "text": "COVID-19",
+      "type": "DIAGNOSIS",
+      "evidence": "covid test and I don't have it",
+      "turn_id": "P-35"
+    },
+    {
+      "id": "N_011",
+      "text": "COVID-19 Test",
+      "type": "PROCEDURE",
+      "evidence": "covid test",
+      "turn_id": "P-35"
+    },
+    {
+      "id": "N_012",
+      "text": "Dietary Modification",
+      "type": "TREATMENT",
+      "evidence": "avoid the foods",
+      "turn_id": "P-25"
+    },
+    {
+      "id": "N_013",
+      "text": "Common Cold",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "I usually get a cold once a year",
+      "turn_id": "P-3"
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "N_001",
+      "target_id": "N_002",
+      "type": "INDICATES",
+      "evidence": "now it's a dry cough",
+      "turn_id": "P-5"
+    },
+    {
+      "source_id": "N_003",
+      "target_id": "N_001",
+      "type": "INDICATES",
+      "evidence": "mucus",
+      "turn_id": "P-5"
+    },
+    {
+      "source_id": "N_001",
+      "target_id": "N_006",
+      "type": "CAUSES",
+      "evidence": "chest hurts a little bit",
+      "turn_id": "P-15"
+    },
+    {
+      "source_id": "N_001",
+      "target_id": "N_004",
+      "type": "CAUSES",
+      "evidence": "sore throat",
+      "turn_id": "P-13"
+    },
+    {
+      "source_id": "N_001",
+      "target_id": "N_005",
+      "type": "CAUSES",
+      "evidence": "runny nose",
+      "turn_id": "P-14"
+    },
+    {
+      "source_id": "N_012",
+      "target_id": "N_007",
+      "type": "TAKEN_FOR",
+      "evidence": "avoid the foods",
+      "turn_id": "P-25"
+    },
+    {
+      "source_id": "N_011",
+      "target_id": "N_010",
+      "type": "RULES_OUT",
+      "evidence": "don't have it",
+      "turn_id": "P-35"
+    }
+  ],
+  "_usage": {
+    "prompt_tokens": 1881,
+    "completion_tokens": 7466,
+    "reasoning_tokens": 5001,
+    "cost": 0.0030064600003712
+  }
+}

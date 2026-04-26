@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Gold Answer describes a 4-day progression: sore throat began 4 days prior and worsened; muscle aches/fatigue started immediately after sore throat; reduced taste began ~2 days prior and was constant; dyspnea began yesterday, is constant, and worsening. The Generated Answer is partially aligned on sore throat onset (~4 days) and mentions tiredness/muscle aches, but it omits the key symptom of difficulty breathing entirely and therefore fails to represent the true chronology. It also incorrectly implies loss of smell (patient said smell not affected) and does not correctly time the onset of reduced taste (it does not specify ‘two days ago’ and constancy). It suggests swallowing difficulty ‘progressed’ over days 2–3, but the transcript indicates swallowing food was already difficult when first describing the sore throat. These issues are significant factual discrepancies versus the Gold Answer.",
+    "completeness": "Key Gold Answer elements covered: sore throat started 4 days ago; sore throat severe; tried salt-water gargles/painkillers; tiredness and muscle aches present (but timing not specified as ‘immediately after’). Key elements missed or inadequately covered: (1) dyspnea onset yesterday, constant, worsening, and new/unprecedented; (2) reduced taste onset two days ago and constant; (3) explicit statement that sore throat progressively worsened over four days; (4) correct statement that smell was not affected. Overall, the answer captures fewer than half of the required timeline/severity details.",
+    "faithfulness": "Several statements are not grounded or are contradicted by the transcript: it reports loss of smell (transcript: ‘maybe taste a little bit but not smell’), implies a specific day-by-day ‘days 2–3’ progression for swallowing difficulty that is not stated, and introduces ‘knowledge graph’ linkage to mono/COVID which is not part of the clinical chronology question and is not supported by the transcript content as causal. Some content is grounded (sore throat timing; attempted remedies; tired/muscle aches), but multiple key claims are unfaithful.",
+    "relevance": "The response attempts to provide a chronological symptom narrative and severity progression, which is the core of the question. However, it fails to include the patient’s breathing difficulty timeline (a central symptom in the transcript) and adds irrelevant commentary about a ‘knowledge graph’ linking symptoms to mono/COVID. Because it does not adequately deliver the requested full chronological order, relevance is only partial."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 3
+  },
+  "average_score": 2.25,
+  "summary": "The generated answer is partially aligned on sore throat onset and general symptoms but contains major omissions (notably dyspnea) and inaccuracies (smell loss, timing), making it incomplete and only partially faithful to the transcript."
+}

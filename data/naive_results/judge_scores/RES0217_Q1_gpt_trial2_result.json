@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer is partly correct on local symptoms (redness/tenderness/soreness behind left knee; skin area rather than joint; tick “stuck pretty good”). However, it is substantially incorrect regarding systemic screening: the transcript clearly shows the doctor asked about joint pain (D-7), fever/feeling ill (D-8), and headaches (D-19), all denied by the patient (P-7, P-8, P-19/P-20). The Generated Answer incorrectly claims there is no explicit evidence of screening for these symptoms. It also wrongly states the doctor screened for drug allergies as the relevant systemic symptoms and incorrectly cites P-7/P-8/P-19 as allergy denials (those lines are about joint pain, fever/illness, and headaches, not allergies).",
+    "completeness": "Local symptoms: includes redness, tenderness, soreness, and clarifies skin vs joint; includes “stuck pretty good.” It omits key Gold Answer points: explicit denial of bullseye/target rash and “larger circle rash” (P-6), and the statement she was otherwise totally fine/pretty healthy (P-18, P-13) as part of symptom description.\nSystemic symptoms: misses all required pertinent negatives (denied joint pain, fever/feeling ill, headaches) despite these being explicit in transcript and central to the question.",
+    "faithfulness": "Multiple statements are not faithful to the transcript: (1) claiming the transcript does not show screening for fever/joint pain/headaches is contradicted by D-7/D-8/D-19 and patient denials P-7/P-8/P-19/P-20; (2) misattributing drug allergy denials to P-7/P-8/P-19 (hallucinated/miscited), and implying the doctor’s systemic screening was for drug allergies rather than the asked systemic symptoms in the question.",
+    "relevance": "The response is aimed at the question (local symptoms and systemic symptoms screened/denied), but a substantial portion is irrelevant/misdirected (focus on drug allergies) and it fails to provide the requested systemic symptoms that were actually screened for."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 1,
+    "relevance": 3
+  },
+  "average_score": 2.0,
+  "summary": "Partially captures the local bite-site symptoms, but it incorrectly denies the presence of documented systemic screening (fever, joint pain, headaches), mis-cites the transcript, and adds an irrelevant focus on drug allergies, making it inaccurate and poorly grounded."
+}

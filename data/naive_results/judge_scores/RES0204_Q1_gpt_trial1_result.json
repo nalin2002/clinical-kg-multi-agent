@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer correctly identifies the two reported respiratory symptoms: cough and runny nose. It correctly characterizes the cough as dry and non-productive, consistent with the transcript and Gold Answer (patient confirms dry cough and denies sputum/gunk). It does not state any incorrect features about the nasal discharge; however, it fails to report the patient’s actual description (“pretty clear”), which is an omission rather than a contradiction.",
+    "completeness": "Key Gold Answer points covered: (1) cough was dry; (2) cough was non-productive; (3) runny nose present.\nKey Gold Answer points missed: (1) cough duration (~4–5 days); (2) cough course/severity stayed the same; (3) runny nose duration (~past couple of days); (4) nasal discharge appearance was “pretty clear” (central to the question); (5) contextual note that patient hadn’t had a dry cough like this before and prior runny noses didn’t last this long; (6) pertinent negatives listed in Gold Answer (sore throat, chest pain, no wheeze/SOB). Overall, it captures less than half of the clinically relevant symptom characteristics requested.",
+    "faithfulness": "All included claims are grounded in the transcript: cough described as dry and non-productive; runny nose reported; and the clinician asked about discharge consistency/color. No hallucinated symptoms or unsupported details are introduced. The main issue is omission (not reporting the discharge was clear), not fabrication.",
+    "relevance": "The response stays focused on respiratory symptoms and attempts to describe characteristics, directly addressing the question’s scope. However, it under-answers the question by not stating the actual nasal discharge appearance and by omitting key requested characteristics (duration/course)."
+  },
+  "scores": {
+    "correctness": 4,
+    "completeness": 2,
+    "faithfulness": 5,
+    "relevance": 4
+  },
+  "average_score": 3.75,
+  "summary": "The answer is accurate and transcript-grounded for the cough, but it significantly under-captures the requested symptom characteristics—especially the nasal discharge being described as clear—reducing completeness and overall utility."
+}

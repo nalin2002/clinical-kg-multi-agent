@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Gold Answer identifies a specific potential exposure event: hiking with the patient’s partner ~2 weeks prior where “some people kind of brushed by us” (P-18), and connects this limited exposure to suspected COVID-19 given classic symptoms and the clinician’s plan to test (D-39). The Generated Answer incorrectly states the patient “did not identify a specific external event” and instead treats symptom onset as the only ‘identified exposure/condition.’ This directly contradicts the transcript (P-18/P-19) and therefore misses the core factual requirement of the question.",
+    "completeness": "Key Gold Answer points:\n- Patient is high school senior attending online; mostly staying home (P-36–P-38).\n- Specific potential exposure: hiking with partner 2 weeks ago; people brushed by them; ~30 minutes away (P-18, P-19).\n- Denied known sick contacts; couldn’t recall other exposures (P-17, P-18).\n- COVID suspected due to symptoms; clinician orders testing and isolation (D-39).\n\nGenerated Answer includes only the symptom-to-COVID link and testing/isolation plan. It omits (and explicitly denies) the hiking/close-contact exposure and does not incorporate the “mostly at home/online school” context into an exposure narrative. Thus, it covers only a minority of required elements.",
+    "faithfulness": "While the answer quotes true symptom and clinician statements (P-1, D-39), it makes a major ungrounded/contradicted claim: that no specific exposure event was identified. The transcript clearly documents a potential exposure (hiking with people brushing by) (P-18). This is not a minor omission; it reverses the exposure history described in the source.",
+    "relevance": "The question asks for the specific potential exposure event and how that exposure history connects to suspected COVID-19. The Generated Answer addresses the symptom-based rationale for COVID testing but fails to identify the exposure event and therefore only partially addresses the question."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 3
+  },
+  "average_score": 2.25,
+  "summary": "The Generated Answer is partially relevant in linking symptoms to suspected COVID-19, but it is incorrect and incomplete because it denies the documented hiking/close-contact exposure event and omits key exposure-history details."
+}

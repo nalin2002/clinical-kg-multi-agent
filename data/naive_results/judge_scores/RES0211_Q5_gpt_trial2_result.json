@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer is factually incorrect compared with the Gold Answer and the transcript. It states there is “no information available” about (1) father’s allergies, (2) cousin’s asthma, (3) brother’s recent cold, and (4) farm/COVID home-schooling context—yet these are explicitly present in the transcript: father has allergies [P-33], cousin has asthma [P-30], brother had a cold a few weeks ago [P-39] (doctor summarizes ~2 weeks [D-58]), and the family is home-schooling during COVID and lives on a farm with limited contacts [P-41–P-45]. It also introduces an unsupported “Knowledge Graph” diagnosis of common cold, which is not in the transcript or Gold Answer.",
+    "completeness": "It fails to cover essentially all key Gold Answer points: (1) family atopy/asthma history as context, (2) allergy season not started suggesting this differs from her usual allergies, (3) brother’s cold as plausible viral exposure, (4) relative isolation (home-schooling, parents working from home/farm, not leaving house/no travel) implying intra-household exposure is most likely, and (5) only a dog/no animal farm reducing zoonotic exposure concern. Instead, it denies these data exist and pivots to symptom listing and an unsupported diagnosis.",
+    "faithfulness": "Low faithfulness: it contradicts the transcript by claiming the contextual factors are absent when they are present. It also adds non-evidenced content (“Knowledge Graph” and a definitive diagnosis of common cold). While some symptom descriptions are grounded (dry cough, scratchy throat, headache, feeling hot, post-nasal drip), the core response to the question is not grounded and includes hallucinated/unsupported elements.",
+    "relevance": "The response is only minimally relevant. It attempts to answer the question but mainly asserts the information is unavailable, which does not address how the factors relate to symptoms. Additional symptom/diagnosis discussion is tangential to the asked integrative exposure/family-history context."
+  },
+  "scores": {
+    "correctness": 1,
+    "completeness": 1,
+    "faithfulness": 1,
+    "relevance": 2
+  },
+  "average_score": 1.25,
+  "summary": "The Generated Answer contradicts the transcript and Gold Answer by denying clearly documented family/exposure/living-context details and adds unsupported diagnostic claims, resulting in very low correctness, completeness, and faithfulness."
+}

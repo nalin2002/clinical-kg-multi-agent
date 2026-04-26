@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The local symptom description is partly accurate (redness, tenderness, soreness behind the left knee; skin rather than joint; “stuck pretty good”). However, the systemic symptom portion is factually incorrect: the transcript clearly shows the doctor screening for joint pain (D-7/P-7), fever/feeling ill (D-8/P-8), and headaches (D-19/P-19, P-20), all denied by the patient. The generated answer incorrectly claims there is no explicit evidence of such screening and instead focuses on drug allergies, with erroneous citation mapping (it attributes “No” at P-7/P-8/P-19 to drug allergies, but those turns are joint pain/fever/headache denials).",
+    "completeness": "Key local details are partially covered (location behind knee crease, skin soreness, redness/tenderness, tick stuck). Important local elements are missing: explicit denial of bullseye/target rash and “no larger circle rash” (P-6), and the “totally fine otherwise” framing (P-18) is not clearly incorporated as in the Gold Answer. Major completeness failure on systemic symptoms: it omits the required fever, joint pain, and headache screening/denials that are central to the question.",
+    "faithfulness": "Multiple claims are not faithfully grounded in the transcript: (1) stating the doctor screened for drug allergies and that denials occurred at P-7/P-8/P-19 is a misattribution; (2) claiming the transcript does not contain explicit evidence of screening for fever/joint pain/headaches contradicts the transcript. This constitutes substantial unfaithfulness (incorrect negative claim about evidence and incorrect citation use).",
+    "relevance": "The response attempts to address both local and systemic symptoms, which is relevant to the question. However, it devotes attention to drug allergies (not asked in the question) and fails to provide the correct systemic symptoms the question explicitly requests (fever, joint pain, headaches). Thus, it is only partially responsive."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 3
+  },
+  "average_score": 2.25,
+  "summary": "Partially correct on local bite-site symptoms but incorrectly denies and replaces the clearly documented systemic screening for joint pain, fever, and headaches, with major citation and faithfulness errors."
+}

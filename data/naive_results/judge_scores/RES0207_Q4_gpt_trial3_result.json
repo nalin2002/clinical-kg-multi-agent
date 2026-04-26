@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Gold Answer lists multiple specific screened symptoms/exposures the patient denied (chest pain, presyncope, GI symptoms, sick contacts, travel, URI/COVID symptoms, sputum, prior similar episodes) and links these negatives to broad differentials (cardiac/cardiopulmonary, infectious/URI/COVID, GI/systemic). The Generated Answer does not report these denied items and instead focuses on a purported “denial of causal link” between seizure and dyspnea, which is not accurate—the patient said they didn’t know if it was related (uncertainty, not denial). It also treats “I’m taking Keppra” as implying compliance/denial of other treatments, which is not what was asked in the question and is not a screened negative symptom/exposure. The differentials proposed (e.g., pneumonia) are not derived from the negative screening findings and are not the mapping requested in the prompt. Overall, the content substantially contradicts/misses the Gold Answer’s factual targets.",
+    "completeness": "Key Gold points covered: none of the actual denied screening items (no chest pain, no fainting, no nausea/vomiting, no belly pain, no diarrhea, no sick contacts, no travel, no loss of taste/smell, no sore throat, no runny nose, dry/no sputum, no prior similar episodes) are included. The required linkage of these specific negative findings to differential categories (infectious/URI/COVID, cardiac/cardiopulmonary, GI/systemic) is not provided in the requested way. Coverage is well under 20% of Gold key points.",
+    "faithfulness": "Some referenced facts are in the transcript (shortness of breath, mild fever, seizure, missed medication, Keppra). However, the answer introduces multiple unsupported interpretations (doctor “screened for relationship” between seizure and dyspnea; patient “denied” relationship) and adds differential statements not grounded in the transcript (e.g., pneumonia/systemic viral infection as explicit considerations). Because it misrepresents an uncertainty as a denial and adds several unsubstantiated clinical claims, faithfulness is low.",
+    "relevance": "The question asks for (1) specific screened symptoms/exposures the patient denied and (2) what differentials those negative findings address. The Generated Answer largely does not list the screened/denied items and instead pivots to seizure-medication discussion and broad differentials not tied to the negative screening. It is only partially on-topic (mentions differentials broadly) but fails to answer the core request."
+  },
+  "scores": {
+    "correctness": 1,
+    "completeness": 1,
+    "faithfulness": 2,
+    "relevance": 2
+  },
+  "average_score": 1.5,
+  "summary": "The Generated Answer misses nearly all denied screening findings and misinterprets the seizure discussion, resulting in low correctness, completeness, and faithfulness with only partial relevance to the asked differential-mapping task."
+}

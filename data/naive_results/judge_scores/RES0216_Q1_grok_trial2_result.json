@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Generated Answer correctly identifies chest tightness [P-1] and difficulty breathing/SOB [P-1, P-7], aligning with Gold's core facts on these. However, it inaccurately claims no upper airway symptoms despite P-11 explicitly mentioning hoarseness, increased phlegm, and throat clearing. It includes irrelevant headache [P-27], not focused on respiratory/chest complaints. For denials, it partially notes chest pain denial but mis-cites [P-1 instead of P-5] and fabricates that fevers, night sweats, chills, weight loss, cough, anxiety, and sweating are not mentioned, directly contradicting explicit denials in [P-5, P-6, P-11-15]. Misses key details like 3-day duration, diffuse nature [P-8], worsening factors [P-9, P-10]. Significant factual errors and contradictions.",
+    "completeness": "Gold key points covered: chest tightness (partial, misses duration, diffuse, worsening); SOB (partial). Missed entirely: upper airway (hoarse/phlegm/throat clearing [P-11]), full denial list (chest pain full detail, anxiety/sweating/doom [P-6], fevers [P-12], night sweats [P-13], chills [P-14], weight loss [P-15], cough [P-11]). Adds extraneous headache and specific spot pain denial (not in screened list). Covers ~25-30% of Gold points.",
+    "faithfulness": "Claims on chest tightness and SOB verifiable [P-1, P-7]. Headache verifiable but irrelevant [P-27]. Incorrectly states no upper airway symptoms (contradicts [P-11]). Falsely claims no info on fevers/night sweats/etc. (directly contradicted by [P-11-15, P-6]). Chest pain denial cite partially off [P-1 vs P-5]. Multiple misrepresentations/hallucinated absences of transcript content.",
+    "relevance": "Directly structures response around reported symptoms and explicit denials as per question. Focuses on respiratory/chest but includes irrelevant headache and off-list 'specific spot pain.' Minor tangents do not derail core addressing of question."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 2.5,
+  "summary": "The Generated Answer partially captures chest tightness and SOB but misses key details, upper airway symptoms, and all major denied symptoms while falsely claiming they are unmentioned, resulting in low correctness, completeness, and faithfulness."
+}

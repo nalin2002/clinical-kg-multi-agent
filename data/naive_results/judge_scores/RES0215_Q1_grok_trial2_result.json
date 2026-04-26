@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer identifies wheezing and difficulty taking deep breaths as the earliest symptoms per P-2 (direct response to 'what did you notice first?'). Generated Answer correctly lists all key symptoms (wheezy, short of breath, slight cough, difficulty taking deep breaths, out of breath, hard time catching breath) with accurate citations, notes cough as recent ('now'), and timeline of 4-5 days for wheezy. However, it inaccurately specifies only 'wheezy' as the earliest symptom, omitting the paired 'difficulty taking deep breaths' from P-2. Minor discrepancy on exact earliest pairing, but core facts (symptoms and general timeline) match.",
+    "completeness": "Gold covers: wheezy (4-5 days), short of breath, slight cough (now), out of breath with activity (P-3), hard time catching breath/no cyanosis (P-32), earliest=wheezing+diff deep breaths (P-2), cough recent/non-productive (P-31), looks fine (P-9). Generated covers all symptoms including out of breath/hard time catching breath/diff deep breaths, timeline, cough recent; misses explicit non-productive cough (P-31) and 'looks fine otherwise' (P-9), and precise earliest pairing. Covers ~85-90% of key points.",
+    "faithfulness": "All listed symptoms directly verifiable in cited transcript sections (P-1 wheezy/SOB/cough; P-2 diff deep breaths; P-3 out of breath; P-32 hard time catching breath). Citations accurate. However, introduces unverified 'knowledge graph' reference and associations not present in transcript, which is a minor hallucination/external assumption. Otherwise fully grounded.",
+    "relevance": "Directly addresses question by listing specific symptoms at presentation with citations and identifying earliest (wheezy) with timeline reasoning. Structured response focused on query; minor tangent on knowledge graph does not detract significantly."
+  },
+  "scores": {
+    "correctness": 4,
+    "completeness": 4,
+    "faithfulness": 4,
+    "relevance": 5
+  },
+  "average_score": 4.25,
+  "summary": "The Generated Answer is mostly accurate and comprehensive in listing symptoms and timeline but has a minor error in specifying only wheezing (vs. wheezing + difficulty deep breaths) as earliest and introduces an extraneous knowledge graph reference."
+}

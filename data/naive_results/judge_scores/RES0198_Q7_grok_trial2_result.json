@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer states symptoms began one week ago (P-1, P-2), with stuffiness first ('felt pretty stuffy at first', P-3), shifting to predominantly runny ('now it's mostly running', P-3), influenced by decongestants (P-10), initially 'on and off' (P-1) but clarified as 'pretty constant' (P-8), no improvement (P-1). Generated Answer incorrectly states both symptoms began together without specifying order (denies transcript specifies first symptom despite P-3), claims no shift in predominance (contradicts P-3), reports only intermittent based on P-1 (ignores P-8 clarification to constant), misattributes 'a little bit' to discharge (P-15 is fatigue, not discharge). Significant contradictions and errors.",
+    "completeness": "Gold key points: 1-week onset [P1,P2]; initial stuffiness [P3]; shift to runny predominant [P3]; decongestant influence [P10]; initial on/off but constant [P1,P8]; no improvement [P1]. Generated covers: 1-week onset [P1]; no improvement [P1]; misses initial stuffiness first, shift to runny, decongestant role, constant clarification. Covers ~25% of key points.",
+    "faithfulness": "Claims both symptoms simultaneous and no order specified (P-3 explicitly states stuffy first); attributes 'a little bit' to discharge citing P-15 (P-15 is fatigue, hallucination/mis-citation); ignores P-3 shift and P-8 constant, relying only on P-1; 'consistency mostly clear' [P5] grounded but irrelevant. Multiple ungrounded claims and hallucinations.",
+    "relevance": "Generated structures response around onset, order, predominance change (denies), and frequency, directly mirroring question elements; minor irrelevant details like discharge consistency but no major tangents or off-topic content."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 2.5,
+  "summary": "The Generated Answer has significant factual inaccuracies, misses most key points from the Gold Answer, includes hallucinations, but remains mostly relevant to the question."
+}

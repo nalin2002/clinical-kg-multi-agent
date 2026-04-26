@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer correctly identifies asthma as the diagnosis, aligning with the Gold Answer's core conclusion of pediatric asthma. However, it specifies 'acute exacerbation of asthma,' which is not mentioned in the Gold Answer and may not perfectly fit the episodic, first-reported nature without prior history; Gold is more precise with 'exercise-induced bronchoconstriction in atopic predisposition.' Core facts on triggers and supports are mostly consistent, with minor discrepancies in specificity. Score: 4.",
+    "completeness": "Gold Answer covers: precise diagnosis, exercise triggers [P-3,P-41,P-6], reversibility with rest [P-6,P-33], cold weather [P-38], across settings [P-38], seasonal allergies [P-35,P-36], nocturnal episode [P-43,P-44], pertinent negatives [P-7,P-8,P-10,P-31]. Generated covers exercise [P-3 partial], cold [P-38], allergies [P-35,36], across settings [P-38], but misses reversibility, nocturnal, negatives, and full diagnosis details. Approximately 4/7 key supports (~57%) plus partial diagnosis. Score: 3.",
+    "faithfulness": "Transcript citations [P-3, P-38, P-35, P-36] are accurate and verifiable. However, multiple references to a non-existent 'Knowledge Graph' (e.g., cold weather causing wheezy, Reactine for allergies, wheezy to out of breath) are hallucinations not grounded in the transcript. Score: 2.",
+    "relevance": "Directly addresses the question by naming a diagnosis (asthma) and listing transcript-supported findings for triggers, weather, allergies, and settings. KG tangents are minor off-topic additions but do not derail focus. Score: 4."
+  },
+  "scores": {
+    "correctness": 4,
+    "completeness": 3,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 3.25,
+  "summary": "The Generated Answer is mostly correct and relevant but incomplete in covering key Gold points like reversibility and negatives, and faithfulness suffers from hallucinated Knowledge Graph references."
+}

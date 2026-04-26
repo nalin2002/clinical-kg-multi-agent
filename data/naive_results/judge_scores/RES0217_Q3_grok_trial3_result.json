@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer accurately captures the exposure history (hiking Friday, gardening Saturday [P-1]), tick attachment duration (>72 hours [D-6]), and prior history (10 years ago tick bite with bullseye rash requiring antibiotics [P-3]). It correctly notes the absence of current bullseye rash and non-deer tick appearance despite prophylaxis. However, it omits the geographic risk assessment (Strathroy as concerning per Lyme map [D-13/P-12]), which is a key factor in the Gold Answer, representing a minor discrepancy but core facts remain consistent.",
+    "completeness": "Key points from Gold Answer: exposure history (hiking/gardening, uncertain timing [P-1]) - covered; duration (>72h [D-6]) - covered; geographic risk (Strathroy creek, concerning on map [P-12/D-13]) - completely missed; prior history (10y ago bullseye rash/abx [P-3]) - covered; despite factors (not deer tick [P-5], no rash [P-6], patient comment [P-5], lab [D-6], safer [D-18]) - partially covered. Covers ~70% of key points (3 out of 4 main factors plus some despite).",
+    "faithfulness": "All major claims verifiable: exposure [P-1], duration [D-6], prior [P-3], no rash implied [P-6], not deer tick [P-5/D-5]. Citation [D-6] for not deer tick slightly inaccurate (actual D-5/P-5). 'Knowledge graph' not in transcript (hallucination). Interpretive 'triggered by duration and prior history' plausible from context but omits geo; mostly grounded with minor unverifiable details.",
+    "relevance": "Directly structures response around exposure, duration, and prior history per question, addresses 'even though' clauses (no rash, not deer tick). Omits geographic risk (explicit in question), but remains focused without off-topic content."
+  },
+  "scores": {
+    "correctness": 4,
+    "completeness": 3,
+    "faithfulness": 4,
+    "relevance": 4
+  },
+  "average_score": 3.75,
+  "summary": "The Generated Answer is mostly accurate and relevant but incomplete due to omitting the geographic risk assessment, with minor faithfulness issues from extraneous 'knowledge graph' reference."
+}

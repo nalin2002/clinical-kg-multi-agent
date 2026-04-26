@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer identifies three specific symptoms (worsening cough, sputum changes, increased dyspnea) as leading to the COPD exacerbation diagnosis in the context of COPD history. Generated Answer correctly identifies two of these (worsening cough and increased dyspnea) with accurate citations [P-1, D-52] and the doctor's linkage, but omits the sputum change entirely, which is a key fact highlighted in Gold [P-6]. No contradictions or errors in what is stated, but minor discrepancy due to omission of one core symptom. Score: 4.",
+    "completeness": "Gold key points: 1) worsening cough details [P-1,P-5]; 2) sputum change to yellow [P-6]; 3) intensified dyspnea [P-8]; 4) COPD history [P-2]; 5) inhalers [P-11]; 6) doctor's explicit synthesis [D-52]. Generated covers worsening cough and dyspnea (partial details from [P-1]), COPD history, and doctor's quote [D-52]; misses sputum entirely, specific citations for cough/dyspnea details, COPD duration, and inhalers. Covers ~60-70% of key points (2/3 symptoms + linkage + history). Score: 3.",
+    "faithfulness": "All claims in Generated are directly verifiable in transcript: patient symptoms in [P-1], doctor's summary and conclusion verbatim from [D-52]. No hallucinations or unverifiable details; sputum omission does not introduce fabrication. Citations accurate. Score: 5.",
+    "relevance": "Generated directly addresses the question by specifying the symptom combination (worsening cough + increased dyspnea) and doctor's linkage via quote from [D-52] in COPD context. No off-topic content, fully focused despite incompleteness. Score: 5."
+  },
+  "scores": {
+    "correctness": 4,
+    "completeness": 3,
+    "faithfulness": 5,
+    "relevance": 5
+  },
+  "average_score": 4.25,
+  "summary": "The Generated Answer is mostly accurate and highly faithful/relevant but incomplete in omitting the sputum change symptom central to the Gold Answer's analysis."
+}

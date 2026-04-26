@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer is largely inconsistent with the Gold Answer. The key denied constitutional symptoms the doctor screened for were night sweats, unexplained weight loss/loose clothes, and hemoptysis; the Generated Answer instead lists fatigue and sleep disturbance (which were reported by the patient, not denied, and were not directly screened by the doctor as constitutional “red flag” symptoms). It incorrectly treats eczema as an exposure risk relevant to chronic cough. It also misstates duration (“cough lasting for a month”) whereas the transcript is clear about ~3 months. While it mentions TB in general terms, it does not connect TB screening to the specific denied symptoms/exposures asked about in the question and misses the malignancy point tied to hemoptysis.",
+    "completeness": "It misses nearly all key items from the Gold Answer: \n- Missed denied constitutional symptoms: night sweats, weight loss/loose-fitting clothes, hemoptysis. \n- Missed denied exposure risks: sick contacts (class/recent/roommate), recent travel/out of country, cocaine/heroin/IV drug use. \n- Missed other negatives noted in Gold: stiff neck, nausea/vomiting, body pain. \n- Missed the explanatory link that these questions help exclude pulmonary TB and reduce concern for TB/malignancy via hemoptysis denial. \nOverall coverage is well under 20% of Gold key points.",
+    "faithfulness": "Multiple elements are not grounded in the transcript or are mischaracterized: “knowledge graph” is not part of the transcript; the doctor did not explicitly screen for fatigue/sleep disturbance as a constitutional red-flag review (the patient volunteered tiredness/sleep disruption); eczema is not an exposure risk for chronic cough in this context; and the answer incorrectly reframes the cough as ‘lasting for a month.’ Only the raw facts that the patient felt tired and had poor sleep are supported by [P-19], but their use as the main denied screening elements is not faithful to the encounter.",
+    "relevance": "The response only partially addresses the question. It attempts to discuss constitutional symptoms, exposure risks, and serious conditions (e.g., TB), but it fails to identify the specific screened-and-denied symptoms/exposures that the question asks for, and it introduces irrelevant/incorrect items (eczema) and misstates timeline. Thus it is largely not responsive to the requested specifics."
+  },
+  "scores": {
+    "correctness": 1,
+    "completeness": 1,
+    "faithfulness": 2,
+    "relevance": 2
+  },
+  "average_score": 1.5,
+  "summary": "The Generated Answer is mostly incorrect and incomplete, missing the key denied TB-oriented constitutional symptoms and exposure risks from the transcript and adding several unsupported or irrelevant elements."
+}

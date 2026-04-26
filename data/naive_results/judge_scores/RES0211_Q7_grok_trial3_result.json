@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer specifies the initial symptom as scratchy throat first [P-4], followed by dry cough, but Generated Answer presents dry cough and scratchy throat together as initial symptoms citing [P-1], omitting the precise order. Headache is noted as progression 'shortly after,' but Gold places it 'by the time of the visit' without specifying timing. Feeling hot is described by Generated as concurrent and beginning alongside cough/throat, while Gold states no exact timing relative to onset is specified, making this an over-precise inference. Doctor's summary as 'fever' is implied but not contradicted. Some factual errors in order and timeline precision, but core symptoms align.",
+    "completeness": "Gold key points: 3-4 days duration [P-1,P-3]; first scratchy throat then cough [P-4]; by visit: headache [P-1,P-2], malaise/crappy [P-1,P-14], fatigue [P-13]; hot persistent day/night [P-7,P-9], no exact start timing, part of same illness [D-58]; progression from airway to systemic. Generated covers: 3-4 days, cough/throat (order missed), headache, hot concurrent/constant. Missed: precise initial order, malaise, fatigue, no-exact-timing note, progression summary, doctor's fever reference. Covers ~60% of keys.",
+    "faithfulness": "Citations [P-1, P-7, P-9] accurate and verifiable. Symptom mentions grounded in transcript. However, initial order not per [P-4]; 'shortly after' for headache and 'began alongside' for hot are plausible inferences but not explicitly stated (hot discussed after initial symptoms in dialogue). No fabricated facts, mostly verifiable with minor interpretive additions.",
+    "relevance": "Generated Answer directly structures response around symptom order/progression in numbered list and explicitly addresses hot sensation timeline relative to cough/throat, perfectly matching question focus with no off-topic content."
+  },
+  "scores": {
+    "correctness": 3,
+    "completeness": 3,
+    "faithfulness": 4,
+    "relevance": 5
+  },
+  "average_score": 3.75,
+  "summary": "The Generated Answer is mostly accurate and relevant but has factual discrepancies in symptom onset order and over-infers the timing of feverish hot sensation relative to Gold Answer, with partial coverage of all key points."
+}

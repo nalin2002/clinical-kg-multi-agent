@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer incorrectly identifies key clinical findings from early dialogue turns (e.g., headache in D-2, fever in D-7, night sweats in D-9) rather than the actual doctor's summary in D-58, which recaps: 3-4 day dry cough with fever/headache, no sputum, no recent sick contacts except brother 2 weeks ago, no asthma, no meds except Claritin. It fabricates a 'common cold' diagnosis and references a non-existent 'knowledge graph.' Jessica's goal is misrepresented as wanting no more questions (citing wrong P-59), ignoring her stated desire in P-60 to know if she needs medicine. Contradicts Gold Answer entirely.",
+    "completeness": "Gold Answer key points: 5 specific recaps from D-58 (dry cough duration/fever/headache, no sputum, sick contacts/brother, no asthma, Claritin only), visit framing as next steps, Jessica's goal (P-60: medicine or not; P-61: go home/lay down). Generated covers 0% accurately: wrong symptoms, no mention of cough/sputum/asthma/meds/contacts, wrong goal. <20% coverage.",
+    "faithfulness": "Claims about 'doctor's recap' not grounded in D-58; cites earlier questions as recap. Night sweats mentioned in D-9/P-9 but not recapped in summary. 'Knowledge graph' and 'common cold' diagnosis hallucinated—not in transcript. Jessica's goal cites erroneous [P-59] (actually response to drug question); ignores P-60/P-61. Multiple fabrications and inaccurate citations.",
+    "relevance": "Attempts structure matching question (key findings recap + Jessica's goal), but content deviates to unrelated early symptoms and wrong goal, introducing off-topic diagnosis/graph. Partially relevant format but largely off-topic substance."
+  },
+  "scores": {
+    "correctness": 1,
+    "completeness": 1,
+    "faithfulness": 1,
+    "relevance": 2
+  },
+  "average_score": 1.25,
+  "summary": "The Generated Answer is factually inaccurate, incomplete, unfaithful to the transcript with hallucinations, and only partially relevant due to mismatched content."
+}

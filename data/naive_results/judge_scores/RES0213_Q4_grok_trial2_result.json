@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer falsely claims the transcript contains only Patient responses and no Doctor dialogue, which is factually incorrect as the transcript includes numerous Doctor turns (e.g., [D-1] to [D-33]) with specific questions matching the Gold Answer; it identifies zero conditions or questions ruled out, directly contradicting the Gold Answer's detailed list of 6 conditions (trauma, cardiac disease, infection, asthma, dyspnea, inherited arrhythmias) with citations.",
+    "completeness": "Key points from Gold Answer: (1) Trauma/injury via [D-5]; (2) Cardiac via [D-10],[D-20],[D-11]; (3) Infection via [D-12],[D-27]; (4) Asthma via [D-23],[D-24]; (5) Dyspnea via [D-19]; (6) Inherited arrhythmia via [D-31],[D-32]. Generated Answer covers 0% of these, instead providing irrelevant excuses about missing Doctor dialogue.",
+    "faithfulness": "Generated Answer hallucinates absence of Doctor turns despite full transcript presence (e.g., ignores [D-5] 'accidents or injuries', [D-12] 'fevers', etc.); all claims about transcript content are unverifiable and false, with no accurate citations.",
+    "relevance": "Generated Answer refuses to answer the question by claiming insufficient transcript data, providing no analysis of conditions screened or questions used, thus failing to address the query directly."
+  },
+  "scores": {
+    "correctness": 1,
+    "completeness": 1,
+    "faithfulness": 1,
+    "relevance": 1
+  },
+  "average_score": 1.0,
+  "summary": "The Generated Answer is entirely inaccurate, hallucinatory, and non-responsive, mistakenly denying the presence of Doctor dialogue and failing to cover any content from the Gold Answer."
+}

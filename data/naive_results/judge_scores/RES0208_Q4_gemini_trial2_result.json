@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer contains a major factual error by stating that the transcript does not explicitly mention 'chest pain, palpitations, runny nose, and nausea.' In reality, these are explicitly asked about in D-16, D-17, D-10, and D-15, respectively, and negated by the patient. The Gold Answer correctly identifies these instances, while the Generated Answer incorrectly claims they are absent or only 'inferred.'",
+    "completeness": "The Generated Answer fails to list the majority of symptoms negated by the patient (vision/hearing, abdominal pain, urinary symptoms, numbness/tingling) which are present in the Gold Answer. It focuses on 'cough' as the primary negated symptom, despite the patient actually suggesting a cough might be starting [P-7].",
+    "faithfulness": "The answer is unfaithful to the source transcript. It explicitly hallucinates that certain symptoms are missing from the text when they are clearly present in the dialogue. It also references a 'knowledge graph' which was not provided in the source context.",
+    "relevance": "While the answer attempts to address the question of differentiation, it does so based on the false premise that the symptoms mentioned in the prompt were not in the transcript. Consequently, it fails to explain how the absence of those specific findings (as requested) helps differentiate the diagnosis, instead focusing on other symptoms like fatigue and muscle aches or claiming chest pain/palpitations 'are not discussed.'', which is incorrect per [D-16] and [D-17].\""
+  },
+  "scores": {
+    "correctness": 1,
+    "completeness": 1,
+    "faithfulness": 1,
+    "relevance": 2
+  },
+  "average_score": 1.25,
+  "summary": "The generated answer is highly inaccurate, explicitly claiming that the symptoms mentioned in the prompt are not in the transcript, when they are clearly present and negated in the text."
+}

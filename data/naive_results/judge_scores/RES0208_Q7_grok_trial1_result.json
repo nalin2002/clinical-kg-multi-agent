@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer specifies onset symptoms including shortness of breath, fatigue/rundown/tiredness, weakness, reduced appetite, laborious breathing, and generalized body aches (onset approximate). Generated correctly identifies SOB and fatigue from onset but omits weakness, appetite loss, breathing description, and aches. Recent symptoms: correctly notes fever (yesterday) and loss of taste (morning) but misses loss of smell. Emerging: correctly notes cough and sore throat as starting, but incorrectly categorizes headaches as emerging (Gold notes they are mild and similar to baseline stress headaches, not new). No contradictions but significant omissions and one misclassification, so some factual errors with main timeline points mostly correct.",
+    "completeness": "Gold key points: Onset (SOB, fatigue/rundown/tired/weakness, reduced appetite, laborious breathing, body aches); Yesterday (subjective fever); Morning (loss of taste/smell, new); Emerging (cough 'on its way', sore throat 'starting', headaches mild/baseline). Generated covers: Onset (SOB, fatigue ~40%); Recent (fever, taste ~67%, misses smell); Emerging (cough, sore throat, headaches ~75%). Overall covers ~60% of key points (misses aches, weakness, appetite, smell, details like laborious/new/baseline).",
+    "faithfulness": "Timeline claims verifiable with accurate citations (P-1, P-4, P-7, P-9, P-11 all match transcript). Loss of smell mentioned in clinical context but not hallucinated (patient says 'kind of' [P-6]). However, 'knowledge graph information' and explicit COVID diagnosis alignment are not in transcript (doctor suspects COVID [D-36] but no graph), introducing minor unverifiable/hallucinated details; mostly grounded.",
+    "relevance": "Generated directly reconstructs timeline in three phases matching question (onset couple days, recent day-before/morning examples, emerging at consult), with structured evidence; clinical context is minor off-topic tangent but does not detract significantly."
+  },
+  "scores": {
+    "correctness": 3,
+    "completeness": 3,
+    "faithfulness": 4,
+    "relevance": 4
+  },
+  "average_score": 3.5,
+  "summary": "The Generated Answer provides a mostly accurate and relevant timeline reconstruction with appropriate structure and citations but omits several key symptoms from the Gold Answer and includes minor hallucinated context."
+}

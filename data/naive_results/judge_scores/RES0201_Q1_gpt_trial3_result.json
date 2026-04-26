@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer correctly identifies some reported symptoms (sore throat starting ~4 days ago; difficulty swallowing food; fatigue; muscle aches) and correctly notes denial of loss of smell. However, it makes a major factual error by stating that cough, runny nose, fever, headaches, and chest pain were not explicitly denied—these were explicitly denied in the transcript ([P-15]–[P-18], [P-23]). It also omits a key reported symptom (difficulty breathing starting yesterday, worsening, constant: [P-8]–[P-11]) and omits the patient’s reported reduced taste beginning ~2 days ago and constant ([P-19]–[P-21]). These are substantial deviations from the Gold Answer.",
+    "completeness": "Reported symptoms: includes sore throat and dysphagia, fatigue, and muscle aches, but misses (1) difficulty breathing (onset yesterday, constant, worsening) and (2) reduced sense of taste (onset ~2 days ago, constant). Also does not include key qualifiers from the Gold (worsening sore throat; fluids tolerated; not weak). Denied symptoms: only includes loss of smell, but misses explicit denials of cough, runny nose, headaches, chest pain, fever, chills/night sweats; also misses denial of sick contacts and travel. Overall coverage is well under 80% of Gold key points.",
+    "faithfulness": "Most included positive-symptom statements are grounded in the transcript, but the note claiming cough/runny nose/fever/headaches/chest pain were not explicitly denied contradicts the transcript, where the patient clearly answers “No/Nope/I don’t think so” to each. This constitutes multiple unfaithful statements relative to the source.",
+    "relevance": "The response is largely focused on the asked categories (reported symptoms and explicitly denied screened symptoms). However, it adds a minor non-essential detail (mono history) and, more importantly, fails to list several directly asked screened symptoms, reducing how well it addresses the question."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 2.5,
+  "summary": "Partially relevant but substantially incomplete and includes a major contradiction of the transcript by incorrectly claiming several screened symptoms were not explicitly denied."
+}

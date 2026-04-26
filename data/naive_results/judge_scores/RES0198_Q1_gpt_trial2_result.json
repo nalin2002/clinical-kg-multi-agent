@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer correctly identifies the patient’s nasal symptoms (stuffy nose and runny nose for ~1 week) and that the discharge was mostly clear. However, it is factually incorrect in stating that the patient did not explicitly deny sore throat, cough, post-nasal drip, or loss of taste/smell—these were all explicitly denied in the transcript (cough [P-4], back-of-throat drainage/post-nasal drip [P-6], sore throat/SOB/fever/chills [P-7], loss of taste/smell [P-16]). It also incorrectly claims the only explicit denial was about “concerns related to their diabetes” at [P-27], which is a misread (that line is denial of additional medications besides insulin, not a diabetes ‘concern’ denial).",
+    "completeness": "Covers only part of the Gold Answer: (1) nasal congestion/rhinorrhea and (2) clear discharge. It misses the temporal progression (stuffy first then mostly running), misses mild fatigue, and—most importantly—omits the full list of explicitly denied related symptoms (cough, sore throat, post-nasal drip, loss of taste/smell, SOB, fever/chills) and other pertinent negatives noted in the Gold Answer.",
+    "faithfulness": "Several statements are not grounded or are contradicted by the transcript. The claim that none of the listed related symptoms were explicitly denied directly conflicts with multiple explicit denials in the transcript. The reference to a “knowledge graph” is not supported by the provided materials. The statement about an explicit denial regarding “concerns related to their diabetes” tied to [P-27] is not what the transcript says.",
+    "relevance": "The response is on-topic (nasal symptoms, discharge character, and denied related symptoms), but it substantially fails the key part of the question by incorrectly stating that the relevant related symptoms were not denied."
+  },
+  "scores": {
+    "correctness": 1,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 3
+  },
+  "average_score": 2.0,
+  "summary": "The answer captures congestion/rhinorrhea and clear discharge but is largely incorrect and unfaithful regarding explicitly denied related symptoms, which are clearly documented in the transcript."
+}

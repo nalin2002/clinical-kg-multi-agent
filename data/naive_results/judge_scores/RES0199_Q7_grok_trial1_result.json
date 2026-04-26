@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Step-by-step: Gold Answer specifies headache and cough started 4 days ago and remained stable in severity ('stayed around the same' [P-9, P-11]). Generated correctly identifies initial symptoms 4 days ago [P-1]. GI symptoms: Gold distinguishes diarrhea 2 days ago [P-28], nausea/vomiting 'few days back' with vomiting yesterday [P-32]; Generated lumps all GI as 'approx three days into illness' ('few days back' [P-1]), which is a minor timing discrepancy (2 vs ~3 days from onset). Loss of smell: both agree 1 day ago [P-24]. Headache/cough stability: Generated says 'persistent' [P-3, only headache] and continued without fluctuations detailed, missing explicit 'same severity' quotes but core idea present. No major contradictions, minor discrepancies in precision.",
+    "completeness": "Key points from Gold: 1) Initial headache+cough 4 days ago ✓; 2) Headache details (persistent, location, 7/10, stable) partially (persistent/stable implied, misses details); 3) Cough dry, stable ✓ partially (stable implied); 4) Diarrhea precisely 2 days ago ✗ (uses vague 'few days'); 5) Nausea/vomiting timing/details partially (lumped); 6) Anosmia 1 day ago ✓; 7) Negatives (omitted). Covers initial onset, GI/anosmia relative timing approximately, stability implied (~60-70% key points).",
+    "faithfulness": "All claims verifiable: initial symptoms [P-1], GI 'few days back' [P-1], anosmia [P-24], persistent headache [P-3]. 'Three days into' is interpretation of 'few days back' (plausible, minor stretch). Stability as 'persistence/continued' grounded but attributes [P-3] to both (minor, P-11 supports cough). No hallucinations, 'daily fluctuations not detailed' accurate as no daily breakdown but overlooks direct stability statements. Citations accurate.",
+    "relevance": "Perfectly addresses question: structures onset/progression (first symptoms, GI/smell relative), stability of headache/cough. No irrelevant content, directly focused on timeline and changes."
+  },
+  "scores": {
+    "correctness": 4,
+    "completeness": 3,
+    "faithfulness": 4,
+    "relevance": 5
+  },
+  "average_score": 4.0,
+  "summary": "The Generated Answer is mostly accurate and relevant but incomplete in precise GI timing and explicit stability details compared to the Gold Answer."
+}

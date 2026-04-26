@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer correctly identifies that the patient tried 'decongestants' [P-10] with assessment 'worked a little bit' [P-10]; Generated Answer incorrectly states no information on medication tried and misattributes assessment to [P-1] instead of [P-10], only partially correct on recommendation; significant factual errors and contradictions.",
+    "completeness": "Gold key points: tried decongestants [P-10], assessment 'little bit effective' with reasoning [P-10], recommend hydration and Tylenol Cold + supportive care [D-39]; Generated covers only Tylenol Cold partially, misses tried medication and correct assessment entirely (covers ~25% of key points).",
+    "faithfulness": "Generated claims 'no information' on medication tried, but [P-10] explicitly states 'I've tried like decongestants'; assessment wrongly sourced to [P-1] ignoring [P-10]; Tylenol verifiable [D-39]; multiple unverifiable/wrong claims equivalent to hallucination.",
+    "relevance": "Generated Answer is structured directly around the three-part question (medication tried, assessment, recommendation) with no tangents or off-topic content."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 5
+  },
+  "average_score": 2.75,
+  "summary": "The Generated Answer has major factual errors and omissions regarding the patient's prior decongestant use and effectiveness assessment, despite correctly identifying the recommended Tylenol Cold, resulting in low scores across most dimensions except relevance."
+}

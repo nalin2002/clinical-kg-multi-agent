@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer identifies Ventolin and Spiriva as respiratory inhalers (correct in Generated), atorvastatin as non-respiratory (missed, Generated falsely claims no non-respiratory drugs), Ventolin used ~10 times past week (missed, Generated claims no quantitative frequency despite [P-12]), and diuretic discontinued without approval (missed, Generated claims no such info despite [P-35,P-36]). Significant omissions and contradictions on key facts.",
+    "completeness": "Gold key points: Ventolin (as-needed), Spiriva, Ventolin 10x/week [P-11,P-12], atorvastatin [P-38], diuretic discontinued own [P-35,P-36]. Generated covers only Ventolin/Spiriva (~30-40% coverage), misses frequency, atorvastatin, and discontinuation entirely.",
+    "faithfulness": "Ventolin/Spiriva verifiable [P-11]. 'No non-resp drugs' contradicts [P-38] (Torva Staten/atorvastatin). 'No quant Ventolin freq' contradicts [P-12] ('10 times'). 'No discontinued med' contradicts [P-35,P-36] (stopped diuretic without asking doc). Multiple contradictions/hallucinated absences.",
+    "relevance": "Generated directly structures response around question components (resp/non-resp meds, Ventolin freq, discontinued med) with no off-topic content or tangents."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 5
+  },
+  "average_score": 2.75,
+  "summary": "Generated Answer partially identifies respiratory inhalers but has significant factual errors, omissions, and contradictions by denying key non-respiratory medication, Ventolin frequency, and self-discontinued diuretic present in the transcript."
+}

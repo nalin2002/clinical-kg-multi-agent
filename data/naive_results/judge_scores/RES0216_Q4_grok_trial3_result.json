@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer correctly identifies the condition as 'cardiac ischemic pictures' matching the Gold Answer's 'cardiac ischemic picture'. It accurately captures the doctor's direct citations in [D-36] regarding chest tightness (not out-of-breathness or pain during exercise), which aligns with the Gold's emphasis on nature of complaints (tightness vs. pain and lack of classic exertional dyspnea). However, it has minor discrepancies: it frames the contrast as tightness vs. out-of-breathness primarily, while Gold stresses tightness vs. pain more explicitly and notes patient nuance in SOB [P-7]; crucially, it omits the Gold's highlighted absent symptoms of anxiety, sweating, and impending doom [D-6/P-6], which Gold presents as key evidence cited by the doctor.",
+    "completeness": "Key points from Gold covered: condition ('cardiac ischemic picture'), nature of complaints (tightness rather than pain/out-of-breathness [D-36], patient descriptions [P-1/P-5]); absence of pain and exertional SOB [D-36]. Missed: specific screening and denial of anxiety/sweaty/impending doom [D-6/P-6] as pertinent negatives; nuance that patient reported some breathing difficulty [P-7]; patient relief [P-35]; detailed combination explanation. Covers core doctor's direct citations (~70% of key points).",
+    "faithfulness": "All claims in Generated are directly verifiable in transcript: condition [D-36]; tightness vs. out-of-breathness and no pain [D-36]; patient description of tightness on breathing in [P-1]. Citations accurate; no hallucinations or unverifiable details.",
+    "relevance": "Perfectly addresses the question by specifying the condition and categorizing evidence into 'nature of chest complaint' (tightness vs. out-of-breathness) and 'absence of symptoms' (no out-of-breathness, no pain), with transcript citations; structured and focused with no tangents."
+  },
+  "scores": {
+    "correctness": 4,
+    "completeness": 3,
+    "faithfulness": 5,
+    "relevance": 5
+  },
+  "average_score": 4.25,
+  "summary": "The Generated Answer is highly faithful and relevant but slightly incomplete in covering all absent symptoms highlighted in the Gold Answer, with minor interpretive differences."
+}

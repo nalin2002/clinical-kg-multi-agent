@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer has significant factual errors compared to the Gold Answer. It correctly identifies the dry cough (duration noted as week or two weeks, nonstop daytime from P-1, P-13, P-14), short of breath (P-1), and wheezing a lot (P-15). However, it incorrectly states that chest sensations/tightness were not explicitly reported, contradicting Gold's citation of P-20 where patient confirms 'Yes' to chest tightness. It also misses and denies any nighttime symptom information, contradicting Gold's details from P-18 (nighttime symptoms every other day or so, less than daytime). Additionally, it omits details like hard time breathing (P-19) and wheezing more frequent than bronchodilator use (P-17). References to [KG] introduce external info not in Gold.",
+    "completeness": "Gold key points: 1) dry cough ~2 weeks, nonstop day (covered fully); 2) breathing difficulty (SOB P-1, hard time breathing P-19, severe wheezing P-16) - partial (only SOB); 3) wheezing a lot, more freq than reliever (P-15,17) - partial (only 'a lot'); 4) chest tightness (P-20) - not covered, explicitly denied; 5) day vs night freq (day more prominent/near-constant P-1, night less/every other day P-18) - partial (only day, misses night). Covers ~30-40% fully/accurately (mainly cough/daytime), so low coverage.",
+    "faithfulness": "Most claims grounded: cough details verifiable (P-1,13,14); SOB (P-1); wheezing (P-15). However, hallucinated absence of chest tightness (verifiable P-20 'Yes'); hallucinated absence of nighttime symptoms (P-18 explicitly states they occur less frequently); adds unverifiable [KG] knowledge graph and 'standard treatment' not in transcript. Multiple misses of transcript facts and external additions indicate poor grounding.",
+    "relevance": "Perfectly addresses the question by structuring response around specific symptoms (cough character, breathing difficulties, wheezing, chest sensations) and day/night frequency, with bullet points matching query elements; no off-topic content despite errors."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 5
+  },
+  "average_score": 2.75,
+  "summary": "The Generated Answer is partially accurate on cough and daytime symptoms but has significant errors by denying reported chest tightness and nighttime symptoms, resulting in low correctness, completeness, and faithfulness despite high relevance."
+}

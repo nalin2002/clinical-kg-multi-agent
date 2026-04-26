@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer diagnoses acute lower respiratory tract infection (acute bronchitis with possible bacterial superinfection or early community-acquired pneumonia on chronic cough). Generated Answer diagnoses pneumonia (bacterial LRTI), which partially aligns as pneumonia is mentioned in Gold but is not the primary diagnosis; Gold emphasizes bronchitis. Explanations: Productive cough omits chronic 3-month history and acute 3-day worsening; cites general cough complaints rather than productive specifics. Green sputum explanation aligns well. Subjective fever incorrectly claims no explicit mention and cites fatigue/sleep disturbance (P-19) instead of actual 'feeling hot at night' (P-4), introducing factual error. Overall, some factual errors but core infectious process correct.",
+    "completeness": "Gold key points: nuanced diagnosis with chronic context; productive cough timing/citations [P-2,P-12]; green sputum etiology [P-9]; subjective fevers [P-4]; doctor's summary [D-47]; absences of other symptoms; no confirmatory tests. Generated covers basic diagnosis and three features but misses chronic cough context, exact timing, doctor's synthesis, absences, and tests. Covers explanations for three features partially (~60-70% of Gold's depth and points).",
+    "faithfulness": "Productive cough citations [P-1,P-3] verifiable but incomplete (misses productive 'gunk' [P-2]). Green sputum [P-9] accurate. Fever: claims no explicit 'fever' (false, implied in P-4 'hot at night'); cites wrong sections [P-19] for fatigue/sleep instead of P-4; equates to night sweats (denied in P-5). Hallucinates evidence for fever and adds unverified neutrophil explanation (plausible medically but not transcript-grounded). Multiple misrepresentations/hallucinations.",
+    "relevance": "Directly names diagnosis and structures response around the three exact features with explanations and citations, perfectly matching question structure without off-topic content."
+  },
+  "scores": {
+    "correctness": 3,
+    "completeness": 3,
+    "faithfulness": 2,
+    "relevance": 5
+  },
+  "average_score": 3.25,
+  "summary": "The Generated Answer partially captures the infectious diagnosis and feature explanations but introduces factual errors in fever evidence, misses chronic context, and has faithfulness issues from mis-citations."
+}

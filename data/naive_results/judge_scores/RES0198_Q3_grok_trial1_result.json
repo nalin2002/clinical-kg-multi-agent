@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer accurately reports core facts from the transcript and Gold Answer, such as stuffy/runny nose [P-1, P-3], clear discharge [P-5], one-week duration [P-1, P-2], doctor's conclusion and timeline for resolution [D-39]. No direct contradictions with Gold Answer. Minor discrepancies include calling one-week symptoms 'chronic' (Gold describes as fitting viral URI timing), implying hallmarks/distinctions not explicitly stated by doctor, and referencing a non-existent 'knowledge graph'. Core facts remain correct.",
+    "completeness": "Gold key points: (1) symptom type/rhinorrhea without absent features (cough [P-4], sore throat/SOB/fevers/chills [P-7], post-nasal drip [P-6]); (2) clear discharge [P-5]; (3) one-week duration/constant [P-2, P-8], few weeks resolution [D-39]; (4) progression stuffy to runny [P-3]; against allergic (no exposures [P-22], no allergies [P-28], no recent priors [P-9]); against bacterial (no fever [P-7], no headache [P-14], clear discharge); exposure (nephew/daycare [P-11]). Generated covers basic symptoms (partial type), discharge (full), duration (partial, misses constant/progression). Misses all absent features details, all against allergic points, specific against bacterial evidences, exposure. Covers ~30-40% of key points.",
+    "faithfulness": "Claims like symptoms [P-1], discharge [P-5], duration [D-39/P-1], doctor's quote [D-39], supportive care/swab [D-39] verifiable in transcript with accurate citations. Unverifiable/hallucinated: 'knowledge graph' (absent), 'chronic nature' vs acute allergic (not discussed, interpretive error), 'hallmarks of viral', specific 'severe/systemic symptoms typically associated' without citing denials [P-4,P-6,P-7]. Multiple hallucinated or ungrounded details.",
+    "relevance": "Directly addresses evidence for viral (symptoms, discharge, duration) with structure matching question's focus on characteristics; implies absence for bacterial via COVID context. Minor tangents (COVID swab details). However, neglects explicit evidence against allergic causes, absent features specifics, and exposure history emphasized in question. Partially relevant with some off-topic implication."
+  },
+  "scores": {
+    "correctness": 4,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 3
+  },
+  "average_score": 2.75,
+  "summary": "The Generated Answer provides a partially grounded overview of viral symptom evidence but lacks completeness in covering absent features, differentiators against allergic/bacterial causes, and exposure, with some hallucinations reducing faithfulness."
+}

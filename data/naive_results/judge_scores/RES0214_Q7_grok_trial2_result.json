@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer details precise chronology: stuffy nose first ('just before' fever), sore throat around fever onset (ongoing), fever for 3 days, muscle aches concurrent with fever (2-3 days). Husband's symptoms started a week ago (4 days before patient's fever). Generated Answer correctly identifies stuffy nose first, sore throat alongside fever, fever 3 days, but errs on muscle aches as 'following' fever (transcript shows concurrent), and significantly misstates husband's timeline as 'concurrent' with no specific duration provided, ignoring explicit [P-19] 'past week'—major contradiction on key comparison.",
+    "completeness": "Gold key points: 1. Stuffy nose first [covered]; 2. Sore throat around fever [partial]; 3. Fever 3 days [covered]; 4. Muscle aches concurrent [missed timing]; 5. Husband past week/~4 days prior [missed]; 6. Similar/ongoing [missed]; 7. Staggered onset/household transmission [missed]. Covers ~30-40% (basic symptoms but incomplete/wrong on timings and husband comparison).",
+    "faithfulness": "Stuffy nose, sore throat, fever verifiable [P-1]; muscle ache timing stretched as 'following' but based on [P-13,P-14] (actually concurrent per [D-15,P-15]); husband claim hallucinates absence of timeline despite clear [P-19] 'past week', misinterprets [D-53] inference as fact, and ignores [P-20] similarity—multiple unverifiable/misrepresented facts.",
+    "relevance": "Directly structures response around symptom chronology (list 1-4) and husband comparison, fully focused on question with no off-topic content despite errors."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 2.5,
+  "summary": "The Generated Answer partially captures symptom progression but contains significant factual errors on timings and husband's timeline, missing key Gold points and hallucinating transcript absences."
+}

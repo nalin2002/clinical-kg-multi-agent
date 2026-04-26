@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer accurately cites [P-3] for stuffiness first ('felt pretty stuffy at first'), shift to runny ('now it's mostly running'), decongestant influence [P-10], and reconciles 'on and off' [P-1] with 'pretty constant' [P-8]. Generated Answer incorrectly states transcript does not specify which symptom first (ignores [P-3]), denies shift in predominance (contradicts [P-3]), claims intermittent based only on [P-1] ignoring [P-8], and misattributes [P-15] (fatigue) to discharge consistency. Significant factual errors and contradictions with Gold.",
+    "completeness": "Gold key points: onset 1 week [P-1,P-2], first stuffy [P-3], shift to runny [P-3], decongestants [P-10], 'on and off' to constant [P-1,P-8], no improvement [P-1]. Generated covers onset/duration/no improvement (~3 points), misses first symptom, shift, decongestants, frequency nuance (contradicts). Covers ~25% of key points.",
+    "faithfulness": "Generated misinterprets [P-3] (stuffy first, now runny), ignores [P-8] constant, wrongly uses [P-15] fatigue for discharge. Claims no specification of first symptom and no predominance shift are not verifiable (contradict transcript). Multiple inaccuracies and misattributions.",
+    "relevance": "Generated structures response around onset, order, predominance, frequency directly matching question elements, with no off-topic content despite errors."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 2.5,
+  "summary": "The Generated Answer has significant factual inaccuracies, misses key progression details from the Gold Answer, shows hallucinations/misattributions, but remains mostly relevant to the question."
+}

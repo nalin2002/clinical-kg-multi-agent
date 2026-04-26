@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer contains major factual errors versus the Gold Answer/transcript. It incorrectly states the cough started ~1 month ago, whereas the patient reports having a cough for ~3 months with intermittent dry symptoms (P-2, P-13). It also incorrectly states there was no mention of subjective fever; the patient explicitly reports feeling “hot at night in the past couple days” (P-4). It correctly places sleep disruption at ~1 month (P-19, P-21) and correctly identifies greenish sputum, but fails to specify that the productive green sputum started ~3 days prior (P-12). Overall, core timeline is substantially wrong.",
+    "completeness": "Key Gold Answer elements: (1) initial onset ~3 months ago during pole dancing class; (2) ~2 months dry/intermittent; (3) ~1 month nightly sleep disruption; (4) ~3 days productive greenish sputum; (5) last couple days subjective fevers. Generated Answer includes (3) sleep disruption (~1 month) and mentions greenish sputum but omits the 3-day timing, omits the 3-month onset and intermittent dry period, and omits subjective fevers (incorrectly denying they exist). This covers fewer than half of required key points.",
+    "faithfulness": "Several statements are not faithful to the transcript: claiming onset was ~1 month contradicts the patient’s explicit “had a cough for like three months” (P-2) and “Three months ago” confirmation (P-13). Saying there is no mention of subjective fever contradicts P-4. While the answer quotes true statements about sleep disruption and sputum color, it misrepresents/ignores other clearly stated parts of the history, making it poorly grounded overall.",
+    "relevance": "The response is focused on the requested cough timeline elements (onset, sleep disruption, productive sputum, fevers) and does not add major unrelated tangents. However, it fails to provide the requested complete timeline details (especially onset, timing of sputum change, and fevers), limiting how well it addresses the question."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 2.5,
+  "summary": "The answer is on-topic but substantially incorrect and incomplete, misdating cough onset, missing the 3-day productivity timing, and incorrectly denying subjective fevers despite explicit transcript evidence."
+}

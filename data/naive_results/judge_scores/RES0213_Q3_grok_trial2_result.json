@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer correctly identifies anxiety as the core diagnosis, aligning with the Gold Answer's 'anxiety-related or stress-induced chest pain.' Key supporting facts like situational triggers [P-4], history of anxiety [P-21], and patient consideration of stress [P-8] match the Gold. Minor discrepancies include a less specific diagnosis phrasing and addition of unverified 'Knowledge Graph' claims not in the Gold Answer, but core facts remain consistent without major contradictions.",
+    "completeness": "Key points from Gold covered: situational pattern (partial, [P-4]; misses full resolution when distracted/social [P-9, P-29]), anxiety history [P-21, P-22 partial], stress linkage (implicit via academics, misses thesis details [P-15, P-16]), patient considers stress [P-8]. Missed: nervousness/breathing [P-19], detailed pertinent negatives (fevers, exertional, etc.). Covers ~60% of key points.",
+    "faithfulness": "Claims like situational triggers [P-4], history [P-21], stress [P-8], analgesics [P-6] verifiable in transcript. However, multiple hallucinations: 'Knowledge Graph' references (not in transcript), psychosomatic pattern inference stretched; reading books [P-28] claimed to mitigate symptoms but actually for general stress management. Multiple unverifiable details.",
+    "relevance": "Directly addresses the question by stating the diagnosis ('Anxiety') and listing supporting clinical observations with citations, though with some extraneous hallucinated elements; remains highly focused on the query."
+  },
+  "scores": {
+    "correctness": 4,
+    "completeness": 3,
+    "faithfulness": 2,
+    "relevance": 5
+  },
+  "average_score": 3.5,
+  "summary": "The Generated Answer is mostly correct and relevant but incomplete in covering all Gold key points and faithfulness suffers from hallucinated Knowledge Graph references."
+}

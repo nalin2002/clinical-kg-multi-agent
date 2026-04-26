@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer accurately lists salbutamol (daily inhaler), Ramipril for HBP, Tylenol occasional for headaches, and details adherence changes: daily inhaler reduced from twice daily (morning/night) to only morning over time, no refill on rescue inhaler for couple years (none available). Generated correctly lists the three medications and their conditions (with minor phrasing like 'asthma reoccurring' which aligns loosely with clinician suspicion), but significantly errs on adherence by claiming 'consistent daily dosing frequency' based on selective quote [P-17], ignoring explicit reduction detailed in [P-19] (skipping night dose for a while, now only morning). Also fabricates 'knowledge graph [KG]' references not in transcript. These are significant factual errors/contradictions.",
+    "completeness": "Gold key points: meds/conditions (salbutamol, Ramipril-HBP, Tylenol-headaches) - fully covered; daily inhaler prescribed 2x/day but reduced to 1x/day (justification, recent confirmation) - completely missed; no rescue refill couple years, unavailable - partially covered (lapse noted but not specifics like 'couple years'); clinician summary - missed. Covers ~60% (meds full, rescue partial, dosing change absent).",
+    "faithfulness": "Meds citations [P-25,26,27] accurate and verifiable. Conditions inferred correctly from context ([P-24] HBP, asthma history [P-16,17], headaches [P-27]). But 'asthma reoccurring' pulls from clinician suspicion [D-35], not patient prescription; worst: multiple [KG] citations entirely fabricated (no KG in transcript); adherence misquotes [P-17] while ignoring [P-19,P-20,P-18] contradictions, hallucinating 'consistent' dosing. Multiple hallucinations.",
+    "relevance": "Perfectly structures response to match question: current meds/conditions section, then specific adherence changes (dosing frequency, rescue availability). No tangents or off-topic content despite errors."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 3,
+    "faithfulness": 2,
+    "relevance": 5
+  },
+  "average_score": 3.0,
+  "summary": "The Generated Answer correctly identifies medications and conditions but significantly errs by missing the key reduction in daily inhaler dosing frequency and hallucinates knowledge graph references, leading to low correctness and faithfulness despite strong relevance."
+}

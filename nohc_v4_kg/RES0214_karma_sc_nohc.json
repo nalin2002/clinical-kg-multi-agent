@@ -1,0 +1,220 @@
+{
+  "nodes": [
+    {
+      "id": "N_001",
+      "text": "fever",
+      "type": "SYMPTOM",
+      "evidence": "fever for the past three days",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_002",
+      "text": "nasal congestion",
+      "type": "SYMPTOM",
+      "evidence": "stuffy nose",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_003",
+      "text": "sore throat",
+      "type": "SYMPTOM",
+      "evidence": "sore throat",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_004",
+      "text": "covid-19",
+      "type": "DIAGNOSIS",
+      "evidence": "covid",
+      "turn_id": "D-53"
+    },
+    {
+      "id": "N_005",
+      "text": "influenza",
+      "type": "DIAGNOSIS",
+      "evidence": "influenza",
+      "turn_id": "D-54"
+    },
+    {
+      "id": "N_006",
+      "text": "influenza vaccine",
+      "type": "TREATMENT",
+      "evidence": "flu shot",
+      "turn_id": "D-53"
+    },
+    {
+      "id": "N_007",
+      "text": "multivitamin",
+      "type": "TREATMENT",
+      "evidence": "multivitamins",
+      "turn_id": "P-40"
+    },
+    {
+      "id": "N_008",
+      "text": "penicillin allergy",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "Penicillin",
+      "turn_id": "P-37"
+    },
+    {
+      "id": "N_009",
+      "text": "digital marketing agent",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "work from home as a digital marketing agent",
+      "turn_id": "P-42"
+    },
+    {
+      "id": "N_010",
+      "text": "marijuana use",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "marijuana",
+      "turn_id": "P-47"
+    },
+    {
+      "id": "N_011",
+      "text": "nose",
+      "type": "LOCATION",
+      "evidence": "stuffy nose",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_012",
+      "text": "throat",
+      "type": "LOCATION",
+      "evidence": "sore throat",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_013",
+      "text": "myalgia",
+      "type": "SYMPTOM",
+      "evidence": "there has been some muscle ache",
+      "turn_id": "P-13"
+    },
+    {
+      "id": "N_014",
+      "text": "cholecystectomy",
+      "type": "PROCEDURE",
+      "evidence": "I had my gallbladder taken out",
+      "turn_id": "P-30"
+    },
+    {
+      "id": "N_NEW_001",
+      "text": "alcohol consumption 1-2 glasses of wine",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "[P-45] P: Um about one or two glasses of wine.",
+      "turn_id": "P-45"
+    },
+    {
+      "id": "N_NEW_002",
+      "text": "marijuana use edibles non-regularly",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "[P-47] P: I've tried marijuana before, just like edibles, but not, not regularly.",
+      "turn_id": "P-47"
+    },
+    {
+      "id": "N_NEW_003",
+      "text": "influenza vaccination status not received",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "[P-53] P: No, I haven't.",
+      "turn_id": "P-53"
+    },
+    {
+      "id": "N_NEW_004",
+      "text": "pre-diabetes",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "[P-33] P: Um I, in the past couple of years uh just for things like like this I guess um colds, um I'm pre diabetic",
+      "turn_id": "P-33"
+    },
+    {
+      "id": "N_NEW_005",
+      "text": "hiking trail exposure",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "[P-18] P: No, I did go hiking um last weekend, um and it was about 2 hours away, um there were some people on the hiking trail",
+      "turn_id": "P-18"
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "N_002",
+      "target_id": "N_011",
+      "type": "LOCATED_AT",
+      "evidence": "stuffy nose",
+      "turn_id": "P-1"
+    },
+    {
+      "source_id": "N_003",
+      "target_id": "N_012",
+      "type": "LOCATED_AT",
+      "evidence": "sore throat",
+      "turn_id": "P-1"
+    },
+    {
+      "source_id": "N_001",
+      "target_id": "N_004",
+      "type": "INDICATES",
+      "evidence": "do you think I have covid",
+      "turn_id": "D-53"
+    },
+    {
+      "source_id": "N_003",
+      "target_id": "N_004",
+      "type": "INDICATES",
+      "evidence": "any presentation where we have someone come in with a fever and sore throat",
+      "turn_id": "D-53"
+    },
+    {
+      "source_id": "N_006",
+      "target_id": "N_005",
+      "type": "TAKEN_FOR",
+      "evidence": "have you gotten your flu shot this year",
+      "turn_id": "D-53"
+    },
+    {
+      "source_id": "N_001",
+      "target_id": "N_005",
+      "type": "INDICATES",
+      "evidence": "if your husband got it, and you have it, covid would be our first thing that we want to rule out... it might be influenza",
+      "turn_id": "D-53"
+    },
+    {
+      "source_id": "N_002",
+      "target_id": "N_004",
+      "type": "INDICATES",
+      "evidence": "It started with a stuffy nose... rule out anything infectious",
+      "turn_id": "D-53"
+    },
+    {
+      "source_id": "N_002",
+      "target_id": "N_005",
+      "type": "INDICATES",
+      "evidence": "it might be influenza",
+      "turn_id": "D-53"
+    },
+    {
+      "source_id": "N_003",
+      "target_id": "N_005",
+      "type": "INDICATES",
+      "evidence": "it might be influenza",
+      "turn_id": "D-53"
+    },
+    {
+      "source_id": "N_013",
+      "target_id": "N_004",
+      "type": "INDICATES",
+      "evidence": "muscle ache... rule out anything infectious",
+      "turn_id": "D-53"
+    },
+    {
+      "source_id": "N_013",
+      "target_id": "N_005",
+      "type": "INDICATES",
+      "evidence": "it might be influenza",
+      "turn_id": "D-53"
+    }
+  ],
+  "_usage": {
+    "prompt_tokens": 14923,
+    "completion_tokens": 35815
+  }
+}

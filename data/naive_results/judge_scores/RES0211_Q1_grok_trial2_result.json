@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer correctly identifies core reported symptoms like dry cough, scratchy throat, headache, feeling hot, and general malaise, matching the Gold Answer. However, it inaccurately claims Jessica confirmed night sweats with 'sheets soaked' (P-9 only describes feeling hot, not soaked sheets), adds post-nasal drip as a primary symptom (which relates to chronic allergies, not the 3-4 day history), and misses tiredness. For denied symptoms, it only covers sputum with incorrect citations (D-33/P-29 refer to unrelated eczema discussion; actual denials are P-5/P-6), falsely states no evidence for inquiries about nausea, joint pain, or rashes (present in D-10-P-10, D-11-P-11, D-13-P-13), and omits diarrhea and breathing difficulty denials. These represent significant factual errors and contradictions with Gold.",
+    "completeness": "Gold reported symptoms covered: dry cough/scratchy throat (yes), headache (yes), feeling hot day/night (partial, exaggerated as night sweats), malaise/crappy/icky (yes). Missed: tiredness explicitly. Gold denied symptoms covered: sputum/phlegm (partial). Missed: skin changes/rashes, nausea/vomiting, diarrhea, joint aches, cannot breathe. Covers about 60% of reported key points and <20% of denied, overall 50-79%.",
+    "faithfulness": "Claims grounded: dry cough/scratchy [P-1,P-4], headache [P-1,P-2], malaise [P-1], feeling hot [P-9]. Hallucinations: night sweats confirmation with soaked sheets (not in P-9), post-nasal drip as new symptom (P-18 allergy context), sputum denial citation wrong (D-33/P-29 unrelated; correct D-5/6 P-5/6), false assertion no inquiries about nausea/joints/rashes (explicit in transcript D-10-13). Multiple unverifiable/hallucinated details.",
+    "relevance": "Answer directly structures sections for reported symptoms (past 3-4 days) and explicitly denied symptoms, closely mirroring the question. Minor irrelevance in introductory 'common cold' diagnosis and addition of post-nasal drip, but overall focused."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 3,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 2.75,
+  "summary": "The Generated Answer partially captures reported symptoms but includes hallucinations, incorrect citations, and misses most denied symptoms, leading to moderate inaccuracies and incompleteness."
+}

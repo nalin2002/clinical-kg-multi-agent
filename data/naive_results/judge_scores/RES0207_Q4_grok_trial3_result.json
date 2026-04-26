@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer incorrectly identifies 'denial of causal link' between seizure and shortness of breath (patient actually said 'I don't know if it's related' [P-8], not a denial) and misrepresents medication compliance (patient admitted forgetting Keppra [P-9, P-24], not denying it). It ignores the Gold Answer's list of specifically denied symptoms (chest pain [D-7/P-7], feeling faint [D-8/P-8], loss of taste/smell [D-19/P-19], sore throat [D-20/P-20], runny nose [D-21/P-21], sick contacts [D-16/P-16], travel [D-17/P-17], nausea/vomiting [D-13/P-13], belly pain [D-14/P-14], diarrhea [D-15/P-15], sputum [D-4/P-4], prior SOB [D-3/P-3]). Differentials are inferred from positive findings (fever, seizure) rather than negative screenings addressing cardiac, infectious, GI causes, directly contradicting Gold.",
+    "completeness": "Covers 0% of Gold key points: misses all denied symptoms (chest pain, faintness, anosmia/ageusia, sore throat, runny nose, sick contacts, travel, nausea/vomiting, belly pain, diarrhea, sputum production, prior episodes); misses grouping by cardiac/cpulmonary, infectious/URI/epidemiological, GI; misses note on no explicit differentials named but pattern implies cardiac/infectious/GI.",
+    "faithfulness": "Multiple hallucinated claims: 'denial of causal link' not in transcript (P-8 unsure); 'denied seizure caused SOB' fabricated; 'No, I'm taking Keppra [P-23]' twisted to imply denial of non-compliance despite admission of missed dose [P-9/P-24]; focuses on positives (fever [P-5], seizure [P-8]) not doctor-screened negatives; 'clinical documentation would screen' assumes beyond transcript; Knowledge Graph references not verifiable in transcript.",
+    "relevance": "Fails to directly address question on specific denied symptoms/exposures and differentials they target; instead obsesses on seizure relation, medication, and positives-driven differentials (infectious from fever/SOB, neurological from epilepsy, cardiopulmonary vaguely), with minimal tie to negatives; largely off-topic from screened denials."
+  },
+  "scores": {
+    "correctness": 1,
+    "completeness": 1,
+    "faithfulness": 2,
+    "relevance": 2
+  },
+  "average_score": 1.5,
+  "summary": "The Generated Answer is mostly incorrect, incomplete, and ungrounded in the transcript's negative screenings, poorly addressing the question by focusing on positives and fabricating denials unrelated to the Gold Answer."
+}

@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer is partly consistent with the Gold Answer: it correctly states the pain is “very sharp, strong” and is associated with deep breaths, and that episodes last ~20 minutes and can occur while studying or walking to school. However, it introduces an unsupported inference that “physical exertion may be a trigger” based on the patient being nervous about running; in the transcript the patient actually says it does not worsen with exercise/walking and has not done strenuous exercise recently. This makes the overall answer only partially accurate.",
+    "completeness": "Key Gold Answer points covered: (1) sharp/strong quality with deep breath association, (2) ~20-minute episode duration, (3) occurs when studying and walking to school. Key points missed: (1) symptoms present ~1.5 weeks and initially described as uncomfortable/odd, (2) intermittent “here and there” throughout the day, (3) occurs particularly when alone (walking alone/studying alone) and can occur at rest, (4) tends to resolve or be unnoticed when distracted/at school/talking to people/working hands-on tasks, (5) not worse with exercise, (6) no injury and no prior episodes. Overall coverage is roughly half of the Gold Answer content.",
+    "faithfulness": "Most statements are grounded in cited transcript lines (sharp/strong with deep breath; ~20 minutes; studying/walking triggers). The claim implying exertion/running as a trigger is not supported and conflicts with the patient’s statement that it doesn’t worsen with exercise; this is a notable ungrounded/hallucinated inference. Otherwise, no major fabrication.",
+    "relevance": "The answer addresses the requested characteristics (quality, duration, and some occurrence situations). However, it largely fails to address the “occur versus resolve” contrast (i.e., improving when talking to people/doing other activities) which is central to the question, and adds a speculative exertion trigger. Thus it is only partially responsive."
+  },
+  "scores": {
+    "correctness": 3,
+    "completeness": 3,
+    "faithfulness": 3,
+    "relevance": 3
+  },
+  "average_score": 3.0,
+  "summary": "Partially correct and relevant but misses several key contextual features (especially when the pain resolves/goes unnoticed) and includes an unsupported exertion-related inference."
+}

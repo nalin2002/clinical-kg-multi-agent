@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer lists four main components: COVID swab, self-isolation for patient and husband, physical exam next, and consult with supervising doctor. Generated Answer correctly identifies the COVID swab and self-isolation with accurate citations. However, it inaccurately describes next steps as concluding with flu shot question (asked in [D-53] but not the conclusion) and general dependence on swab results, omitting the physical exam [D-52] and consult [D-55]. This introduces some factual errors in the management plan's next steps while keeping core elements (test and precautions) correct.",
+    "completeness": "Key points from Gold: 1. COVID swab [D-53], 2. Self-isolation for patient and husband [D-53,D-54], 3. Physical exam [D-52], 4. Consult supervising doctor [D-55], 5. Patient agreement [P-54]. Generated covers 1 and 2 fully (with citations), partially touches flu possibility (not a key point), misses 3,4,5. Covers ~50% of key points.",
+    "faithfulness": "All claims in Generated are grounded: COVID swab [D-53], self-isolate [D-53,D-54], flu shot question [D-53]. 'Until test results available' and 'ongoing plan depends on swab' are plausible inferences from context without fabrication. Minor stretch on 'concluded by asking flu shot' as sequence is [D-53] question then [D-55] conclusion, but verifiable elements present.",
+    "relevance": "Generated directly structures response around the question's elements (test ordered, precautionary measures for patient/husband, next steps), using bullet points matching the query. No off-topic content; perfectly focused despite incompleteness."
+  },
+  "scores": {
+    "correctness": 3,
+    "completeness": 3,
+    "faithfulness": 4,
+    "relevance": 5
+  },
+  "average_score": 3.75,
+  "summary": "The Generated Answer accurately captures the test and isolation but incompletely and somewhat inaccurately describes the next steps, missing the physical exam and physician consult."
+}

@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Gold Answer lists multiple specific screened symptoms/exposures the patient denied (chest pain, presyncope, GI symptoms, URTI/COVID symptoms, sick contacts, travel, sputum) and notes these map to cardiac/cardiopulmonary, infectious, and GI/systemic differentials. The Generated Answer does not report these negatives and instead centers on seizure/Keppra. It also contains factual mischaracterizations: (1) it claims a “denial of causal link” between seizure and dyspnea, but the patient actually said they *didn’t know* if related (uncertainty, not a denial). (2) it implies medication compliance screening/confirmation; the patient actually admitted missing a dose. (3) it introduces differentials like pneumonia/viral infection and “acute cardiac or respiratory failure” without tying them to the doctor’s actual negative screening questions as asked in the prompt. Overall, it is largely inconsistent with the Gold Answer’s specific content and intent.",
+    "completeness": "Key Gold Answer points covered vs missed:\n- Missed: denial of chest pain; denial of feeling faint.\n- Missed: denial of nausea/vomiting, abdominal pain, diarrhea.\n- Missed: denial of sick contacts and travel.\n- Missed: denial of loss of taste/smell, sore throat, runny nose.\n- Missed: cough characterized as dry/denial of sputum.\n- Missed: denial of prior similar episodes/previous SOB.\n- Partially/loosely mentioned: acknowledges SOB and mild fever, but these are not the *denied* items asked about.\nCoverage of Gold Answer key negatives is minimal (<20%).",
+    "faithfulness": "Multiple elements are not grounded in the transcript: \n- The asserted “denial of causal link” is not supported (patient expresses uncertainty).\n- “Knowledge Graph” references are not present in the transcript.\n- Claims about “clinical documentation would screen…” are speculative.\n- Differential diagnoses (pneumonia/systemic viral infection, infection lowering seizure threshold) are plausible clinically but not explicitly supported by the doctor’s negative screening items and are not the focus of the question.\nOverall, the response contains several unverifiable/speculative assertions and fails to anchor to the transcript’s actual screening questions.",
+    "relevance": "The question specifically asks for (1) the *negative* symptoms/exposures the doctor screened for and the patient denied, and (2) what differential categories those negatives address. The Generated Answer mostly discusses seizure, Keppra, and broad differentials without listing the actual denied screening items. It is only loosely related to the clinical context and does not directly answer the requested inventory/mapping."
+  },
+  "scores": {
+    "correctness": 1,
+    "completeness": 1,
+    "faithfulness": 2,
+    "relevance": 2
+  },
+  "average_score": 1.5,
+  "summary": "The Generated Answer largely fails to identify the doctor’s specific negative screening findings and misstates/introduces unsupported elements, resulting in low correctness, completeness, faithfulness, and only partial relevance."
+}

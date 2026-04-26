@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer fundamentally contradicts the Gold Answer and transcript by claiming that smoking history (pack-a-day since age 15, [P-37,P-38]) and occupational details (engineering consultant at chemical plant in Sarnia, [P-33,P-34]) were not elicited, which is false. It partially acknowledges family history ([P-42]) but omits the grandfather's heavy smoking and provides no relations to presentation. It also hallucinates a 'knowledge graph' not present. Overall, mostly incorrect with direct contradictions.",
+    "completeness": "Gold Answer covers details and clinical relations for all three risk factors (smoking: pack/day from 15, predisposes to infection/COPD/cancer; occupation: consultant/engineering side, mitigated exposure; family: grandpa lung cancer/big smoker, genetic risk) plus overall assessment. Generated covers only family history partially (misses grandpa smoker detail, no relation explained), denies/misses other two entirely, ignores relations and vigilance for malignancy. Covers <20% of key points.",
+    "faithfulness": "Major claims like non-elicitation of smoking/occupation contradict transcript ([P-37,P-38,P-33,P-34]). Symptom details mostly verifiable ([P-4,P-5,etc.]), but 'knowledge graph' references are fabricated hallucinations not in transcript. Multiple inaccuracies and inventions.",
+    "relevance": "Question asks for relations of three specific risks to presentation and elicited details. Generated denies two risks exist in transcript, partially addresses family, but diverts to extensive symptom description unrelated to risks, making it largely off-topic."
+  },
+  "scores": {
+    "correctness": 1,
+    "completeness": 1,
+    "faithfulness": 2,
+    "relevance": 2
+  },
+  "average_score": 1.5,
+  "summary": "The Generated Answer is factually incorrect, incomplete, and unfaithful by denying transcript-supported risk factors and hallucinating elements while ignoring key relations to the presentation."
+}

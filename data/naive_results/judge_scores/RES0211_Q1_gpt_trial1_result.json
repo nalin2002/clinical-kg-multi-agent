@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer contains multiple factual errors versus the Gold Answer/transcript: (1) It states Jessica “confirmed experiencing night sweats (sheets are soaked)”; in the transcript she does not confirm soaked sheets—she reports feeling hot day and night [P-9]. (2) It claims the doctor asked about sputum at “D-33” and that Jessica answered “No” at “P-29”; these citations are wrong, and P-29 is about asthma (“No.”). The actual sputum/phlegm denial occurs at [P-5, P-6]. (3) It asserts the doctor did not ask about nausea, joint pain, or rashes; this is directly contradicted by [D-10–D-13] with explicit denials [P-10–P-13]. These are substantial inaccuracies, even though some reported symptoms (dry cough, scratchy throat, headache, malaise/feeling crappy, feeling hot) are correctly noted.",
+    "completeness": "Key reported symptoms in Gold Answer: dry cough, scratchy throat, pounding headache/current headache, feeling really hot persistently, feeling crappy/icky (malaise), tired. Generated Answer covers dry cough/scratchy throat, headache, feeling hot, general malaise; it does not clearly include “icky”/malaise characterization and misses “tired” as a symptom over the 3–4 days. \nKey denied symptoms in Gold Answer: sputum/phlegm, rashes/skin changes, nausea/vomiting, diarrhea, joint aches, no breathing difficulty from allergies. Generated Answer only (attempts to) include sputum denial (but incorrectly sourced) and omits the other denials; moreover it incorrectly claims they were not asked. Overall coverage is well below 80%.",
+    "faithfulness": "Several claims are not supported by the transcript and/or use incorrect references: the ‘night sweats with soaked sheets’ confirmation is not in [P-9]; the sputum question/answer is misattributed (D-33/P-29) and therefore not grounded; and the statement that nausea/joint pain/rashes were not asked is contradicted by the provided text. While some elements (post-nasal drip mention [P-18]) are grounded, the answer includes multiple hallucinated/unsupported assertions.",
+    "relevance": "The response is generally aimed at summarizing reported symptoms and explicitly denied symptoms over the past 3–4 days, which matches the question. However, it adds minor extraneous framing (“consistent with a common cold”) and fails to provide the full set of denials requested, reducing practical usefulness but not shifting off-topic."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 2.5,
+  "summary": "The answer is on-topic but contains major inaccuracies (notably about night sweats and symptom inquiries), mis-citations, and omits several key denied symptoms documented in the transcript."
+}

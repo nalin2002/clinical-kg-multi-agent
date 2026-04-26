@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer correctly identifies asthma reoccurring as the top differential (matching D-35 and Gold). It accurately describes presenting symptoms of chest tightness and dyspnea on exertion with correct citations [P-1, P-7] and notes absence of pain to rule out cardiac issues [D-36], consistent with Gold. Medical history of asthma is correctly cited [P-16]. However, it inaccurately emphasizes 'current use of salbutamol' [P-25] as a linking factor without noting the key non-compliance (skipping night doses [P-19] and no rescue inhaler [P-17/18]), which Gold highlights as central. Linking via symptom-history consistency and cardiac ruleout is mostly aligned, but misses medication limitation synthesis from D-34. Minor discrepancies but core facts intact.",
+    "completeness": "Gold key points: (1) asthma history [P-16,P-29] - covered; (2) medication limiting (night skip [P-19], no rescue [P-17/18], D-34 summary) - missed; (3) symptoms (tightness on exertion [P-1,7,9,10]) - partially covered; (4) patient notes 'different but related' [P-16] - not explicitly; (5) no triggers [P-33] - missed; (6) no cardiac indicators [D-36] - covered; (7) therapeutic trial with rescue [D-35] - partially (mentions puffers but not as confirmatory trial). Covers symptoms, history, cardiac absence (~50-60%), misses medication non-compliance and triggers.",
+    "faithfulness": "All claims directly verifiable in transcript: symptoms [P-1,P-7], history [P-16], salbutamol [P-25], cardiac ruleout [D-36], rescue puffers and physical exam [D-35]. No hallucinations; interpretations (e.g., exertion-related) grounded in patient descriptions [P-9,10] and doctor summary [D-34 indirectly]. Citations accurate.",
+    "relevance": "Perfectly addresses question by breaking down symptoms, history, clinical features (meds, intervention), and explicit linking to diagnosis, with structure mirroring question's focus on combination and doctor's reasoning process. No off-topic content."
+  },
+  "scores": {
+    "correctness": 4,
+    "completeness": 3,
+    "faithfulness": 5,
+    "relevance": 5
+  },
+  "average_score": 4.25,
+  "summary": "The Generated Answer is mostly correct and highly faithful/relevant but incomplete in covering key medication non-compliance and other Gold points."
+}

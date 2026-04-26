@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer incorrectly claims the transcript ends at [P-28] with no doctor's concluding remarks or plan, directly contradicting the transcript which includes [D-33] explicitly stating the plan to pass information to another doctor; while it partially lists some symptoms and history matching Gold (e.g., sharp pain on deep breath, failed OTC, smoking, family history), it omits key details like duration (1.5 weeks), rest/distraction pattern, pertinent negatives (no trauma, fevers, asthma, etc.), and full psychosocial context, introducing significant factual errors including denial of the plan.",
+    "completeness": "Gold Answer covers plan explicitly from [D-33] (0% covered, as Generated denies it) and five key info categories: (1) detailed symptoms (partially covered: sharp pain, deep breath, 20 min, triggers like studying/walking); (2) failed OTC (covered); (3) pertinent negatives (missed entirely); (4) relevant history (partial: anxiety, smoking, father); (5) psychosocial (partial: stress, multivitamin; misses thesis details, living alone). Covers ~30-40% of key points, missing plan and many specifics.",
+    "faithfulness": "Claims unverifiable: transcript ends at [P-28] (false, [D-33]/[P-33] exist); adds hallucinated 'Knowledge Graph' confirmation not in transcript; some citations accurate (e.g., [P-3],[P-6]) for symptoms/smoking/family, but overall multiple misreadings and fabrications about transcript content.",
+    "relevance": "Addresses second part (key info) with a structured list somewhat on-topic, but completely misses/denies first part (plan/concluding remarks), includes off-topic KG note; partially relevant with core off-target error."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 3
+  },
+  "average_score": 2.25,
+  "summary": "The Generated Answer has major factual errors by denying the existence of the concluding plan despite it being in [D-33], partially covers key info with omissions and hallucinations, resulting in low overall quality."
+}

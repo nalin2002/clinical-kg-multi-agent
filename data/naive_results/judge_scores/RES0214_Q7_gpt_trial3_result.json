@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Patient symptom order is mostly correct (stuffy nose → sore throat/fever → muscle aches). However, the answer is incorrect about the husband’s timeline: the transcript explicitly states the husband has had similar symptoms “for the past week” [P-19], whereas the Generated Answer says the duration is not provided and implies concurrency. It also frames muscle aches as occurring after fever, while the transcript supports muscle aches occurring around the same time as the fever (past 2–3 days) [P-14–P-16].",
+    "completeness": "Covers: stuffy nose first, fever x3 days, sore throat ongoing, muscle aches present. Misses/underserves: (1) explicit statement that husband’s symptoms began a week ago [P-19] and therefore started several days earlier than hers; (2) explicit temporal overlap of muscle aches with fever (confirmed in [D-15–P-16]); (3) the comparison quantification from the Gold Answer (husband earlier by ~4 days relative to her fever onset).",
+    "faithfulness": "Most claims about the patient are grounded in [P-1] and [P-13]. But the statement that the husband’s symptom duration/timeline is not provided contradicts [P-19], making this portion unfaithful to the transcript. The inference of concurrency is also not supported.",
+    "relevance": "The response stays focused on the requested chronology and comparison to the husband’s onset, with no major tangents."
+  },
+  "scores": {
+    "correctness": 3,
+    "completeness": 3,
+    "faithfulness": 3,
+    "relevance": 5
+  },
+  "average_score": 3.5,
+  "summary": "Mostly captures the patient’s symptom progression, but it incorrectly states the husband’s timeline is not given (despite “past week” in the transcript) and omits key comparative timing/overlap details."
+}

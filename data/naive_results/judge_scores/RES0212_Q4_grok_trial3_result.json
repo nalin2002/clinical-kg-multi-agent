@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer incorrectly identifies fatigue and sleep disturbance as constitutional symptoms screened for and denied by the patient; in reality, the patient reported these (P-19, P-20, P-21), contradicting the Gold Answer and the question's focus on denied symptoms. It lists eczema as an exposure risk denied, but eczema is a reported medical history (P-22, P-23), not a denied exposure risk. The conditions to exclude (TB, chronic infections) are mentioned but incorrectly linked to affirmed symptoms rather than denied ones like night sweats, weight loss, and hemoptysis. This introduces major factual errors and contradictions with the Gold Answer and transcript.",
+    "completeness": "Key points from Gold Answer covered: none. Missed: constitutional symptoms denied (night sweats [D-5,P-5], unexplained weight loss/loose clothes [D-6-D8,P-6-P8], hemoptysis [D-10,P-10]); exposure risks denied (sick contacts at class [D-14,P-14], recent contacts [D-15,P-15], roommate [D-32,P-32], recent travel/exotic locales [D-33-D34,P-33-P34], IV drug use [D-40,P-40], cocaine/heroin [D-39,P-39]); additional denials (stiff neck [D-18,P-18], nausea/vomiting [D-17,P-17], body pain [D-19,P-19]); explanations for excluding TB (night sweats, weight loss, cough), malignancy (hemoptysis), endemic infections/TB (travel), immunosuppression (drugs); doctor's summary [D-47]. Covers <20%.",
+    "faithfulness": "Generated claims screening for fatigue/sleep disturbance as denied constitutional symptoms, but patient affirmed them (P-19-P21); cites P-19 accurately for patient report but misinterprets as screened/denied. Eczema cited from P-22/P-23 but misrepresented as denied exposure risk rather than reported history. Hallucinates these as the relevant denied items; no verification for TB exclusion tied to correct denied symptoms. Multiple hallucinated facts and misinterpretations.",
+    "relevance": "The question asks for symptoms/exposure risks the doctor screened for that the patient denied and conditions excluded thereby; Generated Answer focuses on affirmed symptoms (fatigue/sleep) and unrelated history (eczema), failing to address denied items or correct linkages, making it largely off-topic."
+  },
+  "scores": {
+    "correctness": 1,
+    "completeness": 1,
+    "faithfulness": 1,
+    "relevance": 1
+  },
+  "average_score": 1.0,
+  "summary": "The Generated Answer is fundamentally incorrect, incomplete, unfaithful to the transcript, and irrelevant as it misidentifies affirmed symptoms and history as denied constitutional symptoms and exposure risks, ignoring the actual denied items central to the Gold Answer."
+}

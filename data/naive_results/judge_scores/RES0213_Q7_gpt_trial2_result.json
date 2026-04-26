@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Compared with the Gold Answer, the Generated Answer includes some correct elements (current smoking reduction to ~5/day; history of teenage anxiety attacks discussed with family doctor; recent academic stress; chest pain starting ~1.5 weeks ago; episodes ~20 minutes and worse with deep breaths). However, it introduces incorrect causal links not supported by the Gold Answer/transcript (e.g., that smoking “potentially contribut[ed] to the anxiety and chest pain issues she faced during her teenage years,” and that there is a “chronic baseline that reacts to stress” inferred from past doctor visits). It also fails to accurately specify key smoking details from the Gold Answer (start at ~18 with occasional smoking; increased to ~10/day for the last two years; cutting down a few months ago). Overall, the main narrative is directionally right but contains notable factual/interpretive errors.",
+    "completeness": "Key Gold Answer points covered: (1) current smoking reduction/trying to quit; (2) teenage anxiety attacks and past physician discussion; (3) increased stress in recent weeks; (4) chest pain began ~1.5 weeks ago and was new; (5) symptoms noticed more when studying/walking and less when distracted (partially addressed via studying/walking triggers, but the “less when distracted/with people” point is only weakly captured).\nKey points missed or insufficiently covered: (1) smoking timeline details (started around 18; rose to ~10/day for last two years; cut in half a few months ago); (2) the ~8-year period without anxiety symptoms; (3) explicit thesis/time-crunch framing for the last couple of weeks; (4) father’s heart attack last year and its role in escalating fear/interpretation of symptoms; (5) explicit connection that anxiety attacks may be returning. Coverage is roughly partial (about half to two-thirds of the Gold Answer’s timeline/links).",
+    "faithfulness": "Multiple statements are not grounded in the transcript: repeated references to a “knowledge graph”; claims that the knowledge graph “explicitly links” studying to chest pain; and causal assertions that smoking contributed to teenage anxiety/chest pain. While some details are directly supported by transcript quotes (e.g., [P-14], [P-21], [P-3], [P-4], [P-6]), the added causal interpretations and externalized “knowledge graph” content reduce faithfulness.",
+    "relevance": "The answer stays focused on the requested timeline (smoking → teen anxiety → recent stress → chest pain onset) and attempts to relate phases to each other. Minor irrelevancies include the “knowledge graph” discussion and generalized cardiovascular-risk commentary, but overall it addresses the question."
+  },
+  "scores": {
+    "correctness": 3,
+    "completeness": 3,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 3.0,
+  "summary": "Partially answers the requested timeline and relationships, but misses several key Gold Answer details (notably the full smoking/anxiety/family-history chronology) and includes multiple ungrounded or speculative causal claims (including “knowledge graph” references), reducing faithfulness and correctness."
+}

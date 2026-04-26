@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer accurately details local symptoms (redness, tenderness, soreness, specific location details, denial of bullseye rash) with correct citations and systemic screenings (joint pain [D-7/P-7], feverish/ill [D-8/P-8], headaches [D-19/P-19-20]) with denials. Generated Answer correctly identifies main local symptoms (redness, tenderness, soreness, location, skin not joint, stuck good) but misses denial of bullseye and 'totally fine' aspects. For systemic, it incorrectly attributes denials [P-7,8,19] to drug allergies [D-17] instead of actual screenings for joint pain, fever, headaches, and falsely claims no evidence for those screenings despite explicit transcript evidence. Significant factual errors and contradictions on systemic symptoms.",
+    "completeness": "Gold key points: Local - behind left knee/crease, stuck good, soreness skin not joint, red/tender [P-1,6], no bullseye only local red, totally fine/pretty healthy. Systemic - joint pain denied [D7/P7], fever/ill denied [D8/P8], headaches denied [D19/P19-20]. Generated covers core local symptoms and location (~80%) but misses bullseye denial and 'fine' statements; covers 0% of systemic key points, instead adding irrelevant drug allergies. Overall ~50-60% coverage.",
+    "faithfulness": "Local claims verifiable [P-1,6]. Systemic: Wrongly cites [P-7,8,19] for drug allergy denials (actual: joint pain, fever, headache); D-17 is allergies but P-17 responds, not those. Claims 'no explicit evidence' for fever/joint pain/headaches despite direct quotes in [D-7,8,19] and denials. Multiple hallucinations/misattributions.",
+    "relevance": "Directly structures response into local symptoms and systemic symptoms sections matching question; local on-topic, systemic attempts to address screenings/denials but with incorrect content; no major off-topic digressions."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 3,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 2.75,
+  "summary": "The Generated Answer is mostly correct and relevant for local symptoms but has significant errors, hallucinations, and omissions regarding systemic symptom screenings, leading to low overall scores."
+}

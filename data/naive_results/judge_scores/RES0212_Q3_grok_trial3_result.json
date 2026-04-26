@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Gold Answer diagnoses acute lower respiratory tract infection (likely acute bronchitis with bacterial superinfection or early community-acquired pneumonia on chronic cough), while Generated specifies 'Pneumonia (or bacterial LRTI)' – partially aligned but more definitive and misses chronic cough context. Productive cough explanation misses 3-day acute onset on 3-month history (Gold cites P-2,P-12; Generated cites P-1,P-3 which are general bother/pain, not productivity). Greenish sputum similar but Gold notes not definitive for bacteria. Subjective fever critically wrong: Gold cites P-4 ('feeling hot at night'); Generated falsely claims no explicit fever, uses P-19 (tiredness/sleep) and confuses with night sweats (denied P-5). Misses Gold's doctor's summary (D-47), absences, no vitals. Significant errors/contradictions warrant score 2.",
+    "completeness": "Gold key points: nuanced diagnosis with chronic overlay; productive cough as acute transition (P-2,P-12); greenish sputum suggestive (P-9); subjective fevers (P-4); doctor's synthesis (D-47); absent symptoms (no sweats/weight loss/blood); no vitals/exam. Generated covers basic diagnosis and three features (~3 points) but inaccurately, misses chronic context, synthesis, absences, no vitals. Covers 20-49% accurately, score 2.",
+    "faithfulness": "Productive cough claims verifiable but citations inaccurate (P-1/P-3 not productivity; actual in P-2/P-12). Greenish sputum verifiable (P-9), medical explanation plausible but not transcript-grounded. Fever: hallucinates absence of fever word/context despite D-4 question/P-4 'hot at night'; wrongly attributes to P-19 tiredness/sleep (unrelated to fever), mentions night sweats (denied P-5). Citations inaccurate, multiple misattributions/hallucinations, score 2.",
+    "relevance": "Directly names diagnosis and structures explanation around the exact three features with transcript support (despite errors), no major tangents; perfectly focused, score 5."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 5
+  },
+  "average_score": 2.75,
+  "summary": "The Generated Answer is relevant but undermined by factual errors, poor citation accuracy, hallucinated fever evidence, and incomplete coverage of the Gold Answer's nuanced diagnosis and context."
+}

@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer correctly identifies fever and sore throat as the key symptoms from [D-53] matching the Gold Answer. It accurately notes the patient's report of these symptoms and muscle aches. However, it inaccurately claims the doctor associates muscle aches specifically with COVID in [D-53], which does not mention muscle aches (doctor summarizes symptoms including muscle aches in [D-24], but ties infectious concern explicitly to fever/sore throat). For influenza, it correctly identifies the flu shot inquiry [D-53] and doctor's statement [D-54]. Minor discrepancy on muscle ache attribution, but core facts align with Gold.",
+    "completeness": "Gold key points: fever/sore throat [D-53]; broader cluster (muscle aches, fever, stuffy nose, sore throat [D-24]); epidemiology (husband similar symptoms [D-53]); no flu shot [P-53] prompting influenza [D-54]. Generated covers fever/sore throat, muscle aches (partial broader), no flu shot/influenza. Misses explicit broader cluster summary [D-24], stuffy nose in doctor's suspicion, and husband/epidemiology context. Covers ~60-70% of key points.",
+    "faithfulness": "All main claims verifiable: fever/sore throat [D-53], patient symptoms [P-1/P-13], flu shot [D-53/P-53/D-54]. Minor issue: muscle aches tied to [D-53] for COVID association is not directly in transcript ([D-53] omits it; earlier [D-24] summarizes symptoms generally). No major hallucinations; interpretive phrase 'likely to differentiate' is plausible but not verbatim. Citations accurate overall.",
+    "relevance": "Answer directly addresses the question by specifying fever/sore throat for infectious/COVID suspicion and flu shot history for influenza differential, with supporting evidence from transcript. No off-topic content."
+  },
+  "scores": {
+    "correctness": 4,
+    "completeness": 3,
+    "faithfulness": 4,
+    "relevance": 5
+  },
+  "average_score": 4.0,
+  "summary": "The Generated Answer is mostly accurate and relevant, covering core symptoms and flu shot detail but missing some contextual elements like epidemiology and full symptom cluster from the Gold Answer."
+}

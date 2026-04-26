@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer accurately captures endorsed symptoms including worsening cough with exertion (P-1,P-5), increased SOB (P-1,P-8), sputum change from clear-white to yellow (P-6), chest discomfort (P-13), chills (P-29), and multiple specific denials. Generated Answer correctly notes SOB (P-1) and increased cough (P-1,P-5), and some denials (orthopnea P-9, PND P-10, hemoptysis P-7, palpitations P-14), but incorrectly states no sputum changes despite clear description in P-6, denies chills despite P-29 endorsement, misses chest discomfort (P-13), and incompletely lists denials. Significant factual errors on key sputum change and chills.",
+    "completeness": "Gold covers: endorsed - worsening cough/exertion, SOB severity, sputum change, chest discomfort, chills/no fever; denies - hemoptysis, orthopnea, PND, palpitations, fever, and many others. Generated covers SOB, increased cough, partial denials (5 examples); misses sputum change, chest discomfort, chills, most other denials, SOB/cough details. Covers ~25-30% of key points.",
+    "faithfulness": "Generated correctly cites P-1 for SOB/cough; denies match transcript (P-7,P-9,P-10,P-14). However, fabricates absence of sputum changes (directly contradicted by P-6), absence of chills/systemic (P-29), no hemoptysis detail in sputum section despite P-7; misuses D-52 (doctor summary, not patient endorsement); evidentiary reference inaccurately claims absence from P-1. Multiple hallucinated absences.",
+    "relevance": "Generated structures response directly around endorsed respiratory/systemic symptoms, sputum character, and denied screened symptoms, mirroring question structure with sections and citations; minor issues with completeness but no off-topic content."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 2.5,
+  "summary": "The Generated Answer partially addresses the question with some correct endorsements and denials but contains significant factual errors by omitting or denying key endorsed symptoms like sputum change and chills, resulting in low correctness, completeness, and faithfulness."
+}

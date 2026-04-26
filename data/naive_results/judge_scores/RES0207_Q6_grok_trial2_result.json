@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer incorrectly claims the transcript ends at [P-23] with no subsequent doctor turns, but the full transcript continues through [D-38]. It denies the existence of next steps communicated in [D-37] (consulting another doctor, possible tests, returning shortly), directly contradicting the Gold Answer's accurate summary of these facts. This is a major factual error, rendering it mostly incorrect.",
+    "completeness": "Gold Answer key points: doctor will review with 'the doctor who's working today' [D-37]; collaborative decision-making; return shortly [D-37,D-38]; possible tests and management plan [D-37]; no specific tests ordered; patient agreement [P-37]; farewell [D-38]. Generated Answer covers 0% of these, instead fabricating transcript incompleteness.",
+    "faithfulness": "Generated Answer hallucinates that the transcript cuts off at [P-23] ('last transcript entry is [P-23]'), ignoring [D-24] through [D-38]. Claims no evidence of decision-making or follow-up, but [D-37] explicitly states these. Includes unverifiable/inaccurate summary of early patient disclosures ([P-1],[P-8],[P-9],[P-23]). Largely fabricated.",
+    "relevance": "Directly addresses the question by claiming next steps 'cannot be determined' due to alleged incomplete transcript, but includes off-topic early patient history summary (e.g., shortness of breath, epilepsy, Keppra) unrelated to end-of-consultation communication. Partially relevant with some off-topic content."
+  },
+  "scores": {
+    "correctness": 1,
+    "completeness": 1,
+    "faithfulness": 1,
+    "relevance": 3
+  },
+  "average_score": 1.5,
+  "summary": "The Generated Answer fails across most dimensions due to hallucinating an incomplete transcript, missing all key next-step details clearly stated in [D-37] and [D-38], and contradicting the Gold Answer entirely."
+}

@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer accurately cites transcript details like father's HA 'last year' in 50s, now seeing heart doctors [P-8,P-30], scares patient [P-8], grandpa accident [P-30]; detailed smoking history from age 18, peak 10/day 2 years, now 5/day [P-13,14,18]; stressors including Masters thesis deadline [P-15,16], living alone [P-26,27], nervous about running [P-28], connections to stress/anxiety [P-8,19,22]. Generated mostly matches core facts on three factors contributing to concern, but has errors: attributes not seeing doctor 8 years to family worry (P-21 is about anxiety); falsely links smoking directly in P-8 (smoking mentioned later); misquotes P-28 coping (says reading school books instead of relaxing, opposite of transcript; running 'for anxiety' inferred but not explicit). Adds external 'knowledge graph' not in Gold or transcript. Main points correct despite some errors.",
+    "completeness": "Gold key points: FH details (HA last year 50s, heart doctors, scares, grandpa); smoking details (start age, peak, current, hard quit); stressors (thesis crunch, live alone, nervous running); interactions (stress possible, nervous breathing, past anxiety). Generated covers FH (father 50s, scares [P8], misses last year/heart doctors/grandpa); smoking (current 5, quit attempt [P14], misses full history); stressors (studying/walking triggers [P4], academic pressure, running [P28 misquoted], misses thesis/live alone/past anxiety specifics); interactions (feedback loop with pain, family, smoking). Covers core categories and some interactions (80%+), misses granular details like citations/timing.",
+    "faithfulness": "Claims mostly verifiable: FH [P8], smoking [P14], pain triggers [P4,P3], synthesis pain details [P6]. Hallucinations/misquotes: 'knowledge graph' KG links not in transcript; 8-year doctor gap 'due to family worry' (P21 about anxiety); P28 'read school books rather than relaxing' (actual: relaxing books instead of school); running 'for anxiety' (enjoys running to manage stress, nervous lately); direct smoking link in P8 (not there). Multiple minor unverifiable additions and misattributions.",
+    "relevance": "Generated perfectly structures response around the three specified factors (FH, smoking, stressors), their mechanisms/contributions to heart disease concern, illustrative transcript details/cites, and explicit synthesis of interactions/feedback loop, directly mirroring question without off-topic content."
+  },
+  "scores": {
+    "correctness": 3,
+    "completeness": 4,
+    "faithfulness": 3,
+    "relevance": 5
+  },
+  "average_score": 3.75,
+  "summary": "The Generated Answer adequately addresses the question with relevant structure and core coverage but is hindered by factual misattributions, incomplete details, and some hallucinations relative to the Gold Answer and transcript."
+}

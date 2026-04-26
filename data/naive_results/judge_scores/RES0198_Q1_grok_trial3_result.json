@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer accurately lists nasal symptoms (stuffy/runny nose for 1 week, initially stuffy now runny), clear discharge, and explicit denials (cough [P-4], post-nasal drip [P-6], sore throat/SOB/fevers/chills [P-7], loss of taste/smell [P-16]). Generated Answer correctly identifies stuffy/runny nose (on/off for week) and clear discharge, but significantly errs by claiming no explicit denials of listed symptoms (cough, sore throat, post-nasal drip, loss of taste/smell), fabricating that only denial is unrelated 'Uh no' at [P-27] (actually about medications). This contradicts Gold and transcript, making it a major factual error despite correct nasal details.",
+    "completeness": "Gold key points: stuffy nose (on/off), runny nose, 1 week; initially stuffy now mostly running [P-3]; clear discharge; denied cough [P-4], post-nasal drip [P-6], sore throat/SOB/fevers/chills [P-7], loss taste/smell [P-16]. Generated covers stuffy/runny on/off for week and clear discharge (~40% coverage), misses symptom evolution, all explicit denials (crucial to question), and fatigue/other negatives.",
+    "faithfulness": "Nasal symptoms and clear discharge verifiable [P-1,P-2,P-3,P-5]. However, claim of no explicit denials for cough/sore throat/post-nasal drip/loss of taste/smell contradicts transcript (explicit 'No' at [P-4,P-7,P-16]; 'Uh no just nose' [P-6]). Misattributes 'Uh no' at [P-27] as only denial and unrelated to diabetes concerns (it's about medications). Multiple ungrounded claims and misreadings indicate hallucination.",
+    "relevance": "Generated Answer structures response directly matching question parts (nasal symptoms, discharge character, denied symptoms), with bullet points; no off-topic content despite errors in content."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 5
+  },
+  "average_score": 2.75,
+  "summary": "The Generated Answer is factually incorrect and incomplete on denied symptoms, with faithfulness issues from misreading the transcript, despite correctly addressing nasal symptoms and relevance."
+}

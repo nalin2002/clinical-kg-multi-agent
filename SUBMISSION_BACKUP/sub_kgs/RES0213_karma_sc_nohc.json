@@ -1,0 +1,157 @@
+{
+  "nodes": [
+    {
+      "id": "N_001",
+      "text": "chest pain",
+      "type": "SYMPTOM",
+      "evidence": "[P-1] P: Chest pain.",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_002",
+      "text": "shortness of breath",
+      "type": "SYMPTOM",
+      "evidence": "[P-19] P: ...hard to get a deep breath...",
+      "turn_id": "P-19"
+    },
+    {
+      "id": "N_003",
+      "text": "anxiety",
+      "type": "DIAGNOSIS",
+      "evidence": "[P-15] P: ...it's very scary... making me very nervous.",
+      "turn_id": "P-15"
+    },
+    {
+      "id": "N_004",
+      "text": "acetaminophen",
+      "type": "TREATMENT",
+      "evidence": "[P-6] P: I've tried Tylenol...",
+      "turn_id": "P-6"
+    },
+    {
+      "id": "N_005",
+      "text": "ibuprofen",
+      "type": "TREATMENT",
+      "evidence": "[P-6] P: I've tried Advil...",
+      "turn_id": "P-6"
+    },
+    {
+      "id": "N_006",
+      "text": "sodium bicarbonate",
+      "type": "TREATMENT",
+      "evidence": "[P-6] P: I've even tried like a like an Alka-Seltzer...",
+      "turn_id": "P-6"
+    },
+    {
+      "id": "N_007",
+      "text": "multivitamin",
+      "type": "TREATMENT",
+      "evidence": "[P-25] P: Uh no, like I take like a multi vitamin but that's it.",
+      "turn_id": "P-25"
+    },
+    {
+      "id": "N_008",
+      "text": "chest",
+      "type": "LOCATION",
+      "evidence": "[D-1] D: ...chest pain?",
+      "turn_id": "D-1"
+    },
+    {
+      "id": "N_009",
+      "text": "smoking",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "[P-14] P: Um so like I guess I'm trying to quit, I'm smoking less than I used to.",
+      "turn_id": "P-14"
+    },
+    {
+      "id": "N_010",
+      "text": "family history of heart attack",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "[P-8] P: my dad had a heart attack last year...",
+      "turn_id": "P-8"
+    },
+    {
+      "id": "N_011",
+      "text": "stress",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "[P-15] P: ...it's just making me very nervous.",
+      "turn_id": "P-15"
+    },
+    {
+      "id": "N_NEW_001",
+      "text": "physical examination",
+      "type": "PROCEDURE",
+      "evidence": "I'll pass it on to the doctor who'll take a look at you.",
+      "turn_id": "D-33"
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "N_001",
+      "target_id": "N_008",
+      "type": "LOCATED_AT",
+      "evidence": "[P-1] P: Chest pain.",
+      "turn_id": "D-2"
+    },
+    {
+      "source_id": "N_001",
+      "target_id": "N_003",
+      "type": "INDICATES",
+      "evidence": "[P-8] P: ...it might be stress...",
+      "turn_id": "P-8"
+    },
+    {
+      "source_id": "N_002",
+      "target_id": "N_008",
+      "type": "LOCATED_AT",
+      "evidence": "[P-19] P: ...hard to get a deep breath 'cause I'm, it makes me really nervous.",
+      "turn_id": "P-19"
+    },
+    {
+      "source_id": "N_010",
+      "target_id": "N_003",
+      "type": "CAUSES",
+      "evidence": "[P-30] P: ...he had a heart attack and just now he has to see a lot of heart doctors... scares me...",
+      "turn_id": "P-30"
+    },
+    {
+      "source_id": "N_011",
+      "target_id": "N_003",
+      "type": "CAUSES",
+      "evidence": "[P-15] P: ...making me very nervous.",
+      "turn_id": "P-15"
+    },
+    {
+      "source_id": "N_004",
+      "target_id": "N_001",
+      "type": "TAKEN_FOR",
+      "evidence": "I've tried Tylenol",
+      "turn_id": "P-6"
+    },
+    {
+      "source_id": "N_005",
+      "target_id": "N_001",
+      "type": "TAKEN_FOR",
+      "evidence": "I've tried Advil",
+      "turn_id": "P-6"
+    },
+    {
+      "source_id": "N_006",
+      "target_id": "N_001",
+      "type": "TAKEN_FOR",
+      "evidence": "[P-6] P: Um and I've even tried like a like an Alka-Seltzer",
+      "turn_id": "P-6"
+    },
+    {
+      "source_id": "N_002",
+      "target_id": "N_003",
+      "type": "INDICATES",
+      "evidence": "[P-19] P: Um I I think I I make myself nervous with it and then I kind of start breathing faster... hard to get a deep breath",
+      "turn_id": "P-19"
+    }
+  ],
+  "_usage": {
+    "prompt_tokens": 15195,
+    "completion_tokens": 38028
+  }
+}

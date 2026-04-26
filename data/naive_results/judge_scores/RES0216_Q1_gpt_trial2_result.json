@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer contains multiple inaccuracies relative to the Gold Answer and transcript. It incorrectly states that the transcript does not contain information about denials of fevers, night sweats, chills, weight loss, cough, anxiety, or sweating—these are explicitly denied in P-6 and P-12 through P-15, and cough is denied in P-11. It also incorrectly states there are no upper-airway symptoms; the patient reports hoarseness, increased phlegm, and throat clearing (P-11). Additionally, it lists “headache” as a reported symptom; the transcript only mentions occasional Tylenol for headaches as a general medication use (P-27), not a symptom present during this visit. The chest tightness and difficulty taking a full breath are correctly captured.",
+    "completeness": "Key present symptoms missing: (1) diffuse/nonlocalized ‘all over’ chest tightness (P-8) and its triggers/worsening with exertion, deep inspiration, and getting up (P-1, P-5, P-9, P-10); (2) upper-airway symptoms—hoarseness, phlegm, throat clearing (P-11). Key explicit denials missing: fevers (P-12), night sweats (P-13), chills (P-14), weight loss (P-15), cough (P-11), anxiety/sweating/impending doom (P-6), and explicit denial of chest pain (P-5). It only captures chest pain denial (and does so by quoting P-1 rather than the clearer denial at P-5). Overall, it covers well under half of the Gold Answer’s required elements.",
+    "faithfulness": "Several statements are not grounded or are contradicted by the transcript: claiming no upper-airway symptoms despite P-11; claiming absence of information on denials despite clear denials in P-6 and P-12 to P-15; and presenting “headache” as a current symptom based solely on occasional Tylenol use (P-27). The correctly grounded parts include chest tightness with inspiration and difficulty getting a full breath (P-1, P-7).",
+    "relevance": "The response is aimed at summarizing present vs denied symptoms, which is relevant to the question. However, it omits many of the specific screened symptom denials asked about (fever, night sweats, chills, weight loss, cough, anxiety, sweating) and adds an irrelevant/unsupported current symptom (headache), reducing overall relevance."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 3
+  },
+  "average_score": 2.25,
+  "summary": "The answer captures chest tightness and breathing difficulty but misses or wrongly denies the presence of key upper-airway symptoms and multiple explicit symptom denials, and it adds an unsupported current headache complaint."
+}

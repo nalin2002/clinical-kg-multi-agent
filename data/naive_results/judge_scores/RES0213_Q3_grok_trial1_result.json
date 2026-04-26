@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer diagnoses 'anxiety-related or stress-induced chest pain'; Generated says 'Anxiety', which is close but less precise. Core facts like situational triggers during studying/walking [P-4], history of anxiety [P-21], stress consideration [P-8] match. However, Generated omits key Gold details like pain resolution with distraction/social engagement [P-9, P-29], specific stress from thesis [P-15,16], nervous breathing [P-19], and most pertinent negatives (e.g., no fevers [P-12], no exertional worsening [P-10]). Adds accurate but minor points like analgesics [P-6]. Minor discrepancies but core correct.",
+    "completeness": "Gold key points: 1) Situational (occurs alone walking/studying, resolves social/distraction) - partial (occurs covered [P-4], misses resolves [P-9,29]); 2) Anxiety history [P-21,22] - covered; 3) Current thesis stress [P-13,15,16] - implied but not detailed; 4) Nervous breathing [P-19] - missed; 5) Patient thinks stress [P-8] - covered; 6) Negatives (fevers, exertional, rest pain, no palps except anxiety, no asthma) - partial (family/smoking addressed). Covers ~60% (situational partial, history, stress/patient thought), misses resolution, stress details, breathing, full negatives.",
+    "faithfulness": "Claims like [P-4,21,8,6,28] verifiable in transcript. However, 'Knowledge Graph' references (e.g., '[PROCEDURE] studying --[CAUSES]--> [SYMPTOM] chest pain') are entirely absent from transcript - hallucinated. Reading for distraction [P-28] is stress management, stretched to symptom relief. Family/smoking links accurate but KG causation fabricated. Multiple hallucinated elements (KG).",
+    "relevance": "Directly states diagnosis 'Anxiety' and lists supporting observations with citations, addressing question on diagnosis and clinical evidence. Minor irrelevant hallucinated KG mentions and analgesic point slightly tangential, but overall focused."
+  },
+  "scores": {
+    "correctness": 4,
+    "completeness": 3,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 3.25,
+  "summary": "The Generated Answer is mostly correct and relevant but incomplete in covering key Gold points like symptom resolution and pertinent negatives, and faithfulness is reduced by hallucinated Knowledge Graph references."
+}

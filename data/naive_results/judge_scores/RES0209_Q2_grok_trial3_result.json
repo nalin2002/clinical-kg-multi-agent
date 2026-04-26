@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer correctly identifies the bronchodilator as the sole medication (rescue inhaler, as-needed), administered via 'puffer' (inhaler, D-7/P-7), patient denies other meds (P-6/P-30), and doctor asks about 'one that you take every day no matter what' (daily controller, D-5), which patient lacks (P-5). Generated Answer correctly notes bronchodilator from P-1 but errs by stating administration method is unspecified (ignores 'puffer' in D-7/P-7), denies existence of specific daily controller question (misinterprets/misses D-5, wrongly cites D-29), and introduces unmentioned 'knowledge graph'. These are significant factual contradictions.",
+    "completeness": "Gold key points: (1) only med = bronchodilator rescue as-needed; (2) admin via puffer; (3) no other meds; (4) doctor asked about daily 'every day no matter what' controller, patient lacks it. Generated covers ~25%: identifies bronchodilator; misses admin method, explicit denial of other meds, and entire daily controller inquiry/answer.",
+    "faithfulness": "Bronchodilator claim verifiable in P-1/D-4 etc.; admin claim wrong—'puffer' explicitly in D-7/P-7; daily controller denial hallucinates absence (D-5 directly asks 'every day no matter what', P-5 denies); cites wrong D-29; mentions extraneous 'knowledge graph' not in transcript. Multiple unverifiable/wrong claims.",
+    "relevance": "Structured to directly answer question's three parts (med, admin, daily controller) with bolded sections; minor tangent on knowledge graph but focused on query."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 2.5,
+  "summary": "Generated Answer partially identifies the bronchodilator but contains significant errors by missing the puffer administration and denying the explicit daily controller question, leading to low correctness, completeness, and faithfulness."
+}

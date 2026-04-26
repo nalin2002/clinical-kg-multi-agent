@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Most items listed match the transcript and Gold Answer (loss of taste, early dry cough, generalized achiness, subjective fever, reduced appetite). However, the Generated Answer contains a key inaccuracy about headaches: the patient said he does **not** think he is getting headaches any more than usual (“I don't think I'm getting any more than usual” [P-11]), whereas the Generated Answer states he believes he “may be having more than usual.” This reverses the patient’s meaning. Also, “general malaise/rundown” overlaps with the chief complaint of fatigue and is not a distinct additional symptom compared with the Gold framing.",
+    "completeness": "The Generated Answer captures several key Gold Answer elements (taste loss, early dry cough, myalgias, subjective fever, decreased appetite, headaches). It misses multiple specific symptoms/clarifications included in the Gold Answer: (1) diminished sense of smell [P-6]; (2) mild sore throat starting [P-9]; (3) explicit denial of runny nose/congestion [P-10]; (4) general weakness [P-2]; and (5) the nuance that the cough was minimal/“starting” (partially captured but less complete than Gold). Overall coverage is roughly ~60–70% of Gold key points.",
+    "faithfulness": "Most statements are supported by the transcript and cited appropriately (taste change [P-4], cough [P-8], achy [P-20], feverish [P-4], reduced intake/hunger [P-4], some headache [P-11], rundown [P-1]). The main unfaithful element is the headache interpretation (suggesting more than usual), which contradicts [P-11]. No major additional hallucinated symptoms beyond that.",
+    "relevance": "The response stays focused on the requested ‘other symptoms’ beyond shortness of breath and fatigue and organizes them into the requested domains (sensory, UR, musculoskeletal, constitutional). Minor redundancy appears with ‘general malaise/rundown,’ but overall it addresses the question directly."
+  },
+  "scores": {
+    "correctness": 4,
+    "completeness": 3,
+    "faithfulness": 4,
+    "relevance": 5
+  },
+  "average_score": 4.0,
+  "summary": "The answer is mostly accurate and relevant but omits several key reported symptoms (smell change, sore throat, denial of congestion, weakness) and misstates the headache severity relative to baseline."
+}

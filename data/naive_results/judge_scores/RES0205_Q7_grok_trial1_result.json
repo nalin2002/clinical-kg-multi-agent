@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer has significant factual errors compared to the Gold Answer. It incorrectly places the productive mucus phase only in the first 2-3 days concurrent with initial flu symptoms, implying transition to dry cough right after, but the transcript and Gold specify whitish clear mucus for the first 4-5 days [P-6], with transition after that. It omits mucus description, mischaracterizes cough as 'frequent and intense' (contradicting stable intensity [P-7] and moderate frequency of 3-4x/hour [P-9]), and vaguely attributes chest pain to current intensity rather than post-cough soreness [P-15,P-16]. Core progression is partially correct but key timelines contradict.",
+    "completeness": "Key points from Gold covered: onset ~2 weeks ago [P-2], initial flu-like symptoms first 2-3 days [P-13,P-14], other symptoms resolved by 3-4 days [P-14], transition to dry cough and persistence. Missed: specific initial symptoms (sore throat, runny nose), mucus duration exactly 4-5 days and appearance (whitish clear) [P-6], cough intensity remained the same/not worse [P-7], frequency stable at 3-4x/hour/spontaneous [P-8,P-9,P-10], no fevers [P-12], COVID test negative [P-35,P-36]. Covers ~40% of key points.",
+    "faithfulness": "Most claims grounded with citations, but timeline for mucus/transition not verifiable and contradicts [P-6] (hallucinated as after 2-3 days based loosely on [P-5]); characterization of cough as 'frequent and intense enough' for chest pain is exaggerated/not in transcript (intensity same [P-7], soreness only after too much coughing [P-15,P-16]). Multiple interpretive hallucinations.",
+    "relevance": "Directly structured as a timeline addressing symptom progression, onset, mucus, transition, resolutions, and cough changes, with no off-topic content, though incomplete on specifics."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 5
+  },
+  "average_score": 2.75,
+  "summary": "The Generated Answer captures the broad symptom progression but has significant inaccuracies in timelines, omissions of key details like mucus characteristics and cough stability, and some hallucinations."
+}

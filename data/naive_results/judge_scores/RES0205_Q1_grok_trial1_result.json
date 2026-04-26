@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer details specific resolved symptoms (sore throat [P-13], runny nose [P-14], productive mucus first 4-5 days [P-6], flu symptoms in 3-4 days [P-14]) and persisting dry cough with details (since day 4-5, 3-4x/hour [P-9], spontaneous [P-10], stable intensity/frequency [P-7,P-8]), chest soreness only with excessive coughing (not independent pain [P-15,P-16]), and pertinent negatives (no SOB [P-11], fever [P-12], N/V [P-19], abd pain [P-20]). Generated correctly captures persistent cough evolving from productive to dry, resolved mucus/flu symptoms vaguely, and associated chest hurt/soreness. Errors: includes chronic acid reflux [P-22] as current symptom of acute illness (not part of two-week illness); categorizes chest hurt as 'Chest Pain' without noting association-only/denial of independent pain; omits cough specifics (frequency, triggers, stability) and detailed resolved symptoms (sore throat, runny nose); no negatives. Some factual errors but core cough facts correct.",
+    "completeness": "Gold key points: Resolved - sore throat (2-3 days), runny nose (couple days), whitish clear mucus (4-5 days), flu symptoms (3-4 days). Persisting - dry cough details (timeline, ~3-4x/hr, spontaneous, stable intensity/freq), chest soreness w/ coughing (not independent). Negatives - no SOB, fever, N/V, abd pain. Generated covers: persisting cough/dry (timeline), chest pain/soreness assoc w/ cough, resolved mucus/flu symptoms vaguely; misses sore throat, runny nose specifics, all cough details (freq/intensity/triggers), negatives; erroneously adds acid reflux. Covers ~50-70% of key points (core cough evolution + some resolved + chest).",
+    "faithfulness": "All Generated claims directly verifiable in transcript: cough 2wks [P-2], initial mucus now dry [P-5,P-6], chest hurts w/ too much coughing [P-15], flu symptoms initial [P-14], acid reflux chronic [P-22]. Citations accurate. No fabrications; minor interpretive grouping (mucus separate from flu) but grounded. Pertinent negatives in transcript but not claimed erroneously.",
+    "relevance": "Directly structures answer around present vs resolved symptoms for two-week illness, mirroring question; minor irrelevance in including chronic acid reflux as 'present symptom' and vague 'flu symptoms' without specifics, but focused on query without major off-topic content."
+  },
+  "scores": {
+    "correctness": 3,
+    "completeness": 3,
+    "faithfulness": 5,
+    "relevance": 4
+  },
+  "average_score": 3.75,
+  "summary": "The Generated Answer captures core cough symptoms and basic resolution but misses key specifics, pertinent negatives, and erroneously includes chronic acid reflux while remaining grounded in the transcript."
+}

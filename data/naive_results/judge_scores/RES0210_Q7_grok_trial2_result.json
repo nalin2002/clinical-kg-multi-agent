@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer timeline: Raspy cough Friday [P-3]; yellow sputum with red spots both start Sunday simultaneously [P-4,P-6,P-7]; fever Monday [P-8]; chills Tuesday-Wednesday ('last two days' [P-9]); right-sided chest pain noticed 'over the last day' (~Tuesday [P-20]). Generated Answer correctly places raspy cough on Friday, red spots (part of hemoptysis) on Sunday, fever on Monday. Minor discrepancy: chills on Monday-Tuesday instead of Tuesday-Wednesday; chest pain on Wednesday instead of ~Tuesday; omits explicit yellow sputum onset on Sunday (though implies productive sputum). Progression mostly aligns but separates red spots without noting yellow sputum co-onset. Core facts correct with minor discrepancies. Score: 4.",
+    "completeness": "Gold key points: runny nose ~1wk ago; Friday raspy cough; Sunday cough worsens + yellow sputum + red spots start together; Monday fever + sputum persists; Tue-Wed chills; ~Tue chest pain (worse w/ cough/breath); Wed: hemoptysis, fever, chills, pleuritic pain, exertional dyspnea, sore throat. Generated covers Friday cough, Sunday red-spotted sputum (misses yellow explicit start/worsening cough), Monday fever, Mon-Tue chills (close), Wed chest pain/dyspnea; progression from respiratory to systemic to worsening distress. Misses runny nose, sore throat, exact yellow sputum/chills/chest pain timing, sputum persistence. Covers ~85% of key points. Score: 4.",
+    "faithfulness": "All cited transcript references (P-3,4,5,9,10,17,19) accurate and verifiable. Symptom descriptions grounded (e.g., cough Fri, red spots Sun, fever Mon, chills last two days, chest pain right-side worse w/ breath). Hallucinations: 'knowledge graph provided' (absent from transcript); fabricated '[Symptom] cough --[INDICATES]--> [SYMPTOM] chest pain/harder to breathe' relations presented as from graph. Chills timing 'Monday & Tuesday' plausible but transcript says 'last two days' (Tue-Wed). Multiple hallucinated elements (knowledge graph entirely). Score: 2.",
+    "relevance": "Directly provides timeline specifying days for raspy cough (Fri), red spots (Sun), fever (Mon), chills (Mon-Tue), chest pain (Wed); describes worsening from respiratory onset to systemic symptoms to distress with dyspnea/pain. Minor off-topic: knowledge graph references/tangents. Perfectly focused on question otherwise. Score: 4."
+  },
+  "scores": {
+    "correctness": 4,
+    "completeness": 4,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 3.5,
+  "summary": "The Generated Answer is mostly correct and complete in tracing symptom onsets and progression but undermined by hallucinated knowledge graph references and minor timeline discrepancies."
+}

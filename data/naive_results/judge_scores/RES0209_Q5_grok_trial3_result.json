@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer incorrectly claims that information on the three triggers (exercise, cold air, pollen) is absent from the transcript, directly contradicting the Gold Answer and transcript evidence in P-9 and P-11. It also denies the doctor's suspicion of undiagnosed allergies, ignoring D-12 ('so you have allergies too?'), P-12 (patient suspects but undiagnosed), and D-13 ('that would make sense'). While it accurately notes family history (sister's asthma, P-32) and some exacerbation symptoms, core facts about triggers and allergies are contradicted. References to a 'knowledge graph' are unsupported by the transcript.",
+    "completeness": "Gold Answer key points: (1) identifies three triggers with citations (P-9, P-11); (2) no other triggers (P-10); (3) clinician probes allergies due to pollen, patient suspects undiagnosed, clinician agrees (D-12/P-12/D-13/D-31); (4) family history sister asthma only (P-32/P-33/P-34); (5) relevance to exacerbation via increased rescue use (P-8); (6) need for better control (D-43). Generated covers exacerbation symptoms (dry cough P-1, SOB P-1, wheezing P-15, increased inhaler P-1/P-8), diagnosis history (P-2), and family sister asthma (P-32), but completely misses triggers, allergy suspicion, and their relation to exacerbation/med changes. Covers ~20-30% of key points.",
+    "faithfulness": "Claims triggers absent (false, verifiable in P-9/P-11); no allergy suspicion (false, D-12/D-13); introduces 'knowledge graph' and mappings not in transcript (hallucination). Accurately cites some symptoms (P-1, P-15, P-8, P-2, P-32) and infection ruling (D-29), but multiple key claims ungrounded or contradicted by transcript.",
+    "relevance": "Question focuses on relation of specific triggers + family history to exacerbation and allergy suspicion. Generated dodges triggers by claiming absence, addresses exacerbation symptoms and family history somewhat, but ignores allergy suspicion and trigger relation; partially relevant with off-topic 'knowledge graph' and infection focus."
+  },
+  "scores": {
+    "correctness": 1,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 3
+  },
+  "average_score": 2.0,
+  "summary": "The Generated Answer is factually incorrect and unfaithful by denying transcript evidence of triggers and allergy suspicion, covering only partial symptom and family details while missing core relations to exacerbation."
+}

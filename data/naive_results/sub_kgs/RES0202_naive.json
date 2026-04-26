@@ -1,0 +1,145 @@
+{
+  "nodes": [
+    {
+      "id": "N_001",
+      "text": "Cough",
+      "type": "SYMPTOM",
+      "evidence": "he started to have a bit of like a cough",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_002",
+      "text": "Fever",
+      "type": "SYMPTOM",
+      "evidence": "it got like a little high today... 101",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_003",
+      "text": "COVID-19",
+      "type": "DIAGNOSIS",
+      "evidence": "I just thought I should probably bring him in 'cause I was really worried about him and you know so he could have maybe got covid",
+      "turn_id": "P-2"
+    },
+    {
+      "id": "N_004",
+      "text": "COVID Swab",
+      "type": "PROCEDURE",
+      "evidence": "first thing is, first we need to do a covid swab",
+      "turn_id": "D-44"
+    },
+    {
+      "id": "N_005",
+      "text": "Viral Infection",
+      "type": "DIAGNOSIS",
+      "evidence": "it could be another viral illness",
+      "turn_id": "D-44"
+    },
+    {
+      "id": "N_006",
+      "text": "Isolation",
+      "type": "TREATMENT",
+      "evidence": "he isolate for 14 days",
+      "turn_id": "D-44"
+    },
+    {
+      "id": "N_007",
+      "text": "Fatigue",
+      "type": "SYMPTOM",
+      "evidence": "he was really tired",
+      "turn_id": "P-2"
+    },
+    {
+      "id": "N_008",
+      "text": "Reduced Appetite",
+      "type": "SYMPTOM",
+      "evidence": "doesn't seem to have a big appetite",
+      "turn_id": "P-15"
+    },
+    {
+      "id": "N_009",
+      "text": "Decreased Sense of Taste",
+      "type": "SYMPTOM",
+      "evidence": "he wasn't like into his breakfast... losing his sense of taste",
+      "turn_id": "P-17"
+    },
+    {
+      "id": "N_010",
+      "text": "Broken Arm",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "he broke his arm once",
+      "turn_id": "P-27"
+    },
+    {
+      "id": "N_011",
+      "text": "Asthma",
+      "type": "DIAGNOSIS",
+      "evidence": "would add other things like asthma to the list of things he could be worked up for",
+      "turn_id": "D-45"
+    },
+    {
+      "id": "N_012",
+      "text": "High Temperature",
+      "type": "SYMPTOM",
+      "evidence": "really high temperature",
+      "turn_id": "D-44"
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "N_001",
+      "target_id": "N_003",
+      "type": "INDICATES",
+      "evidence": "he started to have a bit of like a cough... maybe got covid",
+      "turn_id": "P-1"
+    },
+    {
+      "source_id": "N_002",
+      "target_id": "N_003",
+      "type": "INDICATES",
+      "evidence": "it got like a little high today... maybe got covid",
+      "turn_id": "P-1"
+    },
+    {
+      "source_id": "N_003",
+      "target_id": "N_004",
+      "type": "TAKEN_FOR",
+      "evidence": "first thing is, first we need to do a covid swab",
+      "turn_id": "D-44"
+    },
+    {
+      "source_id": "N_003",
+      "target_id": "N_006",
+      "type": "TAKEN_FOR",
+      "evidence": "he isolate for 14 days",
+      "turn_id": "D-44"
+    },
+    {
+      "source_id": "N_005",
+      "target_id": "N_002",
+      "type": "INDICATES",
+      "evidence": "it could be another viral illness",
+      "turn_id": "D-44"
+    },
+    {
+      "source_id": "N_002",
+      "target_id": "N_012",
+      "type": "INDICATES",
+      "evidence": "really high temperature",
+      "turn_id": "D-44"
+    },
+    {
+      "source_id": "N_007",
+      "target_id": "N_002",
+      "type": "INDICATES",
+      "evidence": "he was really tired... today he actually has a fever",
+      "turn_id": "P-2"
+    }
+  ],
+  "_usage": {
+    "prompt_tokens": 2573,
+    "completion_tokens": 6291,
+    "reasoning_tokens": 4207,
+    "cost": 0.00269633
+  }
+}

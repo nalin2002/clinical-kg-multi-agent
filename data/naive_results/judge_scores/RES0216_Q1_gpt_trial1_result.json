@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer correctly notes chest tightness with inspiration and some difficulty getting a full breath (consistent with [P-1], [P-7]) and that chest pain was denied (supported by [P-1] and more explicitly [P-5]). However, it incorrectly claims the transcript lacks information about fevers, night sweats, chills, weight loss, cough, anxiety, and sweating—these are explicitly denied in [P-6], [P-11]–[P-15]. It also incorrectly states there were no upper-airway symptoms; the patient reported hoarseness, phlegm, and throat-clearing in [P-11]. It inappropriately lists “headache” as a symptom present during this visit; the patient only mentioned occasional Tylenol for headaches, not an active complaint ([P-27]).",
+    "completeness": "Present symptoms: Captures chest tightness and difficulty taking a full breath, but misses key qualifiers (diffuse/all over; worse with exertion/walking, getting up, deep breath) and misses the upper-airway symptoms (hoarseness, phlegm, throat clearing). Denials: Only includes chest pain; misses explicit denials of cough, fever, night sweats, chills, weight loss, anxiety, sweating/impending doom. Overall captures a small minority of Gold Answer elements (~25%).",
+    "faithfulness": "Multiple statements are contradicted by the transcript: it says there is no information on fevers/night sweats/chills/weight loss/cough/anxiety/sweating despite explicit denials being present, and it says no upper-airway symptoms despite [P-11]. The “headache” item is based on a medication-use aside rather than a symptom reported as present, making it misleading in context.",
+    "relevance": "The response attempts to answer both parts of the question (present symptoms and denied screened symptoms), but it substantially fails to list the explicitly denied symptoms asked about and adds a less relevant item (headache/Tylenol use)."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 3
+  },
+  "average_score": 2.25,
+  "summary": "The answer is partially on-topic but contains several transcript-contradicted claims and omits most key present symptoms and explicit denials required by the question."
+}

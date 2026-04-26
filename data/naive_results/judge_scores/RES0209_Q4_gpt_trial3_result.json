@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer does not accurately report the infectious/COVID screening described in the Gold Answer. It incorrectly frames the question “besides your asthma, do you have any health problems?” (D-29) as the infectious screening, whereas the actual infectious screening consisted of questions about recent infection symptoms (colds, fever, loss of taste/smell, GI symptoms) and exposure/travel. It also misattributes the patient’s response “I was diagnosed when I was eight” (P-2) as answering D-29; that response actually pertains to asthma history (D-2/P-2). The only clearly correct element aligned with the Gold Answer is that a COVID swab was planned (D-29). It also correctly notes the cough was dry and that wheezing occurred, but these are not presented in the correct context of the infectious rule-out screening and omit the key infectious symptom/exposure negatives.",
+    "completeness": "Key Gold Answer elements mostly missing: (1) denial of recent colds/infections, (2) denial of sick contacts at home, (3) denial of outside sick contacts, (4) denial of travel, (5) denial of loss of taste/smell, (6) denial of fever, (7) denial of nausea/vomiting, (8) denial of belly pain, plus the rationale that these can occur with infection/after infection. The Generated Answer includes only: dry cough, wheezing, and the plan for a COVID swab. This is well under 50% of required content (closer to <20–30%).",
+    "faithfulness": "Several statements are not grounded or are mis-grounded in the transcript: it claims D-29 is the infectious screening question; it attributes P-2 (“diagnosed when I was eight”) as the response to D-29; it references a “knowledge graph,” which is not part of the provided transcript. While the COVID swab plan and dry cough/wheezing are supported, the core screening content is omitted and replaced with inaccurate framing, reducing faithfulness.",
+    "relevance": "The question asks specifically for the infectious/COVID symptom and exposure screening, the patient’s responses, and the planned test. The Generated Answer only partially addresses this (mentions dry cough/wheeze and COVID swab) and fails to provide the requested symptom/exposure screening negatives. Thus, it is only partially relevant."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 1,
+    "faithfulness": 2,
+    "relevance": 2
+  },
+  "average_score": 1.75,
+  "summary": "The response captures the planned COVID swab but largely misses and misrepresents the actual infectious symptom/exposure screening and includes incorrect/misattributed details."
+}

@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer accurately lists reported symptoms (dry cough/scratchy throat, headache, feeling hot day/night, malaise/icky/crappy, tired) with correct citations and denied symptoms (sputum/phlegm [P-5,P-6], rashes/skin changes [P-10], nausea/vomiting [P-11], diarrhea [P-12], joint aches [P-13], no breathing difficulty [P-18]). Generated Answer correctly identifies some reported symptoms (dry cough/scratchy throat [P-1,P-4], headache [P-1,P-2], feeling hot [P-9], malaise [P-1]) but inaccurately claims confirmation of 'night sweats (sheets soaked)' (P-9 describes feeling hot but not soaked sheets, hallucination), adds unrelated 'post nasal drip' as current symptom (P-18 is allergy history, not new 3-4 day symptom), misses 'tired' [P-13]. For denials, correctly notes sputum denial but uses wrong citations ([D-33,P-29] unrelated; actual [D-5,D-6,P-5,P-6]), falsely claims no inquiries/denials for nausea, joint pain, rashes (present in [D-10-13,P-10-13]), ignores diarrhea and breathing denial. Significant factual errors and contradictions.",
+    "completeness": "Gold reported symptoms covered: dry cough/scratchy throat (yes), headache (yes), feeling hot (partial, extras added), malaise/crappy (yes), tired (no). Gold denied symptoms covered: sputum/phlegm (partial, wrong cite), skin changes/rashes (no), nausea/vomiting (no), diarrhea (no), joint aches (no), can't breathe (no). Covers ~30-40% of key points (some reported yes, only 1/6 denied).",
+    "faithfulness": "Claims verifiable: dry cough/scratchy [P-1,P-4], headache [P-1,P-2], hot [P-9], malaise [P-1] grounded. Unverifiable/hallucinated: night sweats sheets soaked (P-9 no), post nasal drip as new symptom (P-18 allergy context), sputum denial wrong cites [D-33,P-29] (actual [D-5,P-5 etc.]), false claim transcript lacks nausea/joint/rashes inquiries (present [D-10-13]). Multiple hallucinations and citation errors.",
+    "relevance": "Directly structures response around reported symptoms (3-4 days) and denied symptoms, addressing question focus despite incompleteness and errors; minor extraneous note on common cold."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 2.5,
+  "summary": "Generated Answer partially addresses the question with some accurate symptom reporting but includes hallucinations, incorrect citations, omissions of key denials, and false claims about transcript content, leading to low factual reliability."
+}

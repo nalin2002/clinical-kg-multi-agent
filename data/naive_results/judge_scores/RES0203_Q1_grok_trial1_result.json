@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer states partial loss for both smell (can smell really bad odors) and taste (can taste really salty foods but not normal things like banana). Generated Answer correctly identifies smell as impaired/reduced but incorrectly states taste as 'completely lost' (contradicts P-4 and Gold). Cough correctly mild dry. Significant factual error on taste degree, a core symptom.",
+    "completeness": "Gold key points: 3 symptoms (smell partial w/details, taste partial w/details, cough mild dry non-productive consistent same time no triggers all 2 days consistent). Generated covers 3 symptoms and basic degrees (smell partial, cough mild) but misses all details on perception (what can/cannot smell/taste), duration (2 days), consistency, cough specifics (dry confirmed, no sputum, onset). Covers ~30% of key points.",
+    "faithfulness": "Smell and cough claims verifiable in P-1 (and P-4 for smell details ignored). Taste 'completely lost' not verifiable—P-1 says 'lost' but P-4 explicitly partial ('can taste really salty'). Ignores P-4 clarification, misrepresents as complete (hallucinated degree). Only cites P-1, multiple ungrounded aspects.",
+    "relevance": "Directly lists sensory (smell/taste) and respiratory (cough) symptoms with degrees, structured response matches question focus on specifics and degree; no off-topic content."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 2.5,
+  "summary": "Generated Answer has significant factual errors (taste as complete loss), misses key details and coverage from Gold/transcript, though relevant and partially grounded."
+}

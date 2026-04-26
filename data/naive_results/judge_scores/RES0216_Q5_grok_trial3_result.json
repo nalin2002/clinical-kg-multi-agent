@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer correctly identifies the patient's asthma history [P-16], lack of rescue inhaler refill [P-17/P-18], and links symptoms like chest tightness [P-1] and breathing difficulty to possible asthma recurrence [D-35], consistent with Gold. However, it completely omits the self-directed skipping of the evening maintenance inhaler dose [P-19/P-20], a core fact emphasized in both the question and Gold Answer. It also inaccurately presents 'Knowledge Graph [KG]' references as factual sources, which misaligns with Gold's transcript citations. Core facts are mostly accurate but with notable gaps and additions not in Gold.",
+    "completeness": "Key Gold points covered: asthma history [P-16], no rescue refill [P-17/P-18], symptoms of tightness/breathing issues [P-1], doctor's recurrence hypothesis [D-35]. Missed: well-controlled for years [P-29], skipping evening maintenance dose [P-19/P-20], doctor's summary connecting limited meds [D-34], detailed symptoms (worse on exertion/deep breaths [P-4/P-9], phlegm/hoarseness [P-11]), feels 'different' [P-16], lack of relief due to no rescue leading to treatment plan [D-35]. Covers ~40-50% of key points, primarily focusing on rescue inhaler.",
+    "faithfulness": "Verifiable claims: asthma [P-16], symptoms [P-1/P-7], daily puffer use/no rescue refill [P-17/P-18], salbutamol mention [P-25], doctor hypothesis [D-35]. Unverifiable/hallucinated: Multiple 'Knowledge Graph [KG]' citations (e.g., asthma causing 'harder to breathe', reoccurring asthma, salbutamol links), which do not exist in transcript. 'Acute episode of asthma' is plausible but not directly stated. Multiple hallucinated elements reduce grounding.",
+    "relevance": "Directly addresses asthma history and lack of rescue inhaler relating to symptoms, tying to doctor's plan, but ignores skipping evening maintenance dose specified in question. Includes irrelevant 'Knowledge Graph' and pathophysiology framing not central to query. Mostly focused but with omissions and tangents."
+  },
+  "scores": {
+    "correctness": 3,
+    "completeness": 3,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 3.0,
+  "summary": "The Generated Answer partially captures the asthma-symptom link and rescue inhaler issue but omits the maintenance dose skipping, introduces transcript-external hallucinations, resulting in moderate scores across dimensions."
+}

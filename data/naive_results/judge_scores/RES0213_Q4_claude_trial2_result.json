@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer incorrectly claims that only patient responses are provided and that no doctor dialogue is available. This is factually wrong - the transcript clearly contains alternating [D-#] doctor turns and [P-#] patient turns throughout. The Generated Answer completely contradicts the Gold Answer's detailed identification of specific doctor questions. This represents a fundamental misreading of the source material.",
+    "completeness": "The Generated Answer fails to address any of the conditions screened for or the questions used to exclude them. It covers 0% of the key points from the Gold Answer, which identifies 6 specific conditions (traumatic injury, cardiac disease, infectious illness, asthma, dyspnea, inherited arrhythmias) and the corresponding doctor questions for each. The Generated Answer provides no substantive content related to the question.",
+    "faithfulness": "The Generated Answer makes a claim that is demonstrably false based on the transcript. It states that only patient responses are provided when the transcript clearly shows doctor turns labeled [D-1] through [D-33]. This represents a fabrication or hallucination about the content of the source material itself. The claim that it's 'not possible to answer the question' is unfaithful to what the transcript actually contains.",
+    "relevance": "The Generated Answer does not address the question at all. Instead of identifying conditions screened for and questions used to exclude them, it claims the information needed to answer is unavailable. This is completely off-topic given that the question can be fully answered from the transcript, as demonstrated by the Gold Answer."
+  },
+  "scores": {
+    "correctness": 1,
+    "completeness": 1,
+    "faithfulness": 1,
+    "relevance": 1
+  },
+  "average_score": 1.0,
+  "summary": "The Generated Answer fundamentally fails on all evaluation dimensions. It incorrectly claims that only patient responses are available in the transcript when doctor-patient dialogue is clearly present throughout. This false premise leads to a complete failure to identify any of the 6 conditions screened for or any of the specific doctor questions used to rule them out. The answer is factually incorrect, provides zero coverage of required content, makes unfaithful claims about the source material, and does not address the question asked."
+}

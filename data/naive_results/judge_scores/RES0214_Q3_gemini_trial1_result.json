@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer correctly identifies fever and sore throat as the primary symptoms the doctor used to justify an infectious workup. It also correctly identifies the influenza vaccination status as the trigger for the flu differential. However, it incorrectly attributes the mention of 'muscle ache' to transcript turn [D-53], whereas the doctor only mentions 'fever and sore throat' in that specific turn.",
+    "completeness": "The Generated Answer misses a significant point from the Gold Answer: the epidemiological context involving the patient's husband having similar symptoms. This was a key piece of reasoning provided by the doctor for suspecting COVID-19 specifically. It also omits 'stuffy nose' from the symptom cluster mentioned in the Gold Answer.",
+    "faithfulness": "The answer is mostly grounded, but it contains a hallucination regarding turn [D-53]; it claims the doctor associates muscle aches with COVID in that turn, but the transcript shows the doctor only explicitly links fever and sore throat to the infectious rule-out in [D-53].",
+    "relevance": "The Generated Answer is highly relevant and directly addresses both parts of the user's question without adding extraneous non-clinical information."
+  },
+  "scores": {
+    "correctness": 4,
+    "completeness": 3,
+    "faithfulness": 4,
+    "relevance": 5
+  },
+  "average_score": 4.0,
+  "summary": "The Generated Answer identifies the core symptoms and vaccination history correctly but omits the husband's illness as context and has a minor citation error regarding muscle aches."
+}

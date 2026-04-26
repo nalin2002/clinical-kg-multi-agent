@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Generated Answer partially matches Gold: correctly identifies chest tightness [P-1] and difficulty getting a full breath [P-7], but adds irrelevant headache [P-27] not tied to chief complaint; incorrectly states no upper airway symptoms despite P-11 (hoarse, phlegm, throat clearing); misattributes chest pain denial to P-1 (actual explicit denial P-5); claims no info on fevers/night sweats/chills/weight loss/cough/anxiety/sweating despite explicit denials P-6/P-11-15; misses key details like 3-day duration, diffuse nature, triggers (exertion/inspiration). Significant errors/omissions contradict Gold.",
+    "completeness": "Covered: chest tightness (incomplete), difficulty breathing. Missed from Gold: 3-day history, diffuse/'all over' tightness [P-1,P-8], worsens with inspiration/exertion/walking/getting up/deep breath [P-1,P-5,P-9,P-10], upper airway (hoarse/phlegm/throat clearing but no cough [P-11]), full list of denials (chest pain [P-5], anxiety/sweating/impending doom [P-6], fevers [P-12], night sweats [P-13], chills [P-14], weight loss [P-15], cough [P-11]). Covers ~25% of key points.",
+    "faithfulness": "Grounded claims: chest tightness [P-1], difficulty breath [P-1,P-7], headache [P-27], no specific spot [P-1]. Unverifiable/hallucinated: 'no upper airway symptoms' (contradicts P-11); 'no info on fevers/etc.' (explicitly denied P-6,P-11-15); chest pain denial solely P-1 (misses P-5); asthma link [D-35] ok but peripheral. Multiple hallucinations/omissions of transcript facts.",
+    "relevance": "Directly structures as reported symptoms and denied symptoms matching question; focuses on chest/respiratory; minor off-topic (headache, asthma speculation, erroneous notes), but overall addresses present symptoms and screened denials."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 2.5,
+  "summary": "Generated Answer has significant factual inaccuracies, misses most key symptoms and all but one denial, with hallucinations about absent transcript content, though structured relevantly."
+}

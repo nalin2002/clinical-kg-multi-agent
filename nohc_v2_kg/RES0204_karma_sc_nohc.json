@@ -1,0 +1,227 @@
+{
+  "nodes": [
+    {
+      "id": "N_001",
+      "text": "cough",
+      "type": "SYMPTOM",
+      "evidence": "I hear that you have been having some coughing",
+      "turn_id": "P-2"
+    },
+    {
+      "id": "N_002",
+      "text": "runny nose",
+      "type": "SYMPTOM",
+      "evidence": "I have had that for the past couple of days",
+      "turn_id": "P-11"
+    },
+    {
+      "id": "N_003",
+      "text": "clear nasal discharge",
+      "type": "SYMPTOM",
+      "evidence": "And is it a runny nose with kind of clear stuff",
+      "turn_id": "D-12"
+    },
+    {
+      "id": "N_004",
+      "text": "fever",
+      "type": "SYMPTOM",
+      "evidence": "He has had uh like he's had fevers in the past",
+      "turn_id": "P-13"
+    },
+    {
+      "id": "N_005",
+      "text": "asthma",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "his grandparents had um asthma",
+      "turn_id": "P-28"
+    },
+    {
+      "id": "N_006",
+      "text": "absent shortness of breath",
+      "type": "SYMPTOM",
+      "evidence": "he doesn't get short of breath",
+      "turn_id": "P-28"
+    },
+    {
+      "id": "N_007",
+      "text": "absent wheezing",
+      "type": "SYMPTOM",
+      "evidence": "he doesn't get short of breath or wheezing",
+      "turn_id": "P-28"
+    },
+    {
+      "id": "N_008",
+      "text": "chest x ray",
+      "type": "PROCEDURE",
+      "evidence": "he might want to do a chest X Ray",
+      "turn_id": "D-37"
+    },
+    {
+      "id": "N_009",
+      "text": "covid swab",
+      "type": "PROCEDURE",
+      "evidence": "do a covid swab",
+      "turn_id": "D-39"
+    },
+    {
+      "id": "N_010",
+      "text": "lungs",
+      "type": "LOCATION",
+      "evidence": "listen to your lungs",
+      "turn_id": "D-1"
+    },
+    {
+      "id": "N_011",
+      "text": "heart",
+      "type": "LOCATION",
+      "evidence": "listen to your lungs in your heart",
+      "turn_id": "D-1"
+    },
+    {
+      "id": "N_012",
+      "text": "nose",
+      "type": "LOCATION",
+      "evidence": "stick something up your nose",
+      "turn_id": "D-39"
+    },
+    {
+      "id": "N_013",
+      "text": "back",
+      "type": "LOCATION",
+      "evidence": "Have you had any back or muscle pain",
+      "turn_id": "P-14"
+    },
+    {
+      "id": "N_014",
+      "text": "chest",
+      "type": "LOCATION",
+      "evidence": "Any, any chest pain",
+      "turn_id": "D-15"
+    },
+    {
+      "id": "N_015",
+      "text": "dry cough",
+      "type": "SYMPTOM",
+      "evidence": "[D-5] D: OK, so at no point were you bringing up on gunk with your cough?",
+      "turn_id": "D-5"
+    },
+    {
+      "id": "N_016",
+      "text": "absent muscle pain",
+      "type": "SYMPTOM",
+      "evidence": "[D-14] D: OK. Have you had any back or muscle pain?",
+      "turn_id": "D-14"
+    },
+    {
+      "id": "N_017",
+      "text": "absent nausea",
+      "type": "SYMPTOM",
+      "evidence": "[D-15] D: OK. Any, any nausea or vomiting?",
+      "turn_id": "D-15"
+    },
+    {
+      "id": "N_018",
+      "text": "absent vomiting",
+      "type": "SYMPTOM",
+      "evidence": "[D-15] D: OK. Any, any nausea or vomiting?",
+      "turn_id": "D-15"
+    },
+    {
+      "id": "N_019",
+      "text": "absent abdominal pain",
+      "type": "SYMPTOM",
+      "evidence": "[D-17] D: Have you ever had any pain in your belly?",
+      "turn_id": "D-17"
+    },
+    {
+      "id": "N_020",
+      "text": "absent headache",
+      "type": "SYMPTOM",
+      "evidence": "[D-18] D: Any headaches?",
+      "turn_id": "D-18"
+    },
+    {
+      "id": "N_NEW_001",
+      "text": "lung auscultation",
+      "type": "PROCEDURE",
+      "evidence": "have a listen to your lungs",
+      "turn_id": "D-1"
+    },
+    {
+      "id": "N_NEW_002",
+      "text": "heart auscultation",
+      "type": "PROCEDURE",
+      "evidence": "listen to your lungs in your heart",
+      "turn_id": "D-1"
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "N_001",
+      "target_id": "N_010",
+      "type": "LOCATED_AT",
+      "evidence": "listen to your lungs in your heart",
+      "turn_id": "D-1"
+    },
+    {
+      "source_id": "N_001",
+      "target_id": "N_011",
+      "type": "LOCATED_AT",
+      "evidence": "listen to your lungs in your heart",
+      "turn_id": "D-1"
+    },
+    {
+      "source_id": "N_002",
+      "target_id": "N_012",
+      "type": "LOCATED_AT",
+      "evidence": "And is it a runny nose with kind of clear stuff",
+      "turn_id": "D-12"
+    },
+    {
+      "source_id": "N_003",
+      "target_id": "N_012",
+      "type": "LOCATED_AT",
+      "evidence": "And is it a runny nose with kind of clear stuff",
+      "turn_id": "D-12"
+    },
+    {
+      "source_id": "N_001",
+      "target_id": "N_014",
+      "type": "LOCATED_AT",
+      "evidence": "listen to your lungs in your heart",
+      "turn_id": "D-1"
+    },
+    {
+      "source_id": "N_015",
+      "target_id": "N_014",
+      "type": "LOCATED_AT",
+      "evidence": "it was a dry cough",
+      "turn_id": "P-5"
+    },
+    {
+      "source_id": "N_016",
+      "target_id": "N_013",
+      "type": "LOCATED_AT",
+      "evidence": "back or muscle pain",
+      "turn_id": "D-15"
+    },
+    {
+      "source_id": "N_006",
+      "target_id": "N_014",
+      "type": "LOCATED_AT",
+      "evidence": "he doesn't get short of breath",
+      "turn_id": "P-28"
+    },
+    {
+      "source_id": "N_007",
+      "target_id": "N_014",
+      "type": "LOCATED_AT",
+      "evidence": "or wheezing",
+      "turn_id": "P-28"
+    }
+  ],
+  "_usage": {
+    "prompt_tokens": 11440,
+    "completion_tokens": 37567
+  }
+}

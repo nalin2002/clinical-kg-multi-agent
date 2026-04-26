@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The generated answer correctly identifies the patient’s first symptom as a stuffy nose and notes fever for the past three days, consistent with the transcript and Gold Answer. However, it contains major factual errors regarding (1) the husband’s timeline—transcript explicitly states he has had similar symptoms “for the past week” [P-19], while the generated answer claims the duration is not provided and implies concurrence; and (2) the muscle aches—transcript indicates muscle aches for the past 2–3 days and explicitly overlaps them with the fever [P-14–P-16], whereas the generated answer frames them as occurring after the fever. These are significant inaccuracies relative to the Gold Answer.",
+    "completeness": "Key Gold Answer points covered: (a) stuffy nose first; (b) sore throat present and ongoing; (c) fever for three days. Key points missed or inadequately captured: (a) the husband’s symptoms for the past week and the staggered onset vs the patient; (b) explicit temporal overlap of muscle aches with fever and their 2–3 day duration; (c) the comparison inference that husband started earlier by several days (derived from the provided durations). Overall, it captures roughly half to two-thirds of the Gold Answer content but misses the central husband timeline comparison.",
+    "faithfulness": "Several statements are not grounded or directly contradict the transcript. The transcript clearly provides the husband’s symptom duration (“past week” [P-19]), so claiming it is not provided is unfaithful. The suggestion that the husband’s illness is merely ‘concurrent’ with the patient’s is also not supported. Most of the patient-symptom sequence is grounded in [P-1] and [P-13], but the husband-related portion is a notable contradiction/hallucination.",
+    "relevance": "The response is generally focused on symptom chronology, which matches the question. However, it fails to answer a key required component: comparing the patient’s timeline to her husband’s onset. This omission reduces how well it addresses the full question, though the content included remains on-topic."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 3,
+    "faithfulness": 2,
+    "relevance": 3
+  },
+  "average_score": 2.5,
+  "summary": "The answer is partially correct for the patient’s symptom order but contains major transcript-contradicting errors about the husband’s one-week symptom timeline and misstates the timing of muscle aches, making it incomplete and not fully faithful."
+}

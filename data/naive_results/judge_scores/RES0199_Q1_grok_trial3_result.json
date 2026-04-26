@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer inaccurately claims that key specifics are absent from the transcript: cough nature (states 'not described' but P-12 confirms 'mostly a dry cough'), diarrhea frequency ('not specified' but P-28 states 'five or six times a day'), vomiting episodes ('not specified' but P-32 states 'vomited two times'), and headache severity ('did not provide a specific severity rating' but P-8 rates it 'probably like 7'). These direct contradictions with the Gold Answer and transcript make it mostly incorrect, though it correctly notes the cough and headache started four days ago from P-1.",
+    "completeness": "Gold Answer key points include: dry cough (no sputum/blood, stable), no SOB/wheeze/chest pain; diarrhea (2 days ago, liquid stools, 5-6x/day, no blood); nausea (today), vomiting (yesterday, 2x, food contents, no blood); GI negatives; headache (4 days, persistent, bilateral forehead/top, 7/10, no radiation/stiffness, unusual); loss of smell, fatigue. Generated covers only vague reports of cough/diarrhea/vomiting/nausea/headache from P-1 (start ~4 days), missing all specifics, timings, natures, negatives – covers <20% of key points.",
+    "faithfulness": "Generated hallucinates absences: cough nature not in transcript (verifiable P-12 'dry'); diarrhea freq not spec (P-28 '5 or 6 times a day'); vomiting # not spec (P-32 'two times'); headache sev not provided (P-8 '7'). Only P-1 citations are accurate for initial reports. Multiple unverifiable claims of missing details despite evidence in transcript; largely fabricated content about transcript contents.",
+    "relevance": "The Generated Answer directly structures response around requested GI (diarrhea, vomiting, nausea) and respiratory (cough) symptoms, explicitly addresses each specified characteristic (cough nature, diarrhea frequency, vomiting number, headache severity), with no irrelevant tangents or off-topic content – perfectly focused on the question."
+  },
+  "scores": {
+    "correctness": 1,
+    "completeness": 1,
+    "faithfulness": 1,
+    "relevance": 5
+  },
+  "average_score": 2.0,
+  "summary": "The Generated Answer is highly relevant but disastrously fails on correctness, completeness, and faithfulness by hallucinating that critical symptom details absent from the transcript despite their clear presence."
+}

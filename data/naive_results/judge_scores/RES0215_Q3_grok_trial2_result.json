@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer specifies 'pediatric asthma with exercise-induced bronchoconstriction in the context of an atopic predisposition'; Generated Answer says 'Asthma (specifically, an acute exacerbation of asthma)', which captures the core diagnosis of asthma but uses less precise terminology ('acute exacerbation' implies a known prior diagnosis with flare-up, not fully matching the first-noticed episodic presentation) and omits 'pediatric', 'exercise-induced bronchoconstriction', and 'atopic predisposition'. Cited transcript facts are accurate where provided, but overall minor discrepancies in diagnostic specificity.",
+    "completeness": "Gold key points: (1) exercise-triggered [P-3,P-41,P-6], (2) episodic/reversible with rest [P-6,P-33], (3) cold weather [P-38], (4) multiple settings [P-38], (5) seasonal allergies [P-35,P-36], (6) nocturnal episode [P-43,P-44], (7) pertinent negatives (no fever [P-7], runny nose [P-8], etc.). Generated covers (1 partial: only P-3), (3), (4), (5); misses (2), (6), (7) entirely, covering ~60% of key points.",
+    "faithfulness": "Generated citations [P-3,P-38,P-35,P-36] are accurate and verifiable in transcript. However, multiple hallucinations: repeated references to non-existent 'Knowledge Graph' (e.g., links symptoms/triggers/treatments to KG, [KG]), which is not in the source transcript; 'acute exacerbation' is interpretive but stretches beyond transcript without prior diagnosis history.",
+    "relevance": "Generated Answer directly names a respiratory diagnosis (asthma) and lists specific transcript findings supporting it, perfectly matching the question's request despite extraneous KG mentions."
+  },
+  "scores": {
+    "correctness": 4,
+    "completeness": 3,
+    "faithfulness": 2,
+    "relevance": 5
+  },
+  "average_score": 3.5,
+  "summary": "The Generated Answer is mostly correct and relevant but incomplete in covering Gold key points and introduces hallucinations via non-transcript 'Knowledge Graph' references, lowering faithfulness."
+}

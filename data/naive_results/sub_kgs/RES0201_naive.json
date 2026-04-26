@@ -1,0 +1,221 @@
+{
+  "nodes": [
+    {
+      "id": "N_001",
+      "text": "Sore throat",
+      "type": "SYMPTOM",
+      "evidence": "it started about four days ago... It's really it's it's very sore",
+      "turn_id": "P-2"
+    },
+    {
+      "id": "N_002",
+      "text": "Difficulty swallowing food",
+      "type": "SYMPTOM",
+      "evidence": "I can drink fluids OK but I'm even having some issues swallowing food",
+      "turn_id": "P-2"
+    },
+    {
+      "id": "N_003",
+      "text": "Difficulty breathing",
+      "type": "SYMPTOM",
+      "evidence": "you said you've also had some difficulty breathing",
+      "turn_id": "P-7"
+    },
+    {
+      "id": "N_004",
+      "text": "Loss of sense of smell",
+      "type": "SYMPTOM",
+      "evidence": "maybe taste a little bit but not smell",
+      "turn_id": "P-19"
+    },
+    {
+      "id": "N_005",
+      "text": "Loss of sense of taste",
+      "type": "SYMPTOM",
+      "evidence": "maybe taste a little bit",
+      "turn_id": "P-19"
+    },
+    {
+      "id": "N_006",
+      "text": "Muscle aches",
+      "type": "SYMPTOM",
+      "evidence": "my muscles all ache",
+      "turn_id": "P-25"
+    },
+    {
+      "id": "N_007",
+      "text": "Tiredness",
+      "type": "SYMPTOM",
+      "evidence": "I. I felt tired, maybe not weak",
+      "turn_id": "P-25"
+    },
+    {
+      "id": "N_008",
+      "text": "Mono",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "when I was younger I had mono. And I had a sore throat when I had that",
+      "turn_id": "P-5"
+    },
+    {
+      "id": "N_009",
+      "text": "COPD",
+      "type": "DIAGNOSIS",
+      "evidence": "I have mild COPD",
+      "turn_id": "P-27"
+    },
+    {
+      "id": "N_010",
+      "text": "Gargling with salt water",
+      "type": "TREATMENT",
+      "evidence": "I've tried, you know, I've tried gargling with salt water",
+      "turn_id": "P-6"
+    },
+    {
+      "id": "N_011",
+      "text": "Painkillers",
+      "type": "TREATMENT",
+      "evidence": "I've tried some painkillers like nothing",
+      "turn_id": "P-6"
+    },
+    {
+      "id": "N_012",
+      "text": "Long acting beta agonist",
+      "type": "TREATMENT",
+      "evidence": "I'm on a long acting beta agonist",
+      "turn_id": "P-28"
+    },
+    {
+      "id": "N_013",
+      "text": "COVID-19",
+      "type": "DIAGNOSIS",
+      "evidence": "some of your symptoms are in line with common symptoms of covid 19",
+      "turn_id": "D-43"
+    },
+    {
+      "id": "N_014",
+      "text": "COVID swab",
+      "type": "PROCEDURE",
+      "evidence": "that will probably do a covid swab",
+      "turn_id": "D-43"
+    },
+    {
+      "id": "N_015",
+      "text": "Chest xray",
+      "type": "PROCEDURE",
+      "evidence": "we will probably get you a chest xray",
+      "turn_id": "D-43"
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "N_010",
+      "target_id": "N_001",
+      "type": "TAKEN_FOR",
+      "evidence": "I've tried, you know, I've tried gargling with salt water",
+      "turn_id": "P-6"
+    },
+    {
+      "source_id": "N_011",
+      "target_id": "N_001",
+      "type": "TAKEN_FOR",
+      "evidence": "I've tried some painkillers like nothing",
+      "turn_id": "P-6"
+    },
+    {
+      "source_id": "N_012",
+      "target_id": "N_009",
+      "type": "TAKEN_FOR",
+      "evidence": "I'm on a long acting beta agonist",
+      "turn_id": "P-28"
+    },
+    {
+      "source_id": "N_001",
+      "target_id": "N_002",
+      "type": "INDICATES",
+      "evidence": "I can drink fluids OK but I'm even having some issues swallowing food",
+      "turn_id": "P-2"
+    },
+    {
+      "source_id": "N_008",
+      "target_id": "N_001",
+      "type": "INDICATES",
+      "evidence": "when I was younger I had mono. And I had a sore throat when I had that",
+      "turn_id": "P-5"
+    },
+    {
+      "source_id": "N_008",
+      "target_id": "N_005",
+      "type": "INDICATES",
+      "evidence": "when I was younger I had mono. And I had a sore throat when I had that",
+      "turn_id": "P-5"
+    },
+    {
+      "source_id": "N_013",
+      "target_id": "N_001",
+      "type": "INDICATES",
+      "evidence": "symptoms are in line with common symptoms of covid 19",
+      "turn_id": "D-43"
+    },
+    {
+      "source_id": "N_013",
+      "target_id": "N_003",
+      "type": "INDICATES",
+      "evidence": "symptoms are in line with common symptoms of covid 19",
+      "turn_id": "D-43"
+    },
+    {
+      "source_id": "N_013",
+      "target_id": "N_004",
+      "type": "INDICATES",
+      "evidence": "symptoms are in line with common symptoms of covid 19",
+      "turn_id": "D-43"
+    },
+    {
+      "source_id": "N_013",
+      "target_id": "N_005",
+      "type": "INDICATES",
+      "evidence": "symptoms are in line with common symptoms of covid 19",
+      "turn_id": "D-43"
+    },
+    {
+      "source_id": "N_013",
+      "target_id": "N_006",
+      "type": "INDICATES",
+      "evidence": "symptoms are in line with common symptoms of covid 19",
+      "turn_id": "D-43"
+    },
+    {
+      "source_id": "N_013",
+      "target_id": "N_007",
+      "type": "INDICATES",
+      "evidence": "symptoms are in line with common symptoms of covid 19",
+      "turn_id": "D-43"
+    },
+    {
+      "source_id": "N_014",
+      "target_id": "N_013",
+      "type": "TAKEN_FOR",
+      "evidence": "that will probably do a covid swab",
+      "turn_id": "D-43"
+    },
+    {
+      "source_id": "N_015",
+      "target_id": "N_003",
+      "type": "TAKEN_FOR",
+      "evidence": "we will probably get you a chest xray",
+      "turn_id": "D-43"
+    },
+    {
+      "source_id": "N_015",
+      "target_id": "N_013",
+      "type": "TAKEN_FOR",
+      "evidence": "we will probably get you a chest xray",
+      "turn_id": "D-43"
+    }
+  ],
+  "_usage": {
+    "prompt_tokens": 1994,
+    "completion_tokens": 6102,
+    "cost": 0.00282326
+  }
+}

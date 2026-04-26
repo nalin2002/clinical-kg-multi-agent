@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer incorrectly states that the transcript does not contain the doctor's explicit plan for immediate next steps, directly contradicting the Gold Answer's accurate citation of [D-58] which outlines physical exam, consultation with physician, and discussion of next steps. For environmental factors, it only mentions air filters ([D-57]), ignoring smoking ([P-53]), carpets ([P-54]), pets ([P-55]), fireplaces/stoves ([P-56]), townhouse ([P-50]), and family context ([P-49]), resulting in significant factual errors and contradictions with the Gold Answer.",
+    "completeness": "Gold Answer key points: Plan (physical exam, consult physician, return/discuss next steps, offer questions); Environment (smoking, carpets, pets, fireplaces/stoves, air filters, townhouse/family). Generated covers only air filters (~10% of environment points), misses 100% of plan points. Covers <20% overall.",
+    "faithfulness": "Generated hallucinates absence of a stated plan despite clear evidence in [D-58]; limits environment to air filters (correct citation but incomplete); misattributes air filters question to 'patient' instead of mother; claims focus on 'history-taking phase' ignores plan statement; multiple ungrounded claims fabricating lack of plan.",
+    "relevance": "Generated Answer is structured directly around the question with sections for environmental factors and doctor's plan, addressing both parts without off-topic content, though conclusions are erroneous."
+  },
+  "scores": {
+    "correctness": 1,
+    "completeness": 1,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 2.0,
+  "summary": "The Generated Answer is largely incorrect, incomplete, and unfaithful by denying the existence of a clearly stated plan in [D-58] and omitting most assessed environmental factors, despite being relevant in structure."
+}

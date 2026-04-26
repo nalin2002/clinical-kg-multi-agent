@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer correctly identifies the condition as 'cardiac ischemic pictures' matching the Gold Answer's 'cardiac ischemic picture'. It accurately cites the doctor's summary in [D-36] regarding no exertional shortness of breath and no pain, which aligns with the Gold's emphasis on tightness over pain and lack of classic exertional dyspnea. However, there are minor discrepancies: it frames the nature of complaints primarily as tightness vs. out-of-breathness (correct per [D-36]) but underemphasizes the explicit 'tightness rather than pain' distinction highlighted in Gold with [P-5]; it also does not contradict but simplifies the patient's mild dyspnea report [P-7]. Core facts are consistent.",
+    "completeness": "Gold key points: condition ('cardiac ischemic picture'); nature (tightness not pain [P-5], not classic exertional dyspnea despite [P-7]); absences (no pain [P-5], no anxiety/sweat/doom [P-6], screened [D-5,D-6]). Generated covers: condition (100%); nature of tightness ([P-1], no SOB/pain [D-36]) ~70%; absences (only no pain and no SOB, misses anxiety/sweat/doom entirely). Covers ~60-70% of key points, missing significant absent symptoms.",
+    "faithfulness": "All claims verifiable: condition [D-36]; tightness on breathing [P-1]; no out-of-breathness or pain [D-36], supported by patient reports [P-1,P-5]. No hallucinations; directly grounded in transcript quotes and doctor's summary. Citations accurate.",
+    "relevance": "Perfectly addresses the question by specifying the condition and categorizing evidence into 'nature of chest complaint' (tightness vs. SOB) and 'absence of symptoms' (no SOB, no pain), with no off-topic content or tangents."
+  },
+  "scores": {
+    "correctness": 4,
+    "completeness": 3,
+    "faithfulness": 5,
+    "relevance": 5
+  },
+  "average_score": 4.25,
+  "summary": "The Generated Answer is factually accurate and highly faithful/relevant but incomplete in covering all cited absent symptoms like anxiety, sweat, and impending doom from the Gold Answer."
+}

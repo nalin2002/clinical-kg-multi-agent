@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer lists specific symptoms for COPD exacerbation (increased dyspnea, cough frequency, sputum volume, decreased exercise tolerance) and infection (green-yellow sputum, fever, sinus pressure, headache, sick contact), plus exclusions and patient history. Generated correctly identifies worsening dyspnea, green-yellow sputum, and fever as supporting the dual diagnosis per doctor's assessment [D-43], and explains their role in distinguishing infection. However, it omits many key symptoms (e.g., cough frequency, sputum volume, exercise tolerance, sinus pressure, headache, sick contact), adds unsubstantiated claims about COPD typically involving wheezing, and relies on non-existent 'Knowledge Graph [KG]' for causal links, introducing factual discrepancies.",
+    "completeness": "Key points from Gold covered: doctor's dual assessment [D-43], dyspnea [P-1], green-yellow sputum [P-1], fever [P-9]. Missed: increased cough frequency [P-1], increased sputum volume [P-1], decreased exercise tolerance [P-4], sinus pressure [P-12], mild headache [P-14], sick contact [P-20], excluded environmental triggers [P-38], medication adherence [P-26], patient's past pattern [P-3]. Covers approximately 30-40% of key points.",
+    "faithfulness": "Claims about symptoms [P-1, P-9, D-43] are verifiable in transcript. However, multiple references to 'Knowledge Graph [KG]' (e.g., linking infection to exacerbation, causal links between symptoms) are not in transcript, representing hallucination. Additional interpretations like 'hallmark of bacterial infection' and 'COPD exacerbations often involve wheezing' are plausible but not grounded in transcript.",
+    "relevance": "Generated Answer directly addresses the question by listing symptoms supporting the dual assessment of infection and COPD exacerbation, and specifically explains how green-yellow sputum and fever distinguish an infectious trigger, with clear structure matching the query."
+  },
+  "scores": {
+    "correctness": 3,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 5
+  },
+  "average_score": 3.0,
+  "summary": "The Generated Answer captures core symptoms like sputum and fever supporting the dual diagnosis but is incomplete in covering all key points from the Gold Answer, introduces hallucinations via non-existent Knowledge Graph references, and maintains high relevance despite factual additions."
+}

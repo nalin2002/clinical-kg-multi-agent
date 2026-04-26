@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer states stuffy nose first 'just before' fever, sore throat around fever onset and ongoing, fever for 3 days, muscle aches concurrent with fever (past 2-3 days, confirmed same time). Generated correctly identifies stuffy nose first, sore throat alongside fever, fever 3 days, but incorrectly states muscle ache 'following' fever (transcript indicates concurrent, past 2-3 days same as fever [P-14, D-15, P-15]). For husband, Gold notes symptoms for past week (~4 days before patient's fever), staggered onset; Generated wrongly claims timeline 'not provided' and 'concurrent' (directly contradicted by [P-19: past week], patient's fever 3 days). Significant contradictions on timings.",
+    "completeness": "Gold key points: stuffy nose first (covered), sore throat next/around fever (covered), fever 3 days (covered), muscle aches concurrent (timing missed, stated as following), husband past week/4 days earlier/similar ongoing/staggered household transmission (missed entirely, wrongly stated as concurrent/not provided). Covers patient symptoms partially (~70-80%) but misses/inaccurately handles husband comparison, a core question element.",
+    "faithfulness": "Stuffy nose/sore throat/fever grounded in [P-1]. Muscle ache cited [P-13] but timing 'following fever' not supported (transcript [P-14] past 2-3 days concurrent with fever [D-15, P-15]). Husband timeline directly in [P-19: past week], yet Generated claims 'not provided'; misuses [D-53] doctor's inference as evidence of concurrency. Multiple misinterpretations/misrepresentations of transcript facts.",
+    "relevance": "Directly structures answer as chronological list of patient symptoms and husband comparison, perfectly matching question focus with no extraneous content."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 3,
+    "faithfulness": 2,
+    "relevance": 5
+  },
+  "average_score": 3.0,
+  "summary": "The Generated Answer is relevant and partially covers patient symptom progression but contains significant factual errors in timings and completely misrepresents the husband's symptom timeline compared to the Gold Answer and transcript."
+}

@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer incorrectly claims that the transcript consists exclusively of patient statements ([P-2] through [P-35]) with no doctor turns, making it impossible to answer the question; this is factually wrong as the full transcript includes key doctor statements like [D-37] detailing the plan (physical exam of heart/lungs, consult with supervising doctor, reconvene), which matches the Gold Answer exactly. Instead of providing the correct facts, it fabricates a barrier to answering and shifts to irrelevant patient details, directly contradicting the Gold Answer's accurate summary. Thus, mostly incorrect.",
+    "completeness": "Gold Answer key points: multi-step plan from [D-37] (physical exam: listen to heart/lungs + quick exam; consult supervising doctor, review discussion, return to discuss next steps); foreshadowed in [D-1]; patient agreement [P-37]; no diagnosis/meds yet. Generated Answer covers 0% of these, instead listing unrelated patient actions (diet for reflux [P-25], COVID test [P-35]).",
+    "faithfulness": "Generated Answer hallucinates that the 'relevant transcript segments provided' are only patient statements [P-2]-[P-35] excluding doctor turns, but the full transcript includes [D-37] and others; citations to [P-25]/[P-35] are accurate but irrelevant/plausible diversions; core claim about transcript content is fabricated, with no grounding for the doctor's plan which is explicitly in the transcript.",
+    "relevance": "Question asks specifically for doctor's stated plan, exam components, and next-steps process at consultation end; Generated Answer dodges with 'not possible' excuse, then pivots to patient's self-reported history (diet, COVID test), which does not address the question about the doctor's statements."
+  },
+  "scores": {
+    "correctness": 1,
+    "completeness": 1,
+    "faithfulness": 1,
+    "relevance": 1
+  },
+  "average_score": 1.0,
+  "summary": "The Generated Answer is entirely incorrect, ungrounded, and irrelevant, hallucinating transcript limitations to avoid answering while ignoring the explicit doctor's plan in [D-37]."
+}

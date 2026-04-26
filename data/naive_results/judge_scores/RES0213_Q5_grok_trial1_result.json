@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer accurately details family history (father's heart attack last year in 50s, now sees heart doctors [P-8, P-30], scares patient [P-8], grandpa accident [P-30]), smoking (started ~18, 10 cigs/day for 2 years, now ~5/day, hard to quit [P-13,14,18]), stressors (thesis pressure [P-15,16], alone [P-26,27], nervous running [P-28]), and connections (stress? [P-8], nervous breathing [P-19], past anxiety [P-22]). Generated Answer covers core facts but has minor discrepancies: family section omits P-30 details (heart doctors, grandpa) and wrongly links no doctor visit [P-21] to family worry (P-21 is about anxiety); smoking links via external KG not in Gold/transcript; stressors misquotes P-28 (says reads school books instead of relaxing, but transcript is opposite: reads non-school books instead of school); assumes running 'for anxiety' (not stated); synthesis adds KG and pain response details consistent but externally framed. Core facts match, minor errors.",
+    "completeness": "Gold key points: family (detailed P-8/P-30, scares, grandpa); smoking (full timeline P-13/14/18); stressors (thesis crunch P-15/16, alone P-26/27, running P-28); connections (P-8/19/22). Generated covers family (partial, P-8 only), smoking (partial timeline, quit attempt), stressors (studying/walking P-4, academic pressure, P-28 misquoted), synthesis with interactions. Misses: heart doctors, grandpa, full smoking start/escalation, specific thesis/living details, P-19/22. Covers ~70% of key points/details.",
+    "faithfulness": "Most claims verifiable: family [P-8], smoking [P-14], pain triggers [P-4], etc. But hallucinations/misquotes: no KG or 'smoking causes heart attacks' in transcript; P-21 not about family; P-28 reversed (reads leisure books, not school); running not 'for anxiety'; synthesis cites [KG] absent. Multiple unverifiable additions and errors.",
+    "relevance": "Directly structures response around the three factors (family, smoking, stressors), their contributions to heart concern, interactions via feedback loop, with transcript illustrations/citations. No off-topic content; perfectly addresses question."
+  },
+  "scores": {
+    "correctness": 4,
+    "completeness": 3,
+    "faithfulness": 2,
+    "relevance": 5
+  },
+  "average_score": 3.5,
+  "summary": "The Generated Answer is mostly correct and relevant with good structure but reduced by incomplete coverage of Gold details, faithfulness issues from misquotes and external hallucinations."
+}

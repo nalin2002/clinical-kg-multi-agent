@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer correctly identifies the sore throat onset four days ago and its worsening with swallowing issues, and mentions failed self-treatment, aligning with Gold [P-2,3,4,6]. However, it completely omits the difficulty breathing symptom which started yesterday, worsened, and was constant [P-8,9,10]—a major symptom emphasized in Gold. It misstates sensory changes: claims loss of smell 'not really' when transcript explicitly says 'not smell' and only 'maybe taste a little bit' [P-19,20]; lacks timing for taste (two days ago) and places fatigue/muscles as 'current' ignoring 'immediately after sore throat' [P-25,26]. Introduces 'knowledge graph' not in transcript. Significant factual errors and omissions contradict Gold's core chronology and details.",
+    "completeness": "Gold key points: sore throat Day1 worsening/swallowing; fatigue/muscles shortly after Day1; taste Day3 constant/new; breathing Day4 constant/worsening/new; self-treat fail; progressive. Generated covers sore throat onset/worsening/swallowing/treat (good); partial taste/smell (wrong/missing time); fatigue/muscles (missing time). Misses breathing entirely (critical ~25% of symptoms); all precise timings except sore throat; constant/progressive details sparse. Covers ~40% of key points.",
+    "faithfulness": "Most claims grounded: sore throat [P-2], treat [P-6], swallowing [P-2], taste/smell reference [P-19] but misinterpreted (smell unaffected, not loss); fatigue [P-25]. Hallucinates 'knowledge graph links to Mono/COVID'; assigns swallowing to Days2-3 without transcript support (described concurrently [P-2]); no verification for other timings. Multiple inaccuracies and fabrications.",
+    "relevance": "Directly attempts chronological order from sore throat onset with sections for progression and severity changes, structured to address question; minor tangent with ungrounded knowledge graph mention but no major off-topic content."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 2.5,
+  "summary": "The Generated Answer partially captures sore throat chronology but omits breathing difficulty, misinterprets sensory symptoms, lacks precise timings, and hallucinates external references, resulting in significant inaccuracies and incompleteness."
+}

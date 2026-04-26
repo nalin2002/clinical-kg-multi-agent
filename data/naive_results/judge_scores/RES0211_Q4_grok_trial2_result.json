@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer lists specific screened conditions including night sweats (D-9, partial match in Generated), productive cough (D-5/D-6, not mentioned), severe allergies/breathing issues (D-18, partially alluded but not explicit), no EpiPen (D-21, not mentioned), personal asthma (D-29, matched), family asthma (D-30/31, not mentioned), family eczema (D-32/33, not mentioned), rashes (D-10, not mentioned), GI symptoms (D-11/12, not), joint pain (D-13, not). Generated incorrectly includes headache (D-2, presenting symptom not systematic screen) and fabricates knowledge graph references not aligning with Gold's transcript-based facts. Significant discrepancies and omissions make it mostly inconsistent with Gold.",
+    "completeness": "Gold key points: night sweats + response, productive cough denied, severe allergy symptoms mild/no EpiPen, no personal asthma, family asthma limited, no family eczema, no rashes, no GI, no joints. Generated covers only night sweats fully and personal asthma partially (~20-30% coverage), misses all others including examples like eczema, EpiPen, family history.",
+    "faithfulness": "Night sweats [D-9] verifiable; personal asthma [D-29/P-29] verifiable but misattributes P-32 (eczema) to asthma; headache [D-2] verifiable but not a screened condition. Multiple hallucinations: 'knowledge graph', DIAGNOSIS mappings, RULE_OUT links not in transcript. Responses like allergy clarification partially grounded but overall includes unverifiable elements.",
+    "relevance": "Addresses some screened conditions (night sweats, asthma) and responses narrowing diagnosis, but deviates with irrelevant headache screening, knowledge graph fabrications, and focus on confirming common cold symptoms rather than systematic screens listed in question/Gold."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 3
+  },
+  "average_score": 2.25,
+  "summary": "The Generated Answer partially identifies a few screened conditions like night sweats and asthma but misses most key points from the Gold Answer, includes hallucinations like knowledge graph references, and has significant factual discrepancies."
+}

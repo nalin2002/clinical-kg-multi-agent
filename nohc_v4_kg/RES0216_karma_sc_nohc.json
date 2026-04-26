@@ -1,0 +1,269 @@
+{
+  "nodes": [
+    {
+      "id": "N_001",
+      "text": "chest tightness",
+      "type": "SYMPTOM",
+      "evidence": "[P-1]",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_002",
+      "text": "chest",
+      "type": "LOCATION",
+      "evidence": "[P-1]",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_003",
+      "text": "hoarseness",
+      "type": "SYMPTOM",
+      "evidence": "[P-11]",
+      "turn_id": "P-11"
+    },
+    {
+      "id": "N_004",
+      "text": "throat",
+      "type": "LOCATION",
+      "evidence": "[P-11]",
+      "turn_id": "P-11"
+    },
+    {
+      "id": "N_005",
+      "text": "absent chest pain",
+      "type": "SYMPTOM",
+      "evidence": "[P-5]",
+      "turn_id": "P-5"
+    },
+    {
+      "id": "N_006",
+      "text": "absent cough",
+      "type": "SYMPTOM",
+      "evidence": "[P-11]",
+      "turn_id": "P-11"
+    },
+    {
+      "id": "N_007",
+      "text": "asthma",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "[P-16]",
+      "turn_id": "P-16"
+    },
+    {
+      "id": "N_008",
+      "text": "salbutamol",
+      "type": "TREATMENT",
+      "evidence": "[P-17]",
+      "turn_id": "P-17"
+    },
+    {
+      "id": "N_009",
+      "text": "ramipril",
+      "type": "TREATMENT",
+      "evidence": "[P-26]",
+      "turn_id": "P-26"
+    },
+    {
+      "id": "N_010",
+      "text": "acetaminophen",
+      "type": "TREATMENT",
+      "evidence": "[P-27]",
+      "turn_id": "P-27"
+    },
+    {
+      "id": "N_011",
+      "text": "lung auscultation",
+      "type": "PROCEDURE",
+      "evidence": "[D-35]",
+      "turn_id": "D-35"
+    },
+    {
+      "id": "N_012",
+      "text": "cardiac ischemia",
+      "type": "DIAGNOSIS",
+      "evidence": "[D-36]",
+      "turn_id": "D-36"
+    },
+    {
+      "id": "N_013",
+      "text": "hypertension",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "[P-24]",
+      "turn_id": "P-24"
+    },
+    {
+      "id": "N_014",
+      "text": "financial advisor",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "[P-21]",
+      "turn_id": "P-21"
+    },
+    {
+      "id": "N_015",
+      "text": "dyspnea",
+      "type": "SYMPTOM",
+      "evidence": "harder to breathe",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_016",
+      "text": "headache",
+      "type": "SYMPTOM",
+      "evidence": "headache",
+      "turn_id": "P-27"
+    },
+    {
+      "id": "N_017",
+      "text": "absent fever",
+      "type": "SYMPTOM",
+      "evidence": "no",
+      "turn_id": "D-12"
+    },
+    {
+      "id": "N_018",
+      "text": "absent night sweats",
+      "type": "SYMPTOM",
+      "evidence": "no",
+      "turn_id": "D-13"
+    },
+    {
+      "id": "N_019",
+      "text": "absent chills",
+      "type": "SYMPTOM",
+      "evidence": "No",
+      "turn_id": "D-14"
+    },
+    {
+      "id": "N_020",
+      "text": "absent anxiety",
+      "type": "SYMPTOM",
+      "evidence": "Uh, no I can't say that I did",
+      "turn_id": "D-6"
+    },
+    {
+      "id": "N_021",
+      "text": "asthma",
+      "type": "DIAGNOSIS",
+      "evidence": "this actually might be your asthma reoccurring",
+      "turn_id": "D-35"
+    },
+    {
+      "id": "N_022",
+      "text": "physical examination",
+      "type": "PROCEDURE",
+      "evidence": "quick physical exam",
+      "turn_id": "D-35"
+    },
+    {
+      "id": "N_023",
+      "text": "alcohol use",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "a few beers on the weekend",
+      "turn_id": "P-31"
+    },
+    {
+      "id": "N_NEW_001",
+      "text": "chest area",
+      "type": "LOCATION",
+      "evidence": "tight in my chest area when I breathe in especially",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_NEW_002",
+      "text": "seasonal allergies",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "when I was younger I got some seasonal allergies sometimes in the springtime",
+      "turn_id": "P-32"
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "N_001",
+      "target_id": "N_002",
+      "type": "LOCATED_AT",
+      "evidence": "[P-1]",
+      "turn_id": "P-1"
+    },
+    {
+      "source_id": "N_003",
+      "target_id": "N_004",
+      "type": "LOCATED_AT",
+      "evidence": "[P-11]",
+      "turn_id": "P-11"
+    },
+    {
+      "source_id": "N_011",
+      "target_id": "N_012",
+      "type": "RULES_OUT",
+      "evidence": "[D-36]",
+      "turn_id": "D-36"
+    },
+    {
+      "source_id": "N_013",
+      "target_id": "N_012",
+      "type": "CAUSES",
+      "evidence": "[D-36]",
+      "turn_id": "D-36"
+    },
+    {
+      "source_id": "N_015",
+      "target_id": "N_002",
+      "type": "LOCATED_AT",
+      "evidence": "harder to get a whole breath",
+      "turn_id": "P-7"
+    },
+    {
+      "source_id": "N_001",
+      "target_id": "N_021",
+      "type": "INDICATES",
+      "evidence": "feeling that this actually might be your asthma reoccurring",
+      "turn_id": "D-35"
+    },
+    {
+      "source_id": "N_001",
+      "target_id": "N_012",
+      "type": "INDICATES",
+      "evidence": "puts more cardiac ischemic pictures kind of lower on the differential",
+      "turn_id": "D-36"
+    },
+    {
+      "source_id": "N_008",
+      "target_id": "N_021",
+      "type": "TAKEN_FOR",
+      "evidence": "I take the, uh, salbutamol",
+      "turn_id": "P-25"
+    },
+    {
+      "source_id": "N_008",
+      "target_id": "N_012",
+      "type": "TAKEN_FOR",
+      "evidence": "try having those rescue puffers available to see if that helps... if they don't help, then we'll come back to the table... cardiac ischemic",
+      "turn_id": "D-35"
+    },
+    {
+      "source_id": "N_010",
+      "target_id": "N_016",
+      "type": "TAKEN_FOR",
+      "evidence": "sometimes a Tylenol if you know, if I have a headache",
+      "turn_id": "P-27"
+    },
+    {
+      "source_id": "N_015",
+      "target_id": "N_021",
+      "type": "INDICATES",
+      "evidence": "I have asthma",
+      "turn_id": "P-16"
+    },
+    {
+      "source_id": "N_001",
+      "target_id": "N_NEW_001",
+      "type": "LOCATED_AT",
+      "evidence": "tight in my chest area when I breathe in especially",
+      "turn_id": "P-1"
+    }
+  ],
+  "_usage": {
+    "prompt_tokens": 16104,
+    "completion_tokens": 43288
+  }
+}

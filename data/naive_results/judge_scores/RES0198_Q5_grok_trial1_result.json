@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer identifies the nephew attending daycare (P-11) as the key potential infectious exposure from social history, noting daycare as a common source of respiratory viruses despite the nephew not being sick (P-12), and links it to the viral URI assessment (D-39). Generated Answer incorrectly states no specific source identified in social history and instead attributes exposure to the general 'pandemic' context (D-39), completely omitting the nephew/daycare. On diabetes, Gold notes no explicit linkage in transcript to immune risk, while Generated fabricates connections via 'knowledge graph' (not in transcript) and assumes it drove COVID testing/isolation, contradicting Gold's factual summary. Significant contradictions on core facts.",
+    "completeness": "Key Gold points: nephew/daycare exposure (P-11/P-12), plausibility despite nephew fine, viral consistency (D-39), T1DM details (P-23-26), no explicit immune link, additional negatives (P-27-29), symptom duration (P-1/2). Generated misses nephew/daycare entirely (core exposure), covers T1DM partially but adds unsubstantiated relations; covers ~30% (diabetes basics, some presentation context).",
+    "faithfulness": "Generated claims 'knowledge graph' for diabetes-immune link and treatment (absent from transcript); attributes swab/isolation explicitly to diabetes vulnerability and pandemic exposure (D-39 mentions pandemic symptoms overlap but not diabetes-driven); no verification for causal reasoning in transcript, which lacks immune discussion. Doctor's plan is symptom-based COVID rule-out, not tied to social history exposure or diabetes. Multiple ungrounded additions/hallucinations.",
+    "relevance": "Generated addresses potential exposure source and diabetes relation to presentation, structuring around question elements (exposure, social history/chronic condition, relation), though incorrectly; minor tangents via external KG assumptions but stays focused on clinical analysis."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 2.5,
+  "summary": "The Generated Answer significantly deviates from the Gold by missing the key nephew/daycare exposure, hallucinating causal links via external sources, and misattributing clinical decisions, resulting in low factual accuracy and grounding despite topical relevance."
+}

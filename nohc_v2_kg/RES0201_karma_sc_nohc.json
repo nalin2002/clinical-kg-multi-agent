@@ -1,0 +1,213 @@
+{
+  "nodes": [
+    {
+      "id": "N_001",
+      "text": "sore throat",
+      "type": "SYMPTOM",
+      "evidence": "[P-2] Sure, yeah the sore throat it started about four days ago.",
+      "turn_id": "P-2"
+    },
+    {
+      "id": "N_002",
+      "text": "throat",
+      "type": "LOCATION",
+      "evidence": "[P-2] sore throat",
+      "turn_id": "P-2"
+    },
+    {
+      "id": "N_003",
+      "text": "difficulty breathing",
+      "type": "SYMPTOM",
+      "evidence": "[D-7] Did that start around the same time? [P-8] That actually started yesterday, and it's gotten me very concerned.",
+      "turn_id": "D-7"
+    },
+    {
+      "id": "N_004",
+      "text": "absent cough",
+      "type": "SYMPTOM",
+      "evidence": "[D-15] Have you had a cough at all? [P-15] No.",
+      "turn_id": "P-15"
+    },
+    {
+      "id": "N_005",
+      "text": "absent runny nose",
+      "type": "SYMPTOM",
+      "evidence": "[D-16] Have you had a runny nose? [P-16] No runny nose.",
+      "turn_id": "P-16"
+    },
+    {
+      "id": "N_006",
+      "text": "absent headache",
+      "type": "SYMPTOM",
+      "evidence": "[D-17] Have you had any headaches? [P-17] No.",
+      "turn_id": "P-17"
+    },
+    {
+      "id": "N_007",
+      "text": "absent chest pain",
+      "type": "SYMPTOM",
+      "evidence": "[D-18] Have you had any chest pain? [P-18] Ah nope, no chest pain.",
+      "turn_id": "P-18"
+    },
+    {
+      "id": "N_008",
+      "text": "chest",
+      "type": "LOCATION",
+      "evidence": "[D-18] Have you had any chest pain? [P-18] Ah nope, no chest pain.",
+      "turn_id": "P-18"
+    },
+    {
+      "id": "N_009",
+      "text": "reduced sense of taste",
+      "type": "SYMPTOM",
+      "evidence": "[P-20] The taste ah. Maybe two days ago? [P-21] It's it's. It's been pretty constant.",
+      "turn_id": "P-20"
+    },
+    {
+      "id": "N_010",
+      "text": "absent fever",
+      "type": "SYMPTOM",
+      "evidence": "[D-23] Have you had any fevers? [P-23] I don't think so.",
+      "turn_id": "P-23"
+    },
+    {
+      "id": "N_011",
+      "text": "absent chills",
+      "type": "SYMPTOM",
+      "evidence": "[D-24] Have you had any chills or night sweats? [P-24] No.",
+      "turn_id": "P-24"
+    },
+    {
+      "id": "N_012",
+      "text": "absent night sweats",
+      "type": "SYMPTOM",
+      "evidence": "[D-24] Have you had any chills or night sweats? [P-24] No.",
+      "turn_id": "P-24"
+    },
+    {
+      "id": "N_013",
+      "text": "long acting beta agonist",
+      "type": "TREATMENT",
+      "evidence": "[P-28] Um I'm on a long acting beta agonist.",
+      "turn_id": "P-28"
+    },
+    {
+      "id": "N_014",
+      "text": "vitamins",
+      "type": "TREATMENT",
+      "evidence": "[P-30] And I also take a couple of vitamins.",
+      "turn_id": "P-30"
+    },
+    {
+      "id": "N_015",
+      "text": "smoking history",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "[D-34] And do you smoke? [P-34] I quit two years ago. [D-35] before that did you did you smoke for many years? [P-35] I did, I smoked for 40 years.",
+      "turn_id": "P-34"
+    },
+    {
+      "id": "N_016",
+      "text": "covid swab",
+      "type": "PROCEDURE",
+      "evidence": "[D-43] ...that will probably do a covid swab...",
+      "turn_id": "D-43"
+    },
+    {
+      "id": "N_017",
+      "text": "chest xray",
+      "type": "PROCEDURE",
+      "evidence": "[D-43] ...We will probably get you a chest xray...",
+      "turn_id": "D-43"
+    },
+    {
+      "id": "N_018",
+      "text": "isolation",
+      "type": "TREATMENT",
+      "evidence": "[D-43] ...will have to isolate...",
+      "turn_id": "D-43"
+    },
+    {
+      "id": "N_NEW_001",
+      "text": "mild copd",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "I have mild COPD",
+      "turn_id": "D-27"
+    },
+    {
+      "id": "N_NEW_002",
+      "text": "mono",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "I guess when I was younger I had mono.",
+      "turn_id": "D-5"
+    },
+    {
+      "id": "N_NEW_003",
+      "text": "alcohol use",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "I drink occasionally, maybe like on the weekends.",
+      "turn_id": "D-36"
+    },
+    {
+      "id": "N_NEW_004",
+      "text": "covid-19",
+      "type": "DIAGNOSIS",
+      "evidence": "some of your symptoms are in line with common symptoms of covid 19",
+      "turn_id": "D-43"
+    },
+    {
+      "id": "N_NEW_005",
+      "text": "muscle ache",
+      "type": "SYMPTOM",
+      "evidence": "my muscles all ache",
+      "turn_id": "D-25"
+    },
+    {
+      "id": "N_NEW_006",
+      "text": "muscles",
+      "type": "LOCATION",
+      "evidence": "my muscles all ache",
+      "turn_id": "D-25"
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "N_001",
+      "target_id": "N_002",
+      "type": "LOCATED_AT",
+      "evidence": "[P-2] sore throat",
+      "turn_id": "P-2"
+    },
+    {
+      "source_id": "N_007",
+      "target_id": "N_008",
+      "type": "LOCATED_AT",
+      "evidence": "[P-18] Ah nope, no chest pain.",
+      "turn_id": "P-18"
+    },
+    {
+      "source_id": "N_003",
+      "target_id": "N_008",
+      "type": "LOCATED_AT",
+      "evidence": "get an idea of what's going on in there... chest xray",
+      "turn_id": "D-43"
+    },
+    {
+      "source_id": "N_015",
+      "target_id": "N_NEW_004",
+      "type": "CAUSES",
+      "evidence": "common risk factor for respiratory symptoms / COVID-19",
+      "turn_id": "D-43"
+    },
+    {
+      "source_id": "N_NEW_005",
+      "target_id": "N_NEW_006",
+      "type": "LOCATED_AT",
+      "evidence": "my muscles all ache",
+      "turn_id": "D-25"
+    }
+  ],
+  "_usage": {
+    "prompt_tokens": 11850,
+    "completion_tokens": 52865
+  }
+}

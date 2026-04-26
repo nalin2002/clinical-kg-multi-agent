@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold answer: pediatric asthma with exercise-induced bronchoconstriction (EIB) in an atopic context. Generated answer identifies asthma, which aligns with the core diagnosis. However, it adds “acute exacerbation,” which is not supported by the transcript and is less accurate than emphasizing EIB/trigger-induced asthma symptoms. It also omits the key qualifier of exercise-induced bronchoconstriction that the gold answer highlights. Overall diagnosis is directionally correct but with a notable imprecision.",
+    "completeness": "Covered: exercise trigger [P-3], cold-weather worsening [P-38], multiple settings [P-38], seasonal allergies and Reactine use [P-35–P-36].\nMissed key gold points: (1) episodic/reversible pattern resolving with rest [P-6, P-33] (central to asthma/EIB), (2) recurring pattern with activity [P-6], (3) nocturnal episode [P-43–P-44], (4) pertinent negatives arguing against infection (no fever [P-7], no runny nose [P-8], no sick contacts [P-10], no phlegm [P-31]). Thus it captures ~50–70% of gold-supporting evidence but misses several important supporting findings.",
+    "faithfulness": "Several statements invoke a “Knowledge Graph” (e.g., ‘Knowledge Graph also supports…’, ‘KG links…’) which is not present in the provided transcript. Those are hallucinated/unsupported elements. The remaining cited transcript-based findings are accurate. Because multiple claims rely on non-transcript material, faithfulness is reduced.",
+    "relevance": "The answer directly addresses the question by naming a respiratory diagnosis (asthma) and listing supporting transcript findings. Minor off-target content includes the Knowledge Graph discussion and the ‘acute exacerbation’ framing, but it remains largely on point."
+  },
+  "scores": {
+    "correctness": 4,
+    "completeness": 3,
+    "faithfulness": 2,
+    "relevance": 5
+  },
+  "average_score": 3.5,
+  "summary": "The generated answer correctly identifies asthma and cites several supporting triggers, but it misses key transcript features (reversibility with rest, nocturnal symptoms, infectious negatives) and introduces non-transcript “Knowledge Graph” content, reducing completeness and faithfulness."
+}

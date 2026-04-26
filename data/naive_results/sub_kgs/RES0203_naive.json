@@ -1,0 +1,109 @@
+{
+  "nodes": [
+    {
+      "id": "N_001",
+      "text": "Reduced sense of smell",
+      "type": "SYMPTOM",
+      "evidence": "I can't smell things as well",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_002",
+      "text": "Reduced sense of taste",
+      "type": "SYMPTOM",
+      "evidence": "lost my sense of taste",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_003",
+      "text": "Dry cough",
+      "type": "SYMPTOM",
+      "evidence": "mild dry cough",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_004",
+      "text": "COVID-19",
+      "type": "DIAGNOSIS",
+      "evidence": "worried it's covid",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_005",
+      "text": "COVID-19 test",
+      "type": "PROCEDURE",
+      "evidence": "get you a covid test",
+      "turn_id": "D-39"
+    },
+    {
+      "id": "N_006",
+      "text": "Self-isolation",
+      "type": "TREATMENT",
+      "evidence": "You definitely have to self isolate",
+      "turn_id": "D-39"
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "N_001",
+      "target_id": "N_004",
+      "type": "INDICATES",
+      "evidence": "worried it's covid",
+      "turn_id": "P-1"
+    },
+    {
+      "source_id": "N_002",
+      "target_id": "N_004",
+      "type": "INDICATES",
+      "evidence": "worried it's covid",
+      "turn_id": "P-1"
+    },
+    {
+      "source_id": "N_003",
+      "target_id": "N_004",
+      "type": "INDICATES",
+      "evidence": "worried it's covid",
+      "turn_id": "P-1"
+    },
+    {
+      "source_id": "N_004",
+      "target_id": "N_001",
+      "type": "INDICATES",
+      "evidence": "symptoms are consistent with some common covid symptoms",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_004",
+      "target_id": "N_002",
+      "type": "INDICATES",
+      "evidence": "symptoms are consistent with some common covid symptoms",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_004",
+      "target_id": "N_003",
+      "type": "INDICATES",
+      "evidence": "symptoms are consistent with some common covid symptoms",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_004",
+      "target_id": "N_005",
+      "type": "TAKEN_FOR",
+      "evidence": "get you a covid test",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_004",
+      "target_id": "N_006",
+      "type": "TAKEN_FOR",
+      "evidence": "You definitely have to self isolate",
+      "turn_id": "D-39"
+    }
+  ],
+  "_usage": {
+    "prompt_tokens": 1783,
+    "completion_tokens": 3945,
+    "cost": 0.0016817800000128
+  }
+}

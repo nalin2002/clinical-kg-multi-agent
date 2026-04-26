@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold answer: general infectious process evidence = fevers + fatigue + muscle aches; COVID not ruled out due to difficulty breathing plus emerging sore throat and cough. Generated answer incorrectly (1) includes difficulty breathing as part of the “general infectious process” evidence layer, whereas the doctor separated it from the constitutional infectious symptoms, and (2) omits difficulty breathing as a key symptom supporting inability to rule out COVID. These are clinically meaningful categorization errors relative to the Gold Answer.",
+    "completeness": "Gold key points: (A) Infectious process symptoms: fevers, fatigue, muscle aches. (B) COVID concern symptoms: difficulty breathing + sore throat + cough. Generated includes all three in (A) but adds an extra symptom (difficulty breathing) there, and in (B) includes sore throat and cough but misses difficulty breathing. Overall it captures ~2/3 of the COVID-specific symptom set and all infectious constitutional symptoms.",
+    "faithfulness": "All symptoms the Generated Answer mentions (fever, fatigue, muscle aches, difficulty breathing, sore throat, cough) are present in the transcript and explicitly summarized by the doctor in D-36. No clear hallucinated symptoms or events are introduced; the main issue is mis-grouping, not fabrication.",
+    "relevance": "The response directly addresses the question by listing symptoms cited for a general infectious process and additional symptoms leading the doctor to not rule out COVID, with no significant tangential content."
+  },
+  "scores": {
+    "correctness": 3,
+    "completeness": 3,
+    "faithfulness": 5,
+    "relevance": 5
+  },
+  "average_score": 4.0,
+  "summary": "Grounded and on-topic, but it misclassifies shortness of breath as part of the general-infection evidence and fails to include it among the COVID-not-ruled-out symptoms, reducing correctness and completeness."
+}

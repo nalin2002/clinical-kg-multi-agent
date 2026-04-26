@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer identifies COVID-19 as the condition, COVID swab as the test (cited [D-43]), and specifies the patient's recent social contacts with a sick friend during outdoor dog walks (sometimes too close) [P-20] as the prompting detail, plus related questions. Generated Answer correctly identifies the condition (COVID-19) and test (COVID swab [D-43]), but incorrectly states that the transcript 'does not explicitly list details regarding the patient's recent social contacts' and instead attributes consideration to symptoms like fever and sputum, which misrepresents the Gold Answer and ignores the explicit social exposure history; this introduces significant factual contradictions on a core element of the question.",
+    "completeness": "Gold key points: 1) Condition = COVID-19; 2) Test = COVID swab [D-43]; 3) Prompting social contact detail = sick friend during dog walks, proximity despite outdoors [P-20], unsure if tested [P-21], plus symptom/travel screening. Generated covers condition and test fully (~2/5 points), but entirely misses the social contacts detail (replaces with symptoms, covering 0% of that key point), achieving <50% coverage overall.",
+    "faithfulness": "Condition and test claims verifiable in [D-43]; however, assertion that 'transcript does not explicitly list details regarding the patient's recent social contacts' is false—directly contradicted by [D-20]/[P-20] describing sick friend exposure during dog walks; alternative prompting via symptoms is plausible but not the basis cited for COVID consideration (doctor mentions after history including contacts); this represents hallucination by denial of transcript content and misattribution.",
+    "relevance": "Generated Answer directly structures response around the three question elements (condition, test, prompting detail), using bullet points for clarity; minor irrelevance in substituting symptoms for social contacts, but remains focused on addressing the query without off-topic tangents."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 4
+  },
+  "average_score": 2.5,
+  "summary": "The Generated Answer accurately identifies the condition and test but significantly errs by denying and omitting the key social contacts detail from the transcript and Gold Answer, resulting in low correctness, completeness, and faithfulness."
+}

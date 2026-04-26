@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer contains multiple factual inaccuracies relative to the Gold Answer and transcript. It incorrectly states the patient did not explicitly report chest tightness, despite the patient affirming chest tightness at P-20 (“Yes”) after D-20. It also incorrectly states there was no nighttime symptom information, despite clear nighttime frequency at P-18 (“every other day…every two days or so”) and explicit comparison that nighttime is less than daytime (P-18). It misattributes the cough duration to D-14 (the duration is provided by the patient at P-13), and it downplays/changes the time course (“past week”) rather than the clarified “last two weeks” (P-13), though P-1 does mention “past week or so.” Overall, core required elements (night frequency and chest tightness) are contradicted.",
+    "completeness": "Key points from the Gold Answer that are missing or incorrectly addressed: (1) nighttime symptoms frequency and the explicit day vs night comparison (P-18) is omitted/denied; (2) chest tightness (D-20/P-20) is omitted/denied; (3) breathing difficulty specifically during episodes and when wheezing is severe (D-19/P-19, P-16) is not fully captured (it mentions shortness of breath generally but not the episode/severity context); (4) wheezing occurs more frequently than bronchodilator use (D-17/P-17) is omitted. It does capture dry cough and “almost nonstop throughout the day,” and it captures wheezing ‘a lot,’ but misses substantial required details.",
+    "faithfulness": "Several statements are not faithful to the transcript: claiming no nighttime information and no explicit chest sensations directly contradicts P-18 and P-20. The mention of a “knowledge graph” and linking treatment to it is extraneous and not grounded in the transcript. These constitute multiple ungrounded/incorrect claims rather than minor omissions.",
+    "relevance": "The response is mostly aimed at the asked symptom categories (cough, breathing difficulty, wheeze, chest sensations, and day vs night frequency). However, it introduces irrelevant ‘knowledge graph’ commentary and, more importantly, fails to answer the day vs night comparison correctly. Still, the structure is aligned with the question."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 3
+  },
+  "average_score": 2.25,
+  "summary": "The answer is structured around the right symptom domains but contains major contradictions to the transcript (nighttime symptoms and chest tightness) and omits several key details, resulting in low correctness, completeness, and faithfulness."
+}

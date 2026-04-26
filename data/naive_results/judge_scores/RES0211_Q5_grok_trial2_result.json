@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer incorrectly claims there is no information in the transcript about Jessica's family history (father's allergies [P-33], cousin's asthma [P-30]), brother's cold [P-39, D-58], or living situation on a farm with home-schooling [P-41-44, P-42, P-45], directly contradicting the Gold Answer and transcript facts. It also fabricates a 'Knowledge Graph' and 'common cold' diagnosis not present in the source, while misattributing post-nasal drip solely to allergies despite Gold noting season mismatch.",
+    "completeness": "Gold Answer key points: family history of allergies (dad) and asthma (cousin), allergies not yet in season, brother's cold ~2 weeks ago as viral source, farm living outside London, home-schooling during COVID, family all home-based (mom works home, dad on farm), no travel, only dog, suggesting intra-household transmission. Generated Answer covers 0% of these, instead listing symptoms and hallucinated diagnosis.",
+    "faithfulness": "Claims unverifiable absence of key transcript details (e.g., [P-30], [P-33], [P-39], [P-41-48]); hallucinates 'Knowledge Graph', '[DIAGNOSIS] common cold', and attributes symptoms inaccurately (e.g., night sweats not confirmed [P-9]). No citations match claims; largely ungrounded.",
+    "relevance": "Question asks how specific factors (family history, brother's cold, farm/home-schooling) relate to symptoms; Generated denies their existence and pivots to unrelated symptom summary and non-existent diagnosis, failing to address the query."
+  },
+  "scores": {
+    "correctness": 1,
+    "completeness": 1,
+    "faithfulness": 1,
+    "relevance": 1
+  },
+  "average_score": 1.0,
+  "summary": "The Generated Answer is entirely inaccurate, hallucinatory, and irrelevant, falsely denying transcript evidence and failing to address the question or match the Gold Answer."
+}

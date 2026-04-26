@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer specifies the precise order from [P-4]: scratchy throat first, then dry cough; Generated Answer incorrectly lists 'dry cough and scratchy throat' together initially with cough first, missing this key sequence and treating them as simultaneous onset. Gold notes no exact timing for feeling hot relative to onset (part of same illness), while Generated infers it 'began alongside' or 'concurrent onset,' which is not directly stated. Headache and other symptoms are mentioned but not accurately progressed per Gold. These are significant factual discrepancies on symptom order and hot sensation timing.",
+    "completeness": "Gold key points: 3-4 days duration (covered), initial scratchy throat then dry cough (missed precise order), by-visit headache/malaise/fatigue (headache covered, malaise/fatigue missed), persistent hot all day/night with no exact onset timing (persistent covered but timing inferred wrongly), doctor summary as fever, overall progression upper airway to systemic (progression not fully described). Covers ~50-70% (duration, main symptoms, some hot details) but misses order, secondary symptoms, and progression summary.",
+    "faithfulness": "Claims grounded: symptoms from [P-1], hot from [P-7,P-9] verifiable. However, exact order of initial symptoms contradicts [P-4] (throat before cough); inference that hot 'began alongside' or 'during same timeframe' not verifiable in transcript (hot mentioned later when prompted, no start time given); plausible but adds ungrounded timing detail. Minor hallucination on progression specifics.",
+    "relevance": "Generated Answer directly structures response around symptom order/progression (numbered list) and explicit section on hot sensation relation to cough/throat timeline, perfectly matching question without off-topic content."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 3,
+    "faithfulness": 3,
+    "relevance": 5
+  },
+  "average_score": 3.25,
+  "summary": "The Generated Answer partially addresses the symptom progression and hot sensation timeline but introduces significant errors in order and ungrounded inferences on timing, missing some key details from the Gold Answer."
+}

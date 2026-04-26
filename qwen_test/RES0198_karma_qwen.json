@@ -1,0 +1,255 @@
+{
+  "nodes": [
+    {
+      "id": "N_001",
+      "text": "stuffy nose",
+      "type": "SYMPTOM",
+      "evidence": "I've had the stuffy nose um that's been on and off",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_002",
+      "text": "runny nose",
+      "type": "SYMPTOM",
+      "evidence": "as well as a runny nose for the past week",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_003",
+      "text": "clear nasal discharge",
+      "type": "SYMPTOM",
+      "evidence": "It's mostly clear",
+      "turn_id": "P-5"
+    },
+    {
+      "id": "N_004",
+      "text": "fatigue",
+      "type": "SYMPTOM",
+      "evidence": "A little bit",
+      "turn_id": "P-15"
+    },
+    {
+      "id": "N_005",
+      "text": "absent fever",
+      "type": "SYMPTOM",
+      "evidence": "No",
+      "turn_id": "P-7"
+    },
+    {
+      "id": "N_006",
+      "text": "absent cough",
+      "type": "SYMPTOM",
+      "evidence": "No",
+      "turn_id": "P-4"
+    },
+    {
+      "id": "N_007",
+      "text": "type 1 diabetes",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "I have type one diabetes",
+      "turn_id": "P-23"
+    },
+    {
+      "id": "N_008",
+      "text": "daycare exposure",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "I have um a nephew who I live with who goes to daycare",
+      "turn_id": "P-11"
+    },
+    {
+      "id": "N_009",
+      "text": "marijuana use",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "maybe like once a month I'll have an edible",
+      "turn_id": "P-34"
+    },
+    {
+      "id": "N_010",
+      "text": "nose",
+      "type": "LOCATION",
+      "evidence": "for my nose",
+      "turn_id": "P-6"
+    },
+    {
+      "id": "N_011",
+      "text": "viral infection",
+      "type": "DIAGNOSIS",
+      "evidence": "most likely a viral infection like the common cold",
+      "turn_id": "D-39"
+    },
+    {
+      "id": "N_012",
+      "text": "common cold",
+      "type": "DIAGNOSIS",
+      "evidence": "like the common cold",
+      "turn_id": "D-39"
+    },
+    {
+      "id": "N_013",
+      "text": "covid-19",
+      "type": "DIAGNOSIS",
+      "evidence": "some of these symptoms can also be seen in covid patients",
+      "turn_id": "D-39"
+    },
+    {
+      "id": "N_014",
+      "text": "decongestants",
+      "type": "TREATMENT",
+      "evidence": "tried like decongestants",
+      "turn_id": "P-10"
+    },
+    {
+      "id": "N_015",
+      "text": "tylenol cold",
+      "type": "TREATMENT",
+      "evidence": "Tylenol cold",
+      "turn_id": "D-39"
+    },
+    {
+      "id": "N_016",
+      "text": "hydration",
+      "type": "TREATMENT",
+      "evidence": "stay well hydrated",
+      "turn_id": "D-39"
+    },
+    {
+      "id": "N_017",
+      "text": "isolation",
+      "type": "TREATMENT",
+      "evidence": "stay isolated",
+      "turn_id": "D-39"
+    },
+    {
+      "id": "N_018",
+      "text": "swab",
+      "type": "PROCEDURE",
+      "evidence": "get a swab done",
+      "turn_id": "D-39"
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "N_001",
+      "target_id": "N_010",
+      "type": "LOCATED_AT",
+      "evidence": "for my nose",
+      "turn_id": "P-6"
+    },
+    {
+      "source_id": "N_002",
+      "target_id": "N_010",
+      "type": "LOCATED_AT",
+      "evidence": "for my nose",
+      "turn_id": "P-6"
+    },
+    {
+      "source_id": "N_003",
+      "target_id": "N_010",
+      "type": "LOCATED_AT",
+      "evidence": "for my nose",
+      "turn_id": "P-6"
+    },
+    {
+      "source_id": "N_001",
+      "target_id": "N_011",
+      "type": "INDICATES",
+      "evidence": "most likely a viral infection",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_002",
+      "target_id": "N_011",
+      "type": "INDICATES",
+      "evidence": "most likely a viral infection",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_001",
+      "target_id": "N_012",
+      "type": "INDICATES",
+      "evidence": "like the common cold",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_002",
+      "target_id": "N_012",
+      "type": "INDICATES",
+      "evidence": "like the common cold",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_014",
+      "target_id": "N_001",
+      "type": "TAKEN_FOR",
+      "evidence": "tried like decongestants",
+      "turn_id": "P-10"
+    },
+    {
+      "source_id": "N_014",
+      "target_id": "N_002",
+      "type": "TAKEN_FOR",
+      "evidence": "tried like decongestants",
+      "turn_id": "P-10"
+    },
+    {
+      "source_id": "N_015",
+      "target_id": "N_001",
+      "type": "TAKEN_FOR",
+      "evidence": "Tylenol cold",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_015",
+      "target_id": "N_002",
+      "type": "TAKEN_FOR",
+      "evidence": "Tylenol cold",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_016",
+      "target_id": "N_001",
+      "type": "TAKEN_FOR",
+      "evidence": "stay well hydrated",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_016",
+      "target_id": "N_002",
+      "type": "TAKEN_FOR",
+      "evidence": "stay well hydrated",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_017",
+      "target_id": "N_013",
+      "type": "TAKEN_FOR",
+      "evidence": "stay isolated",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_017",
+      "target_id": "N_011",
+      "type": "TAKEN_FOR",
+      "evidence": "stay isolated",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_008",
+      "target_id": "N_011",
+      "type": "CAUSES",
+      "evidence": "nephew who I live with who goes to daycare",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_008",
+      "target_id": "N_012",
+      "type": "CAUSES",
+      "evidence": "nephew who I live with who goes to daycare",
+      "turn_id": "D-39"
+    }
+  ],
+  "_usage": {
+    "prompt_tokens": 5277,
+    "completion_tokens": 13343
+  }
+}

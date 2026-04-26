@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Gold Answer identifies asthma as explicitly considered and ruled out due to mother's report of grandparents' history and patient's lack of shortness of breath or wheezing even with physical activity [P-28]. Generated Answer correctly names asthma as considered based on family history inquiry [D-28], but erroneously states that the specific clinical findings cited by the mother (pertinent negatives even during activity) are not in the transcript, which they explicitly are in [P-28]. It also references a non-existent 'Knowledge Graph' and incomplete 'transcript segments.' Significant factual errors and contradictions with Gold.",
+    "completeness": "Gold key points: asthma; grandparents' history [P-28]; acknowledged by doctor [D-30]; worked up previously; no SOB/wheezing even with activity [P-28]; 'doesn't have that'; patient healthy [P-24]. Generated covers only asthma and family history inquiry [D-28]; misses ruling out, grandparents specificity, all pertinent negatives, and conclusion. Covers ~20-25% of key points.",
+    "faithfulness": "Generated accurately cites [D-28] for inquiry but hallucinates that mother's response [P-28] with exact findings (no SOB/wheezing even with activity, worked up, doesn't have it) is absent from transcript. References unsupported 'Knowledge Graph' and claims limited segments exclude evidence present in full transcript. Multiple hallucinations about transcript content.",
+    "relevance": "Directly names the condition (asthma) and ties to family history question, but fails to address ruling out or specific findings by falsely claiming absence, partially addressing the query while introducing off-topic excuses about source limitations."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 1,
+    "relevance": 3
+  },
+  "average_score": 2.0,
+  "summary": "The Generated Answer partially identifies the condition but inaccurately denies the presence of key ruling-out evidence in the transcript, resulting in low correctness, completeness, and faithfulness."
+}

@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer incorrectly states that the patient 'did not identify a specific external event (such as a travel history or contact with a known infected individual)' [P-18 explicitly mentions hiking with partner two weeks ago where 'some people kind of brushed by us' as the only potential source, directly contradicting the Gold Answer's identification of this as the specific exposure event]. It misframes symptoms as the 'identified exposure/condition,' ignoring the question's focus on exposure history. Core facts about exposure are wrong, though symptoms are accurately noted.",
+    "completeness": "Gold Answer key points: high school online classes/staying home (P-36/37, D-38/P-38), hiking exposure 2 weeks ago with partner and strangers brushing by (P-18/19), no other sources/no sick contacts (P-17/18), lives with family (P-29), immunizations up-to-date (P-20), doctor tests despite limited exposure (D-39). Generated Answer covers 0% of these, focusing only on symptoms (P-1) and doctor's confirmation (D-39), missing all exposure-related points entirely.",
+    "faithfulness": "Symptoms (P-1, P-4) and doctor's assessment (D-39) are verifiable in transcript. However, claim of 'no specific external event identified' is false/hallucinated as P-18 clearly identifies hiking as potential exposure. References to 'knowledge graph provided' and 'knowledge graph's linkage' are entirely fabricated, not present in transcript. Multiple unverifiable/misstated claims.",
+    "relevance": "Question asks for specific potential exposure event identified by patient (hiking) and its connection to COVID-19 suspicion. Generated Answer denies any such event exists, redirects to symptoms instead, and vaguely ties to diagnosis via doctor's words; largely fails to address core query about exposure history."
+  },
+  "scores": {
+    "correctness": 1,
+    "completeness": 1,
+    "faithfulness": 2,
+    "relevance": 1
+  },
+  "average_score": 1.25,
+  "summary": "The Generated Answer fundamentally misses and contradicts the key exposure event (hiking) central to the Gold Answer and question, showing poor factual accuracy, completeness, faithfulness, and relevance."
+}

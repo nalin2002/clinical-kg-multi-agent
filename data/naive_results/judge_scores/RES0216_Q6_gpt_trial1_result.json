@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Core elements match the Gold Answer: asthma recurrence is top differential; planned exam includes listening to lungs; first step is a trial of rescue inhaler during walks; if no improvement, reassess and consider other directions. However, the Generated Answer introduces a potential factual inconsistency by implying the patient currently takes/has salbutamol based on P-25, whereas earlier the patient states they no longer have the as‑needed/rescue inhaler (P-17–P-18) and the plan is to obtain rescue puffers. This is a minor but clinically relevant discrepancy (availability/current use of rescue inhaler).",
+    "completeness": "Includes: (1) assessment of likely asthma recurrence, (2) physical exam with lung auscultation, (3) therapeutic trial of rescue puffers, (4) contingency to revisit and pursue other directions if not improved. Misses/understates: the clinician’s stated intent to consider further investigations depending on exam findings, the explicitly stepwise framing (“one thing at a time”), and the note that they will go discuss with the supervising physician (“go talk to the doc”) before returning.",
+    "faithfulness": "Most statements are grounded in D-35. Two faithfulness issues: (1) the added reference to a “knowledge graph” and ‘requires this procedure’ is not in the transcript and is therefore hallucinated/unverifiable; (2) the statement that the patient ‘confirms they take salbutamol’ is technically in P-25 but conflicts with the earlier transcript context that the patient lacks the as-needed inhaler, so the summary is not fully faithful to the overall record.",
+    "relevance": "Directly addresses the question: overall assessment, planned exam component(s), initial recommended intervention, and contingency if the initial step fails. No major tangents."
+  },
+  "scores": {
+    "correctness": 4,
+    "completeness": 4,
+    "faithfulness": 3,
+    "relevance": 5
+  },
+  "average_score": 4.0,
+  "summary": "The Generated Answer captures the main assessment and stepwise plan, but has minor content gaps (supervising-doc consult/explicit stepwise framing/investigations) and a notable faithfulness issue from adding non-transcript “knowledge graph” justification plus some ambiguity about current rescue-inhaler availability."
+}

@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Gold Answer lists multiple specific denied symptoms/exposures (no chest pain, no presyncope, no GI symptoms, no sick contacts/travel, no URI/COVID-like symptoms, dry cough/no sputum, no prior SOB). The Generated Answer instead focuses on seizure/Keppra and fever, and incorrectly frames a “denial of causal link” between seizure and dyspnea; the patient said they didn’t know if it was related, not that it was not related. It also implies screening for compliance/other treatments in a way that does not answer the asked screening negatives. The differentials it names (pneumonia/viral, epilepsy, cardiopulmonary failure) are not the ones inferred from the doctor’s negative screening pattern and are not tied to the denied items the question asks for.",
+    "completeness": "Key Gold Answer elements covered: essentially none of the specific denied screening items (chest pain, fainting, sputum, nausea/vomiting, belly pain, diarrhea, sick contacts, travel, anosmia/ageusia, sore throat, runny nose, prior similar episodes) are listed. The Generated Answer adds seizure/med adherence discussion, which is not part of the Gold Answer’s requested set of negative symptom/exposure screens. Overall coverage is well under 20% of the Gold Answer key points.",
+    "faithfulness": "Several statements are not grounded in the transcript: the claim that the patient “denied that the seizure directly caused the shortness of breath” is not supported (the patient expressed uncertainty). The “clinical documentation would screen for relationship…” and “implying no other treatments or confirming compliance” are speculative. It also references a “Knowledge Graph” with DIAGNOSIS/TREATMENT tags that are not in the provided transcript. While it correctly notes SOB and mild fever and that the patient takes Keppra, much of the answer is conjecture and misses verifiable negative screens.",
+    "relevance": "The question asks for (1) specific symptoms/exposures the doctor screened for that were denied, and (2) what differentials those negatives address. The Generated Answer mostly does not enumerate the denied screening symptoms/exposures and instead shifts to seizure/medication and broad differential speculation. It is only partially aligned with the task."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 1,
+    "faithfulness": 2,
+    "relevance": 2
+  },
+  "average_score": 1.75,
+  "summary": "The Generated Answer misses most of the denied symptom/exposure screening items from the transcript, introduces speculative and partly incorrect interpretations (notably about seizure–dyspnea linkage), and only partially addresses the requested differential implied by the negative findings."
+}

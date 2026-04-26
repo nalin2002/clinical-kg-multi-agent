@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer correctly identifies the ordered test as a COVID-19 swab (matches Gold Answer and is explicitly stated at D-53). \nFor the rationale, it correctly states that COVID-19 was prioritized over influenza initially, but it inaccurately/over-simplifies the doctor’s explicit reasoning by attributing the prioritization mainly to the symptom pattern (fever/sore throat). In the transcript, the doctor’s stated reason for COVID being first is the apparent household transmission pattern (“if your husband got it, and you have it…” at D-53). The symptom-based infectious-workup comment is present, but it is not the main/explicit basis given for COVID being first over flu. Thus, the core conclusion is right, but the stated rationale is partially mis-specified.",
+    "completeness": "Key points from the Gold Answer:\n- COVID swab ordered ✅\n- COVID prioritized first because husband had similar symptoms/likely household transmission ✅❌ (missed)\n- Self-isolation advised while ruling out COVID ✅❌ (missed)\n- Influenza considered after COVID discussion and after noting no flu shot ✅❌ (missed)\nOverall, it captures the test and the general prioritization, but misses multiple rationale elements emphasized in the Gold Answer.",
+    "faithfulness": "The COVID swab claim is directly supported (D-53). The claim that the doctor prioritized COVID primarily due to fever/sore throat is only partially supported: the doctor does mention fever/sore throat prompting infectious rule-out, but the explicit reason for COVID being first is the husband-with-similar-symptoms context (D-53). The Generated Answer’s framing therefore introduces a mild distortion rather than a clear fabrication.",
+    "relevance": "The response stays focused on the two asked items (what test; why COVID was prioritized over influenza) and does not introduce irrelevant tangents."
+  },
+  "scores": {
+    "correctness": 4,
+    "completeness": 3,
+    "faithfulness": 4,
+    "relevance": 5
+  },
+  "average_score": 4.0,
+  "summary": "Accurately identifies the COVID swab but provides an incomplete and slightly misframed rationale, omitting the key household-transmission and self-isolation reasoning highlighted in the Gold Answer."
+}

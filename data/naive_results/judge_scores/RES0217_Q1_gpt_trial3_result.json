@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The local-site description is partially correct (redness, tenderness, soreness behind left knee; skin soreness not joint; “stuck pretty good”). However, the generated answer is substantially incorrect about systemic screening: the transcript clearly shows the doctor asked about joint pain (D-7), fever/feeling ill (D-8), and headaches (D-19), all denied by the patient (P-7, P-8, P-19/P-20). The generated answer wrongly claims there is no explicit evidence of this screening. It also incorrectly states the doctor screened for “drug allergies” and that the patient denied them at [P-7], [P-8], [P-19]—those turns are actually denials of joint pain, fever/illness, and headaches.",
+    "completeness": "Misses key Gold Answer elements: (1) denial of bullseye/target rash and no larger circle rash; (2) the full set of systemic screening negatives (joint pain, fever/feeling ill, headaches) and the patient’s denials. It only captures some local symptoms (red/tender/sore, stuck) and omits several specific Gold Answer points.",
+    "faithfulness": "Contains multiple statements not grounded in the transcript: claims the transcript does not include fever/joint pain/headache screening (it does), references a “Knowledge Graph” not present, and misattributes/cites allergy denials to [P-7], [P-8], [P-19] (those lines are about other symptoms). This reflects several hallucinations/mis-citations.",
+    "relevance": "Partially addresses the question by describing local symptoms, but then pivots to irrelevant/incorrect discussion of drug allergies and incorrectly denies the presence of the systemic screening asked about in the question. Overall it does not answer the systemic-symptom part and includes off-target content."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 2,
+    "faithfulness": 2,
+    "relevance": 2
+  },
+  "average_score": 2.0,
+  "summary": "The answer captures some local bite-site symptoms but is largely incorrect and incomplete about the systemic symptoms screened (joint pain, fever/illness, headaches), includes mis-citations, and introduces irrelevant/unsupported content."
+}

@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "The Generated Answer accurately captures Jessica's symptoms (dry cough [P-1], scratchy throat [P-1/P-4 equivalent], headache [P-1/P-2], subjective fever [P-7/P-9]) and absences (no sputum [P-5/P-6], no GI symptoms [P-11/P-12], no joint pain [P-13]) as supporting URI, consistent with Gold. It correctly implies upper vs. lower respiratory differentiation via dry cough. Minor discrepancies include referencing a non-existent 'knowledge graph' and specific differentials (e.g., pneumonia, arthritis) not emphasized in Gold, but core facts align without contradiction.",
+    "completeness": "Covers key Gold points: scratchy throat/dry cough, fever, headache, non-productive cough (no sputum), no GI (nausea/vomiting/diarrhea), no joint pain. Explains support for URI. Misses: 3-4 day timeline [P-1/P-3], malaise [P-14/D-15], fatigue [P-13], brother's cold exposure [P-39], doctor's summary [D-58]. Covers ~80-90% of Gold's elaborated points focused on question's symptoms/absences.",
+    "faithfulness": "Symptom descriptions and citations (e.g., [P-1], [P-7], [P-9]) verifiable in transcript. Absences grounded. Allergies context [P-15/P-18] accurate. However, multiple references to 'knowledge graph'/'clinical knowledge base' and phrases like '[INDICATE] [DIAGNOSIS]' are not in transcript (hallucinated). Specific exclusions (pneumonia sputum, arthritis joint pain) plausible but not directly stated; some unverifiable details.",
+    "relevance": "Directly addresses question by correlating exact symptoms and absences to URI diagnosis, using structured sections on correlation, context, and exclusions; minor tangent on allergies but overall focused with no off-topic content."
+  },
+  "scores": {
+    "correctness": 4,
+    "completeness": 4,
+    "faithfulness": 3,
+    "relevance": 5
+  },
+  "average_score": 4.0,
+  "summary": "The Generated Answer effectively supports the URI assessment with accurate symptom mapping and absences but is dinged for hallucinating a knowledge graph and omitting some Gold details like timeline and exposure."
+}

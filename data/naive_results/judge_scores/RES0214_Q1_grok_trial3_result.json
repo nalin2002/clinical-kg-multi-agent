@@ -1,0 +1,16 @@
+{
+  "reasoning": {
+    "correctness": "Step-by-step: Gold Answer precisely identifies four symptoms (stuffy nose with timing, sore throat persistent, fever 3 days, muscle aches 2-3 days coinciding, not joints) with accurate citations. Generated correctly lists the same four symptoms with basic citations (P-1, P-13). For denials, Gold specifies explicit denials when asked with exact citations (P-5 nausea/vomiting, P-7 neck stiffness, P-8 headaches, P-10 cough, P-24-26 difficulty swallowing with details). Generated lists the correct five denied symptoms but incorrectly claims they were 'effectively denied' by omission in P-1 and cites P-1 wrongly, contradicting Gold's emphasis on explicit denials when asked. This introduces significant factual errors in explanation, basis, and citations for denials despite correct list.",
+    "completeness": "Key points from Gold: Detailed four symptoms including timings/clarifications (stuffy nose first, fever 3d, sore throat ongoing, muscle ache 2-3d w/fever, no joints) and citations; explicit denials of five symptoms with specific quotes/citations/details (esp. swallowing). Generated covers the identities of all four symptoms (80% core) and all five denials but misses all timings, clarifications (e.g., no joints), and specific denial citations/quotes/details. Covers ~60-70% of key points (lists correct but lacks depth/details).",
+    "faithfulness": "Symptoms claims fully verifiable (P-1 for three, P-13 for muscle ache). Denial claims verifiable in transcript (she did explicitly deny each when asked at P-5,7,8,10,24-26) but reasoning 'not reported in P-1 = effectively denied' is ungrounded hallucination/misinterpretation (P-1 only reports positives, not denials); explicit citations P-1 for denials inaccurate/not verifiable; summary cites P-1 wrongly for denials. Multiple inaccuracies in grounding for denial section.",
+    "relevance": "Question asks for four reported symptoms and which of five specific symptoms explicitly denied when asked. Generated structures response directly addressing this: sections for reported (lists four) and denied (lists all five), summary reiterates. No off-topic content despite errors in justification; perfectly focused on question."
+  },
+  "scores": {
+    "correctness": 2,
+    "completeness": 3,
+    "faithfulness": 2,
+    "relevance": 5
+  },
+  "average_score": 3.0,
+  "summary": "The Generated Answer accurately identifies the four reported symptoms and five denied symptoms but fails with incorrect reasoning, citations, and lack of details attributing denials to initial omission rather than explicit responses."
+}
