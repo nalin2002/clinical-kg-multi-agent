@@ -12,7 +12,12 @@ Pipeline:
   3. Convert v10 entity/edge JSON → per-patient kg_extraction format
      via eir/convert_v7_to_kg_extraction_format_260425.py.
   4. Run Clinical_KG_OS_LLM.dump_graph (BGE-M3 entity resolution).
-  5. Run Clinical_KG_OS_LLM.kg_similarity_scorer against the
+  5. Run canonicalize_to_curator_260426.py — deterministic BGE-M3 cosine
+     post-step (≥ 0.70) that rewrites student node text to nearest curator
+     KB label of the same entity_type. Bridges lay→clinical surface
+     variants the scorer's lexical fuzzy match misses. Skip with
+     --no-canonicalize.
+  6. Run Clinical_KG_OS_LLM.kg_similarity_scorer against the
      human-curated baseline. Stdout is streamed live so the
      COMPOSITE SCORE prints inline.
 
@@ -23,13 +28,18 @@ Run:
     python smoke_test_v10_260425.py
 
 Flags this script consumes (everything else passes through to v9.main()):
-    --no-score          Skip the convert/dump_graph/scorer chain.
-    --score-name NAME   Override the run name used in the unified-graph
-                        and score JSON filenames (default: derived from
-                        the v9 run timestamp).
-    --baseline PATH     Path to the human-curated baseline JSON
-                        (default: data/human_curated/unified_graph_curated.json
-                        relative to PROJECT_ROOT).
+    --no-score              Skip the convert/dump_graph/canonicalize/scorer
+                            chain.
+    --no-canonicalize       Skip just the canonicalization step (still runs
+                            convert + dump_graph + scorer).
+    --canon-threshold T     BGE-M3 cosine threshold for the canonicalizer
+                            (default 0.70). Higher = more conservative.
+    --score-name NAME       Override the run name used in the unified-graph
+                            and score JSON filenames (default: derived from
+                            the v9 run timestamp).
+    --baseline PATH         Path to the human-curated baseline JSON
+                            (default: data/human_curated/unified_graph_curated.json
+                            relative to PROJECT_ROOT).
 
 Created: 260425
 """
@@ -137,8 +147,10 @@ def _find_new_run_dir(out_dir: Path, before: set[str]) -> Path | None:
 
 
 def _score_run(run_dir: Path, score_name: str | None,
-                baseline_path: Path) -> None:
-    """Run the convert → dump_graph → scorer chain on a v9 run dir."""
+                baseline_path: Path,
+                no_canonicalize: bool = False,
+                canon_threshold: float = 0.70) -> None:
+    """Run the convert → dump_graph → canonicalize → scorer chain on a v9 run dir."""
     run_name = run_dir.name  # e.g. "260425_120000"
     name = score_name or f"v10_{run_name}"
     score_dir = SCORING_BASE / run_name
@@ -161,8 +173,8 @@ def _score_run(run_dir: Path, score_name: str | None,
         sys.exit(f"[v10] ERROR: baseline not found at {baseline_path}\n"
                  f"  (override with --baseline PATH)")
 
-    # ── Step 1/3 — convert v9 → kg_extraction per-patient format ────────────
-    print("\n[v10] STEP 1/3 — convert", flush=True)
+    # ── Step 1/4 — convert v9 → kg_extraction per-patient format ────────────
+    print("\n[v10] STEP 1/4 — convert", flush=True)
     _run(
         cmd=[
             sys.executable, str(CONVERT_SCRIPT),
@@ -173,8 +185,8 @@ def _score_run(run_dir: Path, score_name: str | None,
         cwd=PROJECT_ROOT,
     )
 
-    # ── Step 2/3 — dump_graph (BGE-M3 entity resolution) ─────────────────────
-    print("\n[v10] STEP 2/3 — dump_graph", flush=True)
+    # ── Step 2/4 — dump_graph (BGE-M3 entity resolution) ─────────────────────
+    print("\n[v10] STEP 2/4 — dump_graph", flush=True)
     _run(
         cmd=[
             sys.executable, "-m", "Clinical_KG_OS_LLM.dump_graph",
@@ -190,13 +202,44 @@ def _score_run(run_dir: Path, score_name: str | None,
     if not unified_path.exists():
         sys.exit(f"[v10] ERROR: dump_graph did not produce {unified_path}")
 
-    # ── Step 3/3 — composite score ───────────────────────────────────────────
+    # ── Step 3/4 — canonicalize student node text to curator labels ──────────
+    # Deterministic BGE-M3 cosine post-step (≥ 0.70). Rewrites each student
+    # node's `text` to the nearest curator KB label of the same entity_type
+    # so the scorer's lexical fuzzy match (SequenceMatcher ≥ 0.80) recognizes
+    # lay→clinical bridges. Edges follow nodes for free since edges reference
+    # source_id / target_id, not text. Skip with --no-canonicalize.
+    canon_path = unified_path
+    if not no_canonicalize:
+        canon_script = _HERE / "canonicalize_to_curator_260426.py"
+        canon_kb = Path(v8.CURATED_KB).resolve()
+        canon_path = score_dir / f"unified_graph_{name}_canonicalized.json"
+        canon_report = score_dir / f"canonicalize_report_{name}.json"
+        print("\n[v10] STEP 3/4 — canonicalize_to_curator (BGE-M3 @ 0.70)",
+              flush=True)
+        _run(
+            cmd=[
+                sys.executable, str(canon_script),
+                "--unified",   str(unified_path),
+                "--kb",        str(canon_kb),
+                "--output",    str(canon_path),
+                "--report",    str(canon_report),
+                "--threshold", str(canon_threshold),
+            ],
+            cwd=PROJECT_ROOT,
+        )
+        if not canon_path.exists():
+            sys.exit(f"[v10] ERROR: canonicalize did not produce {canon_path}")
+    else:
+        print("\n[v10] STEP 3/4 — canonicalize SKIPPED (--no-canonicalize)",
+              flush=True)
+
+    # ── Step 4/4 — composite score ───────────────────────────────────────────
     score_json = score_dir / f"score_{name}.json"
-    print("\n[v10] STEP 3/3 — kg_similarity_scorer", flush=True)
+    print("\n[v10] STEP 4/4 — kg_similarity_scorer", flush=True)
     _run(
         cmd=[
             sys.executable, "-m", "Clinical_KG_OS_LLM.kg_similarity_scorer",
-            "--student",  str(unified_path),
+            "--student",  str(canon_path),
             "--baseline", str(baseline_path),
             "--output",   str(score_json),
         ],
@@ -206,8 +249,10 @@ def _score_run(run_dir: Path, score_name: str | None,
 
     print("\n" + "=" * 72, flush=True)
     print(f"[v10] DONE", flush=True)
-    print(f"  unified graph : {unified_path}", flush=True)
-    print(f"  score json    : {score_json}", flush=True)
+    print(f"  unified graph     : {unified_path}", flush=True)
+    if canon_path != unified_path:
+        print(f"  canonicalized     : {canon_path}", flush=True)
+    print(f"  score json        : {score_json}", flush=True)
     print("=" * 72, flush=True)
 
 
@@ -217,9 +262,12 @@ def _score_run(run_dir: Path, score_name: str | None,
 def main() -> None:
     # Pull our own flags out of argv before v9.main() sees it.
     no_score = _consume_flag("--no-score")
+    no_canonicalize = _consume_flag("--no-canonicalize")
     score_name = _consume_value_flag("--score-name")
     baseline_override = _consume_value_flag("--baseline")
     baseline_path = Path(baseline_override) if baseline_override else DEFAULT_BASELINE
+    canon_threshold_str = _consume_value_flag("--canon-threshold")
+    canon_threshold = float(canon_threshold_str) if canon_threshold_str else 0.70
 
     # Sanity: confirm the prompt swap took effect.
     # v10 prompts have no RECALL-ORIENTED / RECALL FLOOR language; verify by
@@ -271,7 +319,9 @@ def main() -> None:
               f"{v9.OUT_DIR} — skipping scoring chain.", flush=True)
         return
 
-    _score_run(run_dir, score_name, baseline_path)
+    _score_run(run_dir, score_name, baseline_path,
+               no_canonicalize=no_canonicalize,
+               canon_threshold=canon_threshold)
 
 
 if __name__ == "__main__":
