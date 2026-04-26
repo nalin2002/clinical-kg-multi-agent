@@ -71,6 +71,20 @@ whether and how to emit it as a SYMPTOM item:
      DIAGNOSIS).
    - Observed signs the clinician names → symptom (EMIT).
 
+   PHYSICIAN EXAM FINDINGS — always extract.
+   Anything the clinician describes during the physical exam that is
+   not itself a diagnosis is a SYMPTOM. This includes auscultation
+   findings (bruits, murmurs, rubs, gallops, crackles, wheezes,
+   rhonchi), palpation findings (tenderness with anatomical specifier,
+   masses, fluctuance, organomegaly, thyromegaly), inspection findings
+   (erythema, swelling, effusion, bruising, rash), neurologic exam
+   signs (positive straight leg raise, reflex changes, weakness,
+   numbness), and range-of-motion findings (decreased flexion, pain
+   with extension). Emit each one as a SYMPTOM with the full curated
+   form when present (e.g. `right knee effusion`, `systolic ejection
+   murmur`, `mild thyromegaly`, `l5 tenderness`), preserving laterality
+   and severity qualifiers.
+
 2. IS THE PATIENT AFFIRMING OR DENYING?
    - Affirming → emit the positive form.
    - Denying in response to a clinician question → check
@@ -82,6 +96,42 @@ whether and how to emit it as a SYMPTOM item:
      `absent palpitations` and the patient says "no, I haven't felt
      my heart racing", emit `absent palpitations` (the curated
      denial form). Do NOT emit `palpitations`.
+
+   STACKED ROS — BLANKET NEGATIVE.
+   When the clinician asks ONE question listing MULTIPLE symptoms
+   (e.g. "any abdominal pain? fever, chills?") and the patient
+   gives a single blanket negative answer ("none of that", "no",
+   "nope", "I'm fine", "not really"), treat EACH listed symptom
+   as denied. Emit ONE separate `absent X` per listed item, using
+   the curated denial form when present in <curated_labels>.
+   - Out-of-corpus example for grounding only: clinician says
+     "any nausea or vomiting?", patient says "no" → emit BOTH
+     `absent nausea` AND `absent vomiting` as two separate
+     items. Never collapse them into one.
+
+   STACKED ROS — PARTIAL AFFIRM = IMPLICIT DENIAL.
+   When the clinician lists multiple symptoms in one question and
+   the patient affirms ONE (or a subset) but says nothing about
+   the others, treat the unmentioned ones as IMPLICITLY DENIED.
+   This follows clinical chart convention: ROS items the patient
+   does not affirm are recorded as denied. Emit the positive form
+   for the affirmed items AND emit `absent X` for each unmentioned
+   listed item.
+   - Out-of-corpus example for grounding only: clinician says
+     "weight loss or decreased appetite or night sweats? coughs?",
+     patient says "slightly decreased appetite" → emit
+     `decreased appetite` (positive) AND `absent weight loss`,
+     `absent night sweats`, `absent cough` (implicit denials).
+
+   CLINICIAN EXAM-FINDING DENIAL.
+   When the clinician documents an exam finding using language
+   like "no X", "X is normal", "no evidence of X", "clear of X",
+   "negative for X", treat it as a denial of that symptom. Emit
+   `absent X` using the curated form when present in
+   <curated_labels>.
+   - Out-of-corpus example for grounding only: clinician says
+     "your lower extremities have no edema" → emit
+     `absent lower extremity edema`.
 
 3. WHICH CURATED VARIANT DO I USE?
    Multiple curated forms may exist for similar content (a base form
@@ -478,6 +528,16 @@ PROCEDURE_PROMPT = _entity_prompt(
         "examinations, endoscopies, biopsies, point-of-care measurements, "
         "and any intervention performed by the clinician. Include both "
         "performed and pending procedures. Do not include treatments. "
+        "PROCEDURE vs LAB_RESULT disambiguation: emit the BARE test or "
+        "imaging name (no outcome qualifier) as PROCEDURE — e.g. "
+        "`creatinine`, `diabetes panel`, `glucose test`, `lyme titer`, "
+        "`endoscopy`, `polypectomy`, `lumbar mri`, `right humerus x-ray`, "
+        "`right middle finger x-ray`. If the same phrase carries an "
+        "OUTCOME anchor (`unremarkable`, `stable`, `normal`, `elevated`, "
+        "a named finding, a numeric value), the compound goes to "
+        "LAB_RESULT instead, NOT here. Anatomical-laterality x-rays "
+        "(`right middle finger x-ray`, `right lower extremity x-ray`) "
+        "with no outcome are PROCEDUREs — preserve laterality verbatim. "
     ),
     what_counts=(
         "Examples by class (illustrative, not exhaustive):\n"
@@ -546,6 +606,18 @@ LAB_RESULT_PROMPT = _entity_prompt(
         "numeric value. Include the test name AND/OR the measured value "
         "if stated. Distinguish from PROCEDURE: PROCEDURE is the action "
         "of obtaining the measurement; LAB_RESULT is the test identity "
+        "PAIRED with its outcome qualifier or value. CRITICAL: when a "
+        "transcript or note says `<imaging-or-test> <outcome>` together "
+        "(e.g. `chest x-ray unremarkable`, `lumbar x-ray stable`, `ekg "
+        "lvh`, `pft mild asthma copd`, `endoscopy gastritis`, `labs "
+        "within normal limits`), THAT compound phrase is a single "
+        "LAB_RESULT. Outcome qualifiers like `unremarkable`, `stable`, "
+        "`clear margins`, `within normal limits`, `normal`, `negative`, "
+        "`positive`, `elevated`, `decreased`, `mild`, `moderate`, "
+        "`severe`, named pathology, and named abnormalities all count "
+        "as outcome anchors. Do NOT emit the bare test name (that goes "
+        "to PROCEDURE) when an outcome anchor is present in the same "
+        "phrase. "
     ),
     what_counts=(
         "Examples by class (illustrative, not exhaustive):\n"
@@ -647,6 +719,32 @@ whether and how to emit it as a MEDICAL_HISTORY item:
    exposure, prior bites or stings). If the clinician asks about an
    exposure as a possible cause of illness, emit the exposure —
    whether the answer was yes or no.
+
+   ACTIVITY / CIRCUMSTANCE OF INJURY are history items.
+   When the patient links a current symptom to a recent activity —
+   recreational sport, household chore, occupational task, accident,
+   or physical exertion — the activity itself is MEDICAL_HISTORY
+   (the proximate context of injury). Examples by class:
+     Recreational:   bowling injury, tennis exertion, volleyball
+                     injury, golfing, hiking
+     Household:      yard work, moving boxes, moving refrigerator
+     Accident:       motor vehicle accident, fall
+     Exposure-like:  pollen exposure, dietary indiscretion, stress
+   Emit the curated form when present; otherwise emit the transcript
+   phrasing as `other`. Do NOT emit the activity as a SYMPTOM.
+
+3b. PRIOR PROCEDURES / PRIOR CONDITIONS are history items.
+   Surgeries, procedures, or removals already done in the past
+   (NOT today) belong to MEDICAL_HISTORY, not PROCEDURE. Any phrase
+   with `prior`, `past`, `previous`, or `history of` in the curated
+   list is a strong signal. Examples by class:
+     Prior surgeries:  prior knee arthroplasty, prior cataract
+                       extraction, prior basal cell carcinoma removal
+     Prior workups:    prior lung nodule biopsy, prior colonoscopy
+     History framing:  hypertension history, depression history,
+                       anxiety history (the chronic-condition form
+                       with `history` suffix in the curated label)
+   Emit the FULL curated form including the `prior`/`history` framing.
 
 4. TRIGGERS of a chronic condition are history items.
    Environmental, physiologic, dietary, and behavioral triggers all

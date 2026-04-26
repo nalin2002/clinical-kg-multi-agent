@@ -195,7 +195,17 @@ def convert_one(res_id: str, nodes_dir: Path, edges_dir: Path, out_dir: Path):
     nodes, by_text_type, by_text = load_entity_nodes(nrd, res_id)
     edges, unresolved = load_edges(erd, res_id, by_text_type, by_text)
 
-    out_file = out_dir / f"{res_id}_v7.json"
+    # Sanitize res_id for the OUTPUT FILENAME only.
+    # dump_graph.py parses res_id back via `kg_path.stem.split("_")[0]`,
+    # so any internal underscore in res_id (e.g. "RES_D2N001") would
+    # collapse to "RES" and merge all 20 ACI-Bench patients into one
+    # bucket → Per-Patient Coverage drops to 0.00%. Strip underscores
+    # here so the filename round-trips cleanly. The inner JSON res_id
+    # field is preserved as-is for traceability.
+    # Backward-compatible: in-corpus IDs like "RES0198" have no
+    # underscores and are unaffected.
+    filename_id = res_id.replace("_", "")
+    out_file = out_dir / f"{filename_id}_v7.json"
     with open(out_file, "w") as f:
         json.dump({"nodes": nodes, "edges": edges}, f, indent=2, ensure_ascii=False)
 
