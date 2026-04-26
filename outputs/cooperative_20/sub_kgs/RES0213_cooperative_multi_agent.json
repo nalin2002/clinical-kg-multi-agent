@@ -1,0 +1,214 @@
+{
+  "nodes": [
+    {
+      "id": "N_001",
+      "text": "chest pain",
+      "type": "SYMPTOM",
+      "evidence": "\"Chest pain.\"",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_002",
+      "text": "tylenol",
+      "type": "TREATMENT",
+      "evidence": "\"I've tried Tylenol\"",
+      "turn_id": "P-6"
+    },
+    {
+      "id": "N_003",
+      "text": "advil",
+      "type": "TREATMENT",
+      "evidence": "\"I've tried Advil\"",
+      "turn_id": "P-6"
+    },
+    {
+      "id": "N_004",
+      "text": "alka-seltzer",
+      "type": "TREATMENT",
+      "evidence": "\"I've even tried like a like an Alka-Seltzer\"",
+      "turn_id": "P-6"
+    },
+    {
+      "id": "N_005",
+      "text": "multivitamin",
+      "type": "TREATMENT",
+      "evidence": "\"I take like a multi vitamin\"",
+      "turn_id": "P-25"
+    },
+    {
+      "id": "N_006",
+      "text": "stress",
+      "type": "SYMPTOM",
+      "evidence": "\"feeling stressed\"",
+      "turn_id": "P-13"
+    },
+    {
+      "id": "N_007",
+      "text": "anxiety attacks",
+      "type": "DIAGNOSIS",
+      "evidence": "\"anxiety attacks\"",
+      "turn_id": "P-21"
+    },
+    {
+      "id": "N_008",
+      "text": "smoking",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "\"trying to quit smoking\"",
+      "turn_id": "P-13"
+    },
+    {
+      "id": "N_009",
+      "text": "father heart attack",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "\"my dad had a heart attack last year\"",
+      "turn_id": "P-8"
+    },
+    {
+      "id": "N_010",
+      "text": "chest",
+      "type": "LOCATION",
+      "evidence": "\"Chest pain.\"",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_011",
+      "text": "absent fever",
+      "type": "SYMPTOM",
+      "evidence": "Uh no, no, I don't think so.",
+      "turn_id": "P-12"
+    },
+    {
+      "id": "N_012",
+      "text": "absent shortness of breath",
+      "type": "SYMPTOM",
+      "evidence": "I don't have a hard time breathing otherwise.",
+      "turn_id": "P-19"
+    },
+    {
+      "id": "N_013",
+      "text": "absent heart flutter",
+      "type": "SYMPTOM",
+      "evidence": "Uhm no, only if I, only if I, if I, if I'm having kind of an anxiety attack that's felt like that before, but not any other time.",
+      "turn_id": "P-20"
+    },
+    {
+      "id": "N_014",
+      "text": "absent arrhythmia",
+      "type": "SYMPTOM",
+      "evidence": "No, no, just my dad and his heart attack. That's like the only thing I know of.",
+      "turn_id": "P-32"
+    },
+    {
+      "id": "N_015",
+      "text": "absent asthma",
+      "type": "SYMPTOM",
+      "evidence": "No.",
+      "turn_id": "P-24"
+    },
+    {
+      "id": "N_016",
+      "text": "absent family history of sudden death",
+      "type": "SYMPTOM",
+      "evidence": "No.",
+      "turn_id": "P-31"
+    },
+    {
+      "id": "N_017",
+      "text": "absent sick contacts",
+      "type": "SYMPTOM",
+      "evidence": "No, like I live alone, I haven't really seen very many people lately.",
+      "turn_id": "P-27"
+    },
+    {
+      "id": "N_018",
+      "text": "absent previous chest pain",
+      "type": "SYMPTOM",
+      "evidence": "No, no, not before this.",
+      "turn_id": "P-17"
+    },
+    {
+      "id": "N_019",
+      "text": "absent medication (other than multivitamin)",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "Uh no, like I take like a multi vitamin but that's it.",
+      "turn_id": "P-25"
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "N_001",
+      "target_id": "N_007",
+      "type": "INDICATES",
+      "evidence": "it's kind of like a very sharp, strong pain uh when I take a deep breath.",
+      "turn_id": "P-3"
+    },
+    {
+      "source_id": "N_006",
+      "target_id": "N_007",
+      "type": "INDICATES",
+      "evidence": "it's just making me very nervous.",
+      "turn_id": "P-15"
+    },
+    {
+      "source_id": "N_006",
+      "target_id": "N_001",
+      "type": "CAUSES",
+      "evidence": "it's just making me very nervous.",
+      "turn_id": "P-15"
+    },
+    {
+      "source_id": "N_001",
+      "target_id": "N_010",
+      "type": "LOCATED_AT",
+      "evidence": "it's kind of like a very sharp, strong pain uh when I take a deep breath.",
+      "turn_id": "P-3"
+    },
+    {
+      "source_id": "N_002",
+      "target_id": "N_001",
+      "type": "TAKEN_FOR",
+      "evidence": "I've tried Tylenol and I've tried Advil um and I've even tried like a like an Alka-Seltzer and it hasn't really helped very much.",
+      "turn_id": "P-6"
+    },
+    {
+      "source_id": "N_003",
+      "target_id": "N_001",
+      "type": "TAKEN_FOR",
+      "evidence": "I've tried Tylenol and I've tried Advil um and I've even tried like a like an Alka-Seltzer and it hasn't really helped very much.",
+      "turn_id": "P-6"
+    },
+    {
+      "source_id": "N_004",
+      "target_id": "N_001",
+      "type": "TAKEN_FOR",
+      "evidence": "I've tried Tylenol and I've tried Advil um and I've even tried like a like an Alka-Seltzer and it hasn't really helped very much.",
+      "turn_id": "P-6"
+    },
+    {
+      "source_id": "N_008",
+      "target_id": "N_001",
+      "type": "CAUSES",
+      "evidence": "I uh like I I've been trying to quit smoking and that's been, that's been kind of hard, and school's just very, very busy right now.",
+      "turn_id": "P-13"
+    },
+    {
+      "source_id": "N_009",
+      "target_id": "N_001",
+      "type": "CAUSES",
+      "evidence": "my dad had a heart attack last year, he was pretty young.",
+      "turn_id": "P-8"
+    },
+    {
+      "source_id": "N_001",
+      "target_id": "N_007",
+      "type": "CAUSES",
+      "evidence": "it's kind of like a very sharp, strong pain uh when I take a deep breath.",
+      "turn_id": "P-3"
+    }
+  ],
+  "_usage": {
+    "prompt_tokens": 12192,
+    "completion_tokens": 26136
+  },
+  "_method": "cooperative_multi_agent"
+}

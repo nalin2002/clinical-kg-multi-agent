@@ -1,0 +1,214 @@
+{
+  "nodes": [
+    {
+      "id": "N_001",
+      "text": "nasal congestion",
+      "type": "SYMPTOM",
+      "evidence": "stuffy nose",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_002",
+      "text": "runny nose",
+      "type": "SYMPTOM",
+      "evidence": "runny nose",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_003",
+      "text": "clear nasal discharge",
+      "type": "SYMPTOM",
+      "evidence": "mostly clear",
+      "turn_id": "P-5"
+    },
+    {
+      "id": "N_004",
+      "text": "fatigue",
+      "type": "SYMPTOM",
+      "evidence": "A little bit.",
+      "turn_id": "P-15"
+    },
+    {
+      "id": "N_005",
+      "text": "type 1 diabetes",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "type one diabetes",
+      "turn_id": "P-23"
+    },
+    {
+      "id": "N_006",
+      "text": "insulin",
+      "type": "TREATMENT",
+      "evidence": "insulin medication",
+      "turn_id": "D-25"
+    },
+    {
+      "id": "N_007",
+      "text": "tylenol cold",
+      "type": "TREATMENT",
+      "evidence": "Tylenol cold",
+      "turn_id": "D-39"
+    },
+    {
+      "id": "N_008",
+      "text": "covid swab",
+      "type": "PROCEDURE",
+      "evidence": "swab done",
+      "turn_id": "D-39"
+    },
+    {
+      "id": "N_009",
+      "text": "covid-19",
+      "type": "DIAGNOSIS",
+      "evidence": "covid patients",
+      "turn_id": "D-39"
+    },
+    {
+      "id": "N_010",
+      "text": "common cold",
+      "type": "DIAGNOSIS",
+      "evidence": "common cold",
+      "turn_id": "D-39"
+    },
+    {
+      "id": "N_011",
+      "text": "daycare exposure",
+      "type": "LOCATION",
+      "evidence": "nephew who goes to daycare",
+      "turn_id": "P-11"
+    },
+    {
+      "id": "N_012",
+      "text": "absent cough",
+      "type": "SYMPTOM",
+      "evidence": "No.",
+      "turn_id": "P-4"
+    },
+    {
+      "id": "N_013",
+      "text": "absent sore throat",
+      "type": "SYMPTOM",
+      "evidence": "No.",
+      "turn_id": "P-7"
+    },
+    {
+      "id": "N_014",
+      "text": "absent shortness of breath",
+      "type": "SYMPTOM",
+      "evidence": "No.",
+      "turn_id": "P-7"
+    },
+    {
+      "id": "N_015",
+      "text": "absent fever",
+      "type": "SYMPTOM",
+      "evidence": "No.",
+      "turn_id": "P-7"
+    },
+    {
+      "id": "N_016",
+      "text": "absent chills",
+      "type": "SYMPTOM",
+      "evidence": "No.",
+      "turn_id": "P-7"
+    },
+    {
+      "id": "N_017",
+      "text": "absent loss of taste or smell",
+      "type": "SYMPTOM",
+      "evidence": "Um. No, um not that I've noticed.",
+      "turn_id": "P-16"
+    },
+    {
+      "id": "N_018",
+      "text": "absent chest pain",
+      "type": "SYMPTOM",
+      "evidence": "No.",
+      "turn_id": "P-17"
+    },
+    {
+      "id": "N_019",
+      "text": "absent racing heart",
+      "type": "SYMPTOM",
+      "evidence": "No.",
+      "turn_id": "P-17"
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "N_001",
+      "target_id": "N_010",
+      "type": "INDICATES",
+      "evidence": "stuffy nose",
+      "turn_id": "P-1"
+    },
+    {
+      "source_id": "N_002",
+      "target_id": "N_010",
+      "type": "INDICATES",
+      "evidence": "runny nose",
+      "turn_id": "P-1"
+    },
+    {
+      "source_id": "N_003",
+      "target_id": "N_010",
+      "type": "INDICATES",
+      "evidence": "clear",
+      "turn_id": "P-5"
+    },
+    {
+      "source_id": "N_004",
+      "target_id": "N_010",
+      "type": "INDICATES",
+      "evidence": "A little bit.",
+      "turn_id": "P-15"
+    },
+    {
+      "source_id": "N_007",
+      "target_id": "N_001",
+      "type": "TAKEN_FOR",
+      "evidence": "Tylenol cold",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_007",
+      "target_id": "N_002",
+      "type": "TAKEN_FOR",
+      "evidence": "Tylenol cold",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_007",
+      "target_id": "N_003",
+      "type": "TAKEN_FOR",
+      "evidence": "Tylenol cold",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_007",
+      "target_id": "N_004",
+      "type": "TAKEN_FOR",
+      "evidence": "Tylenol cold",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_006",
+      "target_id": "N_005",
+      "type": "TAKEN_FOR",
+      "evidence": "insulin medication",
+      "turn_id": "D-25"
+    },
+    {
+      "source_id": "N_008",
+      "target_id": "N_009",
+      "type": "RULES_OUT",
+      "evidence": "swab done for you today",
+      "turn_id": "D-39"
+    }
+  ],
+  "_usage": {
+    "prompt_tokens": 9805,
+    "completion_tokens": 19612
+  },
+  "_method": "cooperative_multi_agent"
+}
