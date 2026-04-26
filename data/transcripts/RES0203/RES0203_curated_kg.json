@@ -1,0 +1,181 @@
+{
+  "nodes": [
+    {
+      "id": "N_001",
+      "text": "loss of smell",
+      "type": "SYMPTOM",
+      "evidence": "I can't smell things as well",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_002",
+      "text": "loss of taste",
+      "type": "SYMPTOM",
+      "evidence": "lost my sense of taste as well",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_003",
+      "text": "dry cough",
+      "type": "SYMPTOM",
+      "evidence": "mild dry cough",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_004",
+      "text": "COVID-19",
+      "type": "DIAGNOSIS",
+      "evidence": "worried it's covid",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_005",
+      "text": "COVID test",
+      "type": "PROCEDURE",
+      "evidence": "get you a covid test",
+      "turn_id": "D-39"
+    },
+    {
+      "id": "N_006",
+      "text": "self-isolation",
+      "type": "TREATMENT",
+      "evidence": "have to self isolate",
+      "turn_id": "D-39"
+    },
+    {
+      "id": "N_007",
+      "text": "absent fever",
+      "type": "SYMPTOM",
+      "evidence": "no fevers",
+      "turn_id": "P-10"
+    },
+    {
+      "id": "N_008",
+      "text": "absent difficulty breathing",
+      "type": "SYMPTOM",
+      "evidence": "any difficulty breathing",
+      "turn_id": "D-11"
+    },
+    {
+      "id": "N_009",
+      "text": "absent headache",
+      "type": "SYMPTOM",
+      "evidence": "no headaches",
+      "turn_id": "P-12"
+    },
+    {
+      "id": "N_010",
+      "text": "absent sore throat",
+      "type": "SYMPTOM",
+      "evidence": "any sore throat",
+      "turn_id": "D-13"
+    },
+    {
+      "id": "N_011",
+      "text": "absent chest pain",
+      "type": "SYMPTOM",
+      "evidence": "No no chest pain",
+      "turn_id": "P-22"
+    },
+    {
+      "id": "N_012",
+      "text": "absent muscle ache",
+      "type": "SYMPTOM",
+      "evidence": "any muscle ache or general weakness",
+      "turn_id": "D-15"
+    },
+    {
+      "id": "N_013",
+      "text": "absent chills/night sweats",
+      "type": "SYMPTOM",
+      "evidence": "any chills or night sweats",
+      "turn_id": "D-14"
+    },
+    {
+      "id": "N_014",
+      "text": "no chronic conditions",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "any chronic conditions",
+      "turn_id": "D-23"
+    },
+    {
+      "id": "N_015",
+      "text": "no allergies",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "No allergies",
+      "turn_id": "P-26"
+    },
+    {
+      "id": "N_016",
+      "text": "immunizations up to date",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "immunizations up to date",
+      "turn_id": "D-20"
+    },
+    {
+      "id": "N_017",
+      "text": "possible exposure hiking",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "people who kind of brushed by us",
+      "turn_id": "P-18"
+    },
+    {
+      "id": "N_018",
+      "text": "non-smoker",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "Do you smoke",
+      "turn_id": "D-32"
+    },
+    {
+      "id": "N_019",
+      "text": "alcohol use",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "drank alcohol before but not not regularly",
+      "turn_id": "P-33"
+    },
+    {
+      "id": "N_020",
+      "text": "marijuana use",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "taken edibles before but also not very regularly",
+      "turn_id": "P-34"
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "N_001",
+      "target_id": "N_004",
+      "type": "INDICATES",
+      "evidence": "symptoms are consistent with some common covid",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_002",
+      "target_id": "N_004",
+      "type": "INDICATES",
+      "evidence": "symptoms are consistent with some common covid",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_003",
+      "target_id": "N_004",
+      "type": "INDICATES",
+      "evidence": "symptoms are consistent with some common covid",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_017",
+      "target_id": "N_004",
+      "type": "INDICATES",
+      "evidence": "people who kind of brushed by us",
+      "turn_id": "P-18"
+    },
+    {
+      "source_id": "N_006",
+      "target_id": "N_004",
+      "type": "TAKEN_FOR",
+      "evidence": "have to self isolate",
+      "turn_id": "D-39"
+    }
+  ]
+}

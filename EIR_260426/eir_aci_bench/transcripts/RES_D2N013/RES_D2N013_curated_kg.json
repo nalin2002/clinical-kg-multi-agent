@@ -1,0 +1,34 @@
+{
+  "_meta": {"source": "ACI-Bench D2N013", "curator": "Claude (Anthropic)", "curated_at": "260426", "schema_version": "v1", "notes": "55M abnormal labs - newly diagnosed diabetes. PMH: anxiety, epilepsy."},
+  "nodes": [
+    {"id": "N_001", "text": "anxiety", "type": "SYMPTOM", "evidence": "Endorses anxiety", "turn_id": "P-7"},
+    {"id": "N_002", "text": "trace pitting edema", "type": "SYMPTOM", "evidence": "Trace pitting edema to the bilateral lower extremities", "turn_id": "D-15"},
+    {"id": "N_003", "text": "absent chest pain", "type": "SYMPTOM", "evidence": "denies chest pain", "turn_id": "P-7"},
+    {"id": "N_004", "text": "absent shortness of breath", "type": "SYMPTOM", "evidence": "denies ... shortness of breath", "turn_id": "P-7"},
+    {"id": "N_005", "text": "absent vomiting", "type": "SYMPTOM", "evidence": "denies ... vomiting", "turn_id": "P-7"},
+    {"id": "N_006", "text": "absent dizziness", "type": "SYMPTOM", "evidence": "denies ... dizziness", "turn_id": "P-7"},
+    {"id": "N_007", "text": "absent fever", "type": "SYMPTOM", "evidence": "denies ... fevers", "turn_id": "P-7"},
+    {"id": "N_008", "text": "absent chills", "type": "SYMPTOM", "evidence": "denies ... chills", "turn_id": "P-7"},
+    {"id": "N_009", "text": "absent seizures", "type": "SYMPTOM", "evidence": "he has not had any seizures in a few months", "turn_id": "P-5"},
+    {"id": "N_010", "text": "newly diagnosed diabetes", "type": "DIAGNOSIS", "evidence": "Newly diagnosed diabetes", "turn_id": "D-18"},
+    {"id": "N_011", "text": "metformin", "type": "TREATMENT", "evidence": "Continue metformin 500 mg twice daily", "turn_id": "D-18"},
+    {"id": "N_012", "text": "keppra", "type": "TREATMENT", "evidence": "Continue Keppra at current dosage", "turn_id": "D-19"},
+    {"id": "N_013", "text": "hemoglobin a1c", "type": "PROCEDURE", "evidence": "Repeat hemoglobin A1c", "turn_id": "D-18"},
+    {"id": "N_014", "text": "glucose test", "type": "PROCEDURE", "evidence": "Non-fasting glucose is elevated", "turn_id": "D-15"},
+    {"id": "N_015", "text": "physical exam", "type": "PROCEDURE", "evidence": "PHYSICAL EXAMINATION", "turn_id": "D-15"},
+    {"id": "N_016", "text": "bilateral lower extremities", "type": "LOCATION", "evidence": "Trace pitting edema to the bilateral lower extremities", "turn_id": "D-15"},
+    {"id": "N_017", "text": "anxiety history", "type": "MEDICAL_HISTORY", "evidence": "past medical history significant for anxiety", "turn_id": "D-3"},
+    {"id": "N_018", "text": "epilepsy", "type": "MEDICAL_HISTORY", "evidence": "past medical history significant for ... epilepsy", "turn_id": "D-3"},
+    {"id": "N_019", "text": "stress", "type": "MEDICAL_HISTORY", "evidence": "going from place to place for different events", "turn_id": "P-3"},
+    {"id": "N_020", "text": "hemoglobin a1c 8", "type": "LAB_RESULT", "evidence": "Hemoglobin A1c is elevated at 8", "turn_id": "D-15"},
+    {"id": "N_021", "text": "elevated glucose", "type": "LAB_RESULT", "evidence": "Non-fasting glucose is elevated", "turn_id": "D-15"}
+  ],
+  "edges": [
+    {"source_id": "N_020", "target_id": "N_010", "type": "CONFIRMS", "evidence": "Hemoglobin A1c is elevated at 8", "turn_id": "D-15"},
+    {"source_id": "N_021", "target_id": "N_010", "type": "CONFIRMS", "evidence": "blood glucose level is also elevated in clinic today", "turn_id": "D-15"},
+    {"source_id": "N_001", "target_id": "N_017", "type": "INDICATES", "evidence": "Endorses anxiety", "turn_id": "P-7"},
+    {"source_id": "N_011", "target_id": "N_010", "type": "TAKEN_FOR", "evidence": "Continue metformin 500 mg twice daily", "turn_id": "D-18"},
+    {"source_id": "N_012", "target_id": "N_018", "type": "TAKEN_FOR", "evidence": "Continue Keppra at current dosage", "turn_id": "D-19"},
+    {"source_id": "N_002", "target_id": "N_016", "type": "LOCATED_AT", "evidence": "Trace pitting edema to the bilateral lower extremities", "turn_id": "D-15"}
+  ]
+}

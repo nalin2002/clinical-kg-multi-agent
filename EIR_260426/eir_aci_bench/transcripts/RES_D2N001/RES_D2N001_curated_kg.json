@@ -1,0 +1,53 @@
+{
+  "_meta": {
+    "source": "ACI-Bench D2N001",
+    "curator": "Claude (Anthropic)",
+    "curated_at": "260426",
+    "schema_version": "v1",
+    "notes": "OoC eval reference KG. 50F annual exam. PMH: CHF, depression, hypertension."
+  },
+  "nodes": [
+    {"id": "N_001", "text": "nasal congestion", "type": "SYMPTOM", "evidence": "endorsing some nasal congestion from some of the fall pollen and allergies", "turn_id": "D-12"},
+    {"id": "N_002", "text": "absent chest pain", "type": "SYMPTOM", "evidence": "any symptoms like chest pains, shortness of breath, any swelling in your legs?", "turn_id": "P-7"},
+    {"id": "N_003", "text": "absent shortness of breath", "type": "SYMPTOM", "evidence": "no, not that i've noticed", "turn_id": "P-7"},
+    {"id": "N_004", "text": "absent leg swelling", "type": "SYMPTOM", "evidence": "no, not that i've noticed", "turn_id": "P-7"},
+    {"id": "N_005", "text": "absent suicidal ideation", "type": "SYMPTOM", "evidence": "no feelings of wanting to harm yourself or hurt others?", "turn_id": "P-9"},
+    {"id": "N_006", "text": "absent nausea", "type": "SYMPTOM", "evidence": "any other symptoms, nausea or vomiting, abdominal pain", "turn_id": "P-12"},
+    {"id": "N_007", "text": "absent vomiting", "type": "SYMPTOM", "evidence": "any other symptoms, nausea or vomiting, abdominal pain", "turn_id": "P-12"},
+    {"id": "N_008", "text": "absent abdominal pain", "type": "SYMPTOM", "evidence": "no, nothing like that", "turn_id": "P-12"},
+    {"id": "N_009", "text": "systolic ejection murmur", "type": "SYMPTOM", "evidence": "i do appreciate a three out of six systolic ejection murmur", "turn_id": "D-16"},
+    {"id": "N_010", "text": "pitting edema", "type": "SYMPTOM", "evidence": "i do appreciate one plus pitting edema, so you do have a little bit of fluid in your legs", "turn_id": "D-16"},
+    {"id": "N_011", "text": "lisinopril", "type": "TREATMENT", "evidence": "increase your lisinopril to 40 milligrams a day", "turn_id": "D-19"},
+    {"id": "N_012", "text": "lasix", "type": "TREATMENT", "evidence": "start you on some lasix, you know, 20 milligrams a day", "turn_id": "D-19"},
+    {"id": "N_013", "text": "dietary modifications", "type": "TREATMENT", "evidence": "watching a low sodium diet", "turn_id": "D-5"},
+    {"id": "N_014", "text": "weekly therapy", "type": "TREATMENT", "evidence": "i've been going every week, um, for the past year", "turn_id": "P-8"},
+    {"id": "N_015", "text": "echocardiogram", "type": "PROCEDURE", "evidence": "i also wan na repeat another echocardiogram", "turn_id": "D-20"},
+    {"id": "N_016", "text": "lipid panel", "type": "PROCEDURE", "evidence": "we'll repeat another one this year", "turn_id": "D-18"},
+    {"id": "N_017", "text": "mammogram", "type": "PROCEDURE", "evidence": "you're due for a mammogram", "turn_id": "D-23"},
+    {"id": "N_018", "text": "physical exam", "type": "PROCEDURE", "evidence": "i'm gon na go ahead and do a quick physical exam", "turn_id": "D-13"},
+    {"id": "N_019", "text": "bilateral lower extremities", "type": "LOCATION", "evidence": "on your lower extremities", "turn_id": "D-16"},
+    {"id": "N_020", "text": "heart", "type": "LOCATION", "evidence": "i'm just gon na check out your heart and your lungs", "turn_id": "D-15"},
+    {"id": "N_021", "text": "congestive heart failure", "type": "MEDICAL_HISTORY", "evidence": "past medical history significant for congestive heart failure", "turn_id": "D-3"},
+    {"id": "N_022", "text": "depression", "type": "MEDICAL_HISTORY", "evidence": "past medical history significant for congestive heart failure, depression and hypertension", "turn_id": "D-3"},
+    {"id": "N_023", "text": "hypertension", "type": "MEDICAL_HISTORY", "evidence": "past medical history significant for ... hypertension", "turn_id": "D-3"},
+    {"id": "N_024", "text": "seasonal allergies", "type": "MEDICAL_HISTORY", "evidence": "fall pollen and allergies", "turn_id": "D-12"},
+    {"id": "N_025", "text": "covid-19 vaccine", "type": "MEDICAL_HISTORY", "evidence": "i got my, my vaccine, so i feel safer about traveling", "turn_id": "P-3"},
+    {"id": "N_026", "text": "ejection fraction 45%", "type": "LAB_RESULT", "evidence": "low-ish pumping function of your heart at about 45%", "turn_id": "D-17"},
+    {"id": "N_027", "text": "mitral regurgitation", "type": "LAB_RESULT", "evidence": "shows some mitral regurgitation, that's that heart murmur that i heard", "turn_id": "D-17"},
+    {"id": "N_028", "text": "elevated cholesterol", "type": "LAB_RESULT", "evidence": "your cholesterol was like, a tiny bit high", "turn_id": "D-18"},
+    {"id": "N_029", "text": "elevated blood pressure", "type": "LAB_RESULT", "evidence": "looking at your blood pressure today here in the office, it is a little elevated", "turn_id": "D-14"}
+  ],
+  "edges": [
+    {"source_id": "N_015", "target_id": "N_021", "type": "CONFIRMS", "evidence": "low-ish pumping function of your heart at about 45%", "turn_id": "D-17"},
+    {"source_id": "N_026", "target_id": "N_021", "type": "CONFIRMS", "evidence": "low-ish pumping function of your heart at about 45%", "turn_id": "D-17"},
+    {"source_id": "N_027", "target_id": "N_021", "type": "CONFIRMS", "evidence": "shows some mitral regurgitation", "turn_id": "D-17"},
+    {"source_id": "N_029", "target_id": "N_023", "type": "CONFIRMS", "evidence": "blood pressure today here in the office, it is a little elevated", "turn_id": "D-14"},
+    {"source_id": "N_011", "target_id": "N_023", "type": "TAKEN_FOR", "evidence": "increase your lisinopril to 40 milligrams a day", "turn_id": "D-19"},
+    {"source_id": "N_011", "target_id": "N_021", "type": "TAKEN_FOR", "evidence": "i wan na continue you on your current medications", "turn_id": "D-19"},
+    {"source_id": "N_012", "target_id": "N_021", "type": "TAKEN_FOR", "evidence": "start you on some lasix, you know, 20 milligrams a day", "turn_id": "D-19"},
+    {"source_id": "N_013", "target_id": "N_021", "type": "TAKEN_FOR", "evidence": "have you continue to watch your, your diet", "turn_id": "D-19"},
+    {"source_id": "N_014", "target_id": "N_022", "type": "TAKEN_FOR", "evidence": "you're in therapy and you're doing really well", "turn_id": "D-21"},
+    {"source_id": "N_010", "target_id": "N_019", "type": "LOCATED_AT", "evidence": "one plus pitting edema", "turn_id": "D-16"},
+    {"source_id": "N_009", "target_id": "N_020", "type": "LOCATED_AT", "evidence": "on your heart exam", "turn_id": "D-16"}
+  ]
+}
