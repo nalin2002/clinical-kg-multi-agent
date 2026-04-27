@@ -737,6 +737,44 @@ echo "OPENROUTER_API_KEY=sk-or-v1-..." >> .env</code></pre>
 <pre><code>EIR_CURATED_KB_PATH=$(pwd)/curated_kb_260419.json ./run_v10_260426.sh aci-bench
 # uses the original 222-label in-corpus KB instead of the combined 522-label one</code></pre>
 
+<h4>Swap Stage 1 (entity) or Stage 2 (edge) models at runtime</h4>
+<p>
+  Two CLI flags let you swap models without code edits:
+  <code>--node-model MODEL</code> overrides Stage 1 (entity extraction);
+  <code>--edge-model MODEL</code> overrides Stage 2 (edge / relation reasoning,
+  applied to all 6 edge categories). Defaults are
+  <code>z-ai/glm-4.7-flash</code> (Stage 1) and
+  <code>deepseek/deepseek-r1-distill-qwen-32b</code> (Stage 2).
+</p>
+<p>Allowed OpenRouter models (per the organizer's README):</p>
+<table>
+<thead><tr><th>Model</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td><code>z-ai/glm-4.7-flash</code></td><td>Fast / SOTA tool calling (default Stage 1)</td></tr>
+<tr><td><code>qwen/qwen3-14b</code></td><td>Smallest, fastest, dense</td></tr>
+<tr><td><code>nvidia/nemotron-3-nano-30b-a3b</code></td><td>MoE, top reasoning, 2.2× faster than gpt-oss</td></tr>
+<tr><td><code>openai/gpt-oss-20b</code></td><td>MoE, highest documented HealthBench (medical knowledge)</td></tr>
+<tr><td><code>deepseek/deepseek-r1-distill-qwen-32b</code></td><td>Heavy CoT reasoning (default Stage 2)</td></tr>
+</tbody>
+</table>
+<pre><code># Try gpt-oss for entities, nemotron for edges
+./run_v10_260426.sh in-corpus \
+    --node-model openai/gpt-oss-20b \
+    --edge-model nvidia/nemotron-3-nano-30b-a3b
+
+# Try qwen3-14b for entities, keep the default Stage 2 model
+./run_v10_260426.sh aci-bench --node-model qwen/qwen3-14b</code></pre>
+<p class="muted">
+  The wrapper monkey-patches <code>v8.OPENROUTER_MODEL</code> (Stage 1) and
+  rebuilds <code>v8.MODEL_OVERRIDES_BY_CATEGORY</code> (Stage 2) at import
+  time, before any worker thread runs, so the swap is in effect for every
+  category call.
+</p>
+
+<h4>Skip or tune the BGE-M3 canonicalization step</h4>
+<pre><code>./run_v10_260426.sh aci-bench --no-canonicalize         # skip the post-step entirely
+./run_v10_260426.sh aci-bench --canon-threshold 0.75    # tighter cosine threshold (default 0.70)</code></pre>
+
 <h4>Inspect a single patient's output</h4>
 <pre><code>python inspect_extraction_260425.py \
     eir_results/smoke_test_glm47_specialized_parallel_v10/&lt;timestamp&gt; \
