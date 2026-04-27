@@ -34,6 +34,18 @@ Flags this script consumes (everything else passes through to v9.main()):
                             convert + dump_graph + scorer).
     --canon-threshold T     BGE-M3 cosine threshold for the canonicalizer
                             (default 0.70). Higher = more conservative.
+    --node-model MODEL      Override Stage 1 (entity extraction) model.
+                            Default z-ai/glm-4.7-flash. Allowed OpenRouter
+                            models per organizer's README:
+                              z-ai/glm-4.7-flash
+                              qwen/qwen3-14b
+                              nvidia/nemotron-3-nano-30b-a3b
+                              openai/gpt-oss-20b
+                              deepseek/deepseek-r1-distill-qwen-32b
+    --edge-model MODEL      Override Stage 2 (edge / relation reasoning)
+                            model for ALL 6 edge categories.
+                            Default deepseek/deepseek-r1-distill-qwen-32b.
+                            Same allowed-model list as --node-model.
     --score-name NAME       Override the run name used in the unified-graph
                             and score JSON filenames (default: derived from
                             the v9 run timestamp).
@@ -268,6 +280,28 @@ def main() -> None:
     baseline_path = Path(baseline_override) if baseline_override else DEFAULT_BASELINE
     canon_threshold_str = _consume_value_flag("--canon-threshold")
     canon_threshold = float(canon_threshold_str) if canon_threshold_str else 0.70
+    node_model = _consume_value_flag("--node-model")
+    edge_model = _consume_value_flag("--edge-model")
+
+    # ── Optional model overrides for Stage 1 (entities) and Stage 2 (edges) ──
+    # Allowed OpenRouter models per organizer's README:
+    #   z-ai/glm-4.7-flash, qwen/qwen3-14b, nvidia/nemotron-3-nano-30b-a3b,
+    #   openai/gpt-oss-20b, deepseek/deepseek-r1-distill-qwen-32b
+    # Patch BOTH v8 and v9 — v9 captured OPENROUTER_MODEL at import time.
+    if node_model:
+        v8.OPENROUTER_MODEL = node_model
+        v9.OPENROUTER_MODEL = node_model
+        print(f"[v10] Stage 1 (entities) model: {node_model}", flush=True)
+    else:
+        print(f"[v10] Stage 1 (entities) model: {v8.OPENROUTER_MODEL} (default)", flush=True)
+    if edge_model:
+        v8.MODEL_OVERRIDES_BY_CATEGORY = {
+            c: edge_model for c in v8.MODEL_OVERRIDES_BY_CATEGORY
+        }
+        print(f"[v10] Stage 2 (edges) model: {edge_model}", flush=True)
+    else:
+        sample_edge_model = next(iter(v8.MODEL_OVERRIDES_BY_CATEGORY.values()), "(none)")
+        print(f"[v10] Stage 2 (edges) model: {sample_edge_model} (default)", flush=True)
 
     # Sanity: confirm the prompt swap took effect.
     # v10 prompts have no RECALL-ORIENTED / RECALL FLOOR language; verify by

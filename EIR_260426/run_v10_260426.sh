@@ -6,8 +6,14 @@
 #   ./run_v10_260426.sh aci-bench      # 20 ACI-Bench transcripts, scored vs OoC ACI curator
 #   ./run_v10_260426.sh in-corpus --workers 4
 #   ./run_v10_260426.sh aci-bench --no-score
-#   ./run_v10_260426.sh aci-bench --no-canonicalize         # skip BGE-M3 canon step
-#   ./run_v10_260426.sh aci-bench --canon-threshold 0.75    # tighter threshold
+#   ./run_v10_260426.sh aci-bench --no-canonicalize                  # skip BGE-M3 canon step
+#   ./run_v10_260426.sh aci-bench --canon-threshold 0.75              # tighter canon threshold
+#   ./run_v10_260426.sh in-corpus --node-model openai/gpt-oss-20b    # swap Stage 1 model
+#   ./run_v10_260426.sh aci-bench --edge-model openai/gpt-oss-20b    # swap Stage 2 reasoning model
+#
+# Allowed OpenRouter models (per organizer's README):
+#   z-ai/glm-4.7-flash, qwen/qwen3-14b, nvidia/nemotron-3-nano-30b-a3b,
+#   openai/gpt-oss-20b, deepseek/deepseek-r1-distill-qwen-32b
 #
 # Pipeline (per run):
 #   extract → convert → dump_graph (BGE-M3 ER) → canonicalize (BGE-M3 ≥ 0.70) → scorer
