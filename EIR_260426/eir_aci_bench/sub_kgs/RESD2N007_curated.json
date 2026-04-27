@@ -1,0 +1,47 @@
+{
+  "_meta": {
+    "source": "ACI-Bench D2N007",
+    "curator": "Claude (Anthropic)",
+    "curated_at": "260426",
+    "schema_version": "v1",
+    "notes": "27F annual visit. PMH: depression on Prozac, chronic back pain, history of CABG."
+  },
+  "nodes": [
+    {"id": "N_001", "text": "depression", "type": "SYMPTOM", "evidence": "she has been struggling with her depression off and on for the past year", "turn_id": "P-3"},
+    {"id": "N_002", "text": "chronic back pain", "type": "SYMPTOM", "evidence": "she has had chronic back pain", "turn_id": "P-5"},
+    {"id": "N_003", "text": "back stiffness", "type": "SYMPTOM", "evidence": "she experiences stiffness and pain when she sits or stands for long periods", "turn_id": "P-5"},
+    {"id": "N_004", "text": "leg numbness", "type": "SYMPTOM", "evidence": "she has a little bit of numbness down her legs", "turn_id": "P-5"},
+    {"id": "N_005", "text": "absent leg tingling", "type": "SYMPTOM", "evidence": "no tingling or pain down her legs", "turn_id": "P-5"},
+    {"id": "N_006", "text": "absent leg weakness", "type": "SYMPTOM", "evidence": "she denies any weakness in her legs", "turn_id": "P-5"},
+    {"id": "N_007", "text": "lumbar spine tenderness", "type": "SYMPTOM", "evidence": "pain to palpation of the lumbar spine", "turn_id": "D-15"},
+    {"id": "N_008", "text": "decreased back flexion", "type": "SYMPTOM", "evidence": "decreased flexion of back", "turn_id": "D-15"},
+    {"id": "N_009", "text": "systolic ejection murmur", "type": "SYMPTOM", "evidence": "3/6 systolic ejection murmur, stable", "turn_id": "D-15"},
+    {"id": "N_010", "text": "prozac", "type": "TREATMENT", "evidence": "increase prozac to 40 mg once daily", "turn_id": "D-18"},
+    {"id": "N_011", "text": "physical therapy", "type": "TREATMENT", "evidence": "physical therapy referral ordered", "turn_id": "D-17"},
+    {"id": "N_012", "text": "aspirin", "type": "TREATMENT", "evidence": "continue aspirin 81 mg daily", "turn_id": "D-19"},
+    {"id": "N_013", "text": "echocardiogram", "type": "PROCEDURE", "evidence": "echocardiogram ordered", "turn_id": "D-19"},
+    {"id": "N_014", "text": "lumbar spine x-ray", "type": "PROCEDURE", "evidence": "x-rays of the lumbar spine stable", "turn_id": "D-16"},
+    {"id": "N_015", "text": "physical exam", "type": "PROCEDURE", "evidence": "physical examination", "turn_id": "D-15"},
+    {"id": "N_016", "text": "back", "type": "LOCATION", "evidence": "back pain", "turn_id": "P-5"},
+    {"id": "N_017", "text": "lumbar spine", "type": "LOCATION", "evidence": "lumbar spine", "turn_id": "D-15"},
+    {"id": "N_018", "text": "legs", "type": "LOCATION", "evidence": "numbness down her legs", "turn_id": "P-5"},
+    {"id": "N_019", "text": "depression history", "type": "MEDICAL_HISTORY", "evidence": "she has been struggling with her depression", "turn_id": "P-3"},
+    {"id": "N_020", "text": "chronic back pain history", "type": "MEDICAL_HISTORY", "evidence": "chronic back pain that she has been managing", "turn_id": "P-5"},
+    {"id": "N_021", "text": "history of coronary artery bypass graft", "type": "MEDICAL_HISTORY", "evidence": "she has had a coronary artery bypass grafting", "turn_id": "P-7"},
+    {"id": "N_022", "text": "congenital artery anomaly", "type": "MEDICAL_HISTORY", "evidence": "she had a congenital artery when she was a baby", "turn_id": "P-7"},
+    {"id": "N_023", "text": "echocardiogram unchanged", "type": "LAB_RESULT", "evidence": "echocardiogram appears unchanged in comparison to last year", "turn_id": "D-16"},
+    {"id": "N_024", "text": "lumbar x-ray stable", "type": "LAB_RESULT", "evidence": "x-rays of the lumbar spine stable in comparison to last year", "turn_id": "D-16"}
+  ],
+  "edges": [
+    {"source_id": "N_002", "target_id": "N_020", "type": "INDICATES", "evidence": "chronic back pain that she has been managing", "turn_id": "P-5"},
+    {"source_id": "N_007", "target_id": "N_020", "type": "INDICATES", "evidence": "pain to palpation of the lumbar spine", "turn_id": "D-15"},
+    {"source_id": "N_008", "target_id": "N_020", "type": "INDICATES", "evidence": "decreased flexion of back", "turn_id": "D-15"},
+    {"source_id": "N_001", "target_id": "N_019", "type": "INDICATES", "evidence": "struggling with her depression", "turn_id": "P-3"},
+    {"source_id": "N_010", "target_id": "N_019", "type": "TAKEN_FOR", "evidence": "increase prozac to 40 mg once daily", "turn_id": "D-18"},
+    {"source_id": "N_011", "target_id": "N_020", "type": "TAKEN_FOR", "evidence": "physical therapy referral ordered", "turn_id": "D-17"},
+    {"source_id": "N_012", "target_id": "N_021", "type": "TAKEN_FOR", "evidence": "continue aspirin 81 mg daily", "turn_id": "D-19"},
+    {"source_id": "N_002", "target_id": "N_016", "type": "LOCATED_AT", "evidence": "back pain", "turn_id": "P-5"},
+    {"source_id": "N_007", "target_id": "N_017", "type": "LOCATED_AT", "evidence": "lumbar spine", "turn_id": "D-15"},
+    {"source_id": "N_004", "target_id": "N_018", "type": "LOCATED_AT", "evidence": "numbness down her legs", "turn_id": "P-5"}
+  ]
+}

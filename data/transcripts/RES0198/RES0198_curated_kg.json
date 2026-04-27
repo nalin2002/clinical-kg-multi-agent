@@ -1,0 +1,167 @@
+{
+  "nodes": [
+    {
+      "id": "N_001",
+      "text": "nasal congestion",
+      "type": "SYMPTOM",
+      "evidence": "I've had the stuffy nose",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_002",
+      "text": "runny nose",
+      "type": "SYMPTOM",
+      "evidence": "a runny nose for the past week",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_003",
+      "text": "fatigue",
+      "type": "SYMPTOM",
+      "evidence": "A little bit",
+      "turn_id": "P-15"
+    },
+    {
+      "id": "N_004",
+      "text": "nose",
+      "type": "LOCATION",
+      "evidence": "just mostly for my nose",
+      "turn_id": "P-6"
+    },
+    {
+      "id": "N_005",
+      "text": "viral infection / common cold",
+      "type": "DIAGNOSIS",
+      "evidence": "most likely a viral infection like the",
+      "turn_id": "D-39"
+    },
+    {
+      "id": "N_006",
+      "text": "COVID-19",
+      "type": "DIAGNOSIS",
+      "evidence": "in case I have covid",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_007",
+      "text": "type 1 diabetes",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "I have type one diabetes",
+      "turn_id": "P-23"
+    },
+    {
+      "id": "N_008",
+      "text": "insulin",
+      "type": "TREATMENT",
+      "evidence": "you have your insulin medication",
+      "turn_id": "D-25"
+    },
+    {
+      "id": "N_009",
+      "text": "decongestants",
+      "type": "TREATMENT",
+      "evidence": "I've tried like decongestants",
+      "turn_id": "P-10"
+    },
+    {
+      "id": "N_010",
+      "text": "Tylenol cold",
+      "type": "TREATMENT",
+      "evidence": "like Tylenol cold",
+      "turn_id": "D-39"
+    },
+    {
+      "id": "N_011",
+      "text": "COVID swab",
+      "type": "PROCEDURE",
+      "evidence": "we will also get a swab done",
+      "turn_id": "D-39"
+    },
+    {
+      "id": "N_012",
+      "text": "daycare exposure",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "a nephew who I live with who goes to",
+      "turn_id": "P-11"
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "N_001",
+      "target_id": "N_004",
+      "type": "LOCATED_AT",
+      "evidence": "just mostly for my nose",
+      "turn_id": "P-6"
+    },
+    {
+      "source_id": "N_002",
+      "target_id": "N_004",
+      "type": "LOCATED_AT",
+      "evidence": "just mostly for my nose",
+      "turn_id": "P-6"
+    },
+    {
+      "source_id": "N_001",
+      "target_id": "N_005",
+      "type": "INDICATES",
+      "evidence": "most likely a viral infection like the",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_002",
+      "target_id": "N_005",
+      "type": "INDICATES",
+      "evidence": "most likely a viral infection like the",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_001",
+      "target_id": "N_006",
+      "type": "INDICATES",
+      "evidence": "these symptoms can also be seen in covid",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_002",
+      "target_id": "N_006",
+      "type": "INDICATES",
+      "evidence": "these symptoms can also be seen in covid",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_008",
+      "target_id": "N_007",
+      "type": "TAKEN_FOR",
+      "evidence": "you have your insulin medication",
+      "turn_id": "D-25"
+    },
+    {
+      "source_id": "N_009",
+      "target_id": "N_001",
+      "type": "TAKEN_FOR",
+      "evidence": "I've tried like decongestants",
+      "turn_id": "P-10"
+    },
+    {
+      "source_id": "N_010",
+      "target_id": "N_005",
+      "type": "TAKEN_FOR",
+      "evidence": "like Tylenol cold",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_011",
+      "target_id": "N_006",
+      "type": "RULES_OUT",
+      "evidence": "we will also get a swab done",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_012",
+      "target_id": "N_005",
+      "type": "CAUSES",
+      "evidence": "a nephew who I live with who goes to",
+      "turn_id": "P-11"
+    }
+  ]
+}

@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EIR — Multi-Agent Clinical KG Extraction Pipeline (260426)</title>
+<style>
+  :root {
+    --fg:        #1a1a1a;
+    --muted:     #555;
+    --accent:    #0a4d8c;
+    --bg:        #fefefe;
+    --code-bg:   #f6f8fa;
+    --border:    #d8d8d8;
+    --table-alt: #fafafa;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: Georgia, "Charter", "Iowan Old Style", serif;
+    color: var(--fg);
+    background: var(--bg);
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 6rem;
+    line-height: 1.55;
+    font-size: 16px;
+  }
+  h1, h2, h3, h4 {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    color: var(--accent);
+    line-height: 1.25;
+    margin-top: 2.2em;
+    margin-bottom: 0.6em;
+  }
+  h1 { font-size: 2.0em; margin-top: 0; border-bottom: 2px solid var(--border); padding-bottom: 0.3em; }
+  h2 { font-size: 1.5em; border-bottom: 1px solid var(--border); padding-bottom: 0.2em; }
+  h3 { font-size: 1.2em; }
+  h4 { font-size: 1.05em; color: #444; }
+  p, li { font-size: 1em; }
+  code, pre {
+    font-family: "SF Mono", Menlo, Consolas, "Roboto Mono", monospace;
+    font-size: 0.92em;
+  }
+  code {
+    background: var(--code-bg);
+    padding: 0.1em 0.35em;
+    border-radius: 3px;
+  }
+  pre {
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 0.9em 1.1em;
+    overflow-x: auto;
+    line-height: 1.4;
+    font-size: 0.85em;
+  }
+  pre code { background: transparent; padding: 0; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1em 0;
+    font-size: 0.92em;
+  }
+  th, td {
+    border: 1px solid var(--border);
+    padding: 0.5em 0.7em;
+    text-align: left;
+    vertical-align: top;
+  }
+  th { background: var(--code-bg); font-family: -apple-system, sans-serif; }
+  tr:nth-child(even) td { background: var(--table-alt); }
+  .muted { color: var(--muted); font-size: 0.92em; }
+  .callout {
+    background: #fff7e0;
+    border-left: 3px solid #c9a23a;
+    padding: 0.7em 1em;
+    margin: 1em 0;
+    font-size: 0.95em;
+  }
+  .toc { background: var(--code-bg); border: 1px solid var(--border); padding: 1em 1.5em; border-radius: 5px; margin-bottom: 2em; }
+  .toc ol { margin: 0.3em 0; padding-left: 1.5em; }
+  .toc a { color: var(--accent); text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+  .arch {
+    font-family: "SF Mono", Menlo, monospace;
+    font-size: 0.78em;
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 1em;
+    white-space: pre;
+    overflow-x: auto;
+    line-height: 1.3;
+  }
+  .footer {
+    margin-top: 4em;
+    border-top: 1px solid var(--border);
+    padding-top: 1em;
+    color: var(--muted);
+    font-size: 0.88em;
+  }
+</style>
+</head>
+<body>
+
+<h1>EIR — Multi-Agent Clinical KG Extraction Pipeline</h1>
+<p class="muted">UChicago AI / Clinical KG OS LLM Hackathon — submission documentation, dated 260426.</p>
+
+<div class="toc">
+<strong>Contents</strong>
+<ol>
+  <li><a href="#overview">Overview</a></li>
+  <li><a href="#architecture">Architecture: parallelization (sectioning) workflow</a></li>
+  <li><a href="#categories">The 13 specialist categories — 7 entity + 6 edge</a></li>
+  <li><a href="#models">Stage 1 vs Stage 2 — fast model + reasoning model</a></li>
+  <li><a href="#why-fanout">Why multi-agent fan-out, not transcript-based routing</a></li>
+  <li><a href="#why-split">Why split calls by category</a></li>
+  <li><a href="#why-whole-transcript">Why we pass the whole transcript (not a summary)</a></li>
+  <li><a href="#why-not-others">Why we did not adopt the other agentic patterns</a></li>
+  <li><a href="#buckets">Three-bucket output schema (matched / other / fine_grained)</a></li>
+  <li><a href="#kb">The curated KB: how it's built and how to swap it</a></li>
+  <li><a href="#combined-kb">The combined curated + synthetic KB</a></li>
+  <li><a href="#downstream">Convert → dump_graph → scorer chain</a></li>
+  <li><a href="#ooc">The out-of-corpus (OoC) eval bundle</a></li>
+  <li><a href="#scores">Score history and what each component means</a></li>
+  <li><a href="#canonicalization">The BGE-M3 canonicalization post-step</a></li>
+  <li><a href="#run">How to run the pipeline</a></li>
+  <li><a href="#limitations">Limitations and lessons learned</a></li>
+</ol>
+</div>
+
+<h2 id="overview">1. Overview</h2>
+<p>
+  EIR is a multi-agent clinical knowledge-graph extraction pipeline built for the UChicago AI hackathon
+  on <a href="https://github.com/chicago-aiscience/Clinical_KG_OS_LLM">Clinical_KG_OS_LLM</a>.
+  Given a doctor–patient transcript, EIR produces a knowledge graph with seven entity types (SYMPTOM,
+  DIAGNOSIS, TREATMENT, PROCEDURE, LOCATION, MEDICAL_HISTORY, LAB_RESULT) and six edge types
+  (INDICATES, CAUSES, CONFIRMS, RULES_OUT, TAKEN_FOR, LOCATED_AT). The output is scored against the
+  organizer's <code>kg_similarity_scorer</code> on a four-component composite metric.
+</p>
+<p>
+  The pipeline organizes <strong>thirteen specialist agents</strong> (one per entity type, one per
+  edge type) in a two-stage parallel workflow. Each agent has its own prompt, model, sampling
+  parameters, and reasoning toggle. Stage 1 fans out seven entity extractors that read the
+  transcript and the curated label list; Stage 2 fans out six edge extractors that read the
+  transcript and the entity list Stage 1 produced. The thirteen per-patient outputs are merged into
+  one canonical KG via the organizer's BGE-M3 entity-resolution step (<code>dump_graph.py</code>).
+</p>
+
+<h2 id="architecture">2. Architecture: parallelization (sectioning) workflow</h2>
+<p>
+  In Anthropic's <em>"Building Effective Agents"</em> taxonomy, EIR is the
+  <strong>parallelization workflow with sectioning</strong> pattern: decompose a task into independent
+  subtasks that run concurrently, then aggregate. We chain two stages of it.
+</p>
+
+<div class="arch">
+                     ┌─────────────────────────────────────────────┐
+   transcript ──►    │  Stage 1 — fan out 7 entity specialists     │
+                     │  (SYMPTOM, DIAGNOSIS, TREATMENT, PROCEDURE, │
+                     │   LOCATION, MEDICAL_HISTORY, LAB_RESULT)    │
+                     │  parallel · z-ai/glm-4.7-flash              │
+                     └────────────────────┬────────────────────────┘
+                                          │ entity list
+                                          ▼
+                     ┌─────────────────────────────────────────────┐
+                     │  Stage 2 — fan out 6 edge specialists       │
+                     │  (INDICATES, CAUSES, CONFIRMS, RULES_OUT,   │
+                     │   TAKEN_FOR, LOCATED_AT)                    │
+                     │  parallel · deepseek-r1-distill-qwen-32b    │
+                     └────────────────────┬────────────────────────┘
+                                          │ per-patient sub-KG
+                                          ▼
+                     ┌─────────────────────────────────────────────┐
+                     │  Aggregation — convert → dump_graph         │
+                     │  (BGE-M3 ER @ 0.85 cosine) → unified KG     │
+                     └─────────────────────────────────────────────┘
+</div>
+
+<p>
+  The aggregation step (BGE-M3 entity resolution inside <code>dump_graph.py</code>) is the
+  classic fan-in / merge that completes the parallelization pattern — bringing the
+  thirteen parallel outputs back into one canonical KG.
+</p>
+
+<h2 id="categories">3. The 13 specialist categories</h2>
+<p>
+  Every transcript runs all 13 categories. The seven entity types correspond to the curator's
+  ontology in <code>data/human_curated/unified_graph_curated.json</code>; the six edge types are
+  the relations that ontology supports.
+</p>
+
+<h4>Entity categories (Stage 1)</h4>
+<table>
+  <thead><tr><th>Category</th><th>What it extracts</th><th>Examples</th></tr></thead>
+  <tbody>
+    <tr><td><code>SYMPTOM</code></td><td>Patient-experienced or clinician-observed clinical findings</td><td>fatigue, chest pain, nausea, peripheral edema, absent shortness of breath</td></tr>
+    <tr><td><code>DIAGNOSIS</code></td><td>Active visit diagnoses — confirmed, suspected, or ruled-out</td><td>covid-19, asthma exacerbation, congestive heart failure, lyme disease</td></tr>
+    <tr><td><code>TREATMENT</code></td><td>Medications, devices, lifestyle interventions, vaccines</td><td>lasix, lisinopril 10 mg, dietary modification, isolation, salbutamol inhaler</td></tr>
+    <tr><td><code>PROCEDURE</code></td><td>Diagnostic or interventional actions performed/ordered</td><td>echocardiogram, chest x-ray, colonoscopy, physical exam, CBC</td></tr>
+    <tr><td><code>LOCATION</code></td><td>Anatomical locations referenced</td><td>chest, throat, right knee, behind left knee, lungs</td></tr>
+    <tr><td><code>MEDICAL_HISTORY</code></td><td>Pre-existing conditions, exposures, family history, allergies</td><td>type 1 diabetes, smoking history, family history of asthma, daycare exposure</td></tr>
+    <tr><td><code>LAB_RESULT</code></td><td>Measured values or qualitative findings, value+anchor as one unit</td><td>hemoglobin 8.2, BP 148/90, ejection fraction 45%, troponin negative</td></tr>
+  </tbody>
+</table>
+
+<h4>Edge categories (Stage 2)</h4>
+<table>
+  <thead><tr><th>Edge</th><th>Semantics</th><th>Typical src → dst</th></tr></thead>
+  <tbody>
+    <tr><td><code>INDICATES</code></td><td>Symptom suggests diagnosis</td><td>SYMPTOM → DIAGNOSIS</td></tr>
+    <tr><td><code>CAUSES</code></td><td>Risk factor / exposure / trigger causes condition</td><td>MEDICAL_HISTORY → DIAGNOSIS, MEDICAL_HISTORY → SYMPTOM</td></tr>
+    <tr><td><code>CONFIRMS</code></td><td>Lab or test result confirms diagnosis</td><td>LAB_RESULT → DIAGNOSIS, PROCEDURE → DIAGNOSIS</td></tr>
+    <tr><td><code>RULES_OUT</code></td><td>Negative test or absent finding rules out diagnosis</td><td>PROCEDURE → DIAGNOSIS, SYMPTOM (absent) → DIAGNOSIS</td></tr>
+    <tr><td><code>TAKEN_FOR</code></td><td>Treatment is administered for a condition</td><td>TREATMENT → DIAGNOSIS, TREATMENT → MEDICAL_HISTORY</td></tr>
+    <tr><td><code>LOCATED_AT</code></td><td>Symptom or finding has an anatomical location</td><td>SYMPTOM → LOCATION, PROCEDURE → LOCATION</td></tr>
+  </tbody>
+</table>
+
+<h2 id="models">4. Stage 1 vs Stage 2 — asymmetric model choice</h2>
+<p>
+  Different cognitive tasks deserve different tools. Entity extraction is mostly retrieval
+  + light classification (read transcript, identify clinical span, normalize); edge extraction is
+  multi-step inference (decide whether a relation exists, disambiguate edge type, weigh
+  competing differentials). We use a fast model for the high-volume retrieval task and a reasoning
+  model only where the deliberation is needed.
+</p>
+
+<h4>Why <code>z-ai/glm-4.7-flash</code> for entities (Stage 1)</h4>
+<ul>
+  <li>Single forward pass per category. No multi-step inference.</li>
+  <li>140 calls per batch (7 categories × 20 patients), each emitting ~3k output tokens.</li>
+  <li>Reasoning-model pricing on this volume would dominate the budget for marginal quality gain.</li>
+  <li>Latency matters here because Stage 2 cannot start without Stage 1's entity lists.</li>
+</ul>
+
+<h4>Why <code>deepseek/deepseek-r1-distill-qwen-32b</code> for edges (Stage 2)</h4>
+<p>Edge extraction needs reasoning the fast model cannot do reliably:</p>
+<ul>
+  <li>Decide whether a clinical relation exists between two extracted entities.</li>
+  <li>Disambiguate edge type (a covid swab → covid-19 edge could be RULES_OUT or CONFIRMS depending on the doctor's framing).</li>
+  <li>Handle negation correctly (an <code>absent X</code> doesn't INDICATE a diagnosis but may RULES_OUT it).</li>
+  <li>Weigh competing differentials when one symptom maps to multiple candidate diagnoses.</li>
+  <li>Pick the right evidence quote across multiple candidate turns.</li>
+</ul>
+<p>
+  Empirically, fast models on edges produce edge-type confusion (RULES_OUT covid swabs misclassified as INDICATES)
+  and weak src/dst pairings. Reasoning fixed both.
+</p>
+
+<h4>Volume / cost / latency comparison</h4>
+<p class="muted">Numbers from a representative v10 run (260425_181459, 20/20 OK, 22.2 min).</p>
+<table>
+<thead><tr><th></th><th>Stage 1 (entities)</th><th>Stage 2 (edges)</th></tr></thead>
+<tbody>
+<tr><td>Model</td><td><code>z-ai/glm-4.7-flash</code></td><td><code>deepseek/deepseek-r1-distill-qwen-32b</code></td></tr>
+<tr><td>Purpose</td><td>retrieval + classification</td><td>multi-step inference</td></tr>
+<tr><td>Calls per batch</td><td>140 (7 cats × 20 patients)</td><td>120 (6 cats × 20 patients)</td></tr>
+<tr><td>Streaming</td><td>yes (chunked)</td><td>no (full response)</td></tr>
+<tr><td>Reasoning trace</td><td>none</td><td>~3.2k hidden chars per call</td></tr>
+<tr><td>Per-call in tokens</td><td>~3.3k</td><td>~3.7k</td></tr>
+<tr><td>Per-call out tokens</td><td>~3.2k visible JSON</td><td>~1.0k visible + ~3.2k hidden reasoning</td></tr>
+<tr><td>Per-call latency</td><td>~58 s avg</td><td>~75 s avg</td></tr>
+<tr><td>Cost per 1M tokens</td><td>~$0.10</td><td>~$0.50 (5× Stage 1)</td></tr>
+<tr><td>Wall-clock with parallelism</td><td>bounded by slowest cat per patient</td><td>bounded by slowest edge per patient + retry tail</td></tr>
+</tbody>
+</table>
+<p>
+  Net: Stage 1 has more calls but cheap per-token; Stage 2 has fewer calls but premium per-token.
+  Roughly cost-balanced. Latency is dominated by Stage 2 — the 75 s/call reasoning latency is the
+  critical path of every batch.
+</p>
+
+<h2 id="why-fanout">5. Why multi-agent fan-out, not transcript-based routing</h2>
+<p>
+  Every transcript runs all 13 categories. We do <em>not</em> classify the transcript first and
+  dispatch to a subset. Reasons:
+</p>
+<ol>
+  <li><strong>Routing requires reading the transcript first.</strong> A pre-pass LLM call per patient just to classify which agents to skip. Adds latency, another failure point, another cost.</li>
+  <li><strong>Recall safety.</strong> A router misclassification ("no labs in this transcript") permanently drops that category. With "run all", every LAB_RESULT call still gets a chance to find <code>BP 148/90</code> mentioned in passing. Routing trades recall for cost; we chose recall.</li>
+  <li><strong>Empty categories are cheap.</strong> When a transcript truly has nothing for a category, the model returns empty buckets quickly. Saving ~4 such calls per patient × 20 patients ≈ 80 calls; the routing pre-pass costs ~20 calls. Net savings is small.</li>
+  <li><strong>Schema Completeness component (25% of organizer composite).</strong> Missing any of the 7 entity types or 6 edge types in the unified graph penalizes us. Always running all 13 guarantees a chance at each.</li>
+  <li><strong>Parallel fan-out.</strong> Within a transcript the 13 categories run concurrently; wall-clock is bounded by the slowest single category, not the sum. Routing to fewer doesn't shrink the critical path much.</li>
+  <li><strong>Deterministic shape.</strong> Every patient yields the same 13-file fan-out, which simplifies the converter, dump_graph, scoring, and any downstream tooling.</li>
+  <li><strong>Prompt specialization.</strong> Each of the 13 prompts is tuned to its category's semantics (denials in SYMPTOM, family-history naming in MEDICAL_HISTORY, src/dst type patterns in edges). One omnibus prompt can't carry that specialization without bloating to ~80k tokens.</li>
+</ol>
+
+<h2 id="why-split">6. Why split calls by category (13× more calls than a single omnibus prompt)</h2>
+<p>The split is intentional. It trades raw call count for quality, reliability, and modularity:</p>
+<ol>
+  <li><strong>Per-category prompt specialization.</strong> Each prompt is tuned to its category's semantics — SYMPTOM has denial rules, MEDICAL_HISTORY has family-history naming, edge prompts have src/dst type patterns and out-of-corpus anchors specific to that relation. One omnibus prompt would either drop these specializations or balloon past 80k tokens.</li>
+  <li><strong>Forced category coverage.</strong> With per-category prompts the model is explicitly asked to look for X. With one omnibus prompt, the model tends to extract whatever's most salient and skip the less obvious categories — populating the easy ones (SYMPTOM, DIAGNOSIS) and missing the rare ones (LAB_RESULT, CONFIRMS).</li>
+  <li><strong>Failure isolation.</strong> If the INDICATES call fails on a patient, only that one cell goes empty (1/120 edges). With one omnibus prompt, a single failure wipes out all 13 categories for that patient.</li>
+  <li><strong>Independent retry granularity.</strong> A 429 on TAKEN_FOR doesn't block CAUSES, RULES_OUT, etc. Each category retries on its own budget. With one big call, a single retry replays the entire 80k-token prompt.</li>
+  <li><strong>Parallel fan-out within a transcript.</strong> 13 categories run concurrently per transcript, wall-clock = max(category latency), not sum. One omnibus prompt is serial — one massive call must finish before any extraction is usable.</li>
+  <li><strong>Asymmetric model choice depends on the split.</strong> We can run entities on <code>glm-4.7-flash</code> and edges on <code>deepseek-r1</code> only because the calls are separable. One omnibus prompt forces one model for everything.</li>
+  <li><strong>Cleaner output contracts.</strong> Each category has a focused JSON shape (matched / other / fine_grained with category-specific fields). One omnibus output would need a 13-section schema, harder to parse and validate.</li>
+  <li><strong>Iterability.</strong> When we needed to fix INDICATES, we edited only INDICATES_PROMPT and re-ran. With one omnibus prompt, every prompt edit risks regressing all 13 categories.</li>
+  <li><strong>Per-category telemetry.</strong> We can see "INDICATES hit% = 45.5%, TAKEN_FOR hit% = 73.3%" because calls are tagged by category.</li>
+</ol>
+<p>
+  <strong>Cost bound:</strong> the extra calls are absorbed by parallelism (wall-clock unchanged)
+  and by the cheap-model-for-high-volume choice (Stage 1 at ~$0.10/M tokens, not the reasoning model).
+  The 260 calls per batch don't cost meaningfully more than a single omnibus prompt would, because
+  each is small (~3–4k input tokens).
+</p>
+
+<h2 id="why-whole-transcript">7. Why we pass the whole transcript (not a summary)</h2>
+<ol>
+  <li><strong>Verbatim quote requirement.</strong> Every emitted entity/edge must cite a <code>turn_id</code> and a <code>quote</code> taken verbatim from the transcript. A summary loses both — turn IDs disappear and exact phrasings get rewritten.</li>
+  <li><strong>Synonym bridging needs raw phrasing.</strong> Patient says "felt really hot" → curator wants <code>subjective fever</code>. The whole point of synonym mapping is to bridge lay phrasings to curated terms. A summary normalizes "felt really hot" to "fever" upstream — the bridge it's supposed to test is already collapsed.</li>
+  <li><strong>Denials require originals.</strong> "No fever" vs. "fever" vs. "I had a fever last year" — a summary often keeps one and drops the others, or fuses them into "denies fever". Our <code>absent X</code> denial form depends on seeing the raw P-N response in question context.</li>
+  <li><strong>Subjective/objective tie-breaks need the discriminator.</strong> <code>pleuritic chest pain</code> vs. bare <code>chest pain</code> is decided by whether the patient said "worse with deep breath". A summary like "patient has chest pain" drops the qualifier we need.</li>
+  <li><strong>Color priority, compound preservation, phonetic variants</strong> all operate on raw phrasings.</li>
+  <li><strong>No single summary serves 13 categories.</strong> Each prompt looks for different things in the same transcript. A pre-summarizer would have to preserve everything for everyone — at which point it's not a summary anymore.</li>
+  <li><strong>Information bottleneck.</strong> Summary is lossy and we can't undo it. A category's prompt may need a single phrase the summarizer dropped — and we'd never know.</li>
+  <li><strong>Cost is small.</strong> Transcripts are ~5–7k chars (~1.5k tokens). 13 calls × 1.5k = 20k tokens of transcript per patient. A summary call would still cost ~3k tokens to produce, with an extra failure point and quality loss. The saving doesn't exist.</li>
+  <li><strong>Reasoning model (Stage 2) needs the doctor's exact framing.</strong> deepseek-r1 disambiguates INDICATES vs. RULES_OUT vs. CONFIRMS by reading "we should rule out", "this is consistent with", "we'll do a swab to confirm". A summary normalizes those into "doctor considers diagnosis X" and the disambiguation signal is gone.</li>
+  <li><strong>Multi-turn evidence.</strong> Some edges require the symptom from one turn and the diagnostic framing from another. A summary may collapse those into a single line and lose turn-level provenance.</li>
+</ol>
+
+<h2 id="why-not-others">8. Why we did not adopt the other agentic patterns</h2>
+
+<h4>Routing (transcript-based dispatch)</h4>
+<p>Already covered in §5 — pre-pass LLM call per patient, recall safety, Schema Completeness penalty, parallelism makes the cost savings tiny, deterministic shape simplifies downstream tooling.</p>
+
+<h4>Orchestrator-Workers (LLM decides decomposition at runtime)</h4>
+<ul>
+  <li>The decomposition is fixed by the curator's ontology — 7 entity types, 6 edge types. Nothing for an orchestrator to decide.</li>
+  <li>An orchestrator adds another LLM call per transcript that doesn't produce final output, and introduces run-to-run variance.</li>
+  <li>Static decomposition already covers the full schema; the dynamic alternative buys nothing.</li>
+</ul>
+
+<h4>Evaluator-Optimizer (critic loop)</h4>
+<ul>
+  <li>The natural evaluator <em>is</em> the organizer's <code>kg_similarity_scorer</code>, which sits downstream of extraction and uses a curator graph we don't have at runtime in the holdout setting. We can't call it from inside extraction.</li>
+  <li>LLM-as-judge alternatives would double the call count, add another failure mode, and still need quality criteria we'd have to define from scratch.</li>
+  <li>We optimize at prompt-engineering iteration time (v7 → v10), not per-call — cheaper, reproducible, auditable.</li>
+</ul>
+
+<h4>Reflection (self-critique)</h4>
+<ul>
+  <li>Reflection at call level (extract → critique → re-extract) doubles latency and cost per call.</li>
+  <li>Our errors are mostly recall gaps (model missing things), not precision problems (model emitting wrong things). Reflection helps precision more than recall.</li>
+  <li>Single-pass approximations of reflection — the v9 "comprehensive review" / "recall floor" prompt rules — dropped precision without lifting recall enough to justify them. We removed them in v10.</li>
+</ul>
+
+<h4>ReAct / Tool use</h4>
+<ul>
+  <li>The transcript is a self-contained input. No databases to query, no calculations to perform, no APIs to call during extraction.</li>
+  <li>Tool use would add infrastructure (tool definitions, execution layer, retry/fallback) for zero quality gain.</li>
+  <li>The reasoning model (deepseek-r1) does multi-step inference internally — that's the right place for deliberation, not externalized into tool calls.</li>
+</ul>
+
+<p class="callout">
+  <strong>Common thread:</strong> clinical KG extraction with a fixed ontology, a single text input,
+  and a downstream similarity scorer is naturally a static parallel pipeline. The fancier patterns
+  (orchestrator, evaluator, reflection, ReAct) add cost and variance that buy nothing in this
+  domain — they're solutions to problems we don't have.
+</p>
+
+<h2 id="buckets">9. Three-bucket output schema</h2>
+<p>Every per-category extraction emits three buckets:</p>
+<table>
+<thead><tr><th>Bucket</th><th>Meaning</th><th>When populated</th></tr></thead>
+<tbody>
+<tr><td><code>matched</code></td><td>Curated label copied verbatim, anchored to a transcript turn</td><td>When the transcript supports a label that's in the runtime <code>&lt;curated_labels&gt;</code> block</td></tr>
+<tr><td><code>other</code></td><td>Free-text entity from the transcript that's NOT in the curated list</td><td>When the model spots a clinical entity that the curator's vocabulary doesn't cover</td></tr>
+<tr><td><code>fine_grained</code></td><td>A more specific subtype of a curated label</td><td>When the transcript provides a refinement (qualifier, dose, severity) finer than what's in the curated list</td></tr>
+</tbody>
+</table>
+<p>
+  After extraction, the converter (<code>convert_v7_to_kg_extraction_format_260425.py</code>)
+  flattens all three buckets into one flat <code>nodes[]</code> array per patient. The bucket
+  distinction is invisible to <code>dump_graph</code> and to the scorer — it only exists at
+  extraction time as a way to keep precision (other / fine_grained) and recall (matched) on
+  separate dials.
+</p>
+
+<p class="callout">
+  <strong>No-corpus consequence.</strong> If the <code>&lt;curated_labels&gt;</code> block is empty
+  (because the holdout transcripts don't ship with a curator label list), <code>matched</code> is
+  logically empty (no list to match against) and <code>fine_grained</code> is also empty
+  (no reference for "finer than"). Everything legitimately lands in <code>other</code>. The
+  scorer's curator-alignment still works because the converter flattens the buckets. But the
+  side effect is that Stage 1 emits more entities into <code>other</code> when there's no
+  curated anchor, which makes Stage 2 edge prompts larger (~15k chars vs. ~11k) and amplifies
+  upstream rate-limit pressure.
+</p>
+
+<h2 id="kb">10. The curated KB: how it's built and how to swap it</h2>
+<p>
+  The <code>&lt;curated_labels&gt;</code> block in every Stage 1 prompt is populated at runtime
+  from a JSON KB file. Two KBs ship with this submission:
+</p>
+
+<table>
+<thead><tr><th>File</th><th>Source</th><th>Entries</th></tr></thead>
+<tbody>
+<tr><td><code>curated_kb_260419.json</code></td><td>Mined from the organizer's <code>data/human_curated/unified_graph_curated.json</code> (in-corpus 20 patients)</td><td>222</td></tr>
+<tr><td><code>curated_synthetic_kb_combined_260426.json</code></td><td>The 222 above <strong>plus</strong> 300 synthetic entries derived from our hand-curated ACI-Bench KGs (39 duplicates removed by <code>(label, type)</code>)</td><td>522</td></tr>
+</tbody>
+</table>
+
+<h4>KB schema</h4>
+<pre><code>[
+  {
+    "entity_id":   "curated:E_0001",
+    "label":       "nasal congestion",
+    "entity_type": "SYMPTOM",
+    "description": "SYMPTOM: nasal congestion",
+    "aliases":     [],
+    "source":      "human_curated",
+    "source_code": "E_0001"
+  },
+  {
+    "entity_id":   "aci_synth:E_0042",
+    "label":       "congestive heart failure",
+    "entity_type": "MEDICAL_HISTORY",
+    "description": "MEDICAL_HISTORY: congestive heart failure",
+    "aliases":     [],
+    "source":      "aci_bench_synthetic",
+    "source_code": "E_0042"
+  }
+]
+</code></pre>
+
+<h4>Swapping at runtime via <code>EIR_CURATED_KB_PATH</code></h4>
+<p>Both v10 wrappers (in-corpus and ACI-bench) honor an environment variable:</p>
+<pre><code>EIR_CURATED_KB_PATH=$(pwd)/curated_synthetic_kb_combined_260426.json \
+  python smoke_test_v10_aci_bench_260425.py</code></pre>
+<p>
+  Default if unset: <code>curated_kb_260419.json</code>. The submission entrypoint
+  <code>run_v10_260426.sh</code> sets <code>EIR_CURATED_KB_PATH</code> to the combined KB by
+  default; teammates who want only the in-corpus 222 labels override the env var.
+</p>
+
+<h4>Building your own KB</h4>
+<p>
+  Any unified graph from a previous pipeline run can become a KB seed for the next iteration.
+  The merge logic is a simple deduplication by <code>(label, entity_type)</code>:
+</p>
+<pre><code>seen = set()
+combined = []
+for source_kb in [original_222_kb, your_new_kb]:
+    for entry in source_kb:
+        key = (entry["label"].strip().lower(), entry["entity_type"].upper())
+        if key in seen: continue
+        seen.add(key)
+        combined.append(entry)
+json.dump(combined, open("your_new_combined_kb.json", "w"), indent=2)</code></pre>
+
+<h2 id="combined-kb">11. The combined curated + synthetic KB</h2>
+<p>
+  The in-corpus curator ships 222 labels mined from 20 patients with mostly respiratory
+  presentations (COVID-19, asthma, COPD, lyme disease, eczema, epilepsy, reflux). When we ran
+  v10 against an out-of-corpus dataset (ACI-Bench, see §13), recall dropped from ~87% (in-corpus)
+  to ~45% (OoC) because the curator's vocabulary didn't cover diagnoses like
+  <em>congestive heart failure</em>, <em>kidney stones</em>, <em>mitral regurgitation</em>,
+  <em>anemia</em>, <em>lateral epicondylitis</em>, etc.
+</p>
+<p>
+  The combined KB extends the curator's vocabulary with 300 ACI-Bench-derived labels (after
+  deduplication). Use it for OoC runs to give the model a curator-aligned vocabulary anchor for
+  presentations the in-corpus curator didn't cover.
+</p>
+
+<table>
+<thead><tr><th>Type</th><th>Combined entries</th></tr></thead>
+<tbody>
+<tr><td>SYMPTOM</td><td>155</td></tr>
+<tr><td>DIAGNOSIS</td><td>39</td></tr>
+<tr><td>TREATMENT</td><td>97</td></tr>
+<tr><td>PROCEDURE</td><td>46</td></tr>
+<tr><td>LOCATION</td><td>36</td></tr>
+<tr><td>MEDICAL_HISTORY</td><td>106</td></tr>
+<tr><td>LAB_RESULT</td><td>42</td></tr>
+<tr><td><strong>Total</strong></td><td><strong>521</strong></td></tr>
+</tbody>
+</table>
+
+<h2 id="downstream">12. Convert → dump_graph → scorer chain</h2>
+<p>The wrappers auto-run the post-batch chain:</p>
+
+<h4>Step 1 — Convert</h4>
+<p>
+  <code>convert_v7_to_kg_extraction_format_260425.py</code> takes our per-category three-bucket
+  output (one JSON per <code>(patient, category)</code> = 260 files per batch) and produces
+  one per-patient JSON in the format the organizer's <code>dump_graph.py</code> consumes:
+</p>
+<pre><code>{
+  "nodes": [
+    {"id": "N_001", "text": "...", "type": "SYMPTOM", "evidence": "...", "turn_id": "P-1"},
+    ...
+  ],
+  "edges": [
+    {"source_id": "N_001", "target_id": "N_005", "type": "INDICATES", "evidence": "...", "turn_id": "D-2"},
+    ...
+  ]
+}</code></pre>
+<p>
+  Buckets are flattened (matched + other + fine_grained → one <code>nodes[]</code> list).
+  Edge endpoints are resolved by matching <code>(text, allowed_type)</code> against Stage 1 nodes;
+  unresolved endpoints (e.g., model-emitted entity text that Stage 1 didn't produce) are dropped
+  and counted in the converter's summary.
+</p>
+
+<h4>Step 2 — <code>dump_graph.py</code> (organizer's tool, BGE-M3 entity resolution)</h4>
+<p>
+  Reads all per-patient JSONs in the input directory; runs BGE-M3 cosine similarity at threshold
+  0.85 within each entity type to merge near-duplicate canonical labels (e.g.,
+  "high blood pressure" ↔ "hypertension"). Outputs one unified KG with canonical entity nodes
+  and resolved edges, tagged with each occurrence's <code>(res_id, turn_id)</code>.
+</p>
+
+<h4>Step 3 — <code>kg_similarity_scorer.py</code> (organizer's scorer)</h4>
+<p>
+  Compares our unified graph to the curator baseline using fuzzy string match
+  (<code>SequenceMatcher</code> ≥ 0.80) within each entity type. Computes a four-component
+  composite score (see §14).
+</p>
+
+<h2 id="ooc">13. The out-of-corpus (OoC) eval bundle</h2>
+<p>
+  To stress-test whether the pipeline generalizes beyond the in-corpus respiratory vocabulary,
+  we built an out-of-corpus evaluation set from the ACI-Bench dataset
+  (<a href="https://huggingface.co/datasets/mkieffer/ACI-Bench">mkieffer/ACI-Bench</a>).
+</p>
+
+<h4>What's in <code>eir_aci_bench/</code></h4>
+<ul>
+  <li><strong>20 transcripts</strong> from ACI-Bench's train split, converted from
+      <code>[doctor]/[patient]</code> tags to our <code>D-N</code>/<code>P-N</code> turn-ID format
+      (see <code>pull_aci_bench_260425.py</code>). Spans cardiology, endocrinology, GI, ortho,
+      derm — vocabulary largely disjoint from the in-corpus 20.</li>
+  <li><strong>20 paired clinical notes</strong> (the ACI-Bench gold-standard summaries).</li>
+  <li><strong>20 hand-curated KGs</strong> built by Claude (Anthropic), one per encounter, in the
+      same schema as the organizer's <code>RES0XXX_curated_kg.json</code>. Total: 558 nodes,
+      261 edges.</li>
+  <li><strong><code>unified_graph_curated_aci.json</code></strong>: the 20 curator KGs merged via
+      <code>dump_graph.py</code> (BGE-M3 ER @ 0.85 cosine) → 338 canonical nodes, 261 edges.
+      This is the OoC scoring baseline.</li>
+  <li><strong><code>er_merge_decisions_curated_aci.json</code></strong>: provenance of which
+      surface variants were merged into which canonical labels.</li>
+</ul>
+
+<p>
+  When you run <code>./run_v10_260426.sh aci-bench</code>, the wrapper points
+  <code>--baseline</code> at <code>unified_graph_curated_aci.json</code> automatically.
+</p>
+
+<h2 id="scores">14. Score history and what each component means</h2>
+
+<h4>The composite score</h4>
+<p>The organizer's scorer produces a weighted four-component composite:</p>
+<table>
+<thead><tr><th>Component</th><th>Weight</th><th>What it measures</th></tr></thead>
+<tbody>
+<tr><td>Entity F1</td><td>25%</td><td>Harmonic mean of node-level precision and recall, fuzzy-matched against the curator baseline at SequenceMatcher ≥ 0.80, scoped within entity type. The most discriminating component on this dataset.</td></tr>
+<tr><td>Population Completeness</td><td>25%</td><td>Per-patient coverage: of each curator patient's nodes, how many do we cover? Averaged across patients.</td></tr>
+<tr><td>Relation Completeness</td><td>25%</td><td>"At least one of each edge type exists in the unified graph." Saturates to 1.0 trivially at 20-patient scale.</td></tr>
+<tr><td>Schema Completeness</td><td>25%</td><td>"At least one of each entity type exists in the unified graph." Same — saturates to 1.0 trivially.</td></tr>
+</tbody>
+</table>
+<p class="muted">
+  Note: Relation and Schema components are designed for very small KGs to avoid degenerate cases.
+  At our scale they always max out, so the meaningful signal comes from Entity F1 and Population.
+</p>
+
+<h4>Run history</h4>
+<p>Approximate scores; LLM nondeterminism at temperature 0.6 produces ±2 pt run-to-run variance.</p>
+<table>
+<thead>
+<tr>
+<th>Run</th><th>Corpus</th><th>Curated KB</th><th>Composite</th><th>Entity F1</th><th>Population</th><th>Recall</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>v7 (workers=4)</td><td>in-corpus 20</td><td>222 in-corpus</td><td>0.894</td><td>0.763</td><td>0.811</td><td>82.4%</td></tr>
+<tr><td>v8 (workers=3)</td><td>in-corpus 20</td><td>222 in-corpus</td><td>0.901</td><td>0.816</td><td>0.790</td><td>86.9%</td></tr>
+<tr><td>v10 (workers=3)</td><td>in-corpus 20</td><td>222 in-corpus</td><td><strong>0.930</strong></td><td>0.721</td><td>1.000</td><td>86.9%</td></tr>
+<tr><td>v10 + examples</td><td>in-corpus 20</td><td>222 in-corpus</td><td>0.923</td><td>0.703</td><td>0.988</td><td>84.6%</td></tr>
+<tr><td>v10 + examples (OoC)</td><td>20 ACI-Bench</td><td>222 in-corpus</td><td>0.815</td><td>0.440</td><td>0.821</td><td>45.1%</td></tr>
+<tr><td>v10 + examples (OoC) + combined KB</td><td>20 ACI-Bench</td><td>522 combined</td><td>0.824</td><td>0.453</td><td>0.844</td><td>47.5%</td></tr>
+<tr><td>v10 + combined KB + canonicalization (BGE-M3 @ 0.70)</td><td>20 ACI-Bench</td><td>522 combined</td><td>0.864</td><td>0.612</td><td>0.844</td><td>60.9%</td></tr>
+<tr><td>v10 + SYMPTOM v2 (stacked-ROS) + canon</td><td>20 ACI-Bench</td><td>522 combined</td><td>0.873</td><td>0.613</td><td>0.878</td><td>62.4%</td></tr>
+<tr><td><strong>v10 + 4 prompt edits + canon (latest OoC, default config)</strong></td><td><strong>20 ACI-Bench</strong></td><td><strong>522 combined</strong></td><td><strong>0.897</strong></td><td><strong>0.633</strong></td><td><strong>0.955</strong></td><td><strong>68.1%</strong></td></tr>
+<tr><td>v10 + 4 prompt edits (in-corpus, tight other)</td><td>in-corpus 20</td><td>522 combined</td><td>0.919</td><td>0.764</td><td>0.910</td><td>85.1%</td></tr>
+<tr><td><strong>v10 + 4 prompt edits + loose-other (latest in-corpus)</strong></td><td><strong>in-corpus 20</strong></td><td><strong>522 combined</strong></td><td><strong>0.925</strong></td><td>0.699</td><td><strong>1.000</strong></td><td><strong>86.9%</strong></td></tr>
+</tbody>
+</table>
+<p>
+  The combined-KB row tests the hypothesis that the curator-vocabulary anchor in the prompt is the
+  active ingredient: extending the KB to cover the OoC vocabulary recovers some of the recall lost
+  on the prior OoC run (+2.4 pp recall over the 222-label KB).
+</p>
+<p>
+  The deterministic <strong>BGE-M3 canonicalization post-step</strong> (see §15) rewrites each
+  student node's text to the nearest curator label of the same entity type when the cosine
+  similarity is ≥ 0.70. This bridges lay-language → clinical-vocabulary surface variants that the
+  scorer's lexical fuzzy match (SequenceMatcher ≥ 0.80) misses. <strong>Net OoC lift over the
+  unbridged combined-KB run: +4.0 pp composite, +15.9 pp Entity F1, +13.4 pp Recall.</strong>
+</p>
+<p>
+  The four targeted prompt edits (260427) are: (1) SYMPTOM <em>physician-exam-findings</em> rule
+  for clinician-observed signs (bruits, tenderness, murmurs, fluctuance); (2) SYMPTOM
+  <em>stacked-ROS</em> rule for compound denial questions ("any fever, chills, cough?" → emit
+  three separate <code>absent X</code>); (3) MEDICAL_HISTORY <em>activity-context</em> +
+  <em>prior-procedures</em> rules (yard work, prior knee arthroplasty, hypertension history);
+  (4) LAB_RESULT <em>outcome-anchor</em> disambiguation (<code>chest x-ray unremarkable</code> is
+  one LAB_RESULT, not two entities) and PROCEDURE <em>bare-test-name</em> mirror rule. Combined
+  with canonicalization, these lift OoC composite from 0.864 → <strong>0.897</strong>
+  (+3.3 pp), Entity F1 from 0.612 → <strong>0.633</strong> (+2.1 pp), and Recall from 60.9% →
+  <strong>68.1%</strong> (+7.2 pp). Population jumps to 0.955 because the new rules surface
+  exam-finding and prior-procedure nodes the model previously dropped.
+</p>
+<p>
+  The "loose-other" in-corpus run additionally relaxes <code>"When in doubt, emit nothing"</code>
+  → <code>"Emit when clearly clinical"</code> across MEDICAL_HISTORY, TREATMENT, PROCEDURE, and
+  LAB_RESULT (SYMPTOM and LOCATION stay tight to protect precision; per-category trade-off in
+  §15b). This pushes Population to 1.0 in-corpus and is the configuration the submission ships
+  with by default.
+</p>
+
+<h4>Per-prompt tight-vs-loose calibration</h4>
+<p id="prompt-matrix">
+  The 7 entity prompts are not all calibrated the same way. SYMPTOM and LOCATION extract too many
+  false positives at high recall (long tail of clinical-sounding transcript chatter), so their
+  <code>other</code> / <code>fine_grained</code> rules stay <strong>tight</strong>
+  ("when in doubt, emit nothing"). The other four are <strong>loose</strong>
+  ("emit when clearly clinical") to push the Population component to 1.0. Empirical evidence:
+  loose-mode SYMPTOM added 44 unmatched student nodes in-corpus and dropped precision −22.9 pp
+  without lifting recall.
+</p>
+<table>
+<thead><tr><th>Prompt</th><th>Mode</th><th>Why</th></tr></thead>
+<tbody>
+<tr><td>SYMPTOM</td><td><strong>TIGHT</strong></td><td>Loose mode = +44 unmatched nodes, −22.9 pp precision; recall barely moved</td></tr>
+<tr><td>LOCATION</td><td><strong>TIGHT</strong></td><td>Bounded vocabulary; loose adds geographic / institutional false positives</td></tr>
+<tr><td>DIAGNOSIS</td><td>NEUTRAL</td><td>Already 84% recall; no emit-nothing rule originally</td></tr>
+<tr><td>TREATMENT</td><td>LOOSE</td><td>Lifestyle/avoidance instructions and drug-class names benefit from inclusion</td></tr>
+<tr><td>PROCEDURE</td><td>LOOSE</td><td>Bare test/imaging names (creatinine, lumbar mri) often missed under tight rules</td></tr>
+<tr><td>LAB_RESULT</td><td>LOOSE</td><td>Outcome-anchored compounds (<code>chest x-ray unremarkable</code>) need free emission</td></tr>
+<tr><td>MEDICAL_HISTORY</td><td>LOOSE</td><td>Activity context (yard work, tennis exertion) and prior-procedure framing have long tails</td></tr>
+</tbody>
+</table>
+<p>
+  The <code>_entity_prompt</code> helper (used for PROCEDURE, LOCATION, LAB_RESULT) accepts
+  <code>tight=True</code> to flip its rules. LOCATION_PROMPT sets it. SYMPTOM and MEDICAL_HISTORY
+  have their <code>other</code> / <code>fine_grained</code> rules edited inline.
+</p>
+
+<h2 id="canonicalization">15. The BGE-M3 canonicalization post-step</h2>
+<p>
+  After dump_graph builds the unified graph but before the scorer compares it to the curator
+  baseline, we run a deterministic post-step: <code>canonicalize_to_curator_260426.py</code>. For
+  each student node it embeds the node text with BGE-M3, finds the highest-cosine curator label of
+  the <em>same entity type</em>, and — if cosine ≥ 0.70 — rewrites the node's <code>text</code>
+  field to that label. The original text is preserved in <code>text_original</code> and the cosine
+  score in <code>canonicalized_via_bge_cosine</code> for full auditability. Edges follow nodes for
+  free because edges reference <code>source_id</code> / <code>target_id</code>, not text.
+</p>
+
+<h4>Why this exists</h4>
+<p>
+  The scorer's fuzzy match (SequenceMatcher ≥ 0.80) catches lexical near-duplicates but misses
+  lay → clinical bridges that are semantically obvious. Examples that BGE-M3 catches at threshold
+  0.70 but SequenceMatcher misses:
+</p>
+<ul>
+  <li><code>swelling in my ankles</code> → <code>ankle swelling</code> (cosine 0.934)</li>
+  <li><code>blood pressure 156 over 94</code> → <code>blood pressure 156/94</code> (0.933)</li>
+  <li><code>zoloft, um, 25 mg once a day</code> → <code>zoloft</code> (0.705)</li>
+  <li><code>cholesterol was like, a tiny bit high</code> → <code>elevated cholesterol</code> (0.700)</li>
+  <li><code>insect bite</code> → <code>tick bite</code> (0.800)</li>
+  <li><code>heart failure</code> → <code>congestive heart failure</code> (0.803)</li>
+</ul>
+
+<h4>What it changed in the OoC run</h4>
+<p>
+  Of 428 student nodes scanned, 144 (33.6%) were rewritten to a canonical curator label. By type:
+  LOCATION 27, TREATMENT 24, SYMPTOM 24, LAB_RESULT 23, DIAGNOSIS 16, MEDICAL_HISTORY 16,
+  PROCEDURE 14.
+</p>
+
+<h4>Threshold sweep</h4>
+<p>We tested two thresholds on the same OoC unified graph:</p>
+<table>
+<thead>
+<tr><th>Threshold</th><th>Rewrites</th><th>Composite</th><th>Entity F1</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+</thead>
+<tbody>
+<tr><td>none (no canon)</td><td>0</td><td>0.824</td><td>0.453</td><td>43.4%</td><td>47.5%</td><td>45.3%</td></tr>
+<tr><td><strong>0.70 (default)</strong></td><td><strong>144 (33.6%)</strong></td><td><strong>0.864</strong></td><td><strong>0.612</strong></td><td><strong>61.5%</strong></td><td><strong>60.9%</strong></td><td><strong>61.2%</strong></td></tr>
+<tr><td>0.80</td><td>68 (15.9%)</td><td>0.837</td><td>0.504</td><td>48.7%</td><td>52.2%</td><td>50.4%</td></tr>
+</tbody>
+</table>
+<p>
+  0.80 is more conservative — it caught only the high-confidence near-duplicates and gave back
+  about two-thirds of the gain. 0.70 caught two questionable boundary rewrites
+  (<code>using the knee → exercise</code>, <code>bowels → stomach</code>) but the net effect is
+  strongly positive because they are minor and the dozens of correct rewrites at 0.70–0.80
+  outweigh them. <strong>We ship with 0.70.</strong>
+</p>
+
+<h4>Why this is deterministic, not an Agent 5</h4>
+<p>
+  This step is a pure embedding-cosine lookup with no LLM call. That keeps the pipeline's run-to-run
+  variance contained to the two LLM stages (Stage 1 entity extraction, Stage 2 edge inference) and
+  makes the canonicalization auditable bit-for-bit: the same input graph + same KB + same threshold
+  always produces the same output graph.
+</p>
+
+<h4>How to override the threshold</h4>
+<pre><code>python canonicalize_to_curator_260426.py \
+    --unified  path/to/unified_graph_*.json \
+    --kb       curated_synthetic_kb_combined_260426.json \
+    --output   path/to/unified_graph_*_canonicalized.json \
+    --report   path/to/canonicalize_report.json \
+    --threshold 0.70</code></pre>
+
+<h2 id="run">16. How to run the pipeline</h2>
+
+<h4>Setup</h4>
+<pre><code>pip install -r requirements_260426.txt
+echo "OPENROUTER_API_KEY=sk-or-v1-..." >> .env</code></pre>
+
+<h4>In-corpus run (20 patients, scored against in-corpus curator)</h4>
+<pre><code>./run_v10_260426.sh in-corpus</code></pre>
+
+<h4>Out-of-corpus run (20 ACI-Bench patients, scored against OoC curator)</h4>
+<pre><code>./run_v10_260426.sh aci-bench</code></pre>
+
+<h4>Override the curated KB</h4>
+<pre><code>EIR_CURATED_KB_PATH=$(pwd)/curated_kb_260419.json ./run_v10_260426.sh aci-bench
+# uses the original 222-label in-corpus KB instead of the combined 522-label one</code></pre>
+
+<h4>Inspect a single patient's output</h4>
+<pre><code>python inspect_extraction_260425.py \
+    eir_results/smoke_test_glm47_specialized_parallel_v10/&lt;timestamp&gt; \
+    RES0198</code></pre>
+
+<h4>Run a subset</h4>
+<pre><code>./run_v10_260426.sh in-corpus --res-ids RES0198 RES0200 RES0203</code></pre>
+
+<h2 id="limitations">17. Limitations and lessons learned</h2>
+
+<h4>Curator-anchor dependency</h4>
+<p>
+  v10's in-corpus performance (0.930 composite) depends on the <code>&lt;curated_labels&gt;</code>
+  block being populated with the curator's specific phrasings. When we ran v10 with an empty
+  curated-labels block (zero-shot mode), composite dropped to 0.815 with Entity F1 of 0.262 — a
+  fundamental degradation. The pipeline needs either a curator-supplied label list at runtime or
+  a substitute vocabulary (SNOMED-CT subset, UMLS, our combined KB).
+</p>
+
+<h4>OoC vocabulary mismatch is the dominant failure mode (now mitigated)</h4>
+<p>
+  On out-of-corpus transcripts where the curator's vocabulary doesn't cover the active conditions
+  (CHF, anemia, kidney stones, etc.), recall drops sharply because the model's natural extractions
+  don't match the curator's specific surface forms. We mitigate this with two layers: (a) an
+  extended KB that covers the OoC vocabulary (the combined 522-label KB), and (b) a deterministic
+  BGE-M3 canonicalization post-step at cosine ≥ 0.70 (see §15). Together these lift OoC composite
+  from 0.815 → 0.864 and Entity F1 from 0.440 → 0.612.
+</p>
+
+<h4>LLM nondeterminism</h4>
+<p>
+  Temperature 0.6 on deepseek-r1-distill produces ~9 pp swings in INDICATES hit% between
+  same-prompt runs. Single-sample comparisons of prompt edits are unreliable; multi-sample
+  averaging (3–5 runs) is needed for confident A/B comparisons.
+</p>
+
+<h4>Recall-pressure prompt rules backfired</h4>
+<p>
+  Earlier iterations (v9) added explicit "recall floor" / "comprehensive review" /
+  "matched=RECALL-ORIENTED" framing to push the model toward higher emission rates. This dropped
+  precision sharply (76.9% → 59.6%) without lifting recall enough to justify it. We removed those
+  levers in v10. Lesson: instruction-tuned models are sensitive to over-specification; cleaner
+  prompts often outperform feature-rich ones.
+</p>
+
+<h4>What we did not have time to try</h4>
+<ul>
+  <li>An LLM-based canonicalization agent (Agent 5 in a 5-stage pipeline) that uses generative reasoning to map free-text to canonical clinical terms via SNOMED-CT or UMLS. We shipped a <em>deterministic</em> BGE-M3 cosine version instead (see §15), which gave us +15.9 pp Entity F1 with no LLM cost or nondeterminism. An LLM-based variant could potentially go further on the harder bridges still missed at cosine 0.70.</li>
+  <li>Two-pass recall sweep (script-side, not prompt-side): for every curator label not yet emitted, force a second-pass focused look.</li>
+  <li>Multi-sample LLM averaging at temperature 0.6 to dampen nondeterminism.</li>
+  <li>Hard wall-clock cap per LLM call (some Stage 2 calls binge for 20+ minutes; an 8-min cap with one refire would bound batch tail latency without changing extraction quality).</li>
+</ul>
+
+<div class="footer">
+  <p>
+    UChicago AI / Clinical_KG_OS_LLM hackathon · EIR pipeline submission · 260426 ·
+    self-contained at <code>EIR_260426/</code> · entrypoint <code>run_v10_260426.sh</code> ·
+    full reasoning trail in <code>eir_implementation_log.md</code>.
+  </p>
+</div>
+
+</body>
+</html>

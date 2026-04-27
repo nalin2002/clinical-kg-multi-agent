@@ -1,0 +1,82 @@
+#!/usr/bin/env bash
+# run_v10_260426.sh — one-line entrypoint for the EIR_260426 submission
+#
+# Usage:
+#   ./run_v10_260426.sh in-corpus      # 20 in-corpus transcripts, scored vs in-corpus curator
+#   ./run_v10_260426.sh aci-bench      # 20 ACI-Bench transcripts, scored vs OoC ACI curator
+#   ./run_v10_260426.sh in-corpus --workers 4
+#   ./run_v10_260426.sh aci-bench --no-score
+#   ./run_v10_260426.sh aci-bench --no-canonicalize                  # skip BGE-M3 canon step
+#   ./run_v10_260426.sh aci-bench --canon-threshold 0.75              # tighter canon threshold
+#   ./run_v10_260426.sh in-corpus --node-model openai/gpt-oss-20b    # swap Stage 1 model
+#   ./run_v10_260426.sh aci-bench --edge-model openai/gpt-oss-20b    # swap Stage 2 reasoning model
+#
+# Allowed OpenRouter models (per organizer's README):
+#   z-ai/glm-4.7-flash, qwen/qwen3-14b, nvidia/nemotron-3-nano-30b-a3b,
+#   openai/gpt-oss-20b, deepseek/deepseek-r1-distill-qwen-32b
+#
+# Pipeline (per run):
+#   extract → convert → dump_graph (BGE-M3 ER) → canonicalize (BGE-M3 ≥ 0.70) → scorer
+#
+# The combined curated+synthetic KB is set as the default. To use the
+# in-corpus-only 222-label KB, override with:
+#   EIR_CURATED_KB_PATH=$(pwd)/curated_kb_260419.json ./run_v10_260426.sh ...
+#
+# To use any other KB:
+#   EIR_CURATED_KB_PATH=/path/to/your_kb.json ./run_v10_260426.sh ...
+#
+# Created: 260426
+
+set -euo pipefail
+
+# Resolve fixed locations BEFORE cd-ing to project root.
+HERE="$(cd "$(dirname "$0")" && pwd)"          # eir/EIR_260426/
+EIR_ROOT="$(cd "$HERE/.." && pwd)"             # eir/
+PROJECT_ROOT="$(cd "$EIR_ROOT/.." && pwd)"     # Clinical_KG_OS_LLM/
+cd "$PROJECT_ROOT"                              # so v8 path resolution works
+
+# Auto-link .env from project root if eir/.env is missing (wrapper looks there).
+if [ ! -e "$EIR_ROOT/.env" ] && [ ! -e "$EIR_ROOT/api_keys.json" ] \
+   && [ -e "$PROJECT_ROOT/.env" ]; then
+    ln -sf "$PROJECT_ROOT/.env" "$EIR_ROOT/.env"
+fi
+
+# ─── Default: combined curated+synthetic KB ───────────────────────────────────
+export EIR_CURATED_KB_PATH="${EIR_CURATED_KB_PATH:-$HERE/curated_synthetic_kb_combined_260426.json}"
+
+# ─── Logging ─────────────────────────────────────────────────────────────────
+mkdir -p "$HERE/run_logs"
+TS=$(date +%y%m%d_%H%M%S)
+
+cmd="${1:-help}"
+shift || true
+
+case "$cmd" in
+    in-corpus)
+        LOG="$HERE/run_logs/v10_in_corpus_${TS}.log"
+        echo "[run_v10] mode: in-corpus 20 patients"
+        echo "[run_v10] KB:   $EIR_CURATED_KB_PATH"
+        echo "[run_v10] log:  $LOG"
+        python "$EIR_ROOT/smoke_test_v10_260425.py" "$@" 2>&1 | tee "$LOG"
+        ;;
+    aci-bench)
+        LOG="$HERE/run_logs/v10_aci_bench_${TS}.log"
+        echo "[run_v10] mode: out-of-corpus ACI-Bench 20 patients"
+        echo "[run_v10] KB:   $EIR_CURATED_KB_PATH"
+        echo "[run_v10] log:  $LOG"
+        # Auto-set the OoC baseline so the auto-scoring chain compares
+        # against our hand-curated ACI graph, not the in-corpus one.
+        python "$EIR_ROOT/smoke_test_v10_aci_bench_260425.py" \
+            --baseline "$EIR_ROOT/eir_aci_bench/unified_graph_curated_aci.json" \
+            "$@" 2>&1 | tee "$LOG"
+        ;;
+    help|--help|-h|"")
+        sed -n '2,22p' "$0"
+        exit 0
+        ;;
+    *)
+        echo "unknown mode: $cmd" >&2
+        echo "valid modes: in-corpus | aci-bench | help" >&2
+        exit 2
+        ;;
+esac
