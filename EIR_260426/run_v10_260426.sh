@@ -23,13 +23,23 @@
 
 set -euo pipefail
 
-cd "$(dirname "$0")"
+# Resolve fixed locations BEFORE cd-ing to project root.
+HERE="$(cd "$(dirname "$0")" && pwd)"          # eir/EIR_260426/
+EIR_ROOT="$(cd "$HERE/.." && pwd)"             # eir/
+PROJECT_ROOT="$(cd "$EIR_ROOT/.." && pwd)"     # Clinical_KG_OS_LLM/
+cd "$PROJECT_ROOT"                              # so v8 path resolution works
+
+# Auto-link .env from project root if eir/.env is missing (wrapper looks there).
+if [ ! -e "$EIR_ROOT/.env" ] && [ ! -e "$EIR_ROOT/api_keys.json" ] \
+   && [ -e "$PROJECT_ROOT/.env" ]; then
+    ln -sf "$PROJECT_ROOT/.env" "$EIR_ROOT/.env"
+fi
 
 # ─── Default: combined curated+synthetic KB ───────────────────────────────────
-export EIR_CURATED_KB_PATH="${EIR_CURATED_KB_PATH:-$(pwd)/curated_synthetic_kb_combined_260426.json}"
+export EIR_CURATED_KB_PATH="${EIR_CURATED_KB_PATH:-$HERE/curated_synthetic_kb_combined_260426.json}"
 
 # ─── Logging ─────────────────────────────────────────────────────────────────
-mkdir -p run_logs
+mkdir -p "$HERE/run_logs"
 TS=$(date +%y%m%d_%H%M%S)
 
 cmd="${1:-help}"
@@ -37,21 +47,21 @@ shift || true
 
 case "$cmd" in
     in-corpus)
-        LOG="run_logs/v10_in_corpus_${TS}.log"
+        LOG="$HERE/run_logs/v10_in_corpus_${TS}.log"
         echo "[run_v10] mode: in-corpus 20 patients"
         echo "[run_v10] KB:   $EIR_CURATED_KB_PATH"
         echo "[run_v10] log:  $LOG"
-        python smoke_test_v10_260425.py "$@" 2>&1 | tee "$LOG"
+        python "$EIR_ROOT/smoke_test_v10_260425.py" "$@" 2>&1 | tee "$LOG"
         ;;
     aci-bench)
-        LOG="run_logs/v10_aci_bench_${TS}.log"
+        LOG="$HERE/run_logs/v10_aci_bench_${TS}.log"
         echo "[run_v10] mode: out-of-corpus ACI-Bench 20 patients"
         echo "[run_v10] KB:   $EIR_CURATED_KB_PATH"
         echo "[run_v10] log:  $LOG"
         # Auto-set the OoC baseline so the auto-scoring chain compares
         # against our hand-curated ACI graph, not the in-corpus one.
-        python smoke_test_v10_aci_bench_260425.py \
-            --baseline "$(pwd)/eir_aci_bench/unified_graph_curated_aci.json" \
+        python "$EIR_ROOT/smoke_test_v10_aci_bench_260425.py" \
+            --baseline "$EIR_ROOT/eir_aci_bench/unified_graph_curated_aci.json" \
             "$@" 2>&1 | tee "$LOG"
         ;;
     help|--help|-h|"")

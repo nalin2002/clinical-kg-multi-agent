@@ -375,9 +375,11 @@ instructions when they are explicitly part of management.
 EXCLUDE diagnostic procedures (imaging, blood draws, lab tests, swabs,
 panels) — those belong to PROCEDURE.
 
-You are rigorous and conservative for free-text claims; clinical
-decision support depends on your output being deterministic and
-grounded. When in doubt for "other" / "fine_grained", emit nothing.
+You are rigorous and grounded for free-text claims, but you do NOT
+under-emit. For "other" and "fine_grained": emit when the phrase
+clearly describes a medication, treatment, or management instruction,
+even if it is not on the curated list. Skip only filler and
+conversational asides.
 </role>
 
 <what_counts_as_a_treatment>
@@ -472,9 +474,31 @@ def _entity_prompt(
     purpose: str,
     what_counts: str = "",
     what_is_not: str = "",
+    tight: bool = False,
 ) -> str:
     counts_block = f"<what_counts_as_a_{category.lower()}>\n{what_counts}\n</what_counts_as_a_{category.lower()}>\n\n" if what_counts else ""
     not_block = f"<what_is_NOT_a_{category.lower()}>\n{what_is_not}\n</what_is_NOT_a_{category.lower()}>\n\n" if what_is_not else ""
+    if tight:
+        rules_2_3 = (
+            f'2. "other" — {category} entities in the transcript\n'
+            f'   that are NOT in <curated_labels>. Use the transcript words.\n'
+            f'   When in doubt, emit nothing.\n'
+            f'3. "fine_grained" — {category} entities finer-grained\n'
+            f'   than entries in <curated_labels>. Use the transcript words.\n'
+            f'   When in doubt, emit nothing.'
+        )
+    else:
+        rules_2_3 = (
+            f'2. "other" — {category} entities in the transcript\n'
+            f'   that are NOT in <curated_labels>. Use the transcript words. Emit\n'
+            f'   when the phrase clearly describes a clinical {category} entity,\n'
+            f'   even without a curated match. Skip only filler and non-clinical\n'
+            f'   content.\n'
+            f'3. "fine_grained" — {category} entities finer-grained\n'
+            f'   than entries in <curated_labels>. Use the transcript words. Emit\n'
+            f'   when the phrase adds clinically meaningful specificity on top of\n'
+            f'   a curated concept; skip only filler.'
+        )
     return f"""<role>
 You are an EXPERT {expert_role} analyzing this doctor-patient transcript
 excerpt for the hospital. Your sole responsibility is to extract {category}
@@ -489,12 +513,7 @@ entities explicitly stated in the transcript.
 1. "matched" — curated labels copied verbatim from
    the list below. Bridge synonyms, abbreviations, and clinical
    restatements using your training.
-2. "other" — {category} entities in the transcript
-   that are NOT in <curated_labels>. Use the transcript words. When in
-   doubt, emit nothing.
-3. "fine_grained" — {category} entities finer-grained
-   than entries in <curated_labels>. Use the transcript words. When in
-   doubt, emit nothing.
+{rules_2_3}
 4. Do NOT assume or infer. Extract ONLY {category} entities explicitly
    mentioned in the transcript.
 </rules>
@@ -594,6 +613,7 @@ LOCATION_PROMPT = _entity_prompt(
         "  - Symptoms or findings AT a location → SYMPTOM (the location\n"
         "    becomes a separate LOCATED_AT edge target)"
     ),
+    tight=True,
 )
 
 
@@ -782,11 +802,15 @@ turn_id + verbatim quote from the transcript.
 
 2. "other" — MEDICAL_HISTORY entities in the
    transcript that are NOT in <curated_labels>. Use the transcript
-   words. When in doubt, emit nothing.
+   words. Emit when the phrase clearly describes a chronic condition,
+   prior illness, exposure, trigger, habit, allergy, or activity
+   context, even without a curated match. Skip only filler and
+   non-clinical content.
 3. "fine_grained" — MEDICAL_HISTORY entities
    finer-grained than entries in <curated_labels> (subtype, age of
-   onset, severity descriptor). Use the transcript words. When in
-   doubt, emit nothing.
+   onset, severity descriptor). Use the transcript words. Emit when
+   the phrase adds clinically meaningful specificity on top of a
+   curated concept; skip only filler.
 4. Do NOT assume or infer. Extract ONLY MEDICAL_HISTORY items
    explicitly mentioned in the transcript.
 </rules>

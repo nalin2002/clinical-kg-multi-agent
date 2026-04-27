@@ -584,7 +584,11 @@ json.dump(combined, open("your_new_combined_kb.json", "w"), indent=2)</code></pr
 <tr><td>v10 + examples</td><td>in-corpus 20</td><td>222 in-corpus</td><td>0.923</td><td>0.703</td><td>0.988</td><td>84.6%</td></tr>
 <tr><td>v10 + examples (OoC)</td><td>20 ACI-Bench</td><td>222 in-corpus</td><td>0.815</td><td>0.440</td><td>0.821</td><td>45.1%</td></tr>
 <tr><td>v10 + examples (OoC) + combined KB</td><td>20 ACI-Bench</td><td>522 combined</td><td>0.824</td><td>0.453</td><td>0.844</td><td>47.5%</td></tr>
-<tr><td><strong>v10 + examples (OoC) + combined KB + canonicalization (BGE-M3 @ 0.70)</strong></td><td>20 ACI-Bench</td><td>522 combined</td><td><strong>0.864</strong></td><td><strong>0.612</strong></td><td>0.844</td><td><strong>60.9%</strong></td></tr>
+<tr><td>v10 + combined KB + canonicalization (BGE-M3 @ 0.70)</td><td>20 ACI-Bench</td><td>522 combined</td><td>0.864</td><td>0.612</td><td>0.844</td><td>60.9%</td></tr>
+<tr><td>v10 + SYMPTOM v2 (stacked-ROS) + canon</td><td>20 ACI-Bench</td><td>522 combined</td><td>0.873</td><td>0.613</td><td>0.878</td><td>62.4%</td></tr>
+<tr><td><strong>v10 + 4 prompt edits + canon (latest OoC, default config)</strong></td><td><strong>20 ACI-Bench</strong></td><td><strong>522 combined</strong></td><td><strong>0.897</strong></td><td><strong>0.633</strong></td><td><strong>0.955</strong></td><td><strong>68.1%</strong></td></tr>
+<tr><td>v10 + 4 prompt edits (in-corpus, tight other)</td><td>in-corpus 20</td><td>522 combined</td><td>0.919</td><td>0.764</td><td>0.910</td><td>85.1%</td></tr>
+<tr><td><strong>v10 + 4 prompt edits + loose-other (latest in-corpus)</strong></td><td><strong>in-corpus 20</strong></td><td><strong>522 combined</strong></td><td><strong>0.925</strong></td><td>0.699</td><td><strong>1.000</strong></td><td><strong>86.9%</strong></td></tr>
 </tbody>
 </table>
 <p>
@@ -593,12 +597,59 @@ json.dump(combined, open("your_new_combined_kb.json", "w"), indent=2)</code></pr
   on the prior OoC run (+2.4 pp recall over the 222-label KB).
 </p>
 <p>
-  The last row adds a deterministic <strong>BGE-M3 canonicalization post-step</strong> (see §15)
-  that rewrites each student node's text to the nearest curator label of the same entity type when
-  the cosine similarity is ≥ 0.70. This bridges lay-language → clinical-vocabulary surface variants
-  that the scorer's lexical fuzzy match (SequenceMatcher ≥ 0.80) misses. <strong>Net lift over the
+  The deterministic <strong>BGE-M3 canonicalization post-step</strong> (see §15) rewrites each
+  student node's text to the nearest curator label of the same entity type when the cosine
+  similarity is ≥ 0.70. This bridges lay-language → clinical-vocabulary surface variants that the
+  scorer's lexical fuzzy match (SequenceMatcher ≥ 0.80) misses. <strong>Net OoC lift over the
   unbridged combined-KB run: +4.0 pp composite, +15.9 pp Entity F1, +13.4 pp Recall.</strong>
-  This is the configuration the submission ships with by default.
+</p>
+<p>
+  The four targeted prompt edits (260427) are: (1) SYMPTOM <em>physician-exam-findings</em> rule
+  for clinician-observed signs (bruits, tenderness, murmurs, fluctuance); (2) SYMPTOM
+  <em>stacked-ROS</em> rule for compound denial questions ("any fever, chills, cough?" → emit
+  three separate <code>absent X</code>); (3) MEDICAL_HISTORY <em>activity-context</em> +
+  <em>prior-procedures</em> rules (yard work, prior knee arthroplasty, hypertension history);
+  (4) LAB_RESULT <em>outcome-anchor</em> disambiguation (<code>chest x-ray unremarkable</code> is
+  one LAB_RESULT, not two entities) and PROCEDURE <em>bare-test-name</em> mirror rule. Combined
+  with canonicalization, these lift OoC composite from 0.864 → <strong>0.897</strong>
+  (+3.3 pp), Entity F1 from 0.612 → <strong>0.633</strong> (+2.1 pp), and Recall from 60.9% →
+  <strong>68.1%</strong> (+7.2 pp). Population jumps to 0.955 because the new rules surface
+  exam-finding and prior-procedure nodes the model previously dropped.
+</p>
+<p>
+  The "loose-other" in-corpus run additionally relaxes <code>"When in doubt, emit nothing"</code>
+  → <code>"Emit when clearly clinical"</code> across MEDICAL_HISTORY, TREATMENT, PROCEDURE, and
+  LAB_RESULT (SYMPTOM and LOCATION stay tight to protect precision; per-category trade-off in
+  §15b). This pushes Population to 1.0 in-corpus and is the configuration the submission ships
+  with by default.
+</p>
+
+<h4>Per-prompt tight-vs-loose calibration</h4>
+<p id="prompt-matrix">
+  The 7 entity prompts are not all calibrated the same way. SYMPTOM and LOCATION extract too many
+  false positives at high recall (long tail of clinical-sounding transcript chatter), so their
+  <code>other</code> / <code>fine_grained</code> rules stay <strong>tight</strong>
+  ("when in doubt, emit nothing"). The other four are <strong>loose</strong>
+  ("emit when clearly clinical") to push the Population component to 1.0. Empirical evidence:
+  loose-mode SYMPTOM added 44 unmatched student nodes in-corpus and dropped precision −22.9 pp
+  without lifting recall.
+</p>
+<table>
+<thead><tr><th>Prompt</th><th>Mode</th><th>Why</th></tr></thead>
+<tbody>
+<tr><td>SYMPTOM</td><td><strong>TIGHT</strong></td><td>Loose mode = +44 unmatched nodes, −22.9 pp precision; recall barely moved</td></tr>
+<tr><td>LOCATION</td><td><strong>TIGHT</strong></td><td>Bounded vocabulary; loose adds geographic / institutional false positives</td></tr>
+<tr><td>DIAGNOSIS</td><td>NEUTRAL</td><td>Already 84% recall; no emit-nothing rule originally</td></tr>
+<tr><td>TREATMENT</td><td>LOOSE</td><td>Lifestyle/avoidance instructions and drug-class names benefit from inclusion</td></tr>
+<tr><td>PROCEDURE</td><td>LOOSE</td><td>Bare test/imaging names (creatinine, lumbar mri) often missed under tight rules</td></tr>
+<tr><td>LAB_RESULT</td><td>LOOSE</td><td>Outcome-anchored compounds (<code>chest x-ray unremarkable</code>) need free emission</td></tr>
+<tr><td>MEDICAL_HISTORY</td><td>LOOSE</td><td>Activity context (yard work, tennis exertion) and prior-procedure framing have long tails</td></tr>
+</tbody>
+</table>
+<p>
+  The <code>_entity_prompt</code> helper (used for PROCEDURE, LOCATION, LAB_RESULT) accepts
+  <code>tight=True</code> to flip its rules. LOCATION_PROMPT sets it. SYMPTOM and MEDICAL_HISTORY
+  have their <code>other</code> / <code>fine_grained</code> rules edited inline.
 </p>
 
 <h2 id="canonicalization">15. The BGE-M3 canonicalization post-step</h2>
