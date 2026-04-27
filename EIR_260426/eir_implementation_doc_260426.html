@@ -588,7 +588,10 @@ json.dump(combined, open("your_new_combined_kb.json", "w"), indent=2)</code></pr
 <tr><td>v10 + SYMPTOM v2 (stacked-ROS) + canon</td><td>20 ACI-Bench</td><td>522 combined</td><td>0.873</td><td>0.613</td><td>0.878</td><td>62.4%</td></tr>
 <tr><td><strong>v10 + 4 prompt edits + canon (latest OoC, default config)</strong></td><td><strong>20 ACI-Bench</strong></td><td><strong>522 combined</strong></td><td><strong>0.897</strong></td><td><strong>0.633</strong></td><td><strong>0.955</strong></td><td><strong>68.1%</strong></td></tr>
 <tr><td>v10 + 4 prompt edits (in-corpus, tight other)</td><td>in-corpus 20</td><td>522 combined</td><td>0.919</td><td>0.764</td><td>0.910</td><td>85.1%</td></tr>
-<tr><td><strong>v10 + 4 prompt edits + loose-other (latest in-corpus)</strong></td><td><strong>in-corpus 20</strong></td><td><strong>522 combined</strong></td><td><strong>0.925</strong></td><td>0.699</td><td><strong>1.000</strong></td><td><strong>86.9%</strong></td></tr>
+<tr><td><strong>v10 + 4 prompt edits + loose-other (latest in-corpus, default models)</strong></td><td><strong>in-corpus 20</strong></td><td><strong>522 combined</strong></td><td><strong>0.925</strong></td><td>0.699</td><td><strong>1.000</strong></td><td><strong>86.9%</strong></td></tr>
+<tr><td>v10 + 4 prompt edits + loose-other, re-run (default models, run B)</td><td>in-corpus 20</td><td>522 combined</td><td>0.929</td><td>0.715</td><td>1.000</td><td>85.5%</td></tr>
+<tr><td><em>v10 + Stage 2 swap only (glm-4.7-flash + nemotron-3-nano)</em> — partial swap; <code>--node-model</code> was buggy in this run</td><td>in-corpus 20</td><td>522 combined</td><td>0.927</td><td>0.709</td><td>1.000</td><td>84.6%</td></tr>
+<tr><td><strong>v10 + REAL model swap (gpt-oss-20b + nemotron-3-nano)</strong></td><td>in-corpus 20</td><td>522 combined</td><td><strong>0.891</strong></td><td><strong>0.803</strong> ← highest in-corpus F1</td><td>0.763</td><td>82.8%</td></tr>
 </tbody>
 </table>
 <p>
@@ -784,6 +787,73 @@ echo "OPENROUTER_API_KEY=sk-or-v1-..." >> .env</code></pre>
 <pre><code>./run_v10_260426.sh in-corpus --res-ids RES0198 RES0200 RES0203</code></pre>
 
 <h2 id="limitations">17. Limitations and lessons learned</h2>
+
+<h4>Model choice trades Entity F1 quality against Population count</h4>
+<p>
+  We A/B-tested the default pairing (<code>z-ai/glm-4.7-flash</code> Stage 1 +
+  <code>deepseek/deepseek-r1-distill-qwen-32b</code> Stage 2) against the
+  strongest alternative pairing the published benchmarks supported
+  (<code>openai/gpt-oss-20b</code> Stage 1 +
+  <code>nvidia/nemotron-3-nano-30b-a3b</code> Stage 2). The first attempt
+  silently failed to swap Stage 1 because the OpenRouter client's <code>__init__</code>
+  default value <code>model=OPENROUTER_MODEL</code> was captured at class-definition
+  time, so monkey-patching the module constant alone left the client constructed
+  with the stale default. We fixed the wrapper to also patch
+  <code>v8.OpenRouterClient.__init__.__defaults__</code> in-place. After the fix,
+  every per-call log line for the swap run shows the correct model strings, with
+  zero <code>z-ai/glm-4.7-flash</code> calls. Same in-corpus 20 transcripts, same
+  522-label KB, same prompts, same canonicalization @ 0.70.
+</p>
+<table>
+<thead><tr><th>Configuration</th><th>Composite</th><th>F1</th><th>Precision</th><th>Recall</th><th>Population</th><th>Nodes</th></tr></thead>
+<tbody>
+<tr><td>Default models, run A (260427_005525)</td><td>0.925</td><td>0.699</td><td>58.5%</td><td>86.9%</td><td>1.000</td><td>374</td></tr>
+<tr><td>Default models, run B (260427_013403)</td><td>0.929</td><td>0.715</td><td>61.4%</td><td>85.5%</td><td>1.000</td><td>345</td></tr>
+<tr><td><strong>REAL swap (gpt-oss + nemotron) (260427_082458)</strong></td><td><strong>0.891</strong></td><td><strong>0.803</strong></td><td><strong>77.9%</strong></td><td>82.8%</td><td><strong>0.763</strong></td><td><strong>254</strong></td></tr>
+</tbody>
+</table>
+<p>
+  <strong>The model swap moves the score significantly — but in opposing
+  directions on different components.</strong> gpt-oss-20b is dramatically more
+  precise (RLHF discipline confirmed: precision +16.5 pp, recall −2.7 pp,
+  Entity F1 +8.8 pp — the highest in-corpus F1 we have ever recorded, 0.803).
+  But it is also more conservative: it emits 254 student nodes vs 345 for the
+  default — 91 fewer. Population is a count-based metric
+  (<code>min(student_count / baseline_count, 1.5) / 1.5</code>) that punishes
+  this conservatism: <strong>Population drops from 1.000 to 0.763</strong>.
+  Since each component is weighted 25%, the +8.8 pp F1 lift contributes
+  +0.022 to composite, while the −0.237 Population drop contributes
+  −0.059 — net composite −0.038.
+</p>
+<p class="muted">
+  The original (pre-fix) A/B numbers were misleading because Stage 1 never
+  changed; only Stage 2 swapped to nemotron. Stage 2 cannot move composite
+  by construction (Relation Completeness is already saturated at 1.0 with
+  our 6-edge fan-out, so edge model swaps only affect <code>edge_jaccard</code>
+  which is reported but not weighted into composite). The earlier conclusion
+  that "model choice does not move the score" was wrong; it was based on a
+  partial swap.
+</p>
+
+<h4>Implications</h4>
+<p>
+  The KG produced by gpt-oss-20b has higher F1 (0.803) and 16.5 pp more
+  precision than the glm-4.7-flash default — it is clinically more
+  defensible. But the composite scorer rewards quantity (Population) at the
+  same weight as quality (F1), so the smaller-but-better KG scores 0.038
+  composite lower. Two reasonable routes from here:
+</p>
+<ul>
+  <li><strong>Composite-optimized</strong>: keep <code>z-ai/glm-4.7-flash</code>
+      for Stage 1. Optionally switch Stage 2 to <code>nvidia/nemotron-3-nano-30b-a3b</code>
+      for 2× speed at equal score (Stage 2 cannot move composite).</li>
+  <li><strong>F1-optimized (recommended for downstream QA)</strong>: switch to
+      <code>openai/gpt-oss-20b</code> Stage 1, then aggressively loosen
+      <code>other</code> / <code>fine_grained</code> emission rules across more
+      categories (currently SYMPTOM and LOCATION are TIGHT) to push student
+      node count from 254 → 333+ and saturate Population. This should yield
+      both the F1 (~0.80) and Population (~1.0) wins, with composite ≈ 0.94+.</li>
+</ul>
 
 <h4>Curator-anchor dependency</h4>
 <p>

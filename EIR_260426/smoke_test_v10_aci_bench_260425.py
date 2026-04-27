@@ -284,10 +284,23 @@ def main() -> None:
     # Allowed OpenRouter models per organizer's README:
     #   z-ai/glm-4.7-flash, qwen/qwen3-14b, nvidia/nemotron-3-nano-30b-a3b,
     #   openai/gpt-oss-20b, deepseek/deepseek-r1-distill-qwen-32b
-    # Patch BOTH v8 and v9 — v9 captured OPENROUTER_MODEL at import time.
     if node_model:
+        # Patch module constants AND the captured default in
+        # OpenRouterClient.__init__. See in-corpus wrapper for rationale —
+        # default arg values bind at function-def time, so without this
+        # __init__.__defaults__ patch, v9's super().__init__(api_key) call
+        # picks up the stale OPENROUTER_MODEL default.
         v8.OPENROUTER_MODEL = node_model
         v9.OPENROUTER_MODEL = node_model
+        import inspect
+        sig = inspect.signature(v8.OpenRouterClient.__init__)
+        defaulted_params = [p for p in sig.parameters.values()
+                            if p.default is not inspect.Parameter.empty]
+        new_defaults = tuple(
+            node_model if p.name == "model" else p.default
+            for p in defaulted_params
+        )
+        v8.OpenRouterClient.__init__.__defaults__ = new_defaults
         print(f"[v10-aci-bench] Stage 1 (entities) model: {node_model}", flush=True)
     else:
         print(f"[v10-aci-bench] Stage 1 (entities) model: {v8.OPENROUTER_MODEL} (default)", flush=True)

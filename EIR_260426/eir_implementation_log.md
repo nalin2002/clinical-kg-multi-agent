@@ -244,3 +244,73 @@ To salvage zero-shot performance we would need either:
 **Bottom line:** v10's composite of 0.930 is a *seeded* number. The pipeline is not zero-shot ready, and zero-shot performance on the same transcripts is 0.815 (Grade A label is misleading — Entity F1 is 0.26).
 
 Create submission Folder
+
+## 260427 — Model A/B test: gpt-oss-20b + nemotron — trades F1 quality for Population count
+
+### Setup
+
+After CLI flags `--node-model` and `--edge-model` shipped (commit `f016adf`),
+A/B-tested the default model pairing against the strongest alternative
+pairing the published benchmarks suggested:
+
+| Stage | Default | Alternative |
+|---|---|---|
+| Stage 1 (entities) | `z-ai/glm-4.7-flash` | `openai/gpt-oss-20b` (highest documented HealthBench, RLHF discipline) |
+| Stage 2 (edges) | `deepseek/deepseek-r1-distill-qwen-32b` | `nvidia/nemotron-3-nano-30b-a3b` (top reasoning across MMLU-Pro / GPQA / MATH; ~2× faster than DeepSeek) |
+
+Same 20 in-corpus transcripts, same 522-label combined KB, same prompts (4 edits + tight SYMPTOM/LOCATION + loose-other), canonicalization @ 0.70.
+
+### Bug discovered after the first attempt
+
+Per-call audit of the supposed first swap run (`260427_025015`) showed every Stage 1 entity call still used `z-ai/glm-4.7-flash`, not `openai/gpt-oss-20b`. Only Stage 2 actually swapped (to nemotron-3-nano). Reason: in v8, `OpenRouterClient.__init__(self, api_key, model=OPENROUTER_MODEL, ...)` captures the default value at class-definition time. Monkey-patching `v8.OPENROUTER_MODEL = node_model` after import does not change the captured default. v9's `InstrumentedOpenRouterClient` calls `super().__init__(api_key)` without an explicit `model=` argument, so the stale default kicks in.
+
+Fix: in the wrapper, also patch `v8.OpenRouterClient.__init__.__defaults__` in-place with `inspect.signature` to identify the right tuple position. After the fix, the per-call log lines for the corrected swap run (`260427_082458`) show 140 calls to `openai/gpt-oss-20b` and 121 to `nvidia/nemotron-3-nano-30b-a3b` — zero stale calls.
+
+### Results
+
+| Run | Stage 1 actually called | Stage 2 actually called | Composite | F1 | Precision | Recall | Population | Nodes |
+|---|---|---|---|---|---|---|---|---|
+| 260427_005525 | glm-4.7-flash | deepseek-r1-distill | 0.925 | 0.699 | 58.5% | 86.9% | 1.000 | 374 |
+| 260427_013403 | glm-4.7-flash | deepseek-r1-distill | 0.929 | 0.715 | 61.4% | 85.5% | 1.000 | 345 |
+| 260427_025015 | glm-4.7-flash _(broken `--node-model`)_ | nemotron-3-nano | 0.927 | 0.709 | 61.1% | 84.6% | 1.000 | 343 |
+| **260427_082458** | **gpt-oss-20b** | **nemotron-3-nano** | **0.891** | **0.803** | **77.9%** | 82.8% | **0.763** | **254** |
+
+### Interpretation
+
+The real swap moves the score significantly — **but in opposing directions on different components.**
+
+- **gpt-oss-20b is dramatically more precise**: precision **+16.5 pp** (61.4% → 77.9%), recall **−2.7 pp**, Entity F1 **+8.8 pp** (0.715 → **0.803** — the highest in-corpus F1 we have ever recorded).
+- **gpt-oss-20b is also more conservative**: 254 student nodes vs 345 for the default — 91 fewer total emissions. Population is `min(student/baseline, 1.5) / 1.5`, count-based and unforgiving — it drops from **1.000 → 0.763**.
+- Net composite: F1 component +0.022, Population component −0.059 → **net composite −0.037** (matches observed −0.038).
+
+The earlier "models do not move the score" conclusion (now removed from the HTML) was based on the broken swap and was wrong. The corrected finding: **model choice moves the score significantly; the composite scorer rewards quantity at the same weight as quality, so the smaller-but-better KG produced by gpt-oss-20b loses on composite despite winning on Entity F1.**
+
+### Why the original prediction was wrong
+
+Pre-swap I predicted +0.01 to +0.02 composite from the swap. The actual signed delta was −0.038. Three errors in the prediction:
+
+1. **Did not anticipate the conservatism of an RLHF-disciplined model on this prompt.** gpt-oss-20b respects exclusion rules so well that it under-emits on the LOOSE prompts, not just on the TIGHT ones — the global node count drops by 91.
+
+2. **Did not weigh Population as the binding component.** Composite is dominated by whichever component is furthest from 1.0. F1 is 0.715 in the default config (room to move up by +0.285) but Population is already 1.000 (room to move down by 1.0). A model that moves both in opposite directions hurts the composite even when it wins on F1.
+
+3. **Stage 2 was confounded with Stage 1 in the broken-swap data.** With only Stage 2 actually swapped (and Relation already saturated), the 0.927 result looked like "no change" when in fact Stage 1 was unchanged. After the fix, the Stage 1 effect emerges as the −0.038 delta.
+
+### Implications for the submission
+
+The KG produced by gpt-oss-20b (F1 0.803, precision 77.9%) is clinically more defensible than the default's KG (F1 0.715, precision 61.4%) — it has fewer false-positive nodes and tighter conformance to the curator's surface forms.
+
+But the composite scorer ranks the smaller-but-cleaner KG **lower** by 0.038. Two reasonable routes:
+
+1. **Composite-optimized**: keep `z-ai/glm-4.7-flash` for Stage 1. Optionally switch Stage 2 to `nvidia/nemotron-3-nano-30b-a3b` for 2× speed at equal score (Stage 2 cannot move composite since Relation Completeness is saturated at 1.0).
+2. **F1-optimized (better for downstream GraphRAG QA)**: switch to `openai/gpt-oss-20b` Stage 1, then aggressively loosen `other` / `fine_grained` emission rules across more categories (currently only 4 of 7 are loose; SYMPTOM and LOCATION stay TIGHT) to push student node count from 254 → 333+ and saturate Population. Should yield both F1 (~0.80) and Population (~1.0), with composite estimated ≈ 0.94+.
+
+### Actual score levers (corrected ranking by measured impact)
+
+1. **BGE-M3 canonicalization @ 0.70**: +0.04 composite OoC (+15.9 pp Entity F1)
+2. **Model swap (Stage 1 → gpt-oss-20b)**: −0.038 composite in-corpus, but **+8.8 pp Entity F1 quality**
+3. **4 prompt edits (SYMPTOM exam findings, MED_HIST activity/prior, LAB_RESULT outcome anchor, PROCEDURE bare-name)**: +0.024 composite OoC
+4. **KB coverage** (in-corpus 222 → combined 522): +0.01 composite OoC
+5. **Loose-other rules on TREATMENT/MEDICAL_HISTORY/PROCEDURE/LAB_RESULT (with SYMPTOM and LOCATION kept tight)**: +0.006 composite in-corpus
+6. **Stage 2 model swap (deepseek → nemotron)**: 0 composite (saturated component); 2× speedup only
+
+Stage 1 model choice IS a score lever — it moves both quality (F1) and quantity (Population) in opposite directions. The composite scorer's design (count-based Population + 25% weight) determines which side wins on the headline number.
