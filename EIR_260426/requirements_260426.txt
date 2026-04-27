@@ -1,0 +1,21 @@
+# EIR_260426 dependencies
+# Run: pip install -r requirements_260426.txt
+# (use a venv — llama_index pulls torch which is heavy)
+
+# ── HTTP / API client ────────────────────────────────────────────────────────
+openai>=1.40.0          # OpenRouter is OpenAI-compatible
+httpx>=0.27.0
+python-dotenv>=1.0.0    # for .env loading (OPENROUTER_API_KEY, CEREBRAS_API_KEY)
+
+# ── Hugging Face dataset pull (pull_aci_bench_260425.py) ─────────────────────
+datasets>=3.0.0
+huggingface_hub>=0.24.0
+
+# ── BGE-M3 entity resolution (organizer's dump_graph.py) ─────────────────────
+llama-index-embeddings-huggingface>=0.6.1
+torch>=2.0.0
+sentence-transformers>=2.7.0
+
+# ── Misc utilities ───────────────────────────────────────────────────────────
+numpy>=1.26.0
+tqdm>=4.66.0

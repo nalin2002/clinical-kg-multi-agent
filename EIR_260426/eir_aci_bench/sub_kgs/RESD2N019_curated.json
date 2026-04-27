@@ -1,0 +1,43 @@
+{
+  "_meta": {"source": "ACI-Bench D2N019", "curator": "Claude (Anthropic)", "curated_at": "260426", "schema_version": "v1", "notes": "48F right elbow lateral epicondylitis after lifting boxes. PMH: anaphylaxis, prior neck surgery."},
+  "nodes": [
+    {"id": "N_001", "text": "right elbow pain", "type": "SYMPTOM", "evidence": "evaluation of right elbow pain", "turn_id": "D-3"},
+    {"id": "N_002", "text": "lateral epicondyle tenderness", "type": "SYMPTOM", "evidence": "tenderness over the lateral epicondyle", "turn_id": "D-10"},
+    {"id": "N_003", "text": "swelling", "type": "SYMPTOM", "evidence": "Swelling and redness are noted", "turn_id": "D-10"},
+    {"id": "N_004", "text": "redness", "type": "SYMPTOM", "evidence": "Swelling and redness are noted", "turn_id": "D-10"},
+    {"id": "N_005", "text": "pain with flexion and extension", "type": "SYMPTOM", "evidence": "Pain with flexion and extension of the elbow", "turn_id": "D-10"},
+    {"id": "N_006", "text": "forearm pain", "type": "SYMPTOM", "evidence": "Pain over the dorsal aspect of the forearm", "turn_id": "D-10"},
+    {"id": "N_007", "text": "right elbow lateral epicondylitis", "type": "DIAGNOSIS", "evidence": "Right elbow lateral epicondylitis", "turn_id": "D-13"},
+    {"id": "N_008", "text": "ibuprofen", "type": "TREATMENT", "evidence": "tried applying ice and taking Ibuprofen", "turn_id": "P-5"},
+    {"id": "N_009", "text": "ice", "type": "TREATMENT", "evidence": "tried applying ice", "turn_id": "P-5"},
+    {"id": "N_010", "text": "motrin", "type": "TREATMENT", "evidence": "Motrin, 800 mg to take every 6 hours", "turn_id": "D-15"},
+    {"id": "N_011", "text": "sling", "type": "TREATMENT", "evidence": "recommended a sling for comfort", "turn_id": "D-15"},
+    {"id": "N_012", "text": "epipen", "type": "TREATMENT", "evidence": "history of anaphylaxis and has an EpiPen", "turn_id": "P-7"},
+    {"id": "N_013", "text": "right elbow x-ray", "type": "PROCEDURE", "evidence": "X-rays of the right elbow", "turn_id": "D-12"},
+    {"id": "N_014", "text": "physical exam", "type": "PROCEDURE", "evidence": "EXAM", "turn_id": "D-10"},
+    {"id": "N_015", "text": "right elbow", "type": "LOCATION", "evidence": "right elbow pain", "turn_id": "D-3"},
+    {"id": "N_016", "text": "lateral epicondyle", "type": "LOCATION", "evidence": "lateral epicondyle", "turn_id": "D-10"},
+    {"id": "N_017", "text": "forearm", "type": "LOCATION", "evidence": "dorsal aspect of the forearm", "turn_id": "D-10"},
+    {"id": "N_018", "text": "anaphylaxis history", "type": "MEDICAL_HISTORY", "evidence": "history of anaphylaxis", "turn_id": "P-7"},
+    {"id": "N_019", "text": "prior neck surgery", "type": "MEDICAL_HISTORY", "evidence": "past surgical history is significant for neck surgery", "turn_id": "P-7"},
+    {"id": "N_020", "text": "moving boxes", "type": "MEDICAL_HISTORY", "evidence": "moving boxes from the truck into the house yesterday and felt a pop", "turn_id": "P-3"},
+    {"id": "N_021", "text": "right elbow x-ray no fracture", "type": "LAB_RESULT", "evidence": "X-rays of the right elbow shows no obvious signs of acute fracture", "turn_id": "D-12"},
+    {"id": "N_022", "text": "lateral effusion", "type": "LAB_RESULT", "evidence": "Mild effusion about the lateral aspect", "turn_id": "D-12"}
+  ],
+  "edges": [
+    {"source_id": "N_001", "target_id": "N_007", "type": "INDICATES", "evidence": "right elbow pain", "turn_id": "D-3"},
+    {"source_id": "N_002", "target_id": "N_007", "type": "INDICATES", "evidence": "tenderness over the lateral epicondyle", "turn_id": "D-10"},
+    {"source_id": "N_005", "target_id": "N_007", "type": "INDICATES", "evidence": "Pain with flexion and extension of the elbow", "turn_id": "D-10"},
+    {"source_id": "N_022", "target_id": "N_007", "type": "CONFIRMS", "evidence": "Mild effusion about the lateral aspect", "turn_id": "D-12"},
+    {"source_id": "N_021", "target_id": "N_007", "type": "RULES_OUT", "evidence": "no obvious signs of acute fracture", "turn_id": "D-12"},
+    {"source_id": "N_020", "target_id": "N_007", "type": "CAUSES", "evidence": "moving boxes from the truck into the house yesterday and felt a pop", "turn_id": "P-3"},
+    {"source_id": "N_008", "target_id": "N_001", "type": "TAKEN_FOR", "evidence": "taking Ibuprofen", "turn_id": "P-5"},
+    {"source_id": "N_009", "target_id": "N_001", "type": "TAKEN_FOR", "evidence": "tried applying ice", "turn_id": "P-5"},
+    {"source_id": "N_010", "target_id": "N_007", "type": "TAKEN_FOR", "evidence": "Motrin, 800 mg to take every 6 hours", "turn_id": "D-15"},
+    {"source_id": "N_011", "target_id": "N_007", "type": "TAKEN_FOR", "evidence": "recommended a sling for comfort", "turn_id": "D-15"},
+    {"source_id": "N_012", "target_id": "N_018", "type": "TAKEN_FOR", "evidence": "anaphylaxis and has an EpiPen", "turn_id": "P-7"},
+    {"source_id": "N_001", "target_id": "N_015", "type": "LOCATED_AT", "evidence": "right elbow pain", "turn_id": "D-3"},
+    {"source_id": "N_002", "target_id": "N_016", "type": "LOCATED_AT", "evidence": "lateral epicondyle", "turn_id": "D-10"},
+    {"source_id": "N_006", "target_id": "N_017", "type": "LOCATED_AT", "evidence": "dorsal aspect of the forearm", "turn_id": "D-10"}
+  ]
+}

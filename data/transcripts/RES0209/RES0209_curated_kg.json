@@ -1,0 +1,181 @@
+{
+  "nodes": [
+    {
+      "id": "N_001",
+      "text": "Dry cough",
+      "type": "SYMPTOM",
+      "evidence": "I have been coughing a lot",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_002",
+      "text": "Shortness of breath",
+      "type": "SYMPTOM",
+      "evidence": "feeling very short of breath",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_003",
+      "text": "Wheezing",
+      "type": "SYMPTOM",
+      "evidence": "I've been wheezing a lot, actually",
+      "turn_id": "P-15"
+    },
+    {
+      "id": "N_004",
+      "text": "Chest tightness",
+      "type": "SYMPTOM",
+      "evidence": "gets tight in your chest",
+      "turn_id": "D-20"
+    },
+    {
+      "id": "N_005",
+      "text": "Nighttime symptoms",
+      "type": "SYMPTOM",
+      "evidence": "maybe like every other day",
+      "turn_id": "P-18"
+    },
+    {
+      "id": "N_006",
+      "text": "Asthma",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "I was diagnosed when I was eight",
+      "turn_id": "P-2"
+    },
+    {
+      "id": "N_007",
+      "text": "Suspected allergies",
+      "type": "DIAGNOSIS",
+      "evidence": "I haven't ever been like formally diagnosed",
+      "turn_id": "P-12"
+    },
+    {
+      "id": "N_008",
+      "text": "Bronchodilator puffer",
+      "type": "TREATMENT",
+      "evidence": "my bronchodilator helps",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_009",
+      "text": "COVID swab",
+      "type": "PROCEDURE",
+      "evidence": "We probably will do a covid swab",
+      "turn_id": "D-29"
+    },
+    {
+      "id": "N_010",
+      "text": "Exercise trigger",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "right after I like, run around",
+      "turn_id": "P-9"
+    },
+    {
+      "id": "N_011",
+      "text": "Cold air trigger",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "the cold also makes it worse",
+      "turn_id": "P-9"
+    },
+    {
+      "id": "N_012",
+      "text": "Pollen trigger",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "spring with like pollen",
+      "turn_id": "P-11"
+    },
+    {
+      "id": "N_013",
+      "text": "Family history of asthma",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "my sister has asthma too",
+      "turn_id": "P-32"
+    },
+    {
+      "id": "N_014",
+      "text": "Chest",
+      "type": "LOCATION",
+      "evidence": "tight in your chest",
+      "turn_id": "D-20"
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "N_001",
+      "target_id": "N_006",
+      "type": "INDICATES",
+      "evidence": "I have been coughing a lot",
+      "turn_id": "P-1"
+    },
+    {
+      "source_id": "N_002",
+      "target_id": "N_006",
+      "type": "INDICATES",
+      "evidence": "feeling very short of breath",
+      "turn_id": "P-1"
+    },
+    {
+      "source_id": "N_003",
+      "target_id": "N_006",
+      "type": "INDICATES",
+      "evidence": "I've been wheezing a lot, actually",
+      "turn_id": "P-15"
+    },
+    {
+      "source_id": "N_004",
+      "target_id": "N_006",
+      "type": "INDICATES",
+      "evidence": "gets tight in your chest",
+      "turn_id": "D-20"
+    },
+    {
+      "source_id": "N_004",
+      "target_id": "N_014",
+      "type": "LOCATED_AT",
+      "evidence": "tight in your chest",
+      "turn_id": "D-20"
+    },
+    {
+      "source_id": "N_008",
+      "target_id": "N_006",
+      "type": "TAKEN_FOR",
+      "evidence": "my bronchodilator helps",
+      "turn_id": "P-1"
+    },
+    {
+      "source_id": "N_010",
+      "target_id": "N_006",
+      "type": "CAUSES",
+      "evidence": "right after I like, run around",
+      "turn_id": "P-9"
+    },
+    {
+      "source_id": "N_011",
+      "target_id": "N_006",
+      "type": "CAUSES",
+      "evidence": "the cold also makes it worse",
+      "turn_id": "P-9"
+    },
+    {
+      "source_id": "N_012",
+      "target_id": "N_007",
+      "type": "CAUSES",
+      "evidence": "spring with like pollen",
+      "turn_id": "P-11"
+    },
+    {
+      "source_id": "N_012",
+      "target_id": "N_006",
+      "type": "CAUSES",
+      "evidence": "spring with like pollen",
+      "turn_id": "P-11"
+    },
+    {
+      "source_id": "N_013",
+      "target_id": "N_006",
+      "type": "INDICATES",
+      "evidence": "my sister has asthma too",
+      "turn_id": "P-32"
+    }
+  ]
+}

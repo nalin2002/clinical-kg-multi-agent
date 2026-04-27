@@ -1,0 +1,279 @@
+{
+  "nodes": [
+    {
+      "id": "N_001",
+      "text": "shortness of breath",
+      "type": "SYMPTOM",
+      "evidence": "feeling really short of breath",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_002",
+      "text": "fatigue",
+      "type": "SYMPTOM",
+      "evidence": "Just like super tired",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_003",
+      "text": "weakness",
+      "type": "SYMPTOM",
+      "evidence": "I feel a bit weak",
+      "turn_id": "P-2"
+    },
+    {
+      "id": "N_004",
+      "text": "decreased appetite",
+      "type": "SYMPTOM",
+      "evidence": "haven't really been eating a lot",
+      "turn_id": "P-2"
+    },
+    {
+      "id": "N_005",
+      "text": "fever",
+      "type": "SYMPTOM",
+      "evidence": "I felt really hot yesterday",
+      "turn_id": "P-4"
+    },
+    {
+      "id": "N_006",
+      "text": "loss of taste",
+      "type": "SYMPTOM",
+      "evidence": "couldn't really taste my breakfast",
+      "turn_id": "P-4"
+    },
+    {
+      "id": "N_007",
+      "text": "loss of smell",
+      "type": "SYMPTOM",
+      "evidence": "yeah, kind of",
+      "turn_id": "P-6"
+    },
+    {
+      "id": "N_008",
+      "text": "dry cough",
+      "type": "SYMPTOM",
+      "evidence": "it feels dry like it's on its way",
+      "turn_id": "P-8"
+    },
+    {
+      "id": "N_009",
+      "text": "sore throat",
+      "type": "SYMPTOM",
+      "evidence": "starting to feel a little bit like that",
+      "turn_id": "P-9"
+    },
+    {
+      "id": "N_010",
+      "text": "headache",
+      "type": "SYMPTOM",
+      "evidence": "I have had a little bit",
+      "turn_id": "P-11"
+    },
+    {
+      "id": "N_011",
+      "text": "muscle aches",
+      "type": "SYMPTOM",
+      "evidence": "I feel kind of overall achy",
+      "turn_id": "P-20"
+    },
+    {
+      "id": "N_012",
+      "text": "reflux",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "I have some um like reflux",
+      "turn_id": "P-25"
+    },
+    {
+      "id": "N_013",
+      "text": "enlarged prostate",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "my prostate's a little big",
+      "turn_id": "P-25"
+    },
+    {
+      "id": "N_014",
+      "text": "Avodart",
+      "type": "TREATMENT",
+      "evidence": "I take avodart",
+      "turn_id": "P-26"
+    },
+    {
+      "id": "N_015",
+      "text": "Tums",
+      "type": "TREATMENT",
+      "evidence": "I take a tums here and there",
+      "turn_id": "P-27"
+    },
+    {
+      "id": "N_016",
+      "text": "sick contact exposure",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "my grandson has a cold",
+      "turn_id": "P-23"
+    },
+    {
+      "id": "N_017",
+      "text": "past smoking",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "three years in my 20s",
+      "turn_id": "P-33"
+    },
+    {
+      "id": "N_018",
+      "text": "suspected infection",
+      "type": "DIAGNOSIS",
+      "evidence": "some sort of an infection",
+      "turn_id": "D-36"
+    },
+    {
+      "id": "N_019",
+      "text": "COVID-19",
+      "type": "DIAGNOSIS",
+      "evidence": "can't necessarily rule out covid",
+      "turn_id": "D-36"
+    },
+    {
+      "id": "N_020",
+      "text": "chest X-ray",
+      "type": "PROCEDURE",
+      "evidence": "do a chest X Ray",
+      "turn_id": "D-37"
+    },
+    {
+      "id": "N_021",
+      "text": "COVID swab",
+      "type": "PROCEDURE",
+      "evidence": "a covid swab",
+      "turn_id": "D-37"
+    },
+    {
+      "id": "N_022",
+      "text": "physical exam",
+      "type": "PROCEDURE",
+      "evidence": "do a physical exam",
+      "turn_id": "D-38"
+    },
+    {
+      "id": "N_023",
+      "text": "self-isolation",
+      "type": "TREATMENT",
+      "evidence": "Try to self isolate as much as possible",
+      "turn_id": "D-37"
+    },
+    {
+      "id": "N_024",
+      "text": "chest",
+      "type": "LOCATION",
+      "evidence": "have a look at your chest",
+      "turn_id": "D-37"
+    },
+    {
+      "id": "N_025",
+      "text": "throat",
+      "type": "LOCATION",
+      "evidence": "a sore throat",
+      "turn_id": "D-9"
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "N_001",
+      "target_id": "N_018",
+      "type": "INDICATES",
+      "evidence": "the difficulty breathing, of course",
+      "turn_id": "D-36"
+    },
+    {
+      "source_id": "N_002",
+      "target_id": "N_018",
+      "type": "INDICATES",
+      "evidence": "infection with the fevers and fatigue",
+      "turn_id": "D-36"
+    },
+    {
+      "source_id": "N_005",
+      "target_id": "N_018",
+      "type": "INDICATES",
+      "evidence": "infection with the fevers",
+      "turn_id": "D-36"
+    },
+    {
+      "source_id": "N_011",
+      "target_id": "N_018",
+      "type": "INDICATES",
+      "evidence": "fatigue and muscle aches",
+      "turn_id": "D-36"
+    },
+    {
+      "source_id": "N_006",
+      "target_id": "N_019",
+      "type": "INDICATES",
+      "evidence": "can't necessarily rule out covid",
+      "turn_id": "D-36"
+    },
+    {
+      "source_id": "N_007",
+      "target_id": "N_019",
+      "type": "INDICATES",
+      "evidence": "can't necessarily rule out covid",
+      "turn_id": "D-36"
+    },
+    {
+      "source_id": "N_014",
+      "target_id": "N_013",
+      "type": "TAKEN_FOR",
+      "evidence": "I take avodart",
+      "turn_id": "P-26"
+    },
+    {
+      "source_id": "N_015",
+      "target_id": "N_012",
+      "type": "TAKEN_FOR",
+      "evidence": "for the the reflux I take a tums",
+      "turn_id": "P-27"
+    },
+    {
+      "source_id": "N_023",
+      "target_id": "N_019",
+      "type": "TAKEN_FOR",
+      "evidence": "Try to self isolate as much as possible",
+      "turn_id": "D-37"
+    },
+    {
+      "source_id": "N_020",
+      "target_id": "N_018",
+      "type": "INDICATES",
+      "evidence": "do a chest X Ray just to make sure",
+      "turn_id": "D-37"
+    },
+    {
+      "source_id": "N_021",
+      "target_id": "N_019",
+      "type": "INDICATES",
+      "evidence": "a covid swab",
+      "turn_id": "D-37"
+    },
+    {
+      "source_id": "N_009",
+      "target_id": "N_018",
+      "type": "INDICATES",
+      "evidence": "sore throat and cough",
+      "turn_id": "D-36"
+    },
+    {
+      "source_id": "N_009",
+      "target_id": "N_025",
+      "type": "LOCATED_AT",
+      "evidence": "a sore throat",
+      "turn_id": "D-9"
+    },
+    {
+      "source_id": "N_016",
+      "target_id": "N_018",
+      "type": "CAUSES",
+      "evidence": "my grandson has a cold",
+      "turn_id": "P-23"
+    }
+  ]
+}
