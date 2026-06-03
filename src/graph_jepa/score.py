@@ -23,6 +23,7 @@ CLI::
 from __future__ import annotations
 
 import argparse
+import json
 import math
 from pathlib import Path
 from typing import List, Tuple
@@ -126,7 +127,15 @@ def run(args) -> None:
         output_path.mkdir(parents=True, exist_ok=True)
 
     for jf in inputs:
-        graph = PatientGraph.load(jf)
+        try:
+            graph = PatientGraph.load(jf)
+        except (ValueError, KeyError, json.JSONDecodeError) as exc:
+            # Skip sidecar JSON that isn't a patient graph (e.g. _stats.json)
+            # so a whole output directory can be scored in one pass.
+            if output_is_dir:
+                print(f"{jf.name}: skipped (not a KG: {exc})")
+                continue
+            raise
         scores, flags = score_graph(graph, model, encoder, cfg, device)
         graph.annotate_edges(scores, flags)
 

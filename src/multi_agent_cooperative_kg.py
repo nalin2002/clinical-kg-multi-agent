@@ -23,10 +23,23 @@ import time
 from pathlib import Path
 from typing import Optional
 
-from Clinical_KG_OS_LLM.paths import transcripts_dir
+
+def default_transcripts_dir() -> Path:
+    """Resolve the default transcript directory.
+
+    Prefers the sibling ``Clinical_KG_OS_LLM`` package when it is importable
+    (the original layout), otherwise falls back to this repo's bundled
+    ``data/transcripts``. Override per-run with ``--transcripts-dir``.
+    """
+    try:
+        from Clinical_KG_OS_LLM.paths import transcripts_dir  # type: ignore
+
+        return transcripts_dir()
+    except Exception:
+        return Path(__file__).resolve().parent.parent / "data" / "transcripts"
 
 
-TRANSCRIPT_DIR = transcripts_dir()
+TRANSCRIPT_DIR = default_transcripts_dir()
 MAX_RETRIES = 3
 REQUEST_TIMEOUT_SECONDS = 60.0
 OUTPUT_SUFFIX = "cooperative_multi_agent"
@@ -329,10 +342,34 @@ def read_transcript(path: Path) -> str:
     return path.read_text(encoding="utf-8")
 
 
-def get_transcript_files(res_ids: Optional[list[str]] = None) -> list[Path]:
+NOTE_HEADER = (
+    "=== CLINICAL NOTE (post-visit clinician summary; use as supporting "
+    "context for extraction) ==="
+)
+
+
+def build_source_text(transcript: str, note: str = "") -> str:
+    """Combine the dialogue transcript with an optional clinical note.
+
+    The note (when present, e.g. for ACI-Bench) is appended under a labeled
+    header so the extraction agents use it as additional context and the
+    deterministic validator grounds note-derived evidence against it too. For
+    transcripts without a note (the in-corpus set), the transcript is returned
+    unchanged.
+    """
+    note = (note or "").strip()
+    if not note:
+        return transcript
+    return f"{transcript}\n\n{NOTE_HEADER}\n{note}"
+
+
+def get_transcript_files(
+    res_ids: Optional[list[str]] = None, transcript_dir: Optional[Path] = None
+) -> list[Path]:
+    base = transcript_dir or TRANSCRIPT_DIR
     files = [
         d / f"{d.name}.txt"
-        for d in sorted(TRANSCRIPT_DIR.glob("RES*"))
+        for d in sorted(base.glob("RES*"))
         if d.is_dir() and (d / f"{d.name}.txt").exists()
     ]
     if res_ids:
@@ -903,31 +940,32 @@ def deterministic_human_style_enrichment(kg: dict, transcript: str) -> dict:
     return _renumber_graph(nodes, edges)
 
 
-def run_pipeline(transcript: str, client: OpenRouterClient) -> tuple[dict, dict]:
+def run_pipeline(transcript: str, client: OpenRouterClient, note: str = "") -> tuple[dict, dict]:
     usage_total = {"prompt_tokens": 0, "completion_tokens": 0}
+    source = build_source_text(transcript, note)
 
     def add_usage(usage: dict) -> None:
         usage_total["prompt_tokens"] += usage.get("prompt_tokens", 0)
         usage_total["completion_tokens"] += usage.get("completion_tokens", 0)
 
     print("    [1/6] high-recall entities...", end=" ", flush=True)
-    candidates, usage = agent1_high_recall_entities(transcript, client)
+    candidates, usage = agent1_high_recall_entities(source, client)
     add_usage(usage)
     print(f"{len(candidates)} candidates", flush=True)
 
     print("    [2/6] precision filter...", end=" ", flush=True)
-    filtered, usage = agent2_precision_filter(candidates, transcript, client)
+    filtered, usage = agent2_precision_filter(candidates, source, client)
     add_usage(usage)
     print(f"{len(filtered)} kept", flush=True)
 
     print("    [3/6] negations...", end=" ", flush=True)
-    negations, usage = agent3_negations(transcript, client)
+    negations, usage = agent3_negations(source, client)
     add_usage(usage)
     nodes = merge_nodes(filtered + negations)
     print(f"{len(negations)} negations, {len(nodes)} merged nodes", flush=True)
 
     print("    [4/6] relations...", end=" ", flush=True)
-    edges, usage = agent4_relations(nodes, transcript, client)
+    edges, usage = agent4_relations(nodes, source, client)
     add_usage(usage)
     kg = {"nodes": nodes, "edges": edges}
     print(f"{len(edges)} candidate edges", flush=True)
@@ -938,10 +976,16 @@ def run_pipeline(transcript: str, client: OpenRouterClient) -> tuple[dict, dict]
     print(f"{len(kg.get('nodes', []))} nodes", flush=True)
 
     print("    [6/6] deterministic validator/enrichment...", end=" ", flush=True)
-    kg = deterministic_validator(kg, transcript)
-    kg = deterministic_human_style_enrichment(kg, transcript)
+    kg = deterministic_validator(kg, source)
+    kg = deterministic_human_style_enrichment(kg, source)
     print(f"{len(kg['nodes'])}n/{len(kg['edges'])}e", flush=True)
     return kg, usage_total
+
+
+def read_note(txt_path: Path) -> str:
+    """Load the sibling ``<res_id>_note.txt`` clinical note, if it exists."""
+    note_path = txt_path.with_name(f"{txt_path.stem}_note.txt")
+    return note_path.read_text(encoding="utf-8") if note_path.exists() else ""
 
 
 def process_one(txt_path: Path, client: OpenRouterClient, output_dir: Path) -> tuple[str, str, int, int, dict]:
@@ -951,10 +995,12 @@ def process_one(txt_path: Path, client: OpenRouterClient, output_dir: Path) -> t
         return res_id, "SKIP", 0, 0, {}
 
     transcript = read_transcript(txt_path)
-    print(f"\n  {res_id}:")
-    kg, usage = run_pipeline(transcript, client)
+    note = read_note(txt_path)
+    print(f"\n  {res_id}:{' (+note)' if note.strip() else ''}")
+    kg, usage = run_pipeline(transcript, client, note)
     kg["_usage"] = usage
     kg["_method"] = OUTPUT_SUFFIX
+    kg["_used_note"] = bool(note.strip())
     output_file.write_text(json.dumps(kg, indent=2, ensure_ascii=False), encoding="utf-8")
     return res_id, "OK", len(kg["nodes"]), len(kg["edges"]), usage
 
@@ -972,15 +1018,23 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Cooperative multi-agent clinical KG extractor")
     parser.add_argument("--output", required=True, help="Output directory for per-transcript KG JSON files")
     parser.add_argument("--res-ids", nargs="+", default=None, help="Optional RES IDs to process")
+    parser.add_argument(
+        "--transcripts-dir",
+        default=None,
+        help="Directory of RES*/RES*.txt transcripts (e.g. ACI-Bench). "
+        f"Default: {TRANSCRIPT_DIR}",
+    )
     args = parser.parse_args()
 
     output_dir = Path(args.output)
     output_dir.mkdir(parents=True, exist_ok=True)
+    transcript_dir = Path(args.transcripts_dir) if args.transcripts_dir else TRANSCRIPT_DIR
     client = load_client()
-    transcript_files = get_transcript_files(args.res_ids)
+    transcript_files = get_transcript_files(args.res_ids, transcript_dir)
 
     print("Cooperative Multi-Agent KG Pipeline")
     print(f"Output: {output_dir}")
+    print(f"Transcripts dir: {transcript_dir}")
     print(f"Transcripts: {len(transcript_files)}")
     print("=" * 60)
 

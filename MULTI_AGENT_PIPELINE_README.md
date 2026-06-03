@@ -250,6 +250,71 @@ Score against the human-curated baseline:
   --output outputs/cooperative_new/score_report_cooperative_new_all.json
 ```
 
+## Running on ACI-Bench
+
+The pipeline can run on the [`mkieffer/ACI-Bench`](https://huggingface.co/datasets/mkieffer/ACI-Bench)
+doctor-patient encounters instead of (or in addition to) the bundled 20
+transcripts. ACI-Bench is pulled from the Hugging Face Hub, converted into the
+same bracketed `[D-N] D: ... / [P-N] P: ...` transcript format the extractor
+keys on, and then fed through the multi-agent extractor and the Graph-JEPA
+refinement layer.
+
+One command runs the whole thing (pull → extract → train-if-needed → JEPA score):
+
+```bash
+# all train-split encounters
+./run_aci_bench.sh
+
+# quick smoke test on the first 5 encounters
+ACI_LIMIT=5 ./run_aci_bench.sh
+
+# specific encounters
+ACI_IDS="D2N008 D2N018" ./run_aci_bench.sh
+```
+
+Artifacts:
+
+- Transcripts: `data/aci_bench/transcripts/RES_<ENCOUNTER>/RES_<ENCOUNTER>.txt`
+- Per-transcript KGs: `outputs/aci_bench/sub_kgs/`
+- JEPA-annotated KGs: `outputs/aci_bench/sub_kgs_jepa/`
+
+The steps can also be run individually:
+
+```bash
+# 1. pull transcripts
+PYTHONPATH=src python -m aci_bench --split train --out data/aci_bench/transcripts
+
+# 2. multi-agent extraction over the ACI transcripts
+python src/multi_agent_cooperative_kg.py \
+  --output outputs/aci_bench/sub_kgs \
+  --transcripts-dir data/aci_bench/transcripts
+
+# 3. Graph-JEPA refinement (annotate-only)
+PYTHONPATH=src python -m graph_jepa.train --data synthetic --out checkpoints/
+PYTHONPATH=src python -m graph_jepa.score \
+  --input outputs/aci_bench/sub_kgs \
+  --checkpoint checkpoints/graph_jepa.pt \
+  --output outputs/aci_bench/sub_kgs_jepa
+```
+
+Notes:
+
+- ACI-Bench has no human-curated KG, so the `dump_graph` unification and
+  composite scorer (which compare against `data/human_curated/unified_graph_curated.json`)
+  are not part of this flow. The deliverable is the per-transcript multi-agent
+  KGs plus their JEPA `jepa_score` / `jepa_flag` annotations. Evaluation is done
+  downstream via RAG over the KGs (with a separate query set), not against the
+  note, so using the note for construction does not contaminate evaluation.
+- The paired clinical note (`RES_<ENCOUNTER>_note.txt`) is used as **additional
+  extraction context**: it is appended to the dialogue under a labeled header
+  before the multi-agent agents run, and the deterministic validator grounds
+  evidence against the transcript + note. Output KGs are tagged with
+  `_used_note: true`. In-corpus transcripts have no note file, so they are
+  extracted from dialogue alone (`_used_note: false`) — behavior is unchanged.
+- `--transcripts-dir` works for any directory shaped like `RES*/RES*.txt`, so
+  the same extractor runs unchanged on the in-corpus transcripts (the default)
+  or on ACI-Bench.
+
 ## How the Enriched v2 Output Was Produced
 
 The current `outputs/cooperative_20_enriched_v2` artifact was produced by applying the deterministic validator/enrichment layer to the prior LLM-generated files in `outputs/cooperative_20/sub_kgs`, then re-running `dump_graph.py` and `kg_similarity_scorer.py`.
