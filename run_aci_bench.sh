@@ -11,11 +11,15 @@
 #   4. Annotate each per-transcript KG edge with jepa_score / jepa_flag.
 #
 # Usage:
-#   ./run_aci_bench.sh                       # all train-split encounters
+#   ./run_aci_bench.sh                       # train split, all 3 subsets
 #   ACI_LIMIT=5 ./run_aci_bench.sh           # first 5 encounters (smoke test)
+#   ACI_SUBSETS="aci virtscribe" ./run_aci_bench.sh   # restrict subsets
 #   ACI_IDS="D2N008 D2N018" ./run_aci_bench.sh
 #   GRAPH_JEPA_CKPT=checkpoints/graph_jepa.pt ./run_aci_bench.sh   # reuse a ckpt
 #   GRAPH_JEPA_PRUNE=0.25 ./run_aci_bench.sh # opt-in edge pruning
+#
+# ACI-Bench ships three subsets (aci, virtassist, virtscribe); all are pulled
+# by default.
 #
 # Requires api_keys.json with an "openrouter" key for the extraction step.
 
@@ -41,6 +45,10 @@ if [ -n "${ACI_IDS:-}" ]; then
     PULL_ARGS+=(--ids ${ACI_IDS})
 else
     PULL_ARGS+=(--split "$ACI_SPLIT")
+fi
+if [ -n "${ACI_SUBSETS:-}" ]; then
+    # shellcheck disable=SC2206
+    PULL_ARGS+=(--subsets ${ACI_SUBSETS})
 fi
 if [ -n "${ACI_LIMIT:-}" ]; then
     PULL_ARGS+=(--limit "$ACI_LIMIT")

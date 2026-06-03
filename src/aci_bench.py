@@ -12,10 +12,16 @@ The transcript uses the same **bracketed** turn-tag format as the in-corpus
 transcripts under ``data/transcripts`` (``[D-1] D: ...`` / ``[P-1] P: ...``),
 which is what ``multi_agent_cooperative_kg`` keys on (regex ``\\[([PD]-\\d+)\\]``).
 
+ACI-Bench ships as three Hugging Face *configs* (subsets) - ``aci``,
+``virtassist`` and ``virtscribe`` - each with ``train/valid/test1/test2/test3``
+splits. By default every subset is pulled and processed; restrict with
+``--subsets``.
+
 CLI::
 
     PYTHONPATH=src python -m aci_bench --split train --out data/aci_bench/transcripts
-    PYTHONPATH=src python -m aci_bench --split train --limit 5 --out data/aci_bench/transcripts
+    PYTHONPATH=src python -m aci_bench --all --out data/aci_bench/transcripts
+    PYTHONPATH=src python -m aci_bench --subsets aci virtscribe --split train
     PYTHONPATH=src python -m aci_bench --ids D2N008 D2N018 --out data/aci_bench/transcripts
 
 Requires the ``datasets`` package (``pip install datasets``).
@@ -33,6 +39,8 @@ from datasets import load_dataset
 
 
 HF_DATASET = "mkieffer/ACI-Bench"
+# ACI-Bench subsets are exposed as separate HF dataset configs.
+CONFIGS = ("aci", "virtassist", "virtscribe")
 SPLITS = ("train", "valid", "test1", "test2", "test3")
 DEFAULT_OUT = Path("data/aci_bench/transcripts")
 
@@ -77,7 +85,8 @@ def write_encounter(row: dict, out_dir: Path) -> Path:
                 "source": "ACI-Bench",
                 "hf_dataset": HF_DATASET,
                 "encounter_id": eid,
-                "dataset": row.get("dataset"),
+                "subset": row.get("_subset"),
+                "split": row.get("_split"),
                 "doctor_turns": d_n,
                 "patient_turns": p_n,
                 "transcript_chars": len(transcript),
@@ -90,17 +99,34 @@ def write_encounter(row: dict, out_dir: Path) -> Path:
     return txt_path
 
 
-def _load_rows(splits: Iterable[str]) -> dict[str, dict]:
-    """Load encounters across the requested splits, keyed by encounter_id."""
+def _load_rows(splits: Iterable[str], subsets: Iterable[str]) -> dict[str, dict]:
+    """Load encounters across the requested subsets x splits, keyed by id.
+
+    Each ACI-Bench subset (``aci`` / ``virtassist`` / ``virtscribe``) is a
+    distinct HF config, so we load every requested ``(config, split)`` pair.
+    Rows are tagged with their originating ``_subset`` / ``_split``.
+    """
     by_id: dict[str, dict] = {}
-    for sp in splits:
-        try:
-            ds = load_dataset(HF_DATASET, split=sp)
-        except Exception as exc:  # split may not exist for every config
-            print(f"[aci-bench] skipping split {sp!r}: {exc}", flush=True)
-            continue
-        for row in ds:
-            by_id[row["encounter_id"]] = dict(row)
+    for cfg in subsets:
+        for sp in splits:
+            try:
+                ds = load_dataset(HF_DATASET, name=cfg, split=sp)
+            except Exception as exc:  # a split may not exist for a config
+                print(f"[aci-bench] skipping {cfg}/{sp}: {exc}", flush=True)
+                continue
+            n = 0
+            for row in ds:
+                eid = row["encounter_id"]
+                prev = by_id.get(eid)
+                if prev is not None and prev["_subset"] != cfg:
+                    print(f"[aci-bench] WARNING: encounter id {eid} found in both "
+                          f"{prev['_subset']} and {cfg}; keeping {cfg}.", flush=True)
+                rec = dict(row)
+                rec["_subset"] = cfg
+                rec["_split"] = sp
+                by_id[eid] = rec
+                n += 1
+            print(f"[aci-bench] loaded {cfg}/{sp}: {n} encounters", flush=True)
     return by_id
 
 
@@ -116,6 +142,8 @@ def main() -> None:
                        help="Pull specific encounter ids (e.g. D2N008 D2N018).")
     ap.add_argument("--all", action="store_true",
                     help="Pull every encounter across all splits.")
+    ap.add_argument("--subsets", nargs="+", choices=CONFIGS, default=list(CONFIGS),
+                    help="ACI-Bench subsets to pull (default: all three).")
     ap.add_argument("--limit", type=int, default=None,
                     help="Cap the number of encounters written (after ordering).")
     args = ap.parse_args()
@@ -128,7 +156,7 @@ def main() -> None:
     else:
         scan_splits = (args.split,) if args.split else ("train",)
 
-    by_id = _load_rows(scan_splits)
+    by_id = _load_rows(scan_splits, args.subsets)
     if not by_id:
         raise SystemExit("[aci-bench] no encounters loaded from Hugging Face.")
 
@@ -147,7 +175,8 @@ def main() -> None:
     for eid in wanted:
         path = write_encounter(by_id[eid], out_dir)
         meta = json.loads(path.with_name(f"RES_{eid}_meta.json").read_text())
-        print(f"  + {eid:>8}  {meta['doctor_turns']}D/{meta['patient_turns']}P  "
+        print(f"  + {eid:>8}  [{meta['subset']}/{meta['split']}]  "
+              f"{meta['doctor_turns']}D/{meta['patient_turns']}P  "
               f"{meta['transcript_chars']} chars  -> {path}", flush=True)
 
 

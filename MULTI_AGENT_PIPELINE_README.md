@@ -259,16 +259,24 @@ same bracketed `[D-N] D: ... / [P-N] P: ...` transcript format the extractor
 keys on, and then fed through the multi-agent extractor and the Graph-JEPA
 refinement layer.
 
+ACI-Bench ships as three Hugging Face configs (subsets) — `aci`, `virtassist`,
+and `virtscribe` — each with `train/valid/test1/test2/test3` splits. All three
+subsets are pulled and processed by default; each transcript's `_meta.json`
+records its originating `subset` and `split`.
+
 One command runs the whole thing (pull → extract → train-if-needed → JEPA score):
 
 ```bash
-# all train-split encounters
+# train split across all 3 subsets
 ./run_aci_bench.sh
 
 # quick smoke test on the first 5 encounters
 ACI_LIMIT=5 ./run_aci_bench.sh
 
-# specific encounters
+# restrict to specific subsets
+ACI_SUBSETS="aci virtscribe" ./run_aci_bench.sh
+
+# specific encounters (scanned across all subsets/splits)
 ACI_IDS="D2N008 D2N018" ./run_aci_bench.sh
 ```
 
@@ -281,7 +289,7 @@ Artifacts:
 The steps can also be run individually:
 
 ```bash
-# 1. pull transcripts
+# 1. pull transcripts (all subsets, train split; use --all for every split)
 PYTHONPATH=src python -m aci_bench --split train --out data/aci_bench/transcripts
 
 # 2. multi-agent extraction over the ACI transcripts
