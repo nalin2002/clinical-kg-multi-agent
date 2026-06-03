@@ -45,5 +45,25 @@ uv run python -m Clinical_KG_OS_LLM.kg_similarity_scorer \
     --student "$STUDENT_KG" \
     --baseline "$BASELINE"
 
+# ---- Step 4 (optional): Graph-JEPA refinement ----
+# Annotates each unified-graph edge with jepa_score / jepa_flag (annotate-only;
+# never adds/removes facts unless GRAPH_JEPA_PRUNE is set). Enable by setting
+# GRAPH_JEPA_CKPT to a trained checkpoint (see GRAPH_JEPA_README.md).
+if [ -n "$GRAPH_JEPA_CKPT" ]; then
+    echo ""
+    echo "=== Step 4: Graph-JEPA Refinement ==="
+    REFINED_KG="${STUDENT_KG%.json}_jepa.json"
+    PRUNE_ARG=""
+    if [ -n "$GRAPH_JEPA_PRUNE" ]; then
+        PRUNE_ARG="--prune-threshold $GRAPH_JEPA_PRUNE"
+    fi
+    PYTHONPATH="$REPO_ROOT/src" python -m graph_jepa.score \
+        --input "$STUDENT_KG" \
+        --checkpoint "$GRAPH_JEPA_CKPT" \
+        --output "$REFINED_KG" \
+        $PRUNE_ARG
+    echo "Refined KG written to: $REFINED_KG"
+fi
+
 echo ""
 echo "Done! Your unified KG is at: $STUDENT_KG"
