@@ -1,0 +1,67 @@
+CHIEF COMPLAINT
+
+Chest pain on exertion.
+
+MEDICAL HISTORY
+
+The patient has a medical history of diabetes type 2. She has not been formally diagnosed with hypertension, but her blood pressures have been trending high.
+
+FAMILY HISTORY
+
+Patient reports family history of heart disease.
+
+MEDICATIONS
+
+Patient reports taking metformin 500 mg twice daily.
+
+REVIEW OF SYSTEMS
+
+Constitutional: Denies diaphoresis or clamminess.
+Cardiovascular: Reports chest pain.
+Respiratory: Denies dyspnea.
+Gastrointestinal: Denies nausea, vomiting, or diarrhea.
+
+PHYSICAL EXAM
+
+Neck
+- General Examination: No JVD, swelling, or carotid bruits.
+
+Respiratory
+- Assessment of Respiratory Effort:
+- Auscultation of Lungs: Clear bilaterally. No wheezes, rales, or rhonchi.
+
+Cardiovascular
+- Auscultation of Heart: 2/6 systolic ejection murmur, otherwise normal rate and rhythm. No murmurs, gallops or rubs. Pulses are equal.
+
+Gastrointestinal
+- Examination of Abdomen: No masses or tenderness. Soft, no guarding.
+
+Musculoskeletal
+- Examination: 1+ nonpitting edema in the ankles. No calf tenderness.
+
+RESULTS
+
+EKG was obtained and reviewed in office today and is unremarkable. Hemoglobin A1c: 7.0
+
+ASSESSMENT AND PLAN
+
+1. Chest pain.
+- Medical Reasoning: Considering her history of diabetes, possible history of hypertension, and family history of heart disease, I suspect her chest pain is likely unstable angina. Her recent EKG was unremarkable and there are no other signs of heart attack, but I am worried she may have some sort of a blockage causing her pain.
+- Patient Education and Counseling: We discussed proper protocol for sublingual nitroglycerin for chest pain. I advised her to go to the emergency department if the medication is not effective after approximately 5 minutes.
+- Medical Treatment: We will have her start a regimen of baby aspirin at 81 mg daily, for which I have sent in a prescription today. I also sent a prescription for nitroglycerin up to 3 tablets every 5 minutes as needed. Finally, I am going to have her follow up with cardiology for further evaluation.
+
+2. Type 2 diabetes.
+- Medical Reasoning: She appears to be doing well on her current regimen.
+- Patient Education and Counseling: I encouraged the patient to keep her appointment with ophthalmology for evaluation of diabetic retinopathy.
+- Medical Treatment: I'm going to put in an order for a repeat hemoglobin A1c to check for any needed medication adjustments and have her follow up in 2 weeks. In the meantime, I want her to continue with metformin 500 mg twice daily and dietary modifications.
+
+3. Hypertension.
+- Medical Reasoning: Several providers, including myself, have noted a trend of elevated blood pressures in the patient's chart.
+- Patient Education and Counseling: I advised the patient to monitor her blood pressures at home over the next 2 weeks and report her readings to me via MyChart. This should help us determine if any adjustments need to be made to her new medications. We discussed the possible side effects of hydrochlorothiazide how this will hopefully reduce some of her swelling seen on physical exam. All of her questions were answered.
+- Medical Treatment: I'm going to have her start hydrochlorothiazide at a low dose.
+
+Patient Agreements: The patient understands and agrees with the recommended medical treatment plan.
+
+INSTRUCTIONS
+
+The patient will follow up in 2 weeks.

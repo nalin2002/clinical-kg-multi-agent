@@ -1,0 +1,60 @@
+CHIEF COMPLAINT
+
+Asthma.
+
+MEDICAL HISTORY
+
+Patient reports history of asthma.
+
+SURGICAL HISTORY
+
+Patient reports history of tonsillectomy.
+
+SOCIAL HISTORY
+
+Patient reports she is a student and enjoys playing water polo as well as being active with aerobics and running.
+
+ALLERGIES
+
+Patient reports history of seasonal allergies.
+
+MEDICATIONS
+
+Patient reports using an albuterol inhaler, 2 puffs as needed.
+
+REVIEW OF SYSTEMS
+
+Constitutional: Reports fatigue.
+Respiratory: Reports shortness of breath.
+Psychiatric: Reports mood changes.
+
+PHYSICAL EXAM
+
+Ears, Nose, Mouth, and Throat
+- Examination of Ears: Mild fluid in ears.
+- Examination of Mouth: Normal.
+- Examination of Throat: Tonsils have been previously removed.
+
+Gastrointestinal
+- Auscultation: Bowel sounds normal in all 4 quadrants.
+
+Integumentary
+- Examination: No rash or lesions. Normal capillary refill and perfusion.
+- Palpation: No enlarged lymph nodes.
+
+ASSESSMENT AND PLAN
+
+1. Asthma.
+- Medical Reasoning: The patient has experienced an increased need to use her albuterol inhaler. She is not currently utilizing a daily medication. At this time, we will try a daily medication since it looks like she might be having some allergies.
+- Patient Education and Counseling: I explained the side effects of albuterol to the patient. We also discussed Singulair and that she should start to see a difference in her breathing within approximately 1 month.
+- Medical Treatment: We will start her on a daily asthma medication. She can continue to use the albuterol inhaler. We will start her on Singulair in about a month.
+
+2. Mood.
+- Medical Reasoning: The patient reports being under a lot of stress with school. I believe this may be attributing to her mood.
+- Medical Treatment: I would like for the patient to be seen by a therapist. She will also complete our screening questionnaire.
+
+Patient Agreements: The patient understands and agrees with the recommended medical treatment plan.
+
+INSTRUCTIONS
+
+The patient will follow up in 6 weeks for recheck.

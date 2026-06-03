@@ -1,0 +1,53 @@
+CHIEF COMPLAINT
+
+Right knee pain.
+
+SOCIAL HISTORY
+
+Patient reports she is an avid runner who enjoys participating in marathons.
+
+FAMILY HISTORY
+
+Patient denies any known family history of arthritis or other immune disease.
+
+REVIEW OF SYSTEMS
+
+Constitutional: Denies fever.
+Musculoskeletal: Reports right knee pain.
+
+VITALS
+
+Blood pressure: 120/60 mmHg
+Heart rate: 58 bpm
+Respiration: 14
+No fever.
+
+PHYSICAL EXAM
+
+Respiratory
+- Assessment of Respiratory Effort: Normal respiratory effort.
+
+Cardiovascular
+- Examination: Normal pedal pulses in right knee.
+- Auscultation of Heart: Regular rate and rhythm. No murmurs, gallops or rubs.
+
+Musculoskeletal
+- Examination: No clubbing, cyanosis, or edema.
+- Right knee: No pain with movement. No pain with strength testing. No erythema or edema. Small effusion. Tender to palpation over the lateral aspect of the knee.
+
+RESULTS
+
+X-rays of the right knee were obtained and reviewed in office today. These reveal well-maintained joint spaces. There is no evidence of any fracture or arthritis.
+
+ASSESSMENT AND PLAN
+
+1. Right knee sprain.
+- Medical Reasoning: The patient is an avid runner and her symptoms appear to be the result of overuse.
+- Patient Education and Counseling: We discussed the nature of her diagnosis, as well as her x-ray results, in detail. I advised her that this is a common issue for runners and encouraged her to continue her strength training exercises.
+- Medical Treatment: She will take Tylenol 500 mg, 2 tablets, and ibuprofen 200 mg, 2 tablets, 3 times daily to reduce her pain and inflammation. We will also refer her to physical therapy to help strengthen her lower extremities, work on her balance, and demonstrate proper running exercises. She should avoid running for the next 2 weeks until her follow up visit, at which point we can consider adding some additional activity.
+
+Patient Agreements: The patient understands and agrees with the recommended medical treatment plan.
+
+INSTRUCTIONS
+
+The patient will follow up in 2 weeks.

@@ -1,0 +1,69 @@
+CHIEF COMPLAINT
+
+Hospital follow-up after acute on chronic CHF exacerbation.
+
+MEDICAL HISTORY
+
+Patient reports history of hypertension and stage 3 chronic kidney disease.
+
+SOCIAL HISTORY
+
+Patient reports being a football fan.
+
+MEDICATIONS
+
+Patient reports taking Bumex 2 mg once daily, Cozaar 100 mg daily, and Norvasc 5 mg once daily.
+
+REVIEW OF SYSTEMS
+
+Cardiovascular: Denies chest pain.
+Respiratory: Denies shortness of breath.
+Musculoskeletal: Reports bilateral ankle swelling.
+Neurological: Denies any sleep disturbance.
+
+VITALS
+
+BP: 128/72.
+HR: 79 bpm.
+RR: 26.
+SpO2: 99%.
+
+PHYSICAL EXAM
+
+Neck
+- General Examination: No jugular venous distension noted.
+
+Respiratory
+- Auscultation of Lungs: Clear bilaterally.
+
+Cardiovascular
+- Auscultation of Heart: Regular rate. There is a 2/6 systolic ejection murmur, stable.
+
+Musculoskeletal
+- Examination: There is trace edema to the bilateral lower extremities.
+
+RESULTS
+
+Previous echocardiogram is reviewed and revealed a preserved EF of 55% abnormal diastolic filling and mild to moderate mitral regurgitation.
+
+ASSESSMENT AND PLAN
+
+1. Congestive heart failure.
+- Medical Reasoning: This appears to be cause by dietary indiscretion and uncontrolled hypertension.
+- Patient Education and Counseling: We discussed that he should continue to monitor his diet and avoid salty foods. I advised him to weigh himself every day and call me if he gains 3 pounds in 2 days.
+- Medical Treatment: Continue Bumex 2 mg once daily. Referral to nutrition provided for dietary education.
+
+2. Hypertension.
+- Medical Reasoning: This was uncontrolled prior to his hospital visit.
+- Patient Education and Counseling: We discussed the importance of diet and home blood pressure monitoring.
+- Medical Treatment: Continue Cozaar 100 mg daily. Continue Norvasc 5 mg once daily. Renal artery ultrasound ordered for further evaluation.
+
+3. Kidney disease.
+- Medical Reasoning: Due to patient's acute CHF exacerbation, this is to be monitored.
+- Medical Treatment: Lab work ordered.
+
+Patient Agreements: The patient understands and agrees with the recommended medical treatment plan.
+
+INSTRUCTIONS
+
+The patient will follow up in 3 months. He is advised to call should he experience weight gain of 3 pounds in 2 days.

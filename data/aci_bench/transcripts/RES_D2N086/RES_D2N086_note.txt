@@ -1,0 +1,56 @@
+CHIEF COMPLAINT
+
+Non-healing ulcer on his right foot.
+
+HISTORY OF PRESENT ILLNESS
+
+Nicholas Gutierrez is a pleasant 45-year-old male who presents to the clinic today for the evaluation of a non-healing ulcer on his right foot. The patient was referred from his primary care physician. The onset of his pain began 6 weeks ago, after wearing a pair of shoes that were too tight.
+
+Today, he describes a burning, stinging, and throbbing sensation. The patient reports a blister on the pad of the plantar aspect of his foot around his heel. He explains that he has been ambulating on the anterior aspect of his foot. He explains that the top part of the skin of the blister detached, which revealed a thick, soft, mushy skin associated with unpleasant smell and yellow drainage. The patient called his primary care physician, who referred him to our office. He was prescribed a 10-day course of antibiotics approximately 6 days ago. He experienced chills and a fever of 99.7 degrees Fahrenheit. The patient denies any nausea or vomiting. He states that when he started the antibiotics, his foot began to feel pretty good. However, he has now noticed that his foot has turned black around the outside of the wound, and he is experiencing cramping in his calf muscle as well. He also reports a burning red streak that was coming up the front part of his ankle along the inside portion of his calf muscle. While palpating his calf, he has noted stiffness in the muscle that is now up to the patella. The patient reports that he has been coughing a lot over the last 2 days. He has experienced shortness of breath with ambulation around the house. He reports that he purchases new diabetic shoes yearly and changes the inserts every 3 to 4 months.
+
+The patient is diabetic and has diabetic neuropathy. He explains that his blood sugar has been trending in the 300 to 400's over the last 2 weeks. At one point, he had a blood sugar spike to either 500 or 600. He states that his last hemoglobin A1c was 6.7, which has been his average for approximately 2 years. The patient checks his blood sugar 2 to 3 times per day and rarely has a blood sugar that goes over 200. He explains that he used to be on an insulin pump and had an A1c that at one point was 13. He states that he worked with an endocrinologist to get it down to where it is now.
+
+MEDICAL HISTORY
+
+The patient reports a history of diabetic neuropathy.
+
+SOCIAL HISTORY
+
+The patient enjoys hiking.
+
+REVIEW OF SYSTEMS
+
+Constitutional: Reports subjective fever and chills
+Respiratory: Reports cough and shortness of breath with ambulation.
+Gastrointestinal: Denies nausea and vomiting.
+Musculoskeletal: Reports right foot pain and right calf cramping.
+Skin: Reports right foot ulcer with yellow foul smelling drainage, and red streaking coming up the front part of his ankle along the inside portion of his calf muscle.
+
+VITALS
+
+Temperature is slightly elevated.
+Vitals are otherwise good.
+
+PHYSICAL EXAM
+
+CV: Edema and pain in calf. Bilateral palpable femoral and papiteal pulses are present. I do not recognize a palpable dorsalis pedis or posterior tibial pulse; however, they are present via Doppler.
+MSK: Examination of the right foot: The necrotic wound on his heel is present. It is approximately 2 cm x 2 cm. I do recognize the sloughing of the tissue, as well as what looks like cellulitis around the area, and erythema. An odor is present from the wound. I do not appreciate any bony exposure now. No pain to palpation in the effected area.
+
+RESULTS
+
+3 views of the right foot were taken today. These reveal no evidence of osteomyelitis or infection.
+
+ASSESSMENT
+
+Right non-healing diabetic foot ulcer.
+Diabetes.
+
+PLAN
+
+After reviewing the patient's examination and radiographic findings today, I have had a lengthy discussion with the patient in regard to his current symptoms. I have explained to him that I do not see any evidence of osteomyelitis. I am concerned about the redness that is moving up his leg, as well as the swelling, and pain that he has in his calf. I have recommended that we obtain a venous ultrasound to check his blood supply for the wound. I have also recommended that we perform a debridement of the wound today. We may have to obtain a culture and look at different antibiotic therapy. I am recommending that he continue with antibiotics that his primary care physician prescribed.
+
+In regard to his diabetes, I have advised him to follow up with his endocrinologist to ensure that we do continue to keep his hemoglobin A1c below 7. We will need to closely monitor his blood sugar since we are going to be doing some medication therapy with antibiotics and potentially some other medications depending on the culture results.
+
+INSTRUCTIONS
+
+The patient will follow up with me in 7 days to check on his progress.

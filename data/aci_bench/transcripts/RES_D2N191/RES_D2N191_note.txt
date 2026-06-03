@@ -1,0 +1,47 @@
+CHIEF COMPLAINT
+
+Left arm pain.
+
+HISTORY OF PRESENT ILLNESS
+
+Zachary Wood is a 45-year-old right-hand-dominant male who presents to the clinic today for the evaluation of left arm pain. The onset of his pain began yesterday when he woke up with pain. He denies any specific injury. The patient locates his pain from his left elbow up all the way to his neck. He describes his pain as an achiness. The patient has been taking Motrin for pain, which does not provide him with relief. He also reports intermittent chest pain that radiates up his neck. He notes that he had to stop cutting the grass the other day because of chest pain. The patient denies any shortness of breath.
+
+For his hypertension, the patient states that his blood pressure has been around 125/72 recently. He is still taking 2.5 mg of Norvasc.
+
+Regarding his type 2 diabetes, his last hemoglobin A1c was 7.2. He takes metformin 500 mg. The patient states that he does not check his blood glucose levels regularly.
+
+MEDICAL HISTORY
+
+Patient reports that he has a past medical history of hypertension and type 2 diabetes.
+
+MEDICATIONS
+
+Patient reports that he currently takes metformin 500 mg and Norvasc 2.5 mg.
+
+REVIEW OF SYSTEMS
+
+Cardiovascular: Reports chest pain.
+Respiratory: Denies shortness of breath.
+Musculoskeletal: Reports left elbow, arm, and neck pain.
+
+VITALS
+
+The patient's blood pressure today is 150/90.
+
+PHYSICAL EXAM
+
+CV: Slight murmur detected, not heard before.
+
+ASSESSMENT
+
+Left arm pain.
+Type 2 diabetes.
+Hypertension.
+
+PLAN
+
+Regarding his left arm pain, I have explained to him that his symptoms are likely a mild heart attack. I have recommended that we obtain an EKG for further evaluation. I have also recommended that the patient take aspirin and nitroglycerin for pain. The patient will follow up with me once the EKG results are available for review and further discussion.
+
+In regards to his diabetes, the patient will continue the 500 mg of metformin for now.
+
+For his hypertension, the patient will continue the 2.5 mg of Norvasc.

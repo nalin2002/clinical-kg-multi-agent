@@ -1,0 +1,61 @@
+CHIEF COMPLAINT
+
+Emergency department follow up.
+
+MEDICAL HISTORY
+
+Patient reports history of hypertension.
+
+MEDICATIONS
+
+Patient reports taking Bumex 2 mg once daily, Cozaar 100 mg daily, and Norvasc 5 mg once daily.
+
+REVIEW OF SYSTEMS
+
+Constitutional: Denies sleep disturbance.
+Cardiovascular: Denies chest pain.
+Respiratory: Denies dyspnea.
+Genitourinary: Reports urinary incontinence in the setting of diuretic medication.
+
+VITALS
+
+Blood Pressure: 128/72 mmHg
+Temperature: 98.7 degrees F
+Heart Rate: 72 bpm
+Oxygen Saturation: 96%
+
+PHYSICAL EXAM
+
+Neck
+- General Examination: No jugular venous distention.
+
+Cardiovascular
+- Auscultation of Heart: Stable 2/6 systolic ejection murmur.
+
+Musculoskeletal
+- Examination: Trace lower extremity edema.
+
+RESULTS
+
+Echocardiogram reveals a preserved ejection fraction of 55%, abnormal diastolic filling, and mild-to-moderate mitral regurgitation.
+
+ASSESSMENT AND PLAN
+
+1. Congestive heart failure.
+- Medical Reasoning: This appears to have been caused by dietary indiscretion and uncontrolled hypertension.
+- Patient Education and Counseling: I encouraged the patient to continue making dietary modifications, including limiting her sodium intake. She could try keeping a food diary, as previously discussed, to log her diet and associated blood pressure readings. I also advised her to monitor her weight daily and contact me if she gains 3 pounds in 2 days.
+- Medical Treatment: Continue with Bumex 2 mg once daily. Referral placed for consult with a nutritionist for education and recommendations regarding her diet.
+
+2. Hypertension.
+- Medical Reasoning: This has been poorly controlled due to inconsistent compliance with medication and dietary indiscretion.
+- Patient Education and Counseling: We discussed dietary modifications as noted above.
+- Medical Treatment: She can continue on Cozaar 100 mg daily and Norvasc 5 mg once daily. Renal artery ultrasound ordered to rule out any issues such as renal artery stenosis.
+
+3. Kidney disease.
+- Medical Treatment: Labs will be ordered to assess her response to new medications.
+
+Patient Agreements: The patient understands and agrees with the recommended medical treatment plan.
+
+INSTRUCTIONS
+
+The patient will follow up in 3 months.

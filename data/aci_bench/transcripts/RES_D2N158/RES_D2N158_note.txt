@@ -1,0 +1,55 @@
+CHIEF COMPLAINT
+
+Abdominal pain.
+
+MEDICAL HISTORY
+
+Patient reports history of diabetes type 2, asthma, and gastritis.
+
+SOCIAL HISTORY
+
+Patient reports history of moderately heavy alcohol use. She also enjoys coffee.
+
+MEDICATIONS
+
+Patient reports taking metformin 500 mg twice daily, Flovent twice daily, and albuterol as-needed.
+
+REVIEW OF SYSTEMS
+
+Constitutional: Denies fever.
+Gastrointestinal: Reports abdominal pain, nausea, and vomiting. Denies diarrhea.
+
+PHYSICAL EXAM
+
+Respiratory
+- Auscultation of Lungs: Mild end expiratory wheezes, very faint.
+
+Cardiovascular
+- Auscultation of Heart: Grade 3/6 systolic ejection murmur, unchanged from prior exam.
+
+Gastrointestinal
+- Examination of Abdomen: Mild tenderness in the epigastrium. Abdomen is soft. No tenderness in the right lower quadrant. No significant tenderness in the right upper quadrant.
+
+ASSESSMENT AND PLAN
+
+1. Abdominal pain.
+- Medical Reasoning: This appears to be acute gastritis, likely related to her increased caffeine intake. She has a history of moderately heavy alcohol use as well.
+- Patient Education and Counseling: We discussed appropriate limitations for alcohol intake as well as spicy foods.
+- Medical Treatment: Reduce caffeine intake. Reduce alcohol intake. Prescription for Zantac twice daily provided. I'm going to order a urinalysis, urine pregnancy test, CBC, and a comprehensive metabolic panel.
+
+2. Diabetes type 2.
+- Medical Reasoning: She is doing well, but I want to make a slight adjustment to her dosage.
+- Patient Education and Counseling: I advised her to continue with home monitoring and bring those readings to her next appointment.
+- Medical Treatment: Metformin 1000 mg in the morning and 500 mg at night.
+Continue home blood sugar monitoring.
+
+3. Asthma.
+- Medical Reasoning: She seems to be doing well on her current regimen and has not had any asthma attacks lately.
+- Patient Education and Counseling: She was advised to take Flovent daily despite no recent asthma attacks as this will decrease the frequency of her attacks.
+- Medical Treatment: Continue on daily Flovent. Continue albuterol as-needed.
+
+Patient Agreements: The patient understands and agrees with the recommended medical treatment plan.
+
+INSTRUCTIONS
+
+The patient will follow up in 4 weeks.

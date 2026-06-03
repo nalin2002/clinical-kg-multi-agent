@@ -1,0 +1,35 @@
+CHIEF COMPLAINT
+
+Right hand pain.
+
+HISTORY OF PRESENT ILLNESS
+
+Alexis Gutierrez is a pleasant 33-year-old female who presents to the clinic today for the evaluation of right hand pain.
+
+Approximately 6 months ago, the patient began experiencing intermittent episodes of numbness and tingling in the 1st, 2nd, and 3rd digits on her right hand. The numbness and tingling has become constant over the past month or so and is accompanied by pain with typing and using a mouse, which she does all day while working on a keyboard. She denies any sleep disturbance associated with her symptoms. Rest and ibuprofen have been the most helpful at providing symptomatic relief.
+
+SOCIAL HISTORY
+
+The patient reports that she works on a keyboard all day.
+
+MEDICATIONS
+
+The patient reports that she has been taking ibuprofen.
+
+REVIEW OF SYSTEMS
+
+Constitutional: Denies sleep disturbance.
+Musculoskeletal: Reports pain in the 1st, 2nd, and 3rd digits on the right hand.
+Neurological: Reports numbness and tingling in the 1st, 2nd, and 3rd digits on the right hand.
+
+PHYSICAL EXAM
+
+MSK: Examination of the right hand: Pain with flexion and extension of the wrist.. Decreased grip strength on the right compared to the left. Positive Tinel's sign.
+
+ASSESSMENT
+
+Right carpal tunnel syndrome.
+
+PLAN
+
+After reviewing her symptoms and exam findings, I believe her symptoms are secondary to carpal tunnel syndrome. We discussed the nature of this condition, as well as her treatment options, in detail. I recommend we treat this conservatively with nighttime wrist splinting and ibuprofen, but I want to increase her dose to 600 mg 4 times daily. I'm also going to order an EMG/Nerve conduction study for further evaluation. If this is positive, we can consider additional treatment with physical therapy or surgical intervention with carpal tunnel release.

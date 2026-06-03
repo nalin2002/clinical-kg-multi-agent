@@ -1,0 +1,48 @@
+CHIEF COMPLAINT
+
+Right flank pain.
+
+HISTORY OF PRESENT ILLNESS
+
+Joshua Reyes is a pleasant 18-year-old male who presents to the clinic today for evaluation of right flank pain.
+
+For the last 2 weeks, the patient has been experiencing pain that starts in his right flank and radiates down into his groin. He also recalls one episode in which the pain radiated down into one of his testicles. Although his pain is intermittent depending on his fluid intake and activity level, he rates the pain as a 4/10 at its worst. Otherwise, the pain is a 1-2/10. He denies any pain with urination, hematuria, nausea, vomiting, or fevers, but recalls possibly having chills at one point. Over-the-counter ibuprofen provides partial relief of his pain. Of note, the patient has a personal history of kidney stones, some which were passed independently, usually within a week, while others required surgical intervention or lithotripsy. He also has several family members with a histories of kidney stones.
+
+MEDICAL HISTORY
+
+The patient has a personal history of kidney stones treated conservatively, surgically, and with lithotripsy.
+
+FAMILY HISTORY
+
+The patient has a significant family history of kidney stones.
+
+REVIEW OF SYSTEMS
+
+Constitutional: Reports chills. Denies fever
+Gastrointestinal: Denies nausea or vomiting.
+Genitourinary: Reports right flank pain. Denies dysuria or hematuria.
+
+VITALS
+
+Blood pressure: Slightly elevated
+
+PHYSICAL EXAM
+
+GI/GU: No tenderness to palpation of the abdomen.
+MSK: Examination of the right flank: CVA tenderness.
+
+RESULTS
+
+CT scan of the right flank was reviewed today, 05/06/2022. It revealed a kidney stone measuring 0.5 cm in size, located on the proximal right ureter. There is no evidence of hydronephrosis.
+
+ASSESSMENT
+
+Kidney stone, right side.
+
+PLAN
+
+After reviewing the patient's examination and CT scan findings today, we discussed the diagnosis and treatment plan. I recommend that we treat the patient conservatively at this point. I advised him to continue drinking plenty of fluids so he can hopefully pass the stone. He has been controlling his pain with over-the-counter ibuprofen and should continue to do so. I also prescribed tramadol 50 mg for any breakthrough pain. His primary care physician provided him with a strainer and I advised him to continue using this as well. I want to order a BMP, a urinalysis, and a urine culture to rule out any need for antibiotics. We will have him follow up in 2 weeks for re-evaluation. If he has not passed the kidney stone at that time, we can consider proceeding with lithotripsy.
+
+INSTRUCTIONS
+
+The patient will follow up in 2 weeks.

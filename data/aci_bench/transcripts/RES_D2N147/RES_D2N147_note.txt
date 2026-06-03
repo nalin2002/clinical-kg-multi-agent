@@ -1,0 +1,41 @@
+CHIEF COMPLAINT
+
+Right shoulder injury.
+
+HISTORY OF PRESENT ILLNESS
+
+Matthew Allen is a 67-year-old male, right-hand-dominant, male who presents to the clinic today for the evaluation of a right shoulder injury. The patient sustained this injury 4 days ago, when he was tackled a couple of times playing pick up football and landed on his right shoulder. He states that he was able to return to the game, however he has had pain since that time. The patient locates his pain to the posterior aspect of his shoulder. He denies any numbness or tingling in his fingers. He states that the strength in his hand is okay; however, he has been trying to avoid lifting anything too heavy. Mr. Allen denies being able to touch his shoulder to his ear because of pain. The patient has been taking Tylenol for pain, which does not provide relief. He denies any neck problems or other joint problems. The patient denies any previous orthopedic injuries to his right shoulder. He denies any fever or chills since the injury, but does note a headache. The patient states that he hit his head at the time of the injury but did not pass out.
+
+SURGICAL HISTORY
+
+The patient has a history of an appendectomy 3 to 4 years ago.
+
+REVIEW OF SYSTEMS
+
+Constitutional: Denies fever or chills.
+Musculoskeletal: Reports right shoulder pain. Denies neck pain.
+Neurological: Reports headache. Denies numbness or tingling.
+
+VITALS
+
+BP: 122/76.
+HR: 82 bpm.
+SpO2: 95% on room air.
+
+PHYSICAL EXAM
+
+NECK: Examination of the cervical spine reveals no tenderness to palpation. Full ROM.
+HEAD: There does not appear to be any trauma. No ecchymosis or bruising.
+MSK: Examination of the right shoulder reveals pain to palpation of the posterior shoulder at the acromioclavicular joint. There is decreased abduction and adduction to about 90 degrees only. Pain with supination and pronation of the right arm. Palpable radial artery pulse.
+
+RESULTS
+
+X-ray of the right shoulder reveals an acute acromioclavicular joint fracture.
+
+ASSESSMENT
+
+Right shoulder acute acromioclavicular joint fracture.
+
+PLAN
+
+After reviewing the patient's examination and radiographic findings today, I have had a lengthy discussion with the patient in regards to his current symptoms. I have explained to him that his x-rays revealed an acute acromioclavicular joint fracture. The plan is to place the patient in a sling and prescribe meloxicam 15 mg once a day to treat his pain. I also recommend that we obtain a CT scan of the right shoulder to evaluate further. I recommend that the patient attend formal physical therapy to strengthen his right shoulder in hopes of avoiding surgery in the future. In the meantime, I have advised him to avoid tackle football.

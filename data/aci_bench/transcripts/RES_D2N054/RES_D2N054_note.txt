@@ -1,0 +1,50 @@
+CHIEF COMPLAINT
+
+Right foot pain.
+
+HISTORY OF PRESENT ILLNESS
+
+Elijah Reyes is a pleasant 45-year-old male who presents to the clinic today for the evaluation of right foot pain. The patient was referred by his primary care physician. He sustained an injury yesterday when he dropped a landscape brick on his right foot while doing yard work. He was able to get up and continue working after the injury. He rates his pain level as an 11 out of 10. The patient also reports numbness in his entire right foot, which has been present for a long time. The patient denies taking any medication for pain.
+
+The patient reports he fractured his right ankle 20 years ago. He received non-operative treatment with casting. He has experienced intermittent soreness and swelling in his right ankle since then.
+
+The patient reports surgical history of his left ankle. He continues to experience soreness and occasional giving way of the left ankle.
+
+MEDICAL HISTORY
+
+Patient reports history of a right ankle fracture 20 years ago.
+
+SURGICAL HISTORY
+
+Patient reports history of left ankle surgery.
+
+REVIEW OF SYSTEMS
+
+Musculoskeletal: Reports right foot pain, right ankle soreness and swelling, and left ankle soreness and instability.
+Neurological: Reports right foot numbness.
+
+VITALS
+
+All vital signs are within the normal limits.
+
+PHYSICAL EXAM
+
+CV: Capillary refill is brisk in less than 3 seconds in the right foot. Strong bounding dorsalis pedis pulse.
+NEURO: Normal sensation. Right foot motor and sensation are intact and equal to the contralateral side.
+MSK: Examination of the right foot: Bruising on the plantar and dorsal aspects of the foot. I do appreciate associated swelling. Tenderness to palpation over the midfoot.
+
+RESULTS
+
+An x-ray of the right foot was obtained and reviewed today. It demonstrates dorsal displacement of the base of the 2nd metatarsal with a 3 mm separation of the 1st and 2nd metatarsal bases and presence of bony fragments.
+
+ASSESSMENT
+
+Right foot pain, due to a Lisfranc fracture.
+
+PLAN
+
+After reviewing the patient's examination and radiographic findings today, I have had a lengthy discussion with him regarding his current symptoms. We discussed treatment options and I have recommended that we proceed with a right foot ORIF and all indicated procedures. We reviewed the risks, benefits, and alternatives of the surgery. I advised him that this procedure will be performed in an outpatient setting and he will be discharged home that same evening. He will then follow up with me 24 hours post procedure, and again 2 weeks later. I explained that he will be placed in a cast and will remain non-weight-bearing for 6 to 8 weeks. He will use crutches while ambulating and we will advance his weight-bearing gradually based on how he tolerates the procedure.
+
+I have also recommended that we obtain an MRI of the right foot to further assess the ligaments. I explained to him that if he has poor bone alignment or ligament healing, this can lead to losing the arch in his foot causing pes planus and developing arthritis. I will send an order to the outpatient MRI facility downstairs for him to obtain the MRI this afternoon.
+
+The patient wishes to think over his options before proceeding with the operation.

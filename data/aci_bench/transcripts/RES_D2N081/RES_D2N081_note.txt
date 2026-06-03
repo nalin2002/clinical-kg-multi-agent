@@ -1,0 +1,72 @@
+CHIEF COMPLAINT
+
+Follow up of stage III non-small cell lung cancer.
+
+MEDICAL HISTORY
+
+Patient reports history of stage III non-small cell lung cancer.
+
+SOCIAL HISTORY
+
+Patient reports having a good family support system and that some of her family has accompanied her to her chemotherapy sessions.
+
+MEDICATIONS
+
+Patient reports she is currently receiving chemotherapy treatment consisting of Cisplatin and etoposide.
+
+REVIEW OF SYSTEMS
+
+Constitutional: Reports fatigue and decrease in appetite.
+HENT: Reports sore throat. Denies dysphagia.
+Respiratory: Reports dry cough. Denies shortness of breath.
+Gastrointestinal: Denies nausea or vomiting
+
+VITALS
+
+Vitals are within normal limits including oxygen saturation.
+
+PHYSICAL EXAM
+
+Neck
+No cervical lymphadenopathy or supraclavicular adenopathy.
+
+Respiratory
+- Auscultation of Lungs: Crackles heard bilaterally.
+
+Cardiovascular
+- Auscultation of Heart: Regular rate and rhythm. No murmurs.
+
+Musculoskeletal
+- Examination: No edema.
+
+Integumentary
+- Erythema noted on the anterior side of the chest on the left side possibly related to radiation.
+
+Hematology/Lymphatic/Immunology
+- Palpation: No enlarged lymph nodes.
+
+RESULTS
+
+Chest x-ray is reviewed and demonstrates mild radiation pneumonitis.
+
+ASSESSMENT AND PLAN
+
+1. Stage III non-small cell lung cancer.
+- Medical Reasoning: The patient has a recent diagnosis of stage III non-small cell lung cancer. Biopsy was positive for adenocarcinoma. Molecular testing is pending at this time.
+- Medical Treatment: We are going to continue with the current regimen of combination chemotherapy consisting of Cisplatin and etoposide. We are also going to continue with her current dose of radiation at 45 Gy. Once this is complete, we will obtain repeat imaging in hopes that the tumor will decrease in size enough for surgical removal.
+
+2. Radiation pneumonitis.
+- Medical Reasoning: The patient is experiencing a persistent dry cough. Recent x-rays are reviewed and demonstrated evidence of mild radiation pneumonitis.
+- Patient Education and Counseling: We discussed the etiology of her dry cough is from her mild radiation pneumonitis.
+- Medical Treatment: A prescription of prednisone 40 mg daily for 5 days is provided to help with her inflammation.
+
+3. Painful swallowing.
+- Medical Reasoning: The patient is experiencing painful swallowing secondary to inflammation of the esophagus.
+- Patient Education and Counseling: We discussed the etiology of her painful swallowing and that a lidocaine viscous solution will be beneficial in preventing dehydration and any further weight loss.
+- Medical Treatment: A lidocaine viscous solution was provided to be performed 4 times daily.
+
+Patient Agreements: The patient understands and agrees with the recommended medical treatment plan.
+
+INSTRUCTIONS
+
+The patient will return to clinic at her next scheduled follow up.

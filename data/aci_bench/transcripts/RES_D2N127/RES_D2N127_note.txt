@@ -1,0 +1,35 @@
+CHIEF COMPLAINT
+
+Neck pain.
+
+HISTORY OF PRESENT ILLNESS
+
+Brandon Green is a pleasant 46-year-old male who presents to the clinic today for the evaluation of neck pain. His pain began when he was involved in a motor vehicle accident in 02/2022 when he was on his way home from a pain clinic. The patient notes that he has been in 4 motor vehicle accidents; however, he notes that he was fine after the first two accidents, but the third motor vehicle accident is when his neck and back pain began. He states that he was in therapy following the second accident and had surgery after his third accident. The patient was seen at a pain clinic secondary to neck and back pain. He was prescribed fentanyl; however, he has not received a prescription for several weeks. Today, he reports that his pain is a 12 out of 10. He describes his pain as sharp and incapacitating with stiffness and pain. The patient also reports headaches, occasional dizziness. He denies any recent visual disturbances. He also reports numbness in his left arm and right leg. The patient also reports spasms throughout his body. He states that he has been experiencing fatigue since the accident. He notes that he is unable to work with this much pain.
+
+REVIEW OF SYSTEMS
+
+Constitutional: Reports fatigue.
+Eyes: Denies any recent visual disturbances.
+Musculoskeletal: Reports neck and back pain, and occasional swelling and bruising of the neck.
+Neurological: Reports headaches, dizziness, spasms, and numbness.
+
+PHYSICAL EXAM
+
+SKIN: No lacerations.
+MSK: Examination of the cervical spine: Pain on palpation on the bony process and muscle. Moderate ROM. No bruising or edema noted.
+
+RESULTS
+
+X-rays of the neck reveal no fractures.
+
+ASSESSMENT
+
+Neck sprain.
+
+PLAN
+
+After reviewing the patient's examination and radiographic findings today, I have had a lengthy discussion with the patient in regards to his current symptoms. I have explained to him that his x-rays did not reveal any signs of a fracture. I recommended an MRI for further evaluation. I have also prescribed the patient Robaxin 1500 mg every 6 to 8 hours to treat his pain. I have also advised him to utilize ice, a heating pad, IcyHot, or Biofreeze on his neck as needed. I have also provided him with a home exercise program to work on his range of motion. I advised the patient that he will not be able to work until we have the MRI results.
+
+INSTRUCTIONS
+
+The patient will follow up with me after his MRI for results.

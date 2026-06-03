@@ -1,0 +1,38 @@
+CHIEF COMPLAINT
+
+Non-healing right foot ulcer.
+
+HISTORY OF PRESENT ILLNESS
+
+Christina Cooper is a pleasant 77-year-old female who presents to the clinic today for the evaluation of a non-healing right foot ulcer. The onset of her wound began 1 year ago with no specific injury. The patient states that it seemed like a blister and she picked at it where it then turned red. The patient was seen by her primary care physician and was prescribed Keflex. She states that the antibiotics improved her symptoms, however they did not resolve them. The patient adds that she was last on Keflex 5 months ago. She denies any pain, however she reports decreased sensation in her foot. The patient also reports increased drainage and fatigue. She states that she has been wearing her regular shoes.
+
+The patient has type 2 diabetes with neuropathy. She states that her blood sugars are running better than they were; however, they are still in the 200's. Her last hemoglobin A1C was 10.
+
+REVIEW OF SYSTEMS
+
+Constitutional: Reports fatigue.
+Skin: Reports right foot ulcer and drainage.
+
+VITALS
+
+No fever noted. Vitals look good today.
+
+PHYSICAL EXAM
+
+MSK: Examination of the right foot: There is a 1.0 cm x 2.0 cm wound on the dorsal aspect of the lateral right foot, just proximal to the 5th MTP joint. I do see some yellow slough that is present with minimal granulation tissue. No surrounding erythema or cellulitis. There is no evidence of fluid collection. I do not see necrosis. No odor. I do not appreciate any bony exposure. No pain to palpation.
+
+RESULTS
+
+X-ray of the right foot today reveals no evidence of osteomyelitis.
+
+ASSESSMENT
+
+Right diabetic foot ulcer.
+
+PLAN
+
+I have recommended that we obtain an ankle brachial index to determine her blood supply to see if we can heal the wound. We discussed doing a debridement in office today, which she agreed to. I have also recommended that the patient be placed in a surgical shoe to provide increased support. I have also prescribed the patient collagenase ointment to apply to her wound 1 time per day and cover it with a sterile dressing. I advised the patient that this should be continued until we see the ulcer decrease in size.
+
+INSTRUCTIONS
+
+The patient will follow up with me in 2 weeks to check on her progress.

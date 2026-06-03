@@ -1,0 +1,38 @@
+CHIEF COMPLAINT
+
+Left shoulder pain.
+
+HISTORY OF PRESENT ILLNESS
+
+Wayne Taylor is a pleasant 66-year-old male who presents to the clinic today for the evaluation of left shoulder pain. The onset of his pain began 3 weeks ago. He denies any specific injury. The patient states he is active and has been renovating his basement. He reports a history of intermittent aches and pains in his left shoulder. He has difficulty reaching for or lifting any objects. He adds that he avoids reaching overhead secondary to the pain. The patient describes his pain as constant and worsening. He notes his pain is unbearable when lying on his left shoulder at night. He denies any numbness or tingling in the bilateral upper extremities. He has been taking 2 Extra Strength Tylenol every 6 to 8 hours, which provides some relief.
+
+REVIEW OF SYSTEMS
+
+Musculoskeletal: Reports left shoulder pain. Neurological: Denies numbness or tingling in the bilateral upper extremities.
+
+VITALS
+
+All vital signs are within the normal limits.
+
+PHYSICAL EXAM
+
+Capillary refill is less than 3 seconds.
+
+NEURO: Normal sensation. Sensation is intact to light touch in the left upper extremity.
+MSK: Examination of the left shoulder: Limited active and passive ROM. Tenderness over the greater tuberosity of the humerus. No tenderness at the sternoclavicular or acromioclavicular joints. Good hand grip.
+
+RESULTS
+
+X-rays of the left shoulder were obtained and are reviewed today. These reveal there are no fractures.
+
+ASSESSMENT
+
+Left shoulder pain, most likely due to rotator cuff tendinopathy.
+
+PLAN
+
+After reviewing the patient's examination and radiographic findings today, I have had a lengthy discussion with the patient in regard to his current symptoms. I have explained to him that his symptoms are most likely due to rotator cuff tendinopathy. I recommend obtaining an MRI of the left shoulder to further assess the rotator cuff. I will also refer him to formal physical therapy to strengthen his left shoulder for approximately 6 to 8 weeks. The patient was provided with educational materials regarding expectations related to his physical therapy. He may continue to take Tylenol as needed. If his symptoms do not improve with physical therapy, we will consider a steroid injection to the left shoulder. All questions were answered.
+
+INSTRUCTIONS
+
+The patient will follow up with me after he has completed his course of physical therapy.

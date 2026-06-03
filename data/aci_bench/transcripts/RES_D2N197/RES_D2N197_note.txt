@@ -1,0 +1,55 @@
+CHIEF COMPLAINT
+
+Headache.
+
+MEDICAL HISTORY
+
+Patient reports history of hypertension and diabetes. She has migraines rarely every 1 to 2 years.
+
+SOCIAL HISTORY
+
+Patient reports she walks for exercise.
+
+ALLERGIES
+
+Patient reports history of seasonal allergies.
+
+MEDICATIONS
+
+Patient reports taking lisinopril 20 mg once a day and Tylenol.
+
+REVIEW OF SYSTEMS
+
+HENT: Denies congestion or runny nose.
+Respiratory: Denies cough.
+Genitourinary: Denies polyuria.
+Neurological: Reports headaches.
+
+PHYSICAL EXAM
+
+Head and Face
+- No frontal or maxillary sinus tenderness.
+
+Neck
+- General Examination: Neck is supple without lymphadenopathy.
+
+Hematology/Lymphatic/Immunology
+- Palpation: No enlarged lymph nodes.
+
+ASSESSMENT AND PLAN
+
+1. Hypertension with headaches.
+- Medical Reasoning: Patient presents today with complaints of increasing headaches and elevated blood pressure readings at home.
+- Patient Education and Counseling: We discussed it is safe for her to exercise and she has been encouraged to continue her walking program.
+- Medical Treatment: Patient will continue to take Tylenol for pain management. Her lisinopril was increased to 40 mg once a day. Routine blood work was ordered for further evaluation. She will also continue monitoring her blood pressure at home.
+
+2. Diabetes.
+- Medical Reasoning: Patient has been experiencing slightly elevated glucose levels with her home monitoring.
+- Patient Education and Counseling: She was provided with diabetic education which she will review.
+- Medical Treatment: Hemoglobin A1c was ordered.
+
+Patient Agreements: The patient understands and agrees with the recommended medical treatment plan.
+
+INSTRUCTIONS
+
+Patient will return for follow-up to see myself or Dr. Ruth to review her lab work and further treatment plan to get her blood pressure under control.

@@ -1,0 +1,52 @@
+CHIEF COMPLAINT
+
+Headache.
+
+MEDICAL HISTORY
+
+Patient reports history of diabetes mellitus type 2.
+
+SOCIAL HISTORY
+
+Patient reports she enjoys golfing.
+
+MEDICATIONS
+
+Patient reports taking metformin 500 mg twice a day.
+
+REVIEW OF SYSTEMS
+
+Constitutional: Denies fever.
+Eyes: Denies vision changes.
+HENT: Reports ear flushing.
+Neurological: Reports headaches and dizziness.
+
+PHYSICAL EXAM
+
+Eyes
+- Examination: No papilledema.
+- Extraocular Muscles: Grossly Intact without pain.
+
+Neck
+- General Examination: Mild posterior paraspinal muscular tenderness in the cervical spine and bilateral trapezius musculature as well tightness.
+
+Cardiovascular
+- Auscultation of Heart: Grade 3 out of 6 systolic ejection murmur that is unchanged from prior exam.
+
+ASSESSMENT AND PLAN
+
+1. Headache.
+- Medical Reasoning: Patient presents with symptoms similar to a tension headache. On exam she has tension and tightness in her paraspinal muscles as well likely due to working at the computer. Additionally, I think her stress level is also a contributing factor.
+- Patient Education and Counseling: I discussed the diagnosis with the patient today. I explained that her headaches may be caused by tension around the muscles around her neck and shoulders. I advised her that her symptoms do not appear related to signs of a stroke or brain bleeding. Questions were asked and answered today.
+- Medical Treatment: She can continue to take Tylenol for the pain. Prescription for Flexeril 5 mg 3 times a day is provided as well.
+
+2. Diabetes mellitus.
+- Medical Reasoning: Due to her headaches, she has been inconsistent with her exercise and checking her blood sugar.
+- Patient Education and Counseling: We discussed the importance of maintaining a healthy lifestyle. We also discussed the importance of keeping a watchful eye on her blood sugar levels.
+- Medical Treatment: She will continue taking metformin 500 mg daily. Order for hemoglobin A1c, CBC, and CMP provided today. She will check her blood sugar daily and will bring that information in on her next visit.
+
+Patient Agreements: The patient understands and agrees with the recommended medical treatment plan.
+
+INSTRUCTIONS
+
+The patient will follow up in 1 month. She can follow up or call sooner if her headaches become more severe or suddenly worsen or she develops a fever.

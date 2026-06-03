@@ -1,0 +1,61 @@
+CHIEF COMPLAINT
+
+Abdominal pain.
+
+MEDICAL HISTORY
+
+Patient reports history of chronic migraines and hypertension.
+
+SOCIAL HISTORY
+
+Patient reports enjoyment in traveling and notes that she has not had any big trips since visiting Europe last summer.
+
+MEDICATIONS
+
+Patient reports use of Excedrin Migraine when needed and occasionally sumatriptan. She also takes lisinopril 20 mg per day.
+
+REVIEW OF SYSTEMS
+
+Constitutional: Reports fatigue, chills, and decreased appetite. Denies fever.
+Gastrointestinal: Reports abdominal pain, nausea, and heartburn. Denies vomiting, diarrhea, and hematochezia.
+Genitourinary: Denies dysuria and hematuria.
+
+VITALS
+
+Blood pressure is slightly elevated.
+
+PHYSICAL EXAM
+
+Respiratory
+- Auscultation of Lungs: No wheezes, rales, or rhonchi.
+Cardiovascular
+
+Cardiovascular
+- Auscultation of Heart: Grade 3 out of 6 systolic ejection murmur, unchanged from prior exam.
+Gastrointestinal
+
+Gastrointestinal
+- Examination of Abdomen: Soft, no masses. Mild to moderate tenderness to palpation in right upper quadrant. Equivocal Murphy's sign in right upper quadrant. Nontender right lower quadrant with deep palpation. No CVA tenderness.
+
+ASSESSMENT AND PLAN
+
+1. Abdominal pain.
+- Medical Reasoning: Patient presents with acute abdominal pain with right upper quadrant tenderness concerning for cholelithiasis or cholecystitis.
+- Patient Education and Counseling: Patient was advised to remain NPO pending her results in case surgery is needed.
+- Medical treatment: CBC, chem 12, urinalysis, HCG qualitative, and right upper quadrant ultrasound were all ordered and will be performed today.
+
+2. Migraine headaches.
+- Medical Reasoning: Patient has a history of chronic migraines with occasional bouts of migraines, but no recent issues.
+- Patient Education and Counseling: Patient counseled on avoidance of alcohol binges and caffeine binges. We also discussed trying to get enough sleep.
+- Medical Treatment: She will continue to use Excedrin as needed. Refill for sumatriptan was provided today which she can take as needed for breakthrough migraine pain.
+
+3. Hypertension.
+- Medical Reasoning: Patient has been monitoring her blood pressure at home which has been under adequate control. Her blood pressure was only slightly elevated today in office.
+- Patient Education and Counseling: Patient encouraged to continue with her daily blood pressure monitoring.
+- Medical Treatment: Refill for lisinopril 20 mg per day was provided today.
+
+Patient Agreements: The patient understands and agrees with the recommended medical treatment plan.
+
+INSTRUCTIONS
+
+We will follow up with the patient regarding her results today. If she is cleared to return home, we will see her back for follow-up in 4 weeks.

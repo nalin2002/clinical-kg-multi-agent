@@ -1,0 +1,40 @@
+CHIEF COMPLAINT
+
+Right knee pain.
+
+MEDICAL HISTORY
+
+The patient has a history of diabetes. She has been doing pretty good with her diet. She states that she forgets to check her sugars quite a bit.
+
+REVIEW OF SYSTEMS
+
+Musculoskeletal: Reports right knee pain and swelling.
+
+PHYSICAL EXAM
+
+Respiratory
+- Auscultation of Lungs: Clear bilaterally.
+
+Cardiovascular
+No murmurs, gallops.
+
+Musculoskeletal
+- Examination of the right knee: Some swelling present.
+- Palpation: Some pain to palpation on the medial aspect of the right knee, and a little bit of pain on the lateral aspect of the right knee.
+- Range of Motion: Limited range of motion as well as pain on both flexion and extension of the knee.
+- Special Testing:
+McMurray's Test: Negative.
+
+ASSESSMENT AND PLAN
+
+1. Right knee pain.
+- Medical Reasoning: I am concerned about a torn MCL due to pain on ambulation and trouble with weightbearing, as well as the pop she heard.
+- Patient Education and Counseling: We discussed treatment options today including bracing, anti-inflammatories, and icing. - Medical Treatment: I am going to put her in a straight leg brace and I will prescribe some Mobic. She can start taking that as a pain reliever and to try to get some of the swelling down. I want her to ice her knee once an hour for about 15 minutes.
+- Additional Testing: I am also going to send her out for an MRI.
+
+2. Type 2 diabetes.
+- Medical Reasoning: The patient states that her type 2 diabetes are well-managed.
+- Medical Treatment: I am also going to get a refill on the metformin that she has been taking 500 mg.
+- Additional Testing: We are going to recheck her hemoglobin A1c.
+
+Patient Agreements: The patient understands and agrees with the recommended medical treatment plan.

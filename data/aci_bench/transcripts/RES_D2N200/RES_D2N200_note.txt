@@ -1,0 +1,45 @@
+CHIEF COMPLAINT
+
+Headache and high blood pressure.
+
+REVIEW OF SYSTEMS
+
+Respiratory: Denies shortness of breath.
+Cardiovascular: Denies chest pain.
+Neurological: Reports blurry vision, dizziness, and headaches.
+
+VITALS
+
+Blood pressure today was 172/98. Oxygenation is within normal limits.
+
+PHYSICAL EXAM
+
+Neck
+- General Examination: No jugular venous distention. No carotid bruits.
+
+Respiratory
+- Auscultation of Lungs: Clear bilaterally.
+
+Cardiovascular
+- Auscultation of Heart: Regular rate. Slight 2/6 systolic ejection murmur, unchanged from last year.
+
+Musculoskeletal
+- Examination: Slight edema to bilateral upper extremities. 1+ pitting edema noted in the bilateral lower extremities.
+
+ASSESSMENT AND PLAN
+
+1. Hypertension, uncontrolled.
+- Medical Reasoning: The patient's blood pressure is is elevated.
+- Patient Education and Counseling: We discussed that this could be multifactorial; for example, her diet, her medications regimen, or the medication she is currently on could be a factor in her elevated blood pressure. I encouraged the patient to take her current medication regimen today. I encouraged her to monitor her blood pressure 3 times a week. We also discussed the patient speaking to our nutritionist to help her diet. I recommended a DASH diet.
+- Medical Treatment: She will continue her current medication regimen.
+
+2. Type 2 diabetes.
+- Medical Reasoning: The patient's diabetes is uncontrolled.
+- Patient Education and Counseling: I advised the patient to continue taking her blood sugars to make sure that the change in medication is effective.
+- Medical Treatment: Increase metformin to 1500 mg.
+
+Patient Agreements: The patient understands and agrees with the recommended medical treatment plan.
+
+INSTRUCTIONS
+
+The patient will follow up in 4 weeks.

@@ -1,0 +1,74 @@
+CHIEF COMPLAINT
+
+Follow-up of stage III non-small cell lung cancer.
+
+MEDICAL HISTORY
+
+Patient reports recent diagnosis of stage III non-small cell lung cancer.
+
+SOCIAL HISTORY
+
+Patient reports she was previously active taking mile long walks with her doberman. She states her husband is her support system and has been helpful with this new diagnosis. Her daughter has also been helpful.
+
+MEDICATIONS
+
+Patient reports receiving chemotherapy consisting of Cisplatin and etoposide. She is also taking Zofran.
+
+REVIEW OF SYSTEMS
+
+Constitutional: Reports fatigue. Denies fever.
+HENT: Reports odynophagia.
+Respiratory: Reports dyspnea and dry cough.
+Gastrointestinal: Reports nausea.
+
+VITALS
+
+Vitals are normal including pulse oximetry.
+
+PHYSICAL EXAM
+
+Neck
+- General Examination: Neck is supple without cervical lymphadenopathy, or subclavicular adenopathy.
+
+Respiratory
+- Auscultation of Lungs: Rales in the lungs bilaterally.
+
+Cardiovascular
+- Auscultation of Heart: Regular rate and rhythm. No murmurs.
+
+Musculoskeletal
+- Examination: No edema.
+
+Integumentary
+- Examination: Some erythema on the left anterior aspect of the chest.
+
+Hematology/Lymphatic/Immunology
+- Palpation: No enlarged lymph nodes.
+
+RESULTS
+
+Pathology report is reviewed and shows evidence of a 4.4 cm left upper lobe nodule.
+
+Chest x-ray is reviewed and shows evidence of mild radiation pneumonitis.
+
+ASSESSMENT AND PLAN
+
+1. Stage III non-small cell lung cancer.
+- Medical Reasoning: This is a new diagnosis for this patient. Recent pathology report showed evidence of a 4.4 cm left upper lobe nodule.
+- Patient Education and Counseling: We discussed that once her treatment regimen is complete we will proceed with further testing and hopefully tumor resection.
+- Medical Treatment: Patient will continue on current regimen consisting of Cisplatin and etoposide. Her radiation will remain at 45 Gy.
+
+2. Radiation pneumonitis.
+- Medical Reasoning: Recent chest x-ray showed evidence of mild radiation pneumonitis.
+- Patient Education and Counseling: We discussed she is experiencing inflammation of the lungs secondary to her radiation treatment. The risks and benefits of prednisone were also discussed.
+- Medical treatment: A prescription for prednisone 40 mg 1 tablet a day for 5 days was provided.
+
+3. Odynophagia.
+- Medical Reasoning: Patient reports symptoms of painful swallowing.
+- Patient Education and Counseling: I advised her that her radiation pneumonitis is also affecting her esophagus which is resulting in her painful swallowing. We discussed the importance of nutrition and hydration while undergoing chemotherapy.
+- Medical treatment: Prescription for lidocaine viscous solution to be completed 4 times a day was provided.
+Patient Agreements: The patient understands and agrees with the recommended medical treatment plan.
+
+INSTRUCTIONS
+
+Patient will return for follow-up in 2 weeks.

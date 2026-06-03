@@ -1,0 +1,47 @@
+CHIEF COMPLAINT
+
+Difficulty swallowing.
+
+HISTORY OF PRESENT ILLNESS
+
+Raymond Taylor is a pleasant 67-year-old male who presents to the clinic today for difficulty swallowing. The patient notes that the pain has been occurring for the last several weeks. The pain radiates to his chest when he swallows. He notes that he does not have pain every time he eats but mostly when he has big pieces of food as they seem to get stuck. Mr. Taylor notes that it has been stressful for him the past couple of months as they moved from the West Coast to the East Coast, so he has been drinking more, and having pizza, and burgers more. He denies any weight loss, but endorses weight gain. The patient states that he has epigastric pain, but denies dark, tarry stools.
+
+REVIEW OF SYSTEMS
+
+Constitutional: Reports weight gain.
+HENT: Reports dysphagia.
+Gastrointestinal: Reports epigastric pain. Denies dark, tarry stools.
+Neurological: Positive stress.
+
+VITALS
+
+BP: 133/70.
+Heart rate looks good.
+Temperature is within normal limits.
+SpO2: 100%.
+Respiratory rate: 19.
+
+PHYSICAL EXAM
+
+EYES: Equal and reactive to light.
+NECK: No adenopathy, thyromegaly.
+RESPIRATORY: Normal respiratory effort no respiratory distress
+GI/GU: Non-distended Active bowel sounds. Pain to palpation of epigastric area. Negative McMurphy's Sign. No peritoneal signs. No rebound.
+SKIN: No rash, no lesion, no bruising.
+MSK: Examination of the mouth reveals no obvious ulcers or evidence of thrush present. Tonsils are midline of the neck.
+
+RESULTS
+
+The barium swallow study revealed two areas of mild narrowing in the mid and lower portions of your esophagus.
+
+ASSESSMENT
+
+Acute esophagitis.
+
+PLAN
+
+After reviewing the patient's examination and barium swallow findings today, I have had a lengthy discussion with the patient in regards to his current symptoms. I have prescribed the patient Protonix 40 mg first thing in the morning to treat his acute esophagitis. I have also prescribed the patient Carafate 1 gram 4 times daily for 1 month to help coat the lining of his esophagus and stomach. I recommended a upper endoscopy for further evaluation. I have also advised him to change his diet, decrease alcohol, and caffeine. I have also advised him to avoid citrus foods, fruits, and spicy foods until his symptoms have improved. We discussed that he should eat slowly and chew his food thoroughly to avoid big pieces of food. All questions were answered.
+
+INSTRUCTIONS
+
+The patient will follow up with me in 1 week for his endoscopy.

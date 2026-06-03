@@ -1,0 +1,47 @@
+CHIEF COMPLAINT
+
+Right knee injury.
+
+HISTORY OF PRESENT ILLNESS
+
+Joe Reed is a pleasant 42-year-old male who presents to the clinic today for the evaluation of a right knee injury. The patient sustained this injury when he was skiing with some friends. He states the front end of his skis dug into the snow and he ended up doing a cartwheel through the air until he stopped halfway and felt a pop with immediate pain in his right knee. The patient reports pain and swelling in his right knee since the injury. He has been able to ambulate although he notes difficulty due to swelling and pain. The patient has been taking Advil as well as icing and applying heat to his knee intermittently. He denies any previous knee injuries.
+
+The patient also reports right shoulder pain and bruising. He states he landed on his right shoulder when he fell. He reports tenderness with raising his arm.
+
+REVIEW OF SYSTEMS
+
+Musculoskeletal: Right knee pain and swelling. Right shoulder pain and bruising.
+
+VITALS
+
+Blood Pressure: 110/74 mmHg.
+Heart Rate: 64 beats per minute.
+Respiratory Rate: 16 breaths per minute.
+Oxygen Saturation: 98%
+Body Temperature: 97.9 degrees F.
+
+PHYSICAL EXAM
+
+CV: Mild edema
+MSK:
+Examination of the right knee: Edema and ecchymosis surrounding the knee. Positive pain to palpation. Pain with flexion and extension. Full ROM.
+Examination of the right shoulder: Mild bruising is present.
+
+RESULTS
+
+X-rays of the right knee were obtained and are reviewed today. No fracture is appreciated. No bony abnormalities are noted.
+
+ASSESSMENT
+
+1. Right knee contusion.
+2. Right shoulder pain.
+
+PLAN
+
+After reviewing the patient's examination and radiographic findings today, I have discussed with the patient that his x-rays did not reveal any signs of a fracture. I have recommended that we treat the patient conservatively. I have advised him to rest his right knee and apply ice 2 to 3 times per day for 20 minutes at a time. He can take non-steroidal anti-inflammatory drugs such as ibuprofen every 6 to 8 hours as needed for pain. If his pain does not improve with the medication, he will return to the office and we will consider formal physical therapy.
+
+With regards to his right shoulder, I have recommended that we obtain x-rays of the right shoulder as well.
+
+INSTRUCTIONS
+
+The patient will follow up with me on an as-needed basis.

@@ -1,0 +1,37 @@
+HISTORY OF PRESENT ILLNESS
+
+Beverly Howard is a pleasant 33-year-old female who presents to the clinic today for the evaluation of right knee pain.
+
+The patient reports that she fell off of a tandem bicycle and struck her right knee on a curb approximately 2 weeks ago. After the injury, she took ibuprofen and treated the wound, but the pain has persisted. She localizes her pain to the medial aspect of the knee. She also reports occasional clicking with full extension of the knee, as well as occasional instability with ambulation. The patient states that her pain is the worst when ambulating up an incline. She denies any previous right knee issues. She enjoys walking her dogs and swimming but has not done this since her injury.
+
+SOCIAL HISTORY
+
+The patient works in a Children's Hospital.
+
+REVIEW OF SYSTEMS
+
+Musculoskeletal: Reports right knee pain, clicking, and instability.
+
+PHYSICAL EXAM
+
+SKIN: Warm, dry and intact
+MSK: 
+Examination of the right knee: Tenderness along the medial joint line. Pes bursa is nontender. The epicondyle and posterior aspect of her knee are soft. Popliteal space is nontender. The lateral aspect of her knee is nontender. There is a dime-sized abrasion that is dry and appears to be 1 week old, over the medial patella. No scars. Full extension. Full symmetric flexion. No deformity. Valgus stress of the medial and lateral collateral ligament are intact. Laxity with posterior drawer testing. 1+ posterior drawer test. Negative Lachman test. Patella tracks fine. No crepitus. Negative McMurray test.
+Examination of the left knee: Full symmetric flexion. No deformity. Valgus stress of the medial collateral ligament is intact. Lateral collateral ligament is intact.
+
+RESULTS
+
+4 views of the right knee were taken. These reveal no evidence of any fractures or dislocations. Joint space is well preserved. No other abnormalities are noted.
+
+ASSESSMENT
+
+Right knee pain, possible posterior cruciate ligament sprain.
+
+PLAN
+
+After reviewing the patient's examination and radiographic findings today, we had a lengthy discussion in regard to her current symptoms. I explained that her x-rays did not reveal any signs of a fracture. I recommend we obtain an MRI of the right knee to evaluate for a possible posterior cruciate ligament injury. In the meantime, I have recommended that the patient be placed in a brace to provide increased support. I have also recommended that the patient attend formal physical therapy to work on her range of motion and strengthening. I advised her to ice her right knee a few times a day to reduce the swelling. She can continue taking her ibuprofen if she finds this helpful, but I am also going to send in a prescription medication she can take less frequently. The patient will follow up with me in 4 to 6 weeks to check on her progress.
+
+ORDERS
+
+MRI, right knee
+Prescription medication

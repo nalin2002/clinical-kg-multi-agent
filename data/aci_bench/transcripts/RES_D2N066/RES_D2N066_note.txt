@@ -1,0 +1,64 @@
+CHIEF COMPLAINT
+
+Back pain evaluation.
+
+MEDICAL HISTORY
+
+The patient has a history of diabetes, hypertension, and high cholesterol.
+
+SURGICAL HISTORY
+
+He denies previous back surgeries.
+
+MEDICATIONS
+
+The patient currently utilizes metformin 500 mg twice daily and Norvasc.
+
+REVIEW OF SYSTEMS
+
+Cardiovascular: Reports ankle swelling.
+Musculoskeletal: Reports lower back pain.
+Neurological: Reports tingling in left leg. Denies weakness or numbness in legs, or loss of bowl or bladder function.
+
+PHYSICAL EXAM
+
+Neurological
+- Orientation: Alert and oriented x3. Cranial nerves grossly intact. Normal gait.
+
+Neck
+- General Examination: No JVD. No bruits.
+
+Respiratory
+- Auscultation of Lungs: No wheezes, rales.
+
+Cardiovascular
+- Auscultation of Heart: Regular rate and rhythm. 2/6 systolic ejection murmur. Otherwise, regular rate and rhythm.
+
+Musculoskeletal
+- Examination: Tenderness on the left paraspinal area. Straight leg raise test is negative. Reflexes are normal. 1+ nonpitting edema of lower extremities. No calf tenderness. Negative Homan's sign.
+
+ASSESSMENT AND PLAN
+
+1. Lower back pain.
+- Medical Reasoning: I believe this is more of a muscular sprain.
+- Patient Education and Counseling: We discussed treatment options today.
+- Medical Treatment: I am going to start him on Naprosyn 500 mg twice a day and Flexeril 10 mg twice a day. I will refer him for physical therapy to help strengthen some of the muscles in his lower back.
+- Additional Testing: I do not think he needs an x-ray at this stage, however if he does not improve, we will order one for further evaluation.
+
+2. Diabetes.
+- Medical Reasoning: His most recent A1c was 7.1 and his blood sugar levels are typically between 120-140.
+- Patient Education and Counseling: We discussed treatment options today.
+- Medical Treatment: He will continue the metformin 500 mg twice a day.
+- Additional Testing: I am going to order another hemoglobin A1c.
+
+3. Hypertension.
+- Medical Reasoning: He does have 1+ edema in his legs.
+- Patient Education and Counseling: We discussed treatment options today. I explained that his edema is likely caused by the Norvasc.
+- Medical Treatment: The patient will discontinue the use of Norvasc and we will start him on hydrochlorothiazide 10 mg once a day.
+- Additional Testing: I will order a CBC and BMP. Additionally, I will order a repeat EKG, as well as a chest x-ray.
+
+Patient Agreements: The patient understands and agrees with the recommended medical treatment plan.
+
+INSTRUCTIONS
+
+The patient will follow up in 2 weeks.

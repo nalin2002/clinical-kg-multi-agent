@@ -1,0 +1,52 @@
+CHIEF COMPLAINT
+
+High blood pressure.
+
+SOCIAL HISTORY
+
+Patient reports drinking a couple of beers during the week and approximately 1 to 2 on the weekend. She is employed.
+
+FAMILY HISTORY
+
+Patient reports both of her parents have hypertension and one also had kidney disease.
+
+MEDICATIONS
+
+Patient reports taking Norvasc 10 mg daily and carvedilol 25 mg twice daily. She occasionally takes anti-inflammatories.
+
+REVIEW OF SYSTEMS
+
+Cardiovascular: Denies chest pain or dyspnea on exertion.
+Respiratory: Denies shortness of breath.
+Musculoskeletal: Denies bilateral lower extremity edema.
+Neurological: Reports headaches.
+
+VITALS
+
+BP: 169/74.
+HR: 88 bpm.
+SpO2: 98%.
+
+PHYSICAL EXAM
+
+Neck
+- General Examination: No jugular vein distension. No carotid bruits.
+
+Cardiovascular
+- Auscultation of Heart: Grade 2/6 systolic ejection murmur.
+
+Musculoskeletal
+- Examination: 1+pitting edema in the bilateral lower extremities.
+
+ASSESSMENT AND PLAN
+
+1. Hypertension, uncontrolled.
+- Medical Reasoning: The patient's elevated blood pressure is consistent with uncontrolled hypertension.
+- Patient Education and Counseling: We discussed the nature of the diagnosis and that this is typically multifactorial. I advised the patient that further testing should reveal additional information. She was encouraged to reduce her intake of alcohol as well as her salt intake. I recommended that she stop taking anti-inflammatories and use Tylenol as needed for pain. We also discussed the importance of home blood pressure monitoring of the next 3 weeks to see if the medication is beneficial.
+- Medical Treatment: Renal artery ultrasound ordered. Urine collection, morning aldosterone levels, renal levels, and a 24-hour urine were also ordered. Referral to nutritionist provided. Prescription for Cardura 4 mg once a day provided as well.
+
+Patient Agreements: The patient understands and agrees with the recommended medical treatment plan.
+
+INSTRUCTIONS
+
+The patient will follow-up in 3 weeks and will bring her blood pressure log with her.

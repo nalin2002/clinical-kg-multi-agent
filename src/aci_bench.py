@@ -33,9 +33,10 @@ import argparse
 import json
 import re
 from pathlib import Path
-from typing import Iterable
+from typing import Iterable, Literal
 
 from datasets import load_dataset
+from tqdm import tqdm
 
 
 HF_DATASET = "mkieffer/ACI-Bench"
@@ -109,13 +110,14 @@ def _load_rows(splits: Iterable[str], subsets: Iterable[str]) -> dict[str, dict]
     by_id: dict[str, dict] = {}
     for cfg in subsets:
         for sp in splits:
+            print(f"[aci-bench] loading {cfg}/{sp}", flush=True)
             try:
                 ds = load_dataset(HF_DATASET, name=cfg, split=sp)
             except Exception as exc:  # a split may not exist for a config
                 print(f"[aci-bench] skipping {cfg}/{sp}: {exc}", flush=True)
                 continue
             n = 0
-            for row in ds:
+            for row in tqdm(ds, desc=f"Loading {cfg}/{sp}", unit="encounter"):
                 eid = row["encounter_id"]
                 prev = by_id.get(eid)
                 if prev is not None and prev["_subset"] != cfg:
@@ -142,13 +144,16 @@ def main() -> None:
                        help="Pull specific encounter ids (e.g. D2N008 D2N018).")
     ap.add_argument("--all", action="store_true",
                     help="Pull every encounter across all splits.")
-    ap.add_argument("--subsets", nargs="+", choices=CONFIGS, default=list(CONFIGS),
+    ap.add_argument("--subsets", nargs="+", choices=CONFIGS, default=list[Literal['aci', 'virtassist', 'virtscribe']](CONFIGS),
                     help="ACI-Bench subsets to pull (default: all three).")
     ap.add_argument("--limit", type=int, default=None,
                     help="Cap the number of encounters written (after ordering).")
     args = ap.parse_args()
 
     out_dir = Path(args.out)
+    if not out_dir.exists():
+        print(f"[aci-bench] creating output directory: {out_dir}", flush=True)
+        out_dir.mkdir(parents=True, exist_ok=True)
 
     # Decide which splits we need to scan.
     if args.ids or args.all:
@@ -172,7 +177,7 @@ def main() -> None:
         wanted = wanted[: args.limit]
 
     print(f"[aci-bench] writing {len(wanted)} encounter(s) -> {out_dir}", flush=True)
-    for eid in wanted:
+    for eid in tqdm(wanted, desc="Writing encounters", unit="encounter"):
         path = write_encounter(by_id[eid], out_dir)
         meta = json.loads(path.with_name(f"RES_{eid}_meta.json").read_text())
         print(f"  + {eid:>8}  [{meta['subset']}/{meta['split']}]  "

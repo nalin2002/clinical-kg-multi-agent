@@ -1,0 +1,42 @@
+HISTORY OF PRESENT ILLNESS
+
+Larry Garcia is a pleasant 41-year-old male who presents to the clinic today for the evaluation of back pain.
+
+The onset of his pain began 2 years ago, after moving furniture. He denies any specific injury. The patient describes his pain as sharp and stabbing. He locates his pain to his lower back, which radiates distally into his right leg and occasionally into his great toe. Sitting will increase his pain and he notes he is unable to get comfortable. The patient also reports numbness and tingling, especially in his right leg that radiates distally to his foot. He adds that he tries to be as active as he can, however it has been difficult with his back pain. The patient adds that he has gained weight over the past year. He denies any loss of sensation in his genital or rectal area, weakness, or loss of bladder or bowel control.
+
+In the past, he has attended physical therapy. The patient has also been prescribed pain medications, however they only provided temporary relief. He would like to avoid any surgical procedure at this time.
+
+SOCIAL HISTORY
+
+He quit smoking 20 years ago.
+
+FAMILY HISTORY
+
+The patient denies any family history of spine conditions.
+
+REVIEW OF SYSTEMS
+
+Constitutional: Reports weight gain.
+Musculoskeletal: Reports lower back pain.
+Neurological: Positive for numbness and tingling in the right leg and foot. Denies loss of bowl or bladder control, or loss of sensation in the genital or rectal area.
+
+VITALS
+
+Vitals are within normal limits.
+
+PHYSICAL EXAM
+
+NEURO: Decreased sensation to light touch at the right lateral thigh at the L4 dermatome. Patellar and Achilles reflexes are symmetrical.
+MSK: Examination of the lumbar spine: No overlying erythema or ecchymosis. Midline tenderness at L4-5 disc space with right-sided lumbar paravertebral tenderness. Pain with lumbar flexion. Supine straight leg test is positive.
+
+RESULTS
+
+The MRI of the lumbar spine was reviewed today. This revealed a disc herniation with nerve impingement.
+
+ASSESSMENT
+
+L4-5 herniated disc with radiculopathy.
+
+PLAN
+
+After reviewing the patient's examination and MRI findings today, I have discussed with the patient that his symptoms are consistent with an L4-5 herniated disc with radiculopathy. I have recommended that we treat the patient conservatively with a corticosteroid injection under fluoroscopy. With the patient's consent, we will proceed with a cortisone injection into the lumbar spine today.

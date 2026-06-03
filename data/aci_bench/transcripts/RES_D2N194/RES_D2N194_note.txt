@@ -1,0 +1,48 @@
+CHIEF COMPLAINT
+
+Left shoulder pain.
+
+HISTORY OF PRESENT ILLNESS
+
+Betty Rogers is a pleasant 50-year-old female who presents to the clinic today for the evaluation of left shoulder pain.
+
+For the past few weeks, the patient has been experiencing constant pain isolated to the left shoulder. She denies any known injury or trauma; however, she is very active and is currently renovating her basement. She denies any associated numbness or tingling as well. While movements such as reaching and lifting exacerbate her pain, full flexion of the shoulder is the most severe. Her pain is also exacerbated if she lays on her shoulder, which subsequently causes sleep disturbance due to her being uncomfortable. She typically takes Tylenol Extra Strength, 2 tablets every 6 to 8 hours, for aches and pains associated with her active lifestyle, and doing so reduces her shoulder pain to 2-3/10 on the pain scale. Without medication, she rates her pain as 7/10.
+
+MEDICAL HISTORY
+
+The patient denies any previous trauma or injury to left shoulder.
+
+SOCIAL HISTORY
+
+The patient reports that she has a very active lifestyle. She has also been renovating her basement recently.
+
+MEDICATIONS
+
+The patient reports that she has been taking Tylenol Extra Strength, 2 tablets every 6 to 8 hours.
+
+REVIEW OF SYSTEMS
+
+Musculoskeletal: Reports left shoulder pain.
+Neurological: Denies left shoulder numbness or tingling.
+
+PHYSICAL EXAM
+
+CV: Capillary refill is brisk at less than 3 seconds.
+NEURO: Motor and sensation in the left shoulder are intact to light touch.
+MSK: Examination of the left shoulder: Limited active and passive range of motion. Tenderness over the greater tuberosity of the humerus. No tenderness at the sternoclavicular or acromioclavicular joints. Good hand grip bilaterally.
+
+RESULTS
+
+X-ray imaging of the left shoulder was performed and reviewed in office today. These reveal no fracture or bony abnormality.
+
+ASSESSMENT
+
+Left shoulder pain.
+
+PLAN
+
+After reviewing the patient's examination and radiographic findings today, I believe this is most likely due to rotator cuff tendinopathy. We discussed the nature of this condition in detail, and I have ordered an MRI for further evaluation. I'm going to put in a referral for 6 to 8 weeks of physical therapy, during which time she should continue with Tylenol as-needed. If her symptoms do not improve, we can consider administering a steroid injection.
+
+INSTRUCTIONS
+
+The patient will follow up in 2 weeks.

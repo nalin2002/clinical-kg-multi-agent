@@ -1,0 +1,45 @@
+CHIEF COMPLAINT
+
+Right elbow pain.
+
+HISTORY OF PRESENT ILLNESS
+
+Lawrence Butler is a pleasant 45-year-old male who presents to the clinic today for the evaluation of right elbow pain.
+
+Over the past week, the patient has developed 6/10 pain in the "inside" of his right elbow. The pain may radiate into his forearm on occasion, but does not extend up to his shoulder. He denies any history of trauma or injury, but he did start making pottery during the COVID-19 pandemic and suspects that his symptoms could be related to that. His symptoms affect his ability to lift objects or perform his typical activities of daily living. Ibuprofen provides minimal symptomatic relief.
+
+SOCIAL HISTORY
+
+The patient reports that he began making pottery during the COVID-19 pandemic.
+
+MEDICATIONS
+
+The patient reports that he has been taking ibuprofen.
+
+REVIEW OF SYSTEMS
+
+Musculoskeletal: Reports right elbow pain.
+
+VITALS
+
+Normal
+
+PHYSICAL EXAM
+
+MSK: Examination of the right elbow: Moderate tenderness at the medial epicondyle. No pain with supination of the forearm. Pain with pronation of the forearm. Pain with resistance against flexion of the wrist.
+
+RESULTS
+
+X-ray imaging of the right elbow was obtained and reviewed in office today. These reveal no evidence of fracture or bony abnormality.
+
+ASSESSMENT
+
+Right medial epicondylitis.
+
+PLAN
+
+The patient and I discussed his diagnosis in detail, and I explained that his symptoms are likely caused by overuse and potential damage of the tendons. We will provide him with sling to be worn during the day while he is awake. I want him to take ibuprofen 600 mg every 6 hours with food for a full week and ice the elbow for 20 minutes, 3 times daily. Finally, I advised the patient to rest his elbow and avoid doing any pottery for the next couple of weeks.
+
+INSTRUCTIONS
+
+The patient will follow up in 1 week.

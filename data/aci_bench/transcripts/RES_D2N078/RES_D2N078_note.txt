@@ -1,0 +1,38 @@
+CHIEF COMPLAINT
+
+Right knee pain.
+
+REVIEW OF SYSTEMS
+
+Cardiovascular: Denies chest pain.
+Respiratory: Denies shortness of breath.
+Gastrointestinal: Denies abdominal pain.
+Musculoskeletal: Reports right knee pain.
+
+PHYSICAL EXAM
+
+Respiratory
+- Auscultation of Lungs: Clear bilaterally. No wheezes.
+
+Cardiovascular
+- Auscultation of Heart: Grade 2/6 systolic ejection murmur. Some edema and effusion noted around the right knee.
+
+Musculoskeletal
+- Examination: Right knee
+- Palpation: Pain to palpation of the medial aspect. No pain to palpation of the lateral aspect.
+- ROM: Pain with flexion and extension.
+-Some effusion noted around the right knee.
+
+RESULTS
+
+X-rays of the right knee were taken. These show no fractures or bony abnormalities.
+
+ASSESSMENT AND PLAN
+
+1. Right knee MCL strain.
+- Medical Reasoning: Based on the physical examination findings, the patient has a MCL strain of the right knee. - Medical Treatment: I have prescribed ibuprofen 800 mg twice a day. I will also place him in a knee brace. I advised him to ice the knee for 20 minutes at a time for 3 to 4 times a day. The patient was instructed to elevate his leg as needed and avoid strenuous activities for 2-3 weeks.
+
+2. Hypertension.
+- Medical Treatment: The patient will continue lisinopril 20 mg daily. I have also provided a referral to see a nutritionist for dietary changes.
+
+Patient Agreements: The patient understands and agrees with the recommended medical treatment plan.

@@ -1,0 +1,47 @@
+CHIEF COMPLAINT
+
+Right knee injury
+
+HISTORY OF PRESENT ILLNESS
+
+Michelle King is a pleasant 44-year-old male who presents to the clinic today for the evaluation of a right knee injury. Her injury was sustained while skiing in Vermont last weekend after she caught her ski when coming off of the lift and fell. She reports a pop in her knee at the time of injury and has been experiencing pain since that time. Due to her fall she was unable to weight bear and had to be taken down by the ski patrol. She locates her pain to the lateral aspect of her knee and also describes the feeling of instability as well as buckling. At this time she is experiencing difficulty with knee flexion; however, she states this was not a problem immediately after the injury. Full knee extension is also quite painful for her. The patient denies any numbness or tingling in her toes. She is currently utilizing crutches for ambulation which were provided to her by the ski patrol. In terms of pain control, she is taking ibuprofen which is providing some relief.
+
+MEDICAL HISTORY
+
+Patient reports she is otherwise healthy and denies a history of high blood pressure or diabetes.
+
+SOCIAL HISTORY
+
+Patient reports she is very active with skiing and taking care of her 4-year-old twins. She mentions that she would like to get back into running at some point. She states that her husband is home with her, but he also works a job where he has gone quite a bit.
+
+MEDICATIONS
+
+Patient reports she is taking ibuprofen.
+
+REVIEW OF SYSTEMS
+
+Musculoskeletal: Reports right knee pain and limited range of motion.
+Neurological: Denies numbness or tingling in toes.
+
+PHYSICAL EXAM
+
+GAIT: The patient is ambulating with crutches.
+CV: Regular rate and rhythm. No murmur.
+RESPIRATORY: Lungs are clear to auscultation.
+MSK: Examination of the right knee: Edema and effusion noted. Pain with palpation of the lateral knee. Decreased flexion and extension. Positive Lachman's. Palpable dorsalis pedis and posterior tibial pulse. No ankle edema.
+
+RESULTS
+
+4 views of the right knee were taken today. These reveal no bony abnormalities.
+
+ASSESSMENT
+
+Right knee pain, possible ACL tear.
+
+PLAN
+
+After reviewing the patient's examination and radiographic findings today, I have had a lengthy discussion with the patient in regards to her current symptoms. I have recommended that we obtain an MRI of the right knee to evaluate for a possible ACL tear. In the meantime, I have advised her to continue taking ibuprofen 600 to 800 mg every 8 hours as needed for pain. She will also be placed into a brace for increased knee support.
+
+INSTRUCTIONS
+
+The patient will follow up with me once the MRI results are available for review and further discussion.

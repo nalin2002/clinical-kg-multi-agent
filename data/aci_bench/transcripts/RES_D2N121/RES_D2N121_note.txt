@@ -1,0 +1,66 @@
+CHIEF COMPLAINT
+
+Right knee pain.
+
+MEDICAL HISTORY
+
+Patient reports history of hypertension.
+
+SURGICAL HISTORY
+
+Patient reports history of tonsillectomy.
+
+SOCIAL HISTORY
+
+Patient reports that he has a boat on Lake Martin. He is frequent water skier.
+
+MEDICATIONS
+
+Patient reports taking lisinopril 20 mg once a day.
+
+REVIEW OF SYSTEMS
+
+Musculoskeletal: Reports right knee pain and swelling.
+Neurological: Denies numbness or tingling in the right foot.
+
+VITALS
+
+Blood pressure: 120/77
+
+PHYSICAL EXAM
+
+Neck
+- General Examination: Neck is supple without lymphadenopathy.
+
+Respiratory
+- Auscultation of Lungs: Clear bilaterally.
+
+Cardiovascular
+- Auscultation of Heart: Regular rate and rhythm. No murmurs.
+
+Musculoskeletal
+- Examination of the right knee: Ecchymosis noted. Effusion present. Pain to palpation medially. Decreased range of motion. Negative varus and valgus test. Negative Lachman sign. Palpable dorsalis pedis and posterior tibial pulse. There is otherwise no lower extremity edema.
+
+Hematology/Lymphatic/Immunology
+- Palpation: No enlarged lymph nodes.
+
+ASSESSMENT AND PLAN
+
+1. Right knee pain.
+- Medical Reasoning: Based on the patient's symptoms and exam, I believe he has a medial collateral ligament strain.
+- Patient Education and Counseling: We discussed the nature of this injury as well as the expected recovery outcome. He was advised surgery is typically not needed and that physical therapy will be beneficial for strengthening to prevent future injuries. He was also counseled to rest his knee until we at least receive his x-ray results in order to prevent further injury and to allow for a quicker recovery.
+- Medical Treatment: X-ray of the right knee was ordered for further evaluation. Referral to physical therapy was provided for strengthening. A prescription for meloxicam 15 mg once a day for pain and swelling was also provided.
+
+2. Hypertension.
+- Medical Reasoning: The patient is doing well on his current medication regimen. He is monitoring his blood pressure at home and has not had any elevated readings.
+- Medical Treatment: He will continue taking lisinopril 20 mg a day. Lipid panel was ordered today.
+
+3. Health Maintenance.
+- Patient Education and Counseling: I advised the patient that his records indicate that he is due for a tetanus vaccine.
+- Medical Treatment: The patient will receive his tetanus vaccine in office today.
+
+Patient Agreements: The patient understands and agrees with the recommended medical treatment plan.
+
+INSTRUCTIONS
+
+The patient will follow-up for his x-ray results.

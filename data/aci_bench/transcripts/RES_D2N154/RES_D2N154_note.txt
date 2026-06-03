@@ -1,0 +1,27 @@
+HISTORY OF PRESENT ILLNESS
+
+Dennis Martin is a pleasant 46-year-old male who presents to the clinic today for the evaluation of right heel pain. The onset of his pain began 10 days ago while training for a triathlon. He locates his pain to the posterior aspect of his heel, which radiates proximally into his calf. His pain is aggravated by working out and when he first gets up in the morning. If he sits for a long period, his pain will return upon standing. The patient states that he runs 10 kilometers in the morning. At lunchtime, he tries to get on a bike for about 45 minutes to an hour. In the evening, he goes to the aquatic center and swims for 30 minutes to 1 hour. The patient states that he runs 5 days per week. He adds that he alternates between a long run and a long bike ride on weekends. He currently takes one day off from his exercises. The patient states that he does not stretch at all. He denies any left leg pain.
+
+REVIEW OF SYSTEMS
+
+Musculoskeletal: Reports right heel pain. Denies left leg pain.
+
+PHYSICAL EXAM
+
+MSK: Examination of the right heel: Pain with resisted extension. Mild pain with flexion. Positive calcaneal squeeze test. Severe tenderness to the Achilles tendon. Thompson test is negative, bilaterally.
+
+RESULTS
+
+No new imaging was obtained today
+
+ASSESSMENT
+
+Right Achilles tendinitis.
+
+PLAN
+
+After reviewing the patient's examination today, I had a lengthy discussion with the patient regarding his current symptoms. I have explained to him that his symptoms are likely secondary to overuse. I have recommended that we treat the patient conservatively. The patient was instructed to take at least 1 week off from his training to recover from this. I will provide him with a referral for formal physical therapy to strengthen his right lower extremities. I have advised him to take 3 tablets of ibuprofen every 6 hours for pain. If his pain does not improve with physical therapy, I will recommend obtaining an x-ray.
+
+INSTRUCTIONS
+
+The patient will follow up with me in 7 to 10 days to check on his progress.

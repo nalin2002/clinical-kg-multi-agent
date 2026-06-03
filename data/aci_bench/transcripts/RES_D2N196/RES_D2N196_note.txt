@@ -1,0 +1,56 @@
+CHIEF COMPLAINT
+
+Elevated and fluctuating blood pressures.
+
+MEDICAL HISTORY
+
+Patient reports history of essential hypertension, hyperlipidemia, and osteoarthritis.
+
+SOCIAL HISTORY
+
+Patient reports he enjoys playing golf.
+
+MEDICATIONS
+
+Patient reports he is taking lisinopril 20 mg twice per day, atorvastatin, and occasional Tylenol.
+
+REVIEW OF SYSTEMS
+
+Constitutional: Denies fever.
+Cardiovascular: Reports heaviness in chest. Denies heart palpitations or syncope.
+Respiratory: Denies dyspnea.
+Gastrointestinal: Denies nausea, vomiting, or diarrhea.
+Neurological: Reports headache and lightheadedness. Denies syncope.
+
+PHYSICAL EXAM
+
+Respiratory
+- Auscultation of Lungs: Mild bibasilar rales, but no wheezes or rhonchi. Excellent air movement.
+
+Cardiovascular
+- Auscultation of Heart: Grade 3 out of 6 systolic ejection murmur, unchanged from prior.
+
+Musculoskeletal
+- Examination: Trace lower extremity edema bilaterally.
+
+ASSESSMENT AND PLAN
+
+1. Elevated blood pressure.
+- Medical Reasoning: I do think his blood pressure is uncontrolled and we need to make some adjustments to his medication.
+- Patient Education and Counseling: The patient and I discussed that he should stay well hydrated during warm weather. I explained he loses more fluid when perspiring and will need to increase his fluid intake as needed. We discussed that drinking 6 to 8 standard glasses of water per day is an adequate amount. He may want to increase that amount if he is feeling particularly dehydrated or as he increases his activity level. I cautioned him from drinking more than 2 alcoholic beverages a week.
+- Medical Treatment: I am going to increase his lisinopril to 60 mg twice per day. Prescription for 25 mg per day of hydrochlorothiazide provided as well. He will check his blood pressure twice a day for the next 2 weeks.
+
+2. Hyperlipidemia.
+- Medical Reasoning: Stable.
+- Medical Treatment: I will order a cholesterol panel, CBC with differential, and comprehensive metabolic panel. We will also obtain an urinalysis to assess his kidney function as well. He will continue the current management with his atorvastatin.
+
+3. Osteoarthritis.
+- Medical Reasoning: Stable.
+- Patient Education and Counseling: I encouraged the patient to continue to stay as active as he can without overdoing it. We discussed that walking and golfing are great activities for him to engage in.
+- Medical Treatment: He can take Tylenol for any mild pain.
+
+Patient Agreements: The patient understands and agrees with the recommended medical treatment plan.
+
+INSTRUCTIONS
+
+The patient will follow up with me in 2 weeks.

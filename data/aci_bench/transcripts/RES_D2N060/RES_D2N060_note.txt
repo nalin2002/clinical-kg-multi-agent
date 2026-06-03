@@ -1,0 +1,59 @@
+CHIEF COMPLAINT
+
+Left foot pain.
+
+HISTORY OF PRESENT ILLNESS
+
+Jean Martinez is a pleasant 27-year-old female who presents to the clinic today for the evaluation of left foot pain.
+
+The patient sustained an injury to her left foot while playing soccer yesterday. She became entangled with another player, causing the player to fall onto the patient's foot, resulting in immediate pain. After the incident, she required help to get off of the field and was unable to participate for the rest of the game. Her trainer wrapped her foot, and she has tried ice, elevation, and ibuprofen to treat her symptoms. with medication, she rates her pain as 3/10, but without medication her pain is rated as 7-8/10. There is no numbness, tingling, or other abnormal sensations associated with her pain.
+
+Of note, the patient has sustained several injuries in the past while playing soccer, but this is her first left foot injury.
+
+MEDICAL HISTORY
+
+The patient reports that she has sustained several soccer injuries in the past.
+
+SOCIAL HISTORY
+
+The patient has been playing soccer since she was 4 or 5 years old. She is currently playing in a local league.
+
+MEDICATIONS
+
+The patient reports that she has been taking ibuprofen.
+
+REVIEW OF SYSTEMS
+
+Musculoskeletal: Reports left foot pain.
+Neurological: Denies left foot numbness or tingling.
+
+VITALS
+
+Blood pressure: 118/72 mmHg
+Heart rate: 58 bpm
+Respiratory rate: 14
+Temperature: Afebrile
+Oxygen saturation: 99% on room air
+
+PHYSICAL EXAM
+
+CV: Regular rate and rhythm without clicks, rubs, or murmurs. No ectopic beats noted on auscultation of the heart. Brisk capillary refill, less than 3 seconds. Dorsalis pedis pulse is intact and strong.
+RESPIRATORY: Lungs are clear and equal bilaterally.
+NEURO: Motor and sensation in the left foot are intact to light touch.
+MSK: Examination of the left foot: Ecchymosis on the plantar and dorsal aspects of the foot. Associated swelling. Tenderness to palpation of the midfoot. Positive piano key test.
+
+RESULTS
+
+X-ray images of the left foot were obtained and reviewed today. These reveal subtle dorsal displacement of the base of the 2nd metatarsal with a 3 mm separation of the 1st and 2nd metatarsal bases. There is presence of a bony fragment in the Lisfranc joint space.
+
+ASSESSMENT
+
+Lisfranc fracture, left foot.
+
+PLAN
+
+I explained the nature of her injury in detail. Based on her exam and x-ray findings, she will most likely require surgery of the left foot, but I want to order an MRI to assess for any ligamentous injuries. We discussed the procedure and postoperative expectations, such as recovery time and restrictions, at length. We also discussed the complications associated with deferring surgical intervention including poor bone and ligament healing, pes planus deformation, and a high likelihood of developing arthritis in the foot. She will be unable to participate for the remainder of the soccer season, but should be able to play next season.
+
+INSTRUCTIONS
+
+We will see the patient on Monday, for surgery.

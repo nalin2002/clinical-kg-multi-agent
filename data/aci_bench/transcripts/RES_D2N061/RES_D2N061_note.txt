@@ -1,0 +1,45 @@
+CHIEF COMPLAINT
+
+Right knee pain.
+
+HISTORY OF PRESENT ILLNESS
+
+Virginia Phillips is a pleasant 53-year-old female who presents to the clinic today for the evaluation of right knee pain. The onset of her pain began 7 days ago, when she was playing basketball and another player ran into her. She states that she fell to the ground and landed on her side. She denies hearing or feeling a pop at the time of the injury. The patient localizes her pain to the medial aspect of her knee. She used ice and an ACE wrap right after the injury. Today, she notes that she has been doing exercises, ice, and Mobic for pain control.
+
+MEDICAL HISTORY
+
+The patient reports she is a diabetic who takes her blood sugar every morning.
+
+SOCIAL HISTORY
+
+Patient reports that she plays basketball at the Y for fun.
+
+MEDICATIONS
+
+Patient reports that she takes metformin 500 mg twice a day.
+
+REVIEW OF SYSTEMS
+
+Musculoskeletal: Reports right knee pain.
+
+PHYSICAL EXAM
+
+MSK: Examination of the right knee: No pain to palpation of the lateral aspect of the right knee. Pain with palpation on the medial aspect of the knee. Ecchymosis and swelling on the medial aspect of the knee. Effusion is appreciated. Decreased ROM. Negative varus and valgus stress test.
+
+RESULTS
+
+X-rays of the right knee taken in office today reveal the bony alignment in good position. There is no evidence of any fractures. There is effusion present.
+
+ASSESSMENT
+
+Right knee pain, possible medial collateral ligament strain.
+
+PLAN
+
+After reviewing the patient's examination and radiographic findings today, I have had a lengthy discussion with the patient in regard to her current symptoms. I have prescribed the patient meloxicam 15 mg once a day to treat the pain and swelling. She was advised to stop taking any anti-inflammatory such as Motrin or Advil. I have also recommended that the patient attend formal physical therapy to strengthen her right knee. I have also advised her to continue to use the ACE wrap and wear a right knee brace for a few days. She should continue light walking with her brace on. The patient was advised to stop basketball until she follows up in 7 days.
+
+Regarding her diabetes, she should continue to monitor her blood sugars daily. She should reach out to her primary care physician if she sees an increase in her blood sugars due to loss of activity.
+
+INSTRUCTIONS
+
+The patient will follow up with me in 7 days to check on her progress. If her swelling has not improved, we will consider obtaining a CT or MRI of the right knee to evaluate for a possible medial collateral ligament strain.

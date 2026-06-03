@@ -1,0 +1,59 @@
+CHIEF COMPLAINT
+
+Smoking cessation.
+
+MEDICAL HISTORY
+
+Patient reports a history of type 2 diabetes, gout, and a 2/6 Systolic ejection murmur.
+
+SOCIAL HISTORY
+
+Patient reports he is a smoker.
+
+MEDICATIONS
+
+Patient reports taking allopurinol.
+
+VITALS
+
+Oxygen Saturation: 98% on room air.
+Blood Pressure: 128/88 mmHg.
+Heart Rate: 68 beats per minute.
+Respiratory Rate: 16 breaths per minute.
+
+PHYSICAL EXAM
+
+Neck
+- General Examination: Neck is supple without lymphadenopathy. No carotid bruits.
+
+Respiratory
+- Auscultation of Lungs: Clear bilaterally. No expiratory wheezes, rales, or rhonchi.
+
+Cardiovascular
+- Auscultation of Heart: Regular rate. 2/6 systolic ejection murmur.
+
+Hematology/Lymphatic/Immunology
+- Palpation: No enlarged lymph nodes.
+
+ASSESSMENT AND PLAN
+
+1. Nicotine dependence.
+- Medical Reasoning: The patient has a long history of smoking cigarettes. He is currently smoking 1.5 packs per day. He is highly motivated to cease smoking as he is preparing to become a father.
+- Patient Education and Counseling: I applaud the patient on making this first step to stop smoking. I reassured him that with absolute 100% certainty that I will be with him every step of the way. I explained to the patient that stress can often be a trigger for smoking. He received handouts today for common smoking triggers. I advised him to be watchful and monitor his stress level, not only regarding work, but also his impending fatherhood. The patient and I discussed coping mechanisms for when he encounters stressful situations. I encouraged him to maintain his gym routine, engage in meditation, and try adding in yoga to help further reduce his stress levels. We discussed additional cessation aids.
+- Medical Treatment: The patient has chosen his birthday, as a quit date. On that day, I am going to start him with a 21 mg nicotine patch, and the goal will be to decrease that over time. We will work together to decrease the dosage of the nicotine patch, so there are not necessarily any hard dates in mind. I recommend he change the patch location each day as that will help reduce or avoid any skin irritation that can occur if he re-uses the same location repeatedly.
+
+2. Type 2 diabetes.
+- Medical Reasoning: Stable.
+- Patient Education and Counseling: We discussed that continuing to follow a healthy diet and perform regular exercise will help to maintain his blood glucose levels.
+- Medical Treatment: We will continue to monitor his type 2 diabetes. Hemoglobin A1c is ordered to be completed by his next visit in 2 weeks.
+
+3. History of gout.
+- Medical Reasoning: Stable with medication.
+- Patient Education and Counseling: I advised him to continue to watch for foods that will exacerbate his uric acid levels.
+- Medical Treatment: He will continue his allopurinol.
+
+Patient Agreements: The patient understands and agrees with the recommended medical treatment plan.
+
+INSTRUCTIONS
+
+I would like to see him again in 2 weeks to discuss how things are going and to reevaluate the nicotine patch dosage.

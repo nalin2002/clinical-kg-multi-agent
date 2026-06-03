@@ -1,0 +1,31 @@
+CHIEF COMPLAINT
+
+Changes in vision.
+
+SOCIAL HISTORY
+
+Patient smokes approximately 1 pack of cigarettes per day.
+
+REVIEW OF SYSTEMS
+
+Eyes: Reports visual distortions and blurred vision.
+
+PHYSICAL EXAM
+
+Eyes
+- Examination: Anterior segment examination reveals posterior chamber intraocular lenses in both eyes.
+Right eye: The cornea is clear. No MVI. PCIOL cup to disc is 0.2. Fundus examination of the right eye shows the retina to be attached 360 degrees without any tears or holes. RPE changes in the fovea. Posterior segment exam shows drusen in the macula, thickening of the retina, presence of subretinal fluid and exudates accumulation. Positive for hemorrhage.
+Left eye: The cornea is clear. No MVI. Cup to disc is 0.3. RPE changes in the fovea. No hemorrhage or subretinal fluid. Retina is attached.
+
+RESULTS
+
+Optical coherence tomography shows drusen deposit. Retinal pigment epithelium with subretinal fluid accumulation. The choroidal neovascular membrane can be visualized. Fluorescein angiography reveals focal areas of leakage in the right eye consistent with neovascular age-related macular degeneration.
+
+ASSESSMENT AND PLAN
+
+1. Neovascular age-related macular degeneration.
+- Medical Reasoning: Based on her diagnostic testing and eye exam, this is at an advanced stage.
+- Patient Education and Counseling: We discussed the nature of the condition, as well as the recommendation for Lucentis injections. I explained the procedure in detail and advised the patient of the potential outcomes.
+- Medical Treatment: We will proceed with a once-monthly Lucenti's injections.
+
+Patient Agreements: The patient understands and agrees with the recommended medical treatment plan.

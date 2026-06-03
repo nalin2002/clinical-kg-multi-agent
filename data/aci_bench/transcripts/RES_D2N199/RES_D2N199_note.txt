@@ -1,0 +1,80 @@
+CHIEF COMPLAINT
+
+Cough.
+
+MEDICAL HISTORY
+
+Patient reports history of hypertension and diabetes.
+
+SOCIAL HISTORY
+
+Patient reports that he is a teacher.
+
+MEDICATIONS
+
+Patient reports taking lisinopril 20 mg daily and metformin 1000 mg twice a day.
+
+REVIEW OF SYSTEMS
+
+Constitutional: Reports "feeling warm". Denies chills.
+HENT: Reports nasal congestion, sore throat, and sinus pressure.
+Respiratory: Reports productive cough with yellow sputum. Denies dyspnea.
+Musculoskeletal: Reports body aches and right knee pain. Denies right knee instability.
+
+VITALS
+
+Temperature is 98.4 today.
+BP: 125/62.
+Heart rate is nice and slow in the 80s.
+SpO2 is 97% on room air.
+
+PHYSICAL EXAM
+
+Head and Face
+- Examination: Pain to palpation to the bilateral maxillary sinuses.
+
+Ears, Nose, Mouth, and Throat
+- Examination of Nose: Erythema and edema of the nasal turbinates bilaterally with associated yellow discharge.
+- Examination of Throat: Uvula is midline. Pharynx without erythema, swelling, or exudate in the peritonsillar space.
+
+Neck
+- General Examination: Bilateral cervical lymphadenopathy noted.
+
+Respiratory
+- Auscultation of Lungs: Coarse rhonchi present bilaterally that clears with cough.
+
+Cardiovascular
+- Auscultation of Heart: Regular rate and rhythm. No murmurs.
+
+Gastrointestinal
+- Examination of Abdomen: No masses or tenderness.
+- Auscultation: Bowel sounds normal in all 4 quadrants.
+
+Musculoskeletal
+- Examination of the right knee: Pain to palpation. Decreased flexion and extension. Ecchymosis present medially. No evidence of an effusion.
+
+ASSESSMENT AND PLAN
+
+1. Cough.
+- Medical Reasoning: The patient presents with a cough likely due to a viral syndrome such as mild bronchitis.
+- Patient Education and Counseling: We discussed that antibiotics are not needed at this time, however, if his symptoms worsen we will consider a chest x-ray. - Medical Treatment: Continue over-the-counter medications. I will prescribe guaifenesin 600 mg twice a day.
+
+2. Right knee pain.
+- Medical Reasoning: The patient's physical exam is consistent with a right medial lateral ligament strain.
+- Patient Education and Counseling: We discussed physical therapy will be beneficial for strengthening the right knee.
+- Medical Treatment: Prescription for meloxicam 15 mg once a day provided. Referral to physical therapy provided. Right knee x-ray ordered.
+
+3. Hypertension.
+- Medical Reasoning: The patient's blood pressure in office today looked great and appears stable at this time.
+- Medical Treatment: Continue lisinopril 20 mg once a day. I will order a lipid panel.
+
+4. Diabetes.
+- Medical Reasoning: The patient does not check his blood sugar at home and admits to not watching his diet.
+- Patient Education and Counseling: We discussed the importance of diet as there can be complications with diabetes such as kidney dysfunction and eye problems that we want to avoid. He was also advised of the importance of blood sugar monitoring.
+- Medical Treatment: Hemoglobin A1c ordered. Continue metformin as prescribed. Start blood sugar monitoring and report levels through patient portal.
+
+Patient Agreements: The patient understands and agrees with the recommended medical treatment plan.
+
+INSTRUCTIONS
+
+We will contact the patient with his lab results when ready.

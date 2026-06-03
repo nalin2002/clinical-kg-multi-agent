@@ -1,0 +1,35 @@
+CHIEF COMPLAINT
+
+New patient evaluation of newly diagnosed ovarian cancer.
+
+FAMILY HISTORY
+
+The patient was adopted and has no knowledge of any family history.
+
+REVIEW OF SYSTEMS
+
+Constitutional: Reports unintentional weight loss
+Gastrointestinal: Reports abdominal pain and constipation. Denies vomiting.
+Genitourinary: Reports abnormal vaginal bleeding. Denies urinary issues.
+Psychiatric: Reports depression
+
+PHYSICAL EXAM
+
+Gastrointestinal
+- Examination of Abdomen: There is slight tenderness to palpation of the left lower quadrant. No rebounding or guarding.
+
+Pelvic
+- Examination: There are no external lesions on the labia. The vaginal vault is within normal limits. The cervix is pink without lesions. On bimanual exam, I appreciate a left adnexal mass. No masses on the right.
+
+RESULTS
+
+CT scan of the abdomen was reviewed and demonstrated a 3 cm left ovarian mass with associated localized lymph node involvement. There is no evidence of gross peritoneal or metastatic disease.
+
+ASSESSMENT AND PLAN
+
+1. Ovarian cancer.
+- Medical Reasoning: Looking at her abdominal CT results, it appears to be stage IIIA disease based on the lymph node involvement.
+- Patient Education and Counseling: I explained to the patient that the typical approach to treating this stage of cancer is surgical intervention followed by adjunct chemotherapy. The procedure and subsequent chemotherapy plans were discussed in detail. Given that she is young and otherwise healthy, I reassured her that I believe her prognosis is favorable based on her current status, however, this is dependent on the final pathology report. All of her questions were answered.
+- Medical Treatment: I want to start by ordering several blood tests including a CA-125, hCG, AFP, and LDH. I also want her to undergo genetic counseling and testing to see if she has a genetic predisposition for developing ovarian cancer. I recommend we perform a hysterectomy and oophorectomy, as well as a lymph node dissection to remove any involved lymph nodes. Any concerning tissue will be biopsied and sent to pathology for staging. After she has recovered from surgery, she will start chemotherapy treatment with cisplatin and Taxol. We may also consider intraperitoneal chemotherapy.
+
+Patient Agreements: The patient understands and agrees with the recommended medical treatment plan.

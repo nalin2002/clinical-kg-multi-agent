@@ -1,0 +1,35 @@
+CHIEF COMPLAINT
+
+Kidney stones.
+
+HISTORY OF PRESENT ILLNESS
+
+Mason Ward is a pleasant 80-year-old male who presents to the clinic today for the evaluation of kidney stones. The patient was referred from his primary care physician. The onset of his pain began 1 week ago when he was in his barn moving hay when he had a sudden onset of right back pain. The patient initially thought his pain was due to throwing hay; however, he broke out into a sweat and became nauseated. He was seen by his primary care physician, who ordered a CT scan and told him that he had a kidney stone. He denies having kidney stones before, but states that his father has a history of kidney stones in the past. He explains that when he had pain, which has now resolved, it would radiate almost to his groin. The patient describes the pain as intermittent after he found out it was a kidney stone. He explains that he has been straining his urine, but has not seen anything. He denies any hematuria.
+
+REVIEW OF SYSTEMS
+
+Musculoskeletal: Reports right back pain.
+
+VITALS
+
+Vitals look good, blood pressure and hear rate are within normal limits. Temperature is within normal limits.
+
+PHYSICAL EXAM
+
+MSK: Examination of the abdomen: No pain with palpation of the abdomen. No rebound or guarding. There is CVA tenderness on the right side.
+
+RESULTS
+
+The CT scan of the abdomen revealed a stone that is measuring 0.5 cm located in the proximal right ureter. There is no evidence of hydronephrosis.
+
+ASSESSMENT
+
+Right kidney stone.
+
+PLAN
+
+We reviewed the patient's CT results in detail today. I have recommended that we treat the patient conservatively. I have prescribed the patient oxycodone 5 mg every 6 to 8 hours for pain. He may continue to take Tylenol between the oxycodone doses for any breakthrough pain. The patient should continue to use the strainer when he urinates until the stone passes. I have also recommended that we obtain a BMP, urinalysis, and urine culture to evaluate for any signs of infection.
+
+INSTRUCTIONS
+
+The patient will follow up with me in 1 to 2 weeks to check on his progress. If his symptoms have not improved, we will discuss further treatment options including lithotripsy.

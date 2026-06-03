@@ -1,0 +1,34 @@
+CHIEF COMPLAINT
+
+Itchy scalp pain.
+
+REVIEW OF SYSTEMS
+
+Constitutional: Denies fever or weight loss.
+HENT: Reports scalp pain Musculoskeletal: Denies joint pain.
+Skin: Reports itchy scalp Denies any rashes.
+
+VITALS
+
+BP: 130/68.
+HR: 98.
+RR:18.
+Temperature is 97.7 today.
+
+PHYSICAL EXAM
+
+Integumentary
+- Examination: Scalp reveals demarcated scaly, erythematous plaques. They are patchy in format and diffusely present across the back of the skull.
+
+ASSESSMENT AND PLAN
+
+1. Scalp psoriasis.
+- Medical Reasoning: The patient presents today with symptoms similar to scalp psoriasis.
+- Patient Education and Counseling: Nature of the diagnosis was discussed as well as treatment options. Patient was advised there is no cure for this. Patient was counseled on how to apply clobetasol 0.05%.
+- Medical Treatment: Prescription for clobetasol 0.05% solution twice daily provided. Continuing using T/Gel shampoo. Prescription for steroids provided to be used for flare ups.
+
+Patient Agreements: The patient understands and agrees with the recommended medical treatment plan.
+
+INSTRUCTIONS
+
+The patient will follow-up in 3 months or sooner if her conditions worsen.

@@ -1,0 +1,38 @@
+CHIEF COMPLAINT
+
+Vision changes in the right eye.
+
+MEDICAL HISTORY
+
+Patient reports history of high blood pressure.
+
+SOCIAL HISTORY
+
+Patient reports he is smoking 1 pack of cigarettes daily.
+
+REVIEW OF SYSTEMS
+
+Eyes: Reports right eye vision changes.
+
+PHYSICAL EXAM
+
+Eyes
+- Examination of the right eye: Posterior chamber intraocular lenses present bilaterally. Right eye cornea is clear without NVI and cup-disc ratio is 0.2. Fundus of right eye shows retina is intact 360 degrees without holes or tears noted, and RPE changes in fovea. Posterior segment shows drusen of the macula, retinal thickening, and presence of subretinal fluid and exudate accumulation. Positive hemorrhage
+Examination of the left eye: Cornea is clear. No NVI. Cup-disc ration is 0.3. RPE changes in fovea. No hemorrhage noted or subretinal fluid noted. Retina is attached appropriately.
+
+RESULTS
+
+OTC:
+Drusen deposits under the RPE. SRF accumulation and choroidal neovascular membrane can also be visualized.
+
+Fluorescein angiography:
+Reveals that the focal area of the leakage in the right eye is consistent with neovascular age related macular degeneration.
+
+ASSESSMENT AND PLAN
+
+1. Wet macular degeneration.
+- Medical Reasoning: The diagnostic test and eye exams are consistent with neovascular age-related macular degeneration, also called wet macular degeneration.
+- Patient Education and Counseling: I explained the nature of the diagnosis and that this is advanced to a stage that usually leads to more severe vision loss happening. We discussed this happens when those abnormal blood vessels start to grow beneath the retina leaking fluid and blood. Secondary to that, it creates a large blind spot in the center of his visual field. He was advised that this is the most common cause of severe vision loss. I explained the treatment plan at length. He understands he is going to be injected in the vitreous portion of the eye after we numb the eye, so he is not going to feel any pain. I advised injections given over time can slow the rate of the vision decline and maybe even stop it. However, I also have to let him know that there could be a situation where he may still note a small amount of vision loss, but this is his best chance of maintaining that vision for as long as he can. Additionally, patient was counseled on the importance of taking his blood pressure medication. Questions were invited and answered today.
+- Medical Treatment: Lucentis injections once a month with his first being performed today.
+
+Patient Agreements: The patient understands and agrees with the recommended medical treatment plan.

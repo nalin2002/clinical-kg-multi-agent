@@ -1,0 +1,61 @@
+CHIEF COMPLAINT
+
+Right elbow pain.
+
+MEDICAL HISTORY
+
+Patient reports history of type 2 diabetes and mild intermittent asthma.
+
+SURGICAL HISTORY
+
+Patient reports history of cholecystectomy 10 years ago by Dr. Nelson.
+
+SOCIAL HISTORY
+
+Patient reports he has been playing tennis since high school.
+
+ALLERGIES
+
+Patient reports that he has an allergy to PENICILLIN.
+
+MEDICATIONS
+
+Patient reports taking metformin 500 mg twice a day, Flovent twice a day and albuterol as needed.
+
+REVIEW OF SYSTEMS
+
+Constitutional: Denies fever.
+Musculoskeletal: Reports right elbow pain.
+
+PHYSICAL EXAM
+
+Cardiovascular
+- Auscultation of Heart: Grade 3 out of 6 systolic ejection murmur, unchanged from prior exam.
+
+Musculoskeletal
+- Examination of the right upper extremity: Moderate lateral epicondylar tenderness. Moderate pain with passive range of motion. No palpable joint effusion. Mild pain with resisted extension of the right wrist.
+
+RESULTS
+
+X-ray of the right elbow taken today is reviewed and shows no acute fracture or other bony abnormality. There is no malalignment or joint effusion. Otherwise normal right elbow x-ray.
+
+ASSESSMENT AND PLAN
+
+1. Acute lateral epicondylitis of right elbow.
+- Medical Reasoning: Patient presents today with symptoms consistent with lateral epicondylitis secondary to overuse.
+- Patient Education and Counseling: The nature of the diagnosis was discussed. He was advised that this is like due to increased tennis activity and was encouraged to rest as much as possible. - Medical Treatment: Patient will discontinue playing tennis for the next 4 to 6 weeks, as well as avoid repetitive stress with the right arm. He will apply ice to the elbow for at least 20 minutes 3 times per day to reduce pain and inflammation. Right forearm brace was provided today to help with discomfort. Prescription for Ultram 50 mg once per day was also provided for pain.
+
+2. Diabetes type 2.
+- Medical Reasoning: His blood sugar today is not controlled.
+- Patient Education and Counseling: We discussed that I would like him to take his blood sugars twice a day for the next 2 weeks and to let me know how they are running so we can make additional adjustments if needed.
+- Medical Treatment: He will increase his metformin to 1000 mg twice a day. He will begin home blood sugar monitoring twice a day for the next 2 weeks. Hemoglobin A1c, CBC, and a Chem-12 test were ordered today.
+
+3. Mild acute intermittent asthma.
+- Medical Reasoning: This remains well-controlled.
+- Medical Treatment: The patient will continue his Flovent twice a day. Refill of albuterol provided today to be used as needed.
+
+Patient Agreements: The patient understands and agrees with the recommended medical treatment plan.
+
+INSTRUCTIONS
+
+The patient will follow-up in 4 weeks to assess his elbow and to determine if additional imaging or physical therapy is needed.

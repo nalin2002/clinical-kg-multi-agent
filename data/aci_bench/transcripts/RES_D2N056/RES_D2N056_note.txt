@@ -1,0 +1,45 @@
+CHIEF COMPLAINT
+
+Recurrent lung infections.
+
+SOCIAL HISTORY
+
+Patient reports he is a farmer. He denies smoking or living with anyone who smokes.
+
+ALLERGIES
+
+Patient denies history of seasonal allergies.
+
+REVIEW OF SYSTEMS
+
+Constitutional: Reports low-grade fever.
+Respiratory: Reports shortness of breath and productive cough.
+
+VITALS
+
+Respiratory rate: 20 breaths per minute.
+Pulse oxygenation: 99 percent on room air.
+
+PHYSICAL EXAM
+
+Respiratory
+- Auscultation of Lungs: Some fine rales were noted.
+
+Cardiovascular
+- Auscultation of Heart: Regular rate and rhythm. No murmurs, gallops or rubs.
+
+Musculoskeletal
+- Examination: No clubbing.
+
+RESULTS
+
+X-ray of the chest was reviewed today and shows some round glass opacities.
+
+ASSESSMENT AND PLAN
+
+1. Recurrent lung infections.
+- Medical Reasoning: The patient's symptoms seem consistent with hypersensitivity pneumonitis. He is a farmer and has been moving hay quite frequently recently.
+- Patient Education and Counseling: The nature of the diagnosis was discussed with the patient. I explained that hypersensitivity pneumonitis could be caused by bacteria and/or mold that is found in the hay. We discussed that when inhaling this, it leads to an allergic reaction in the lungs, which would explain why symptoms occur every time he moves hay. He was advised that it would be best to eliminate his exposure to hay in order to prevent further damage to his lungs, however, if he is unable to do this then it would be recommended that he wear a respirator when working. Questions were invited and answered today.
+- Medical Treatment: A course of oral steroids were prescribed today to help decrease his lung inflammation. CT of the lungs will also be ordered today to confirm the diagnosis. A pulmonary function test was also ordered to assess the severity of his respiratory impairment.
+
+Patient Agreements: The patient understands and agrees with the recommended medical treatment plan.

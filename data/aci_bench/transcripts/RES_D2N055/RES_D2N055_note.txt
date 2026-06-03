@@ -1,0 +1,33 @@
+CHIEF COMPLAINT
+
+Right eye twitch.
+
+SOCIAL HISTORY
+
+The patient plays soccer every Saturday, however she has noted that there is a girl that tries to kick her and pulls her hair.
+
+FAMILY HISTORY
+
+Patient's father reports that they do not have a family history of seizures or Tourette's syndrome.
+
+REVIEW OF SYSTEMS
+
+Constitutional: Denies fever, chills, or changes in appetite.
+Eyes: Reports right eye twitch. Denies right eye pain.
+Respiratory: Denies cough.
+Neurological: Denies headaches or sleep disturbances.
+
+PHYSICAL EXAM
+
+Neurological
+- Orientation: Alert and oriented x3. Speech is clear and fluent. Gait is steady. Heel toe walking is normal. Cranial nerves grossly intact without focal neurologic findings. No pronator drift. Sensation is intact. Reflexes are 2+ and symmetric at the biceps, triceps, knees, and ankles.
+
+ASSESSMENT AND PLAN
+
+1. Transient tics.
+- Medical Reasoning: The patient's father provided a video today as she did not have a twitch in office. It appears the patient is experiencing a tic.
+- Patient Education and Counseling: Nature of the diagnosis was discussed today with the patient and her father. I advised eye tics are very common in children and as many as 1 in 5 children have a tick during their school years. We discussed tics can also include things like shoulder shrugging, facial grimacing, sniffling, excessive throat clearing, and uncontrolled vocalization. I explained that essentially they are brief, sudden and involuntary motor movements and that we do not have a full understanding of the cause. We also discussed that they typically occur around 5 to 10 years of age and mostly resolve on their own within a year. Dad was advised that treatment is not recommended as they do not appear to be bothering Karen and she continues to do well in school and activities. Additionally, we discussed avoiding drawing attention to the tic as it may cause Karen to feel self-conscious and increase the severity of the tic.
+- Medical Treatment: None at this time.
+
+Patient Agreements: The patient's parent understands and agrees with the recommended medical treatment plan. 
+All questions were answered.

@@ -1,0 +1,36 @@
+CHIEF COMPLAINT
+
+Right great toe pain.
+
+HISTORY OF PRESENT ILLNESS
+
+Joseph Walker is a pleasant 58-year-old male who presents to the clinic today for the evaluation of right great toe pain. The onset of his pain began 2 weeks ago, however it worsened last week. He noticed the pain worsening when he was at a trade show convention and he could not ambulate as he was forced to stand there as the pain was there the whole time. He denies any specific injury. The patient describes his pain usually as throbbing and burning, but notes it occasionally changes to sharp, stabbing pain especially with movement or prolonged ambulation. His symptoms also include redness to the right great toe. The patient states that he has been ambulating on his heel to keep his toe from bending. He reports that his pain is present even with the slightest of pressure, which he notes is worse at night when his sheet is touching his right toe. He adds that he has been taking 2 ibuprofen per day, which does not provide him with relief.
+
+SOCIAL HISTORY
+
+Patient reports that he likes to bicycle ride.
+
+REVIEW OF SYSTEMS
+
+Musculoskeletal: Reports right great toe pain.
+Skin: Reports redness.
+
+PHYSICAL EXAM
+
+MSK: Examination of the right great toe reveals 10 degrees of plantar flexion with pain. Pain to palpation of the right great toe, between the big toe and 2nd toe. Palpated a bone spur on the right great toe.
+
+RESULTS
+
+X-ray of the right great toe taken today in office reveals a large bone spur on the anterior aspect of the right great toe joint. There is a loss of cartilage with some arthritis present.
+
+ASSESSMENT
+
+Right foot hallux rigidus.
+
+PLAN
+
+After reviewing the patient's examination and radiographic findings today, I have had a lengthy discussion with the patient in regards to his current symptoms. I have explained to him that his x-rays revealed hallux rigidus. We discussed treatment options for this and I have recommended that we begin with conservative treatment in the form of custom orthotics. I have also prescribed the patient meloxicam once a day to treat the pain. The patient was instructed to discontinue use and contact the office if gastrointestinal issues develop. I advised the patient that I want him to continue his regular activities.
+
+INSTRUCTIONS
+
+The patient will follow up with me in 2 weeks to check on his progress. If his pain does not improve with the orthotics, I will recommend a cortisone injection or surgical intervention.

@@ -1,0 +1,73 @@
+CHIEF COMPLAINT
+
+Dyspnea.
+
+MEDICAL HISTORY
+
+Patient reports history of diabetes, back pain, congestive heart failure, and chronic obstructive pulmonary disease.
+
+SOCIAL HISTORY
+
+Patient reports living a sedentary lifestyle.
+
+MEDICATIONS
+
+Patient reports she is not consistent with taking Lasix and metformin.
+
+REVIEW OF SYSTEMS
+
+Constitutional: Reports 10 pound weight gain. Denies fever.
+Cardiovascular: Denies chest pain or tightness.
+Respiratory: Reports orthopnea and productive cough. Denies dyspnea on exertion.
+Gastrointestinal: Denies nausea, vomiting, or diarrhea.
+Genitourinary: Reports polyuria.
+Musculoskeletal: Reports back pain and lower extremity edema.
+Neurological: Denies lower extremity weakness or numbness.
+
+VITALS
+
+Oxygen saturation: 92%
+
+PHYSICAL EXAM
+
+Neck
+- General Examination: Slight swelling. Mild JVD. No bruits.
+
+Respiratory
+- Auscultation of Lungs: Mild rales heard at the base bilaterally and slight intermittent wheezing.
+
+Cardiovascular
+- Auscultation of Heart: 2 out of 6 systolic ejection murmur, otherwise regular rate and rhythm.
+
+Gastrointestinal
+- Examination of Abdomen: Slightly distended. No tenderness or guarding.
+
+Musculoskeletal
+- Examination: 1.5+ pitting edema in the ankles bilaterally. No calf tenderness. Negative Homan's sign. Slight tenderness in the paraspinal area, mostly in the lower back. No midline tenderness. Good reflexes.
+
+RESULTS
+
+Hemoglobin A1c: 7.5
+
+ASSESSMENT AND PLAN
+
+1. Shortness of breath.
+- Medical Reasoning: I believe this is an exacerbation of her congestive heart failure.
+- Patient Education and Counseling: I advised the patient to monitor her weight daily.
+- Medical Treatment: She will increase her dose of Lasix from 20 mg to 60 mg for the next 4 days. She should also use her albuterol and Atrovent inhalers as needed. If her symptoms don't improve in the next couple of days, we will either increase her doses or have her go to the hospital.
+
+2. Diabetes type 2.
+- Medical Reasoning: Her recent blood glucose levels have been elevated.
+- Patient Education and Counseling: We discussed the possibility of needing to add another medication to her regimen.
+- Medical Treatment: We are going to order a repeat hemoglobin A1c and adjust her dose of metformin accordingly.
+
+3. Back pain.
+- Medical Reasoning: This appears to be all muscular pain.
+- Patient Education and Counseling: We discussed exercises she can do to help her pain and that ff this doesn't help we can consider physical therapy.
+- Medical Treatment: Prescriptions provided for Naprosyn and Flexeril.
+
+Patient Agreements: The patient understands and agrees with the recommended medical treatment plan.
+
+INSTRUCTIONS
+
+We will have her follow up in a couple of days.

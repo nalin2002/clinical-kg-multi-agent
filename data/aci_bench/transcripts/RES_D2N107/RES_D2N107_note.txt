@@ -1,0 +1,35 @@
+CHIEF COMPLAINT
+
+Low back pain.
+
+HISTORY OF PRESENT ILLNESS
+
+Bryan Brooks is a pleasant 39-year-old male who presents to the clinic today for the evaluation of low back pain. He is accompanied today by his partner.
+
+Approximately 2 hours after he finished raking leaves yesterday, the patient began to feel a tightening sensation in his low back and tingling in his right foot. Prior to this, he recalls a similar episode approximately 3 years ago in which his symptoms resolved after 1 day. Ice and Advil provided no relief, but his pain is less severe when he is in a seated position and taking a hot shower helped alleviate his pain. The patient's partner reports that his pain seems to worsen when he stands up.
+
+REVIEW OF SYSTEMS
+
+Musculoskeletal: Reports low back pain.
+Neurological: Reports tingling in the right foot.
+
+PHYSICAL EXAM
+
+NEURO: Normal strength and sensation.
+MSK: Examination of the lumbar spine: No pain on extension. Some pain with flexion. Pain with palpation around L5. Dorsiflexion is normal. Pulses are equal in all extremities.
+
+RESULTS
+
+X-rays obtained and reviewed in office today were normal.
+
+ASSESSMENT
+
+Low back sprain.
+
+PLAN
+
+The examination findings and x-ray results were discussed with the patient and his partner today. I recommend we treat this conservatively with rest, meloxicam, and formal physical therapy. If he fails to improve, we can consider obtaining an MRI for further evaluation.
+
+INSTRUCTIONS
+
+The patient will follow up in 2 weeks.

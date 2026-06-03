@@ -1,0 +1,62 @@
+CHIEF COMPLAINT
+
+Right foot ulcer.
+
+HISTORY OF PRESENT ILLNESS
+
+Jeremy Roberts is a 79-year-old male who presents today for evaluation of a right foot ulcer. He reports an ulcer on his right foot has been present for approximately 6 to 8 weeks. He first noticed the ulcer after working outside. There is no associated pain, however, he feels the ulcer may have worsened from when he first noticed it. He denies experiencing any fevers or chills. He does however experience tension headaches quite frequently. He denies any pain in his calves when he walks. At this time the patient does not have a podiatrist for yearly foot exams.
+
+He is a diabetic and takes insulin. His blood sugar has been running higher than normal and his last hemoglobin A1c was higher than 9. Occasionally he will also experience numbness and tingling in his feet, especially with colder weather.
+
+In terms of his heart disease, the patient sustained a heart attack in 2018 and underwent stent placement at the right coronary artery. He is currently taking aspirin 81 mg daily. He denies chest pain or shortness of breath.
+
+MEDICAL HISTORY
+
+Patient reports history of diabetes and heart disease. He sustained a heart attack in 2018.
+
+SURGICAL HISTORY
+
+Patient reports undergoing stent placement at the right coronary artery.
+
+SOCIAL HISTORY
+
+Patient reports he is a former smoker. He previously smoked 2 packs a day for 20 years and was able to stop smoking approximately 4 years ago. Currently he is not very active but he does work around the house.
+
+MEDICATIONS
+
+Patient reports taking aspirin 81 mg daily and insulin.
+
+REVIEW OF SYSTEMS
+
+Constitutional: Denies fevers and chills.
+Cardiovascular: Denies chest pain.
+Respiratory: Denies dyspnea.
+Skin: Patient reports right foot ulcer.
+Neurological: Patient reports headaches and numbness and tingling in feet.
+
+VITALS
+
+No fever.
+Blood pressure: 127/80
+Heart rate: 60s
+
+PHYSICAL EXAM
+
+CV: 2/6 systolic ejection murmur heard at the left base.
+RESPIRATORY: Clear to auscultation bilaterally
+NECK: No jugular venous distention or carotid bruits
+MSK: Examination of the right lower extremity: No palpable dorsalis pedis or posterior tibial pulses. There is a 2 x 3 cm ulcerated lesion on the right lateral foot near the 5th metacarpal metatarsophalangeal joint. No associated cellulitis. No pain to palpation of the right foot. There is associated granulation tissue and some slight purulent discharge from the wound.
+
+ASSESSMENT
+
+1. Non-healing ulcer, right foot
+2. Diabetes
+3. Coronary artery disease
+
+PLAN
+
+After reviewing the patient's examination findings today, I have had a lengthy discussion with the patient in regards to his current symptoms. We discussed that his right foot ulcer is fairly sizable and will require wound care. I advised him that the ulcer does not appear to be healing and that further studies will be needed to assess if he has adequate blood supply to heal his foot wound. He was advised that due to his diabetes it is possible surgical intervention such as stent placement or bypass surgery may be required to improve his blood supply. I also advised him that I believe we will be able to heal his wound. At this time, I have recommended continued wound care and for him to also continue taking aspirin 81 mg daily. We will order an arterial ultrasound of the lower extremities. He will also be referred to podiatry for a consult.
+
+Regarding his diabetes, this appears to be unstable as the patient reports his last hemoglobin a1c was greater than 9 and is now experiencing a non-healing right foot ulcer. We discussed the importance of blood sugar control as this will impact his wound healing. At this time, I have recommended that he follow-up with his primary care physician for further care.
+
+The patient's coronary artery disease is currently stable. It is recommended that he continue to take his statin as prescribed. I will contact his cardiologist for medical clearance should surgical intervention be required for his non-healing right foot ulcer.

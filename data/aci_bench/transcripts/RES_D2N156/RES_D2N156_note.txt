@@ -1,0 +1,78 @@
+CHIEF COMPLAINT
+
+Follow up status post inferior STEMI.
+
+SURGICAL HISTORY
+
+RCA stent 2018
+
+MEDICATIONS
+
+aspirin 81 mg daily
+Brilinta 90 mg twice daily
+Lipitor 80 mg daily
+Toprol 50 mg daily
+lisinopril 20 mg daily
+metformin
+
+REVIEW OF SYSTEMS
+
+Cardiovascular: Denies chest pain.
+Respiratory: Denies shortness of breath.
+Musculoskeletal: Reports bilateral leg swelling.
+
+VITALS
+
+Within normal limits
+
+PHYSICAL EXAM
+
+Neck
+- General Examination: No jugular venous distention.
+
+Respiratory
+- Auscultation of Lungs: Clear bilaterally.
+
+Cardiovascular
+- Auscultation of Heart: No carotid bruits. A 3/6 systolic ejection murmur is heard at the left base.
+- Examination: Right radial artery cath site is clean, dry, and intact without hematoma. Radial artery pulses are palpable.
+
+Musculoskeletal
+- Examination: Bilateral lower limb edema. Pitting 1+.
+
+RESULTS
+
+EKG is reviewed and demonstrates a normal sinus rhythm. Good R wave progression. Evolutionary changes that are anticipated after a STEMI.
+
+Echocardiogram is reviewed and demonstrates a reduced ejection fraction of 35%.
+
+ASSESSMENT AND PLAN
+
+1. Coronary artery disease.
+- Medical Reasoning: The patient has a history of coronary artery disease that we will continue to monitor.
+- Medical Treatment: She will continue aspirin 81 mg daily and Brilinta 90 mg twice daily. She will continue Lipitor 80 mg a day and Toprol 50 mg daily. I am going to refer her to cardiac rehab for education and to gain confidence to resume exercising regularly.
+
+2. Newly reduced left ventricular dysfunction and moderate mitral regurgitation.
+- Medical Reasoning: A recent echocardiogram revealed a reduced ejection fraction of 35%. She was able to be treated in the cath lab in a timely manner, so I think that the muscle is just stunned. Given her history. it will improve over time.
+- Patient Education and Counseling: I advised the patient that she will recover since she is compliant with her medications.
+- Medical Treatment: Continue lisinopril 20 mg daily.
+
+3. Acute heart failure.
+- Medical Reasoning: The patient is retaining fluid.
+- Medical Treatment: I am going to prescribe Lasix 40 mg once a day. I want to add Aldactone 12.5 mg daily. I will order lab work. We will obtain a repeat echo in approximately 2 months.
+
+4. Hypertension.
+- Medical Reasoning: Blood pressure is well controlled. She will tolerate the Aldactone well.
+- Patient Education and Counseling: I encouraged the patient to continue exercising and to be cognizant of her diet. I explained that there are healthier alternatives available to reduce the amount of preserved meats she consumes.
+- Medical Treatment: Continue lisinopril 20 mg daily. The patient received a referral to nutrition counseling to consider what other diet options might be available to her.
+
+5. Type 2 diabetes.
+- Medical Reasoning: Stable.
+- Patient Education and Counseling: I encouraged the patient to continue monitoring her blood glucose levels.
+- Medical Treatment: Continue metformin as prescribed.
+
+Patient Agreements: The patient understands and agrees with the recommended medical treatment plan.
+
+INSTRUCTIONS
+
+The patient will follow up as instructed.

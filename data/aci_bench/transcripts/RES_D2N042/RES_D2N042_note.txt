@@ -1,0 +1,55 @@
+CHIEF COMPLAINT
+
+Right ankle pain.
+
+HISTORY OF PRESENT ILLNESS
+
+Carolyn Jones is a pleasant 38-year-old female who presents to the clinic today for evaluation of right ankle pain.
+
+The patient sustained an injury to her right ankle when she slipped and fell on ice while taking her garbage out yesterday. This was her first right ankle injury. She believes she heard a pop at the time, but denies any associated numbness or tingling. Initially, she was unable to bear weight on the ankle and required help getting inside; however, she is now able to slightly bear weight but ambulates with an antalgic gait. Ice, elevation, and ibuprofen have been helpful at reducing her pain. She rates her current pain as 4/10, her pain without medication as 6/10, and her pain with medication as 1/10.
+
+Of note, the patient participates in an intramural soccer league but has not been able to play since this injury.
+
+MEDICAL HISTORY
+
+The patient reports that she has had several ankle injuries in the past. This is her first right ankle injury.
+
+SOCIAL HISTORY
+
+The patient reports that she has a history of playing sports. She played soccer in college and is now in an intramural soccer league.
+
+MEDICATIONS
+
+The patient reports that she has been taking ibuprofen.
+
+REVIEW OF SYSTEMS
+
+Musculoskeletal: Reports right ankle pain.
+Neurological: Denies right ankle numbness or tingling.
+
+VITALS
+
+Normal
+
+PHYSICAL EXAM
+
+GAIT: antalgic gait
+CV: Brisk capillary refill to less than 3 seconds. Strong dorsalis pedis pulse.
+NEURO: Sensation in the right ankle is intact to light touch distally.
+MSK: Examination of the right ankle: Ecchymosis over the lateral malleolus associated with trace edema in that area. Tenderness to palpation over the anterolateral soft tissue. No laxity on anterior drawer testing or inversion stress testing. No bony tenderness on palpation of the foot or ankle area. Findings are consistent bilaterally.
+
+RESULTS
+
+X-ray images of the right ankle were obtained and reviewed today. These reveal no evidence of fracture.
+
+ASSESSMENT
+
+Lateral ligament complex sprain, Right ankle.
+
+PLAN
+
+After reviewing the patient's examination and radiographic findings today, her symptoms are consistent with a right ankle sprain of the lateral ligament complex, more specifically the anterior talofibular ligament. We had a lengthy discussion regarding the nature of this injury and the course of treatment. I advised her to keep her leg elevated when she is seated and continue to ice her ankle. She should also continue taking ibuprofen as-needed for pain and inflammation management. She will be placed in an Aircast to help stabilize her ankle, and I am going to order crutches so she can remain non-weight-bearing for the next couple of days. At that point, she can start bearing weight on the ankle as tolerated.
+
+INSTRUCTIONS
+
+The patient will follow up in 2 weeks.

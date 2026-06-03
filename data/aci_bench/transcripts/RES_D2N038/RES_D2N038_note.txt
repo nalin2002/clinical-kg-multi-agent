@@ -1,0 +1,55 @@
+CHIEF COMPLAINT
+
+Hepatitis C.
+
+HISTORY OF PRESENT ILLNESS
+
+Bruce Ward is a pleasant 60-year-old male who presents to the clinic today following a positive result in a hepatitis C antibody test. He was sent to obtain the hepatitis C antibody test as part of a routine physical. He states he is anxious with the results and denies he has ever been diagnosed with hepatitis C. The patient admits to intravenous drug use in the past; however, he notes it has been longer than 15 years since his last usage. He also reports a history of heavy alcohol use. He continues to drink a beer on occasion. The patient currently smokes 1 to 2 cigarettes per day. He notes he used to smoke more and is having difficulty with complete cessation.
+
+MEDICAL HISTORY
+
+The patient denies any significant past medical history.
+
+SOCIAL HISTORY
+
+The patient is married with children. He reports history of IV drug use 15 years ago. He currently drinks beer occasionally. The patient reports smoking 1 to 2 cigarettes per day.
+
+FAMILY HISTORY
+
+He reports a family history of high blood pressure, diabetes, and depression.
+
+MEDICATIONS
+
+Patient denies taking any current medications.
+
+VITALS
+
+All vital signs are within normal limits.
+
+PHYSICAL EXAM
+
+CONSTITUTIONAL: In no apparent distress.
+CV: Regular rate and rhythm. Grade 2 out of 6 systolic ejection murmur is appreciated.
+RESPIRATORY: Lungs are clear without wheezes, rales, or rhonchi.
+GI/GU: Abdomen is soft with no hepatosplenomegaly. Bowel sounds are present.
+SKIN: No jaundice.
+
+RESULTS
+
+The HCV antibody test was reviewed today and is positive.
+
+Liver panel revealed an elevated AST at 39 U/L. The ALT, albumin, and total bilirubin were all within normal limits.
+
+ASSESSMENT
+
+Hepatitis C.
+
+PLAN
+
+After reviewing the patient's laboratory findings today, I have had a lengthy discussion with him in regard to his current symptoms. His initial labs were consistent with a hepatitis C diagnosis. I have recommended that we confirm the diagnosis with additional blood work including checking his hepatitis C RNA and HCV genotype. I have also recommended that we obtain an ultrasound elastography to evaluate for fibrosis of the liver.
+
+The patient is married with children and is concerned about their hepatitis C status. I advised the patient that his family should be screened and we will assist him with setting appointments with their primary care physician.
+
+INSTRUCTIONS
+
+The patient will follow up with me in 3 weeks to review his results and discuss further treatment.

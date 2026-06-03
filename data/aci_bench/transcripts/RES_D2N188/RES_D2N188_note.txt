@@ -1,0 +1,40 @@
+CHIEF COMPLAINT
+
+Right ankle injury.
+
+HISTORY OF PRESENT ILLNESS
+
+Jacqueline Price is a pleasant 28-year-old female who presents to the clinic today for the evaluation of a right ankle injury. The patient sustained the injury when she fell while in mountain biking lessons. She states that her ankle twisted outward. The patient localizes the pain to her lateral aspect of her right ankle. She denies any tingling, but notes numbness in her toes. She notes that she is able to move her ankle a little bit. The patient states that she has difficulty walking. Additionally, she notes that she has a limp when she ambulates. She has taken Tylenol for the pain, but states that it was not beneficial. She denies hearing a pop, but did hear a crack when the injury happened. Ms. Price notes that she has had a fever.
+
+SOCIAL HISTORY
+
+The patient has been mountain biking for 3 years.
+
+REVIEW OF SYSTEMS
+
+Constitutional: Reports fever.
+Musculoskeletal: Reports right ankle pain.
+Neurological: Reports numbness in the right ankle.
+
+VITALS
+
+Temperature in offce today was 98.6.
+BP: 118/77.
+HR: 77 bpm.
+
+PHYSICAL EXAM
+
+CV: Mild edema.
+MSK: Examination of the right ankle there is edema and erythema on the lateral malleolus on the right side. There is associated ecchymosis and a few excoriations. Pain with palpation of the right lateral malleolus. Decreased flexion and extension of the right ankle, as well as internal and external rotation. There is no apparent injury to the right knee or foot.
+
+RESULTS
+
+X-ray of the right foot taken in office today reveals no acute fracture or bony abnormalities.
+
+ASSESSMENT
+
+Acute right ankle sprain.
+
+PLAN
+
+We reviewed the patient's x-rays in detail today. The plan is to place the patient in an Aircast and provide the patient with crutches. I have also prescribed the patient meloxicam 15 mg to treat the pain. I have advised her to ice the area for 20 minutes 5 times per day. She can weight-bear as tolerated. I anticipate that she will improve in the next 2 weeks. If her pain does not improve with the Aircast, I will recommend formal physical therapy or pursuing further imaging.

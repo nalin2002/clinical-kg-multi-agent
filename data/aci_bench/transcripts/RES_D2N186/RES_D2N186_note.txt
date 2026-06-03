@@ -1,0 +1,37 @@
+CHIEF COMPLAINT
+
+Low back pain, left side.
+
+HISTORY OF PRESENT ILLNESS
+
+Sean Phillips is a pleasant 35-year-old male who presents to the clinic today for the evaluation of left-sided low back pain.
+
+The patient has been experiencing pain in the left side of his low back, generally localized around the surgical site of his microdiscectomy performed in 11/2020, but occasionally into the right side as well. Other than spontaneous flare-ups, his pain is worsened with excessive spinal flexion. Stretching and ibuprofen 800 mg daily are helpful, but he denies having tried icing the area.
+
+SURGICAL HISTORY
+
+The patient is status post lumbar microdiscectomy performed in 11/2020.
+
+MEDICATIONS
+
+The patient reports that, prior to his microdiscectomy in 2020, he was taking high-dose gabapentin for severe nerve pain through his back and lower extremities. He is currently taking ibuprofen 800 mg daily.
+
+REVIEW OF SYSTEMS
+
+Musculoskeletal: Reports left-sided low back pain.
+
+PHYSICAL EXAM
+
+MSK: Examination of the lumbar spine: No pain with flexion or extension. Pain with weight-bearing. Pain with palpation on the left side around L5. No pain with palpation on the right side. Dorsiflexion is normal. Normal range of motion. No nerve pain in his lower extremities.
+
+RESULTS
+
+X-ray images of the lumbar spine were obtained and reviewed in office today. These reveal no evidence of fracture or other abnormalities in the spine or vertebrae. His previous surgical site is visible and appears to have healed properly.
+
+ASSESSMENT
+
+Low back pain, left side.
+
+PLAN
+
+After reviewing the patient's examination and radiographic findings today, I believe his symptoms are related to a muscle strain due to spinal misalignment. I recommend that we treat the patient conservatively with formal physical therapy and meloxicam. The patient requested a prescription for Vicodin and Demerol. I explained that Vicodin is a strong medication for this issue and that I would need to refer him to pain management for that, but I did provide him with a prescription for Demerol.

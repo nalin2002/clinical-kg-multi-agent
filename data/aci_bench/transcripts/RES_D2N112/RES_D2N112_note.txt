@@ -1,0 +1,20 @@
+HISTORY OF PRESENT ILLNESS
+
+Matthew Hill is a pleasant 44-year-old male who presents to the clinic today for the evaluation of back pain. The patient was referred from his primary care physician. The onset of his pain began 30 years ago, when he fell off of a roof. He endorses that it was very bothersome and he was unable to play football. He states that he was told that he may have a fracture at that time. The patient reports that his pain has worsened 1 month ago. He locates his pain to his lower back, which radiates into his left hip, down his left leg, on the side of his calf, and into his left big toe. The patient describes his pain as an "electrical tooth ache" that radiates down his entire left leg. He notes that he has to use a cane to walk as his left foot drags when he walks. He rates his pain level as a 6 to 8 out of 10, however it can get to a 13 out of 10 at its worst. He states that he did not take any medication before his appointment so it did not affect his pain during our visit. The patient notes that he was in the waiting room for 30 minutes today and states that it made his symptoms worse. His pain is aggravated by standing, ambulating, coughing, and sneezing. The patient states that he is unable to tie his shoes secondary to the pain. The patient states that his pain is alleviated by lying down. He also reports weakness in his bilateral legs and his back. The patient denies any numbness or tingling. The patient has attempted NSAIDs in the past without relief. He has also attended physical therapy.
+
+PHYSICAL EXAM
+
+CONSTITUTIONAL: Vitals look good.
+MSK: Examination of the lumbar spine: No bony abnormalities. No redness. No bruising present. Pain with palpation at the L4 vertebrae. Positive for pain with flexion and extension of the back. 4/5 strength on the left, 5/5 strength on the right. Reflexes are brisk. Motor and sensory are intact throughout the bilateral lower extremities.
+
+RESULTS
+
+The MRI of the lumbar spine was reviewed today. It revealed a disc herniation at the level of the L4-5 vertebrae. It is associated with some nerve root impingement.
+
+ASSESSMENT
+
+Acute disc herniation at L4-5 with nerve root impingement.
+
+PLAN
+
+I have recommended that we treat the patient conservatively with a epidural steroid injection and formal physical therapy. With the patient's consent, we will proceed with a epidural steroid injection into the lumbar spine today. He will follow up with me in 4 weeks to check on his progress.

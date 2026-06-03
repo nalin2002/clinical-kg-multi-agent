@@ -1,0 +1,62 @@
+CHIEF COMPLAINT
+
+Abdominal pain.
+
+MEDICAL HISTORY
+
+Patient reports history of type 2 diabetes.
+
+SOCIAL HISTORY
+
+Patient reports enjoying nature photography.
+
+FAMILY HISTORY
+
+Patient reports family history of cholelithiasis. Both of his parents have had cholecystectomies.
+
+REVIEW OF SYSTEMS
+
+Constitutional: Reports low-grade fevers.
+Gastrointestinal: Reports right-sided abdominal pain and nausea. Denies vomiting.
+
+VITALS
+
+Blood Pressure: 128/88 mmHg.
+Respiratory Rate: 16 breaths per minute.
+Heart Rate: 68 beats per minute.
+Oxygen Saturation: 99% on room air.
+Body Temperature: Afebrile.
+
+PHYSICAL EXAM
+
+Respiratory
+- Auscultation of Lungs: Clear and equal bilaterally.
+
+Cardiovascular
+- Auscultation of Heart: Regular rate and rhythm. No ectopic beats. No murmurs, clicks, or rubs.
+
+Gastrointestinal
+- Examination of Abdomen: Soft, nondistended abdomen. Positive slight guarding to the right upper quadrant, but without rebound tenderness. Positive for Murphy signs. Peritoneal signs not appreciated.
+- Auscultation: Bowel sounds normal in all 4 quadrants.
+
+RESULTS
+
+Abdominal ultrasound obtained at an outside facility is reviewed today. This demonstrates multiple gallstones present in the gallbladder. I do appreciate some mild thickening. The common bile duct size is within normal limits at 4.1 mm.
+
+ASSESSMENT AND PLAN
+
+1. Mild cholecystitis with gallstones.
+- Medical Reasoning: Based on the patient's symptoms, exam findings, and ultrasound, I do believe he has some mild cholecystitis with gallstones. I do not appreciate any frank obstruction, but it looks like his gallbladder is inflamed. This appears to have happened maybe over the last few weeks or since he has been symptomatic.
+- Patient Education and Counseling: I had a thorough discussion with the patient concerning surgical treatment. The preoperative, intraoperative, and postoperative courses of care were described and discussed. I explained the surgery will take approximately 1 to 1.5 hours, and he will probably spend the night in the hospital for post-procedure monitoring. We also discussed that he should avoid high fat foods after surgery and eat foods that are high in fiber. All questions were answered.
+- Medical Treatment: Since he has not had any improvement with dietary modifications, I recommend a laparoscopic cholecystectomy. A mutually agreed upon surgical date has been scheduled for 1 week.
+
+2. Type 2 diabetes.
+- Medical Reasoning: The patient is currently managing his diabetes with diet and exercise.
+- Patient Education and Counseling: I advised the patient he should refrain from hiking in the immediate postoperative period; however, he may return to walking outdoors on solid ground 1 week status post-surgery.
+Medical Treatment: I recommended he follow up with his physician regarding his impending surgery. We will continue to monitor his diabetes as has been outlined by either his endocrinologist or his primary care provider.
+
+Patient Agreements: The patient understands and agrees with the recommended medical treatment plan.
+
+INSTRUCTIONS
+
+The patient will follow up with me 1 week status post-surgery.

@@ -1,0 +1,59 @@
+CHIEF COMPLAINT
+
+Left knee pain.
+
+HISTORY OF PRESENT ILLNESS
+
+Andrea Barnes is a 34-year-old female who presents today for evaluation of left knee pain.
+
+The patient has been experiencing intermittent episodes of pain and sudden instability with ambulation. Her pain is localized deep in her patella and occurs less than once daily. Due to the fleeting nature of these episodes, she has not taken medication and simply braces herself until it passes. She denies any trauma or injury, or ever hearing or feeling a pop in the knee. Her symptoms do not interfere with her daily activities and she does not use a cane.
+
+Regarding her hypertension, it has been several days since she last checked her blood pressure at home, but it was approximately 120/70 mmHg at that time. Her current medications include amlodipine, lisinopril, and hydrochlorothiazide, all of which she takes on a regular basis.
+
+In terms of her diabetes, her fasting morning blood glucose levels have been approximately 130 based on home monitoring. This is slightly higher than usual, even though she has been compliant with metformin and Farxiga. She does try to avoid eating late at night.
+
+MEDICAL HISTORY
+
+Patient reports a personal history of hypertension and type 2 diabetes.
+
+SOCIAL HISTORY
+
+Patient likes to travel and is planning a trip to Columbus, Georgia in the next month or so. She is part of the Lion's Club.
+
+MEDICATIONS
+
+Patient reports that she is taking amlodipine, lisinopril 20 mg once daily, hydrochlorothiazide, Metformin, and Farxiga.
+
+REVIEW OF SYSTEMS
+
+Musculoskeletal: Reports left knee pain and instability,
+
+VITALS
+
+Temperature: 98.2 degrees F
+Heart rate: 72 bpm
+Respirations: 16
+Blood pressure: 122/70 mmHg
+
+PHYSICAL EXAM
+
+MSK: Examination of the right knee: No ecchymosis or edema. No effusion. No pain with palpation.
+Examination of the left knee: Full range of motion. Negative varus and valgus stress test.
+
+RESULTS
+
+X-rays were obtained and reviewed today. These reveal no evidence of fracture or bony abnormality.
+
+ASSESSMENT
+
+1. Left knee pain.
+2. Hypertension.
+3. Diabetes mellitus type 2.
+
+PLAN
+
+After reviewing the patients x-rays, I believe there is some arthritis in the knee. I'm going to prescribe meloxicam 15 mg once daily. We can consider physical therapy to strengthen the muscles around the area to prevent any further issues.
+
+Her hypertension is well controlled with her current medication regimen. She can continue with lisinopril 20 mg once daily. I'm also going to order an echocardiogram for further evaluation of the murmur heard on exam.
+
+She has been compliant with metformin as prescribed, but her blood glucose levels have been slightly elevated recently. I'm going to order a lipid panel, as well as a hemoglobin A1c to determine if any adjustments need to be made to her dose of metformin.

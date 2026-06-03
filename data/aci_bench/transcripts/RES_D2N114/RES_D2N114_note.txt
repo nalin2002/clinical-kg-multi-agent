@@ -1,0 +1,38 @@
+CHIEF COMPLAINT
+
+Headaches.
+
+HISTORY OF PRESENT ILLNESS
+
+Julie Jenkins is a pleasant 33-year-old female who presents to the clinic today for the evaluation of headaches. The patient was referred from her primary care physician. The patient states that she was seen by Dr. White a few years ago and was going to obtain an MRI; however, Dr. White wanted her to see me first and urgently.
+
+The onset of her headaches began when she was a teenager. Initially, her headaches appeared during menses, however she now experiences them more frequently and with more severity. Her pain is aggravated by physical activities. The patient states that she has been trying to exercise more in order to lose weight, however she is unable to exercise for prolonged periods of time secondary to the headaches. The patient locates her pain to the right side of her head and behind her eye. She describes her pain as a pulsing sensation. She also reports intermittent ringing in her ears for the last few months. Additionally, she reports intermittent blurred vision on the lateral aspect of her vision. She denies any numbness or tingling in her hands, feet, or face.
+
+The patient enjoys running and wears either New Balance or Asics shoes.
+
+REVIEW OF SYSTEMS
+
+Neurological: Reports headaches. Denies numbness or tingling in her hands, feet, or face.
+
+VITALS
+
+Vitals are within normal limits.
+
+PHYSICAL EXAM
+
+CV: Normal head rhythm with no murmurs, rubs, or gallops.
+NEURO: Cranial nerves I through XII are intact distally, including a normal cranial reflex.
+MSK: Gait is normal.
+Funduscopic exam: Positive for papilledema.
+
+ASSESSMENT
+
+Headaches, concern for idiopathic intracranial hypertension.
+
+PLAN
+
+After reviewing the patient's examination today, I have had a lengthy discussion with the patient in regard to her current symptoms. I have recommended that we obtain an urgent MRI of the brain to evaluate for any other condition that could be contributing to her symptoms. We will contact her to schedule this after approved by insurance. Once the MRI results are available for review and further discussion, I will also perform a spinal tap to evaluate the pressure in the brain. I have also advised her to be seen by a neuro ophthalmologist for a complete eye exam. Questions were invited and answered today. The patient agrees to the treatment plan.
+
+INSTRUCTIONS
+
+The patient will follow up with me once the MRI results are available for review and further recommendations.

@@ -1,0 +1,39 @@
+CHIEF COMPLAINT
+
+Right-sided abdominal pain
+
+MEDICAL HISTORY
+
+Patient reports history of kidney stones.
+
+FAMILY HISTORY
+
+Patient reports his father has a history of kidney stones.
+
+MEDICATIONS
+
+Patient reports use of Tylenol.
+
+REVIEW OF SYSTEMS
+
+Gastrointestinal: Reports right-sided abdominal pain and nausea. Denies vomiting
+Genitourinary: Reports dysuria and dark colored urine. Denies hematuria.
+
+PHYSICAL EXAM
+
+Gastrointestinal
+- Examination of Abdomen: No masses or tenderness to palpation. No rebound or guarding. No peritoneal signs. Positive CVA tenderness on the right flank.
+
+RESULTS
+
+Previous CT scan of the abdomen ordered by the patient's PCP is reviewed and demonstrates a 0.5 cm kidney stone located in the proximal right ureter. There is no evidence of hydronephrosis.
+
+ASSESSMENT AND PLAN
+
+1. Acute nephrolithiasis.
+- Medical Reasoning: The patient presents with complaints of right-sided abdominal pain. His previous CT scan was reviewed and demonstrates a 0.5 cm kidney stone located in the proximal right ureter without evidence of hydronephrosis.
+- Medical Treatment: I have recommended that he push fluids in order to help facilitate urination to help pass the stone. He will be provided with a strainer to allow us to potentially test the stone if he is able to pass it. I have also prescribed oxycodone 5 mg every 6 to 8 hours as needed for pain. He can continue to alternate oxycodone with Tylenol. A basic metabolic panel, urinalysis, and urine culture will also be ordered.
+
+INSTRUCTIONS
+
+He will follow up in 1 to 2 weeks. If he is still having symptoms at that time, we will discuss further treatment such as lithotripsy or ureteroscopy. He is to contact me if he is having worsening symptoms over the next week.

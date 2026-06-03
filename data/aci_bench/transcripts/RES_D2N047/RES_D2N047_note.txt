@@ -1,0 +1,56 @@
+CHIEF COMPLAINT
+
+Difficulty urinating.
+
+MEDICAL HISTORY
+
+Patient reports history of coronary artery disease and diabetes.
+
+SURGICAL HISTORY
+
+Patient reports undergoing right coronary arter stent placement in 2018 by Dr. Moore.
+
+SOCIAL HISTORY
+
+Patient reports that he tries to exercise. He is a college football fan.
+
+REVIEW OF SYSTEMS
+
+Cardiovascular: Denies chest pain or shortness of breath.
+Gastrointestinal: Denies change in bowel movements.
+Genitourinary: Reports difficulty urinating. Denies dysuria or urinary retention.
+
+PHYSICAL EXAM
+
+Respiratory
+- Auscultation of Lungs: Clear bilaterally.
+
+Cardiovascular
+Slight 3/6 systolic ejection murmur heard at the left base.
+
+Gastrointestinal
+- Examination of Abdomen: Nontender and nondistended. No masses, rebound or guarding.
+
+Rectal
+- Examination: Enlarged prostate appreciated. No masses appreciated.
+
+ASSESSMENT AND PLAN
+
+1. Difficulty urinating.
+- Medical Reasoning: The patient presents today with approximately a 6 month history of difficulty with urination. His prostate also felt slightly enlarged on exam today.
+- Patient Education and Counseling: The patient was advised that there were no concerning symptoms of prostate cancer appreciated on his physical exam today.
+- Medical Treatment: We will order routine labs including a PSA to rule out prostate cancer. We will also refer him to a urologist for further evaluation as well as order a urinalysis and urine culture. We will start him on Flomax 0.4 mg once at night to avoid dizziness.
+
+2. Coronary artery disease.
+- Medical Reasoning: The patient had a 3/6 systolic ejection murmur heard at the left base on exam today. This has been heard on his exams in the past.
+- Medical Treatment: We will order an echocardiogram to follow up on his murmur. We will also order a lipid panel. He will continue Lipitor 40 mg a day, aspirin and metoprolol.
+
+3. Diabetes.
+- Medical Reasoning: The patient is currently doing well with his diabetes.
+- Medical Treatment: We will continue him on metformin 1000 mg twice a day. A hemoglobin A1c will be ordered to see if any medication adjustments are needed.
+
+Patient Agreements: The patient understands and agrees with the recommended medical treatment plan.
+
+INSTRUCTIONS
+
+He will follow up in 3 to 4 weeks and is advised to call or message me in the patient portal if he has any concerns.

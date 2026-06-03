@@ -1,0 +1,44 @@
+CHIEF COMPLAINT
+
+Left ankle pain.
+
+HISTORY OF PRESENT ILLNESS
+
+Matthew Murphy is a pleasant 20-year-old male who presents to the clinic today for the evaluation of left ankle pain. The onset of his pain began 2 days ago, when he stepped off of a curb and landed on his left ankle wrong. He denies hearing a pop at the time of the injury, however, he describes his ankle as feeling extended and stretched. He was able to ambulate back to his house after the incident but with pain. He denies any previous injuries to his left ankle. His pain is localized to the lateral aspect of his left ankle and can be rated at 8 out of 10 without medication. When taking ibuprofen his pain level is 7 out of 10. He states he has also iced and elevated his ankle.
+
+SOCIAL HISTORY
+
+Patient reports that he has been working from home since the start of COVID-19 and enjoys taking lots of walks.
+
+MEDICATIONS
+
+Patient reports taking ibuprofen.
+
+REVIEW OF SYSTEMS
+
+Musculoskeletal: Patient reports left ankle pain.
+
+VITALS
+
+Vitals are slightly elevated due to pain level but are otherwise stable.
+
+PHYSICAL EXAM
+
+NEURO: Normal strength and sensation bilaterally.
+MSK: Examination of the left ankle: Ecchymosis noted over the lateral malleolus. Edema is present. Tenderness to palpation laterally. No joint laxity appreciated. No bony tenderness to palpation of the foot. Capillary refill is brisk at less than 3 seconds bilaterally. Strong dorsalis pedis pulses bilaterally.
+
+RESULTS
+
+These reveal no fracture or bony abnormalities.
+
+ASSESSMENT
+
+Left ankle sprain of the lateral ligament complex.
+
+PLAN
+
+After reviewing the patient's examination and radiographic findings today, I have had a lengthy discussion with the patient in regards to his current symptoms. We discussed that his symptoms are consistent with an ankle sprain of the lateral ligament complex. The nature of the diagnosis and treatment options were discussed. At this time he will continue to follow the RICE protocol. He will continue to take NSAIDs as needed for pain and swelling. He will also be placed into an Aircast for ankle stabilization and will be provided crutches in order to remain non-weight-bearing. We discussed that it may be a few days before he feels able to tolerate walking. I also advised him that his symptoms will likely start to improve significantly over the next 4 to 6 days.
+
+INSTRUCTIONS
+
+The patient will follow up with me in 2 weeks to assess his progress, sooner if needed.

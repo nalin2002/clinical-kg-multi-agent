@@ -1,0 +1,64 @@
+CHIEF COMPLAINT
+
+Kidney stone.
+
+MEDICAL HISTORY
+
+Patient reports history of hypertension, diabetes, and kidney stones.
+
+MEDICATIONS
+
+Patient reports taking Norvasc 2.5 mg and metformin 500 mg.
+
+REVIEW OF SYSTEMS
+
+Constitutional: Reports insomnia.
+Cardiovascular: Denies chest pain.
+Gastrointestinal: Denies abdominal pain.
+Genitourinary: Denies hematuria.
+
+VITALS
+
+Blood pressure: 150/90 mm Hg
+
+PHYSICAL EXAM
+
+Respiratory
+- Auscultation of Lungs: Clear bilaterally. No wheezes, rales, or rhonchi.
+
+Cardiovascular
+- Auscultation of Heart: Grade 2/6 systolic ejection murmur, unchanged.
+
+Gastrointestinal
+- Examination of Abdomen: No masses or tenderness. No tenderness of the CVA.
+
+RESULTS
+
+A1c: 6.7
+
+ASSESSMENT AND PLAN
+
+1. Kidney stones.
+- Medical Reasoning: Patient recently experience an episode of kidney stones which is her 7th or 8th episode. Based on the patient's symptoms and exam today, I think she has likely passed her kidney stones.
+- Patient Education and Counseling: I advised the patient that we will obtain further testing, however, based on her recurrent episodes a referral to urology is necessary.
+- Medical Treatment: Urine culture and urinalysis were ordered. She will be referred to Dr. Harris in urology.
+
+2. Hypertension.
+- Medical Reasoning: Patient is currently stable and doing well on Norvasc 2.5 mg.
+- Medical Treatment: Continue Norvasc 2.5 mg. Referral to nutrition provided.
+
+3. Diabetes.
+- Medical Reasoning: Patient is currently stable and compliant with her metformin.
+- Patient Education and Counseling: She was advised to start checking her blood sugar prior to every meal.
+- Medical Treatment: Continue metformin 500 mg daily. Start daily blood sugar monitoring before each meal.
+
+4. Insomnia.
+- Medical Reasoning: The patient has a history of insomnia.
+- Patient Education and Counseling: We discussed proper sleep hygiene.
+- Medical Treatment: I have recommended she take 10 mg of melatonin as needed.
+
+Patient Agreements: The patient understands and agrees with the recommended medical treatment plan.
+
+INSTRUCTIONS
+
+Patient will return for follow-up in 3 months.

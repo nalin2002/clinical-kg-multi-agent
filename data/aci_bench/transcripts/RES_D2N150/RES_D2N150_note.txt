@@ -1,0 +1,32 @@
+CHIEF COMPLAINT
+
+Right knee injury.
+
+HISTORY OF PRESENT ILLNESS
+
+Scott Miller is a pleasant 36-year-old male who presents to the clinic today for the evaluation of a right knee injury. The injury occurred 3 days ago, when he was playing pickup soccer games and felt a pop in his right knee. He reports swelling at the time of the injury, which has improved. The patient states that his knee is not as functional or moving as well as it used to be. He rates his pain level as a 6 to 7 out of 10 currently and a 4 to 5 out of 10 when the swelling decreases. The patient has been taking ibuprofen on a regular basis, which provides some relief. He states that he is able to bend his knee with pain towards the end of this motion; however, when he goes to straighten his knee, he feels like he has to help it straight. The patient adds that he is able to bear weight on his right knee, however it feels loose and does not feel normal.
+
+SOCIAL HISTORY
+
+The patient works at a desk.
+
+REVIEW OF SYSTEMS
+
+Musculoskeletal: Reports right knee pain.
+
+PHYSICAL EXAM
+
+GAIT: Marked limp in the right leg upon ambulation.
+MSK: Examination of the right knee: Significant effusion. Slight ecchymosis. Pain with palpation at the medial joint line. Difficulty with passive ROM. Lacking a few degrees of terminal extension to 115 degrees. Lacking 20-30 degrees of terminal flexion secondary to pain. Positive Lachman's test. Muscle strength is 5/5. Neurovascular intact distally.
+
+ASSESSMENT
+
+Right knee pain, possible anterior cruciate ligament tear.
+
+PLAN
+
+After reviewing the patient's examination findings today, I have had a lengthy discussion with the patient in regards to his current symptoms. I have recommended that we obtain an MRI of the right knee to evaluate the integrity of the ACL. I have prescribed the patient meloxicam 15 mg a day to reduce swelling and pain. We discussed that the patient should utilize ice and activity modification to reduce swelling and pain. I recommended that he wears a knee immobilizer and use crutches when he is ambulating. He will avoid jogging until we have the results of his MRI.
+
+INSTRUCTIONS
+
+The patient will follow up with me once the MRI results are available for review and further discussion.

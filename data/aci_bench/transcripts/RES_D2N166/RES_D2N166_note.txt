@@ -1,0 +1,45 @@
+HISTORY OF PRESENT ILLNESS
+
+Kyle Morales is a pleasant 58-year-old male who presents to the clinic today for the evaluation of low back pain.
+
+Onset of his pain began 2 weeks ago, when he was lifting a box of books and felt a pop. The pain is described as aching and sharp. His pain has been increasing since the time of onset and is beginning to radiate down his left leg. The patient denies any pain with sitting. He adds that he has a sedentary job. The patient states that his pain does not affect his job, however he feels that he does not want to be as active as he was previously. He tries to exercise a few times per week, however he is inconsistent. He denies any numbness, tingling, loss of sensation, weakness, and loss of control of his bladder or bowels.
+
+The patient has been taking ibuprofen and Tylenol for pain, which provides some relief. He has not been evaluated for surgery.
+
+SOCIAL HISTORY
+
+He denies smoking. The patient has a history of playing soccer in the midfield position.
+
+FAMILY HISTORY
+
+The patient states that his father has back pain.
+
+REVIEW OF SYSTEMS
+
+Musculoskeletal: Reports low back pain.
+Neurological: Denies bowl or bladder control issues, numbness, tingling, decreased sensations, or weakness.
+
+VITALS
+
+Blood pressure: 130/70 mm Hg.
+Respiratory rate: 18.
+
+PHYSICAL EXAM
+
+CV: I do not appreciate any murmurs, rubs, or gallops.
+RESPIRATORY: Normal respiratory effort no respiratory distress. Clear to auscultation, bilaterally.
+BACK: No evidence of trauma or deformity
+NEURO: Normal sensation. Patellar and Achilles reflexes are symmetrical.
+MSK: Examination of the lumbar spine: No ecchymosis noted. Midline tenderness at the L4-5 disc space with right-sided lumbar paravertebral tenderness. Pain with lumbar flexion. Positive supine straight leg test.
+
+RESULTS
+
+The MRI of the lumbar spine was reviewed today. It revealed disc desiccation and a disc bulge with a paracentral disc herniation resulting in moderate right neural foraminal stenosis.
+
+ASSESSMENT
+
+Lumbar back pain at the L4-5 disc space due to a herniated disc with radiculopathy.
+
+PLAN
+
+After reviewing the patient's examination and MRI findings today, I have discussed with the patient that his MRI revealed a herniated disc with radiculopathy. We discussed treatment options for this and I have recommended that we begin with conservative treatment in the form of a corticosteroid injection. With the patient's consent, we will proceed with a corticosteroid injection into the lumbar spine today. The patient was made aware of the risks of bleeding, infection, nerve damage, blood vessel damage, reaction to the medication, including skin changes, swelling, and also, the risk of elevated glucose levels if the patient were diabetic.

@@ -1,0 +1,37 @@
+HISTORY OF PRESENT ILLNESS
+
+Anna Diaz is a pleasant 29-year-old female who presents to the clinic today for the evaluation of right-sided back pain.
+
+For approximately 1 week, the patient has been experiencing constant right-sided back pain that radiates down to her lower right side, as well as hematuria and nausea. Her primary care physician was concerned for possible kidney stones and subsequently referred her here for further evaluation. She denies any pain with urination or vomiting, but admits that she has likely not been drinking enough water. The only treatment she has tried so far is ibuprofen with minimal pain relief. Although she denies any personal history of kidney stones prior to this occurrence, she explains that her father has had kidney stones in the past.
+
+REVIEW OF SYSTEMS
+
+Constitutional: Negative for fever.
+Gastrointestinal: Positive for nausea. Negative for vomiting.
+Genitourinary: Positive for hematuria
+
+VITALS
+
+Vitals are normal.
+Blood pressure is normal.
+Heart rate is normal.
+
+PHYSICAL EXAM
+
+GI/GU: Mild pain and tenderness to palpation of the abdomen. No rebound or guarding. There is CVA located near her flank with tenderness on the right.
+
+RESULTS
+
+CT scan of the abdomen was reviewed today and revealed a kidney stone measuring 0.5 cm in size, located in the proximal right ureter. There is no evidence of hydronephrosis.
+
+ASSESSMENT
+
+Kidney stone, right side.
+
+PLAN
+
+After reviewing the patient's examination and CT results, I discussed the findings with the patient. The CT scan revealed a 0.5 cm kidney stone in the proximal right ureter. I advised her to drink plenty of fluids, as much as possible, to help facilitate passing of the stone. She was provided with a urine strainer so she can see if and when the stone passes. Given that over-the-counter ibuprofen is not providing significant relief, we will send in a prescription for ibuprofen 800 mg to help with her pain. I'm also going to order a BMP, urinalysis, and a urine culture for further evaluation. Depending on the results of the urinalysis, we may need to start her on antibiotics. I want to see her back in 2 weeks. If she is still symptomatic at that time, we may need to consider further treatment such as a lithotripsy. This procedure was explained to the patient.
+
+INSTRUCTIONS
+
+Follow up in 2 weeks.

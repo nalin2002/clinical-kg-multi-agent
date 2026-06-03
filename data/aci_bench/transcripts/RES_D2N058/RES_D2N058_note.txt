@@ -1,0 +1,66 @@
+CHIEF COMPLAINT
+
+Hospital follow-up after an anterior STEMI.
+
+MEDICAL HISTORY
+
+Patient reports history of CAD status post prior RCA stent in 2018, hypertension, and diabetes mellitus.
+
+SURGICAL HISTORY
+
+Patient reports history of RCA stent in 2018 and most recently underwent drug-eluting stent placement in the LAD.
+
+SOCIAL HISTORY
+
+Patient reports enjoying walking outside, gardening, and nature photography.
+
+MEDICATIONS
+
+Patient reports taking aspirin 81 mg daily, Brilinta 90 mg twice a day, Lipitor 80 mg daily, Toprol 50 mg daily, and lisinopril 20 mg a day.
+
+REVIEW OF SYSTEMS
+
+Constitutional: Reports fatigue. Denies changes in sleep.
+Cardiovascular: Denies chest pain.
+Respiratory: Denies shortness of breath.
+Musculoskeletal: Denies lower extremity swelling.
+
+VITALS
+
+Vital signs look good today.
+
+PHYSICAL EXAM
+
+Neck
+- General Examination: No carotid bruits.
+
+Respiratory
+- Auscultation of Lungs: Clear bilaterally.
+
+Cardiovascular
+- Auscultation of Heart: Grade 3/6 systolic ejection murmur, heard at the left base.
+
+Musculoskeletal
+- Examination of the right upper extremity reveals no swelling or edema on the right radial artery. Cath site is clean, dry, and intact. No hematoma. Palpable right radial artery pulse.
+
+RESULTS
+
+Electrocardiogram is reviewed and revealed normal sinus rhythm with good R wave progression and evolutionary changes, which are anticipated.
+
+ASSESSMENT AND PLAN
+
+1. Coronary artery disease.
+- Medical Reasoning: The patient's exam is consistent with coronary artery disease.
+- Patient Education and Counseling: We discussed that he should continue to watch his diet and salt intake. We also discussed that the cardiac rehab should help with his confidence with exercising regularly and for his education.
+- Medical Treatment: Continue taking aspirin 81 mg daily Continue taking Brilinta 90 mg twice a day. Continue taking Lipitor 80 mg daily. Continue taking Toprol 50 mg daily. I will refer him to cardiac rehab.
+
+2. Newly reduced left ventricular dysfunction and moderate mitral regurgitation.
+- Medical Reasoning: The patient's physical exam is consistent with this diagnosis.
+- Patient Education and Counseling: We discussed that his pumping function should improve in time. We also discussed that since he is compliant with his medications and presented to the cardiac cath lab quickly, he should recover. I advised the patient that he does not need to start a diuretic at this time.
+- Medical Treatment: Continue taking lisinopril 20 mg a day. Prescription for Aldactone 12.5 mg daily provided. Order for labs provided. Repeat echocardiogram ordered to be completed in 2 months.
+
+3. Hypertension.
+- Medical Reasoning: This seems stable at this time.
+- Medical Treatment: Continue home blood pressure monitoring.
+
+Patient Agreements: The patient understands and agrees with the recommended medical treatment plan.

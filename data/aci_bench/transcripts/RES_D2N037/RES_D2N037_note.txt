@@ -1,0 +1,43 @@
+CHIEF COMPLAINT
+
+Bilateral elbow pain, right worse than left.
+
+HISTORY OF PRESENT ILLNESS
+
+Dylan Bennett is a pleasant 53-year-old male who presents to the clinic today for the evaluation of bilateral elbow pain, right worse than left.
+
+The patient has been experiencing bilateral elbow pain, right worse than left, for approximately 1.5 years. His pain is localized to the medial aspect of his elbows and is described as being extremely sore, worse with increased use of his upper extremities. Of note, he utilizes heavy weights for strength training and was very active in sports when he was younger, primarily playing basketball, baseball, and football, but he denies having any pain at that time. Applying ice to the area has not been helpful, but he does use ibuprofen 800 mg 3 times daily.
+
+SOCIAL HISTORY
+
+The patient reports that utilizes heavy weights for strength training. He was also very active in sports when he was younger, primarily playing basketball, baseball, and football.
+
+He is expecting a newborn baby in the near future.
+
+MEDICATIONS
+
+The patient reports that he has been taking ibuprofen 800 mg 3 times daily.
+
+REVIEW OF SYSTEMS
+
+Musculoskeletal: Reports bilateral elbow pain, right worse than left.
+
+PHYSICAL EXAM
+
+CV: Pulses are equal in all extremities.
+NEURO: Sensation is normal to light touch distally.
+MSK: 
+Examination of the right elbow: Limited range of motion with extension with pain. Full range of motion with flexion with pain. Pain to palpation along the medial aspect. No pain to palpation on the lateral aspect of the elbow. Pain with supination. No pain with pronation.
+Examination of the left elbow: minimal pain with flexion and extension Slight Limited ROM on extension of the arm. Pain with supination. No pain with pronation.
+
+RESULTS
+
+X-ray images of the bilateral elbows were obtained and review in office today. These reveal no evidence of fracture or bony misalignment.
+
+ASSESSMENT
+
+Bilateral medial epicondylitis.
+
+PLAN
+
+After reviewing the patient's examination and radiographic findings today, we had a lengthy discussion in regards to his current symptoms. I want to get an MRI of the bilateral elbows for further evaluation. We discussed the possibility of performing a whole blood transfusion to encourage healing, and the patient is already familiar with this procedure.

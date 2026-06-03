@@ -1,0 +1,49 @@
+CHIEF COMPLAINT
+
+Right elbow pain.
+
+REVIEW OF SYSTEMS
+
+Cardiovascular: Denies chest pain.
+Gastrointestinal: Denies abdominal pain.
+Musculoskeletal: Reports right elbow pain.
+
+VITALS
+
+Blood pressure: 150/90 mmHg
+
+PHYSICAL EXAM
+
+Respiratory
+- Auscultation of Lungs: Clear bilaterally.
+
+Cardiovascular
+Grade 2/6 systolic ejection murmur.
+
+Musculoskeletal
+- Examination: Pain to palpation of the olecranon area of the posterior elbow. Mild pain with flexion and extension but otherwise normal range of motion. There is swelling about the elbow, as well as mild ecchymosis.
+
+Hematology/Lymphatic/Immunology
+- Examination: Bruising noted over the right elbow.
+
+RESULTS
+
+X-ray of the right elbow was reviewed and demonstrates no evidence of fracture or bony abnormalities.
+
+ASSESSMENT AND PLAN
+
+1. Right elbow contusion.
+- Medical Reasoning: The patient sustained an injury to his elbow when his son struck him with a lacrosse stick. His x-ray and exam findings are consistent with an elbow contusion.
+- Patient Education and Counseling: I encouraged the patient to avoid playing lacrosse for the next couple of weeks, just until his elbow heals. After that, he should be fine to continue playing normally.
+- Medical Treatment: I'm going to prescribe him ibuprofen 800 mg twice daily to help with some of the pain and swelling. He should also ice the area in 20-minute intervals 3 times per day to further reduce his symptoms.
+
+2. Hypertension.
+- Medical Reasoning: This appears to be well-controlled with dietary modifications and lisinopril.
+- Patient Education and Counseling: I encouraged him to keep up with his dietary modifications.
+- Medical Treatment: We will keep him on lisinopril 20 mg daily.
+
+3. Diabetes.
+- Medical Reasoning: This appears to be well controlled at this time.
+- Medical Treatment: We will keep him on metformin 500 mg and order a hemoglobin A1c to evaluate any need for medication adjustments.
+
+Patient Agreements: The patient understands and agrees with the recommended medical treatment plan.

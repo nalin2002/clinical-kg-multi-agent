@@ -1,0 +1,45 @@
+HISTORY OF PRESENT ILLNESS
+
+Kyle Lee is a pleasant 46-year-old male who presents to the clinic today for evaluation of low immunoglobulin A level. He was referred to our offices by his primary care physician after routine labs revealed abnormalities. The patient states he has been experiencing frequent infections. During the winter months, he experiences frequent colds that tend to linger, however this is not uncommon for him. The patient denies abdominal issues or diarrhea.
+
+The patient was recently diagnosed with type 2 diabetes. He is currently taking metformin.
+
+MEDICAL HISTORY
+
+Patient denies a history of blood transfusions.
+
+SOCIAL HISTORY
+
+He recently traveled internationally on a trip to Zambia. His family owns a local doughnut shop.
+
+FAMILY HISTORY
+
+Patient denies a family history of immune deficiencies.
+
+REVIEW OF SYSTEMS
+
+Gastrointestinal: Denies abdominal issues or diarrhea.
+
+VITALS
+
+Temperature: Normal.
+All other vitals were reviewed and are within normal limits.
+
+PHYSICAL EXAM
+
+NECK: No swelling noted. No lymphadenopathy.
+CV: Normal heart rhythm with no murmurs.
+RESPIRATORY: Lungs are clear. There's no wheezes, rales, or rhonchi.
+Gastrointestinal: Abdomen is soft and without tenderness.
+
+RESULTS
+
+I did review the results of her recent lab work. It is consistent as her primary care physician noted with an IgA deficiency.
+
+ASSESSMENT
+
+IgA deficiency.
+
+PLAN
+
+After reviewing the patient's examination today, I have had a lengthy discussion with the patient in regards to his current symptoms. I have explained to him that the results of his recent lab work is consistent with an IgA deficiency. I have recommended that we obtain additional blood work to check his other antibodies. I encouraged the patient to be aware of lingering infections or abdominal changes including diarrhea. If he experiences these issues, he should report them to my office so we may investigate further, however I do not believe there is a need for that at this time. In the meantime, he should report this IgA deficiency in the event that he needs any blood transfusions. Questions were invited and answered today.
