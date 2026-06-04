@@ -133,10 +133,98 @@ class BgeNodeEncoder:
         return _l2_normalise(mat)
 
 
+class SapBertNodeEncoder:
+    """SapBERT encoder for biomedical entity similarity.
+
+    Uses ``cambridgeltl/SapBERT-from-PubMedBERT-fulltext`` (768-dim), which is
+    specifically trained on UMLS synonym pairs. Produces much better clinical
+    concept similarity than general-purpose encoders like BGE-M3.
+
+    Same interface as :class:`BgeNodeEncoder`: ``dim``, ``encode(keys)``.
+
+    Parameters
+    ----------
+    model_name : HuggingFace id for the SapBERT model.
+    cache_dir  : directory holding ``<sha1>.npy`` per ``(type, text)`` key.
+    device     : "cpu" / "cuda" / "cuda:0" etc.
+    """
+
+    DIM = 768
+
+    def __init__(
+        self,
+        model_name: str = "cambridgeltl/SapBERT-from-PubMedBERT-fulltext",
+        cache_dir: str | Path = ".cache/graph_jepa/sapbert",
+        device: str | None = None,
+    ):
+        self.dim = self.DIM
+        self.model_name = model_name
+        self.cache_dir = Path(cache_dir)
+        self.cache_dir.mkdir(parents=True, exist_ok=True)
+        self.device = device
+        self._tokenizer = None
+        self._model = None
+
+    def _ensure_model(self):
+        if self._model is None:
+            import torch
+            from transformers import AutoModel, AutoTokenizer
+
+            self._tokenizer = AutoTokenizer.from_pretrained(self.model_name)
+            self._model = AutoModel.from_pretrained(self.model_name)
+            dev = self.device or ("cuda" if torch.cuda.is_available() else "cpu")
+            self._model = self._model.to(dev).eval()
+
+    def _cache_path(self, node_type: str, text: str) -> Path:
+        return self.cache_dir / f"{_hash_key(node_type, text)}.npy"
+
+    def _encode_uncached(self, keys: List[Tuple[str, str]]) -> np.ndarray:
+        import torch
+
+        self._ensure_model()
+        texts = [_key_text(t, x) for t, x in keys]
+        dev = next(self._model.parameters()).device
+        toks = self._tokenizer(
+            texts, padding=True, truncation=True, max_length=64,
+            return_tensors="pt",
+        ).to(dev)
+        with torch.no_grad():
+            out = self._model(**toks)
+        # CLS pooling
+        return out.last_hidden_state[:, 0, :].cpu().numpy().astype(np.float32)
+
+    def encode(self, keys: Sequence[Tuple[str, str]]) -> np.ndarray:
+        keys = list(keys)
+        if not keys:
+            return np.zeros((0, self.dim), dtype=np.float32)
+
+        vectors: List[np.ndarray | None] = [None] * len(keys)
+        misses: List[int] = []
+        for i, (t, x) in enumerate(keys):
+            p = self._cache_path(t, x)
+            if p.exists():
+                vectors[i] = np.load(p)
+            else:
+                misses.append(i)
+
+        if misses:
+            miss_keys = [keys[i] for i in misses]
+            computed = self._encode_uncached(miss_keys)
+            for j, i in enumerate(misses):
+                vec = computed[j].astype(np.float32)
+                vectors[i] = vec
+                np.save(self._cache_path(*keys[i]), vec)
+
+        mat = np.stack([v for v in vectors], axis=0).astype(np.float32)
+        return _l2_normalise(mat)
+
+
 def build_encoder(kind: str, *, mock_dim: int = 256, **kwargs):
-    """Factory: ``kind`` is ``"mock"`` or ``"bge"``."""
+    """Factory: ``kind`` is ``"mock"``, ``"bge"``, or ``"sapbert"``."""
     if kind == "mock":
         return MockEncoder(dim=mock_dim)
     if kind == "bge":
         return BgeNodeEncoder(**kwargs)
+    if kind == "sapbert":
+        return SapBertNodeEncoder(**kwargs)
     raise ValueError(f"unknown encoder kind: {kind!r}")

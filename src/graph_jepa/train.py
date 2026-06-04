@@ -49,18 +49,14 @@ def train(args) -> Path:
     cfg.encoder = args.encoder
     cfg.train.epochs = args.epochs
     cfg.train.lr = args.lr
-    if args.encoder == "mock":
-        cfg.model.in_dim = args.mock_dim
-    else:  # bge
-        cfg.model.in_dim = 1024
+    encoder = build_encoder(
+        args.encoder, mock_dim=args.mock_dim, cache_dir=args.bge_cache
+    )
+    cfg.model.in_dim = encoder.dim
 
     torch.manual_seed(cfg.train.seed)
     gen = torch.Generator().manual_seed(cfg.train.seed)
     device = torch.device(args.device)
-
-    encoder = build_encoder(
-        args.encoder, mock_dim=args.mock_dim, cache_dir=args.bge_cache
-    ) if args.encoder == "bge" else build_encoder("mock", mock_dim=args.mock_dim)
 
     graphs = _build_graphs(args, cfg)
     dataset = PatientGraphDataset(graphs, encoder)
@@ -128,7 +124,7 @@ def build_arg_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(description="Train the Graph-JEPA refinement model")
     p.add_argument("--data", choices=["synthetic", "mimic"], default="synthetic")
     p.add_argument("--out", default="checkpoints/", help="output directory")
-    p.add_argument("--encoder", choices=["mock", "bge"], default="mock")
+    p.add_argument("--encoder", choices=["mock", "bge", "sapbert"], default="mock")
     p.add_argument("--mock-dim", type=int, default=256,
                    help="MockEncoder dimension (ignored for bge)")
     p.add_argument("--bge-cache", default=".cache/graph_jepa/bge")

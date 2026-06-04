@@ -78,7 +78,7 @@ class Config:
     model: ModelConfig = field(default_factory=ModelConfig)
     train: TrainConfig = field(default_factory=TrainConfig)
     score: ScoreConfig = field(default_factory=ScoreConfig)
-    encoder: str = "mock"  # "mock" | "bge"
+    encoder: str = "mock"  # "mock" | "bge" | "sapbert"
 
     def to_dict(self) -> Dict[str, Any]:
         return asdict(self)

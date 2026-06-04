@@ -11,10 +11,11 @@ python-dotenv>=1.0.0    # for .env loading (OPENROUTER_API_KEY, CEREBRAS_API_KEY
 datasets>=3.0.0
 huggingface_hub>=0.24.0
 
-# ── BGE-M3 entity resolution (organizer's dump_graph.py) ─────────────────────
-llama-index-embeddings-huggingface>=0.6.1
+# ── Embedding models for entity resolution ───────────────────────────────────
+llama-index-embeddings-huggingface>=0.6.1  # BGE-M3 (--encoder bge-m3)
 torch>=2.0.0
 sentence-transformers>=2.7.0
+transformers>=4.36.0  # SapBERT (--encoder sapbert, default)
 
 # ── Misc utilities ───────────────────────────────────────────────────────────
 numpy>=1.26.0

@@ -5,7 +5,12 @@ canonicalize_to_curator_260426.py
 
 Post-process a unified-graph JSON (output of dump_graph.py) by rewriting each
 student node's `text` field to the nearest curator KB label of the same
-entity type, IF the BGE-M3 cosine similarity is above a threshold.
+entity type, IF the cosine similarity is above a threshold.
+
+Supports two embedding models via ``--encoder``:
+  - ``sapbert`` (default) — SapBERT, trained on UMLS synonym pairs, better for
+    clinical concept matching
+  - ``bge-m3`` — general-purpose BGE-M3 (original)
 
 Edges follow nodes for free because edges reference `source_id`/`target_id`,
 not text. So canonicalizing a node's text field automatically updates every
@@ -73,6 +78,42 @@ def load_bge_m3():
     return HuggingFaceEmbedding(model_name="BAAI/bge-m3")
 
 
+class SapBertEmbedder:
+    """SapBERT wrapper with the same interface as llama_index HuggingFaceEmbedding."""
+
+    def __init__(self, model_name: str = "cambridgeltl/SapBERT-from-PubMedBERT-fulltext"):
+        import torch
+        from transformers import AutoModel, AutoTokenizer
+
+        self._tokenizer = AutoTokenizer.from_pretrained(model_name)
+        self._model = AutoModel.from_pretrained(model_name)
+        self._device = "cuda" if torch.cuda.is_available() else "cpu"
+        self._model = self._model.to(self._device).eval()
+
+    def get_text_embedding(self, text: str) -> list[float]:
+        return self.get_text_embedding_batch([text])[0]
+
+    def get_text_embedding_batch(self, texts: list[str]) -> list[list[float]]:
+        import torch
+
+        toks = self._tokenizer(
+            texts, padding=True, truncation=True, max_length=64,
+            return_tensors="pt",
+        ).to(self._device)
+        with torch.no_grad():
+            out = self._model(**toks)
+        # CLS pooling, L2-normalise for cosine similarity
+        vecs = out.last_hidden_state[:, 0, :]
+        vecs = vecs / vecs.norm(dim=1, keepdim=True).clamp(min=1e-8)
+        return vecs.cpu().tolist()
+
+
+def load_sapbert():
+    """Load the SapBERT model for biomedical entity similarity."""
+    print("[canonicalize] loading SapBERT …", flush=True)
+    return SapBertEmbedder()
+
+
 def cosine(a, b) -> float:
     import numpy as np
     a = np.asarray(a)
@@ -91,6 +132,8 @@ def main() -> None:
                     help="Path to write the canonicalized unified graph")
     ap.add_argument("--threshold", type=float, default=DEFAULT_THRESHOLD,
                     help=f"BGE-M3 cosine threshold for rewriting (default {DEFAULT_THRESHOLD})")
+    ap.add_argument("--encoder", choices=["bge-m3", "sapbert"], default="sapbert",
+                    help="Embedding model for similarity (default: sapbert)")
     ap.add_argument("--report", default=None,
                     help="Optional path to write a JSON report of the rewrites")
     args = ap.parse_args()
@@ -103,6 +146,7 @@ def main() -> None:
     print(f"[canonicalize] unified : {unified_path}")
     print(f"[canonicalize] kb      : {kb_path}")
     print(f"[canonicalize] output  : {out_path}")
+    print(f"[canonicalize] encoder : {args.encoder}")
     print(f"[canonicalize] threshold: {args.threshold}")
 
     # ── Load ──────────────────────────────────────────────────────────────────
@@ -113,7 +157,7 @@ def main() -> None:
         print(f"  {t:18} {len(labels):4} labels")
 
     # ── Embed curator labels (once per type) ──────────────────────────────────
-    embed_model = load_bge_m3()
+    embed_model = load_sapbert() if args.encoder == "sapbert" else load_bge_m3()
     label_embs_by_type: dict[str, list] = {}
     for t, labels in kb_by_type.items():
         label_embs_by_type[t] = embed_model.get_text_embedding_batch(labels)
@@ -163,7 +207,7 @@ def main() -> None:
             })
             node["text_original"] = ntext
             node["text"] = best_label
-            node["canonicalized_via_bge_cosine"] = round(best_sim, 4)
+            node[f"canonicalized_via_{args.encoder.replace('-', '_')}_cosine"] = round(best_sim, 4)
             n_rewritten += 1
 
     # ── Save ──────────────────────────────────────────────────────────────────

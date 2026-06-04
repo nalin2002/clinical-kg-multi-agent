@@ -43,8 +43,8 @@ def _load(checkpoint: str, device: torch.device, bge_cache: str):
     model = GraphJEPA(cfg.model).to(device)
     model.load_state_dict(ckpt["state_dict"])
     model.eval()
-    if cfg.encoder == "bge":
-        encoder = build_encoder("bge", cache_dir=bge_cache)
+    if cfg.encoder in ("bge", "sapbert"):
+        encoder = build_encoder(cfg.encoder, cache_dir=bge_cache)
     else:
         encoder = build_encoder("mock", mock_dim=cfg.model.in_dim)
     return model, encoder, cfg
