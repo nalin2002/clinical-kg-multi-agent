@@ -44,11 +44,29 @@ MAX_RETRIES = 3
 REQUEST_TIMEOUT_SECONDS = 60.0
 OUTPUT_SUFFIX = "cooperative_multi_agent"
 
-MODEL_RECALL = "openai/gpt-oss-20b"
-MODEL_FILTER = "openai/gpt-oss-20b"
-MODEL_NEGATION = "openai/gpt-oss-20b"
-MODEL_RELATION = "openai/gpt-oss-20b"
-MODEL_CANONICALIZE = "qwen/qwen3-14b"
+PROVIDER_MODELS = {
+    "openrouter": {
+        "recall": "openai/gpt-oss-20b",
+        "filter": "openai/gpt-oss-20b",
+        "negation": "openai/gpt-oss-20b",
+        "relation": "openai/gpt-oss-20b",
+        "canonicalize": "qwen/qwen3-14b",
+    },
+    "anthropic": {
+        "recall": "claude-sonnet-4-20250514",
+        "filter": "claude-sonnet-4-20250514",
+        "negation": "claude-sonnet-4-20250514",
+        "relation": "claude-sonnet-4-20250514",
+        "canonicalize": "claude-sonnet-4-20250514",
+    },
+}
+
+# Active model config (set at startup based on provider)
+MODEL_RECALL = PROVIDER_MODELS["openrouter"]["recall"]
+MODEL_FILTER = PROVIDER_MODELS["openrouter"]["filter"]
+MODEL_NEGATION = PROVIDER_MODELS["openrouter"]["negation"]
+MODEL_RELATION = PROVIDER_MODELS["openrouter"]["relation"]
+MODEL_CANONICALIZE = PROVIDER_MODELS["openrouter"]["canonicalize"]
 
 VALID_NODE_TYPES = frozenset(
     {
@@ -313,6 +331,102 @@ class OpenRouterClient:
         return "", {}
 
 
+class AnthropicClient:
+    """Direct Anthropic API client, interface-compatible with OpenRouterClient."""
+
+    def __init__(self, api_key: str) -> None:
+        import anthropic
+
+        self.client = anthropic.Anthropic(api_key=api_key, timeout=90.0)
+
+    def generate(self, prompt: str, model: str) -> tuple[str, dict]:
+        for attempt in range(MAX_RETRIES):
+            try:
+                message = self.client.messages.create(
+                    model=model,
+                    max_tokens=4096,
+                    temperature=0.1,
+                    messages=[{"role": "user", "content": prompt}],
+                )
+                content = message.content[0].text if message.content else ""
+                usage = {
+                    "prompt_tokens": message.usage.input_tokens,
+                    "completion_tokens": message.usage.output_tokens,
+                }
+                if content.strip():
+                    return content, usage
+            except Exception as exc:
+                print(f"      retry {attempt + 1}/{MAX_RETRIES}: {exc}", flush=True)
+                time.sleep(2**attempt)
+        return "", {}
+
+    def batch_generate(
+        self, requests: list[dict]
+    ) -> dict[str, tuple[str, dict]]:
+        """Submit requests via Anthropic Message Batches API (50% cost discount).
+
+        Args:
+            requests: list of {"custom_id": str, "model": str, "prompt": str}
+
+        Returns:
+            dict mapping custom_id -> (content_str, usage_dict)
+        """
+        if not requests:
+            return {}
+
+        batch_requests = [
+            {
+                "custom_id": req["custom_id"],
+                "params": {
+                    "model": req["model"],
+                    "max_tokens": 4096,
+                    "temperature": 0.1,
+                    "messages": [{"role": "user", "content": req["prompt"]}],
+                },
+            }
+            for req in requests
+        ]
+
+        batch = self.client.messages.batches.create(requests=batch_requests)
+        print(
+            f"    Batch {batch.id} submitted ({len(requests)} requests), "
+            "polling for results...",
+            flush=True,
+        )
+
+        poll_interval = 10
+        while True:
+            batch = self.client.messages.batches.retrieve(batch.id)
+            if batch.processing_status == "ended":
+                break
+            counts = batch.request_counts
+            print(
+                f"      {counts.succeeded}/{len(requests)} done, "
+                f"{counts.processing} processing, {counts.errored} errors",
+                flush=True,
+            )
+            time.sleep(poll_interval)
+            poll_interval = min(poll_interval * 1.5, 60)
+
+        results: dict[str, tuple[str, dict]] = {}
+        for result in self.client.messages.batches.results(batch.id):
+            cid = result.custom_id
+            if result.result.type == "succeeded":
+                msg = result.result.message
+                content = msg.content[0].text if msg.content else ""
+                usage = {
+                    "prompt_tokens": msg.usage.input_tokens,
+                    "completion_tokens": msg.usage.output_tokens,
+                }
+                results[cid] = (content, usage)
+            else:
+                print(f"      Batch request {cid} failed: {result.result.type}", flush=True)
+                results[cid] = ("", {})
+
+        print(f"    Batch complete: {len(results)} results", flush=True)
+        return results
+
+
 def extract_json(text: str):
     """Parse JSON from model output, including fenced or think-tagged output."""
     text = re.sub(r"<think>[\s\S]*?</think>", "", text or "", flags=re.I).strip()
@@ -410,8 +524,8 @@ def _token_overlap_supported(evidence: str, transcript_norm: str) -> bool:
     return hits / len(ev_tokens) >= 0.6
 
 
-def agent1_high_recall_entities(transcript: str, client: OpenRouterClient) -> tuple[list[dict], dict]:
-    prompt = f"""
+def _build_agent1_prompt(transcript: str) -> str:
+    return f"""
 You are Agent 1: a high-recall clinical entity extractor.
 
 Extract all candidate clinical entities from the transcript. Be inclusive, but
@@ -434,17 +548,10 @@ Transcript:
 Output ONLY a valid JSON array. Each item:
 {{"id":"C_001","text":"short canonical phrase","type":"SYMPTOM","evidence":"tight quote","turn_id":"P-1"}}
 """.strip()
-    content, usage = client.generate(prompt, MODEL_RECALL)
-    nodes = extract_json(content)
-    return (nodes if isinstance(nodes, list) else []), usage
 
 
-def agent2_precision_filter(
-    candidates: list[dict], transcript: str, client: OpenRouterClient
-) -> tuple[list[dict], dict]:
-    if not candidates:
-        return [], {}
-    prompt = f"""
+def _build_agent2_prompt(candidates: list[dict], transcript: str) -> str:
+    return f"""
 You are Agent 2: a clinical precision filter.
 
 Keep candidates that a human curator would put into the KG. Remove:
@@ -469,18 +576,10 @@ Candidates:
 Output ONLY JSON:
 {{"keep_ids":["C_001"],"drop_ids":["C_002"]}}
 """.strip()
-    content, usage = client.generate(prompt, MODEL_FILTER)
-    decision = extract_json(content)
-    if not isinstance(decision, dict):
-        return candidates, usage
-    keep_ids = set(decision.get("keep_ids") or [])
-    if not keep_ids:
-        return candidates, usage
-    return [n for n in candidates if n.get("id") in keep_ids], usage
 
 
-def agent3_negations(transcript: str, client: OpenRouterClient) -> tuple[list[dict], dict]:
-    prompt = f"""
+def _build_agent3_prompt(transcript: str) -> str:
+    return f"""
 You are Agent 3: negation / absent finding extractor.
 
 Extract clinically salient denied findings from this transcript. The human KG
@@ -501,6 +600,96 @@ Transcript:
 Output ONLY a valid JSON array:
 [{{"id":"NEG_001","text":"absent fever","type":"SYMPTOM","evidence":"No.","turn_id":"P-7"}}]
 """.strip()
+
+
+def _build_agent4_prompt(nodes: list[dict], transcript: str) -> str:
+    inventory = "\n".join(f'{n["id"]}: [{n["type"]}] "{n["text"]}"' for n in nodes)
+    return f"""
+You are Agent 4: clinical relation extractor.
+
+Build edges using ONLY the node IDs in the inventory.
+
+Allowed relations:
+- CAUSES: risk factor/exposure/history causes or contributes to diagnosis/symptom
+- INDICATES: symptom/procedure/history suggests diagnosis
+- LOCATED_AT: symptom/diagnosis/procedure at anatomical location
+- RULES_OUT: test/procedure or absent finding rules out condition
+- TAKEN_FOR: treatment for diagnosis, symptom, or chronic medical history
+- CONFIRMS: result/procedure confirms finding or diagnosis
+
+Human relation style:
+- Most INDICATES edges are SYMPTOM -> DIAGNOSIS.
+- Most TAKEN_FOR edges are TREATMENT -> MEDICAL_HISTORY/DIAGNOSIS/SYMPTOM.
+- Most LOCATED_AT edges are SYMPTOM -> LOCATION.
+- A covid swab usually RULES_OUT covid-19 when ordered for possible covid.
+- Self-isolation, tylenol, inhalers, insulin, steroids, antibiotics, etc. should
+  connect to the condition or symptom they are used for.
+
+Inventory:
+{inventory}
+
+Transcript:
+{transcript}
+
+Output ONLY a valid JSON array:
+[{{"source_id":"N_001","target_id":"N_005","type":"INDICATES","evidence":"tight quote","turn_id":"D-39"}}]
+""".strip()
+
+
+def _build_agent5_prompt(kg: dict) -> str:
+    nodes = kg.get("nodes", [])
+    payload = [{"id": n["id"], "text": n["text"], "type": n["type"]} for n in nodes]
+    return f"""
+You are Agent 5: clinical canonicalization agent.
+
+Rewrite each node text to the human-curated style. Preserve id and type exactly.
+Do not add or remove items. Use lowercase short clinical phrases except where
+the source already contains a meaningful product/proper form.
+
+{HUMAN_STYLE_GUIDE}
+
+Rules:
+- "stuffy nose" -> "nasal congestion"
+- "covid" -> "covid-19"
+- "type one diabetes" -> "type 1 diabetes"
+- "short of breath" -> "shortness of breath"
+- Preserve "absent X", "no X", and "non-smoker" prefixes.
+- Keep specific phrases such as dry cough, productive cough, tylenol cold,
+  covid swab, chest x-ray, family history of asthma.
+
+Input:
+{json.dumps(payload, indent=2, ensure_ascii=False)}
+
+Output ONLY a valid JSON array, same ids:
+[{{"id":"N_001","text":"canonical text"}}]
+""".strip()
+
+
+def agent1_high_recall_entities(transcript: str, client) -> tuple[list[dict], dict]:
+    prompt = _build_agent1_prompt(transcript)
+    content, usage = client.generate(prompt, MODEL_RECALL)
+    nodes = extract_json(content)
+    return (nodes if isinstance(nodes, list) else []), usage
+
+
+def agent2_precision_filter(
+    candidates: list[dict], transcript: str, client
+) -> tuple[list[dict], dict]:
+    if not candidates:
+        return [], {}
+    prompt = _build_agent2_prompt(candidates, transcript)
+    content, usage = client.generate(prompt, MODEL_FILTER)
+    decision = extract_json(content)
+    if not isinstance(decision, dict):
+        return candidates, usage
+    keep_ids = set(decision.get("keep_ids") or [])
+    if not keep_ids:
+        return candidates, usage
+    return [n for n in candidates if n.get("id") in keep_ids], usage
+
+
+def agent3_negations(transcript: str, client) -> tuple[list[dict], dict]:
+    prompt = _build_agent3_prompt(transcript)
     content, usage = client.generate(prompt, MODEL_NEGATION)
     nodes = extract_json(content)
     return (nodes if isinstance(nodes, list) else []), usage
@@ -534,79 +723,18 @@ def merge_nodes(raw_nodes: list[dict]) -> list[dict]:
     return merged
 
 
-def agent4_relations(nodes: list[dict], transcript: str, client: OpenRouterClient) -> tuple[list[dict], dict]:
+def agent4_relations(nodes: list[dict], transcript: str, client) -> tuple[list[dict], dict]:
     if not nodes:
         return [], {}
-    inventory = "\n".join(f'{n["id"]}: [{n["type"]}] "{n["text"]}"' for n in nodes)
-    prompt = f"""
-You are Agent 4: clinical relation extractor.
-
-Build edges using ONLY the node IDs in the inventory.
-
-Allowed relations:
-- CAUSES: risk factor/exposure/history causes or contributes to diagnosis/symptom
-- INDICATES: symptom/procedure/history suggests diagnosis
-- LOCATED_AT: symptom/diagnosis/procedure at anatomical location
-- RULES_OUT: test/procedure or absent finding rules out condition
-- TAKEN_FOR: treatment for diagnosis, symptom, or chronic medical history
-- CONFIRMS: result/procedure confirms finding or diagnosis
-
-Human relation style:
-- Most INDICATES edges are SYMPTOM -> DIAGNOSIS.
-- Most TAKEN_FOR edges are TREATMENT -> MEDICAL_HISTORY/DIAGNOSIS/SYMPTOM.
-- Most LOCATED_AT edges are SYMPTOM -> LOCATION.
-- A covid swab usually RULES_OUT covid-19 when ordered for possible covid.
-- Self-isolation, tylenol, inhalers, insulin, steroids, antibiotics, etc. should
-  connect to the condition or symptom they are used for.
-
-Inventory:
-{inventory}
-
-Transcript:
-{transcript}
-
-Output ONLY a valid JSON array:
-[{{"source_id":"N_001","target_id":"N_005","type":"INDICATES","evidence":"tight quote","turn_id":"D-39"}}]
-""".strip()
+    prompt = _build_agent4_prompt(nodes, transcript)
     content, usage = client.generate(prompt, MODEL_RELATION)
     edges = extract_json(content)
     return (edges if isinstance(edges, list) else []), usage
 
 
-def agent5_canonicalize(kg: dict, client: OpenRouterClient) -> tuple[dict, dict]:
+def _apply_canonicalization(kg: dict, rewritten: list) -> dict:
+    """Apply agent-5 rewriting results to a KG dict."""
     nodes = kg.get("nodes", [])
-    if not nodes:
-        return kg, {}
-    payload = [{"id": n["id"], "text": n["text"], "type": n["type"]} for n in nodes]
-    prompt = f"""
-You are Agent 5: clinical canonicalization agent.
-
-Rewrite each node text to the human-curated style. Preserve id and type exactly.
-Do not add or remove items. Use lowercase short clinical phrases except where
-the source already contains a meaningful product/proper form.
-
-{HUMAN_STYLE_GUIDE}
-
-Rules:
-- "stuffy nose" -> "nasal congestion"
-- "covid" -> "covid-19"
-- "type one diabetes" -> "type 1 diabetes"
-- "short of breath" -> "shortness of breath"
-- Preserve "absent X", "no X", and "non-smoker" prefixes.
-- Keep specific phrases such as dry cough, productive cough, tylenol cold,
-  covid swab, chest x-ray, family history of asthma.
-
-Input:
-{json.dumps(payload, indent=2, ensure_ascii=False)}
-
-Output ONLY a valid JSON array, same ids:
-[{{"id":"N_001","text":"canonical text"}}]
-""".strip()
-    content, usage = client.generate(prompt, MODEL_CANONICALIZE)
-    rewritten = extract_json(content)
-    if not isinstance(rewritten, list):
-        return kg, usage
-
     id_to_text = {
         str(item.get("id")): canonicalize_text(str(item.get("text") or ""))
         for item in rewritten
@@ -643,7 +771,19 @@ Output ONLY a valid JSON array, same ids:
         edge_seen.add(key)
         remapped_edges.append({**edge, "source_id": src, "target_id": tgt, "type": etype})
 
-    return {"nodes": remapped_nodes, "edges": remapped_edges}, usage
+    return {"nodes": remapped_nodes, "edges": remapped_edges}
+
+
+def agent5_canonicalize(kg: dict, client) -> tuple[dict, dict]:
+    nodes = kg.get("nodes", [])
+    if not nodes:
+        return kg, {}
+    prompt = _build_agent5_prompt(kg)
+    content, usage = client.generate(prompt, MODEL_CANONICALIZE)
+    rewritten = extract_json(content)
+    if not isinstance(rewritten, list):
+        return kg, usage
+    return _apply_canonicalization(kg, rewritten), usage
 
 
 def deterministic_validator(kg: dict, transcript: str) -> dict:
@@ -940,7 +1080,7 @@ def deterministic_human_style_enrichment(kg: dict, transcript: str) -> dict:
     return _renumber_graph(nodes, edges)
 
 
-def run_pipeline(transcript: str, client: OpenRouterClient, note: str = "") -> tuple[dict, dict]:
+def run_pipeline(transcript: str, client, note: str = "") -> tuple[dict, dict]:
     usage_total = {"prompt_tokens": 0, "completion_tokens": 0}
     source = build_source_text(transcript, note)
 
@@ -988,7 +1128,7 @@ def read_note(txt_path: Path) -> str:
     return note_path.read_text(encoding="utf-8") if note_path.exists() else ""
 
 
-def process_one(txt_path: Path, client: OpenRouterClient, output_dir: Path) -> tuple[str, str, int, int, dict]:
+def process_one(txt_path: Path, client, output_dir: Path) -> tuple[str, str, int, int, dict]:
     res_id = txt_path.stem
     output_file = output_dir / f"{res_id}_{OUTPUT_SUFFIX}.json"
     if output_file.exists():
@@ -1005,9 +1145,193 @@ def process_one(txt_path: Path, client: OpenRouterClient, output_dir: Path) -> t
     return res_id, "OK", len(kg["nodes"]), len(kg["edges"]), usage
 
 
-def load_client() -> OpenRouterClient:
+def run_all_batch(
+    transcript_files: list[Path],
+    client: AnthropicClient,
+    output_dir: Path,
+    models: dict[str, str],
+) -> tuple[int, int, dict, list[dict]]:
+    """Process all transcripts via Anthropic Batch API in staged batches.
+
+    Stages:
+      Batch 1 — Agent 1 (entities) + Agent 3 (negations) — independent
+      Batch 2 — Agent 2 (precision filter) — depends on Agent 1
+      Batch 3 — Agent 4 (relations) — depends on merged 1+2+3
+      Batch 4 — Agent 5 (canonicalization) — depends on Agent 4
+      Local   — deterministic validator + enrichment
+    """
+    work: dict[str, dict] = {}
+    skipped = 0
+    for f in transcript_files:
+        res_id = f.stem
+        if (output_dir / f"{res_id}_{OUTPUT_SUFFIX}.json").exists():
+            print(f"  {res_id}: SKIP (exists)")
+            skipped += 1
+            continue
+        note = read_note(f)
+        work[res_id] = {
+            "path": f,
+            "source": build_source_text(read_transcript(f), note),
+            "has_note": bool(note.strip()),
+        }
+
+    if not work:
+        print("  Nothing to process.")
+        return skipped, 0, {"prompt_tokens": 0, "completion_tokens": 0}, []
+
+    res_ids = sorted(work)
+    usage_total = {"prompt_tokens": 0, "completion_tokens": 0}
+
+    def add_usage(u: dict) -> None:
+        usage_total["prompt_tokens"] += u.get("prompt_tokens", 0)
+        usage_total["completion_tokens"] += u.get("completion_tokens", 0)
+
+    # ── Batch 1: Agent 1 (entities) + Agent 3 (negations) ──
+    print(f"\n  [Batch 1/4] Agent 1 + Agent 3 ({len(res_ids)*2} requests)...")
+    reqs = []
+    for rid in res_ids:
+        src = work[rid]["source"]
+        reqs.append({"custom_id": f"a1_{rid}", "model": models["recall"], "prompt": _build_agent1_prompt(src)})
+        reqs.append({"custom_id": f"a3_{rid}", "model": models["negation"], "prompt": _build_agent3_prompt(src)})
+
+    b1 = client.batch_generate(reqs)
+
+    a1_results: dict[str, list[dict]] = {}
+    a3_results: dict[str, list[dict]] = {}
+    for rid in res_ids:
+        content, usage = b1.get(f"a1_{rid}", ("", {}))
+        add_usage(usage)
+        nodes = extract_json(content)
+        a1_results[rid] = nodes if isinstance(nodes, list) else []
+
+        content, usage = b1.get(f"a3_{rid}", ("", {}))
+        add_usage(usage)
+        nodes = extract_json(content)
+        a3_results[rid] = nodes if isinstance(nodes, list) else []
+
+    print(
+        f"    Agent 1: {sum(len(v) for v in a1_results.values())} candidates | "
+        f"Agent 3: {sum(len(v) for v in a3_results.values())} negations"
+    )
+
+    # ── Batch 2: Agent 2 (precision filter) ──
+    reqs = []
+    for rid in res_ids:
+        if a1_results[rid]:
+            reqs.append({
+                "custom_id": f"a2_{rid}",
+                "model": models["filter"],
+                "prompt": _build_agent2_prompt(a1_results[rid], work[rid]["source"]),
+            })
+    print(f"\n  [Batch 2/4] Agent 2 ({len(reqs)} requests)...")
+    b2 = client.batch_generate(reqs) if reqs else {}
+
+    a2_results: dict[str, list[dict]] = {}
+    for rid in res_ids:
+        if not a1_results[rid]:
+            a2_results[rid] = []
+            continue
+        content, usage = b2.get(f"a2_{rid}", ("", {}))
+        add_usage(usage)
+        decision = extract_json(content)
+        if isinstance(decision, dict):
+            keep_ids = set(decision.get("keep_ids") or [])
+            a2_results[rid] = [n for n in a1_results[rid] if n.get("id") in keep_ids] if keep_ids else a1_results[rid]
+        else:
+            a2_results[rid] = a1_results[rid]
+
+    merged: dict[str, list[dict]] = {}
+    for rid in res_ids:
+        merged[rid] = merge_nodes(a2_results[rid] + a3_results[rid])
+    print(f"    Merged: {sum(len(v) for v in merged.values())} total nodes")
+
+    # ── Batch 3: Agent 4 (relations) ──
+    reqs = []
+    for rid in res_ids:
+        if merged[rid]:
+            reqs.append({
+                "custom_id": f"a4_{rid}",
+                "model": models["relation"],
+                "prompt": _build_agent4_prompt(merged[rid], work[rid]["source"]),
+            })
+    print(f"\n  [Batch 3/4] Agent 4 ({len(reqs)} requests)...")
+    b3 = client.batch_generate(reqs) if reqs else {}
+
+    kgs: dict[str, dict] = {}
+    for rid in res_ids:
+        content, usage = b3.get(f"a4_{rid}", ("", {}))
+        add_usage(usage)
+        edges = extract_json(content)
+        kgs[rid] = {"nodes": merged[rid], "edges": edges if isinstance(edges, list) else []}
+
+    print(f"    Edges: {sum(len(v['edges']) for v in kgs.values())} total")
+
+    # ── Batch 4: Agent 5 (canonicalization) ──
+    reqs = []
+    for rid in res_ids:
+        if kgs[rid]["nodes"]:
+            reqs.append({
+                "custom_id": f"a5_{rid}",
+                "model": models["canonicalize"],
+                "prompt": _build_agent5_prompt(kgs[rid]),
+            })
+    print(f"\n  [Batch 4/4] Agent 5 ({len(reqs)} requests)...")
+    b4 = client.batch_generate(reqs) if reqs else {}
+
+    for rid in res_ids:
+        content, usage = b4.get(f"a5_{rid}", ("", {}))
+        add_usage(usage)
+        rewritten = extract_json(content)
+        if isinstance(rewritten, list):
+            kgs[rid] = _apply_canonicalization(kgs[rid], rewritten)
+
+    # ── Deterministic: validator + enrichment (no API calls) ──
+    print("\n  [Local] Deterministic validator + enrichment...")
+    details: list[dict] = []
+    for rid in res_ids:
+        source = work[rid]["source"]
+        kgs[rid] = deterministic_validator(kgs[rid], source)
+        kgs[rid] = deterministic_human_style_enrichment(kgs[rid], source)
+
+        kg = kgs[rid]
+        kg["_usage"] = usage_total
+        kg["_method"] = OUTPUT_SUFFIX
+        kg["_used_note"] = work[rid]["has_note"]
+        out = output_dir / f"{rid}_{OUTPUT_SUFFIX}.json"
+        out.write_text(json.dumps(kg, indent=2, ensure_ascii=False), encoding="utf-8")
+        print(f"    {rid}: {len(kg['nodes'])}n/{len(kg['edges'])}e")
+        details.append({
+            "res_id": rid,
+            "status": "OK",
+            "nodes": len(kg["nodes"]),
+            "edges": len(kg["edges"]),
+        })
+
+    return skipped + len(res_ids), 0, usage_total, details
+
+
+def _configure_models(provider: str) -> None:
+    """Set the global MODEL_* variables from the provider config."""
+    global MODEL_RECALL, MODEL_FILTER, MODEL_NEGATION, MODEL_RELATION, MODEL_CANONICALIZE
+    models = PROVIDER_MODELS[provider]
+    MODEL_RECALL = models["recall"]
+    MODEL_FILTER = models["filter"]
+    MODEL_NEGATION = models["negation"]
+    MODEL_RELATION = models["relation"]
+    MODEL_CANONICALIZE = models["canonicalize"]
+
+
+def load_client(provider: str):
+    """Load API client based on provider. Reads api_keys.json for credentials."""
     with open("api_keys.json", encoding="utf-8") as f:
         api_keys = json.load(f)
+
+    if provider == "anthropic":
+        key = api_keys.get("anthropic")
+        if not key:
+            raise SystemExit('api_keys.json must contain a non-empty "anthropic" key')
+        return AnthropicClient(key)
+
     key = api_keys.get("openrouter")
     if not key:
         raise SystemExit('api_keys.json must contain a non-empty "openrouter" key')
@@ -1024,50 +1348,86 @@ def main() -> None:
         help="Directory of RES*/RES*.txt transcripts (e.g. ACI-Bench). "
         f"Default: {TRANSCRIPT_DIR}",
     )
+    parser.add_argument(
+        "--provider",
+        choices=list(PROVIDER_MODELS),
+        default=None,
+        help='API provider: "openrouter" or "anthropic". '
+        "Overrides the \"provider\" field in api_keys.json.",
+    )
+    parser.add_argument(
+        "--batch",
+        action="store_true",
+        help="Use Anthropic Message Batches API for 50%% cost reduction "
+        "(requires --provider anthropic). Processes all transcripts in "
+        "staged batches instead of one-at-a-time.",
+    )
     args = parser.parse_args()
+
+    # Resolve provider: CLI flag > api_keys.json > default
+    if args.provider:
+        provider = args.provider
+    else:
+        try:
+            with open("api_keys.json", encoding="utf-8") as f:
+                provider = json.load(f).get("provider", "openrouter")
+        except FileNotFoundError:
+            provider = "openrouter"
+
+    if args.batch and provider != "anthropic":
+        raise SystemExit("--batch requires --provider anthropic")
+
+    _configure_models(provider)
 
     output_dir = Path(args.output)
     output_dir.mkdir(parents=True, exist_ok=True)
     transcript_dir = Path(args.transcripts_dir) if args.transcripts_dir else TRANSCRIPT_DIR
-    client = load_client()
+    client = load_client(provider)
     transcript_files = get_transcript_files(args.res_ids, transcript_dir)
 
     print("Cooperative Multi-Agent KG Pipeline")
+    print(f"Provider: {provider}" + (" (batch mode)" if args.batch else ""))
+    print(f"Models: {PROVIDER_MODELS[provider]}")
     print(f"Output: {output_dir}")
     print(f"Transcripts dir: {transcript_dir}")
     print(f"Transcripts: {len(transcript_files)}")
     print("=" * 60)
 
-    success = failed = 0
-    total_tokens = {"prompt": 0, "completion": 0}
-    details: list[dict] = []
+    if args.batch:
+        success, failed, total_usage, details = run_all_batch(
+            transcript_files, client, output_dir, PROVIDER_MODELS[provider]
+        )
+        total_tokens = {
+            "prompt": total_usage.get("prompt_tokens", 0),
+            "completion": total_usage.get("completion_tokens", 0),
+        }
+    else:
+        success = failed = 0
+        total_tokens = {"prompt": 0, "completion": 0}
+        details: list[dict] = []
 
-    for txt_path in transcript_files:
-        try:
-            res_id, status, nodes, edges, usage = process_one(txt_path, client, output_dir)
-        except Exception as exc:
-            res_id = txt_path.stem
-            status, nodes, edges, usage = f"ERROR: {exc}", 0, 0, {}
-            print(f"  {res_id}: {status}", flush=True)
+        for txt_path in transcript_files:
+            try:
+                res_id, status, nodes, edges, usage = process_one(txt_path, client, output_dir)
+            except Exception as exc:
+                res_id = txt_path.stem
+                status, nodes, edges, usage = f"ERROR: {exc}", 0, 0, {}
+                print(f"  {res_id}: {status}", flush=True)
 
-        if status in {"OK", "SKIP"}:
-            success += 1
-        else:
-            failed += 1
-        total_tokens["prompt"] += usage.get("prompt_tokens", 0)
-        total_tokens["completion"] += usage.get("completion_tokens", 0)
-        details.append({"res_id": res_id, "status": status, "nodes": nodes, "edges": edges, **usage})
-        time.sleep(0.2)
+            if status in {"OK", "SKIP"}:
+                success += 1
+            else:
+                failed += 1
+            total_tokens["prompt"] += usage.get("prompt_tokens", 0)
+            total_tokens["completion"] += usage.get("completion_tokens", 0)
+            details.append({"res_id": res_id, "status": status, "nodes": nodes, "edges": edges, **usage})
+            time.sleep(0.2)
 
     stats = {
         "method": OUTPUT_SUFFIX,
-        "models": {
-            "recall": MODEL_RECALL,
-            "filter": MODEL_FILTER,
-            "negation": MODEL_NEGATION,
-            "relation": MODEL_RELATION,
-            "canonicalize": MODEL_CANONICALIZE,
-        },
+        "provider": provider,
+        "batch_mode": args.batch,
+        "models": PROVIDER_MODELS[provider],
         "total_tokens": total_tokens,
         "success": success,
         "failed": failed,
