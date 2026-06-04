@@ -21,7 +21,7 @@
 # ACI-Bench ships three subsets (aci, virtassist, virtscribe); all are pulled
 # by default.
 #
-# Requires api_keys.json with an "openrouter" key for the extraction step.
+# Requires OPENROUTER_API_KEY in .env (or openrouter in api_keys.json).
 
 set -euo pipefail
 

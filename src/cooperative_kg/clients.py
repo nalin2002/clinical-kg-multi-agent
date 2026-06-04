@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import time
 
-from .constants import MAX_RETRIES, REQUEST_TIMEOUT_SECONDS
+from .constants import MAX_COMPLETION_TOKENS, MAX_RETRIES, REQUEST_TIMEOUT_SECONDS
 
 
 class OpenRouterClient:
@@ -56,7 +56,7 @@ class AnthropicClient:
             try:
                 message = self.client.messages.create(
                     model=model,
-                    max_tokens=4096,
+                    max_tokens=MAX_COMPLETION_TOKENS,
                     temperature=0.1,
                     messages=[{"role": "user", "content": prompt}],
                 )
@@ -91,7 +91,7 @@ class AnthropicClient:
                 "custom_id": req["custom_id"],
                 "params": {
                     "model": req["model"],
-                    "max_tokens": 4096,
+                    "max_tokens": MAX_COMPLETION_TOKENS,
                     "temperature": 0.1,
                     "messages": [{"role": "user", "content": req["prompt"]}],
                 },

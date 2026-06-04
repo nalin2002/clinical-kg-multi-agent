@@ -6,6 +6,8 @@ import re
 
 MAX_RETRIES = 3
 REQUEST_TIMEOUT_SECONDS = 60.0
+# Anthropic output cap; Agents 2/3/5 stay well under this; 1/4 benefit on long visits.
+MAX_COMPLETION_TOKENS = 8192
 OUTPUT_SUFFIX = "cooperative_multi_agent"
 
 PROVIDER_MODELS = {

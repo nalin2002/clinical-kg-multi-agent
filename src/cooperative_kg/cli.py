@@ -9,6 +9,7 @@ from pathlib import Path
 
 from .clients import AnthropicClient, OpenRouterClient
 from .constants import OUTPUT_SUFFIX, PROVIDER_MODELS
+from .credentials import get_api_key, resolve_provider
 from .io import get_transcript_files
 from .models import configure_models
 from .paths import TRANSCRIPT_DIR
@@ -16,20 +17,10 @@ from .pipeline import process_one, run_all_batch
 
 
 def load_client(provider: str):
-    """Load API client based on provider. Reads api_keys.json for credentials."""
-    with open("api_keys.json", encoding="utf-8") as f:
-        api_keys = json.load(f)
-
+    """Load API client for *provider* using .env or legacy api_keys.json."""
     if provider == "anthropic":
-        key = api_keys.get("anthropic")
-        if not key:
-            raise SystemExit('api_keys.json must contain a non-empty "anthropic" key')
-        return AnthropicClient(key)
-
-    key = api_keys.get("openrouter")
-    if not key:
-        raise SystemExit('api_keys.json must contain a non-empty "openrouter" key')
-    return OpenRouterClient(key)
+        return AnthropicClient(get_api_key("anthropic"))
+    return OpenRouterClient(get_api_key("openrouter"))
 
 
 def main() -> None:
@@ -38,7 +29,7 @@ def main() -> None:
     parser.add_argument("--res-ids", nargs="+", default=None, help="Optional RES IDs to process")
     parser.add_argument(
         "--transcripts-dir",
-        default=None,
+        required=True,
         help="Directory of RES*/RES*.txt transcripts (e.g. ACI-Bench). "
         f"Default: {TRANSCRIPT_DIR}",
     )
@@ -47,7 +38,7 @@ def main() -> None:
         choices=list(PROVIDER_MODELS),
         default=None,
         help='API provider: "openrouter" or "anthropic". '
-        'Overrides the "provider" field in api_keys.json.',
+        "Overrides COOPERATIVE_KG_PROVIDER / api_keys.json.",
     )
     parser.add_argument(
         "--batch",
@@ -58,14 +49,7 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    if args.provider:
-        provider = args.provider
-    else:
-        try:
-            with open("api_keys.json", encoding="utf-8") as f:
-                provider = json.load(f).get("provider", "openrouter")
-        except FileNotFoundError:
-            provider = "openrouter"
+    provider = resolve_provider(args.provider)
 
     if args.batch and provider != "anthropic":
         raise SystemExit("--batch requires --provider anthropic")
