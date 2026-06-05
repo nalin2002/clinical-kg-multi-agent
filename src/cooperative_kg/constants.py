@@ -6,7 +6,6 @@ import re
 
 MAX_RETRIES = 3
 REQUEST_TIMEOUT_SECONDS = 60.0
-# Anthropic output cap; Agents 2/3/5 stay well under this; 1/4 benefit on long visits.
 MAX_COMPLETION_TOKENS = 8192
 OUTPUT_SUFFIX = "cooperative_multi_agent"
 
@@ -319,7 +318,7 @@ ENRICHMENT_PATTERNS: tuple[tuple[str, str, str, tuple[str, ...]], ...] = (
     ("SYMPTOM", "mucus production", r"\b(?:mucus|phlegm|sputum)\b", ("mucus", "phlegm", "sputum")),
     ("SYMPTOM", "loss of taste", r"\bloss of (?:sense of )?taste\b|\bcan't taste\b", ("taste",)),
     ("SYMPTOM", "loss of smell", r"\bloss of (?:sense of )?smell\b|\bcan't smell\b", ("smell",)),
-    ("SYMPTOM", "hemoptysis", r"\b(?:blood|red spots?) (?:in|with) (?:sputum|phlegm|mucus)\b", ("blood",)),
+    ("SYMPTOM", "hemoptysis", r"\b(?:blood|red spots?) (?:in|with) (?:sputum|phlegm|mucus)\b", ("blood in sputum", "hemoptysis")),
     ("SYMPTOM", "worsening cough", r"\b(?:cough|coughing).{0,40}(?:worse|worsening|progressively)\b", ("cough",)),
     ("SYMPTOM", "pleuritic chest pain", r"\bchest pain\b.{0,60}\b(?:deep breath|breathing|cough|coughing)\b", ("chest pain",)),
     ("SYMPTOM", "subjective fever", r"\b(?:felt|feel|feeling) feverish\b", ("feverish",)),
@@ -347,7 +346,7 @@ ENRICHMENT_PATTERNS: tuple[tuple[str, str, str, tuple[str, ...]], ...] = (
     ("DIAGNOSIS", "suspected infection", r"\bsuspected infection\b|\bconcern(?:ed)? for infection\b", ("suspected infection",)),
     ("DIAGNOSIS", "suspected allergies", r"\bsuspected allergies\b|\blikely allergies\b", ("allergies",)),
     ("DIAGNOSIS", "cardiac ischemia", r"\bcardiac ischemia\b|\bischemia\b", ("ischemia",)),
-    ("DIAGNOSIS", "heart disease concern", r"\b(?:heart disease|heart attack|cardiac).{0,40}\b(?:concern|worried|worry)\b", ("heart",)),
+    ("DIAGNOSIS", "heart disease concern", r"\b(?:heart disease|heart attack|cardiac).{0,40}\b(?:concern|worried|worry)\b", ("heart disease", "cardiac concern")),
     ("DIAGNOSIS", "tick bite", r"\btick bite\b|\btick\b.{0,30}\b(?:bite|bit)", ("tick",)),
     ("TREATMENT", "decongestants", r"\bdecongestants?\b", ("decongestant",)),
     ("TREATMENT", "nsaids", r"\bnsaids?\b|\bnon[- ]steroidal\b", ("nsaid",)),
@@ -361,8 +360,8 @@ ENRICHMENT_PATTERNS: tuple[tuple[str, str, str, tuple[str, ...]], ...] = (
     ("TREATMENT", "long acting beta agonist", r"\blong[- ]acting beta agonist\b|\blaba\b", ("beta agonist", "laba")),
     ("TREATMENT", "inhalers", r"\binhalers\b", ("inhalers",)),
     ("TREATMENT", "salt water gargle", r"\bsalt ?water gargle\b", ("gargle",)),
-    ("TREATMENT", "painkillers", r"\bpain ?killers?\b|\bpain medications?\b", ("pain",)),
-    ("TREATMENT", "14-day isolation", r"\b14[- ]day isolation\b|\bisolat(?:e|ion).{0,20}\b14 days\b", ("14", "isolation")),
+    ("TREATMENT", "painkillers", r"\bpain ?killers?\b|\bpain medications?\b", ("painkiller", "pain medication", "pain med")),
+    ("TREATMENT", "14-day isolation", r"\b14[- ]day isolation\b|\bisolat(?:e|ion).{0,20}\b14 days\b", ("14-day isolation", "14 day isolation", "isolate 14")),
     ("TREATMENT", "self-isolation", r"\bself[- ]isolation\b|\bstay isolated\b", ("isolated", "isolation")),
     ("TREATMENT", "dietary modification", r"\bdiet(?:ary)? modifications?\b|\bchange (?:your )?diet\b", ("diet",)),
     ("TREATMENT", "maintenance inhaler", r"\bmaintenance inhaler\b|\bdaily puffer\b|\bpreventer inhaler\b", ("maintenance", "daily puffer")),
@@ -468,7 +467,7 @@ ENRICHMENT_PATTERNS: tuple[tuple[str, str, str, tuple[str, ...]], ...] = (
     ("SYMPTOM", "absent weight loss", r"\b(?:no|denies?).{0,10}weight loss\b", ("no weight loss",)),
     ("SYMPTOM", "absent night sweats", r"\b(?:no|denies?) night sweats?\b", ("no night sweat",)),
     # ── Diagnoses ─────────────────────────────────────────────────────────────
-    ("DIAGNOSIS", "congestive heart failure exacerbation", r"\b(?:chf|congestive heart failure|heart failure).{0,20}exacerbation\b", ("heart failure", "exacerbation")),
+    ("DIAGNOSIS", "congestive heart failure exacerbation", r"\b(?:chf|congestive heart failure|heart failure).{0,20}exacerbation\b", ("heart failure exacerbation", "chf exacerbation")),
     ("DIAGNOSIS", "coronary artery disease", r"\bcoronary artery disease\b|\bcad\b", ("coronary", "cad")),
     ("DIAGNOSIS", "anemia", r"\banemia\b", ("anemia",)),
     ("DIAGNOSIS", "gastritis", r"\bgastritis\b", ("gastritis",)),
@@ -562,8 +561,8 @@ ENRICHMENT_PATTERNS: tuple[tuple[str, str, str, tuple[str, ...]], ...] = (
     # ── Medical history (ACI-Bench) ───────────────────────────────────────────
     ("MEDICAL_HISTORY", "congestive heart failure", r"\b(?:congestive heart failure|chf)\b.{0,30}\bhistory\b|\bhistory.{0,30}\b(?:chf|congestive heart failure)\b|\bpmh.{0,60}\b(?:chf|heart failure)\b", ("chf", "heart failure")),
     ("MEDICAL_HISTORY", "type 2 diabetes", r"\b(?:type 2 diabetes|type ii diabetes|dm2|t2dm)\b", ("type 2 diabetes", "dm2")),
-    ("MEDICAL_HISTORY", "depression history", r"\bhistory of depression\b|\bdepression.{0,20}history\b|\bpmh.{0,60}depression\b", ("depression", "history")),
-    ("MEDICAL_HISTORY", "anxiety history", r"\bhistory of anxiety\b|\banxiety.{0,20}history\b", ("anxiety", "history")),
+    ("MEDICAL_HISTORY", "depression history", r"\bhistory of depression\b|\bdepression.{0,20}history\b|\bpmh.{0,60}depression\b", ("depression history", "history of depression")),
+    ("MEDICAL_HISTORY", "anxiety history", r"\bhistory of anxiety\b|\banxiety.{0,20}history\b", ("anxiety history", "history of anxiety")),
     ("MEDICAL_HISTORY", "hypothyroidism", r"\bhypothyroidism\b|\bhypothyroid\b|\bunderactive thyroid\b", ("hypothyroid",)),
     ("MEDICAL_HISTORY", "kidney transplant", r"\bkidney transplant\b|\brenal transplant\b", ("kidney transplant",)),
     ("MEDICAL_HISTORY", "kidney stones", r"\bkidney stones?\b|\brenal calcul[ui]\b|\bnephrolithiasis\b", ("kidney stone",)),

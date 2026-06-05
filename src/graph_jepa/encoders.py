@@ -25,7 +25,8 @@ from pathlib import Path
 from typing import List, Sequence, Tuple
 
 import numpy as np
-
+import torch
+from transformers import AutoModel, AutoTokenizer
 
 def _key_text(node_type: str, text: str) -> str:
     return f"{node_type}: {text}"
@@ -167,9 +168,6 @@ class SapBertNodeEncoder:
 
     def _ensure_model(self):
         if self._model is None:
-            import torch
-            from transformers import AutoModel, AutoTokenizer
-
             self._tokenizer = AutoTokenizer.from_pretrained(self.model_name)
             self._model = AutoModel.from_pretrained(self.model_name)
             dev = self.device or ("cuda" if torch.cuda.is_available() else "cpu")
@@ -179,8 +177,6 @@ class SapBertNodeEncoder:
         return self.cache_dir / f"{_hash_key(node_type, text)}.npy"
 
     def _encode_uncached(self, keys: List[Tuple[str, str]]) -> np.ndarray:
-        import torch
-
         self._ensure_model()
         texts = [_key_text(t, x) for t, x in keys]
         dev = next(self._model.parameters()).device

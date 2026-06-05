@@ -1,0 +1,55 @@
+# Graph-JEPA v2
+
+This folder is a parallel implementation of the Graph-JEPA refinement layer. It
+does not replace `graph_jepa`; it adds a more upstream-style patch/subgraph JEPA
+core for clinical KG refinement.
+
+## What changed
+
+- Patient KGs are partitioned into connected patches with balanced BFS.
+- A coarsened patch graph is built for each patient graph.
+- Patch positional features include patch size, patch degree, and random-walk
+  return probabilities on the coarsened graph.
+- The self-supervised task predicts target patch latents from context patches.
+- The clinical typed edge plausibility head is kept as the downstream scorer.
+
+## Train
+
+```bash
+PYTHONPATH=src python -m graph_jepa_v2.train \
+  --data synthetic \
+  --out checkpoints/
+```
+
+Useful knobs:
+
+```bash
+PYTHONPATH=src python -m graph_jepa_v2.train \
+  --data synthetic \
+  --num-patches 8 \
+  --context-patches 1 \
+  --target-patches 4 \
+  --patch-pe-dim 8 \
+  --out checkpoints/
+```
+
+The checkpoint is written to `checkpoints/graph_jepa_v2.pt`.
+
+## Score
+
+```bash
+PYTHONPATH=src python -m graph_jepa_v2.score \
+  --input outputs/cooperative_20_enriched_v2/sub_kgs/RES0198_cooperative_multi_agent_enriched_v2.json \
+  --checkpoint checkpoints/graph_jepa_v2.pt \
+  --output RES0198_jepa_v2.json
+```
+
+The scorer writes the same edge fields as v1: `jepa_score` and `jepa_flag`.
+
+## Design note
+
+The implementation is conceptually inspired by the Graph-JEPA paper/repo shape:
+patch/subgraph encoding, context-to-target prediction, and EMA target encoders.
+It is written fresh for this clinical KG pipeline and keeps the current schema,
+encoders, synthetic graph adapter, MIMIC-IV stub, and annotate-only scoring
+contract.

@@ -23,6 +23,67 @@ from .text_utils import (
     token_overlap_supported,
 )
 
+_NEGATION_CUES_RE = re.compile(
+    r"\b(?:no|never|deny|denies|denying|without|absent|negative for|"
+    r"doesn't have|does not have|did not have|"
+    r"not (?:having|experiencing|noticing|noticed))\b",
+    re.I,
+)
+
+_POSITIVE_ASSERTION_RE = re.compile(
+    r"\b(?:has|have|had|reports?|endorses?|complains?|presents?"
+    r"|experiences?|notes?|states?|describes?)\b",
+    re.I,
+)
+
+
+def _is_negated_context(transcript: str, match_start: int, match_end: int) -> bool:
+    """Return True if the match is in a negation/denial context."""
+    pre_start = max(0, match_start - 120)
+    pre_text = transcript[pre_start:match_start]
+
+    # Find the last (closest) negation cue in the preceding text.
+    # Only count it if no positive assertion intervenes between the cue and the match.
+    neg_match = None
+    for m in _NEGATION_CUES_RE.finditer(pre_text):
+        neg_match = m
+    if neg_match:
+        between = pre_text[neg_match.end():]
+        if not _POSITIVE_ASSERTION_RE.search(between):
+            return True
+
+    # Doctor "any …?" pattern followed by patient denial
+    if re.search(r"\bany\b", pre_text):
+        post_end = min(len(transcript), match_end + 250)
+        post_text = transcript[match_end:post_end]
+        patient_resp = re.search(r"\[P-\d+\]\s*P:\s*(.{0,80})", post_text)
+        if patient_resp:
+            resp = patient_resp.group(1).strip().lower()
+            if re.match(r"no\b|nothing|none|not\b|i don't|i haven't|nope", resp):
+                return True
+
+    return False
+
+
+def _resolve_present_absent_conflicts(nodes: list[dict]) -> list[dict]:
+    """When both 'X' and 'absent X' exist for the same type, drop present 'X'."""
+    absent_bases: set[tuple[str, str]] = set()
+    for n in nodes:
+        text = n["text"].lower()
+        ntype = n["type"]
+        if text.startswith("absent "):
+            absent_bases.add((text[7:], ntype))
+        elif text.endswith(" (absent)"):
+            absent_bases.add((text[:-9].strip(), ntype))
+    if not absent_bases:
+        return nodes
+    return [
+        n for n in nodes
+        if n["text"].lower().startswith(("absent ", "no "))
+        or n["text"].lower().endswith(" (absent)")
+        or (n["text"].lower(), n["type"]) not in absent_bases
+    ]
+
 
 def deterministic_validator(kg: dict, transcript: str) -> dict:
     transcript_norm = normalize_for_match(transcript)
@@ -58,6 +119,8 @@ def deterministic_validator(kg: dict, transcript: str) -> dict:
             }
         )
 
+    clean_nodes = _resolve_present_absent_conflicts(clean_nodes)
+
     valid_ids = {node["id"] for node in clean_nodes}
     edge_seen: set[tuple[str, str, str]] = set()
     clean_edges: list[dict] = []
@@ -89,7 +152,10 @@ def deterministic_validator(kg: dict, transcript: str) -> dict:
     return {"nodes": clean_nodes, "edges": clean_edges}
 
 
-def find_evidence(transcript: str, pattern: str, fallback_terms: tuple[str, ...]) -> tuple[str, str]:
+def find_evidence(
+    transcript: str, pattern: str, fallback_terms: tuple[str, ...]
+) -> tuple[str, str, bool]:
+    """Return ``(evidence, turn_id, is_negated)``."""
     match = re.search(pattern, transcript, flags=re.I)
     if match:
         start = max(0, match.start() - 70)
@@ -97,18 +163,21 @@ def find_evidence(transcript: str, pattern: str, fallback_terms: tuple[str, ...]
         window = transcript[start:end]
         turn = re.search(r"\[([PD]-\d+)\]", window)
         evidence = re.sub(r"\s+", " ", match.group(0)).strip()
-        return evidence, turn.group(1) if turn else ""
+        negated = _is_negated_context(transcript, match.start(), match.end())
+        return evidence, turn.group(1) if turn else "", negated
 
     lowered = transcript.lower()
     for term in fallback_terms:
-        idx = lowered.find(term.lower())
-        if idx >= 0:
+        fb_match = re.search(r"\b" + re.escape(term.lower()) + r"\b", lowered)
+        if fb_match:
+            idx = fb_match.start()
             start = max(0, idx - 60)
             end = min(len(transcript), idx + len(term) + 60)
             window = transcript[start:end]
             turn = re.search(r"\[([PD]-\d+)\]", window)
-            return term, turn.group(1) if turn else ""
-    return "", ""
+            negated = _is_negated_context(transcript, fb_match.start(), fb_match.end())
+            return term, turn.group(1) if turn else "", negated
+    return "", "", False
 
 
 def renumber_graph(nodes: list[dict], edges: list[dict]) -> dict:
@@ -179,9 +248,18 @@ def deterministic_human_style_enrichment(kg: dict, transcript: str) -> dict:
         key = (canonicalize_text(text).lower(), ntype)
         if key in present:
             continue
-        evidence, turn_id = find_evidence(transcript, pattern, fallback_terms)
-        if evidence:
-            add_node(ntype, text, evidence, turn_id)
+        evidence, turn_id, is_negated = find_evidence(transcript, pattern, fallback_terms)
+        if not evidence:
+            continue
+        text_lower = text.lower()
+        is_absent_pattern = text_lower.startswith(("absent", "no ")) or "(absent)" in text_lower
+        if is_negated and not is_absent_pattern:
+            continue
+        bare = canonicalize_text(text).lower()
+        if not is_absent_pattern:
+            if (f"absent {bare}", ntype) in present or (f"{bare} (absent)", ntype) in present:
+                continue
+        add_node(ntype, text, evidence, turn_id)
 
     graph = renumber_graph(nodes, edges)
     nodes = graph["nodes"]
