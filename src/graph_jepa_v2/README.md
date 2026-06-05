@@ -22,6 +22,28 @@ PYTHONPATH=src python -m graph_jepa_v2.train \
   --out checkpoints/
 ```
 
+Train from ACI-Bench KG JSONs:
+
+```bash
+PYTHONPATH=src python -m graph_jepa_v2.train \
+  --data aci-bench \
+  --aci-kg-path outputs/aci_bench/sub_kgs/ \
+  --gnn-backend pyg \
+  --conv gine \
+  --out checkpoints/
+```
+
+For the curated ACI-Bench reference KGs already present in this repo:
+
+```bash
+PYTHONPATH=src python -m graph_jepa_v2.train \
+  --data aci-bench \
+  --aci-kg-path EIR_260426/eir_aci_bench/transcripts/ \
+  --gnn-backend pyg \
+  --conv gine \
+  --out checkpoints/
+```
+
 Useful knobs:
 
 ```bash

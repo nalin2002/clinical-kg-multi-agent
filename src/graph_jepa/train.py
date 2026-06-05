@@ -23,7 +23,12 @@ from typing import List
 import torch
 
 from .config import Config
-from .data import MimicGraphBuilder, PatientGraphDataset, SyntheticGraphGenerator
+from .data import (
+    AciBenchGraphBuilder,
+    MimicGraphBuilder,
+    PatientGraphDataset,
+    SyntheticGraphGenerator,
+)
 from .encoders import build_encoder
 from .model import GraphJEPA, subgraph_mask
 from .schema import PatientGraph
@@ -41,6 +46,11 @@ def _build_graphs(args, cfg: Config) -> List[PatientGraph]:
         return gen.generate_many(cfg.train.synthetic_graphs)
     if args.data == "mimic":
         return MimicGraphBuilder(args.mimic_root, include_notes=args.mimic_notes).build()
+    if args.data == "aci-bench":
+        return AciBenchGraphBuilder(
+            args.aci_kg_path,
+            limit=args.aci_limit,
+        ).build()
     raise ValueError(f"unknown --data: {args.data!r}")
 
 
@@ -122,7 +132,7 @@ def train(args) -> Path:
 
 def build_arg_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(description="Train the Graph-JEPA refinement model")
-    p.add_argument("--data", choices=["synthetic", "mimic"], default="synthetic")
+    p.add_argument("--data", choices=["synthetic", "mimic", "aci-bench"], default="synthetic")
     p.add_argument("--out", default="checkpoints/", help="output directory")
     p.add_argument("--encoder", choices=["mock", "bge", "sapbert"], default="mock")
     p.add_argument("--mock-dim", type=int, default=256,
@@ -134,6 +144,11 @@ def build_arg_parser() -> argparse.ArgumentParser:
     p.add_argument("--mimic-root", default=None, help="MIMIC-IV data root")
     p.add_argument("--mimic-notes", action="store_true",
                    help="include notes-derived SYMPTOM/MEDICAL_HISTORY nodes")
+    p.add_argument("--aci-kg-path", default=None,
+                   help="ACI-Bench KG JSON file or directory. Defaults to "
+                        "outputs/aci_bench/sub_kgs, then curated EIR KGs, then smoke KGs.")
+    p.add_argument("--aci-limit", type=int, default=None,
+                   help="Limit number of ACI-Bench graphs loaded for training/smoke tests.")
     return p
 
 

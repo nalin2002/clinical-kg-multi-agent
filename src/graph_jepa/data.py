@@ -16,6 +16,7 @@ Three things live here:
 
 from __future__ import annotations
 
+import json
 import random
 from pathlib import Path
 from typing import Dict, List, Sequence, Set, Tuple
@@ -236,6 +237,76 @@ class MimicGraphBuilder:
             f"({self.TABLE_MAPPING}). The PatientGraph schema and the rest of the "
             "Graph-JEPA pipeline are unchanged; only this builder needs filling in."
         )
+
+
+class AciBenchGraphBuilder:
+    """Load ACI-Bench KG JSONs for Graph-JEPA training.
+
+    This consumes already-built KG JSONs, either from the multi-agent extractor
+    (for example ``outputs/aci_bench/sub_kgs``) or curated reference KGs (for
+    example ``EIR_260426/eir_aci_bench/transcripts``).  It deliberately does not
+    run extraction from transcripts; training starts from graph JSONs.
+    """
+
+    DEFAULT_CANDIDATES = (
+        Path("outputs/aci_bench/sub_kgs"),
+        Path("EIR_260426/eir_aci_bench/transcripts"),
+        Path("outputs/aci_bench_smoke/sub_kgs"),
+    )
+
+    def __init__(
+        self,
+        kg_path: str | Path | None = None,
+        *,
+        limit: int | None = None,
+        pattern: str = "*.json",
+    ):
+        self.kg_path = Path(kg_path) if kg_path else None
+        self.limit = limit
+        self.pattern = pattern
+
+    def _roots(self) -> List[Path]:
+        if self.kg_path is not None:
+            return [self.kg_path]
+        return [p for p in self.DEFAULT_CANDIDATES if p.exists()]
+
+    def _paths(self, root: Path) -> List[Path]:
+        if root.is_file():
+            return [root]
+        if root.is_dir():
+            return sorted(root.rglob(self.pattern))
+        return []
+
+    @staticmethod
+    def _load_graph(path: Path) -> PatientGraph | None:
+        try:
+            graph = PatientGraph.load(path)
+        except (ValueError, KeyError, json.JSONDecodeError):
+            return None
+        if not graph.nodes:
+            return None
+        graph.extra.setdefault("_source_path", str(path))
+        return graph
+
+    def build(self) -> List[PatientGraph]:
+        graphs: List[PatientGraph] = []
+        for root in self._roots():
+            for path in self._paths(root):
+                graph = self._load_graph(path)
+                if graph is None:
+                    continue
+                graphs.append(graph)
+                if self.limit is not None and len(graphs) >= self.limit:
+                    return graphs
+        if not graphs:
+            roots = self._roots()
+            root_msg = ", ".join(str(p) for p in roots) if roots else "no existing default paths"
+            raise ValueError(
+                "No ACI-Bench KG graphs found. Pass --aci-kg-path to a KG JSON "
+                "file/directory, or run ACI-Bench KG extraction first. Checked: "
+                f"{root_msg}"
+            )
+        return graphs
 
 
 # --------------------------------------------------------------------------- #

@@ -317,6 +317,52 @@ def _unpack_patches(values: torch.Tensor, patch_data: PatchData) -> torch.Tensor
     return torch.cat(chunks, dim=0)
 
 
+def _sample_clean_negative_dst(data) -> tuple[torch.Tensor, torch.Tensor]:
+    edge_index = data.edge_index
+    device = edge_index.device
+    src_cpu = edge_index[0].detach().cpu().tolist()
+    dst_cpu = edge_index[1].detach().cpu().tolist()
+    existing: dict[int, set[int]] = {}
+    for s, t in zip(src_cpu, dst_cpu):
+        existing.setdefault(int(s), set()).add(int(t))
+
+    batch = getattr(data, "batch", None)
+    ptr = getattr(data, "ptr", None)
+    if batch is not None and ptr is not None:
+        batch_cpu = batch.detach().cpu().tolist()
+        ptr_cpu = ptr.detach().cpu().tolist()
+    else:
+        batch_cpu = None
+        ptr_cpu = None
+
+    neg_dst = []
+    valid = []
+    for s in src_cpu:
+        s = int(s)
+        if batch_cpu is not None and ptr_cpu is not None:
+            graph_id = int(batch_cpu[s])
+            lo = int(ptr_cpu[graph_id])
+            hi = int(ptr_cpu[graph_id + 1])
+        else:
+            lo = 0
+            hi = int(data.num_nodes)
+
+        blocked = existing.get(s, set())
+        candidates = [node for node in range(lo, hi) if node not in blocked]
+        if not candidates:
+            neg_dst.append(lo)
+            valid.append(False)
+            continue
+        idx = int(torch.randint(len(candidates), (1,)).item())
+        neg_dst.append(candidates[idx])
+        valid.append(True)
+
+    return (
+        torch.tensor(neg_dst, dtype=torch.long, device=device),
+        torch.tensor(valid, dtype=torch.bool, device=device),
+    )
+
+
 class GraphJEPAv2(nn.Module):
     """Patch-based JEPA with a downstream typed edge head."""
 
@@ -440,20 +486,16 @@ class GraphJEPAv2(nn.Module):
         src = data.edge_index[0]
         dst = data.edge_index[1]
         rel = data.edge_type
-        pos_logit = self.edge_head(z[src], z[dst], rel)
+        neg_dst, valid_neg = _sample_clean_negative_dst(data)
+        if not bool(valid_neg.any()):
+            zero = self.edge_head.net[0].weight.sum() * 0.0
+            return zero, {"edge_bce": 0.0}
 
-        num_nodes = z.size(0)
-        batch = getattr(data, "batch", None)
-        ptr = getattr(data, "ptr", None)
-        if batch is not None and ptr is not None:
-            node_batch = batch.to(z.device)
-            graph_id = node_batch[src]
-            ptr = ptr.to(z.device)
-            lo = ptr[graph_id]
-            span = (ptr[graph_id + 1] - lo).clamp_min(1)
-            neg_dst = lo + (torch.rand(src.shape, device=z.device) * span).long()
-        else:
-            neg_dst = torch.randint(0, num_nodes, dst.shape, device=z.device)
+        src = src[valid_neg]
+        dst = dst[valid_neg]
+        rel = rel[valid_neg]
+        neg_dst = neg_dst[valid_neg]
+        pos_logit = self.edge_head(z[src], z[dst], rel)
         neg_logit = self.edge_head(z[src], z[neg_dst], rel)
 
         logits = torch.cat([pos_logit, neg_logit])

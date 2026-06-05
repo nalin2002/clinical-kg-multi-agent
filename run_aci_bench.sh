@@ -7,7 +7,7 @@
 #   1. Pull encounters from Hugging Face (mkieffer/ACI-Bench) into bracketed
 #      transcripts that the multi-agent extractor understands.
 #   2. Run the cooperative multi-agent KG extractor over those transcripts.
-#   3. Train a Graph-JEPA checkpoint on synthetic data if one isn't supplied.
+#   3. Train a Graph-JEPA checkpoint on ACI-Bench KGs if one isn't supplied.
 #   4. Annotate each per-transcript KG edge with jepa_score / jepa_flag.
 #
 # Usage:
@@ -16,6 +16,8 @@
 #   ACI_SUBSETS="aci virtscribe" ./run_aci_bench.sh   # restrict subsets
 #   ACI_IDS="D2N008 D2N018" ./run_aci_bench.sh
 #   GRAPH_JEPA_CKPT=checkpoints/graph_jepa.pt ./run_aci_bench.sh   # reuse a ckpt
+#   GRAPH_JEPA_MODULE=graph_jepa_v2 ./run_aci_bench.sh             # use v2
+#   GRAPH_JEPA_TRAIN_ARGS="--encoder sapbert" ./run_aci_bench.sh   # extra train args
 #   GRAPH_JEPA_PRUNE=0.25 ./run_aci_bench.sh # opt-in edge pruning
 #
 # ACI-Bench ships three subsets (aci, virtassist, virtscribe); all are pulled
@@ -33,7 +35,13 @@ ACI_SPLIT="${ACI_SPLIT:-train}"
 TRANSCRIPTS_DIR="$REPO_ROOT/data/aci_bench/transcripts"
 EXTRACT_DIR="$REPO_ROOT/outputs/aci_bench/sub_kgs"
 REFINED_DIR="$REPO_ROOT/outputs/aci_bench/sub_kgs_jepa"
-CKPT="${GRAPH_JEPA_CKPT:-$REPO_ROOT/checkpoints/graph_jepa.pt}"
+GRAPH_JEPA_MODULE="${GRAPH_JEPA_MODULE:-graph_jepa}"
+if [ "$GRAPH_JEPA_MODULE" = "graph_jepa_v2" ]; then
+    DEFAULT_CKPT="$REPO_ROOT/checkpoints/graph_jepa_v2.pt"
+else
+    DEFAULT_CKPT="$REPO_ROOT/checkpoints/graph_jepa.pt"
+fi
+CKPT="${GRAPH_JEPA_CKPT:-$DEFAULT_CKPT}"
 
 export PYTHONPATH="$REPO_ROOT/src${PYTHONPATH:+:$PYTHONPATH}"
 
@@ -66,8 +74,17 @@ echo "=== Step 2: Multi-Agent KG Extraction ==="
 echo ""
 echo "=== Step 3: Graph-JEPA checkpoint ==="
 if [ ! -f "$CKPT" ]; then
-    echo "No checkpoint at $CKPT — training on synthetic data."
-    "$PYTHON" -m graph_jepa.train --data synthetic --out "$(dirname "$CKPT")"
+    echo "No checkpoint at $CKPT — training $GRAPH_JEPA_MODULE on ACI-Bench KGs."
+    EXTRA_TRAIN_ARGS=()
+    if [ -n "${GRAPH_JEPA_TRAIN_ARGS:-}" ]; then
+        # shellcheck disable=SC2206
+        EXTRA_TRAIN_ARGS+=($GRAPH_JEPA_TRAIN_ARGS)
+    fi
+    "$PYTHON" -m "$GRAPH_JEPA_MODULE.train" \
+        --data aci-bench \
+        --aci-kg-path "$EXTRACT_DIR" \
+        --out "$(dirname "$CKPT")" \
+        "${EXTRA_TRAIN_ARGS[@]}"
 else
     echo "Using existing checkpoint: $CKPT"
 fi
@@ -79,7 +96,7 @@ PRUNE_ARGS=()
 if [ -n "${GRAPH_JEPA_PRUNE:-}" ]; then
     PRUNE_ARGS+=(--prune-threshold "$GRAPH_JEPA_PRUNE")
 fi
-"$PYTHON" -m graph_jepa.score \
+"$PYTHON" -m "$GRAPH_JEPA_MODULE.score" \
     --input "$EXTRACT_DIR" \
     --checkpoint "$CKPT" \
     --output "$REFINED_DIR" \

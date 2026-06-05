@@ -103,6 +103,30 @@ export PYTHONPATH=src
 PYTHONPATH=src python -m graph_jepa.train --data synthetic --out checkpoints/
 ```
 
+### Train on ACI-Bench KG JSONs
+
+Train from ACI-Bench KGs produced by the multi-agent extractor:
+
+```bash
+PYTHONPATH=src python -m graph_jepa.train \
+    --data aci-bench \
+    --aci-kg-path outputs/aci_bench/sub_kgs/ \
+    --out checkpoints/
+```
+
+For the curated ACI-Bench reference KGs already present in this repo:
+
+```bash
+PYTHONPATH=src python -m graph_jepa.train \
+    --data aci-bench \
+    --aci-kg-path EIR_260426/eir_aci_bench/transcripts/ \
+    --out checkpoints/
+```
+
+If `--aci-kg-path` is omitted, the trainer auto-detects
+`outputs/aci_bench/sub_kgs`, then the curated EIR ACI-Bench KGs, then
+`outputs/aci_bench_smoke/sub_kgs`.
+
 Use the real encoder instead of the mock one:
 
 ```bash

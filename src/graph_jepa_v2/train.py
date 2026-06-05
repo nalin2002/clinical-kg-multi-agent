@@ -11,7 +11,7 @@ from typing import List
 import torch
 from torch_geometric.loader import DataLoader
 
-from graph_jepa.data import MimicGraphBuilder, SyntheticGraphGenerator
+from graph_jepa.data import AciBenchGraphBuilder, MimicGraphBuilder, SyntheticGraphGenerator
 from graph_jepa.encoders import build_encoder
 from graph_jepa.schema import PatientGraph
 
@@ -33,6 +33,11 @@ def _build_graphs(args, cfg: Config) -> List[PatientGraph]:
         return gen.generate_many(cfg.train.synthetic_graphs)
     if args.data == "mimic":
         return MimicGraphBuilder(args.mimic_root, include_notes=args.mimic_notes).build()
+    if args.data == "aci-bench":
+        return AciBenchGraphBuilder(
+            args.aci_kg_path,
+            limit=args.aci_limit,
+        ).build()
     raise ValueError(f"unknown --data: {args.data!r}")
 
 
@@ -167,7 +172,7 @@ def train(args) -> Path:
 
 def build_arg_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(description="Train Graph-JEPA v2")
-    p.add_argument("--data", choices=["synthetic", "mimic"], default="synthetic")
+    p.add_argument("--data", choices=["synthetic", "mimic", "aci-bench"], default="synthetic")
     p.add_argument("--out", default="checkpoints/")
     p.add_argument("--encoder", choices=["mock", "bge", "sapbert"], default="mock")
     p.add_argument("--mock-dim", type=int, default=256)
@@ -188,6 +193,11 @@ def build_arg_parser() -> argparse.ArgumentParser:
     p.add_argument("--synthetic-max-nodes", type=int, default=28)
     p.add_argument("--mimic-root", default=None)
     p.add_argument("--mimic-notes", action="store_true")
+    p.add_argument("--aci-kg-path", default=None,
+                   help="ACI-Bench KG JSON file or directory. Defaults to "
+                        "outputs/aci_bench/sub_kgs, then curated EIR KGs, then smoke KGs.")
+    p.add_argument("--aci-limit", type=int, default=None,
+                   help="Limit number of ACI-Bench graphs loaded for training/smoke tests.")
     return p
 
 
