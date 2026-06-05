@@ -12,6 +12,12 @@ import torch.nn.functional as F
 from .config import ModelConfig
 from .patches import PatchData, PatchTask, pool_nodes_to_patches, visible_mask
 
+try:
+    from torch_geometric.nn import GATConv, GINEConv
+except ImportError:  # pragma: no cover - exercised only without PyG installed.
+    GATConv = None
+    GINEConv = None
+
 
 def _mlp(
     in_dim: int,
@@ -69,6 +75,47 @@ class TypedMessageLayer(nn.Module):
         return self.self_lin(h) + out / deg.clamp_min(1.0)
 
 
+class PygMessageLayer(nn.Module):
+    """PyTorch Geometric typed message passing layer."""
+
+    def __init__(self, cfg: ModelConfig):
+        super().__init__()
+        if GINEConv is None or GATConv is None:
+            raise ImportError(
+                "Graph-JEPA v2 was configured with gnn_backend='pyg', but "
+                "torch_geometric is not importable. Install torch-geometric or "
+                "run with --gnn-backend torch."
+            )
+        self.cfg = cfg
+        self.relation_emb = nn.Embedding(cfg.num_relations, cfg.hidden_dim)
+        if cfg.conv == "gine":
+            self.conv = GINEConv(
+                _mlp(cfg.hidden_dim, cfg.hidden_dim, cfg.hidden_dim),
+                edge_dim=cfg.hidden_dim,
+            )
+        elif cfg.conv == "gat":
+            self.conv = GATConv(
+                cfg.hidden_dim,
+                cfg.hidden_dim,
+                heads=1,
+                edge_dim=cfg.hidden_dim,
+                add_self_loops=False,
+            )
+        else:
+            raise ValueError(f"unknown conv: {cfg.conv!r}")
+
+    def forward(
+        self,
+        h: torch.Tensor,
+        edge_index: torch.Tensor,
+        edge_type: torch.Tensor,
+    ) -> torch.Tensor:
+        if edge_index.numel() == 0:
+            return h
+        edge_attr = self.relation_emb(edge_type)
+        return self.conv(h, edge_index, edge_attr)
+
+
 class GraphNodeEncoder(nn.Module):
     """Typed-edge GNN used before patch pooling."""
 
@@ -78,8 +125,11 @@ class GraphNodeEncoder(nn.Module):
         self.input_proj = nn.Linear(cfg.in_dim, cfg.hidden_dim)
         if cfg.conv not in {"gine", "gat"}:
             raise ValueError(f"unknown conv: {cfg.conv!r}")
+        if cfg.gnn_backend not in {"pyg", "torch"}:
+            raise ValueError(f"unknown gnn_backend: {cfg.gnn_backend!r}")
+        layer_cls = PygMessageLayer if cfg.gnn_backend == "pyg" else TypedMessageLayer
         self.layers = nn.ModuleList(
-            TypedMessageLayer(cfg) for _ in range(cfg.num_gnn_layers)
+            layer_cls(cfg) for _ in range(cfg.num_gnn_layers)
         )
         self.norms = nn.ModuleList(
             nn.LayerNorm(cfg.hidden_dim) for _ in range(cfg.num_gnn_layers)
@@ -137,17 +187,42 @@ class PatchTransformer(nn.Module):
         content: torch.Tensor,
         pos: torch.Tensor,
         visible: Optional[torch.Tensor] = None,
+        valid: Optional[torch.Tensor] = None,
     ) -> torch.Tensor:
+        squeeze = content.dim() == 2
+        if squeeze:
+            content = content.unsqueeze(0)
+            pos = pos.unsqueeze(0)
+            if visible is not None:
+                visible = visible.unsqueeze(0)
+            if valid is not None:
+                valid = valid.unsqueeze(0)
+
         tokens = content + pos
         key_padding_mask = None
         if visible is not None:
-            if not bool(visible.any()):
-                visible = torch.ones_like(visible)
+            if valid is None:
+                valid = torch.ones_like(visible)
+            visible = visible & valid
+            if visible.size(1) > 0:
+                no_visible = ~visible.any(dim=1)
+                if bool(no_visible.any()):
+                    visible = visible.clone()
+                    visible[no_visible, 0] = True
             masked_content = self.mask_token.to(content.dtype).expand_as(content)
-            tokens = torch.where(visible[:, None], tokens, masked_content + pos)
-            key_padding_mask = (~visible).unsqueeze(0)
-        out = self.encoder(tokens.unsqueeze(0), src_key_padding_mask=key_padding_mask)
-        return self.out_norm(out.squeeze(0))
+            tokens = torch.where(visible.unsqueeze(-1), tokens, masked_content + pos)
+            key_padding_mask = ~visible
+        elif valid is not None:
+            key_padding_mask = ~valid
+            if key_padding_mask.size(1) > 0:
+                no_valid = key_padding_mask.all(dim=1)
+                if bool(no_valid.any()):
+                    key_padding_mask = key_padding_mask.clone()
+                    key_padding_mask[no_valid, 0] = False
+
+        out = self.encoder(tokens, src_key_padding_mask=key_padding_mask)
+        out = self.out_norm(out)
+        return out.squeeze(0) if squeeze else out
 
 
 class EdgePlausibilityHead(nn.Module):
@@ -188,6 +263,58 @@ def vicreg_terms(z: torch.Tensor, gamma: float = 1.0, eps: float = 1e-4
     off_diag = cov - torch.diag(torch.diag(cov))
     cov_loss = off_diag.pow(2).sum() / z.size(1)
     return var_loss, cov_loss
+
+
+def _pack_patches(
+    values: torch.Tensor,
+    patch_data: PatchData,
+    fill_value: float | bool = 0.0,
+) -> tuple[torch.Tensor, torch.Tensor | None]:
+    if patch_data.patch_ptr is None:
+        return values, None
+
+    ptr = patch_data.patch_ptr.to(values.device)
+    sizes = ptr[1:] - ptr[:-1]
+    batch_size = max(0, int(ptr.numel()) - 1)
+    max_patches = int(sizes.max().item()) if sizes.numel() else 0
+    out_shape = (batch_size, max_patches) + tuple(values.shape[1:])
+    if values.dtype == torch.bool:
+        out = torch.full(
+            out_shape,
+            bool(fill_value),
+            dtype=values.dtype,
+            device=values.device,
+        )
+    else:
+        out = values.new_full(out_shape, fill_value)
+    valid = torch.zeros((batch_size, max_patches), dtype=torch.bool, device=values.device)
+
+    for graph_idx in range(batch_size):
+        lo = int(ptr[graph_idx].item())
+        hi = int(ptr[graph_idx + 1].item())
+        length = hi - lo
+        if length <= 0:
+            continue
+        out[graph_idx, :length] = values[lo:hi]
+        valid[graph_idx, :length] = True
+    return out, valid
+
+
+def _unpack_patches(values: torch.Tensor, patch_data: PatchData) -> torch.Tensor:
+    if patch_data.patch_ptr is None:
+        return values
+
+    ptr = patch_data.patch_ptr.to(values.device)
+    chunks = []
+    for graph_idx in range(max(0, int(ptr.numel()) - 1)):
+        lo = int(ptr[graph_idx].item())
+        hi = int(ptr[graph_idx + 1].item())
+        length = hi - lo
+        if length > 0:
+            chunks.append(values[graph_idx, :length])
+    if not chunks:
+        return values.new_zeros((0,) + tuple(values.shape[2:]))
+    return torch.cat(chunks, dim=0)
 
 
 class GraphJEPAv2(nn.Module):
@@ -240,7 +367,15 @@ class GraphJEPAv2(nn.Module):
         node_z = self.encode_nodes(data)
         content = pool_nodes_to_patches(node_z, patch_data)
         pos = self.context_patch_pos(patch_data.patch_pos.to(node_z.device))
-        patches = self.context_patch_encoder(content, pos, visible.to(node_z.device))
+        visible = visible.to(node_z.device)
+        if patch_data.patch_ptr is not None:
+            content, valid = _pack_patches(content, patch_data)
+            pos_dense, _ = _pack_patches(pos, patch_data)
+            visible, _ = _pack_patches(visible, patch_data, fill_value=False)
+            patches = self.context_patch_encoder(content, pos_dense, visible, valid)
+            patches = _unpack_patches(patches, patch_data)
+        else:
+            patches = self.context_patch_encoder(content, pos, visible)
         return patches, pos
 
     @torch.no_grad()
@@ -251,6 +386,11 @@ class GraphJEPAv2(nn.Module):
         node_z = self.encode_target_nodes(data)
         content = pool_nodes_to_patches(node_z, patch_data)
         pos = self.target_patch_pos(patch_data.patch_pos.to(node_z.device))
+        if patch_data.patch_ptr is not None:
+            content, valid = _pack_patches(content, patch_data)
+            pos, _ = _pack_patches(pos, patch_data)
+            patches = self.target_patch_encoder(content, pos, None, valid)
+            return _unpack_patches(patches, patch_data)
         return self.target_patch_encoder(content, pos, None)
 
     def jepa_loss(
@@ -303,7 +443,17 @@ class GraphJEPAv2(nn.Module):
         pos_logit = self.edge_head(z[src], z[dst], rel)
 
         num_nodes = z.size(0)
-        neg_dst = torch.randint(0, num_nodes, dst.shape, device=z.device)
+        batch = getattr(data, "batch", None)
+        ptr = getattr(data, "ptr", None)
+        if batch is not None and ptr is not None:
+            node_batch = batch.to(z.device)
+            graph_id = node_batch[src]
+            ptr = ptr.to(z.device)
+            lo = ptr[graph_id]
+            span = (ptr[graph_id + 1] - lo).clamp_min(1)
+            neg_dst = lo + (torch.rand(src.shape, device=z.device) * span).long()
+        else:
+            neg_dst = torch.randint(0, num_nodes, dst.shape, device=z.device)
         neg_logit = self.edge_head(z[src], z[neg_dst], rel)
 
         logits = torch.cat([pos_logit, neg_logit])

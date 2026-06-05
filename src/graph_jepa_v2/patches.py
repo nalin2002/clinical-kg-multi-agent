@@ -18,7 +18,7 @@ import torch
 
 @dataclass(frozen=True)
 class PatchData:
-    """A patched view of one patient graph tensor object."""
+    """A patched view of one graph or a PyG mini-batch of graphs."""
 
     assignment: torch.Tensor       # [num_nodes], node -> patch id
     patch_nodes: List[List[int]]
@@ -26,10 +26,17 @@ class PatchData:
     patch_adj: torch.Tensor        # [num_patches, num_patches], dense 0/1
     patch_pos: torch.Tensor        # [num_patches, patch_pe_dim]
     patch_mask: torch.Tensor       # [num_patches], all True for unpadded v2
+    patch_ptr: torch.Tensor | None = None # [num_graphs + 1], patch offsets
 
     @property
     def num_patches(self) -> int:
         return len(self.patch_nodes)
+
+    @property
+    def num_graphs(self) -> int:
+        if self.patch_ptr is None:
+            return 1
+        return max(0, int(self.patch_ptr.numel()) - 1)
 
     def to(self, device: torch.device | str) -> "PatchData":
         return PatchData(
@@ -39,6 +46,7 @@ class PatchData:
             patch_adj=self.patch_adj.to(device),
             patch_pos=self.patch_pos.to(device),
             patch_mask=self.patch_mask.to(device),
+            patch_ptr=self.patch_ptr.to(device) if self.patch_ptr is not None else None,
         )
 
 
@@ -235,6 +243,115 @@ def _patch_positional_features(
     return pos
 
 
+def _build_local_patch_tensors(
+    edge_index: torch.Tensor,
+    num_nodes: int,
+    num_patches: int,
+    patch_pe_dim: int,
+    generator: torch.Generator | None,
+) -> tuple[torch.Tensor, List[List[int]], torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor]:
+    patches = balanced_bfs_partition(
+        edge_index.detach().cpu(), num_nodes, num_patches, generator
+    )
+    if not patches:
+        empty_long = torch.zeros((0,), dtype=torch.long)
+        empty_edges = torch.zeros((2, 0), dtype=torch.long)
+        empty_adj = torch.zeros((0, 0), dtype=torch.float32)
+        empty_pos = torch.zeros((0, patch_pe_dim), dtype=torch.float32)
+        return empty_long, [], empty_edges, empty_adj, empty_pos, empty_long.bool()
+
+    assignment = torch.empty(num_nodes, dtype=torch.long)
+    for pid, nodes in enumerate(patches):
+        assignment[nodes] = pid
+    patch_edges, patch_adj = _coarsen_edges(edge_index, assignment, len(patches))
+    patch_pos = _patch_positional_features(patch_adj, patches, num_nodes, patch_pe_dim)
+    patch_mask = torch.ones(len(patches), dtype=torch.bool)
+
+    return assignment, patches, patch_edges, patch_adj, patch_pos, patch_mask
+
+
+def _build_batched_patch_data(
+    data,
+    *,
+    num_patches: int,
+    patch_pe_dim: int,
+    generator: torch.Generator | None,
+) -> PatchData:
+    device = data.x.device
+    ptr = data.ptr.detach().cpu()
+    edge_index = data.edge_index.detach().cpu()
+    assignment = torch.empty(int(data.num_nodes), dtype=torch.long)
+    patch_nodes: List[List[int]] = []
+    patch_edges: List[torch.Tensor] = []
+    patch_adjs: List[torch.Tensor] = []
+    patch_pos: List[torch.Tensor] = []
+    patch_masks: List[torch.Tensor] = []
+    patch_ptr = [0]
+    patch_offset = 0
+
+    for graph_idx in range(max(0, ptr.numel() - 1)):
+        start = int(ptr[graph_idx])
+        end = int(ptr[graph_idx + 1])
+        n = end - start
+        if n <= 0:
+            patch_ptr.append(patch_offset)
+            continue
+
+        src, dst = edge_index[0], edge_index[1]
+        edge_mask = (src >= start) & (src < end) & (dst >= start) & (dst < end)
+        local_edge_index = edge_index[:, edge_mask] - start
+        local_assignment, local_nodes, local_edges, local_adj, local_pos, local_mask = (
+            _build_local_patch_tensors(
+                local_edge_index,
+                n,
+                num_patches,
+                patch_pe_dim,
+                generator,
+            )
+        )
+
+        assignment[start:end] = local_assignment + patch_offset
+        patch_nodes.extend([[start + node for node in nodes] for nodes in local_nodes])
+        if local_edges.numel():
+            patch_edges.append(local_edges + patch_offset)
+        patch_adjs.append(local_adj)
+        patch_pos.append(local_pos)
+        patch_masks.append(local_mask)
+        patch_offset += len(local_nodes)
+        patch_ptr.append(patch_offset)
+
+    if patch_offset == 0:
+        empty_long = torch.zeros((0,), dtype=torch.long, device=device)
+        empty_edges = torch.zeros((2, 0), dtype=torch.long, device=device)
+        empty_adj = torch.zeros((0, 0), dtype=torch.float32, device=device)
+        empty_pos = torch.zeros((0, patch_pe_dim), dtype=torch.float32, device=device)
+        return PatchData(
+            empty_long,
+            [],
+            empty_edges,
+            empty_adj,
+            empty_pos,
+            empty_long.bool(),
+            torch.tensor(patch_ptr, dtype=torch.long, device=device),
+        )
+
+    if patch_edges:
+        batched_edges = torch.cat(patch_edges, dim=1)
+    else:
+        batched_edges = torch.zeros((2, 0), dtype=torch.long)
+    batched_adj = torch.block_diag(*patch_adjs)
+
+    return PatchData(
+        assignment=assignment.to(device),
+        patch_nodes=patch_nodes,
+        patch_edge_index=batched_edges.to(device),
+        patch_adj=batched_adj.to(device),
+        patch_pos=torch.cat(patch_pos, dim=0).to(device),
+        patch_mask=torch.cat(patch_masks, dim=0).to(device),
+        patch_ptr=torch.tensor(patch_ptr, dtype=torch.long, device=device),
+    )
+
+
 def build_patch_data(
     data,
     *,
@@ -242,26 +359,28 @@ def build_patch_data(
     patch_pe_dim: int,
     generator: torch.Generator | None = None,
 ) -> PatchData:
-    """Build patches for a single v2 ``GraphData`` object."""
+    """Build patches for a v2 graph object or PyG mini-batch."""
+    batch = getattr(data, "batch", None)
+    ptr = getattr(data, "ptr", None)
+    if batch is not None and ptr is not None:
+        return _build_batched_patch_data(
+            data,
+            num_patches=num_patches,
+            patch_pe_dim=patch_pe_dim,
+            generator=generator,
+        )
+
     device = data.x.device
     n = int(data.num_nodes)
-    patches = balanced_bfs_partition(
-        data.edge_index.detach().cpu(), n, num_patches, generator
+    assignment, patches, patch_edges, patch_adj, patch_pos, patch_mask = (
+        _build_local_patch_tensors(
+            data.edge_index,
+            n,
+            num_patches,
+            patch_pe_dim,
+            generator,
+        )
     )
-    if not patches:
-        empty_long = torch.zeros((0,), dtype=torch.long, device=device)
-        empty_edges = torch.zeros((2, 0), dtype=torch.long, device=device)
-        empty_adj = torch.zeros((0, 0), dtype=torch.float32, device=device)
-        empty_pos = torch.zeros((0, patch_pe_dim), dtype=torch.float32, device=device)
-        return PatchData(empty_long, [], empty_edges, empty_adj, empty_pos, empty_long.bool())
-
-    assignment = torch.empty(n, dtype=torch.long)
-    for pid, nodes in enumerate(patches):
-        assignment[nodes] = pid
-    patch_edges, patch_adj = _coarsen_edges(data.edge_index, assignment, len(patches))
-    patch_pos = _patch_positional_features(patch_adj, patches, n, patch_pe_dim)
-    patch_mask = torch.ones(len(patches), dtype=torch.bool)
-
     return PatchData(
         assignment=assignment.to(device),
         patch_nodes=patches,
@@ -326,18 +445,54 @@ def sample_patch_task(
     generator: torch.Generator | None = None,
 ) -> PatchTask:
     """Sample one context-to-target patch prediction task."""
-    p = patch_data.num_patches
-    if p == 0:
-        z = torch.zeros((0,), dtype=torch.long, device=patch_data.patch_adj.device)
-        return PatchTask(z, z)
-    if p == 1:
-        one = torch.zeros((1,), dtype=torch.long, device=patch_data.patch_adj.device)
-        return PatchTask(one, one)
+    if patch_data.patch_ptr is not None:
+        contexts: List[int] = []
+        targets: List[int] = []
+        ptr = patch_data.patch_ptr.detach().cpu().tolist()
+        adj = patch_data.patch_adj.detach().cpu()
+        for lo, hi in zip(ptr[:-1], ptr[1:]):
+            local_context, local_target = _sample_patch_indices(
+                adj[lo:hi, lo:hi],
+                context_patches=context_patches,
+                target_patches=target_patches,
+                generator=generator,
+            )
+            contexts.extend(lo + idx for idx in local_context)
+            targets.extend(lo + idx for idx in local_target)
+        device = patch_data.patch_adj.device
+        return PatchTask(
+            context_idx=torch.tensor(contexts, dtype=torch.long, device=device),
+            target_idx=torch.tensor(targets, dtype=torch.long, device=device),
+        )
 
-    target = _connected_patch_sample(patch_data.patch_adj, target_patches, generator)
+    context, target = _sample_patch_indices(
+        patch_data.patch_adj,
+        context_patches=context_patches,
+        target_patches=target_patches,
+        generator=generator,
+    )
+    device = patch_data.patch_adj.device
+    return PatchTask(
+        context_idx=torch.tensor(context, dtype=torch.long, device=device),
+        target_idx=torch.tensor(target, dtype=torch.long, device=device),
+    )
+
+
+def _sample_patch_indices(
+    patch_adj: torch.Tensor,
+    *,
+    context_patches: int,
+    target_patches: int,
+    generator: torch.Generator | None = None,
+) -> tuple[List[int], List[int]]:
+    p = patch_adj.size(0)
+    if p < 2:
+        return [], []
+
+    target = _connected_patch_sample(patch_adj, target_patches, generator)
     target_set = set(target)
 
-    adj = patch_data.patch_adj.detach().cpu()
+    adj = patch_adj.detach().cpu()
     neighbors = sorted({
         int(nb)
         for t in target
@@ -351,12 +506,7 @@ def sample_patch_task(
     c = max(1, min(context_patches, len(candidates)))
     order = _randperm(len(candidates), generator)
     context = [candidates[i] for i in order[:c]]
-
-    device = patch_data.patch_adj.device
-    return PatchTask(
-        context_idx=torch.tensor(context, dtype=torch.long, device=device),
-        target_idx=torch.tensor(target, dtype=torch.long, device=device),
-    )
+    return context, target
 
 
 def visible_mask(num_patches: int, context_idx: torch.Tensor) -> torch.Tensor:

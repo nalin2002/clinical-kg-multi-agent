@@ -10,6 +10,7 @@ core for clinical KG refinement.
 - A coarsened patch graph is built for each patient graph.
 - Patch positional features include patch size, patch degree, and random-walk
   return probabilities on the coarsened graph.
+- The node encoder defaults to PyTorch Geometric `GINEConv` / `GATConv`.
 - The self-supervised task predicts target patch latents from context patches.
 - The clinical typed edge plausibility head is kept as the downstream scorer.
 
@@ -30,8 +31,14 @@ PYTHONPATH=src python -m graph_jepa_v2.train \
   --context-patches 1 \
   --target-patches 4 \
   --patch-pe-dim 8 \
+  --batch-size 16 \
+  --gnn-backend pyg \
+  --conv gine \
   --out checkpoints/
 ```
+
+Use `--gnn-backend torch` only as a dependency-light fallback when
+`torch-geometric` is unavailable.
 
 The checkpoint is written to `checkpoints/graph_jepa_v2.pt`.
 

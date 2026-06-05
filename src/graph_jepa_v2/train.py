@@ -9,6 +9,7 @@ from pathlib import Path
 from typing import List
 
 import torch
+from torch_geometric.loader import DataLoader
 
 from graph_jepa.data import MimicGraphBuilder, SyntheticGraphGenerator
 from graph_jepa.encoders import build_encoder
@@ -48,8 +49,12 @@ def train(args) -> Path:
     cfg.encoder = args.encoder
     cfg.train.epochs = args.epochs
     cfg.train.lr = args.lr
+    cfg.train.batch_size = args.batch_size
+    cfg.train.num_workers = args.num_workers
     cfg.model.num_patches = args.num_patches
     cfg.model.patch_pe_dim = args.patch_pe_dim
+    cfg.model.conv = args.conv
+    cfg.model.gnn_backend = args.gnn_backend
     cfg.train.context_patches = args.context_patches
     cfg.train.target_patches = args.target_patches
     cfg.train.synthetic_graphs = args.synthetic_graphs
@@ -65,9 +70,19 @@ def train(args) -> Path:
 
     graphs = _build_graphs(args, cfg)
     dataset = PatientGraphDataset(graphs, encoder)
+    loader_gen = torch.Generator().manual_seed(cfg.train.seed)
+    train_loader = DataLoader(
+        dataset,
+        batch_size=cfg.train.batch_size,
+        shuffle=True,
+        num_workers=cfg.train.num_workers,
+        generator=loader_gen,
+    )
     print(
         f"Loaded {len(dataset)} graphs (encoder={args.encoder}, "
-        f"in_dim={cfg.model.in_dim}, patches={cfg.model.num_patches})"
+        f"in_dim={cfg.model.in_dim}, patches={cfg.model.num_patches}, "
+        f"batch_size={cfg.train.batch_size}, "
+        f"gnn_backend={cfg.model.gnn_backend}, conv={cfg.model.conv})"
     )
 
     model = GraphJEPAv2(cfg.model).to(device)
@@ -77,9 +92,8 @@ def train(args) -> Path:
         weight_decay=cfg.train.weight_decay,
     )
 
-    total_steps = max(1, cfg.train.epochs * len(dataset))
+    total_steps = max(1, cfg.train.epochs * len(train_loader))
     global_step = 0
-    order = list(range(len(dataset)))
     for epoch in range(cfg.train.epochs):
         model.train()
         agg = {
@@ -90,8 +104,8 @@ def train(args) -> Path:
             "patch_std": 0.0,
         }
         n = 0
-        for i in order:
-            data = dataset[i].to(device)
+        for data in train_loader:
+            data = data.to(device)
             if data.num_nodes < 2:
                 continue
 
@@ -161,6 +175,10 @@ def build_arg_parser() -> argparse.ArgumentParser:
     p.add_argument("--epochs", type=int, default=40)
     p.add_argument("--lr", type=float, default=8e-4)
     p.add_argument("--device", default="cpu")
+    p.add_argument("--batch-size", type=int, default=16)
+    p.add_argument("--num-workers", type=int, default=0)
+    p.add_argument("--conv", choices=["gine", "gat"], default="gine")
+    p.add_argument("--gnn-backend", choices=["pyg", "torch"], default="pyg")
     p.add_argument("--num-patches", type=int, default=8)
     p.add_argument("--patch-pe-dim", type=int, default=8)
     p.add_argument("--context-patches", type=int, default=1)

@@ -20,6 +20,7 @@ class ModelConfig:
     latent_dim: int = 160
     num_gnn_layers: int = 2
     conv: str = "gine"  # "gine" | "gat"
+    gnn_backend: str = "pyg"  # "pyg" | "torch"
     dropout: float = 0.1
     num_relations: int = 6
     ema_decay: float = 0.996
@@ -44,6 +45,8 @@ class TrainConfig:
     weight_decay: float = 1e-5
     grad_clip: float = 1.0
     seed: int = 0
+    batch_size: int = 16
+    num_workers: int = 0
 
     # JEPA patch task.
     context_patches: int = 1
@@ -86,8 +89,12 @@ class Config:
 
     @classmethod
     def from_dict(cls, d: Dict[str, Any]) -> "Config":
+        model_dict = dict(d.get("model", {}))
+        if model_dict and "gnn_backend" not in model_dict:
+            model_dict["gnn_backend"] = "torch"
+
         return cls(
-            model=ModelConfig(**d.get("model", {})),
+            model=ModelConfig(**model_dict),
             train=TrainConfig(**d.get("train", {})),
             score=ScoreConfig(**d.get("score", {})),
             encoder=d.get("encoder", "mock"),
