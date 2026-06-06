@@ -7,6 +7,15 @@ import time
 from .constants import MAX_COMPLETION_TOKENS, MAX_RETRIES, REQUEST_TIMEOUT_SECONDS
 
 
+def _warn_max_tokens(*, request_id: str, model: str, output_tokens: int | None = None) -> None:
+    detail = f", output_tokens={output_tokens}" if output_tokens is not None else ""
+    print(
+        f"      WARNING: max_tokens reached for {request_id} "
+        f"(model={model}, max_tokens={MAX_COMPLETION_TOKENS}{detail})",
+        flush=True,
+    )
+
+
 class OpenRouterClient:
     """OpenAI-compatible OpenRouter client with low-temperature JSON calls."""
 
@@ -29,6 +38,16 @@ class OpenRouterClient:
                     timeout=REQUEST_TIMEOUT_SECONDS,
                 )
                 content = completion.choices[0].message.content or ""
+                if completion.choices[0].finish_reason == "length":
+                    _warn_max_tokens(
+                        request_id="openrouter_request",
+                        model=model,
+                        output_tokens=(
+                            completion.usage.completion_tokens
+                            if completion.usage and completion.usage.completion_tokens
+                            else None
+                        ),
+                    )
                 usage = {}
                 if completion.usage:
                     usage = {
@@ -65,6 +84,12 @@ class AnthropicClient:
                     "prompt_tokens": message.usage.input_tokens,
                     "completion_tokens": message.usage.output_tokens,
                 }
+                if message.stop_reason == "max_tokens":
+                    _warn_max_tokens(
+                        request_id="anthropic_request",
+                        model=model,
+                        output_tokens=message.usage.output_tokens,
+                    )
                 if content.strip():
                     return content, usage
             except Exception as exc:
@@ -130,6 +155,12 @@ class AnthropicClient:
                     "prompt_tokens": msg.usage.input_tokens,
                     "completion_tokens": msg.usage.output_tokens,
                 }
+                if msg.stop_reason == "max_tokens":
+                    _warn_max_tokens(
+                        request_id=cid,
+                        model=msg.model,
+                        output_tokens=msg.usage.output_tokens,
+                    )
                 results[cid] = (content, usage)
             else:
                 print(f"      Batch request {cid} failed: {result.result.type}", flush=True)

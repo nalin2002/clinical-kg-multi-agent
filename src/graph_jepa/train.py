@@ -54,6 +54,30 @@ def _build_graphs(args, cfg: Config) -> List[PatientGraph]:
     raise ValueError(f"unknown --data: {args.data!r}")
 
 
+def _init_wandb(args, cfg: Config, dataset_size: int):
+    if not args.wandb:
+        return None
+    try:
+        import wandb
+    except ImportError as exc:
+        raise SystemExit("wandb logging requested; install with `pip install wandb`.") from exc
+
+    return wandb.init(
+        project=args.wandb_project,
+        entity=args.wandb_entity or None,
+        name=args.wandb_run_name or None,
+        tags=args.wandb_tags or None,
+        mode=args.wandb_mode,
+        config={
+            "script": "graph_jepa.train",
+            "checkpoint_name": CHECKPOINT_NAME,
+            "dataset_size": dataset_size,
+            "cli": vars(args),
+            "graph_jepa": cfg.to_dict(),
+        },
+    )
+
+
 def train(args) -> Path:
     cfg = Config()
     cfg.encoder = args.encoder
@@ -72,6 +96,7 @@ def train(args) -> Path:
     dataset = PatientGraphDataset(graphs, encoder)
     print(f"Loaded {len(dataset)} graphs (encoder={args.encoder}, "
           f"in_dim={cfg.model.in_dim})")
+    wandb_run = _init_wandb(args, cfg, len(dataset))
 
     model = GraphJEPA(cfg.model).to(device)
     opt = torch.optim.AdamW(
@@ -113,11 +138,22 @@ def train(args) -> Path:
             n += 1
 
         n = max(n, 1)
-        print(f"epoch {epoch:03d} | loss {agg['loss']/n:.4f} "
-              f"| jepa_inv {agg['jepa_inv']/n:.4f} "
-              f"| jepa_var {agg['jepa_var']/n:.4f} "
-              f"| edge_bce {agg['edge_bce']/n:.4f} "
-              f"| latent_std {agg['latent_std']/n:.4f}")
+        metrics = {
+            "epoch": epoch,
+            "train/loss": agg["loss"] / n,
+            "train/jepa_inv": agg["jepa_inv"] / n,
+            "train/jepa_var": agg["jepa_var"] / n,
+            "train/edge_bce": agg["edge_bce"] / n,
+            "train/latent_std": agg["latent_std"] / n,
+            "train/lr": cfg.train.lr,
+        }
+        print(f"epoch {epoch:03d} | loss {metrics['train/loss']:.4f} "
+              f"| jepa_inv {metrics['train/jepa_inv']:.4f} "
+              f"| jepa_var {metrics['train/jepa_var']:.4f} "
+              f"| edge_bce {metrics['train/edge_bce']:.4f} "
+              f"| latent_std {metrics['train/latent_std']:.4f}")
+        if wandb_run:
+            wandb_run.log(metrics, step=epoch)
 
     out_dir = Path(args.out)
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -127,6 +163,9 @@ def train(args) -> Path:
     with open(out_dir / "config.json", "w") as f:
         json.dump(cfg.to_dict(), f, indent=2)
     print(f"Saved checkpoint to {ckpt_path}")
+    if wandb_run:
+        wandb_run.summary["checkpoint_path"] = str(ckpt_path)
+        wandb_run.finish()
     return ckpt_path
 
 
@@ -149,6 +188,12 @@ def build_arg_parser() -> argparse.ArgumentParser:
                         "outputs/aci_bench/sub_kgs, then curated EIR KGs, then smoke KGs.")
     p.add_argument("--aci-limit", type=int, default=None,
                    help="Limit number of ACI-Bench graphs loaded for training/smoke tests.")
+    p.add_argument("--wandb", action="store_true", help="Log training metrics to Weights & Biases")
+    p.add_argument("--wandb-project", default="clinical-kg-graph-jepa")
+    p.add_argument("--wandb-entity", default=None)
+    p.add_argument("--wandb-run-name", default=None)
+    p.add_argument("--wandb-tags", nargs="*", default=None)
+    p.add_argument("--wandb-mode", choices=["online", "offline", "disabled"], default="online")
     return p
 
 

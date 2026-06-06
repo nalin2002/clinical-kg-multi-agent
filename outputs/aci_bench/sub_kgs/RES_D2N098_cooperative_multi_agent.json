@@ -1,0 +1,264 @@
+{
+  "nodes": [
+    {
+      "id": "N_001",
+      "text": "left shoulder pain",
+      "type": "SYMPTOM",
+      "evidence": "pain in his left shoulder",
+      "turn_id": "D-1"
+    },
+    {
+      "id": "N_002",
+      "text": "elbow pain",
+      "type": "SYMPTOM",
+      "evidence": "pain in his left shoulder and elbow",
+      "turn_id": "D-1"
+    },
+    {
+      "id": "N_003",
+      "text": "fall",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "he fell five months ago going up a stairs",
+      "turn_id": "D-1"
+    },
+    {
+      "id": "N_004",
+      "text": "constant pain",
+      "type": "SYMPTOM",
+      "evidence": "i've been having constant pain in my left shoulder and left elbow",
+      "turn_id": "P-2"
+    },
+    {
+      "id": "N_005",
+      "text": "weight lifting",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "i've always hit the gym and lifted weights",
+      "turn_id": "P-4"
+    },
+    {
+      "id": "N_006",
+      "text": "exercise limitation",
+      "type": "SYMPTOM",
+      "evidence": "i have n't been able to lift more than 15 or 20 pounds",
+      "turn_id": "P-4"
+    },
+    {
+      "id": "N_007",
+      "text": "ice",
+      "type": "TREATMENT",
+      "evidence": "i have iced a bit",
+      "turn_id": "P-6"
+    },
+    {
+      "id": "N_008",
+      "text": "physical exam",
+      "type": "PROCEDURE",
+      "evidence": "let's go ahead and take a look",
+      "turn_id": "D-9"
+    },
+    {
+      "id": "N_009",
+      "text": "tenderness",
+      "type": "SYMPTOM",
+      "evidence": "it hurts when you press there on my elbow and here on my shoulder",
+      "turn_id": "P-9"
+    },
+    {
+      "id": "N_010",
+      "text": "hawkins-kennedy test",
+      "type": "PROCEDURE",
+      "evidence": "positive hawkins-kennedy and neer's test",
+      "turn_id": "D-11"
+    },
+    {
+      "id": "N_011",
+      "text": "neer's test",
+      "type": "PROCEDURE",
+      "evidence": "positive hawkins-kennedy and neer's test",
+      "turn_id": "D-11"
+    },
+    {
+      "id": "N_012",
+      "text": "impingement syndrome",
+      "type": "DIAGNOSIS",
+      "evidence": "impingement syndrome of your left shoulder",
+      "turn_id": "D-11"
+    },
+    {
+      "id": "N_013",
+      "text": "physical therapy",
+      "type": "TREATMENT",
+      "evidence": "start with physical therapy",
+      "turn_id": "D-12"
+    },
+    {
+      "id": "N_014",
+      "text": "cortisone injection",
+      "type": "TREATMENT",
+      "evidence": "we could try a cortisone injection",
+      "turn_id": "D-12"
+    },
+    {
+      "id": "N_015",
+      "text": "rest",
+      "type": "TREATMENT",
+      "evidence": "rest as much as you can",
+      "turn_id": "D-14"
+    },
+    {
+      "id": "N_016",
+      "text": "absent numbness",
+      "type": "SYMPTOM",
+      "evidence": "no tingling or numbless, numbness, thankfully",
+      "turn_id": "P-7"
+    },
+    {
+      "id": "N_017",
+      "text": "absent tingling",
+      "type": "SYMPTOM",
+      "evidence": "no tingling or numbless, numbness, thankfully",
+      "turn_id": "P-7"
+    },
+    {
+      "id": "N_018",
+      "text": "no pain medications",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "i have not taken anything for the pain",
+      "turn_id": "P-6"
+    },
+    {
+      "id": "N_019",
+      "text": "exercise trigger",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "exercise",
+      "turn_id": "P-5"
+    },
+    {
+      "id": "N_020",
+      "text": "lumbar tenderness",
+      "type": "SYMPTOM",
+      "evidence": "tender",
+      "turn_id": "D-11"
+    },
+    {
+      "id": "N_021",
+      "text": "weekly therapy",
+      "type": "TREATMENT",
+      "evidence": "therapy",
+      "turn_id": ""
+    },
+    {
+      "id": "N_022",
+      "text": "right elbow x-ray",
+      "type": "PROCEDURE",
+      "evidence": "elbow",
+      "turn_id": ""
+    },
+    {
+      "id": "N_023",
+      "text": "right chest",
+      "type": "LOCATION",
+      "evidence": "right",
+      "turn_id": "D-1"
+    },
+    {
+      "id": "N_024",
+      "text": "hemoglobin a1c 8",
+      "type": "LAB_RESULT",
+      "evidence": "8",
+      "turn_id": "D-8"
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "N_003",
+      "target_id": "N_001",
+      "type": "CAUSES",
+      "evidence": "he fell five months ago going up a stairs , and the pain has been present since",
+      "turn_id": "D-1"
+    },
+    {
+      "source_id": "N_003",
+      "target_id": "N_002",
+      "type": "CAUSES",
+      "evidence": "he fell five months ago going up a stairs , and the pain has been present since",
+      "turn_id": "D-1"
+    },
+    {
+      "source_id": "N_005",
+      "target_id": "N_006",
+      "type": "CAUSES",
+      "evidence": "the pain is worse when i lift , and i have n't been able to lift more than 15 or 20 pounds",
+      "turn_id": "P-4"
+    },
+    {
+      "source_id": "N_001",
+      "target_id": "N_012",
+      "type": "INDICATES",
+      "evidence": "what i think you are dealing with is impingement syndrome of your left shoulder",
+      "turn_id": "D-11"
+    },
+    {
+      "source_id": "N_004",
+      "target_id": "N_012",
+      "type": "INDICATES",
+      "evidence": "i've been having constant pain in my left shoulder and left elbow",
+      "turn_id": "P-2"
+    },
+    {
+      "source_id": "N_009",
+      "target_id": "N_012",
+      "type": "INDICATES",
+      "evidence": "left shoulder and elbow , tender sa space",
+      "turn_id": "D-11"
+    },
+    {
+      "source_id": "N_010",
+      "target_id": "N_012",
+      "type": "CONFIRMS",
+      "evidence": "positive hawkins-kennedy and neer's test",
+      "turn_id": "D-11"
+    },
+    {
+      "source_id": "N_011",
+      "target_id": "N_012",
+      "type": "CONFIRMS",
+      "evidence": "positive hawkins-kennedy and neer's test",
+      "turn_id": "D-11"
+    },
+    {
+      "source_id": "N_007",
+      "target_id": "N_001",
+      "type": "TAKEN_FOR",
+      "evidence": "i have iced a bit",
+      "turn_id": "P-6"
+    },
+    {
+      "source_id": "N_013",
+      "target_id": "N_012",
+      "type": "TAKEN_FOR",
+      "evidence": "first option would be to start with physical therapy",
+      "turn_id": "D-12"
+    },
+    {
+      "source_id": "N_014",
+      "target_id": "N_012",
+      "type": "TAKEN_FOR",
+      "evidence": "if that does n't improve your pain , then we could try a cortisone injection",
+      "turn_id": "D-12"
+    },
+    {
+      "source_id": "N_015",
+      "target_id": "N_012",
+      "type": "TAKEN_FOR",
+      "evidence": "rest as much as you can",
+      "turn_id": "D-14"
+    }
+  ],
+  "_usage": {
+    "prompt_tokens": 3304912,
+    "completion_tokens": 648595
+  },
+  "_method": "cooperative_multi_agent",
+  "_used_note": true
+}

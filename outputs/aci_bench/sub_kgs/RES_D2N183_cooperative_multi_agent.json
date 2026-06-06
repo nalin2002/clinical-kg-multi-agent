@@ -1,0 +1,236 @@
+{
+  "nodes": [
+    {
+      "id": "N_001",
+      "text": "acne",
+      "type": "DIAGNOSIS",
+      "evidence": "he is here today for an acne follow-up",
+      "turn_id": "D-1"
+    },
+    {
+      "id": "N_002",
+      "text": "clindamycin lotion",
+      "type": "TREATMENT",
+      "evidence": "clindamycin lotion",
+      "turn_id": "D-1"
+    },
+    {
+      "id": "N_003",
+      "text": "tretinoin cream",
+      "type": "TREATMENT",
+      "evidence": "tretinoin cream",
+      "turn_id": "D-1"
+    },
+    {
+      "id": "N_004",
+      "text": "benzoyl peroxide wash",
+      "type": "TREATMENT",
+      "evidence": "4-5 % benzoyl peroxide wash for f-face and 5-10 % for chest and back",
+      "turn_id": "D-1"
+    },
+    {
+      "id": "N_005",
+      "text": "sunscreen",
+      "type": "TREATMENT",
+      "evidence": "the sunscreen moisture stuff as well",
+      "turn_id": "P-3"
+    },
+    {
+      "id": "N_006",
+      "text": "covid-19",
+      "type": "DIAGNOSIS",
+      "evidence": "this is one of the fun parts of covid for me",
+      "turn_id": "D-12"
+    },
+    {
+      "id": "N_007",
+      "text": "panoxyl",
+      "type": "TREATMENT",
+      "evidence": "the one i recommend for the chest and back is the , the PanOxyl 10 %",
+      "turn_id": "D-16"
+    },
+    {
+      "id": "N_008",
+      "text": "physical exam",
+      "type": "PROCEDURE",
+      "evidence": "as far as the physical exam",
+      "turn_id": "D-20"
+    },
+    {
+      "id": "N_009",
+      "text": "inflammatory papules",
+      "type": "SYMPTOM",
+      "evidence": "scattered inflammatory papules and pustules across the upper back and posterior shoulders",
+      "turn_id": "D-20"
+    },
+    {
+      "id": "N_010",
+      "text": "pustules",
+      "type": "SYMPTOM",
+      "evidence": "scattered inflammatory papules and pustules across the upper back and posterior shoulders",
+      "turn_id": "D-20"
+    },
+    {
+      "id": "N_011",
+      "text": "acne vulgaris",
+      "type": "DIAGNOSIS",
+      "evidence": "acne vulgaris is improved and well controlled on the face",
+      "turn_id": "D-20"
+    },
+    {
+      "id": "N_012",
+      "text": "absent redness",
+      "type": "SYMPTOM",
+      "evidence": "have you had any redness, peeling, dryness, or irritation with the use of these medications at all? nope. not at all.",
+      "turn_id": "P-5"
+    },
+    {
+      "id": "N_013",
+      "text": "absent peeling",
+      "type": "SYMPTOM",
+      "evidence": "have you had any redness, peeling, dryness, or irritation with the use of these medications at all? nope. not at all.",
+      "turn_id": "P-5"
+    },
+    {
+      "id": "N_014",
+      "text": "absent dryness",
+      "type": "SYMPTOM",
+      "evidence": "have you had any redness, peeling, dryness, or irritation with the use of these medications at all? nope. not at all.",
+      "turn_id": "P-5"
+    },
+    {
+      "id": "N_015",
+      "text": "absent irritation",
+      "type": "SYMPTOM",
+      "evidence": "have you had any redness, peeling, dryness, or irritation with the use of these medications at all? nope. not at all.",
+      "turn_id": "P-5"
+    },
+    {
+      "id": "N_016",
+      "text": "antibiotics",
+      "type": "TREATMENT",
+      "evidence": "antibiotic",
+      "turn_id": "P-3"
+    },
+    {
+      "id": "N_017",
+      "text": "chest auscultation",
+      "type": "PROCEDURE",
+      "evidence": "chest",
+      "turn_id": "D-2"
+    },
+    {
+      "id": "N_018",
+      "text": "family hx allergies (father)",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "father",
+      "turn_id": ""
+    },
+    {
+      "id": "N_019",
+      "text": "back stiffness",
+      "type": "SYMPTOM",
+      "evidence": "back",
+      "turn_id": "D-2"
+    },
+    {
+      "id": "N_020",
+      "text": "right chest",
+      "type": "LOCATION",
+      "evidence": "right",
+      "turn_id": "D-1"
+    },
+    {
+      "id": "N_021",
+      "text": "chest",
+      "type": "LOCATION",
+      "evidence": "chest",
+      "turn_id": "D-2"
+    },
+    {
+      "id": "N_022",
+      "text": "back",
+      "type": "LOCATION",
+      "evidence": "back",
+      "turn_id": "D-2"
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "N_009",
+      "target_id": "N_001",
+      "type": "INDICATES",
+      "evidence": "scattered inflammatory papules and pustules across the upper back and posterior shoulders",
+      "turn_id": "D-20"
+    },
+    {
+      "source_id": "N_010",
+      "target_id": "N_001",
+      "type": "INDICATES",
+      "evidence": "scattered inflammatory papules and pustules across the upper back and posterior shoulders",
+      "turn_id": "D-20"
+    },
+    {
+      "source_id": "N_009",
+      "target_id": "N_011",
+      "type": "INDICATES",
+      "evidence": "There are less than 5 inflammatory papules on the forehead, cheeks, and chin. acne vulgaris is improved",
+      "turn_id": "D-20"
+    },
+    {
+      "source_id": "N_010",
+      "target_id": "N_011",
+      "type": "INDICATES",
+      "evidence": "scattered inflammatory papules and pustules across the upper back and posterior shoulders",
+      "turn_id": "D-20"
+    },
+    {
+      "source_id": "N_002",
+      "target_id": "N_001",
+      "type": "TAKEN_FOR",
+      "evidence": "clindamycin lotion",
+      "turn_id": "D-1"
+    },
+    {
+      "source_id": "N_003",
+      "target_id": "N_001",
+      "type": "TAKEN_FOR",
+      "evidence": "tretinoin cream",
+      "turn_id": "D-1"
+    },
+    {
+      "source_id": "N_004",
+      "target_id": "N_001",
+      "type": "TAKEN_FOR",
+      "evidence": "benzoyl peroxide wash for f-face",
+      "turn_id": "D-1"
+    },
+    {
+      "source_id": "N_007",
+      "target_id": "N_001",
+      "type": "TAKEN_FOR",
+      "evidence": "PanOxyl 10 % foaming wash to the back",
+      "turn_id": "D-20"
+    },
+    {
+      "source_id": "N_005",
+      "target_id": "N_001",
+      "type": "TAKEN_FOR",
+      "evidence": "sunscreen moisture stuff",
+      "turn_id": "P-3"
+    },
+    {
+      "source_id": "N_019",
+      "target_id": "N_022",
+      "type": "LOCATED_AT",
+      "evidence": "back",
+      "turn_id": "D-2"
+    }
+  ],
+  "_usage": {
+    "prompt_tokens": 3304912,
+    "completion_tokens": 648595
+  },
+  "_method": "cooperative_multi_agent",
+  "_used_note": true
+}

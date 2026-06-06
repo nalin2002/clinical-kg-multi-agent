@@ -1,0 +1,285 @@
+{
+  "nodes": [
+    {
+      "id": "N_001",
+      "text": "right eye twitch",
+      "type": "SYMPTOM",
+      "evidence": "karen has been having this eye twitch",
+      "turn_id": "P-2"
+    },
+    {
+      "id": "N_002",
+      "text": "urge to move face",
+      "type": "SYMPTOM",
+      "evidence": "do you feel the urge to move your face",
+      "turn_id": "D-5"
+    },
+    {
+      "id": "N_003",
+      "text": "frequent blinking",
+      "type": "SYMPTOM",
+      "evidence": "she just seems to be blinking frequently",
+      "turn_id": "P-20"
+    },
+    {
+      "id": "N_004",
+      "text": "physical exam",
+      "type": "PROCEDURE",
+      "evidence": "let's go ahead and do physical exam",
+      "turn_id": "D-26"
+    },
+    {
+      "id": "N_005",
+      "text": "neurological exam",
+      "type": "PROCEDURE",
+      "evidence": "on the neurological exam",
+      "turn_id": "D-29"
+    },
+    {
+      "id": "N_006",
+      "text": "no family history seizures",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "no history of seizures",
+      "turn_id": "P-21"
+    },
+    {
+      "id": "N_007",
+      "text": "no family history tourette's",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "i never heard of that tourette thing",
+      "turn_id": "P-21"
+    },
+    {
+      "id": "N_008",
+      "text": "transient tics",
+      "type": "DIAGNOSIS",
+      "evidence": "i do believe that karen does have a tick",
+      "turn_id": "D-30"
+    },
+    {
+      "id": "N_009",
+      "text": "absent pain",
+      "type": "SYMPTOM",
+      "evidence": "no it it does n't really hurt",
+      "turn_id": "P-4"
+    },
+    {
+      "id": "N_010",
+      "text": "no seizures",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "no",
+      "turn_id": "P-18"
+    },
+    {
+      "id": "N_011",
+      "text": "absent fever",
+      "type": "SYMPTOM",
+      "evidence": "no",
+      "turn_id": "P-23"
+    },
+    {
+      "id": "N_012",
+      "text": "absent chills",
+      "type": "SYMPTOM",
+      "evidence": "no",
+      "turn_id": "P-23"
+    },
+    {
+      "id": "N_013",
+      "text": "absent cough",
+      "type": "SYMPTOM",
+      "evidence": "ma'am",
+      "turn_id": "P-24"
+    },
+    {
+      "id": "N_014",
+      "text": "absent headache",
+      "type": "SYMPTOM",
+      "evidence": "ma'am",
+      "turn_id": "P-24"
+    },
+    {
+      "id": "N_015",
+      "text": "absent sleep problems",
+      "type": "SYMPTOM",
+      "evidence": "nope",
+      "turn_id": "P-25"
+    },
+    {
+      "id": "N_016",
+      "text": "tick bite",
+      "type": "DIAGNOSIS",
+      "evidence": "tick",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "text": "school exposure",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "school",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "text": "prior tick bite",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "tick",
+      "turn_id": ""
+    },
+    {
+      "id": "N_019",
+      "text": "fatigue",
+      "type": "SYMPTOM",
+      "evidence": "tired",
+      "turn_id": ""
+    },
+    {
+      "id": "N_020",
+      "text": "uncontrolled hypertension",
+      "type": "DIAGNOSIS",
+      "evidence": "uncontrolled",
+      "turn_id": ""
+    },
+    {
+      "id": "N_021",
+      "text": "right middle finger x-ray",
+      "type": "PROCEDURE",
+      "evidence": "finger",
+      "turn_id": "P-26"
+    },
+    {
+      "id": "N_022",
+      "text": "epilepsy",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "seizure",
+      "turn_id": "D-31"
+    },
+    {
+      "id": "N_023",
+      "text": "throat",
+      "type": "LOCATION",
+      "evidence": "throat",
+      "turn_id": ""
+    },
+    {
+      "id": "N_024",
+      "text": "right middle finger",
+      "type": "LOCATION",
+      "evidence": "finger",
+      "turn_id": "P-26"
+    },
+    {
+      "id": "N_025",
+      "text": "ekg normal",
+      "type": "LAB_RESULT",
+      "evidence": "normal",
+      "turn_id": "D-17"
+    },
+    {
+      "id": "N_026",
+      "text": "chest x-ray unremarkable",
+      "type": "LAB_RESULT",
+      "evidence": "normal",
+      "turn_id": "D-17"
+    },
+    {
+      "id": "N_027",
+      "text": "hemoglobin a1c 8",
+      "type": "LAB_RESULT",
+      "evidence": "8",
+      "turn_id": "P-7"
+    },
+    {
+      "id": "N_028",
+      "text": "white blood cell count normal",
+      "type": "LAB_RESULT",
+      "evidence": "normal",
+      "turn_id": "D-17"
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "N_001",
+      "target_id": "N_008",
+      "type": "INDICATES",
+      "evidence": "Right eye twitch indicates transient tics",
+      "turn_id": "D-30"
+    },
+    {
+      "source_id": "N_002",
+      "target_id": "N_008",
+      "type": "INDICATES",
+      "evidence": "urge to move your face...sometimes and then it moves and then i feel better",
+      "turn_id": "P-5"
+    },
+    {
+      "source_id": "N_003",
+      "target_id": "N_008",
+      "type": "INDICATES",
+      "evidence": "she seems to be blinking frequently",
+      "turn_id": "P-20"
+    },
+    {
+      "source_id": "N_004",
+      "target_id": "N_008",
+      "type": "CONFIRMS",
+      "evidence": "let's go ahead and do physical exam on karen here",
+      "turn_id": "D-26"
+    },
+    {
+      "source_id": "N_005",
+      "target_id": "N_008",
+      "type": "CONFIRMS",
+      "evidence": "on the neurological exam the patient is awake alert and oriented times three...everything looks good karen",
+      "turn_id": "D-29"
+    },
+    {
+      "source_id": "N_009",
+      "target_id": "N_008",
+      "type": "INDICATES",
+      "evidence": "do you have any pain when it happens...no it it does n't really hurt",
+      "turn_id": "P-4"
+    },
+    {
+      "source_id": "N_011",
+      "target_id": "N_008",
+      "type": "INDICATES",
+      "evidence": "how about like fever or chills...no",
+      "turn_id": "P-23"
+    },
+    {
+      "source_id": "N_012",
+      "target_id": "N_008",
+      "type": "INDICATES",
+      "evidence": "how about like fever or chills...no",
+      "turn_id": "P-23"
+    },
+    {
+      "source_id": "N_013",
+      "target_id": "N_008",
+      "type": "INDICATES",
+      "evidence": "okay coughing headache...ma'am",
+      "turn_id": "P-24"
+    },
+    {
+      "source_id": "N_014",
+      "target_id": "N_008",
+      "type": "INDICATES",
+      "evidence": "okay coughing headache...ma'am",
+      "turn_id": "P-24"
+    },
+    {
+      "source_id": "N_015",
+      "target_id": "N_008",
+      "type": "INDICATES",
+      "evidence": "how about any problems with karen's sleep...nope",
+      "turn_id": "P-25"
+    }
+  ],
+  "_usage": {
+    "prompt_tokens": 3304912,
+    "completion_tokens": 648595
+  },
+  "_method": "cooperative_multi_agent",
+  "_used_note": true
+}

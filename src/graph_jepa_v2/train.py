@@ -9,6 +9,7 @@ from pathlib import Path
 from typing import List
 
 import torch
+from tqdm.auto import tqdm
 from torch_geometric.loader import DataLoader
 
 from graph_jepa.data import AciBenchGraphBuilder, MimicGraphBuilder, SyntheticGraphGenerator
@@ -47,6 +48,30 @@ def _ema_decay(step: int, total_steps: int, cfg: Config) -> float:
     progress = step / float(total_steps - 1)
     cosine = 0.5 * (1.0 - math.cos(math.pi * progress))
     return cfg.train.ema_start + cosine * (cfg.train.ema_end - cfg.train.ema_start)
+
+
+def _init_wandb(args, cfg: Config, dataset_size: int):
+    if not args.wandb:
+        return None
+    try:
+        import wandb
+    except ImportError as exc:
+        raise SystemExit("wandb logging requested; install with `pip install wandb`.") from exc
+
+    return wandb.init(
+        project=args.wandb_project,
+        entity=args.wandb_entity or None,
+        name=args.wandb_run_name or None,
+        tags=args.wandb_tags or None,
+        mode=args.wandb_mode,
+        config={
+            "script": "graph_jepa_v2.train",
+            "checkpoint_name": CHECKPOINT_NAME,
+            "dataset_size": dataset_size,
+            "cli": vars(args),
+            "graph_jepa": cfg.to_dict(),
+        },
+    )
 
 
 def train(args) -> Path:
@@ -89,6 +114,7 @@ def train(args) -> Path:
         f"batch_size={cfg.train.batch_size}, "
         f"gnn_backend={cfg.model.gnn_backend}, conv={cfg.model.conv})"
     )
+    wandb_run = _init_wandb(args, cfg, len(dataset))
 
     model = GraphJEPAv2(cfg.model).to(device)
     opt = torch.optim.AdamW(
@@ -109,7 +135,15 @@ def train(args) -> Path:
             "patch_std": 0.0,
         }
         n = 0
-        for data in train_loader:
+        progress = tqdm(
+            train_loader,
+            desc=f"epoch {epoch:03d}",
+            total=len(train_loader),
+            unit="batch",
+            dynamic_ncols=True,
+            leave=False,
+        )
+        for data in progress:
             data = data.to(device)
             if data.num_nodes < 2:
                 continue
@@ -150,15 +184,32 @@ def train(args) -> Path:
             agg["patch_std"] += jlog["patch_std"]
             agg["edge_bce"] += elog["edge_bce"]
             n += 1
+            progress.set_postfix(
+                loss=f"{agg['loss']/n:.4f}",
+                jepa=f"{agg['jepa_inv']/n:.4f}",
+                edge=f"{agg['edge_bce']/n:.4f}",
+            )
 
         denom = max(n, 1)
+        metrics = {
+            "epoch": epoch,
+            "train/loss": agg["loss"] / denom,
+            "train/jepa_inv": agg["jepa_inv"] / denom,
+            "train/jepa_var": agg["jepa_var"] / denom,
+            "train/edge_bce": agg["edge_bce"] / denom,
+            "train/patch_std": agg["patch_std"] / denom,
+            "train/lr": cfg.train.lr,
+            "train/global_step": global_step,
+        }
         print(
-            f"epoch {epoch:03d} | loss {agg['loss']/denom:.4f} "
-            f"| jepa_inv {agg['jepa_inv']/denom:.4f} "
-            f"| jepa_var {agg['jepa_var']/denom:.4f} "
-            f"| edge_bce {agg['edge_bce']/denom:.4f} "
-            f"| patch_std {agg['patch_std']/denom:.4f}"
+            f"epoch {epoch:03d} | loss {metrics['train/loss']:.4f} "
+            f"| jepa_inv {metrics['train/jepa_inv']:.4f} "
+            f"| jepa_var {metrics['train/jepa_var']:.4f} "
+            f"| edge_bce {metrics['train/edge_bce']:.4f} "
+            f"| patch_std {metrics['train/patch_std']:.4f}"
         )
+        if wandb_run:
+            wandb_run.log(metrics, step=epoch)
 
     out_dir = Path(args.out)
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -167,6 +218,9 @@ def train(args) -> Path:
     with open(out_dir / "config_v2.json", "w") as f:
         json.dump(cfg.to_dict(), f, indent=2)
     print(f"Saved checkpoint to {ckpt_path}")
+    if wandb_run:
+        wandb_run.summary["checkpoint_path"] = str(ckpt_path)
+        wandb_run.finish()
     return ckpt_path
 
 
@@ -180,7 +234,7 @@ def build_arg_parser() -> argparse.ArgumentParser:
     p.add_argument("--epochs", type=int, default=40)
     p.add_argument("--lr", type=float, default=8e-4)
     p.add_argument("--device", default="cpu")
-    p.add_argument("--batch-size", type=int, default=16)
+    p.add_argument("--batch_size", type=int, default=16)
     p.add_argument("--num-workers", type=int, default=0)
     p.add_argument("--conv", choices=["gine", "gat"], default="gine")
     p.add_argument("--gnn-backend", choices=["pyg", "torch"], default="pyg")
@@ -198,6 +252,12 @@ def build_arg_parser() -> argparse.ArgumentParser:
                         "outputs/aci_bench/sub_kgs, then curated EIR KGs, then smoke KGs.")
     p.add_argument("--aci-limit", type=int, default=None,
                    help="Limit number of ACI-Bench graphs loaded for training/smoke tests.")
+    p.add_argument("--wandb", action="store_true", help="Log training metrics to Weights & Biases")
+    p.add_argument("--wandb-project", default="clinical-kg-graph-jepa")
+    p.add_argument("--wandb-entity", default=None)
+    p.add_argument("--wandb-run-name", default=None)
+    p.add_argument("--wandb-tags", nargs="*", default=None)
+    p.add_argument("--wandb-mode", choices=["online", "offline", "disabled"], default="online")
     return p
 
 

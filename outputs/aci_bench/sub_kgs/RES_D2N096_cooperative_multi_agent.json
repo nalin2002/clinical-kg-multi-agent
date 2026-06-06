@@ -1,0 +1,271 @@
+{
+  "nodes": [
+    {
+      "id": "N_001",
+      "text": "left shoulder pain",
+      "type": "SYMPTOM",
+      "evidence": "i'm having this left shoulder pain lately",
+      "turn_id": "P-2"
+    },
+    {
+      "id": "N_002",
+      "text": "tylenol",
+      "type": "TREATMENT",
+      "evidence": "i did take a tylenol for two or three days",
+      "turn_id": "P-5"
+    },
+    {
+      "id": "N_003",
+      "text": "gymnastics",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "i was actually in gymnastics class",
+      "turn_id": "P-6"
+    },
+    {
+      "id": "N_004",
+      "text": "pain with movement",
+      "type": "SYMPTOM",
+      "evidence": "any kind of movement on my left shoulder actually hurts",
+      "turn_id": "P-12"
+    },
+    {
+      "id": "N_005",
+      "text": "x-ray",
+      "type": "PROCEDURE",
+      "evidence": "from the x-ray , it does n't look like there is any , uh , broken bone or fracture",
+      "turn_id": "D-13"
+    },
+    {
+      "id": "N_006",
+      "text": "joint injury",
+      "type": "DIAGNOSIS",
+      "evidence": "my guess is you probably , um , hurt your joint",
+      "turn_id": "D-13"
+    },
+    {
+      "id": "N_007",
+      "text": "ibuprofen",
+      "type": "TREATMENT",
+      "evidence": "600 milligram of ibuprofen three times a day",
+      "turn_id": "D-15"
+    },
+    {
+      "id": "N_008",
+      "text": "ice",
+      "type": "TREATMENT",
+      "evidence": "you can use , uh , ice",
+      "turn_id": "D-17"
+    },
+    {
+      "id": "N_009",
+      "text": "heat pad",
+      "type": "TREATMENT",
+      "evidence": "heat pad",
+      "turn_id": "D-17"
+    },
+    {
+      "id": "N_010",
+      "text": "prior surgery",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "i did have past surgery on my , um , left arm",
+      "turn_id": "P-19"
+    },
+    {
+      "id": "N_011",
+      "text": "rest",
+      "type": "TREATMENT",
+      "evidence": "i would try to rest my , your left arm",
+      "turn_id": "D-22"
+    },
+    {
+      "id": "N_012",
+      "text": "aleve",
+      "type": "TREATMENT",
+      "evidence": "aleve",
+      "turn_id": "D-42"
+    },
+    {
+      "id": "N_013",
+      "text": "absent fracture",
+      "type": "SYMPTOM",
+      "evidence": "from the x-ray , it does n't look like there is any , uh , broken bone or fracture",
+      "turn_id": "D-13"
+    },
+    {
+      "id": "N_014",
+      "text": "school exposure",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "class",
+      "turn_id": "D-6"
+    },
+    {
+      "id": "N_015",
+      "text": "back stiffness",
+      "type": "SYMPTOM",
+      "evidence": "back",
+      "turn_id": "P-10"
+    },
+    {
+      "id": "N_016",
+      "text": "decreased range of motion",
+      "type": "SYMPTOM",
+      "evidence": "range of motion",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "text": "lumbar spine x-ray",
+      "type": "PROCEDURE",
+      "evidence": "x-ray",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "text": "right knee x-ray",
+      "type": "PROCEDURE",
+      "evidence": "x-ray",
+      "turn_id": ""
+    },
+    {
+      "id": "N_019",
+      "text": "right elbow x-ray",
+      "type": "PROCEDURE",
+      "evidence": "x-ray",
+      "turn_id": ""
+    },
+    {
+      "id": "N_020",
+      "text": "right humerus x-ray",
+      "type": "PROCEDURE",
+      "evidence": "x-ray",
+      "turn_id": ""
+    },
+    {
+      "id": "N_021",
+      "text": "right middle finger x-ray",
+      "type": "PROCEDURE",
+      "evidence": "x-ray",
+      "turn_id": ""
+    },
+    {
+      "id": "N_022",
+      "text": "right lower extremity x-ray",
+      "type": "PROCEDURE",
+      "evidence": "x-ray",
+      "turn_id": ""
+    },
+    {
+      "id": "N_023",
+      "text": "abdominal x-ray",
+      "type": "PROCEDURE",
+      "evidence": "x-ray",
+      "turn_id": ""
+    },
+    {
+      "id": "N_024",
+      "text": "right chest",
+      "type": "LOCATION",
+      "evidence": "right",
+      "turn_id": "D-1"
+    },
+    {
+      "id": "N_025",
+      "text": "back",
+      "type": "LOCATION",
+      "evidence": "back",
+      "turn_id": "P-10"
+    },
+    {
+      "id": "N_026",
+      "text": "hemoglobin a1c 8",
+      "type": "LAB_RESULT",
+      "evidence": "8",
+      "turn_id": "D-8"
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "N_003",
+      "target_id": "N_001",
+      "type": "CAUSES",
+      "evidence": "i was actually in gymnastics class",
+      "turn_id": "P-6"
+    },
+    {
+      "source_id": "N_001",
+      "target_id": "N_006",
+      "type": "INDICATES",
+      "evidence": "my guess is you probably hurt your joint",
+      "turn_id": "D-13"
+    },
+    {
+      "source_id": "N_004",
+      "target_id": "N_006",
+      "type": "INDICATES",
+      "evidence": "any kind of movement on my left shoulder actually hurts",
+      "turn_id": "P-12"
+    },
+    {
+      "source_id": "N_013",
+      "target_id": "N_006",
+      "type": "INDICATES",
+      "evidence": "it doesn't look like there is any broken bone or fracture",
+      "turn_id": "D-13"
+    },
+    {
+      "source_id": "N_002",
+      "target_id": "N_001",
+      "type": "TAKEN_FOR",
+      "evidence": "i did take a tylenol for two or three days",
+      "turn_id": "P-5"
+    },
+    {
+      "source_id": "N_007",
+      "target_id": "N_001",
+      "type": "TAKEN_FOR",
+      "evidence": "600 milligram of ibuprofen three times a day",
+      "turn_id": "D-15"
+    },
+    {
+      "source_id": "N_008",
+      "target_id": "N_001",
+      "type": "TAKEN_FOR",
+      "evidence": "you can use ice",
+      "turn_id": "D-17"
+    },
+    {
+      "source_id": "N_009",
+      "target_id": "N_001",
+      "type": "TAKEN_FOR",
+      "evidence": "or heat pad",
+      "turn_id": "D-17"
+    },
+    {
+      "source_id": "N_011",
+      "target_id": "N_001",
+      "type": "TAKEN_FOR",
+      "evidence": "i would try to rest my your left arm",
+      "turn_id": "D-22"
+    },
+    {
+      "source_id": "N_012",
+      "target_id": "N_001",
+      "type": "TAKEN_FOR",
+      "evidence": "you can also try advil aleve",
+      "turn_id": "D-40"
+    },
+    {
+      "source_id": "N_015",
+      "target_id": "N_025",
+      "type": "LOCATED_AT",
+      "evidence": "back",
+      "turn_id": "P-10"
+    }
+  ],
+  "_usage": {
+    "prompt_tokens": 3304912,
+    "completion_tokens": 648595
+  },
+  "_method": "cooperative_multi_agent",
+  "_used_note": true
+}

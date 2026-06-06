@@ -1,0 +1,229 @@
+{
+  "nodes": [
+    {
+      "id": "N_001",
+      "text": "psoriatic arthritis",
+      "type": "DIAGNOSIS",
+      "evidence": "ongoing management of psoriatic arthritis",
+      "turn_id": "D-1"
+    },
+    {
+      "id": "N_002",
+      "text": "prednisone",
+      "type": "TREATMENT",
+      "evidence": "decreasing your prednisone dose",
+      "turn_id": "D-2"
+    },
+    {
+      "id": "N_003",
+      "text": "foot pain",
+      "type": "SYMPTOM",
+      "evidence": "there was a little extra pain in my feet",
+      "turn_id": "P-3"
+    },
+    {
+      "id": "N_004",
+      "text": "methotrexate",
+      "type": "TREATMENT",
+      "evidence": "how about the methotrexate",
+      "turn_id": "D-5"
+    },
+    {
+      "id": "N_005",
+      "text": "joint pain",
+      "type": "SYMPTOM",
+      "evidence": "helped with your joint pain",
+      "turn_id": "D-5"
+    },
+    {
+      "id": "N_006",
+      "text": "covid-19 vaccination",
+      "type": "PROCEDURE",
+      "evidence": "i went to get my covid shots",
+      "turn_id": "P-5"
+    },
+    {
+      "id": "N_007",
+      "text": "bruising",
+      "type": "SYMPTOM",
+      "evidence": "why i was getting all these bruises",
+      "turn_id": "P-9"
+    },
+    {
+      "id": "N_008",
+      "text": "nail ridges",
+      "type": "SYMPTOM",
+      "evidence": "ridges in nails",
+      "turn_id": "D-15"
+    },
+    {
+      "id": "N_009",
+      "text": "psoriasis",
+      "type": "DIAGNOSIS",
+      "evidence": "that's from the psoriasis",
+      "turn_id": "D-15"
+    },
+    {
+      "id": "N_010",
+      "text": "lab tests",
+      "type": "PROCEDURE",
+      "evidence": "appointment for the blood work",
+      "turn_id": "D-16"
+    },
+    {
+      "id": "N_011",
+      "text": "absent swelling",
+      "type": "SYMPTOM",
+      "evidence": "Physical exam shows full range of motion without mention of joint swelling",
+      "turn_id": "D-15"
+    },
+    {
+      "id": "N_012",
+      "text": "absent joint pain",
+      "type": "SYMPTOM",
+      "evidence": "joint pain",
+      "turn_id": "P-5"
+    },
+    {
+      "id": "N_013",
+      "text": "steroids",
+      "type": "TREATMENT",
+      "evidence": "prednisone",
+      "turn_id": "P-2"
+    },
+    {
+      "id": "N_014",
+      "text": "decreased range of motion",
+      "type": "SYMPTOM",
+      "evidence": "range of motion",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "text": "right knee effusion",
+      "type": "SYMPTOM",
+      "evidence": "knee",
+      "turn_id": "D-14"
+    },
+    {
+      "id": "N_016",
+      "text": "right knee erythema",
+      "type": "SYMPTOM",
+      "evidence": "knee",
+      "turn_id": "D-14"
+    },
+    {
+      "id": "N_017",
+      "text": "bilateral lower extremity edema",
+      "type": "SYMPTOM",
+      "evidence": "bilateral",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "text": "arthritis exacerbation",
+      "type": "DIAGNOSIS",
+      "evidence": "arthritis",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_019",
+      "text": "right knee x-ray",
+      "type": "PROCEDURE",
+      "evidence": "knee",
+      "turn_id": "D-14"
+    },
+    {
+      "id": "N_020",
+      "text": "arthritis",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "arthritis",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_021",
+      "text": "right chest",
+      "type": "LOCATION",
+      "evidence": "right",
+      "turn_id": "P-12"
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "N_005",
+      "target_id": "N_001",
+      "type": "INDICATES",
+      "evidence": "methotrexate helped with your joint pain",
+      "turn_id": "D-5"
+    },
+    {
+      "source_id": "N_003",
+      "target_id": "N_001",
+      "type": "INDICATES",
+      "evidence": "there was a little extra pain in my feet",
+      "turn_id": "P-3"
+    },
+    {
+      "source_id": "N_008",
+      "target_id": "N_009",
+      "type": "INDICATES",
+      "evidence": "ridges in nails, that's from the psoriasis",
+      "turn_id": "D-15"
+    },
+    {
+      "source_id": "N_002",
+      "target_id": "N_001",
+      "type": "TAKEN_FOR",
+      "evidence": "decreasing your prednisone dose",
+      "turn_id": "D-2"
+    },
+    {
+      "source_id": "N_004",
+      "target_id": "N_005",
+      "type": "TAKEN_FOR",
+      "evidence": "methotrexate helped with your joint pain",
+      "turn_id": "D-5"
+    },
+    {
+      "source_id": "N_004",
+      "target_id": "N_001",
+      "type": "TAKEN_FOR",
+      "evidence": "continue with the methotrexate",
+      "turn_id": "D-16"
+    },
+    {
+      "source_id": "N_002",
+      "target_id": "N_007",
+      "type": "CAUSES",
+      "evidence": "that's probably from the prednisone, it can increase bruising",
+      "turn_id": "D-10"
+    },
+    {
+      "source_id": "N_005",
+      "target_id": "N_018",
+      "type": "INDICATES",
+      "evidence": "helped with your joint pain",
+      "turn_id": "D-5"
+    },
+    {
+      "source_id": "N_014",
+      "target_id": "N_018",
+      "type": "INDICATES",
+      "evidence": "range of motion",
+      "turn_id": "P-1"
+    },
+    {
+      "source_id": "N_019",
+      "target_id": "N_018",
+      "type": "RULES_OUT",
+      "evidence": "knee",
+      "turn_id": "D-14"
+    }
+  ],
+  "_usage": {
+    "prompt_tokens": 3304912,
+    "completion_tokens": 648595
+  },
+  "_method": "cooperative_multi_agent",
+  "_used_note": true
+}
