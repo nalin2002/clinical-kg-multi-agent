@@ -235,7 +235,7 @@ def build_arg_parser() -> argparse.ArgumentParser:
     p.add_argument("--lr", type=float, default=8e-4)
     p.add_argument("--device", default="cpu")
     p.add_argument("--batch_size", type=int, default=16)
-    p.add_argument("--num-workers", type=int, default=0)
+    p.add_argument("--num-workers", type=int, default=8)
     p.add_argument("--conv", choices=["gine", "gat"], default="gine")
     p.add_argument("--gnn-backend", choices=["pyg", "torch"], default="pyg")
     p.add_argument("--num-patches", type=int, default=8)
