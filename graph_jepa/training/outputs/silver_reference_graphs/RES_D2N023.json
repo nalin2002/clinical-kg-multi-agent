@@ -1,0 +1,125 @@
+{
+  "patient_id": "RES_D2N023",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "hypogonadism",
+      "type": "DIAGNOSIS",
+      "normalized_name": "hypogonadism",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "HIV",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "hiv",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "gynecomastia",
+      "type": "SYMPTOM",
+      "normalized_name": "gynecomastia",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "testosterone cypionate",
+      "type": "TREATMENT",
+      "normalized_name": "testosterone cypionate",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "elevated triglycerides",
+      "type": "LAB_RESULT",
+      "normalized_name": "elevated triglycerides",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "finasteride",
+      "type": "TREATMENT",
+      "normalized_name": "finasteride",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "Cialis",
+      "type": "TREATMENT",
+      "normalized_name": "cialis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "Indole-3-carbinol",
+      "type": "TREATMENT",
+      "normalized_name": "indole-3-carbinol",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "PSA 0.6 ng/mL",
+      "type": "LAB_RESULT",
+      "normalized_name": "psa 0.6 ng/ml",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "triglycerides 145 mg/dL",
+      "type": "LAB_RESULT",
+      "normalized_name": "triglycerides 145 mg/dl",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "total testosterone 1500 ng/dL",
+      "type": "LAB_RESULT",
+      "normalized_name": "total testosterone 1500 ng/dl",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "normal estradiol",
+      "type": "LAB_RESULT",
+      "normalized_name": "normal estradiol",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_004",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "presents to the clinic today for hypogonadism ... feels the testosterone is helping",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_008",
+      "target": "N_003",
+      "relation": "TAKEN_FOR",
+      "evidence": "Indole-3-carbinol, which is a broccoli extract for estrogen control",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_011",
+      "target": "N_001",
+      "relation": "INDICATES",
+      "evidence": "Total testosterone 1500 ng/dL ... already high testosterone levels",
+      "confidence": 0.5
+    }
+  ]
+}

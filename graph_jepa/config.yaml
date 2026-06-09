@@ -1,0 +1,155 @@
+# ==========================================================================
+# graph_jepa — central configuration
+# --------------------------------------------------------------------------
+# Every CLI entry point reads this file via --config. Nothing is hardcoded;
+# change paths / models / hyperparameters here, not in code.
+# All relative paths are resolved against `project_root` (auto-detected as the
+# repo root that contains this `graph_jepa/` folder unless set explicitly).
+# ==========================================================================
+
+project_root: null            # null => auto-detect (parent of graph_jepa/)
+
+# --------------------------------------------------------------------------
+# Data
+# --------------------------------------------------------------------------
+data:
+  # Root holding per-patient ACI-Bench folders: <root>/<PID>/<PID>.txt etc.
+  aci_bench_dir: data/aci_bench/transcripts
+  transcript_suffix: ".txt"          # <PID>.txt
+  note_suffix: "_note.txt"           # <PID>_note.txt
+  meta_suffix: "_meta.json"          # <PID>_meta.json (optional)
+  # Optional explicit patient allow-list (null => all folders under aci_bench_dir).
+  patient_ids: null
+  # Patient-level split. Fractions are applied to the sorted patient list with
+  # a fixed seed so splits are reproducible and never leak across train/val/test.
+  split:
+    seed: 13
+    train: 0.6
+    val: 0.2
+    test: 0.2
+
+# --------------------------------------------------------------------------
+# Outputs (all under graph_jepa/, created on demand)
+# --------------------------------------------------------------------------
+paths:
+  silver_graphs: graph_jepa/training/outputs/silver_reference_graphs
+  llm_graphs: graph_jepa/training/outputs/llm_graphs
+  training_outputs: graph_jepa/training/outputs
+  eval_outputs: graph_jepa/evaluation/outputs
+  qa_sets: graph_jepa/evaluation/outputs/qa_sets
+  # Where refined graphs land, keyed by method name.
+  refined_graphs: graph_jepa/training/outputs/refined_graphs
+
+# --------------------------------------------------------------------------
+# LLM providers. All keys come from environment variables (never commit keys).
+# `provider` selects the default backend; per-task overrides below.
+# `mock` returns deterministic, low-quality stub output so the whole pipeline
+# runs end-to-end with no API keys (clearly logged as MOCK — never for results).
+# --------------------------------------------------------------------------
+llm:
+  provider: anthropic           # anthropic | openai | gemini | openrouter | mock
+  anthropic:
+    model: claude-opus-4-8
+    api_key_env: ANTHROPIC_API_KEY
+  openai:
+    model: gpt-5.2
+    api_key_env: OPENAI_API_KEY
+  gemini:
+    model: gemini-3-flash-preview
+    api_key_env: GEMINI_API_KEY
+  openrouter:
+    model: z-ai/glm-4.7-flash
+    api_key_env: OPENROUTER_API_KEY
+  max_tokens: 4096
+  temperature: 0.0
+  max_retries: 4
+  timeout_s: 120
+
+# --------------------------------------------------------------------------
+# Text encoder for graph featurization (edge classifier, contrastive scorer).
+# `sentence-transformers` is used when available; otherwise a deterministic
+# hashing encoder keeps everything runnable offline (lower quality, logged).
+# --------------------------------------------------------------------------
+encoder:
+  backend: auto                 # auto | sentence-transformers | hashing
+  model: BAAI/bge-m3
+  hashing_dim: 256
+  cache_dir: .cache/graph_jepa/encoder
+
+# --------------------------------------------------------------------------
+# EIR integration (the existing 13-agent LLM extractor; we wrap, not rewrite).
+# --------------------------------------------------------------------------
+eir:
+  root: EIR_260426
+  # Entry script invoked as a subprocess to extract KGs from transcripts.
+  entry_script: smoke_test_v10_aci_bench_260425.py
+  # Directories searched for already-extracted EIR KGs before re-running EIR
+  # (so we never burn API calls if usable graphs already exist).
+  existing_kg_dirs:
+    - outputs/aci_bench/sub_kgs
+    - EIR_260426/eir_aci_bench/transcripts          # curated reference KGs
+  run_eir: false                # false => use existing/cached KGs only
+  workers: 3
+
+# --------------------------------------------------------------------------
+# Training — shared
+# --------------------------------------------------------------------------
+training:
+  seed: 13
+  # Setup B (self-supervised world model): which paths.* dir the self-supervised
+  # refiners (masked_edge_prediction, graph_contrastive_scorer) TRAIN on. Default
+  # is the EIR 13-agent transcript graphs. Silver is reserved for evaluation, so
+  # there is no leakage and no patient split is needed.
+  # NOTE: the SUPERVISED edge_plausibility_classifier ignores this and trains on
+  # silver positives (Setup A) — training it on llm_graphs would teach it to keep
+  # the LLM's noise.
+  train_graph_source: llm_graphs        # llm_graphs | silver_graphs
+  negatives_per_positive: 4
+  # Relative weights for the four corruption strategies used to build negatives.
+  corruption_mix:
+    relation_replacement: 1.0
+    source_target_swap: 1.0
+    random_target: 1.0
+    invalid_clinical_relation: 1.0
+
+  edge_plausibility_classifier:
+    model_type: mlp             # mlp | logreg  (sklearn, CPU, no GPU needed)
+    hidden_layer_sizes: [256, 64]
+    max_iter: 400
+    threshold: null             # null => tuned on val (F1-optimal); else fixed
+    prune_below_threshold: true
+    relabel_to_best_relation: true
+
+  graph_contrastive_scorer:
+    epochs: 30
+    lr: 0.001
+    hidden_dim: 128
+    margin: 0.3
+    edits_per_graph: 50         # candidate edits scored per graph during refine
+
+  masked_edge_prediction:
+    epochs: 40
+    lr: 0.001
+    hidden_dim: 128
+    mask_ratio: 0.25
+    completion_threshold: 0.5
+
+# --------------------------------------------------------------------------
+# Evaluation
+# --------------------------------------------------------------------------
+evaluation:
+  # Which refined-graph methods to score against silver (folder names under
+  # paths.refined_graphs). "llm_only" is the raw EIR graph (no refinement).
+  # Setup B headline comparison: LLM-only vs self-supervised world-model refined.
+  # (edge_plausibility_classifier / fully_connected_wm are Setup-A extras; add
+  # them here if you also trained the supervised classifier.)
+  methods:
+    - llm_only
+    - masked_edge_prediction
+    - graph_contrastive_scorer
+  node_match_threshold: 0.80    # fuzzy node-text match for edge comparison
+  qa:
+    questions_per_patient: 7
+    judge_provider: anthropic   # judge can differ from the generator
+    judge_ensemble: []          # e.g. [anthropic, openai, gemini] for ensemble
+    answerer_provider: anthropic

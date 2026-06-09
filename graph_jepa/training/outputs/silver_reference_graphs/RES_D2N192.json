@@ -1,0 +1,305 @@
+{
+  "patient_id": "RES_D2N192",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "abdominal pain",
+      "type": "SYMPTOM",
+      "normalized_name": "abdominal pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "chronic migraines",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "chronic migraines",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "hypertension",
+      "type": "DIAGNOSIS",
+      "normalized_name": "hypertension",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "Excedrin Migraine",
+      "type": "TREATMENT",
+      "normalized_name": "excedrin migraine",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "sumatriptan",
+      "type": "TREATMENT",
+      "normalized_name": "sumatriptan",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "lisinopril 20 mg",
+      "type": "TREATMENT",
+      "normalized_name": "lisinopril 20 mg",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "fatigue",
+      "type": "SYMPTOM",
+      "normalized_name": "fatigue",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "chills",
+      "type": "SYMPTOM",
+      "normalized_name": "chills",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "decreased appetite",
+      "type": "SYMPTOM",
+      "normalized_name": "decreased appetite",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "nausea",
+      "type": "SYMPTOM",
+      "normalized_name": "nausea",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "heartburn",
+      "type": "SYMPTOM",
+      "normalized_name": "heartburn",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "elevated blood pressure",
+      "type": "LAB_RESULT",
+      "normalized_name": "elevated blood pressure",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "systolic ejection murmur",
+      "type": "SYMPTOM",
+      "normalized_name": "systolic ejection murmur",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "right upper quadrant tenderness",
+      "type": "SYMPTOM",
+      "normalized_name": "right upper quadrant tenderness",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "equivocal Murphy's sign",
+      "type": "SYMPTOM",
+      "normalized_name": "equivocal murphy's sign",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "right upper quadrant",
+      "type": "LOCATION",
+      "normalized_name": "right upper quadrant",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "cholelithiasis",
+      "type": "DIAGNOSIS",
+      "normalized_name": "cholelithiasis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "name": "cholecystitis",
+      "type": "DIAGNOSIS",
+      "normalized_name": "cholecystitis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_019",
+      "name": "CBC",
+      "type": "PROCEDURE",
+      "normalized_name": "cbc",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_020",
+      "name": "chem 12",
+      "type": "PROCEDURE",
+      "normalized_name": "chem 12",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_021",
+      "name": "urinalysis",
+      "type": "PROCEDURE",
+      "normalized_name": "urinalysis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_022",
+      "name": "HCG qualitative",
+      "type": "PROCEDURE",
+      "normalized_name": "hcg qualitative",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_023",
+      "name": "right upper quadrant ultrasound",
+      "type": "PROCEDURE",
+      "normalized_name": "right upper quadrant ultrasound",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_024",
+      "name": "migraine headaches",
+      "type": "DIAGNOSIS",
+      "normalized_name": "migraine headaches",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_017",
+      "relation": "INDICATES",
+      "evidence": "acute abdominal pain with right upper quadrant tenderness concerning for cholelithiasis or cholecystitis",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_001",
+      "target": "N_018",
+      "relation": "INDICATES",
+      "evidence": "concerning for cholelithiasis or cholecystitis",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_014",
+      "target": "N_017",
+      "relation": "INDICATES",
+      "evidence": "right upper quadrant tenderness concerning for cholelithiasis or cholecystitis",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_014",
+      "target": "N_018",
+      "relation": "INDICATES",
+      "evidence": "right upper quadrant tenderness concerning for cholelithiasis or cholecystitis",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_014",
+      "target": "N_016",
+      "relation": "LOCATED_AT",
+      "evidence": "tenderness to palpation in right upper quadrant",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_015",
+      "target": "N_016",
+      "relation": "LOCATED_AT",
+      "evidence": "Equivocal Murphy's sign in right upper quadrant",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_015",
+      "target": "N_018",
+      "relation": "INDICATES",
+      "evidence": "Equivocal Murphy's sign in right upper quadrant",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_001",
+      "target": "N_016",
+      "relation": "LOCATED_AT",
+      "evidence": "Mild to moderate tenderness to palpation in right upper quadrant",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_023",
+      "target": "N_017",
+      "relation": "RULES_OUT",
+      "evidence": "right upper quadrant ultrasound were all ordered",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_023",
+      "target": "N_018",
+      "relation": "RULES_OUT",
+      "evidence": "right upper quadrant ultrasound were all ordered",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_004",
+      "target": "N_024",
+      "relation": "TAKEN_FOR",
+      "evidence": "She will continue to use Excedrin as needed",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_005",
+      "target": "N_024",
+      "relation": "TAKEN_FOR",
+      "evidence": "sumatriptan ... she can take as needed for breakthrough migraine pain",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_006",
+      "target": "N_003",
+      "relation": "TAKEN_FOR",
+      "evidence": "Refill for lisinopril 20 mg per day was provided today",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_002",
+      "target": "N_024",
+      "relation": "CAUSES",
+      "evidence": "Patient has a history of chronic migraines with occasional bouts of migraines",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_012",
+      "target": "N_003",
+      "relation": "INDICATES",
+      "evidence": "Her blood pressure was only slightly elevated today in office",
+      "confidence": 0.7
+    }
+  ]
+}

@@ -1,0 +1,229 @@
+{
+  "patient_id": "RES_D2N011",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "chest pain",
+      "type": "SYMPTOM",
+      "normalized_name": "chest pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "shortness of breath",
+      "type": "SYMPTOM",
+      "normalized_name": "shortness of breath",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "chest",
+      "type": "LOCATION",
+      "normalized_name": "chest",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "elevated blood pressure",
+      "type": "LAB_RESULT",
+      "normalized_name": "elevated blood pressure",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "hypertension",
+      "type": "DIAGNOSIS",
+      "normalized_name": "hypertension",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "right knee surgery",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "right knee surgery",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "enlarged thyroid",
+      "type": "SYMPTOM",
+      "normalized_name": "enlarged thyroid",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "carotid bruit",
+      "type": "SYMPTOM",
+      "normalized_name": "carotid bruit",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "right carotid",
+      "type": "LOCATION",
+      "normalized_name": "right carotid",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "systolic ejection murmur",
+      "type": "SYMPTOM",
+      "normalized_name": "systolic ejection murmur",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "normal EKG",
+      "type": "LAB_RESULT",
+      "normalized_name": "normal ekg",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "decreased ejection fraction",
+      "type": "LAB_RESULT",
+      "normalized_name": "decreased ejection fraction",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "coronary artery disease",
+      "type": "DIAGNOSIS",
+      "normalized_name": "coronary artery disease",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "pumping dysfunction",
+      "type": "DIAGNOSIS",
+      "normalized_name": "pumping dysfunction",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "carvedilol",
+      "type": "TREATMENT",
+      "normalized_name": "carvedilol",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "lisinopril",
+      "type": "TREATMENT",
+      "normalized_name": "lisinopril",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "cardiac catheterization",
+      "type": "PROCEDURE",
+      "normalized_name": "cardiac catheterization",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "name": "heart",
+      "type": "LOCATION",
+      "normalized_name": "heart",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_003",
+      "relation": "LOCATED_AT",
+      "evidence": "a full chest pain for approximately hour",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_001",
+      "target": "N_013",
+      "relation": "INDICATES",
+      "evidence": "Given his recent episode of blood pressure elevation and chest pain, I suspect an element of coronary artery disease",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_002",
+      "target": "N_014",
+      "relation": "INDICATES",
+      "evidence": "began to feel short of breath",
+      "confidence": 0.5
+    },
+    {
+      "source": "N_004",
+      "target": "N_005",
+      "relation": "INDICATES",
+      "evidence": "Chest pain and hypertension",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_008",
+      "target": "N_009",
+      "relation": "LOCATED_AT",
+      "evidence": "carotid bruit on the right side",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_012",
+      "target": "N_014",
+      "relation": "INDICATES",
+      "evidence": "ejection fraction on echocardiogram was abnormal ... pumping dysfunction",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_010",
+      "target": "N_014",
+      "relation": "INDICATES",
+      "evidence": "3/6 systolic ejection murmur",
+      "confidence": 0.5
+    },
+    {
+      "source": "N_015",
+      "target": "N_005",
+      "relation": "TAKEN_FOR",
+      "evidence": "change his blood pressure regimen to carvedilol 25 mg twice a day",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_016",
+      "target": "N_005",
+      "relation": "TAKEN_FOR",
+      "evidence": "continue lisinopril 10 mg a day",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_017",
+      "target": "N_013",
+      "relation": "RULES_OUT",
+      "evidence": "recommended cardiac catheterization on him to make sure that he does not have any blockages in his heart",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_017",
+      "target": "N_018",
+      "relation": "LOCATED_AT",
+      "evidence": "blockages in his heart",
+      "confidence": 0.8
+    }
+  ]
+}

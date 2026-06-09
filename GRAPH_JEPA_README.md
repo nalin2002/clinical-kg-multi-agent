@@ -63,6 +63,8 @@ dangling endpoint or unknown relation are kept and flagged `inconsistent`.
 
 ## Data contract
 
+Ambient Clinical Intelligence Benchmark (ACI Benchmark) - used to evaluate AI systems that create notes from doctor-patient conversations (real outpatient clinical encounters)
+
 Per-transcript and unified KGs share:
 
 - nodes: `{id, text, type, evidence, turn_id}` (unified adds `occurrences` / `res_id`)

@@ -1,0 +1,278 @@
+{
+  "patient_id": "RES_D2N166",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "low back pain",
+      "type": "SYMPTOM",
+      "normalized_name": "low back pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "radiating left leg pain",
+      "type": "SYMPTOM",
+      "normalized_name": "radiating left leg pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "lumbar spine",
+      "type": "LOCATION",
+      "normalized_name": "lumbar spine",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "L4-5 disc space",
+      "type": "LOCATION",
+      "normalized_name": "l4-5 disc space",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "left leg",
+      "type": "LOCATION",
+      "normalized_name": "left leg",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "ibuprofen",
+      "type": "TREATMENT",
+      "normalized_name": "ibuprofen",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "Tylenol",
+      "type": "TREATMENT",
+      "normalized_name": "tylenol",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "herniated disc with radiculopathy",
+      "type": "DIAGNOSIS",
+      "normalized_name": "herniated disc with radiculopathy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "MRI of lumbar spine",
+      "type": "PROCEDURE",
+      "normalized_name": "mri of lumbar spine",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "disc desiccation",
+      "type": "LAB_RESULT",
+      "normalized_name": "disc desiccation",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "disc bulge with paracentral disc herniation",
+      "type": "LAB_RESULT",
+      "normalized_name": "disc bulge with paracentral disc herniation",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "moderate right neural foraminal stenosis",
+      "type": "LAB_RESULT",
+      "normalized_name": "moderate right neural foraminal stenosis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "corticosteroid injection",
+      "type": "TREATMENT",
+      "normalized_name": "corticosteroid injection",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "midline tenderness at L4-5",
+      "type": "SYMPTOM",
+      "normalized_name": "midline tenderness at l4-5",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "right-sided lumbar paravertebral tenderness",
+      "type": "SYMPTOM",
+      "normalized_name": "right-sided lumbar paravertebral tenderness",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "pain with lumbar flexion",
+      "type": "SYMPTOM",
+      "normalized_name": "pain with lumbar flexion",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "positive supine straight leg test",
+      "type": "PROCEDURE",
+      "normalized_name": "positive supine straight leg test",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "name": "lifting injury",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "lifting injury",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_004",
+      "relation": "LOCATED_AT",
+      "evidence": "Lumbar back pain at the L4-5 disc space",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_001",
+      "target": "N_008",
+      "relation": "INDICATES",
+      "evidence": "Lumbar back pain at the L4-5 disc space due to a herniated disc with radiculopathy",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_002",
+      "target": "N_005",
+      "relation": "LOCATED_AT",
+      "evidence": "beginning to radiate down his left leg",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_002",
+      "target": "N_008",
+      "relation": "INDICATES",
+      "evidence": "radiate down his left leg ... radiculopathy",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_008",
+      "target": "N_001",
+      "relation": "CAUSES",
+      "evidence": "Lumbar back pain ... due to a herniated disc with radiculopathy",
+      "confidence": 0.92
+    },
+    {
+      "source": "N_006",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "taking ibuprofen and Tylenol for pain",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_007",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "taking ibuprofen and Tylenol for pain",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_013",
+      "target": "N_008",
+      "relation": "TAKEN_FOR",
+      "evidence": "begin with conservative treatment in the form of a corticosteroid injection",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_009",
+      "target": "N_008",
+      "relation": "CONFIRMS",
+      "evidence": "MRI revealed a herniated disc with radiculopathy",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_011",
+      "target": "N_008",
+      "relation": "CONFIRMS",
+      "evidence": "disc bulge with a paracentral disc herniation",
+      "confidence": 0.88
+    },
+    {
+      "source": "N_010",
+      "target": "N_008",
+      "relation": "INDICATES",
+      "evidence": "revealed disc desiccation",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_012",
+      "target": "N_008",
+      "relation": "INDICATES",
+      "evidence": "moderate right neural foraminal stenosis",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_014",
+      "target": "N_004",
+      "relation": "LOCATED_AT",
+      "evidence": "Midline tenderness at the L4-5 disc space",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_014",
+      "target": "N_008",
+      "relation": "INDICATES",
+      "evidence": "Midline tenderness at the L4-5 disc space",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_015",
+      "target": "N_003",
+      "relation": "LOCATED_AT",
+      "evidence": "right-sided lumbar paravertebral tenderness",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_016",
+      "target": "N_008",
+      "relation": "INDICATES",
+      "evidence": "Pain with lumbar flexion",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_017",
+      "target": "N_008",
+      "relation": "CONFIRMS",
+      "evidence": "Positive supine straight leg test",
+      "confidence": 0.75
+    },
+    {
+      "source": "N_018",
+      "target": "N_008",
+      "relation": "CAUSES",
+      "evidence": "lifting a box of books and felt a pop",
+      "confidence": 0.7
+    }
+  ]
+}

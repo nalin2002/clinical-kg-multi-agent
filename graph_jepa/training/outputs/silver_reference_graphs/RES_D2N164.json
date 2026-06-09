@@ -1,0 +1,289 @@
+{
+  "patient_id": "RES_D2N164",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "chest pain on exertion",
+      "type": "SYMPTOM",
+      "normalized_name": "chest pain on exertion",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "type 2 diabetes",
+      "type": "DIAGNOSIS",
+      "normalized_name": "type 2 diabetes",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "hypertension",
+      "type": "DIAGNOSIS",
+      "normalized_name": "hypertension",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "elevated blood pressure",
+      "type": "LAB_RESULT",
+      "normalized_name": "elevated blood pressure",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "family history of heart disease",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "family history of heart disease",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "metformin 500 mg twice daily",
+      "type": "TREATMENT",
+      "normalized_name": "metformin 500 mg twice daily",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "systolic ejection murmur",
+      "type": "SYMPTOM",
+      "normalized_name": "systolic ejection murmur",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "nonpitting ankle edema",
+      "type": "SYMPTOM",
+      "normalized_name": "nonpitting ankle edema",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "ankle",
+      "type": "LOCATION",
+      "normalized_name": "ankle",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "EKG",
+      "type": "PROCEDURE",
+      "normalized_name": "ekg",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "hemoglobin A1c 7.0",
+      "type": "LAB_RESULT",
+      "normalized_name": "hemoglobin a1c 7.0",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "unstable angina",
+      "type": "DIAGNOSIS",
+      "normalized_name": "unstable angina",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "myocardial infarction",
+      "type": "DIAGNOSIS",
+      "normalized_name": "myocardial infarction",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "coronary blockage",
+      "type": "DIAGNOSIS",
+      "normalized_name": "coronary blockage",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "sublingual nitroglycerin",
+      "type": "TREATMENT",
+      "normalized_name": "sublingual nitroglycerin",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "baby aspirin 81 mg daily",
+      "type": "TREATMENT",
+      "normalized_name": "baby aspirin 81 mg daily",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "cardiology referral",
+      "type": "PROCEDURE",
+      "normalized_name": "cardiology referral",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "name": "diabetic retinopathy",
+      "type": "DIAGNOSIS",
+      "normalized_name": "diabetic retinopathy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_019",
+      "name": "repeat hemoglobin A1c",
+      "type": "PROCEDURE",
+      "normalized_name": "repeat hemoglobin a1c",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_020",
+      "name": "dietary modifications",
+      "type": "TREATMENT",
+      "normalized_name": "dietary modifications",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_021",
+      "name": "hydrochlorothiazide",
+      "type": "TREATMENT",
+      "normalized_name": "hydrochlorothiazide",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_022",
+      "name": "swelling",
+      "type": "SYMPTOM",
+      "normalized_name": "swelling",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_012",
+      "relation": "INDICATES",
+      "evidence": "I suspect her chest pain is likely unstable angina",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_002",
+      "target": "N_012",
+      "relation": "CAUSES",
+      "evidence": "Considering her history of diabetes... I suspect her chest pain is likely unstable angina",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_005",
+      "target": "N_012",
+      "relation": "CAUSES",
+      "evidence": "family history of heart disease... I suspect her chest pain is likely unstable angina",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_010",
+      "target": "N_013",
+      "relation": "RULES_OUT",
+      "evidence": "Her recent EKG was unremarkable and there are no other signs of heart attack",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_014",
+      "target": "N_001",
+      "relation": "CAUSES",
+      "evidence": "I am worried she may have some sort of a blockage causing her pain",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_008",
+      "target": "N_009",
+      "relation": "LOCATED_AT",
+      "evidence": "1+ nonpitting edema in the ankles",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_004",
+      "target": "N_003",
+      "relation": "INDICATES",
+      "evidence": "a trend of elevated blood pressures in the patient's chart",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_011",
+      "target": "N_002",
+      "relation": "INDICATES",
+      "evidence": "Hemoglobin A1c: 7.0",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_006",
+      "target": "N_002",
+      "relation": "TAKEN_FOR",
+      "evidence": "continue with metformin 500 mg twice daily",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_020",
+      "target": "N_002",
+      "relation": "TAKEN_FOR",
+      "evidence": "continue with metformin 500 mg twice daily and dietary modifications",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_015",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "proper protocol for sublingual nitroglycerin for chest pain",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_016",
+      "target": "N_012",
+      "relation": "TAKEN_FOR",
+      "evidence": "start a regimen of baby aspirin at 81 mg daily",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_021",
+      "target": "N_003",
+      "relation": "TAKEN_FOR",
+      "evidence": "have her start hydrochlorothiazide at a low dose",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_021",
+      "target": "N_022",
+      "relation": "TAKEN_FOR",
+      "evidence": "this will hopefully reduce some of her swelling seen on physical exam",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_002",
+      "target": "N_018",
+      "relation": "CAUSES",
+      "evidence": "keep her appointment with ophthalmology for evaluation of diabetic retinopathy",
+      "confidence": 0.6
+    }
+  ]
+}

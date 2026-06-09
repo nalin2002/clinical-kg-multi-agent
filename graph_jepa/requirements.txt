@@ -1,0 +1,21 @@
+# graph_jepa dependencies
+# --------------------------------------------------------------------------
+# Core (required for the DEFAULT path: silver graphs, edge classifier, tier-1
+# metrics, QA eval). All CPU-only, no GPU required.
+numpy>=1.24
+PyYAML>=6.0
+scikit-learn>=1.3        # edge_plausibility_classifier (MLP / logistic reg)
+
+# LLM providers — install only the one(s) you use (all optional at runtime;
+# missing providers fail loudly only when actually selected).
+anthropic>=0.40          # Claude (default for silver graphs / QA / judge)
+openai>=1.40             # optional alternative provider / judge
+google-genai>=0.3        # optional Gemini provider / judge
+
+# Text encoder for graph featurization. Optional: a deterministic hashing
+# encoder is used automatically if this is absent (lower quality, logged).
+sentence-transformers>=2.6   # optional, enables BGE-M3 node embeddings
+
+# ABLATIONS ONLY (graph_contrastive_scorer, masked_edge_prediction).
+# Not needed for the default edge_plausibility_classifier path.
+torch>=2.1               # optional

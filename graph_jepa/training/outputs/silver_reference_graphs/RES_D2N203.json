@@ -1,0 +1,248 @@
+{
+  "patient_id": "RES_D2N203",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "right eye vision changes",
+      "type": "SYMPTOM",
+      "normalized_name": "right eye vision changes",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "high blood pressure",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "high blood pressure",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "right eye",
+      "type": "LOCATION",
+      "normalized_name": "right eye",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "drusen of the macula",
+      "type": "SYMPTOM",
+      "normalized_name": "drusen of the macula",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "retinal thickening",
+      "type": "SYMPTOM",
+      "normalized_name": "retinal thickening",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "subretinal fluid",
+      "type": "SYMPTOM",
+      "normalized_name": "subretinal fluid",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "exudate accumulation",
+      "type": "SYMPTOM",
+      "normalized_name": "exudate accumulation",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "hemorrhage",
+      "type": "SYMPTOM",
+      "normalized_name": "hemorrhage",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "choroidal neovascular membrane",
+      "type": "LAB_RESULT",
+      "normalized_name": "choroidal neovascular membrane",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "fluorescein angiography",
+      "type": "PROCEDURE",
+      "normalized_name": "fluorescein angiography",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "wet macular degeneration",
+      "type": "DIAGNOSIS",
+      "normalized_name": "wet macular degeneration",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "OCT",
+      "type": "PROCEDURE",
+      "normalized_name": "oct",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "central blind spot",
+      "type": "SYMPTOM",
+      "normalized_name": "central blind spot",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "Lucentis injection",
+      "type": "TREATMENT",
+      "normalized_name": "lucentis injection",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "drusen deposits under RPE",
+      "type": "LAB_RESULT",
+      "normalized_name": "drusen deposits under rpe",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "blood pressure medication",
+      "type": "TREATMENT",
+      "normalized_name": "blood pressure medication",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_011",
+      "relation": "INDICATES",
+      "evidence": "Reports right eye vision changes",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_001",
+      "target": "N_003",
+      "relation": "LOCATED_AT",
+      "evidence": "right eye vision changes",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_004",
+      "target": "N_011",
+      "relation": "INDICATES",
+      "evidence": "drusen of the macula ... consistent with neovascular age related macular degeneration",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_006",
+      "target": "N_011",
+      "relation": "INDICATES",
+      "evidence": "presence of subretinal fluid",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_008",
+      "target": "N_011",
+      "relation": "INDICATES",
+      "evidence": "Positive hemorrhage",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_004",
+      "target": "N_003",
+      "relation": "LOCATED_AT",
+      "evidence": "Right eye ... drusen of the macula",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_006",
+      "target": "N_003",
+      "relation": "LOCATED_AT",
+      "evidence": "Right eye ... subretinal fluid",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_008",
+      "target": "N_003",
+      "relation": "LOCATED_AT",
+      "evidence": "Right eye ... Positive hemorrhage",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_010",
+      "target": "N_011",
+      "relation": "CONFIRMS",
+      "evidence": "Reveals that the focal area of the leakage in the right eye is consistent with neovascular age related macular degeneration",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_012",
+      "target": "N_011",
+      "relation": "CONFIRMS",
+      "evidence": "Drusen deposits under the RPE. SRF accumulation and choroidal neovascular membrane can also be visualized",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_009",
+      "target": "N_011",
+      "relation": "INDICATES",
+      "evidence": "choroidal neovascular membrane can also be visualized",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_015",
+      "target": "N_011",
+      "relation": "INDICATES",
+      "evidence": "Drusen deposits under the RPE",
+      "confidence": 0.75
+    },
+    {
+      "source": "N_011",
+      "target": "N_013",
+      "relation": "CAUSES",
+      "evidence": "it creates a large blind spot in the center of his visual field",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_011",
+      "target": "N_001",
+      "relation": "CAUSES",
+      "evidence": "usually leads to more severe vision loss",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_014",
+      "target": "N_011",
+      "relation": "TAKEN_FOR",
+      "evidence": "Lucentis injections once a month",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_016",
+      "target": "N_002",
+      "relation": "TAKEN_FOR",
+      "evidence": "counseled on the importance of taking his blood pressure medication",
+      "confidence": 0.85
+    }
+  ]
+}

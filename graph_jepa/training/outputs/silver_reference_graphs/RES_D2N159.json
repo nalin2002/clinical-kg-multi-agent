@@ -1,0 +1,224 @@
+{
+  "patient_id": "RES_D2N159",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "right hand pain",
+      "type": "SYMPTOM",
+      "normalized_name": "right hand pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "numbness and tingling in 1st, 2nd, and 3rd digits",
+      "type": "SYMPTOM",
+      "normalized_name": "numbness and tingling in 1st, 2nd, and 3rd digits",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "decreased grip strength",
+      "type": "SYMPTOM",
+      "normalized_name": "decreased grip strength",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "right hand",
+      "type": "LOCATION",
+      "normalized_name": "right hand",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "wrist",
+      "type": "LOCATION",
+      "normalized_name": "wrist",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "positive Tinel's sign",
+      "type": "PROCEDURE",
+      "normalized_name": "positive tinel's sign",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "carpal tunnel syndrome",
+      "type": "DIAGNOSIS",
+      "normalized_name": "carpal tunnel syndrome",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "ibuprofen",
+      "type": "TREATMENT",
+      "normalized_name": "ibuprofen",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "nighttime wrist splinting",
+      "type": "TREATMENT",
+      "normalized_name": "nighttime wrist splinting",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "EMG/nerve conduction study",
+      "type": "PROCEDURE",
+      "normalized_name": "emg/nerve conduction study",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "physical therapy",
+      "type": "TREATMENT",
+      "normalized_name": "physical therapy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "carpal tunnel release",
+      "type": "PROCEDURE",
+      "normalized_name": "carpal tunnel release",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "pain with wrist flexion and extension",
+      "type": "SYMPTOM",
+      "normalized_name": "pain with wrist flexion and extension",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_007",
+      "relation": "INDICATES",
+      "evidence": "her symptoms are secondary to carpal tunnel syndrome",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_002",
+      "target": "N_007",
+      "relation": "INDICATES",
+      "evidence": "numbness and tingling in the 1st, 2nd, and 3rd digits on the right hand",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_003",
+      "target": "N_007",
+      "relation": "INDICATES",
+      "evidence": "Decreased grip strength on the right compared to the left",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_013",
+      "target": "N_007",
+      "relation": "INDICATES",
+      "evidence": "Pain with flexion and extension of the wrist",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_001",
+      "target": "N_004",
+      "relation": "LOCATED_AT",
+      "evidence": "right hand pain",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_002",
+      "target": "N_004",
+      "relation": "LOCATED_AT",
+      "evidence": "numbness and tingling in the 1st, 2nd, and 3rd digits on the right hand",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_013",
+      "target": "N_005",
+      "relation": "LOCATED_AT",
+      "evidence": "Pain with flexion and extension of the wrist",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_006",
+      "target": "N_007",
+      "relation": "CONFIRMS",
+      "evidence": "Positive Tinel's sign",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_008",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "Rest and ibuprofen have been the most helpful at providing symptomatic relief",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_008",
+      "target": "N_007",
+      "relation": "TAKEN_FOR",
+      "evidence": "treat this conservatively with nighttime wrist splinting and ibuprofen",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_009",
+      "target": "N_007",
+      "relation": "TAKEN_FOR",
+      "evidence": "treat this conservatively with nighttime wrist splinting",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_011",
+      "target": "N_007",
+      "relation": "TAKEN_FOR",
+      "evidence": "additional treatment with physical therapy",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_012",
+      "target": "N_007",
+      "relation": "TAKEN_FOR",
+      "evidence": "surgical intervention with carpal tunnel release",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_010",
+      "target": "N_007",
+      "relation": "CONFIRMS",
+      "evidence": "order an EMG/Nerve conduction study for further evaluation",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_007",
+      "target": "N_002",
+      "relation": "CAUSES",
+      "evidence": "her symptoms are secondary to carpal tunnel syndrome",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_007",
+      "target": "N_001",
+      "relation": "CAUSES",
+      "evidence": "her symptoms are secondary to carpal tunnel syndrome",
+      "confidence": 0.85
+    }
+  ]
+}

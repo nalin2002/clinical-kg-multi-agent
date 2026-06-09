@@ -1,0 +1,198 @@
+{
+  "patient_id": "RES_D2N200",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "headache",
+      "type": "SYMPTOM",
+      "normalized_name": "headache",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "high blood pressure",
+      "type": "SYMPTOM",
+      "normalized_name": "high blood pressure",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "blurry vision",
+      "type": "SYMPTOM",
+      "normalized_name": "blurry vision",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "dizziness",
+      "type": "SYMPTOM",
+      "normalized_name": "dizziness",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "elevated blood pressure 172/98",
+      "type": "LAB_RESULT",
+      "normalized_name": "elevated blood pressure 172/98",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "systolic ejection murmur",
+      "type": "SYMPTOM",
+      "normalized_name": "systolic ejection murmur",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "bilateral upper extremity edema",
+      "type": "SYMPTOM",
+      "normalized_name": "bilateral upper extremity edema",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "bilateral lower extremity pitting edema",
+      "type": "SYMPTOM",
+      "normalized_name": "bilateral lower extremity pitting edema",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "hypertension, uncontrolled",
+      "type": "DIAGNOSIS",
+      "normalized_name": "hypertension, uncontrolled",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "type 2 diabetes",
+      "type": "DIAGNOSIS",
+      "normalized_name": "type 2 diabetes",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "metformin",
+      "type": "TREATMENT",
+      "normalized_name": "metformin",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "DASH diet",
+      "type": "TREATMENT",
+      "normalized_name": "dash diet",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "upper extremities",
+      "type": "LOCATION",
+      "normalized_name": "upper extremities",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "lower extremities",
+      "type": "LOCATION",
+      "normalized_name": "lower extremities",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "heart",
+      "type": "LOCATION",
+      "normalized_name": "heart",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_002",
+      "target": "N_009",
+      "relation": "INDICATES",
+      "evidence": "Hypertension, uncontrolled. The patient's blood pressure is is elevated.",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_005",
+      "target": "N_009",
+      "relation": "CONFIRMS",
+      "evidence": "Blood pressure today was 172/98. ... blood pressure is is elevated.",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_001",
+      "target": "N_009",
+      "relation": "INDICATES",
+      "evidence": "CHIEF COMPLAINT Headache and high blood pressure.",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_003",
+      "target": "N_009",
+      "relation": "INDICATES",
+      "evidence": "Reports blurry vision, dizziness, and headaches.",
+      "confidence": 0.4
+    },
+    {
+      "source": "N_004",
+      "target": "N_009",
+      "relation": "INDICATES",
+      "evidence": "Reports blurry vision, dizziness, and headaches.",
+      "confidence": 0.4
+    },
+    {
+      "source": "N_006",
+      "target": "N_015",
+      "relation": "LOCATED_AT",
+      "evidence": "Auscultation of Heart: ... Slight 2/6 systolic ejection murmur",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_007",
+      "target": "N_013",
+      "relation": "LOCATED_AT",
+      "evidence": "Slight edema to bilateral upper extremities.",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_008",
+      "target": "N_014",
+      "relation": "LOCATED_AT",
+      "evidence": "1+ pitting edema noted in the bilateral lower extremities.",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_011",
+      "target": "N_010",
+      "relation": "TAKEN_FOR",
+      "evidence": "Type 2 diabetes. ... Increase metformin to 1500 mg.",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_012",
+      "target": "N_009",
+      "relation": "TAKEN_FOR",
+      "evidence": "I recommended a DASH diet.",
+      "confidence": 0.85
+    }
+  ]
+}

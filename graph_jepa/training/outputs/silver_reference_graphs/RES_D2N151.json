@@ -1,0 +1,317 @@
+{
+  "patient_id": "RES_D2N151",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "right elbow pain",
+      "type": "SYMPTOM",
+      "normalized_name": "right elbow pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "medial epicondylitis",
+      "type": "DIAGNOSIS",
+      "normalized_name": "medial epicondylitis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "medial epicondyle",
+      "type": "LOCATION",
+      "normalized_name": "medial epicondyle",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "medial aspect of elbow",
+      "type": "LOCATION",
+      "normalized_name": "medial aspect of elbow",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "tenderness at medial epicondyle",
+      "type": "SYMPTOM",
+      "normalized_name": "tenderness at medial epicondyle",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "pain with resisted pronation",
+      "type": "SYMPTOM",
+      "normalized_name": "pain with resisted pronation",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "pain with wrist flexion",
+      "type": "SYMPTOM",
+      "normalized_name": "pain with wrist flexion",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "overuse of tendons",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "overuse of tendons",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "x-ray of right elbow",
+      "type": "PROCEDURE",
+      "normalized_name": "x-ray of right elbow",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "fracture",
+      "type": "DIAGNOSIS",
+      "normalized_name": "fracture",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "sling",
+      "type": "TREATMENT",
+      "normalized_name": "sling",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "ice",
+      "type": "TREATMENT",
+      "normalized_name": "ice",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "ibuprofen",
+      "type": "TREATMENT",
+      "normalized_name": "ibuprofen",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "physical therapy",
+      "type": "TREATMENT",
+      "normalized_name": "physical therapy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "hypertension",
+      "type": "DIAGNOSIS",
+      "normalized_name": "hypertension",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "diabetes type 2",
+      "type": "DIAGNOSIS",
+      "normalized_name": "diabetes type 2",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "lisinopril",
+      "type": "TREATMENT",
+      "normalized_name": "lisinopril",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "name": "metformin",
+      "type": "TREATMENT",
+      "normalized_name": "metformin",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_019",
+      "name": "diabetic counseling",
+      "type": "TREATMENT",
+      "normalized_name": "diabetic counseling",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_020",
+      "name": "hemoglobin A1c test",
+      "type": "PROCEDURE",
+      "normalized_name": "hemoglobin a1c test",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_021",
+      "name": "elevated blood sugar 150-170 mg/dL",
+      "type": "LAB_RESULT",
+      "normalized_name": "elevated blood sugar 150-170 mg/dl",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_022",
+      "name": "blood pressure 120/70 mmHg",
+      "type": "LAB_RESULT",
+      "normalized_name": "blood pressure 120/70 mmhg",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_002",
+      "relation": "INDICATES",
+      "evidence": "Right elbow pain, consistent with medial epicondylitis",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_001",
+      "target": "N_004",
+      "relation": "LOCATED_AT",
+      "evidence": "Her pain is in the medial aspect of her elbow",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_005",
+      "target": "N_002",
+      "relation": "INDICATES",
+      "evidence": "Moderate tenderness at the medial epicondyle",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_005",
+      "target": "N_003",
+      "relation": "LOCATED_AT",
+      "evidence": "Moderate tenderness at the medial epicondyle",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_006",
+      "target": "N_002",
+      "relation": "INDICATES",
+      "evidence": "Pain with resisted pronation of the right forearm",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_007",
+      "target": "N_002",
+      "relation": "INDICATES",
+      "evidence": "Pain with flexion and bending the right wrist",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_008",
+      "target": "N_002",
+      "relation": "CAUSES",
+      "evidence": "most likely caused by overuse and damage to the tendons in her arm",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_002",
+      "target": "N_001",
+      "relation": "CAUSES",
+      "evidence": "her elbow pain is consistent with medial epicondylitis",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_009",
+      "target": "N_010",
+      "relation": "RULES_OUT",
+      "evidence": "It demonstrated no evidence of any fractures",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_011",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "wear a sling on her right arm while she is awake to provide increased support",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_012",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "ice her right elbow for 20 minutes 3 times per day",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_013",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "take ibuprofen 600 mg every 6 hours with food for 1 week",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_014",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "we may consider formal physical therapy at her next visit",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_017",
+      "target": "N_015",
+      "relation": "TAKEN_FOR",
+      "evidence": "continue taking lisinopril 10 mg",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_018",
+      "target": "N_016",
+      "relation": "TAKEN_FOR",
+      "evidence": "I will increase her metformin to 1000 mg twice a day",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_019",
+      "target": "N_016",
+      "relation": "TAKEN_FOR",
+      "evidence": "referred to diabetic counseling for more information on the steps she can take to manage her diabetes",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_020",
+      "target": "N_016",
+      "relation": "INDICATES",
+      "evidence": "order a hemoglobin A1c test for a more accurate assessment of her long-term blood sugar levels",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_021",
+      "target": "N_016",
+      "relation": "INDICATES",
+      "evidence": "her blood sugar levels range from 150 to 170 mg/dL",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_022",
+      "target": "N_015",
+      "relation": "INDICATES",
+      "evidence": "Blood Pressure: 120/70 mmHg; hypertension is currently controlled",
+      "confidence": 0.6
+    }
+  ]
+}

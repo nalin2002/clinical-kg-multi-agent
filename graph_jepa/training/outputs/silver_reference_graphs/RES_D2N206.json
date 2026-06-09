@@ -1,0 +1,287 @@
+{
+  "patient_id": "RES_D2N206",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "right flank pain",
+      "type": "SYMPTOM",
+      "normalized_name": "right flank pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "right flank",
+      "type": "LOCATION",
+      "normalized_name": "right flank",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "groin",
+      "type": "LOCATION",
+      "normalized_name": "groin",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "testicle",
+      "type": "LOCATION",
+      "normalized_name": "testicle",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "chills",
+      "type": "SYMPTOM",
+      "normalized_name": "chills",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "kidney stone",
+      "type": "DIAGNOSIS",
+      "normalized_name": "kidney stone",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "personal history of kidney stones",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "personal history of kidney stones",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "family history of kidney stones",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "family history of kidney stones",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "CVA tenderness",
+      "type": "SYMPTOM",
+      "normalized_name": "cva tenderness",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "CT scan of the right flank",
+      "type": "PROCEDURE",
+      "normalized_name": "ct scan of the right flank",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "proximal right ureter",
+      "type": "LOCATION",
+      "normalized_name": "proximal right ureter",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "hydronephrosis",
+      "type": "DIAGNOSIS",
+      "normalized_name": "hydronephrosis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "ibuprofen",
+      "type": "TREATMENT",
+      "normalized_name": "ibuprofen",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "tramadol",
+      "type": "TREATMENT",
+      "normalized_name": "tramadol",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "increased fluid intake",
+      "type": "TREATMENT",
+      "normalized_name": "increased fluid intake",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "lithotripsy",
+      "type": "TREATMENT",
+      "normalized_name": "lithotripsy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "urinary strainer",
+      "type": "TREATMENT",
+      "normalized_name": "urinary strainer",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "name": "BMP",
+      "type": "PROCEDURE",
+      "normalized_name": "bmp",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_019",
+      "name": "urinalysis",
+      "type": "PROCEDURE",
+      "normalized_name": "urinalysis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_020",
+      "name": "urine culture",
+      "type": "PROCEDURE",
+      "normalized_name": "urine culture",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_002",
+      "relation": "LOCATED_AT",
+      "evidence": "pain that starts in his right flank",
+      "confidence": 0.97
+    },
+    {
+      "source": "N_001",
+      "target": "N_003",
+      "relation": "LOCATED_AT",
+      "evidence": "radiates down into his groin",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_001",
+      "target": "N_004",
+      "relation": "LOCATED_AT",
+      "evidence": "the pain radiated down into one of his testicles",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_001",
+      "target": "N_006",
+      "relation": "INDICATES",
+      "evidence": "right flank pain ... Kidney stone, right side",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_009",
+      "target": "N_006",
+      "relation": "INDICATES",
+      "evidence": "Examination of the right flank: CVA tenderness",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_009",
+      "target": "N_002",
+      "relation": "LOCATED_AT",
+      "evidence": "Examination of the right flank: CVA tenderness",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_007",
+      "target": "N_006",
+      "relation": "CAUSES",
+      "evidence": "personal history of kidney stones",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_008",
+      "target": "N_006",
+      "relation": "CAUSES",
+      "evidence": "significant family history of kidney stones",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_010",
+      "target": "N_006",
+      "relation": "CONFIRMS",
+      "evidence": "CT scan ... revealed a kidney stone measuring 0.5 cm",
+      "confidence": 0.97
+    },
+    {
+      "source": "N_006",
+      "target": "N_011",
+      "relation": "LOCATED_AT",
+      "evidence": "located on the proximal right ureter",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_010",
+      "target": "N_012",
+      "relation": "RULES_OUT",
+      "evidence": "There is no evidence of hydronephrosis",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_006",
+      "target": "N_001",
+      "relation": "CAUSES",
+      "evidence": "Kidney stone, right side ... right flank pain",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_013",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "ibuprofen provides partial relief of his pain",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_014",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "prescribed tramadol 50 mg for any breakthrough pain",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_015",
+      "target": "N_006",
+      "relation": "TAKEN_FOR",
+      "evidence": "continue drinking plenty of fluids so he can hopefully pass the stone",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_016",
+      "target": "N_006",
+      "relation": "TAKEN_FOR",
+      "evidence": "we can consider proceeding with lithotripsy",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_017",
+      "target": "N_006",
+      "relation": "TAKEN_FOR",
+      "evidence": "provided him with a strainer",
+      "confidence": 0.8
+    }
+  ]
+}

@@ -1,0 +1,205 @@
+{
+  "patient_id": "RES_D2N092",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "right arm pain",
+      "type": "SYMPTOM",
+      "normalized_name": "right arm pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "arm swelling",
+      "type": "SYMPTOM",
+      "normalized_name": "arm swelling",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "pain with motion",
+      "type": "SYMPTOM",
+      "normalized_name": "pain with motion",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "allergies",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "allergies",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "Flonase",
+      "type": "TREATMENT",
+      "normalized_name": "flonase",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "tenderness over distal radius",
+      "type": "SYMPTOM",
+      "normalized_name": "tenderness over distal radius",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "pain with wrist and thumb flexion",
+      "type": "SYMPTOM",
+      "normalized_name": "pain with wrist and thumb flexion",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "distal radius",
+      "type": "LOCATION",
+      "normalized_name": "distal radius",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "wrist X-ray",
+      "type": "PROCEDURE",
+      "normalized_name": "wrist x-ray",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "acute fracture",
+      "type": "DIAGNOSIS",
+      "normalized_name": "acute fracture",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "right wrist sprain",
+      "type": "DIAGNOSIS",
+      "normalized_name": "right wrist sprain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "ice",
+      "type": "TREATMENT",
+      "normalized_name": "ice",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "anti-inflammatory medication",
+      "type": "TREATMENT",
+      "normalized_name": "anti-inflammatory medication",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "Motrin 800 mg",
+      "type": "TREATMENT",
+      "normalized_name": "motrin 800 mg",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "wrist",
+      "type": "LOCATION",
+      "normalized_name": "wrist",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_006",
+      "target": "N_011",
+      "relation": "INDICATES",
+      "evidence": "tenderness over the distal radius",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_007",
+      "target": "N_011",
+      "relation": "INDICATES",
+      "evidence": "pain with flexion of the wrist and thumb",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_006",
+      "target": "N_008",
+      "relation": "LOCATED_AT",
+      "evidence": "tenderness over the distal radius",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_007",
+      "target": "N_015",
+      "relation": "LOCATED_AT",
+      "evidence": "pain with flexion of the wrist and thumb",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_009",
+      "target": "N_010",
+      "relation": "RULES_OUT",
+      "evidence": "X-rays of the left wrist show no obvious signs of acute fracture",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_005",
+      "target": "N_004",
+      "relation": "TAKEN_FOR",
+      "evidence": "past medical history of allergies and takes Flonase",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_012",
+      "target": "N_011",
+      "relation": "TAKEN_FOR",
+      "evidence": "recommended ice and anti-inflammatory medications",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_013",
+      "target": "N_011",
+      "relation": "TAKEN_FOR",
+      "evidence": "recommended ice and anti-inflammatory medications",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_014",
+      "target": "N_011",
+      "relation": "TAKEN_FOR",
+      "evidence": "prescribing Motrin, 800 mg to take 3 times a day",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_011",
+      "target": "N_001",
+      "relation": "CAUSES",
+      "evidence": "Right wrist sprain ... right arm pain",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_001",
+      "target": "N_011",
+      "relation": "INDICATES",
+      "evidence": "presents today for an evaluation of right arm pain",
+      "confidence": 0.6
+    }
+  ]
+}

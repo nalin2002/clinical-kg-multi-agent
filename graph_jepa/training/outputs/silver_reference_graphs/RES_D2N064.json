@@ -1,0 +1,234 @@
+{
+  "patient_id": "RES_D2N064",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "left ankle pain",
+      "type": "SYMPTOM",
+      "normalized_name": "left ankle pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "left ankle",
+      "type": "LOCATION",
+      "normalized_name": "left ankle",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "lateral malleolus",
+      "type": "LOCATION",
+      "normalized_name": "lateral malleolus",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "ecchymosis",
+      "type": "SYMPTOM",
+      "normalized_name": "ecchymosis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "edema",
+      "type": "SYMPTOM",
+      "normalized_name": "edema",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "tenderness to palpation laterally",
+      "type": "SYMPTOM",
+      "normalized_name": "lateral tenderness to palpation",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "left ankle sprain of lateral ligament complex",
+      "type": "DIAGNOSIS",
+      "normalized_name": "left ankle sprain of lateral ligament complex",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "radiograph showing no fracture",
+      "type": "LAB_RESULT",
+      "normalized_name": "radiograph no fracture",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "fracture",
+      "type": "DIAGNOSIS",
+      "normalized_name": "fracture",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "ibuprofen",
+      "type": "TREATMENT",
+      "normalized_name": "ibuprofen",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "RICE protocol",
+      "type": "TREATMENT",
+      "normalized_name": "rice protocol",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "NSAIDs",
+      "type": "TREATMENT",
+      "normalized_name": "nsaids",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "Aircast",
+      "type": "TREATMENT",
+      "normalized_name": "aircast",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "crutches",
+      "type": "TREATMENT",
+      "normalized_name": "crutches",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "ankle radiograph",
+      "type": "PROCEDURE",
+      "normalized_name": "ankle radiograph",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "swelling",
+      "type": "SYMPTOM",
+      "normalized_name": "swelling",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_002",
+      "relation": "LOCATED_AT",
+      "evidence": "His pain is localized to the lateral aspect of his left ankle",
+      "confidence": 0.97
+    },
+    {
+      "source": "N_001",
+      "target": "N_007",
+      "relation": "INDICATES",
+      "evidence": "his symptoms are consistent with an ankle sprain of the lateral ligament complex",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_004",
+      "target": "N_003",
+      "relation": "LOCATED_AT",
+      "evidence": "Ecchymosis noted over the lateral malleolus",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_004",
+      "target": "N_007",
+      "relation": "INDICATES",
+      "evidence": "Ecchymosis noted over the lateral malleolus",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_005",
+      "target": "N_007",
+      "relation": "INDICATES",
+      "evidence": "Edema is present",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_006",
+      "target": "N_007",
+      "relation": "INDICATES",
+      "evidence": "Tenderness to palpation laterally",
+      "confidence": 0.75
+    },
+    {
+      "source": "N_015",
+      "target": "N_009",
+      "relation": "RULES_OUT",
+      "evidence": "These reveal no fracture or bony abnormalities",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_008",
+      "target": "N_009",
+      "relation": "RULES_OUT",
+      "evidence": "no fracture or bony abnormalities",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_010",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "When taking ibuprofen his pain level is 7 out of 10",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_011",
+      "target": "N_007",
+      "relation": "TAKEN_FOR",
+      "evidence": "he will continue to follow the RICE protocol",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_012",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "He will continue to take NSAIDs as needed for pain and swelling",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_012",
+      "target": "N_016",
+      "relation": "TAKEN_FOR",
+      "evidence": "NSAIDs as needed for pain and swelling",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_013",
+      "target": "N_007",
+      "relation": "TAKEN_FOR",
+      "evidence": "placed into an Aircast for ankle stabilization",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_014",
+      "target": "N_007",
+      "relation": "TAKEN_FOR",
+      "evidence": "provided crutches in order to remain non-weight-bearing",
+      "confidence": 0.8
+    }
+  ]
+}

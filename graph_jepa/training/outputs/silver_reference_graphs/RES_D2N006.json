@@ -1,0 +1,294 @@
+{
+  "patient_id": "RES_D2N006",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "arthritis",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "arthritis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "gout",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "gout",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "acid reflux",
+      "type": "DIAGNOSIS",
+      "normalized_name": "acid reflux",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "joint pain",
+      "type": "SYMPTOM",
+      "normalized_name": "joint pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "physical therapy",
+      "type": "TREATMENT",
+      "normalized_name": "physical therapy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "allopurinol 100 mg once daily",
+      "type": "TREATMENT",
+      "normalized_name": "allopurinol 100 mg once daily",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "omeprazole 40 mg once daily",
+      "type": "TREATMENT",
+      "normalized_name": "omeprazole 40 mg once daily",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "vomiting",
+      "type": "SYMPTOM",
+      "normalized_name": "vomiting",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "abdominal pain",
+      "type": "SYMPTOM",
+      "normalized_name": "abdominal pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "bloating",
+      "type": "SYMPTOM",
+      "normalized_name": "bloating",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "right first big toe",
+      "type": "LOCATION",
+      "normalized_name": "right first big toe",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "right upper quadrant",
+      "type": "LOCATION",
+      "normalized_name": "right upper quadrant",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "right knee",
+      "type": "LOCATION",
+      "normalized_name": "right knee",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "right knee effusion",
+      "type": "SYMPTOM",
+      "normalized_name": "right knee effusion",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "autoimmune panel within normal limits",
+      "type": "LAB_RESULT",
+      "normalized_name": "autoimmune panel within normal limits",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "right knee x-ray showing residual arthritis",
+      "type": "PROCEDURE",
+      "normalized_name": "right knee x-ray showing residual arthritis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "residual arthritis",
+      "type": "DIAGNOSIS",
+      "normalized_name": "residual arthritis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "name": "right upper quadrant ultrasound",
+      "type": "PROCEDURE",
+      "normalized_name": "right upper quadrant ultrasound",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_019",
+      "name": "biliary etiology",
+      "type": "DIAGNOSIS",
+      "normalized_name": "biliary etiology",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_020",
+      "name": "right upper quadrant pain to palpation",
+      "type": "SYMPTOM",
+      "normalized_name": "right upper quadrant pain to palpation",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_007",
+      "target": "N_003",
+      "relation": "TAKEN_FOR",
+      "evidence": "she was placed on omeprazole 40 mg once a day to help with some of the symptoms",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_006",
+      "target": "N_002",
+      "relation": "TAKEN_FOR",
+      "evidence": "doing well on the allopurinol 100 mg once daily and has had no further flare ups",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_005",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "continued to attend physical therapy, which she feels has been beneficial",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_002",
+      "target": "N_011",
+      "relation": "LOCATED_AT",
+      "evidence": "episode of gout of her right first big toe",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_003",
+      "target": "N_008",
+      "relation": "CAUSES",
+      "evidence": "Acid reflux with nausea and vomiting",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_003",
+      "target": "N_009",
+      "relation": "CAUSES",
+      "evidence": "abdominal pain and bloating",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_003",
+      "target": "N_010",
+      "relation": "CAUSES",
+      "evidence": "abdominal pain and bloating",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_008",
+      "target": "N_003",
+      "relation": "INDICATES",
+      "evidence": "She reports episodes of vomiting in the morning",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_009",
+      "target": "N_003",
+      "relation": "INDICATES",
+      "evidence": "abdominal pain and bloating",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_020",
+      "target": "N_012",
+      "relation": "LOCATED_AT",
+      "evidence": "Pain to palpation of the right upper quadrant",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_014",
+      "target": "N_013",
+      "relation": "LOCATED_AT",
+      "evidence": "Right knee shows a little effusion",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_004",
+      "target": "N_013",
+      "relation": "LOCATED_AT",
+      "evidence": "Right knee... Slight pain to palpation",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_016",
+      "target": "N_017",
+      "relation": "CONFIRMS",
+      "evidence": "X-ray of the right knee demonstrates residual arthritis",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_016",
+      "target": "N_013",
+      "relation": "LOCATED_AT",
+      "evidence": "X-ray of the right knee",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_017",
+      "target": "N_013",
+      "relation": "LOCATED_AT",
+      "evidence": "right knee x-ray demonstrated residual arthritis",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_018",
+      "target": "N_019",
+      "relation": "RULES_OUT",
+      "evidence": "order an ultrasound of her right upper quadrant... to rule out biliary etiology",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_018",
+      "target": "N_012",
+      "relation": "LOCATED_AT",
+      "evidence": "ultrasound of her right upper quadrant",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_015",
+      "target": "N_017",
+      "relation": "INDICATES",
+      "evidence": "Autoimmune panel is within normal limits",
+      "confidence": 0.4
+    }
+  ]
+}

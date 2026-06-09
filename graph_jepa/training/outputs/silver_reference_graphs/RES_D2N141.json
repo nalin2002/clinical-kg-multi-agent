@@ -1,0 +1,271 @@
+{
+  "patient_id": "RES_D2N141",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "adult hydrocephalus",
+      "type": "DIAGNOSIS",
+      "normalized_name": "adult hydrocephalus",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "gait impairment",
+      "type": "SYMPTOM",
+      "normalized_name": "gait impairment",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "cognitive impairment",
+      "type": "SYMPTOM",
+      "normalized_name": "cognitive impairment",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "decreased bladder control",
+      "type": "SYMPTOM",
+      "normalized_name": "decreased bladder control",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "urinary incontinence",
+      "type": "SYMPTOM",
+      "normalized_name": "urinary incontinence",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "shunt surgery",
+      "type": "PROCEDURE",
+      "normalized_name": "shunt surgery",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "ventriculoperitoneal shunt",
+      "type": "TREATMENT",
+      "normalized_name": "ventriculoperitoneal shunt",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "spinal catheter protocol",
+      "type": "PROCEDURE",
+      "normalized_name": "spinal catheter protocol",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "MMSE",
+      "type": "PROCEDURE",
+      "normalized_name": "mmse",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "MMSE score 26/30",
+      "type": "LAB_RESULT",
+      "normalized_name": "mmse score 26/30",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "Tinetti assessment",
+      "type": "PROCEDURE",
+      "normalized_name": "tinetti assessment",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "Tinetti total score 18-20/28",
+      "type": "LAB_RESULT",
+      "normalized_name": "tinetti total score 18-20/28",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "CT scan of the head",
+      "type": "PROCEDURE",
+      "normalized_name": "ct scan of the head",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "subdural fluid collection",
+      "type": "DIAGNOSIS",
+      "normalized_name": "subdural fluid collection",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "small vessel ischemic change",
+      "type": "DIAGNOSIS",
+      "normalized_name": "small vessel ischemic change",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "right frontal/parietal region",
+      "type": "LOCATION",
+      "normalized_name": "right frontal/parietal region",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "urinary urgency",
+      "type": "SYMPTOM",
+      "normalized_name": "urinary urgency",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "name": "slowed finger-to-nose coordination",
+      "type": "SYMPTOM",
+      "normalized_name": "slowed finger-to-nose coordination",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_002",
+      "target": "N_001",
+      "relation": "INDICATES",
+      "evidence": "He presented with 8-10 years of progressive gait impairment, cognitive impairment, and decreased bladder control. We established a diagnosis of adult hydrocephalus",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_003",
+      "target": "N_001",
+      "relation": "INDICATES",
+      "evidence": "cognitive impairment ... We established a diagnosis of adult hydrocephalus",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_004",
+      "target": "N_001",
+      "relation": "INDICATES",
+      "evidence": "decreased bladder control ... We established a diagnosis of adult hydrocephalus",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_001",
+      "target": "N_002",
+      "relation": "CAUSES",
+      "evidence": "follow up of adult hydrocephalus ... continued walking impairment",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_001",
+      "target": "N_003",
+      "relation": "CAUSES",
+      "evidence": "his thinking has improved ... follow up of adult hydrocephalus",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_001",
+      "target": "N_005",
+      "relation": "CAUSES",
+      "evidence": "decreased bladder control ... adult hydrocephalus",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_008",
+      "target": "N_001",
+      "relation": "CONFIRMS",
+      "evidence": "We established a diagnosis of adult hydrocephalus with the spinal catheter protocol in June 2020",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_007",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "A Medtronic Strata programmable shunt in the ventriculoperitoneal configuration ... was placed",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_006",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "3 months status post shunt surgery ... follow up of adult hydrocephalus",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_010",
+      "target": "N_003",
+      "relation": "INDICATES",
+      "evidence": "He scored 26/30 on the MMSE ... slight improvement",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_009",
+      "target": "N_003",
+      "relation": "CONFIRMS",
+      "evidence": "Mental status: Tested ... He scored 26/30 on the MMSE",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_012",
+      "target": "N_002",
+      "relation": "INDICATES",
+      "evidence": "Tinetti assessment tool ... total score of 18-20/28",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_011",
+      "target": "N_002",
+      "relation": "CONFIRMS",
+      "evidence": "Gait: Tested using the Tinetti assessment tool",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_013",
+      "target": "N_014",
+      "relation": "CONFIRMS",
+      "evidence": "CT scan of the head ... a tiny subdural collection",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_013",
+      "target": "N_015",
+      "relation": "CONFIRMS",
+      "evidence": "There is also substantial small vessel ischemic change",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_014",
+      "target": "N_016",
+      "relation": "LOCATED_AT",
+      "evidence": "a tiny amount of blood in the right frontal region with just a tiny subdural collection ... fluid collection in the right parietal region",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_005",
+      "target": "N_016",
+      "relation": "LOCATED_AT",
+      "evidence": "Genitourinary: Significant for urinary incontinence",
+      "confidence": 0.2
+    }
+  ]
+}

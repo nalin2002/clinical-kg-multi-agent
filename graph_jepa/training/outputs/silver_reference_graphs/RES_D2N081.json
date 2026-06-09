@@ -1,0 +1,280 @@
+{
+  "patient_id": "RES_D2N081",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "stage III non-small cell lung cancer",
+      "type": "DIAGNOSIS",
+      "normalized_name": "stage iii non-small cell lung cancer",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "cisplatin",
+      "type": "TREATMENT",
+      "normalized_name": "cisplatin",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "etoposide",
+      "type": "TREATMENT",
+      "normalized_name": "etoposide",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "fatigue",
+      "type": "SYMPTOM",
+      "normalized_name": "fatigue",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "decreased appetite",
+      "type": "SYMPTOM",
+      "normalized_name": "decreased appetite",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "sore throat",
+      "type": "SYMPTOM",
+      "normalized_name": "sore throat",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "dry cough",
+      "type": "SYMPTOM",
+      "normalized_name": "dry cough",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "bilateral crackles",
+      "type": "SYMPTOM",
+      "normalized_name": "bilateral crackles",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "chest erythema",
+      "type": "SYMPTOM",
+      "normalized_name": "chest erythema",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "chest",
+      "type": "LOCATION",
+      "normalized_name": "chest",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "radiation therapy",
+      "type": "TREATMENT",
+      "normalized_name": "radiation therapy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "chest x-ray",
+      "type": "PROCEDURE",
+      "normalized_name": "chest x-ray",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "radiation pneumonitis",
+      "type": "DIAGNOSIS",
+      "normalized_name": "radiation pneumonitis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "biopsy",
+      "type": "PROCEDURE",
+      "normalized_name": "biopsy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "adenocarcinoma",
+      "type": "LAB_RESULT",
+      "normalized_name": "adenocarcinoma",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "prednisone",
+      "type": "TREATMENT",
+      "normalized_name": "prednisone",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "painful swallowing",
+      "type": "SYMPTOM",
+      "normalized_name": "painful swallowing",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "name": "esophagitis",
+      "type": "DIAGNOSIS",
+      "normalized_name": "esophagitis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_019",
+      "name": "lidocaine viscous solution",
+      "type": "TREATMENT",
+      "normalized_name": "lidocaine viscous solution",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_020",
+      "name": "esophagus",
+      "type": "LOCATION",
+      "normalized_name": "esophagus",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_002",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "current regimen of combination chemotherapy consisting of Cisplatin and etoposide",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_003",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "current regimen of combination chemotherapy consisting of Cisplatin and etoposide",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_011",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "continue with her current dose of radiation at 45 Gy",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_009",
+      "target": "N_010",
+      "relation": "LOCATED_AT",
+      "evidence": "Erythema noted on the anterior side of the chest on the left side",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_011",
+      "target": "N_009",
+      "relation": "CAUSES",
+      "evidence": "Erythema noted on the anterior side of the chest possibly related to radiation",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_014",
+      "target": "N_001",
+      "relation": "CONFIRMS",
+      "evidence": "Biopsy was positive for adenocarcinoma",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_015",
+      "target": "N_001",
+      "relation": "CONFIRMS",
+      "evidence": "Biopsy was positive for adenocarcinoma",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_012",
+      "target": "N_013",
+      "relation": "CONFIRMS",
+      "evidence": "Chest x-ray is reviewed and demonstrates mild radiation pneumonitis",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_007",
+      "target": "N_013",
+      "relation": "INDICATES",
+      "evidence": "the etiology of her dry cough is from her mild radiation pneumonitis",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_013",
+      "target": "N_007",
+      "relation": "CAUSES",
+      "evidence": "the etiology of her dry cough is from her mild radiation pneumonitis",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_011",
+      "target": "N_013",
+      "relation": "CAUSES",
+      "evidence": "mild radiation pneumonitis",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_016",
+      "target": "N_013",
+      "relation": "TAKEN_FOR",
+      "evidence": "prescription of prednisone 40 mg daily for 5 days is provided to help with her inflammation",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_017",
+      "target": "N_018",
+      "relation": "INDICATES",
+      "evidence": "painful swallowing secondary to inflammation of the esophagus",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_018",
+      "target": "N_017",
+      "relation": "CAUSES",
+      "evidence": "painful swallowing secondary to inflammation of the esophagus",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_018",
+      "target": "N_020",
+      "relation": "LOCATED_AT",
+      "evidence": "inflammation of the esophagus",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_019",
+      "target": "N_017",
+      "relation": "TAKEN_FOR",
+      "evidence": "lidocaine viscous solution will be beneficial in preventing dehydration",
+      "confidence": 0.85
+    }
+  ]
+}

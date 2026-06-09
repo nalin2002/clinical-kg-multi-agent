@@ -1,0 +1,347 @@
+{
+  "patient_id": "RES_D2N015",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "shortness of breath",
+      "type": "SYMPTOM",
+      "normalized_name": "shortness of breath",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "dyspnea on exertion",
+      "type": "SYMPTOM",
+      "normalized_name": "dyspnea on exertion",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "palpitations",
+      "type": "SYMPTOM",
+      "normalized_name": "palpitations",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "wheezes bilaterally",
+      "type": "SYMPTOM",
+      "normalized_name": "bilateral wheezes",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "back pain",
+      "type": "SYMPTOM",
+      "normalized_name": "back pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "depression",
+      "type": "DIAGNOSIS",
+      "normalized_name": "depression",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "chronic back pain",
+      "type": "DIAGNOSIS",
+      "normalized_name": "chronic back pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "COPD",
+      "type": "DIAGNOSIS",
+      "normalized_name": "copd",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "asthma",
+      "type": "DIAGNOSIS",
+      "normalized_name": "asthma",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "smoking",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "smoking",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "depression",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "depression",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "chronic back pain",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "chronic back pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "Effexor",
+      "type": "TREATMENT",
+      "normalized_name": "effexor",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "Neurontin",
+      "type": "TREATMENT",
+      "normalized_name": "neurontin",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "Combivent",
+      "type": "TREATMENT",
+      "normalized_name": "combivent",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "albuterol inhaler",
+      "type": "TREATMENT",
+      "normalized_name": "albuterol inhaler",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "prednisone taper pack",
+      "type": "TREATMENT",
+      "normalized_name": "prednisone taper pack",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "name": "smoking cessation",
+      "type": "TREATMENT",
+      "normalized_name": "smoking cessation",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_019",
+      "name": "yoga",
+      "type": "TREATMENT",
+      "normalized_name": "yoga",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_020",
+      "name": "pulmonary function test",
+      "type": "PROCEDURE",
+      "normalized_name": "pulmonary function test",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_021",
+      "name": "chest x-ray",
+      "type": "PROCEDURE",
+      "normalized_name": "chest x-ray",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_022",
+      "name": "flattening of the diaphragm",
+      "type": "LAB_RESULT",
+      "normalized_name": "flattening of the diaphragm",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_023",
+      "name": "diaphragm",
+      "type": "LOCATION",
+      "normalized_name": "diaphragm",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_024",
+      "name": "back",
+      "type": "LOCATION",
+      "normalized_name": "back",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_008",
+      "relation": "INDICATES",
+      "evidence": "The patient presents today with shortness of breath with exertion ... consistent with COPD",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_002",
+      "target": "N_008",
+      "relation": "INDICATES",
+      "evidence": "Endorses dyspnea on exertion",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_004",
+      "target": "N_008",
+      "relation": "INDICATES",
+      "evidence": "Mild wheezes bilaterally ... consistent with COPD",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_005",
+      "target": "N_007",
+      "relation": "INDICATES",
+      "evidence": "Endorses back pain",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_005",
+      "target": "N_024",
+      "relation": "LOCATED_AT",
+      "evidence": "Endorses back pain",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_010",
+      "target": "N_008",
+      "relation": "CAUSES",
+      "evidence": "I counseled the patient on the importance of smoking cessation",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_020",
+      "target": "N_009",
+      "relation": "INDICATES",
+      "evidence": "Pulmonary function test demonstrates mild asthma",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_020",
+      "target": "N_008",
+      "relation": "INDICATES",
+      "evidence": "Pulmonary function test ... the appearance of COPD",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_021",
+      "target": "N_008",
+      "relation": "CONFIRMS",
+      "evidence": "X-ray of the chest demonstrates flattening of the diaphragm which is consistent with COPD",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_022",
+      "target": "N_008",
+      "relation": "INDICATES",
+      "evidence": "flattening of the diaphragm which is consistent with COPD",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_022",
+      "target": "N_023",
+      "relation": "LOCATED_AT",
+      "evidence": "flattening of the diaphragm",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_013",
+      "target": "N_006",
+      "relation": "TAKEN_FOR",
+      "evidence": "her depression is well managed on Effexor",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_014",
+      "target": "N_007",
+      "relation": "TAKEN_FOR",
+      "evidence": "taking Neurontin, which she states is helping control her pain",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_015",
+      "target": "N_008",
+      "relation": "TAKEN_FOR",
+      "evidence": "We will start the patient on Combivent",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_016",
+      "target": "N_008",
+      "relation": "TAKEN_FOR",
+      "evidence": "prescribe an albuterol inhaler",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_017",
+      "target": "N_008",
+      "relation": "TAKEN_FOR",
+      "evidence": "a prednisone taper pack",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_018",
+      "target": "N_008",
+      "relation": "TAKEN_FOR",
+      "evidence": "counseled the patient on the importance of smoking cessation",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_019",
+      "target": "N_006",
+      "relation": "TAKEN_FOR",
+      "evidence": "encouraged her to practice yoga for depression relief",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_019",
+      "target": "N_007",
+      "relation": "TAKEN_FOR",
+      "evidence": "encouraged her to practice yoga for her back pain",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_011",
+      "target": "N_006",
+      "relation": "CAUSES",
+      "evidence": "history of depression",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_012",
+      "target": "N_007",
+      "relation": "CAUSES",
+      "evidence": "history of ... chronic back pain",
+      "confidence": 0.6
+    }
+  ]
+}

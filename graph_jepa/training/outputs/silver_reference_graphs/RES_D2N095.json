@@ -1,0 +1,295 @@
+{
+  "patient_id": "RES_D2N095",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "back pain",
+      "type": "SYMPTOM",
+      "normalized_name": "back pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "hypertension",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "hypertension",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "muscle spasm",
+      "type": "SYMPTOM",
+      "normalized_name": "muscle spasm",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "back stiffness",
+      "type": "SYMPTOM",
+      "normalized_name": "back stiffness",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "ibuprofen",
+      "type": "TREATMENT",
+      "normalized_name": "ibuprofen",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "heat application",
+      "type": "TREATMENT",
+      "normalized_name": "heat application",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "mid lower back",
+      "type": "LOCATION",
+      "normalized_name": "mid lower back",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "lumbar spine",
+      "type": "LOCATION",
+      "normalized_name": "lumbar spine",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "nasal congestion",
+      "type": "SYMPTOM",
+      "normalized_name": "nasal congestion",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "seasonal allergies",
+      "type": "DIAGNOSIS",
+      "normalized_name": "seasonal allergies",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "systolic ejection murmur",
+      "type": "SYMPTOM",
+      "normalized_name": "systolic ejection murmur",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "pain to palpation right lateral lumbar spine",
+      "type": "SYMPTOM",
+      "normalized_name": "pain to palpation right lateral lumbar spine",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "back x-ray",
+      "type": "PROCEDURE",
+      "normalized_name": "back x-ray",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "fracture",
+      "type": "DIAGNOSIS",
+      "normalized_name": "fracture",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "lumbar strain",
+      "type": "DIAGNOSIS",
+      "normalized_name": "lumbar strain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "meloxicam",
+      "type": "TREATMENT",
+      "normalized_name": "meloxicam",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "physical therapy",
+      "type": "TREATMENT",
+      "normalized_name": "physical therapy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "name": "ice and heat",
+      "type": "TREATMENT",
+      "normalized_name": "ice and heat",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_019",
+      "name": "lisinopril",
+      "type": "TREATMENT",
+      "normalized_name": "lisinopril",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_020",
+      "name": "weightlifting",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "weightlifting",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_021",
+      "name": "normal labs",
+      "type": "LAB_RESULT",
+      "normalized_name": "normal labs",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_015",
+      "relation": "INDICATES",
+      "evidence": "I believe she has a lumbar strain",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_003",
+      "target": "N_015",
+      "relation": "INDICATES",
+      "evidence": "She experienced a spasm-like pain in her back while walking",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_001",
+      "target": "N_007",
+      "relation": "LOCATED_AT",
+      "evidence": "She locates the pain in her mid lower back",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_012",
+      "target": "N_008",
+      "relation": "LOCATED_AT",
+      "evidence": "Pain to palpation along the right lateral aspect of her lumbar spine",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_012",
+      "target": "N_015",
+      "relation": "INDICATES",
+      "evidence": "Pain to palpation along the right lateral aspect of her lumbar spine",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_005",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "She has been taking ibuprofen and using heat on it",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_006",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "using heat on it",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_009",
+      "target": "N_010",
+      "relation": "INDICATES",
+      "evidence": "nasal congestion, which she attributes to her seasonal allergies",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_010",
+      "target": "N_009",
+      "relation": "CAUSES",
+      "evidence": "Endorses nasal congestion from seasonal allergies",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_013",
+      "target": "N_014",
+      "relation": "RULES_OUT",
+      "evidence": "Back x-ray reveals good bony alignment with no obvious fracture",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_013",
+      "target": "N_015",
+      "relation": "CONFIRMS",
+      "evidence": "Her lumbar spine x-ray was unremarkable",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_021",
+      "target": "N_015",
+      "relation": "INDICATES",
+      "evidence": "her recent labs were normal",
+      "confidence": 0.5
+    },
+    {
+      "source": "N_016",
+      "target": "N_015",
+      "relation": "TAKEN_FOR",
+      "evidence": "We will initiate meloxicam 15 mg once daily",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_017",
+      "target": "N_015",
+      "relation": "TAKEN_FOR",
+      "evidence": "refer her to physical therapy to work on strengthening exercises",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_018",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "She may apply ice and heat to the area",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_019",
+      "target": "N_002",
+      "relation": "TAKEN_FOR",
+      "evidence": "This is well controlled with lisinopril",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_020",
+      "target": "N_015",
+      "relation": "CAUSES",
+      "evidence": "She did do deadlifts that day before her walk and thinks she may have been using her back more than her legs",
+      "confidence": 0.7
+    }
+  ]
+}

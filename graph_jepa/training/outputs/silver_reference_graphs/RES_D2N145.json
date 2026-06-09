@@ -1,0 +1,227 @@
+{
+  "patient_id": "RES_D2N145",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "perioral dermatitis",
+      "type": "DIAGNOSIS",
+      "normalized_name": "perioral dermatitis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "rosacea",
+      "type": "DIAGNOSIS",
+      "normalized_name": "rosacea",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "ocular rosacea",
+      "type": "DIAGNOSIS",
+      "normalized_name": "ocular rosacea",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "perioral dermatitis",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "perioral dermatitis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "doxycycline",
+      "type": "TREATMENT",
+      "normalized_name": "doxycycline",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "sulfacetamide wash",
+      "type": "TREATMENT",
+      "normalized_name": "sulfacetamide wash",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "MetroCream",
+      "type": "TREATMENT",
+      "normalized_name": "metrocream",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "Tacrolimus",
+      "type": "TREATMENT",
+      "normalized_name": "tacrolimus",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "Elidel",
+      "type": "TREATMENT",
+      "normalized_name": "elidel",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "Bruder mask",
+      "type": "TREATMENT",
+      "normalized_name": "bruder mask",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "Vanicream",
+      "type": "TREATMENT",
+      "normalized_name": "vanicream",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "erythematous papules",
+      "type": "SYMPTOM",
+      "normalized_name": "erythematous papules",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "redness around nostrils",
+      "type": "SYMPTOM",
+      "normalized_name": "redness around nostrils",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "bilateral medial cheeks",
+      "type": "LOCATION",
+      "normalized_name": "bilateral medial cheeks",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "nostrils",
+      "type": "LOCATION",
+      "normalized_name": "nostrils",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "skin inspection of the face",
+      "type": "PROCEDURE",
+      "normalized_name": "skin inspection of the face",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_004",
+      "target": "N_001",
+      "relation": "CAUSES",
+      "evidence": "Medical history: Perioral dermatitis; follow-up for perioral dermatitis",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_012",
+      "target": "N_001",
+      "relation": "INDICATES",
+      "evidence": "there are a few, very faint, erythematous papules",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_013",
+      "target": "N_002",
+      "relation": "INDICATES",
+      "evidence": "mild redness around and underneath the nostrils",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_012",
+      "target": "N_014",
+      "relation": "LOCATED_AT",
+      "evidence": "On bilateral medial cheeks, there are a few, very faint, erythematous papules",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_013",
+      "target": "N_015",
+      "relation": "LOCATED_AT",
+      "evidence": "mild redness around and underneath the nostrils",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_016",
+      "target": "N_001",
+      "relation": "CONFIRMS",
+      "evidence": "Skin inspection of the face was performed today",
+      "confidence": 0.5
+    },
+    {
+      "source": "N_005",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "recommended she resume twice daily application until she reaches full resolution",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_006",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "She is using the sulfacetamide wash twice daily",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_008",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "I provided a prescription for Tacrolimus",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_009",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "The patient did not begin Elidel",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_010",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "use Bruder mask as needed",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_007",
+      "target": "N_002",
+      "relation": "TAKEN_FOR",
+      "evidence": "Continue using MetroCream twice daily",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_011",
+      "target": "N_003",
+      "relation": "TAKEN_FOR",
+      "evidence": "wash her eyelids once daily with a gentle cleanser and try a gentle cream such as Vanicream",
+      "confidence": 0.6
+    }
+  ]
+}

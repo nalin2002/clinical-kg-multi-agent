@@ -1,0 +1,280 @@
+{
+  "patient_id": "RES_D2N161",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "congestive heart failure",
+      "type": "DIAGNOSIS",
+      "normalized_name": "congestive heart failure",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "hypertension",
+      "type": "DIAGNOSIS",
+      "normalized_name": "hypertension",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "stage 3 chronic kidney disease",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "stage 3 chronic kidney disease",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "hypertension",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "hypertension",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "Bumex",
+      "type": "TREATMENT",
+      "normalized_name": "bumex",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "Cozaar",
+      "type": "TREATMENT",
+      "normalized_name": "cozaar",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "Norvasc",
+      "type": "TREATMENT",
+      "normalized_name": "norvasc",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "bilateral ankle swelling",
+      "type": "SYMPTOM",
+      "normalized_name": "bilateral ankle swelling",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "bilateral lower extremities",
+      "type": "LOCATION",
+      "normalized_name": "bilateral lower extremities",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "trace lower extremity edema",
+      "type": "SYMPTOM",
+      "normalized_name": "trace lower extremity edema",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "systolic ejection murmur",
+      "type": "SYMPTOM",
+      "normalized_name": "systolic ejection murmur",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "preserved ejection fraction 55%",
+      "type": "LAB_RESULT",
+      "normalized_name": "preserved ejection fraction 55%",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "abnormal diastolic filling",
+      "type": "LAB_RESULT",
+      "normalized_name": "abnormal diastolic filling",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "mild to moderate mitral regurgitation",
+      "type": "DIAGNOSIS",
+      "normalized_name": "mild to moderate mitral regurgitation",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "echocardiogram",
+      "type": "PROCEDURE",
+      "normalized_name": "echocardiogram",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "dietary indiscretion",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "dietary indiscretion",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "nutrition referral",
+      "type": "TREATMENT",
+      "normalized_name": "nutrition referral",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "name": "renal artery ultrasound",
+      "type": "PROCEDURE",
+      "normalized_name": "renal artery ultrasound",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_019",
+      "name": "lab work",
+      "type": "PROCEDURE",
+      "normalized_name": "lab work",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_020",
+      "name": "kidney disease",
+      "type": "DIAGNOSIS",
+      "normalized_name": "kidney disease",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_004",
+      "target": "N_001",
+      "relation": "CAUSES",
+      "evidence": "This appears to be cause by dietary indiscretion and uncontrolled hypertension.",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_016",
+      "target": "N_001",
+      "relation": "CAUSES",
+      "evidence": "This appears to be cause by dietary indiscretion and uncontrolled hypertension.",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_008",
+      "target": "N_001",
+      "relation": "INDICATES",
+      "evidence": "Reports bilateral ankle swelling.",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_008",
+      "target": "N_009",
+      "relation": "LOCATED_AT",
+      "evidence": "Reports bilateral ankle swelling.",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_010",
+      "target": "N_009",
+      "relation": "LOCATED_AT",
+      "evidence": "trace edema to the bilateral lower extremities",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_010",
+      "target": "N_001",
+      "relation": "INDICATES",
+      "evidence": "trace edema to the bilateral lower extremities",
+      "confidence": 0.55
+    },
+    {
+      "source": "N_005",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "Continue Bumex 2 mg once daily.",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_006",
+      "target": "N_002",
+      "relation": "TAKEN_FOR",
+      "evidence": "Continue Cozaar 100 mg daily.",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_007",
+      "target": "N_002",
+      "relation": "TAKEN_FOR",
+      "evidence": "Continue Norvasc 5 mg once daily.",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_017",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "Referral to nutrition provided for dietary education.",
+      "confidence": 0.75
+    },
+    {
+      "source": "N_015",
+      "target": "N_014",
+      "relation": "CONFIRMS",
+      "evidence": "echocardiogram is reviewed and revealed ... mild to moderate mitral regurgitation",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_012",
+      "target": "N_001",
+      "relation": "INDICATES",
+      "evidence": "preserved EF of 55% abnormal diastolic filling",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_013",
+      "target": "N_001",
+      "relation": "INDICATES",
+      "evidence": "abnormal diastolic filling",
+      "confidence": 0.65
+    },
+    {
+      "source": "N_018",
+      "target": "N_002",
+      "relation": "RULES_OUT",
+      "evidence": "Renal artery ultrasound ordered for further evaluation.",
+      "confidence": 0.5
+    },
+    {
+      "source": "N_019",
+      "target": "N_020",
+      "relation": "CONFIRMS",
+      "evidence": "Lab work ordered.",
+      "confidence": 0.4
+    },
+    {
+      "source": "N_001",
+      "target": "N_020",
+      "relation": "CAUSES",
+      "evidence": "Due to patient's acute CHF exacerbation, this is to be monitored.",
+      "confidence": 0.6
+    }
+  ]
+}

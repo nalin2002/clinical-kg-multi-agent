@@ -1,0 +1,265 @@
+{
+  "patient_id": "RES_D2N065",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "right ankle pain",
+      "type": "SYMPTOM",
+      "normalized_name": "right ankle pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "right ankle",
+      "type": "LOCATION",
+      "normalized_name": "right ankle",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "right ankle sprain",
+      "type": "DIAGNOSIS",
+      "normalized_name": "right ankle sprain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "warmth to the touch",
+      "type": "SYMPTOM",
+      "normalized_name": "warmth to the touch",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "limping",
+      "type": "SYMPTOM",
+      "normalized_name": "limping",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "ecchymosis over lateral malleolus",
+      "type": "SYMPTOM",
+      "normalized_name": "ecchymosis over lateral malleolus",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "swelling",
+      "type": "SYMPTOM",
+      "normalized_name": "swelling",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "tenderness to palpation anterolaterally",
+      "type": "SYMPTOM",
+      "normalized_name": "tenderness to palpation anterolaterally",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "lateral malleolus",
+      "type": "LOCATION",
+      "normalized_name": "lateral malleolus",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "X-ray of right ankle",
+      "type": "PROCEDURE",
+      "normalized_name": "x-ray of right ankle",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "fracture",
+      "type": "DIAGNOSIS",
+      "normalized_name": "fracture",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "ibuprofen",
+      "type": "TREATMENT",
+      "normalized_name": "ibuprofen",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "ice",
+      "type": "TREATMENT",
+      "normalized_name": "ice",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "elevation",
+      "type": "TREATMENT",
+      "normalized_name": "elevation",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "Aircast",
+      "type": "TREATMENT",
+      "normalized_name": "aircast",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "crutches",
+      "type": "TREATMENT",
+      "normalized_name": "crutches",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "previous right foot injuries",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "previous right foot injuries",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "name": "slipped on ice",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "slipped on ice",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_019",
+      "name": "MRI",
+      "type": "PROCEDURE",
+      "normalized_name": "mri",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_002",
+      "relation": "LOCATED_AT",
+      "evidence": "evaluation of right ankle pain",
+      "confidence": 0.97
+    },
+    {
+      "source": "N_001",
+      "target": "N_003",
+      "relation": "INDICATES",
+      "evidence": "her symptoms are consistent with a right ankle sprain",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_006",
+      "target": "N_003",
+      "relation": "INDICATES",
+      "evidence": "ecchymosis over the lateral malleolus associated with swelling",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_007",
+      "target": "N_003",
+      "relation": "INDICATES",
+      "evidence": "swelling",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_008",
+      "target": "N_003",
+      "relation": "INDICATES",
+      "evidence": "Tenderness to palpation anterolaterally in the soft tissue",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_006",
+      "target": "N_009",
+      "relation": "LOCATED_AT",
+      "evidence": "ecchymosis over the lateral malleolus",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_004",
+      "target": "N_002",
+      "relation": "LOCATED_AT",
+      "evidence": "her right ankle is warm to the touch",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_010",
+      "target": "N_011",
+      "relation": "RULES_OUT",
+      "evidence": "X-ray of the right ankle taken in office today reveals no fracture or bony abnormalities",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_018",
+      "target": "N_003",
+      "relation": "CAUSES",
+      "evidence": "her pain began when she slipped on a patch of ice",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_012",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "utilizing ibuprofen last night and this morning",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_013",
+      "target": "N_007",
+      "relation": "TAKEN_FOR",
+      "evidence": "ice her right ankle 5 times per day for 20 minutes at a time to help with the swelling",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_014",
+      "target": "N_003",
+      "relation": "TAKEN_FOR",
+      "evidence": "keep her right leg elevated when she is seated",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_015",
+      "target": "N_003",
+      "relation": "TAKEN_FOR",
+      "evidence": "placed in an Aircast to stabilize the ankle",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_016",
+      "target": "N_003",
+      "relation": "TAKEN_FOR",
+      "evidence": "we provided her with crutches today",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_003",
+      "target": "N_001",
+      "relation": "CAUSES",
+      "evidence": "right ankle sprain ... right ankle pain",
+      "confidence": 0.8
+    }
+  ]
+}

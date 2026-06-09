@@ -1,0 +1,46 @@
+{
+  "patient_id": "RES_D2N055",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "right eye twitch",
+      "type": "SYMPTOM",
+      "normalized_name": "right eye twitch",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "transient tics",
+      "type": "DIAGNOSIS",
+      "normalized_name": "transient tics",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "right eye",
+      "type": "LOCATION",
+      "normalized_name": "right eye",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_002",
+      "relation": "INDICATES",
+      "evidence": "It appears the patient is experiencing a tic.",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_001",
+      "target": "N_003",
+      "relation": "LOCATED_AT",
+      "evidence": "Reports right eye twitch.",
+      "confidence": 0.95
+    }
+  ]
+}

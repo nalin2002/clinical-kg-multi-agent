@@ -1,0 +1,189 @@
+{
+  "patient_id": "RES_D2N079",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "left shoulder pain",
+      "type": "SYMPTOM",
+      "normalized_name": "left shoulder pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "left shoulder",
+      "type": "LOCATION",
+      "normalized_name": "left shoulder",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "difficulty reaching or lifting",
+      "type": "SYMPTOM",
+      "normalized_name": "difficulty reaching or lifting",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "tenderness over greater tuberosity of humerus",
+      "type": "SYMPTOM",
+      "normalized_name": "tenderness over greater tuberosity of humerus",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "limited active and passive range of motion",
+      "type": "SYMPTOM",
+      "normalized_name": "limited active and passive range of motion",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "rotator cuff tendinopathy",
+      "type": "DIAGNOSIS",
+      "normalized_name": "rotator cuff tendinopathy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "fracture",
+      "type": "DIAGNOSIS",
+      "normalized_name": "fracture",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "x-ray of left shoulder",
+      "type": "PROCEDURE",
+      "normalized_name": "x-ray of left shoulder",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "MRI of left shoulder",
+      "type": "PROCEDURE",
+      "normalized_name": "mri of left shoulder",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "Extra Strength Tylenol",
+      "type": "TREATMENT",
+      "normalized_name": "extra strength tylenol",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "physical therapy",
+      "type": "TREATMENT",
+      "normalized_name": "physical therapy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "steroid injection to left shoulder",
+      "type": "TREATMENT",
+      "normalized_name": "steroid injection to left shoulder",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "greater tuberosity of humerus",
+      "type": "LOCATION",
+      "normalized_name": "greater tuberosity of humerus",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_002",
+      "relation": "LOCATED_AT",
+      "evidence": "evaluation of left shoulder pain",
+      "confidence": 0.98
+    },
+    {
+      "source": "N_001",
+      "target": "N_006",
+      "relation": "INDICATES",
+      "evidence": "Left shoulder pain, most likely due to rotator cuff tendinopathy",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_004",
+      "target": "N_006",
+      "relation": "INDICATES",
+      "evidence": "Tenderness over the greater tuberosity of the humerus",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_005",
+      "target": "N_006",
+      "relation": "INDICATES",
+      "evidence": "Limited active and passive ROM",
+      "confidence": 0.75
+    },
+    {
+      "source": "N_003",
+      "target": "N_006",
+      "relation": "INDICATES",
+      "evidence": "difficulty reaching for or lifting any objects",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_004",
+      "target": "N_013",
+      "relation": "LOCATED_AT",
+      "evidence": "Tenderness over the greater tuberosity of the humerus",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_008",
+      "target": "N_007",
+      "relation": "RULES_OUT",
+      "evidence": "X-rays of the left shoulder ... reveal there are no fractures",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_010",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "taking 2 Extra Strength Tylenol every 6 to 8 hours, which provides some relief",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_011",
+      "target": "N_006",
+      "relation": "TAKEN_FOR",
+      "evidence": "refer him to formal physical therapy to strengthen his left shoulder",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_012",
+      "target": "N_006",
+      "relation": "TAKEN_FOR",
+      "evidence": "we will consider a steroid injection to the left shoulder",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_006",
+      "target": "N_001",
+      "relation": "CAUSES",
+      "evidence": "his symptoms are most likely due to rotator cuff tendinopathy",
+      "confidence": 0.85
+    }
+  ]
+}

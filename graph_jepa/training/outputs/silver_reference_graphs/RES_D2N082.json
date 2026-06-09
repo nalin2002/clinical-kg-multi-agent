@@ -1,0 +1,92 @@
+{
+  "patient_id": "RES_D2N082",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "low immunoglobulin A level",
+      "type": "LAB_RESULT",
+      "normalized_name": "low immunoglobulin a level",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "frequent infections",
+      "type": "SYMPTOM",
+      "normalized_name": "frequent infections",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "frequent lingering colds",
+      "type": "SYMPTOM",
+      "normalized_name": "frequent lingering colds",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "type 2 diabetes",
+      "type": "DIAGNOSIS",
+      "normalized_name": "type 2 diabetes",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "metformin",
+      "type": "TREATMENT",
+      "normalized_name": "metformin",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "IgA deficiency",
+      "type": "DIAGNOSIS",
+      "normalized_name": "iga deficiency",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "additional antibody blood work",
+      "type": "PROCEDURE",
+      "normalized_name": "additional antibody blood work",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_006",
+      "relation": "CONFIRMS",
+      "evidence": "It is consistent as her primary care physician noted with an IgA deficiency.",
+      "confidence": 0.92
+    },
+    {
+      "source": "N_002",
+      "target": "N_006",
+      "relation": "INDICATES",
+      "evidence": "The patient states he has been experiencing frequent infections.",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_005",
+      "target": "N_004",
+      "relation": "TAKEN_FOR",
+      "evidence": "He was recently diagnosed with type 2 diabetes. He is currently taking metformin.",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_006",
+      "target": "N_002",
+      "relation": "CAUSES",
+      "evidence": "frequent infections ... consistent with an IgA deficiency",
+      "confidence": 0.55
+    }
+  ]
+}

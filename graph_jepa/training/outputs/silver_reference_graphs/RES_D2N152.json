@@ -1,0 +1,212 @@
+{
+  "patient_id": "RES_D2N152",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "back pain",
+      "type": "SYMPTOM",
+      "normalized_name": "back pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "low back pain",
+      "type": "SYMPTOM",
+      "normalized_name": "low back pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "diabetes",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "diabetes",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "metformin",
+      "type": "TREATMENT",
+      "normalized_name": "metformin",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "lower back",
+      "type": "LOCATION",
+      "normalized_name": "lower back",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "musculoskeletal low back strain",
+      "type": "DIAGNOSIS",
+      "normalized_name": "musculoskeletal low back strain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "low back x-ray",
+      "type": "PROCEDURE",
+      "normalized_name": "low back x-ray",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "physical therapy",
+      "type": "TREATMENT",
+      "normalized_name": "physical therapy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "ibuprofen",
+      "type": "TREATMENT",
+      "normalized_name": "ibuprofen",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "tylenol",
+      "type": "TREATMENT",
+      "normalized_name": "tylenol",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "Flexeril",
+      "type": "TREATMENT",
+      "normalized_name": "flexeril",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "diabetes",
+      "type": "DIAGNOSIS",
+      "normalized_name": "diabetes",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "hemoglobin A1c",
+      "type": "LAB_RESULT",
+      "normalized_name": "hemoglobin a1c",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "positive straight leg raise",
+      "type": "SYMPTOM",
+      "normalized_name": "positive straight leg raise",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "pain to palpation of lower back",
+      "type": "SYMPTOM",
+      "normalized_name": "pain to palpation of lower back",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_002",
+      "target": "N_005",
+      "relation": "LOCATED_AT",
+      "evidence": "Pain to palpation of the midline of the lower back",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_002",
+      "target": "N_006",
+      "relation": "INDICATES",
+      "evidence": "I believe he has a musculoskeletal low back strain",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_015",
+      "target": "N_006",
+      "relation": "INDICATES",
+      "evidence": "Pain to palpation of the midline of the lower back, especially on the left",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_015",
+      "target": "N_005",
+      "relation": "LOCATED_AT",
+      "evidence": "Pain to palpation of the midline of the lower back",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_007",
+      "target": "N_006",
+      "relation": "RULES_OUT",
+      "evidence": "I do not expect to see anything significant on x-ray, but we will obtain one for further evaluation of any possible disc issues",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_008",
+      "target": "N_002",
+      "relation": "TAKEN_FOR",
+      "evidence": "physical therapy can help with the pain",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_009",
+      "target": "N_002",
+      "relation": "TAKEN_FOR",
+      "evidence": "He will take 400 mg of ibuprofen up to 3 times per day",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_010",
+      "target": "N_002",
+      "relation": "TAKEN_FOR",
+      "evidence": "Tylenol can be used for severe pain",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_011",
+      "target": "N_002",
+      "relation": "TAKEN_FOR",
+      "evidence": "Prescription for Flexeril also provided",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_004",
+      "target": "N_012",
+      "relation": "TAKEN_FOR",
+      "evidence": "Continue current dose of metformin",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_013",
+      "target": "N_012",
+      "relation": "INDICATES",
+      "evidence": "Hemoglobin A1c ordered",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_003",
+      "target": "N_012",
+      "relation": "CAUSES",
+      "evidence": "Patient reports history of diabetes",
+      "confidence": 0.6
+    }
+  ]
+}

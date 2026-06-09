@@ -1,0 +1,264 @@
+{
+  "patient_id": "RES_D2N048",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "right foot pain",
+      "type": "SYMPTOM",
+      "normalized_name": "right foot pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "right foot",
+      "type": "LOCATION",
+      "normalized_name": "right foot",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "bruising of plantar and dorsal foot",
+      "type": "SYMPTOM",
+      "normalized_name": "foot bruising",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "swelling",
+      "type": "SYMPTOM",
+      "normalized_name": "swelling",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "midfoot tenderness",
+      "type": "SYMPTOM",
+      "normalized_name": "midfoot tenderness",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "positive piano key test",
+      "type": "PROCEDURE",
+      "normalized_name": "piano key test",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "Lisfranc fracture",
+      "type": "DIAGNOSIS",
+      "normalized_name": "lisfranc fracture",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "3 views right foot x-ray",
+      "type": "PROCEDURE",
+      "normalized_name": "right foot radiograph",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "dorsal displacement of 2nd metatarsal base",
+      "type": "LAB_RESULT",
+      "normalized_name": "dorsal displacement 2nd metatarsal base",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "bony fragment in Lisfranc joint space",
+      "type": "LAB_RESULT",
+      "normalized_name": "bony fragment lisfranc joint space",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "twisting fall onto foot",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "twisting fall onto foot",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "ibuprofen",
+      "type": "TREATMENT",
+      "normalized_name": "ibuprofen",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "icing",
+      "type": "TREATMENT",
+      "normalized_name": "icing",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "elevation",
+      "type": "TREATMENT",
+      "normalized_name": "elevation",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "right foot ORIF",
+      "type": "TREATMENT",
+      "normalized_name": "right foot orif",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "physical therapy",
+      "type": "TREATMENT",
+      "normalized_name": "physical therapy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "left leg injury",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "left leg injury",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "name": "midfoot",
+      "type": "LOCATION",
+      "normalized_name": "midfoot",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_002",
+      "relation": "LOCATED_AT",
+      "evidence": "evaluation of right foot pain",
+      "confidence": 0.97
+    },
+    {
+      "source": "N_001",
+      "target": "N_007",
+      "relation": "INDICATES",
+      "evidence": "Right foot pain, consistent with a Lisfranc fracture",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_005",
+      "target": "N_018",
+      "relation": "LOCATED_AT",
+      "evidence": "Tenderness to palpation of the midfoot",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_005",
+      "target": "N_007",
+      "relation": "INDICATES",
+      "evidence": "Tenderness to palpation of the midfoot",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_006",
+      "target": "N_007",
+      "relation": "INDICATES",
+      "evidence": "Positive piano key test of the 1st and 2nd metatarsals",
+      "confidence": 0.75
+    },
+    {
+      "source": "N_011",
+      "target": "N_007",
+      "relation": "CAUSES",
+      "evidence": "fell on the dorsal aspect of her right foot... quickly twisted her foot",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_007",
+      "target": "N_004",
+      "relation": "CAUSES",
+      "evidence": "Associated swelling",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_007",
+      "target": "N_003",
+      "relation": "CAUSES",
+      "evidence": "Bruising of the plantar and dorsal aspects of the foot",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_008",
+      "target": "N_007",
+      "relation": "CONFIRMS",
+      "evidence": "her x-rays revealed a Lisfranc fracture",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_009",
+      "target": "N_007",
+      "relation": "INDICATES",
+      "evidence": "subtle dorsal displacement of the base of the 2nd metatarsal",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_010",
+      "target": "N_007",
+      "relation": "CONFIRMS",
+      "evidence": "presence of a bony fragment in the Lisfranc joint space",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_012",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "took ibuprofen for pain",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_013",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "iced it last night",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_014",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "kept her foot up on a pillow",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_015",
+      "target": "N_007",
+      "relation": "TAKEN_FOR",
+      "evidence": "proceed with a right foot ORIF",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_016",
+      "target": "N_002",
+      "relation": "TAKEN_FOR",
+      "evidence": "attend formal physical therapy to strengthen her right foot",
+      "confidence": 0.85
+    }
+  ]
+}

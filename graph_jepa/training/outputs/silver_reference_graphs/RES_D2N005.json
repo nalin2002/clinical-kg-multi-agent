@@ -1,0 +1,181 @@
+{
+  "patient_id": "RES_D2N005",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "right middle finger pain",
+      "type": "SYMPTOM",
+      "normalized_name": "right middle finger pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "right middle finger",
+      "type": "LOCATION",
+      "normalized_name": "right middle finger",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "motor vehicle accident",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "motor vehicle accident",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "digoxin",
+      "type": "TREATMENT",
+      "normalized_name": "digoxin",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "atrial fibrillation",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "atrial fibrillation",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "tenderness over distal phalanx",
+      "type": "SYMPTOM",
+      "normalized_name": "tenderness over distal phalanx",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "distal phalanx",
+      "type": "LOCATION",
+      "normalized_name": "distal phalanx",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "x-ray of right middle finger",
+      "type": "PROCEDURE",
+      "normalized_name": "x-ray of right middle finger",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "comminuted distal phalanx fracture",
+      "type": "DIAGNOSIS",
+      "normalized_name": "comminuted distal phalanx fracture",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "tramadol",
+      "type": "TREATMENT",
+      "normalized_name": "tramadol",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "finger splint",
+      "type": "TREATMENT",
+      "normalized_name": "finger splint",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "comminuted distal phalanx fracture (lab result)",
+      "type": "LAB_RESULT",
+      "normalized_name": "comminuted distal phalanx fracture on x-ray",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_002",
+      "relation": "LOCATED_AT",
+      "evidence": "Right middle finger pain.",
+      "confidence": 0.97
+    },
+    {
+      "source": "N_003",
+      "target": "N_009",
+      "relation": "CAUSES",
+      "evidence": "right middle finger pain after she was rear-ended in a motor vehicle accident",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_004",
+      "target": "N_005",
+      "relation": "TAKEN_FOR",
+      "evidence": "CURRENT MEDICATIONS: Digoxin / PAST MEDICAL HISTORY: Atrial Fibrillation",
+      "confidence": 0.75
+    },
+    {
+      "source": "N_006",
+      "target": "N_007",
+      "relation": "LOCATED_AT",
+      "evidence": "tenderness over the distal phalanx",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_006",
+      "target": "N_009",
+      "relation": "INDICATES",
+      "evidence": "tenderness over the distal phalanx ... comminuted distal phalanx fracture",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_001",
+      "target": "N_009",
+      "relation": "INDICATES",
+      "evidence": "right middle finger pain ... distal phalanx fracture",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_008",
+      "target": "N_009",
+      "relation": "CONFIRMS",
+      "evidence": "X-rays of the right middle finger, 3 views ... shows a comminuted distal phalanx fracture",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_012",
+      "target": "N_009",
+      "relation": "CONFIRMS",
+      "evidence": "X-rays ... shows a comminuted distal phalanx fracture",
+      "confidence": 0.92
+    },
+    {
+      "source": "N_009",
+      "target": "N_001",
+      "relation": "CAUSES",
+      "evidence": "Right middle finger distal phalanx fracture ... finger pain",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_010",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "Tramadol 50 mg every 6 hours as needed for pain",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_011",
+      "target": "N_009",
+      "relation": "TAKEN_FOR",
+      "evidence": "She is provided a finger splint",
+      "confidence": 0.9
+    }
+  ]
+}

@@ -1,0 +1,258 @@
+{
+  "patient_id": "RES_D2N075",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "chest pain",
+      "type": "SYMPTOM",
+      "normalized_name": "chest pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "dysphagia",
+      "type": "SYMPTOM",
+      "normalized_name": "dysphagia",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "sternum",
+      "type": "LOCATION",
+      "normalized_name": "sternum",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "esophagitis",
+      "type": "DIAGNOSIS",
+      "normalized_name": "esophagitis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "stress",
+      "type": "SYMPTOM",
+      "normalized_name": "stress",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "EKG",
+      "type": "PROCEDURE",
+      "normalized_name": "ekg",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "cardiac workup",
+      "type": "PROCEDURE",
+      "normalized_name": "cardiac workup",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "uterine fibroids",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "uterine fibroids",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "anemia",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "anemia",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "cholecystectomy",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "cholecystectomy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "upper abdominal tenderness",
+      "type": "SYMPTOM",
+      "normalized_name": "upper abdominal tenderness",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "upper abdominal quadrants",
+      "type": "LOCATION",
+      "normalized_name": "upper abdominal quadrants",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "GERD",
+      "type": "DIAGNOSIS",
+      "normalized_name": "gerd",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "dyspepsia",
+      "type": "DIAGNOSIS",
+      "normalized_name": "dyspepsia",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "musculoskeletal etiology",
+      "type": "DIAGNOSIS",
+      "normalized_name": "musculoskeletal etiology",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "anxiety",
+      "type": "DIAGNOSIS",
+      "normalized_name": "anxiety",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "non-cardiac chest pain",
+      "type": "DIAGNOSIS",
+      "normalized_name": "non-cardiac chest pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "name": "job transition",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "job transition",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_019",
+      "name": "EGD",
+      "type": "PROCEDURE",
+      "normalized_name": "egd",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_003",
+      "relation": "LOCATED_AT",
+      "evidence": "sharp and localized behind the sternum",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_001",
+      "target": "N_004",
+      "relation": "INDICATES",
+      "evidence": "referral to me for suspected esophagitis",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_002",
+      "target": "N_004",
+      "relation": "INDICATES",
+      "evidence": "accompanied by dysphagia ... suspected esophagitis",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_011",
+      "target": "N_012",
+      "relation": "LOCATED_AT",
+      "evidence": "Mild tenderness to light palpation in the upper abdominal quadrants",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_007",
+      "target": "N_017",
+      "relation": "CONFIRMS",
+      "evidence": "Her cardiac evaluation in the emergency department was normal",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_006",
+      "target": "N_017",
+      "relation": "CONFIRMS",
+      "evidence": "underwent labs and EKG. All results came back normal",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_001",
+      "target": "N_017",
+      "relation": "INDICATES",
+      "evidence": "Non-cardiac chest pain",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_001",
+      "target": "N_016",
+      "relation": "INDICATES",
+      "evidence": "I suspect she had an anxiety attack",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_018",
+      "target": "N_016",
+      "relation": "CAUSES",
+      "evidence": "anxiety attack related to her job transition",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_018",
+      "target": "N_005",
+      "relation": "CAUSES",
+      "evidence": "experiencing a lot of stress at that time due to a job transition",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_001",
+      "target": "N_013",
+      "relation": "INDICATES",
+      "evidence": "Possible etiologies of her chest pain and dysphagia include GERD",
+      "confidence": 0.4
+    },
+    {
+      "source": "N_001",
+      "target": "N_014",
+      "relation": "INDICATES",
+      "evidence": "Possible etiologies ... dyspepsia",
+      "confidence": 0.4
+    },
+    {
+      "source": "N_001",
+      "target": "N_015",
+      "relation": "INDICATES",
+      "evidence": "plus or minus a contribution from musculoskeletal etiologies",
+      "confidence": 0.5
+    },
+    {
+      "source": "N_019",
+      "target": "N_004",
+      "relation": "CONFIRMS",
+      "evidence": "the role of an EGD in evaluating her prior symptoms",
+      "confidence": 0.5
+    }
+  ]
+}

@@ -1,0 +1,287 @@
+{
+  "patient_id": "RES_D2N160",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "right elbow pain",
+      "type": "SYMPTOM",
+      "normalized_name": "right elbow pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "posterior elbow",
+      "type": "LOCATION",
+      "normalized_name": "posterior elbow",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "olecranon",
+      "type": "LOCATION",
+      "normalized_name": "olecranon",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "elbow swelling",
+      "type": "SYMPTOM",
+      "normalized_name": "elbow swelling",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "ecchymosis",
+      "type": "SYMPTOM",
+      "normalized_name": "ecchymosis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "bruising over right elbow",
+      "type": "SYMPTOM",
+      "normalized_name": "bruising over right elbow",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "systolic ejection murmur",
+      "type": "SYMPTOM",
+      "normalized_name": "systolic ejection murmur",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "elevated blood pressure 150/90",
+      "type": "LAB_RESULT",
+      "normalized_name": "elevated blood pressure 150/90",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "x-ray of right elbow",
+      "type": "PROCEDURE",
+      "normalized_name": "x-ray of right elbow",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "fracture",
+      "type": "DIAGNOSIS",
+      "normalized_name": "fracture",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "right elbow contusion",
+      "type": "DIAGNOSIS",
+      "normalized_name": "right elbow contusion",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "elbow injury from lacrosse stick",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "elbow injury from lacrosse stick",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "ibuprofen 800 mg",
+      "type": "TREATMENT",
+      "normalized_name": "ibuprofen 800 mg",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "ice application",
+      "type": "TREATMENT",
+      "normalized_name": "ice application",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "hypertension",
+      "type": "DIAGNOSIS",
+      "normalized_name": "hypertension",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "lisinopril 20 mg",
+      "type": "TREATMENT",
+      "normalized_name": "lisinopril 20 mg",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "dietary modifications",
+      "type": "TREATMENT",
+      "normalized_name": "dietary modifications",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "name": "diabetes",
+      "type": "DIAGNOSIS",
+      "normalized_name": "diabetes",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_019",
+      "name": "metformin 500 mg",
+      "type": "TREATMENT",
+      "normalized_name": "metformin 500 mg",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_020",
+      "name": "hemoglobin A1c",
+      "type": "PROCEDURE",
+      "normalized_name": "hemoglobin a1c",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_002",
+      "relation": "LOCATED_AT",
+      "evidence": "Pain to palpation of the olecranon area of the posterior elbow",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_001",
+      "target": "N_003",
+      "relation": "LOCATED_AT",
+      "evidence": "Pain to palpation of the olecranon area",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_001",
+      "target": "N_011",
+      "relation": "INDICATES",
+      "evidence": "His x-ray and exam findings are consistent with an elbow contusion",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_004",
+      "target": "N_011",
+      "relation": "INDICATES",
+      "evidence": "There is swelling about the elbow",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_005",
+      "target": "N_011",
+      "relation": "INDICATES",
+      "evidence": "mild ecchymosis",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_006",
+      "target": "N_011",
+      "relation": "INDICATES",
+      "evidence": "Bruising noted over the right elbow",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_009",
+      "target": "N_010",
+      "relation": "RULES_OUT",
+      "evidence": "X-ray of the right elbow ... demonstrates no evidence of fracture or bony abnormalities",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_009",
+      "target": "N_011",
+      "relation": "CONFIRMS",
+      "evidence": "His x-ray and exam findings are consistent with an elbow contusion",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_012",
+      "target": "N_011",
+      "relation": "CAUSES",
+      "evidence": "The patient sustained an injury to his elbow when his son struck him with a lacrosse stick",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_013",
+      "target": "N_011",
+      "relation": "TAKEN_FOR",
+      "evidence": "prescribe him ibuprofen 800 mg twice daily to help with some of the pain and swelling",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_013",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "to help with some of the pain and swelling",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_014",
+      "target": "N_004",
+      "relation": "TAKEN_FOR",
+      "evidence": "ice the area in 20-minute intervals 3 times per day to further reduce his symptoms",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_008",
+      "target": "N_015",
+      "relation": "INDICATES",
+      "evidence": "Blood pressure: 150/90 mmHg",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_016",
+      "target": "N_015",
+      "relation": "TAKEN_FOR",
+      "evidence": "We will keep him on lisinopril 20 mg daily",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_017",
+      "target": "N_015",
+      "relation": "TAKEN_FOR",
+      "evidence": "well-controlled with dietary modifications and lisinopril",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_019",
+      "target": "N_018",
+      "relation": "TAKEN_FOR",
+      "evidence": "We will keep him on metformin 500 mg",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_020",
+      "target": "N_018",
+      "relation": "INDICATES",
+      "evidence": "order a hemoglobin A1c to evaluate any need for medication adjustments",
+      "confidence": 0.7
+    }
+  ]
+}

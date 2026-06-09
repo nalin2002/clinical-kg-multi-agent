@@ -1,0 +1,281 @@
+{
+  "patient_id": "RES_D2N085",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "right-sided abdominal pain",
+      "type": "SYMPTOM",
+      "normalized_name": "right-sided abdominal pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "nausea",
+      "type": "SYMPTOM",
+      "normalized_name": "nausea",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "dysuria",
+      "type": "SYMPTOM",
+      "normalized_name": "dysuria",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "dark colored urine",
+      "type": "SYMPTOM",
+      "normalized_name": "dark colored urine",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "CVA tenderness",
+      "type": "SYMPTOM",
+      "normalized_name": "cva tenderness",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "right flank",
+      "type": "LOCATION",
+      "normalized_name": "right flank",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "history of kidney stones",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "history of kidney stones",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "family history of kidney stones",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "family history of kidney stones",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "Tylenol",
+      "type": "TREATMENT",
+      "normalized_name": "tylenol",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "acute nephrolithiasis",
+      "type": "DIAGNOSIS",
+      "normalized_name": "acute nephrolithiasis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "kidney stone",
+      "type": "DIAGNOSIS",
+      "normalized_name": "kidney stone",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "proximal right ureter",
+      "type": "LOCATION",
+      "normalized_name": "proximal right ureter",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "hydronephrosis",
+      "type": "DIAGNOSIS",
+      "normalized_name": "hydronephrosis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "CT scan of the abdomen",
+      "type": "PROCEDURE",
+      "normalized_name": "ct scan of the abdomen",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "push fluids",
+      "type": "TREATMENT",
+      "normalized_name": "push fluids",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "oxycodone",
+      "type": "TREATMENT",
+      "normalized_name": "oxycodone",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "basic metabolic panel",
+      "type": "PROCEDURE",
+      "normalized_name": "basic metabolic panel",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "name": "urinalysis",
+      "type": "PROCEDURE",
+      "normalized_name": "urinalysis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_019",
+      "name": "urine culture",
+      "type": "PROCEDURE",
+      "normalized_name": "urine culture",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_020",
+      "name": "lithotripsy",
+      "type": "PROCEDURE",
+      "normalized_name": "lithotripsy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_021",
+      "name": "ureteroscopy",
+      "type": "PROCEDURE",
+      "normalized_name": "ureteroscopy",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_010",
+      "relation": "INDICATES",
+      "evidence": "The patient presents with complaints of right-sided abdominal pain",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_003",
+      "target": "N_010",
+      "relation": "INDICATES",
+      "evidence": "Reports dysuria and dark colored urine",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_004",
+      "target": "N_010",
+      "relation": "INDICATES",
+      "evidence": "Reports dysuria and dark colored urine",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_005",
+      "target": "N_006",
+      "relation": "LOCATED_AT",
+      "evidence": "Positive CVA tenderness on the right flank",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_005",
+      "target": "N_010",
+      "relation": "INDICATES",
+      "evidence": "Positive CVA tenderness on the right flank",
+      "confidence": 0.75
+    },
+    {
+      "source": "N_007",
+      "target": "N_010",
+      "relation": "CAUSES",
+      "evidence": "Patient reports history of kidney stones",
+      "confidence": 0.5
+    },
+    {
+      "source": "N_008",
+      "target": "N_010",
+      "relation": "CAUSES",
+      "evidence": "his father has a history of kidney stones",
+      "confidence": 0.4
+    },
+    {
+      "source": "N_011",
+      "target": "N_012",
+      "relation": "LOCATED_AT",
+      "evidence": "0.5 cm kidney stone located in the proximal right ureter",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_014",
+      "target": "N_010",
+      "relation": "CONFIRMS",
+      "evidence": "His previous CT scan was reviewed and demonstrates a 0.5 cm kidney stone located in the proximal right ureter",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_014",
+      "target": "N_013",
+      "relation": "RULES_OUT",
+      "evidence": "There is no evidence of hydronephrosis",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_015",
+      "target": "N_010",
+      "relation": "TAKEN_FOR",
+      "evidence": "push fluids in order to help facilitate urination to help pass the stone",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_016",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "prescribed oxycodone 5 mg every 6 to 8 hours as needed for pain",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_009",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "continue to alternate oxycodone with Tylenol",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_020",
+      "target": "N_010",
+      "relation": "TAKEN_FOR",
+      "evidence": "we will discuss further treatment such as lithotripsy or ureteroscopy",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_021",
+      "target": "N_010",
+      "relation": "TAKEN_FOR",
+      "evidence": "we will discuss further treatment such as lithotripsy or ureteroscopy",
+      "confidence": 0.6
+    }
+  ]
+}

@@ -1,0 +1,169 @@
+{
+  "patient_id": "RES_D2N131",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "hypertension",
+      "type": "DIAGNOSIS",
+      "normalized_name": "hypertension",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "elevated blood pressure",
+      "type": "SYMPTOM",
+      "normalized_name": "elevated blood pressure",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "headaches",
+      "type": "SYMPTOM",
+      "normalized_name": "headaches",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "Norvasc 10 mg daily",
+      "type": "TREATMENT",
+      "normalized_name": "norvasc",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "carvedilol 25 mg twice a day",
+      "type": "TREATMENT",
+      "normalized_name": "carvedilol",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "kidney transplant",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "kidney transplant",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "immunosuppression medication",
+      "type": "TREATMENT",
+      "normalized_name": "immunosuppression medication",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "systolic ejection murmur",
+      "type": "SYMPTOM",
+      "normalized_name": "systolic ejection murmur",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "creatinine normal",
+      "type": "LAB_RESULT",
+      "normalized_name": "creatinine normal",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "electrocardiogram normal",
+      "type": "PROCEDURE",
+      "normalized_name": "electrocardiogram normal",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "lipid panel",
+      "type": "PROCEDURE",
+      "normalized_name": "lipid panel",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "metabolic panel",
+      "type": "PROCEDURE",
+      "normalized_name": "metabolic panel",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "left flank",
+      "type": "LOCATION",
+      "normalized_name": "left flank",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "stable kidney function",
+      "type": "DIAGNOSIS",
+      "normalized_name": "stable kidney function",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_002",
+      "target": "N_001",
+      "relation": "INDICATES",
+      "evidence": "Her blood pressure is elevated today and based on her recent home monitoring.",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_009",
+      "target": "N_014",
+      "relation": "INDICATES",
+      "evidence": "Creatinine: normal. Kidney function stable.",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_004",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "She is currently on Norvasc 10 mg daily.",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_005",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "carvedilol 25 mg twice a day to help bring her blood pressure down.",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_007",
+      "target": "N_006",
+      "relation": "TAKEN_FOR",
+      "evidence": "She is taking all of her immunosuppression medication.",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_001",
+      "target": "N_003",
+      "relation": "CAUSES",
+      "evidence": "She notes she has had some headaches, but she is unsure if it is due to stress at work or her high blood pressure.",
+      "confidence": 0.4
+    },
+    {
+      "source": "N_006",
+      "target": "N_013",
+      "relation": "LOCATED_AT",
+      "evidence": "Scar on left flank from kidney transplant, healed.",
+      "confidence": 0.8
+    }
+  ]
+}

@@ -1,0 +1,235 @@
+{
+  "patient_id": "RES_D2N123",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "dysphagia",
+      "type": "SYMPTOM",
+      "normalized_name": "dysphagia",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "throat",
+      "type": "LOCATION",
+      "normalized_name": "throat",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "esophageal narrowing",
+      "type": "DIAGNOSIS",
+      "normalized_name": "esophageal narrowing",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "gastroesophageal reflux",
+      "type": "DIAGNOSIS",
+      "normalized_name": "gastroesophageal reflux",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "epigastric tenderness",
+      "type": "SYMPTOM",
+      "normalized_name": "epigastric tenderness",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "Prilosec",
+      "type": "TREATMENT",
+      "normalized_name": "prilosec",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "gastroenterology referral and scope",
+      "type": "PROCEDURE",
+      "normalized_name": "gastroenterology endoscopy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "diabetes",
+      "type": "DIAGNOSIS",
+      "normalized_name": "diabetes",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "hypertension",
+      "type": "DIAGNOSIS",
+      "normalized_name": "hypertension",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "metformin 500 mg twice a day",
+      "type": "TREATMENT",
+      "normalized_name": "metformin",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "Norvasc",
+      "type": "TREATMENT",
+      "normalized_name": "norvasc",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "hemoglobin A1c 7.4",
+      "type": "LAB_RESULT",
+      "normalized_name": "hemoglobin a1c 7.4",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "history of diabetes",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "history of diabetes",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "history of hypertension",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "history of hypertension",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "diabetic retinopathy",
+      "type": "DIAGNOSIS",
+      "normalized_name": "diabetic retinopathy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "ophthalmology referral",
+      "type": "PROCEDURE",
+      "normalized_name": "ophthalmology referral",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "kidney function test",
+      "type": "PROCEDURE",
+      "normalized_name": "kidney function test",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_002",
+      "relation": "LOCATED_AT",
+      "evidence": "something stuck in his throat",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_001",
+      "target": "N_003",
+      "relation": "INDICATES",
+      "evidence": "I am concerned he has a narrowing in his throat that is causing this",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_001",
+      "target": "N_004",
+      "relation": "INDICATES",
+      "evidence": "I recommended Prilosec as he might be experiencing reflux",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_003",
+      "target": "N_001",
+      "relation": "CAUSES",
+      "evidence": "narrowing in his throat that is causing this",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_006",
+      "target": "N_004",
+      "relation": "TAKEN_FOR",
+      "evidence": "I recommended Prilosec as he might be experiencing reflux",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_007",
+      "target": "N_003",
+      "relation": "CONFIRMS",
+      "evidence": "the gastroenterology will do a scope",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_010",
+      "target": "N_008",
+      "relation": "TAKEN_FOR",
+      "evidence": "Continue metformin 500 mg twice a day",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_011",
+      "target": "N_009",
+      "relation": "TAKEN_FOR",
+      "evidence": "continue his current medication, Norvasc",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_012",
+      "target": "N_008",
+      "relation": "INDICATES",
+      "evidence": "His last hemoglobin A1c was 7.4",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_013",
+      "target": "N_008",
+      "relation": "CAUSES",
+      "evidence": "Patient reports a history of diabetes",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_014",
+      "target": "N_009",
+      "relation": "CAUSES",
+      "evidence": "Patient reports a history of diabetes and hypertension",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_008",
+      "target": "N_015",
+      "relation": "CAUSES",
+      "evidence": "I referred the patient to ophthalmology for retinopathy",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_016",
+      "target": "N_015",
+      "relation": "RULES_OUT",
+      "evidence": "referred the patient to ophthalmology for retinopathy",
+      "confidence": 0.6
+    }
+  ]
+}

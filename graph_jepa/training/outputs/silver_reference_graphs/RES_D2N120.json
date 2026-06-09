@@ -1,0 +1,248 @@
+{
+  "patient_id": "RES_D2N120",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "back pain",
+      "type": "SYMPTOM",
+      "normalized_name": "back pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "lower back",
+      "type": "LOCATION",
+      "normalized_name": "lower back",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "radiating pain to right leg",
+      "type": "SYMPTOM",
+      "normalized_name": "radiating pain to right leg",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "numbness and tingling",
+      "type": "SYMPTOM",
+      "normalized_name": "numbness and tingling",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "right leg",
+      "type": "LOCATION",
+      "normalized_name": "right leg",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "weight gain",
+      "type": "SYMPTOM",
+      "normalized_name": "weight gain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "physical therapy",
+      "type": "TREATMENT",
+      "normalized_name": "physical therapy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "pain medications",
+      "type": "TREATMENT",
+      "normalized_name": "pain medications",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "decreased sensation at L4 dermatome",
+      "type": "SYMPTOM",
+      "normalized_name": "decreased sensation at l4 dermatome",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "L4-5 midline tenderness",
+      "type": "SYMPTOM",
+      "normalized_name": "l4-5 midline tenderness",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "positive straight leg test",
+      "type": "PROCEDURE",
+      "normalized_name": "positive straight leg test",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "MRI of lumbar spine",
+      "type": "PROCEDURE",
+      "normalized_name": "mri of lumbar spine",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "disc herniation with nerve impingement",
+      "type": "LAB_RESULT",
+      "normalized_name": "disc herniation with nerve impingement",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "L4-5 herniated disc with radiculopathy",
+      "type": "DIAGNOSIS",
+      "normalized_name": "l4-5 herniated disc with radiculopathy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "lumbar spine",
+      "type": "LOCATION",
+      "normalized_name": "lumbar spine",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "corticosteroid injection under fluoroscopy",
+      "type": "TREATMENT",
+      "normalized_name": "corticosteroid injection under fluoroscopy",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_002",
+      "relation": "LOCATED_AT",
+      "evidence": "He locates his pain to his lower back",
+      "confidence": 0.97
+    },
+    {
+      "source": "N_003",
+      "target": "N_005",
+      "relation": "LOCATED_AT",
+      "evidence": "radiates distally into his right leg",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_004",
+      "target": "N_005",
+      "relation": "LOCATED_AT",
+      "evidence": "numbness and tingling, especially in his right leg",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_001",
+      "target": "N_014",
+      "relation": "INDICATES",
+      "evidence": "symptoms are consistent with an L4-5 herniated disc with radiculopathy",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_003",
+      "target": "N_014",
+      "relation": "INDICATES",
+      "evidence": "radiates distally into his right leg ... radiculopathy",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_004",
+      "target": "N_014",
+      "relation": "INDICATES",
+      "evidence": "numbness and tingling ... radiculopathy",
+      "confidence": 0.88
+    },
+    {
+      "source": "N_009",
+      "target": "N_014",
+      "relation": "INDICATES",
+      "evidence": "Decreased sensation to light touch at the right lateral thigh at the L4 dermatome",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_010",
+      "target": "N_014",
+      "relation": "INDICATES",
+      "evidence": "Midline tenderness at L4-5 disc space",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_011",
+      "target": "N_014",
+      "relation": "CONFIRMS",
+      "evidence": "Supine straight leg test is positive",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_012",
+      "target": "N_014",
+      "relation": "CONFIRMS",
+      "evidence": "MRI of the lumbar spine ... revealed a disc herniation with nerve impingement",
+      "confidence": 0.92
+    },
+    {
+      "source": "N_013",
+      "target": "N_014",
+      "relation": "CONFIRMS",
+      "evidence": "disc herniation with nerve impingement",
+      "confidence": 0.92
+    },
+    {
+      "source": "N_014",
+      "target": "N_001",
+      "relation": "CAUSES",
+      "evidence": "L4-5 herniated disc with radiculopathy",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_007",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "he has attended physical therapy",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_008",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "prescribed pain medications, however they only provided temporary relief",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_016",
+      "target": "N_014",
+      "relation": "TAKEN_FOR",
+      "evidence": "treat the patient conservatively with a corticosteroid injection under fluoroscopy",
+      "confidence": 0.92
+    },
+    {
+      "source": "N_010",
+      "target": "N_015",
+      "relation": "LOCATED_AT",
+      "evidence": "Examination of the lumbar spine: ... Midline tenderness at L4-5 disc space",
+      "confidence": 0.85
+    }
+  ]
+}

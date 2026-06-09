@@ -1,0 +1,205 @@
+{
+  "patient_id": "RES_D2N137",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "hypertension",
+      "type": "DIAGNOSIS",
+      "normalized_name": "hypertension",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "depression",
+      "type": "DIAGNOSIS",
+      "normalized_name": "depression",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "history of high blood pressure",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "history of high blood pressure",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "history of depression",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "history of depression",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "right carpal tunnel release",
+      "type": "PROCEDURE",
+      "normalized_name": "right carpal tunnel release",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "headaches",
+      "type": "SYMPTOM",
+      "normalized_name": "headaches",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "increased screen time",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "increased screen time",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "elevated blood pressure",
+      "type": "LAB_RESULT",
+      "normalized_name": "elevated blood pressure",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "fluctuating blood pressure",
+      "type": "SYMPTOM",
+      "normalized_name": "fluctuating blood pressure",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "lisinopril",
+      "type": "TREATMENT",
+      "normalized_name": "lisinopril",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "weekly therapy",
+      "type": "TREATMENT",
+      "normalized_name": "weekly therapy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "antidepressant medication",
+      "type": "TREATMENT",
+      "normalized_name": "antidepressant medication",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "dietary indiscretion",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "dietary indiscretion",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "numbness or tingling in hands",
+      "type": "SYMPTOM",
+      "normalized_name": "numbness or tingling in hands",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "carpal tunnel syndrome",
+      "type": "DIAGNOSIS",
+      "normalized_name": "carpal tunnel syndrome",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_003",
+      "target": "N_001",
+      "relation": "CAUSES",
+      "evidence": "history of high blood pressure",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_004",
+      "target": "N_002",
+      "relation": "CAUSES",
+      "evidence": "depression in the past",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_008",
+      "target": "N_001",
+      "relation": "INDICATES",
+      "evidence": "Blood Pressure: Elevated.",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_009",
+      "target": "N_001",
+      "relation": "INDICATES",
+      "evidence": "Her blood pressures have been fluctuating lately.",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_010",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "Increase lisinopril to 10 mg once daily.",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_011",
+      "target": "N_002",
+      "relation": "TAKEN_FOR",
+      "evidence": "managing this with medication and weekly therapy",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_012",
+      "target": "N_002",
+      "relation": "TAKEN_FOR",
+      "evidence": "managing this with medication and weekly therapy",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_007",
+      "target": "N_006",
+      "relation": "CAUSES",
+      "evidence": "she thought that it was related to her increased screen time",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_013",
+      "target": "N_001",
+      "relation": "CAUSES",
+      "evidence": "She does admit to dietary indiscretion due to her increased workload.",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_005",
+      "target": "N_015",
+      "relation": "TAKEN_FOR",
+      "evidence": "right carpal tunnel release done about 2 years ago",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_014",
+      "target": "N_015",
+      "relation": "INDICATES",
+      "evidence": "She denies numbness or tingling in her hands or fingers.",
+      "confidence": 0.5
+    }
+  ]
+}

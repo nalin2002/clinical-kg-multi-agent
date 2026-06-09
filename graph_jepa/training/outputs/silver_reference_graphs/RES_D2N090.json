@@ -1,0 +1,198 @@
+{
+  "patient_id": "RES_D2N090",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "depression",
+      "type": "DIAGNOSIS",
+      "normalized_name": "depression",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "type 2 diabetes",
+      "type": "DIAGNOSIS",
+      "normalized_name": "type 2 diabetes",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "kidney transplant",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "kidney transplant",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "wooziness",
+      "type": "SYMPTOM",
+      "normalized_name": "wooziness",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "elevated blood sugar",
+      "type": "SYMPTOM",
+      "normalized_name": "elevated blood sugar",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "Lantus insulin",
+      "type": "TREATMENT",
+      "normalized_name": "lantus insulin",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "immunotherapy medication",
+      "type": "TREATMENT",
+      "normalized_name": "immunotherapy medication",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "meditation",
+      "type": "TREATMENT",
+      "normalized_name": "meditation",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "systolic ejection murmur",
+      "type": "SYMPTOM",
+      "normalized_name": "systolic ejection murmur",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "lower extremity edema",
+      "type": "SYMPTOM",
+      "normalized_name": "lower extremity edema",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "elevated fasting glucose 162",
+      "type": "LAB_RESULT",
+      "normalized_name": "elevated fasting glucose 162",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "elevated hemoglobin a1c 8",
+      "type": "LAB_RESULT",
+      "normalized_name": "elevated hemoglobin a1c 8",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "hyperglycemia",
+      "type": "DIAGNOSIS",
+      "normalized_name": "hyperglycemia",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "status post renal transplant",
+      "type": "DIAGNOSIS",
+      "normalized_name": "status post renal transplant",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "lower extremities",
+      "type": "LOCATION",
+      "normalized_name": "lower extremities",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_011",
+      "target": "N_013",
+      "relation": "INDICATES",
+      "evidence": "Fasting glucose is elevated at 162",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_012",
+      "target": "N_013",
+      "relation": "INDICATES",
+      "evidence": "Hemoglobin A1c is elevated at 8",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_011",
+      "target": "N_002",
+      "relation": "INDICATES",
+      "evidence": "recent blood glucose level was 162",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_012",
+      "target": "N_002",
+      "relation": "INDICATES",
+      "evidence": "recent hemoglobin A1c was 8",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_004",
+      "target": "N_013",
+      "relation": "INDICATES",
+      "evidence": "felt woozy over the weekend... levels were elevated",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_006",
+      "target": "N_013",
+      "relation": "TAKEN_FOR",
+      "evidence": "Increase Lantus to 20 units at night",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_006",
+      "target": "N_002",
+      "relation": "TAKEN_FOR",
+      "evidence": "He continues Lantus insulin at bedtime",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_007",
+      "target": "N_014",
+      "relation": "TAKEN_FOR",
+      "evidence": "compliant with his immunotherapy medications",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_008",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "He recently started meditating",
+      "confidence": 0.75
+    },
+    {
+      "source": "N_010",
+      "target": "N_015",
+      "relation": "LOCATED_AT",
+      "evidence": "1+ edema in the bilateral lower extremities",
+      "confidence": 0.9
+    }
+  ]
+}

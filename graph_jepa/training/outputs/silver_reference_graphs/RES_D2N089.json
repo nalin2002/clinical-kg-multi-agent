@@ -1,0 +1,250 @@
+{
+  "patient_id": "RES_D2N089",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "rheumatoid arthritis",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "rheumatoid arthritis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "atrial fibrillation",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "atrial fibrillation",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "GERD",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "gerd",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "methotrexate",
+      "type": "TREATMENT",
+      "normalized_name": "methotrexate",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "palpitations",
+      "type": "SYMPTOM",
+      "normalized_name": "palpitations",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "event monitor",
+      "type": "PROCEDURE",
+      "normalized_name": "event monitor",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "Protonix",
+      "type": "TREATMENT",
+      "normalized_name": "protonix",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "nasal congestion",
+      "type": "SYMPTOM",
+      "normalized_name": "nasal congestion",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "allergies",
+      "type": "DIAGNOSIS",
+      "normalized_name": "allergies",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "systolic ejection murmur",
+      "type": "SYMPTOM",
+      "normalized_name": "systolic ejection murmur",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "right elbow edema and erythema",
+      "type": "SYMPTOM",
+      "normalized_name": "right elbow edema and erythema",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "right elbow pain to palpation",
+      "type": "SYMPTOM",
+      "normalized_name": "right elbow pain to palpation",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "right elbow",
+      "type": "LOCATION",
+      "normalized_name": "right elbow",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "conversion pause",
+      "type": "LAB_RESULT",
+      "normalized_name": "conversion pause",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "autoimmune panel normal",
+      "type": "LAB_RESULT",
+      "normalized_name": "autoimmune panel normal",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "cardiac ablation",
+      "type": "PROCEDURE",
+      "normalized_name": "cardiac ablation",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "dietary modifications",
+      "type": "TREATMENT",
+      "normalized_name": "dietary modifications",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "name": "stress",
+      "type": "SYMPTOM",
+      "normalized_name": "stress",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_004",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "The patient has continued utilizing methotrexate 2.5 mg once a week",
+      "confidence": 0.97
+    },
+    {
+      "source": "N_002",
+      "target": "N_005",
+      "relation": "CAUSES",
+      "evidence": "In terms of her atrial fibrillation, she endorses continued palpitations",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_005",
+      "target": "N_002",
+      "relation": "INDICATES",
+      "evidence": "She continues to experience episodes of palpitations",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_018",
+      "target": "N_005",
+      "relation": "CAUSES",
+      "evidence": "when she starts to get stressed they start to flare up again",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_007",
+      "target": "N_003",
+      "relation": "TAKEN_FOR",
+      "evidence": "Regarding her GERD, she has continued to utilize Protonix 40 mg a day",
+      "confidence": 0.97
+    },
+    {
+      "source": "N_017",
+      "target": "N_003",
+      "relation": "TAKEN_FOR",
+      "evidence": "She has been compliant with dietary modifications",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_009",
+      "target": "N_008",
+      "relation": "CAUSES",
+      "evidence": "The patient endorses nasal congestion because of her allergies",
+      "confidence": 0.92
+    },
+    {
+      "source": "N_008",
+      "target": "N_009",
+      "relation": "INDICATES",
+      "evidence": "nasal congestion because of her allergies",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_011",
+      "target": "N_013",
+      "relation": "LOCATED_AT",
+      "evidence": "Edema and erythema of the right elbow",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_012",
+      "target": "N_013",
+      "relation": "LOCATED_AT",
+      "evidence": "Pain to palpation of the right elbow",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_014",
+      "target": "N_002",
+      "relation": "CONFIRMS",
+      "evidence": "her recent cardiac event monitor demonstrated a conversion pause",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_006",
+      "target": "N_002",
+      "relation": "CONFIRMS",
+      "evidence": "had an event monitor done ... Positive for conversion pause",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_015",
+      "target": "N_001",
+      "relation": "INDICATES",
+      "evidence": "Autoimmune panel: Normal. Well controlled rheumatoid arthritis",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_016",
+      "target": "N_002",
+      "relation": "TAKEN_FOR",
+      "evidence": "We will refer her to cardiology for a cardiac ablation",
+      "confidence": 0.9
+    }
+  ]
+}

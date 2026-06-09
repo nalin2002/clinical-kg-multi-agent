@@ -1,0 +1,214 @@
+{
+  "patient_id": "RES_D2N189",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "myocardial infarction",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "myocardial infarction",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "stent placement in right coronary artery",
+      "type": "PROCEDURE",
+      "normalized_name": "stent placement in right coronary artery",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "right coronary artery",
+      "type": "LOCATION",
+      "normalized_name": "right coronary artery",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "Brilinta",
+      "type": "TREATMENT",
+      "normalized_name": "brilinta",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "aspirin",
+      "type": "TREATMENT",
+      "normalized_name": "aspirin",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "Crestor",
+      "type": "TREATMENT",
+      "normalized_name": "crestor",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "Toprol",
+      "type": "TREATMENT",
+      "normalized_name": "toprol",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "shortness of breath with exertion",
+      "type": "SYMPTOM",
+      "normalized_name": "shortness of breath with exertion",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "systolic ejection murmur",
+      "type": "SYMPTOM",
+      "normalized_name": "systolic ejection murmur",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "left base of heart",
+      "type": "LOCATION",
+      "normalized_name": "left base of heart",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "ejection fraction 50%",
+      "type": "LAB_RESULT",
+      "normalized_name": "ejection fraction 50%",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "echocardiogram",
+      "type": "PROCEDURE",
+      "normalized_name": "echocardiogram",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "mild mitral regurgitation",
+      "type": "DIAGNOSIS",
+      "normalized_name": "mild mitral regurgitation",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "inferior myocardial infarction",
+      "type": "DIAGNOSIS",
+      "normalized_name": "inferior myocardial infarction",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "cardiac rehab",
+      "type": "TREATMENT",
+      "normalized_name": "cardiac rehab",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "cardiac catheterization",
+      "type": "PROCEDURE",
+      "normalized_name": "cardiac catheterization",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "right radial artery",
+      "type": "LOCATION",
+      "normalized_name": "right radial artery",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_002",
+      "target": "N_003",
+      "relation": "LOCATED_AT",
+      "evidence": "stent placement in the right coronary artery",
+      "confidence": 0.97
+    },
+    {
+      "source": "N_009",
+      "target": "N_010",
+      "relation": "LOCATED_AT",
+      "evidence": "systolic ejection murmur heard at the left base",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_012",
+      "target": "N_013",
+      "relation": "CONFIRMS",
+      "evidence": "echocardiogram which demonstrates mild mitral regurgitation",
+      "confidence": 0.92
+    },
+    {
+      "source": "N_005",
+      "target": "N_014",
+      "relation": "TAKEN_FOR",
+      "evidence": "continuing to take his medications to prevent the stent from clogging again and to reduce his chance of another heart attack",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_004",
+      "target": "N_014",
+      "relation": "TAKEN_FOR",
+      "evidence": "Continue Brilinta for at least 1 year",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_006",
+      "target": "N_014",
+      "relation": "TAKEN_FOR",
+      "evidence": "Continue Crestor 40 mg once a day",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_007",
+      "target": "N_014",
+      "relation": "TAKEN_FOR",
+      "evidence": "Continue Toprol 50 mg once a day",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_015",
+      "target": "N_014",
+      "relation": "TAKEN_FOR",
+      "evidence": "He will enroll in cardiac rehab to gain confidence in returning to exercising",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_001",
+      "target": "N_014",
+      "relation": "CAUSES",
+      "evidence": "Patient reports an myocardial infarction; Inferior myocardial infarction",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_016",
+      "target": "N_017",
+      "relation": "LOCATED_AT",
+      "evidence": "Right radial artery cardiac catheterization site",
+      "confidence": 0.9
+    }
+  ]
+}

@@ -1,0 +1,211 @@
+{
+  "patient_id": "RES_D2N154",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "right heel pain",
+      "type": "SYMPTOM",
+      "normalized_name": "right heel pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "posterior heel",
+      "type": "LOCATION",
+      "normalized_name": "posterior heel",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "calf",
+      "type": "LOCATION",
+      "normalized_name": "calf",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "right Achilles tendinitis",
+      "type": "DIAGNOSIS",
+      "normalized_name": "right achilles tendinitis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "overuse",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "overuse",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "pain with resisted extension",
+      "type": "SYMPTOM",
+      "normalized_name": "pain with resisted extension",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "positive calcaneal squeeze test",
+      "type": "PROCEDURE",
+      "normalized_name": "calcaneal squeeze test",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "Achilles tendon tenderness",
+      "type": "SYMPTOM",
+      "normalized_name": "achilles tendon tenderness",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "Thompson test",
+      "type": "PROCEDURE",
+      "normalized_name": "thompson test",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "rest from training",
+      "type": "TREATMENT",
+      "normalized_name": "rest from training",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "physical therapy",
+      "type": "TREATMENT",
+      "normalized_name": "physical therapy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "ibuprofen",
+      "type": "TREATMENT",
+      "normalized_name": "ibuprofen",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "x-ray",
+      "type": "PROCEDURE",
+      "normalized_name": "x-ray",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "Achilles tendon rupture",
+      "type": "DIAGNOSIS",
+      "normalized_name": "achilles tendon rupture",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_002",
+      "relation": "LOCATED_AT",
+      "evidence": "He locates his pain to the posterior aspect of his heel",
+      "confidence": 0.97
+    },
+    {
+      "source": "N_001",
+      "target": "N_003",
+      "relation": "LOCATED_AT",
+      "evidence": "which radiates proximally into his calf",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_001",
+      "target": "N_004",
+      "relation": "INDICATES",
+      "evidence": "Right Achilles tendinitis",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_006",
+      "target": "N_004",
+      "relation": "INDICATES",
+      "evidence": "Pain with resisted extension",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_008",
+      "target": "N_004",
+      "relation": "INDICATES",
+      "evidence": "Severe tenderness to the Achilles tendon",
+      "confidence": 0.88
+    },
+    {
+      "source": "N_007",
+      "target": "N_004",
+      "relation": "CONFIRMS",
+      "evidence": "Positive calcaneal squeeze test",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_009",
+      "target": "N_014",
+      "relation": "RULES_OUT",
+      "evidence": "Thompson test is negative, bilaterally",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_005",
+      "target": "N_004",
+      "relation": "CAUSES",
+      "evidence": "his symptoms are likely secondary to overuse",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_004",
+      "target": "N_001",
+      "relation": "CAUSES",
+      "evidence": "Right Achilles tendinitis ... right heel pain",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_010",
+      "target": "N_004",
+      "relation": "TAKEN_FOR",
+      "evidence": "instructed to take at least 1 week off from his training to recover",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_011",
+      "target": "N_004",
+      "relation": "TAKEN_FOR",
+      "evidence": "referral for formal physical therapy to strengthen his right lower extremities",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_012",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "take 3 tablets of ibuprofen every 6 hours for pain",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_013",
+      "target": "N_004",
+      "relation": "CONFIRMS",
+      "evidence": "If his pain does not improve with physical therapy, I will recommend obtaining an x-ray",
+      "confidence": 0.6
+    }
+  ]
+}

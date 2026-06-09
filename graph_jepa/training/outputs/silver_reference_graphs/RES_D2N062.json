@@ -1,0 +1,220 @@
+{
+  "patient_id": "RES_D2N062",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "dysphagia",
+      "type": "SYMPTOM",
+      "normalized_name": "dysphagia",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "chest pain on swallowing",
+      "type": "SYMPTOM",
+      "normalized_name": "chest pain on swallowing",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "epigastric pain",
+      "type": "SYMPTOM",
+      "normalized_name": "epigastric pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "weight gain",
+      "type": "SYMPTOM",
+      "normalized_name": "weight gain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "stress",
+      "type": "SYMPTOM",
+      "normalized_name": "stress",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "acute esophagitis",
+      "type": "DIAGNOSIS",
+      "normalized_name": "acute esophagitis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "esophagus",
+      "type": "LOCATION",
+      "normalized_name": "esophagus",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "chest",
+      "type": "LOCATION",
+      "normalized_name": "chest",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "epigastric area",
+      "type": "LOCATION",
+      "normalized_name": "epigastric area",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "barium swallow study",
+      "type": "PROCEDURE",
+      "normalized_name": "barium swallow study",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "esophageal narrowing",
+      "type": "LAB_RESULT",
+      "normalized_name": "esophageal narrowing",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "upper endoscopy",
+      "type": "PROCEDURE",
+      "normalized_name": "upper endoscopy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "Protonix 40 mg",
+      "type": "TREATMENT",
+      "normalized_name": "protonix 40 mg",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "Carafate 1 gram",
+      "type": "TREATMENT",
+      "normalized_name": "carafate 1 gram",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "alcohol use",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "alcohol use",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "dietary changes",
+      "type": "TREATMENT",
+      "normalized_name": "dietary changes",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_006",
+      "relation": "INDICATES",
+      "evidence": "difficulty swallowing ... Acute esophagitis",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_003",
+      "target": "N_006",
+      "relation": "INDICATES",
+      "evidence": "epigastric pain ... Acute esophagitis",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_002",
+      "target": "N_006",
+      "relation": "INDICATES",
+      "evidence": "The pain radiates to his chest when he swallows",
+      "confidence": 0.55
+    },
+    {
+      "source": "N_002",
+      "target": "N_008",
+      "relation": "LOCATED_AT",
+      "evidence": "pain radiates to his chest when he swallows",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_003",
+      "target": "N_009",
+      "relation": "LOCATED_AT",
+      "evidence": "Pain to palpation of epigastric area",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_010",
+      "target": "N_006",
+      "relation": "CONFIRMS",
+      "evidence": "barium swallow study revealed two areas of mild narrowing in the mid and lower portions of your esophagus",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_011",
+      "target": "N_006",
+      "relation": "INDICATES",
+      "evidence": "two areas of mild narrowing in the mid and lower portions of your esophagus",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_011",
+      "target": "N_007",
+      "relation": "LOCATED_AT",
+      "evidence": "narrowing in the mid and lower portions of your esophagus",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_013",
+      "target": "N_006",
+      "relation": "TAKEN_FOR",
+      "evidence": "prescribed the patient Protonix 40 mg ... to treat his acute esophagitis",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_014",
+      "target": "N_006",
+      "relation": "TAKEN_FOR",
+      "evidence": "prescribed the patient Carafate 1 gram ... to help coat the lining of his esophagus and stomach",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_016",
+      "target": "N_006",
+      "relation": "TAKEN_FOR",
+      "evidence": "advised him to change his diet, decrease alcohol, and caffeine",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_015",
+      "target": "N_006",
+      "relation": "CAUSES",
+      "evidence": "he has been drinking more ... Acute esophagitis",
+      "confidence": 0.5
+    }
+  ]
+}

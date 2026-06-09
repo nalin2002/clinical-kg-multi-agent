@@ -1,0 +1,273 @@
+{
+  "patient_id": "RES_D2N019",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "right elbow pain",
+      "type": "SYMPTOM",
+      "normalized_name": "right elbow pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "right elbow",
+      "type": "LOCATION",
+      "normalized_name": "right elbow",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "ibuprofen",
+      "type": "TREATMENT",
+      "normalized_name": "ibuprofen",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "ice",
+      "type": "TREATMENT",
+      "normalized_name": "ice",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "anaphylaxis",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "anaphylaxis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "EpiPen",
+      "type": "TREATMENT",
+      "normalized_name": "epipen",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "neck surgery",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "neck surgery",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "tenderness over lateral epicondyle",
+      "type": "SYMPTOM",
+      "normalized_name": "tenderness over lateral epicondyle",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "lateral epicondyle",
+      "type": "LOCATION",
+      "normalized_name": "lateral epicondyle",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "swelling",
+      "type": "SYMPTOM",
+      "normalized_name": "swelling",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "redness",
+      "type": "SYMPTOM",
+      "normalized_name": "redness",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "pain with flexion and extension of elbow",
+      "type": "SYMPTOM",
+      "normalized_name": "pain with flexion and extension of elbow",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "pain over dorsal forearm",
+      "type": "SYMPTOM",
+      "normalized_name": "pain over dorsal forearm",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "dorsal aspect of forearm",
+      "type": "LOCATION",
+      "normalized_name": "dorsal aspect of forearm",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "right elbow x-ray",
+      "type": "PROCEDURE",
+      "normalized_name": "right elbow x-ray",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "acute fracture",
+      "type": "DIAGNOSIS",
+      "normalized_name": "acute fracture",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "mild effusion lateral aspect",
+      "type": "LAB_RESULT",
+      "normalized_name": "mild effusion lateral aspect",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "name": "right elbow lateral epicondylitis",
+      "type": "DIAGNOSIS",
+      "normalized_name": "right elbow lateral epicondylitis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_019",
+      "name": "sling",
+      "type": "TREATMENT",
+      "normalized_name": "sling",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_020",
+      "name": "Motrin 800 mg",
+      "type": "TREATMENT",
+      "normalized_name": "motrin 800 mg",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_002",
+      "relation": "LOCATED_AT",
+      "evidence": "evaluation of right elbow pain",
+      "confidence": 0.97
+    },
+    {
+      "source": "N_003",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "tried applying ice and taking Ibuprofen",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_004",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "tried applying ice and taking Ibuprofen",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_006",
+      "target": "N_005",
+      "relation": "TAKEN_FOR",
+      "evidence": "history of anaphylaxis and has an EpiPen",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_008",
+      "target": "N_009",
+      "relation": "LOCATED_AT",
+      "evidence": "tenderness over the lateral epicondyle",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_008",
+      "target": "N_018",
+      "relation": "INDICATES",
+      "evidence": "tenderness over the lateral epicondyle ... lateral epicondylitis",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_013",
+      "target": "N_014",
+      "relation": "LOCATED_AT",
+      "evidence": "Pain over the dorsal aspect of the forearm",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_010",
+      "target": "N_002",
+      "relation": "LOCATED_AT",
+      "evidence": "Examination of the right elbow shows ... Swelling and redness",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_011",
+      "target": "N_002",
+      "relation": "LOCATED_AT",
+      "evidence": "Examination of the right elbow shows ... Swelling and redness",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_015",
+      "target": "N_016",
+      "relation": "RULES_OUT",
+      "evidence": "X-rays of the right elbow shows no obvious signs of acute fracture",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_015",
+      "target": "N_002",
+      "relation": "LOCATED_AT",
+      "evidence": "X-rays of the right elbow",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_017",
+      "target": "N_018",
+      "relation": "INDICATES",
+      "evidence": "Mild effusion about the lateral aspect ... lateral epicondylitis",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_018",
+      "target": "N_001",
+      "relation": "CAUSES",
+      "evidence": "Right elbow lateral epicondylitis",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_019",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "recommended a sling for comfort",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_020",
+      "target": "N_018",
+      "relation": "TAKEN_FOR",
+      "evidence": "I will prescribe Motrin, 800 mg",
+      "confidence": 0.85
+    }
+  ]
+}

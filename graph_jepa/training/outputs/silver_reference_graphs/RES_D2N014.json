@@ -1,0 +1,296 @@
+{
+  "patient_id": "RES_D2N014",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "dyspnea",
+      "type": "SYMPTOM",
+      "normalized_name": "dyspnea",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "shortness of breath",
+      "type": "SYMPTOM",
+      "normalized_name": "shortness of breath",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "lightheadedness",
+      "type": "SYMPTOM",
+      "normalized_name": "lightheadedness",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "dizziness",
+      "type": "SYMPTOM",
+      "normalized_name": "dizziness",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "dyspnea on exertion",
+      "type": "SYMPTOM",
+      "normalized_name": "dyspnea on exertion",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "fine crackles bilaterally",
+      "type": "SYMPTOM",
+      "normalized_name": "fine crackles bilaterally",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "bilateral lower extremity edema",
+      "type": "SYMPTOM",
+      "normalized_name": "bilateral lower extremity edema",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "fluid retention",
+      "type": "SYMPTOM",
+      "normalized_name": "fluid retention",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "congestive heart failure",
+      "type": "DIAGNOSIS",
+      "normalized_name": "congestive heart failure",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "congestive heart failure exacerbation",
+      "type": "DIAGNOSIS",
+      "normalized_name": "congestive heart failure exacerbation",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "dietary indiscretion",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "dietary indiscretion",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "Lasix 80 mg once a day",
+      "type": "TREATMENT",
+      "normalized_name": "lasix",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "carvedilol 25 mg twice a day",
+      "type": "TREATMENT",
+      "normalized_name": "carvedilol",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "ECG",
+      "type": "PROCEDURE",
+      "normalized_name": "ecg",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "left ventricular hypertrophy",
+      "type": "LAB_RESULT",
+      "normalized_name": "left ventricular hypertrophy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "echocardiogram",
+      "type": "PROCEDURE",
+      "normalized_name": "echocardiogram",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "diminished ejection fraction",
+      "type": "LAB_RESULT",
+      "normalized_name": "diminished ejection fraction",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "name": "basal cell carcinoma",
+      "type": "DIAGNOSIS",
+      "normalized_name": "basal cell carcinoma",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_019",
+      "name": "skin cancer removal",
+      "type": "PROCEDURE",
+      "normalized_name": "skin cancer removal",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_020",
+      "name": "skin cancer pathology clear margins",
+      "type": "LAB_RESULT",
+      "normalized_name": "skin cancer pathology clear margins",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_021",
+      "name": "cataract extraction",
+      "type": "PROCEDURE",
+      "normalized_name": "cataract extraction",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_022",
+      "name": "lower extremity",
+      "type": "LOCATION",
+      "normalized_name": "lower extremity",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_005",
+      "target": "N_009",
+      "relation": "INDICATES",
+      "evidence": "Cardiovascular: Endorse dyspnea on exertion.",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_006",
+      "target": "N_009",
+      "relation": "INDICATES",
+      "evidence": "Respiratory: Fine crackles bilaterally.",
+      "confidence": 0.75
+    },
+    {
+      "source": "N_007",
+      "target": "N_009",
+      "relation": "INDICATES",
+      "evidence": "Bilateral lower extremity edema.",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_007",
+      "target": "N_022",
+      "relation": "LOCATED_AT",
+      "evidence": "Bilateral lower extremity edema.",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_010",
+      "target": "N_002",
+      "relation": "CAUSES",
+      "evidence": "his symptoms which led to his ED visit were due to an exacerbation of his heart failure",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_010",
+      "target": "N_003",
+      "relation": "CAUSES",
+      "evidence": "his symptoms which led to his ED visit were due to an exacerbation of his heart failure",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_010",
+      "target": "N_004",
+      "relation": "CAUSES",
+      "evidence": "his symptoms which led to his ED visit were due to an exacerbation of his heart failure",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_011",
+      "target": "N_010",
+      "relation": "CAUSES",
+      "evidence": "He admits to some dietary indiscretion, which likely resulted in fluid retention.",
+      "confidence": 0.75
+    },
+    {
+      "source": "N_011",
+      "target": "N_008",
+      "relation": "CAUSES",
+      "evidence": "dietary indiscretion, which likely resulted in fluid retention",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_012",
+      "target": "N_009",
+      "relation": "TAKEN_FOR",
+      "evidence": "I will prescribe Lasix 80 mg once a day.",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_013",
+      "target": "N_009",
+      "relation": "TAKEN_FOR",
+      "evidence": "I will also place him on carvedilol 25 mg twice a day.",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_014",
+      "target": "N_009",
+      "relation": "CONFIRMS",
+      "evidence": "ECG revealed left ventricular hypertrophy consistent with congestive heart failure.",
+      "confidence": 0.75
+    },
+    {
+      "source": "N_015",
+      "target": "N_009",
+      "relation": "INDICATES",
+      "evidence": "ECG revealed left ventricular hypertrophy consistent with congestive heart failure.",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_017",
+      "target": "N_009",
+      "relation": "INDICATES",
+      "evidence": "Echocardiogram demonstrates stable diminished ejection fraction.",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_019",
+      "target": "N_018",
+      "relation": "TAKEN_FOR",
+      "evidence": "He had a skin cancer removed approximately 5 months ago.",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_020",
+      "target": "N_018",
+      "relation": "CONFIRMS",
+      "evidence": "Skin cancer pathology demonstrates clear margins.",
+      "confidence": 0.7
+    }
+  ]
+}

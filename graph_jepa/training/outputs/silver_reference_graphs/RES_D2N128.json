@@ -1,0 +1,227 @@
+{
+  "patient_id": "RES_D2N128",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "osteoarthritis",
+      "type": "DIAGNOSIS",
+      "normalized_name": "osteoarthritis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "elbow pain",
+      "type": "SYMPTOM",
+      "normalized_name": "elbow pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "right elbow",
+      "type": "LOCATION",
+      "normalized_name": "right elbow",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "numbness and tingling in hands",
+      "type": "SYMPTOM",
+      "normalized_name": "numbness and tingling in hands",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "gout",
+      "type": "DIAGNOSIS",
+      "normalized_name": "gout",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "toe inflammation",
+      "type": "SYMPTOM",
+      "normalized_name": "toe inflammation",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "toe",
+      "type": "LOCATION",
+      "normalized_name": "toe",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "psoriasis",
+      "type": "DIAGNOSIS",
+      "normalized_name": "psoriasis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "colchicine 0.6 mg",
+      "type": "TREATMENT",
+      "normalized_name": "colchicine 0.6 mg",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "joint pain",
+      "type": "SYMPTOM",
+      "normalized_name": "joint pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "olecranon edema and inflammation",
+      "type": "SYMPTOM",
+      "normalized_name": "olecranon edema and inflammation",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "olecranon bursa tenderness",
+      "type": "SYMPTOM",
+      "normalized_name": "olecranon bursa tenderness",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "right elbow x-ray",
+      "type": "PROCEDURE",
+      "normalized_name": "right elbow x-ray",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "meloxicam 15 mg",
+      "type": "TREATMENT",
+      "normalized_name": "meloxicam 15 mg",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "steroid cream",
+      "type": "TREATMENT",
+      "normalized_name": "steroid cream",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "history of gout",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "history of gout",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_002",
+      "target": "N_001",
+      "relation": "INDICATES",
+      "evidence": "her osteoarthritis has been flaring up a little lately, and she would like to talk about that, primarily in her elbows",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_002",
+      "target": "N_003",
+      "relation": "LOCATED_AT",
+      "evidence": "her right elbow bothers her more than her left elbow",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_011",
+      "target": "N_003",
+      "relation": "LOCATED_AT",
+      "evidence": "there is some edema and inflammation of the right olecranon",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_012",
+      "target": "N_003",
+      "relation": "LOCATED_AT",
+      "evidence": "tenderness to palpation of the olecranon bursa",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_006",
+      "target": "N_005",
+      "relation": "INDICATES",
+      "evidence": "She had some inflammation of her toe at that time",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_006",
+      "target": "N_007",
+      "relation": "LOCATED_AT",
+      "evidence": "inflammation of her toe",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_016",
+      "target": "N_005",
+      "relation": "CAUSES",
+      "evidence": "She also has a history of gout",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_009",
+      "target": "N_005",
+      "relation": "TAKEN_FOR",
+      "evidence": "still on colchicine 0.6 mg twice a day as needed for flare-ups of her gout",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_014",
+      "target": "N_002",
+      "relation": "TAKEN_FOR",
+      "evidence": "prescribe meloxicam 15 mg once a day for pain and swelling",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_014",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "Osteoarthritis ... prescribe meloxicam 15 mg once a day for pain and swelling",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_015",
+      "target": "N_008",
+      "relation": "TAKEN_FOR",
+      "evidence": "Psoriasis Medical Treatment: Continue steroid cream",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_013",
+      "target": "N_001",
+      "relation": "CONFIRMS",
+      "evidence": "We will order a right elbow x-ray",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_011",
+      "target": "N_001",
+      "relation": "INDICATES",
+      "evidence": "edema and inflammation of the right olecranon",
+      "confidence": 0.6
+    }
+  ]
+}

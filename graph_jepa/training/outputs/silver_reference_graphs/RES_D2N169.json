@@ -1,0 +1,244 @@
+{
+  "patient_id": "RES_D2N169",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "shortness of breath",
+      "type": "SYMPTOM",
+      "normalized_name": "shortness of breath",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "lightheadedness",
+      "type": "SYMPTOM",
+      "normalized_name": "lightheadedness",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "chest pain",
+      "type": "SYMPTOM",
+      "normalized_name": "chest pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "cough",
+      "type": "SYMPTOM",
+      "normalized_name": "cough",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "dyspnea on exertion",
+      "type": "SYMPTOM",
+      "normalized_name": "dyspnea on exertion",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "expiratory wheezing bilaterally",
+      "type": "SYMPTOM",
+      "normalized_name": "expiratory wheezing bilaterally",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "bilateral lower extremity edema",
+      "type": "SYMPTOM",
+      "normalized_name": "bilateral lower extremity edema",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "asthma exacerbation",
+      "type": "DIAGNOSIS",
+      "normalized_name": "asthma exacerbation",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "migraines",
+      "type": "DIAGNOSIS",
+      "normalized_name": "migraines",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "acid reflux",
+      "type": "DIAGNOSIS",
+      "normalized_name": "acid reflux",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "Imitrex",
+      "type": "TREATMENT",
+      "normalized_name": "imitrex",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "Protonix",
+      "type": "TREATMENT",
+      "normalized_name": "protonix",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "albuterol inhaler",
+      "type": "TREATMENT",
+      "normalized_name": "albuterol inhaler",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "cataract surgery",
+      "type": "PROCEDURE",
+      "normalized_name": "cataract surgery",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "pulmonary function test",
+      "type": "PROCEDURE",
+      "normalized_name": "pulmonary function test",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "chest x-ray",
+      "type": "PROCEDURE",
+      "normalized_name": "chest x-ray",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "CBC",
+      "type": "LAB_RESULT",
+      "normalized_name": "cbc",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "name": "chest",
+      "type": "LOCATION",
+      "normalized_name": "chest",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_019",
+      "name": "bilateral lower extremities",
+      "type": "LOCATION",
+      "normalized_name": "bilateral lower extremities",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_006",
+      "target": "N_008",
+      "relation": "INDICATES",
+      "evidence": "He does have slight expiratory wheezing bilaterally on exam. I suspect his episode of shortness of breath was due to an exacerbation of asthma.",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_001",
+      "target": "N_008",
+      "relation": "INDICATES",
+      "evidence": "I suspect his episode of shortness of breath was due to an exacerbation of asthma.",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_003",
+      "target": "N_018",
+      "relation": "LOCATED_AT",
+      "evidence": "he had mild chest pain",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_007",
+      "target": "N_019",
+      "relation": "LOCATED_AT",
+      "evidence": "Trace edema in the bilateral lower extremities",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_013",
+      "target": "N_006",
+      "relation": "TAKEN_FOR",
+      "evidence": "prescribe an albuterol inhaler, 2 puffs every 4 hours as needed for wheezing or shortness of breath",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_013",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "albuterol inhaler ... as needed for wheezing or shortness of breath",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_013",
+      "target": "N_008",
+      "relation": "TAKEN_FOR",
+      "evidence": "I suspect his episode of shortness of breath was due to an exacerbation of asthma ... prescribe an albuterol inhaler",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_011",
+      "target": "N_009",
+      "relation": "TAKEN_FOR",
+      "evidence": "continue Imitrex as needed for migraines",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_012",
+      "target": "N_010",
+      "relation": "TAKEN_FOR",
+      "evidence": "taking Protonix for his reflux",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_015",
+      "target": "N_008",
+      "relation": "RULES_OUT",
+      "evidence": "Pulmonary function test are within normal limits",
+      "confidence": 0.5
+    },
+    {
+      "source": "N_016",
+      "target": "N_008",
+      "relation": "RULES_OUT",
+      "evidence": "X-ray of the chest is unremarkable",
+      "confidence": 0.5
+    },
+    {
+      "source": "N_016",
+      "target": "N_018",
+      "relation": "LOCATED_AT",
+      "evidence": "X-ray of the chest",
+      "confidence": 0.9
+    }
+  ]
+}

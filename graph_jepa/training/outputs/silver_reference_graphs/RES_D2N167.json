@@ -1,0 +1,309 @@
+{
+  "patient_id": "RES_D2N167",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "left knee pain",
+      "type": "SYMPTOM",
+      "normalized_name": "left knee pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "left knee",
+      "type": "LOCATION",
+      "normalized_name": "left knee",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "limping",
+      "type": "SYMPTOM",
+      "normalized_name": "limping",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "throbbing pain",
+      "type": "SYMPTOM",
+      "normalized_name": "throbbing pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "edema",
+      "type": "SYMPTOM",
+      "normalized_name": "edema",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "effusion",
+      "type": "SYMPTOM",
+      "normalized_name": "effusion",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "pain with flexion and extension",
+      "type": "SYMPTOM",
+      "normalized_name": "pain with flexion and extension",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "MCL strain",
+      "type": "DIAGNOSIS",
+      "normalized_name": "mcl strain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "knee injury from fall",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "knee injury from fall",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "ulcer",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "ulcer",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "Tylenol",
+      "type": "TREATMENT",
+      "normalized_name": "tylenol",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "kinesiology tape",
+      "type": "TREATMENT",
+      "normalized_name": "kinesiology tape",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "knee immobilizer",
+      "type": "TREATMENT",
+      "normalized_name": "knee immobilizer",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "tramadol 50 mg",
+      "type": "TREATMENT",
+      "normalized_name": "tramadol 50 mg",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "ice",
+      "type": "TREATMENT",
+      "normalized_name": "ice",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "knee x-ray (4 views)",
+      "type": "PROCEDURE",
+      "normalized_name": "knee x-ray",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "fracture",
+      "type": "DIAGNOSIS",
+      "normalized_name": "fracture",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "name": "dislocation",
+      "type": "DIAGNOSIS",
+      "normalized_name": "dislocation",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_019",
+      "name": "MRI",
+      "type": "PROCEDURE",
+      "normalized_name": "mri",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_020",
+      "name": "negative Lachman's test",
+      "type": "PROCEDURE",
+      "normalized_name": "negative lachman's test",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_021",
+      "name": "negative valgus and varus stress test",
+      "type": "PROCEDURE",
+      "normalized_name": "negative valgus and varus stress test",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_002",
+      "relation": "LOCATED_AT",
+      "evidence": "evaluation of left knee pain",
+      "confidence": 0.98
+    },
+    {
+      "source": "N_001",
+      "target": "N_008",
+      "relation": "INDICATES",
+      "evidence": "Left knee pain, possible MCL strain",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_004",
+      "target": "N_001",
+      "relation": "INDICATES",
+      "evidence": "Her pain is described as a throbbing pain",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_005",
+      "target": "N_008",
+      "relation": "INDICATES",
+      "evidence": "Edema and effusion noted",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_006",
+      "target": "N_008",
+      "relation": "INDICATES",
+      "evidence": "Edema and effusion noted",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_007",
+      "target": "N_008",
+      "relation": "INDICATES",
+      "evidence": "Pain with flexion and extension of the knee",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_007",
+      "target": "N_002",
+      "relation": "LOCATED_AT",
+      "evidence": "Pain with flexion and extension of the knee",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_009",
+      "target": "N_008",
+      "relation": "CAUSES",
+      "evidence": "she was running around with her niece and fell... heard a pop... twisted her knee",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_009",
+      "target": "N_001",
+      "relation": "CAUSES",
+      "evidence": "onset of her pain began 1 week ago, when she fell",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_011",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "taking Tylenol, which has provided mild and temporary relief",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_012",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "wrapping her knee with kinesiology tape",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_013",
+      "target": "N_008",
+      "relation": "TAKEN_FOR",
+      "evidence": "place the patient in a knee immobilizer to provide increased support",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_014",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "prescribed the patient tramadol 50 mg to treat her pain",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_015",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "advised her to ice her left knee 3 to 4 times a day",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_016",
+      "target": "N_017",
+      "relation": "RULES_OUT",
+      "evidence": "reveal no evidence of any fractures or dislocations",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_016",
+      "target": "N_018",
+      "relation": "RULES_OUT",
+      "evidence": "reveal no evidence of any fractures or dislocations",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_020",
+      "target": "N_008",
+      "relation": "RULES_OUT",
+      "evidence": "Negative Lachman's",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_021",
+      "target": "N_008",
+      "relation": "RULES_OUT",
+      "evidence": "Negative valgus and varus stress test",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_010",
+      "target": "N_001",
+      "relation": "CAUSES",
+      "evidence": "unable to take ibuprofen secondary to an ulcer",
+      "confidence": 0.3
+    }
+  ]
+}

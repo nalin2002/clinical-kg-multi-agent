@@ -1,0 +1,115 @@
+{
+  "patient_id": "RES_D2N176",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "acid reflux",
+      "type": "DIAGNOSIS",
+      "normalized_name": "acid reflux",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "Protonix 40 mg daily",
+      "type": "TREATMENT",
+      "normalized_name": "protonix 40 mg daily",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "dietary modifications",
+      "type": "TREATMENT",
+      "normalized_name": "dietary modifications",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "reflux",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "reflux",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "systolic ejection murmur",
+      "type": "SYMPTOM",
+      "normalized_name": "systolic ejection murmur",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "bilateral lower extremity pitting edema",
+      "type": "SYMPTOM",
+      "normalized_name": "bilateral lower extremity pitting edema",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "lower extremities",
+      "type": "LOCATION",
+      "normalized_name": "lower extremities",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "mild gastritis",
+      "type": "DIAGNOSIS",
+      "normalized_name": "mild gastritis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "endoscopy",
+      "type": "PROCEDURE",
+      "normalized_name": "endoscopy",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_002",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "Continue Protonix 40 mg daily. This is well controlled on Protonix",
+      "confidence": 0.97
+    },
+    {
+      "source": "N_003",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "well controlled on Protonix and dietary modifications",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_004",
+      "target": "N_001",
+      "relation": "CAUSES",
+      "evidence": "past medical history significant for reflux",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_006",
+      "target": "N_007",
+      "relation": "LOCATED_AT",
+      "evidence": "1+ pitting edema bilaterally in the lower extremities",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_009",
+      "target": "N_008",
+      "relation": "CONFIRMS",
+      "evidence": "Endoscopy from last year revealed mild gastritis",
+      "confidence": 0.95
+    }
+  ]
+}

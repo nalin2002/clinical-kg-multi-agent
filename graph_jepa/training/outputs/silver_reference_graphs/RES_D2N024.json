@@ -1,0 +1,144 @@
+{
+  "patient_id": "RES_D2N024",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "bilateral reduction mammoplasty",
+      "type": "PROCEDURE",
+      "normalized_name": "bilateral reduction mammoplasty",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "left breast lump",
+      "type": "SYMPTOM",
+      "normalized_name": "left breast lump",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "back pain",
+      "type": "SYMPTOM",
+      "normalized_name": "back pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "scar widening",
+      "type": "SYMPTOM",
+      "normalized_name": "scar widening",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "bothersome scar",
+      "type": "SYMPTOM",
+      "normalized_name": "bothersome scar",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "Mederma scar gel",
+      "type": "TREATMENT",
+      "normalized_name": "mederma scar gel",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "incisional scar massage",
+      "type": "TREATMENT",
+      "normalized_name": "incisional scar massage",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "left breast",
+      "type": "LOCATION",
+      "normalized_name": "left breast",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "breast incision",
+      "type": "LOCATION",
+      "normalized_name": "breast incision",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "bilateral breast photos",
+      "type": "PROCEDURE",
+      "normalized_name": "bilateral breast photos",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_002",
+      "target": "N_008",
+      "relation": "LOCATED_AT",
+      "evidence": "lump along the left breast",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_006",
+      "target": "N_002",
+      "relation": "TAKEN_FOR",
+      "evidence": "lower incisional lump from last visit has resolved with massaging and use of scar gel",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_007",
+      "target": "N_002",
+      "relation": "TAKEN_FOR",
+      "evidence": "resolved with massaging and use of scar gel",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_006",
+      "target": "N_005",
+      "relation": "TAKEN_FOR",
+      "evidence": "Continue Mederma scar gel and incisional scar massage",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_007",
+      "target": "N_005",
+      "relation": "TAKEN_FOR",
+      "evidence": "Continue Mederma scar gel and incisional scar massage twice daily",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_006",
+      "target": "N_009",
+      "relation": "LOCATED_AT",
+      "evidence": "Mederma scar gel to incision",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_004",
+      "target": "N_009",
+      "relation": "LOCATED_AT",
+      "evidence": "Bilateral breast incisions well healed with widening of the scar tissue",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_001",
+      "target": "N_004",
+      "relation": "CAUSES",
+      "evidence": "status post bilateral reduction mammaplasty ... widening of the scar tissue bilaterally",
+      "confidence": 0.7
+    }
+  ]
+}

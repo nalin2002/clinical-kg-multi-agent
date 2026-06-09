@@ -1,0 +1,287 @@
+{
+  "patient_id": "RES_D2N052",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "right-sided back pain",
+      "type": "SYMPTOM",
+      "normalized_name": "right-sided back pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "hematuria",
+      "type": "SYMPTOM",
+      "normalized_name": "hematuria",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "nausea",
+      "type": "SYMPTOM",
+      "normalized_name": "nausea",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "kidney stone, right side",
+      "type": "DIAGNOSIS",
+      "normalized_name": "kidney stone, right side",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "proximal right ureter",
+      "type": "LOCATION",
+      "normalized_name": "proximal right ureter",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "right flank",
+      "type": "LOCATION",
+      "normalized_name": "right flank",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "ibuprofen",
+      "type": "TREATMENT",
+      "normalized_name": "ibuprofen",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "ibuprofen 800 mg",
+      "type": "TREATMENT",
+      "normalized_name": "ibuprofen 800 mg",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "increased fluid intake",
+      "type": "TREATMENT",
+      "normalized_name": "increased fluid intake",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "urine strainer",
+      "type": "TREATMENT",
+      "normalized_name": "urine strainer",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "CT scan of the abdomen",
+      "type": "PROCEDURE",
+      "normalized_name": "ct scan of the abdomen",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "family history of kidney stones",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "family history of kidney stones",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "CVA tenderness",
+      "type": "SYMPTOM",
+      "normalized_name": "cva tenderness",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "abdominal tenderness",
+      "type": "SYMPTOM",
+      "normalized_name": "abdominal tenderness",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "BMP",
+      "type": "PROCEDURE",
+      "normalized_name": "bmp",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "urinalysis",
+      "type": "PROCEDURE",
+      "normalized_name": "urinalysis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "urine culture",
+      "type": "PROCEDURE",
+      "normalized_name": "urine culture",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "name": "antibiotics",
+      "type": "TREATMENT",
+      "normalized_name": "antibiotics",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_019",
+      "name": "lithotripsy",
+      "type": "PROCEDURE",
+      "normalized_name": "lithotripsy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_020",
+      "name": "hydronephrosis",
+      "type": "DIAGNOSIS",
+      "normalized_name": "hydronephrosis",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_004",
+      "relation": "INDICATES",
+      "evidence": "constant right-sided back pain that radiates down to her lower right side",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_002",
+      "target": "N_004",
+      "relation": "INDICATES",
+      "evidence": "hematuria ... concerned for possible kidney stones",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_003",
+      "target": "N_004",
+      "relation": "INDICATES",
+      "evidence": "nausea ... concerned for possible kidney stones",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_001",
+      "target": "N_006",
+      "relation": "LOCATED_AT",
+      "evidence": "right-sided back pain that radiates down to her lower right side",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_013",
+      "target": "N_006",
+      "relation": "LOCATED_AT",
+      "evidence": "CVA located near her flank with tenderness on the right",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_013",
+      "target": "N_004",
+      "relation": "INDICATES",
+      "evidence": "CVA located near her flank with tenderness on the right",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_004",
+      "target": "N_005",
+      "relation": "LOCATED_AT",
+      "evidence": "kidney stone ... located in the proximal right ureter",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_011",
+      "target": "N_004",
+      "relation": "CONFIRMS",
+      "evidence": "CT scan of the abdomen ... revealed a kidney stone measuring 0.5 cm",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_011",
+      "target": "N_020",
+      "relation": "RULES_OUT",
+      "evidence": "There is no evidence of hydronephrosis",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_012",
+      "target": "N_004",
+      "relation": "CAUSES",
+      "evidence": "her father has had kidney stones in the past",
+      "confidence": 0.5
+    },
+    {
+      "source": "N_007",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "The only treatment she has tried so far is ibuprofen with minimal pain relief",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_008",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "we will send in a prescription for ibuprofen 800 mg to help with her pain",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_009",
+      "target": "N_004",
+      "relation": "TAKEN_FOR",
+      "evidence": "advised her to drink plenty of fluids ... to help facilitate passing of the stone",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_010",
+      "target": "N_004",
+      "relation": "TAKEN_FOR",
+      "evidence": "provided with a urine strainer so she can see if and when the stone passes",
+      "confidence": 0.75
+    },
+    {
+      "source": "N_019",
+      "target": "N_004",
+      "relation": "TAKEN_FOR",
+      "evidence": "consider further treatment such as a lithotripsy",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_004",
+      "target": "N_001",
+      "relation": "CAUSES",
+      "evidence": "kidney stone ... right-sided back pain",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_004",
+      "target": "N_002",
+      "relation": "CAUSES",
+      "evidence": "kidney stone ... hematuria",
+      "confidence": 0.6
+    }
+  ]
+}

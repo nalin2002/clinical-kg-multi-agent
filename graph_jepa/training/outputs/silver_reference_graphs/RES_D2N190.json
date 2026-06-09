@@ -1,0 +1,317 @@
+{
+  "patient_id": "RES_D2N190",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "right knee pain",
+      "type": "SYMPTOM",
+      "normalized_name": "right knee pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "right knee",
+      "type": "LOCATION",
+      "normalized_name": "right knee",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "medial aspect of knee",
+      "type": "LOCATION",
+      "normalized_name": "medial aspect of knee",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "knee clicking",
+      "type": "SYMPTOM",
+      "normalized_name": "knee clicking",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "knee instability",
+      "type": "SYMPTOM",
+      "normalized_name": "knee instability",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "knee abrasion",
+      "type": "SYMPTOM",
+      "normalized_name": "knee abrasion",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "fall off bicycle striking right knee",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "fall off bicycle striking right knee",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "posterior cruciate ligament sprain",
+      "type": "DIAGNOSIS",
+      "normalized_name": "posterior cruciate ligament sprain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "medial joint line tenderness",
+      "type": "SYMPTOM",
+      "normalized_name": "medial joint line tenderness",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "positive posterior drawer test",
+      "type": "PROCEDURE",
+      "normalized_name": "positive posterior drawer test",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "negative Lachman test",
+      "type": "PROCEDURE",
+      "normalized_name": "negative lachman test",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "negative McMurray test",
+      "type": "PROCEDURE",
+      "normalized_name": "negative mcmurray test",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "knee radiograph",
+      "type": "PROCEDURE",
+      "normalized_name": "knee radiograph",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "fracture",
+      "type": "DIAGNOSIS",
+      "normalized_name": "fracture",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "dislocation",
+      "type": "DIAGNOSIS",
+      "normalized_name": "dislocation",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "MRI right knee",
+      "type": "PROCEDURE",
+      "normalized_name": "mri right knee",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "ibuprofen",
+      "type": "TREATMENT",
+      "normalized_name": "ibuprofen",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "name": "knee brace",
+      "type": "TREATMENT",
+      "normalized_name": "knee brace",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_019",
+      "name": "physical therapy",
+      "type": "TREATMENT",
+      "normalized_name": "physical therapy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_020",
+      "name": "ice therapy",
+      "type": "TREATMENT",
+      "normalized_name": "ice therapy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_021",
+      "name": "prescription medication",
+      "type": "TREATMENT",
+      "normalized_name": "prescription medication",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_022",
+      "name": "medial patella",
+      "type": "LOCATION",
+      "normalized_name": "medial patella",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_002",
+      "relation": "LOCATED_AT",
+      "evidence": "evaluation of right knee pain",
+      "confidence": 0.97
+    },
+    {
+      "source": "N_001",
+      "target": "N_003",
+      "relation": "LOCATED_AT",
+      "evidence": "She localizes her pain to the medial aspect of the knee",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_007",
+      "target": "N_001",
+      "relation": "CAUSES",
+      "evidence": "she fell off of a tandem bicycle and struck her right knee on a curb approximately 2 weeks ago",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_001",
+      "target": "N_008",
+      "relation": "INDICATES",
+      "evidence": "Right knee pain, possible posterior cruciate ligament sprain",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_005",
+      "target": "N_008",
+      "relation": "INDICATES",
+      "evidence": "occasional instability with ambulation; possible posterior cruciate ligament sprain",
+      "confidence": 0.65
+    },
+    {
+      "source": "N_004",
+      "target": "N_008",
+      "relation": "INDICATES",
+      "evidence": "occasional clicking with full extension of the knee",
+      "confidence": 0.5
+    },
+    {
+      "source": "N_009",
+      "target": "N_008",
+      "relation": "INDICATES",
+      "evidence": "Tenderness along the medial joint line; possible posterior cruciate ligament sprain",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_010",
+      "target": "N_008",
+      "relation": "INDICATES",
+      "evidence": "Laxity with posterior drawer testing. 1+ posterior drawer test",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_011",
+      "target": "N_008",
+      "relation": "RULES_OUT",
+      "evidence": "Negative Lachman test",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_012",
+      "target": "N_008",
+      "relation": "RULES_OUT",
+      "evidence": "Negative McMurray test",
+      "confidence": 0.55
+    },
+    {
+      "source": "N_006",
+      "target": "N_022",
+      "relation": "LOCATED_AT",
+      "evidence": "a dime-sized abrasion ... over the medial patella",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_013",
+      "target": "N_014",
+      "relation": "RULES_OUT",
+      "evidence": "no evidence of any fractures or dislocations",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_013",
+      "target": "N_015",
+      "relation": "RULES_OUT",
+      "evidence": "no evidence of any fractures or dislocations",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_016",
+      "target": "N_008",
+      "relation": "CONFIRMS",
+      "evidence": "obtain an MRI of the right knee to evaluate for a possible posterior cruciate ligament injury",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_017",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "she took ibuprofen ... can continue taking her ibuprofen",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_018",
+      "target": "N_008",
+      "relation": "TAKEN_FOR",
+      "evidence": "be placed in a brace to provide increased support",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_019",
+      "target": "N_008",
+      "relation": "TAKEN_FOR",
+      "evidence": "attend formal physical therapy to work on her range of motion and strengthening",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_020",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "ice her right knee a few times a day to reduce the swelling",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_021",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "send in a prescription medication she can take less frequently",
+      "confidence": 0.7
+    }
+  ]
+}

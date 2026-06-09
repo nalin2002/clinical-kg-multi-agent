@@ -1,0 +1,221 @@
+{
+  "patient_id": "RES_D2N168",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "depression",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "depression",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "hypertension",
+      "type": "DIAGNOSIS",
+      "normalized_name": "hypertension",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "lightheadedness",
+      "type": "SYMPTOM",
+      "normalized_name": "lightheadedness",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "presyncope",
+      "type": "SYMPTOM",
+      "normalized_name": "presyncope",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "elevated blood pressure",
+      "type": "LAB_RESULT",
+      "normalized_name": "elevated blood pressure",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "headache",
+      "type": "SYMPTOM",
+      "normalized_name": "headache",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "lisinopril",
+      "type": "TREATMENT",
+      "normalized_name": "lisinopril",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "nasal congestion",
+      "type": "SYMPTOM",
+      "normalized_name": "nasal congestion",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "seasonal allergies",
+      "type": "DIAGNOSIS",
+      "normalized_name": "seasonal allergies",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "therapy",
+      "type": "TREATMENT",
+      "normalized_name": "therapy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "systolic ejection murmur",
+      "type": "SYMPTOM",
+      "normalized_name": "systolic ejection murmur",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "bilateral lower extremity pitting edema",
+      "type": "SYMPTOM",
+      "normalized_name": "bilateral lower extremity pitting edema",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "lower extremities",
+      "type": "LOCATION",
+      "normalized_name": "lower extremities",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "electrocardiogram",
+      "type": "PROCEDURE",
+      "normalized_name": "electrocardiogram",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "echocardiogram",
+      "type": "PROCEDURE",
+      "normalized_name": "echocardiogram",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "decreased ejection fraction",
+      "type": "LAB_RESULT",
+      "normalized_name": "decreased ejection fraction",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "EKG changes from chronic hypertension",
+      "type": "LAB_RESULT",
+      "normalized_name": "ekg changes from chronic hypertension",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_005",
+      "target": "N_002",
+      "relation": "INDICATES",
+      "evidence": "her blood pressure was nearly 200",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_003",
+      "target": "N_002",
+      "relation": "INDICATES",
+      "evidence": "began to feel lightheaded ... blood pressure was nearly 200",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_006",
+      "target": "N_002",
+      "relation": "INDICATES",
+      "evidence": "blood pressure was nearly 200 and she had a headache",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_007",
+      "target": "N_002",
+      "relation": "TAKEN_FOR",
+      "evidence": "The patient is taking her lisinopril as prescribed",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_010",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "Last year she started therapy and she has been going once a week",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_008",
+      "target": "N_009",
+      "relation": "INDICATES",
+      "evidence": "nasal congestion, which she attributes to her seasonal allergies",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_009",
+      "target": "N_008",
+      "relation": "CAUSES",
+      "evidence": "nasal congestion, which she attributes to her seasonal allergies",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_012",
+      "target": "N_013",
+      "relation": "LOCATED_AT",
+      "evidence": "Trace pitting edema in the bilateral lower extremities",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_016",
+      "target": "N_002",
+      "relation": "INDICATES",
+      "evidence": "Echocardiogram demonstrates decreased ejection fraction",
+      "confidence": 0.5
+    },
+    {
+      "source": "N_017",
+      "target": "N_002",
+      "relation": "INDICATES",
+      "evidence": "A recent EKG revealed changes from her chronic high blood pressure",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_004",
+      "target": "N_002",
+      "relation": "INDICATES",
+      "evidence": "presented to the emergency department yesterday with an elevated blood pressure, presyncope, and headache",
+      "confidence": 0.6
+    }
+  ]
+}

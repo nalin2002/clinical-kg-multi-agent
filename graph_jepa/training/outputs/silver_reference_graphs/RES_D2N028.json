@@ -1,0 +1,250 @@
+{
+  "patient_id": "RES_D2N028",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "abdominal pain",
+      "type": "SYMPTOM",
+      "normalized_name": "abdominal pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "constipation",
+      "type": "DIAGNOSIS",
+      "normalized_name": "constipation",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "diarrhea",
+      "type": "SYMPTOM",
+      "normalized_name": "diarrhea",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "umbilicus",
+      "type": "LOCATION",
+      "normalized_name": "umbilicus",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "elevated AST and ALT",
+      "type": "LAB_RESULT",
+      "normalized_name": "elevated ast and alt",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "Crestor",
+      "type": "TREATMENT",
+      "normalized_name": "crestor",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "olmesartan",
+      "type": "TREATMENT",
+      "normalized_name": "olmesartan",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "Tylenol",
+      "type": "TREATMENT",
+      "normalized_name": "tylenol",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "hepatomegaly",
+      "type": "DIAGNOSIS",
+      "normalized_name": "hepatomegaly",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "CT of abdomen",
+      "type": "PROCEDURE",
+      "normalized_name": "ct of abdomen",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "hard stools",
+      "type": "SYMPTOM",
+      "normalized_name": "hard stools",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "left periumbilical tenderness",
+      "type": "SYMPTOM",
+      "normalized_name": "left periumbilical tenderness",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "increased stool burden in colon",
+      "type": "SYMPTOM",
+      "normalized_name": "increased stool burden in colon",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "fiber supplement",
+      "type": "TREATMENT",
+      "normalized_name": "fiber supplement",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "increased water consumption",
+      "type": "TREATMENT",
+      "normalized_name": "increased water consumption",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "liver ultrasound",
+      "type": "PROCEDURE",
+      "normalized_name": "liver ultrasound",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "liver",
+      "type": "LOCATION",
+      "normalized_name": "liver",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "name": "elevated liver enzymes",
+      "type": "LAB_RESULT",
+      "normalized_name": "elevated liver enzymes",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_004",
+      "relation": "LOCATED_AT",
+      "evidence": "The pain is localized just inferior to the umbilicus",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_002",
+      "target": "N_001",
+      "relation": "CAUSES",
+      "evidence": "The most likely etiology of his abdominal pain is constipation",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_013",
+      "target": "N_002",
+      "relation": "INDICATES",
+      "evidence": "exam with increased stool burden",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_011",
+      "target": "N_002",
+      "relation": "INDICATES",
+      "evidence": "he has a bowel movement 3-4 times a week and the stools are hard",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_010",
+      "target": "N_002",
+      "relation": "CONFIRMS",
+      "evidence": "normal abdominal CT",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_009",
+      "target": "N_017",
+      "relation": "LOCATED_AT",
+      "evidence": "mild hepatomegaly",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_018",
+      "target": "N_009",
+      "relation": "INDICATES",
+      "evidence": "patient reportedly had elevated liver enzymes on labs",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_006",
+      "target": "N_018",
+      "relation": "CAUSES",
+      "evidence": "The patient is currently on Crestor which may be contributing to his elevated liver enzymes",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_005",
+      "target": "N_009",
+      "relation": "INDICATES",
+      "evidence": "his AST and ALT were mildly elevated",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_008",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "He also takes Tylenol as needed for pain",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_014",
+      "target": "N_002",
+      "relation": "TAKEN_FOR",
+      "evidence": "Start daily fiber supplement ... to help with bowel regularity",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_015",
+      "target": "N_002",
+      "relation": "TAKEN_FOR",
+      "evidence": "increase water consumption to at least 48 ounces daily to help with bowel regularity",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_016",
+      "target": "N_009",
+      "relation": "CONFIRMS",
+      "evidence": "Schedule a liver ultrasound pending lab results",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_012",
+      "target": "N_002",
+      "relation": "INDICATES",
+      "evidence": "mild left periumbilical tenderness to palpation",
+      "confidence": 0.6
+    }
+  ]
+}

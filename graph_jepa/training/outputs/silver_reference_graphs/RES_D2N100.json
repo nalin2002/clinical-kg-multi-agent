@@ -1,0 +1,279 @@
+{
+  "patient_id": "RES_D2N100",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "acne",
+      "type": "SYMPTOM",
+      "normalized_name": "acne",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "face",
+      "type": "LOCATION",
+      "normalized_name": "face",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "comedonal acne",
+      "type": "DIAGNOSIS",
+      "normalized_name": "comedonal acne",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "open and closed comedones",
+      "type": "SYMPTOM",
+      "normalized_name": "open and closed comedones",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "erythematous papules",
+      "type": "SYMPTOM",
+      "normalized_name": "erythematous papules",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "skin-colored papules",
+      "type": "SYMPTOM",
+      "normalized_name": "skin-colored papules",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "forehead",
+      "type": "LOCATION",
+      "normalized_name": "forehead",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "central cheeks",
+      "type": "LOCATION",
+      "normalized_name": "central cheeks",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "chin",
+      "type": "LOCATION",
+      "normalized_name": "chin",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "multiple benign melanocytic nevi",
+      "type": "DIAGNOSIS",
+      "normalized_name": "multiple benign melanocytic nevi",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "trunk",
+      "type": "LOCATION",
+      "normalized_name": "trunk",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "upper and lower extremities",
+      "type": "LOCATION",
+      "normalized_name": "upper and lower extremities",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "Retin-A 0.1% gel",
+      "type": "TREATMENT",
+      "normalized_name": "retin-a 0.1% gel",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "Differin gel",
+      "type": "TREATMENT",
+      "normalized_name": "differin gel",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "Persa-Gel",
+      "type": "TREATMENT",
+      "normalized_name": "persa-gel",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "mild cleanser face washing",
+      "type": "TREATMENT",
+      "normalized_name": "mild cleanser face washing",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "sunscreen SPF 30",
+      "type": "TREATMENT",
+      "normalized_name": "sunscreen spf 30",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "name": "sun sensitivity",
+      "type": "SYMPTOM",
+      "normalized_name": "sun sensitivity",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_019",
+      "name": "dryness or irritation",
+      "type": "SYMPTOM",
+      "normalized_name": "dryness or irritation",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_002",
+      "relation": "LOCATED_AT",
+      "evidence": "evaluation of acne located on the face",
+      "confidence": 0.97
+    },
+    {
+      "source": "N_004",
+      "target": "N_003",
+      "relation": "INDICATES",
+      "evidence": "open and closed comedones ... Comedonal acne",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_005",
+      "target": "N_003",
+      "relation": "INDICATES",
+      "evidence": "erythematous papules on the face ... small inflammatory component",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_006",
+      "target": "N_003",
+      "relation": "INDICATES",
+      "evidence": "Scattered skin-colored papules ... comedones",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_004",
+      "target": "N_007",
+      "relation": "LOCATED_AT",
+      "evidence": "comedones ... on the face, primarily on the forehead",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_005",
+      "target": "N_008",
+      "relation": "LOCATED_AT",
+      "evidence": "some on the central cheeks",
+      "confidence": 0.75
+    },
+    {
+      "source": "N_005",
+      "target": "N_009",
+      "relation": "LOCATED_AT",
+      "evidence": "and chin",
+      "confidence": 0.75
+    },
+    {
+      "source": "N_003",
+      "target": "N_002",
+      "relation": "LOCATED_AT",
+      "evidence": "comedonal acne ... on the face",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_010",
+      "target": "N_011",
+      "relation": "LOCATED_AT",
+      "evidence": "benign melanocytic nevi of ... trunk",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_010",
+      "target": "N_012",
+      "relation": "LOCATED_AT",
+      "evidence": "benign melanocytic nevi of upper and lower extremities",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_013",
+      "target": "N_003",
+      "relation": "TAKEN_FOR",
+      "evidence": "Start Retin-A 0.1% topical gel, apply to acne prone areas",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_014",
+      "target": "N_003",
+      "relation": "TAKEN_FOR",
+      "evidence": "you can try Differin gel over the counter",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_015",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "Her acne regimen includes washing her face ... with Persa-Gel",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_016",
+      "target": "N_003",
+      "relation": "TAKEN_FOR",
+      "evidence": "wash face every morning with a mild cleanser",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_013",
+      "target": "N_018",
+      "relation": "CAUSES",
+      "evidence": "Your topical retinoid will cause sun sensitivity",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_013",
+      "target": "N_019",
+      "relation": "CAUSES",
+      "evidence": "It may also cause some dryness or irritation",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_017",
+      "target": "N_018",
+      "relation": "TAKEN_FOR",
+      "evidence": "you will need to wear sunscreen when you are outside",
+      "confidence": 0.8
+    }
+  ]
+}

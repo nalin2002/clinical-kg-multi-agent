@@ -1,0 +1,183 @@
+{
+  "patient_id": "RES_D2N142",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "hypertension",
+      "type": "DIAGNOSIS",
+      "normalized_name": "hypertension",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "alcohol use disorder",
+      "type": "DIAGNOSIS",
+      "normalized_name": "alcohol use disorder",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "hypercholesterolemia",
+      "type": "DIAGNOSIS",
+      "normalized_name": "hypercholesterolemia",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "hydrochlorothiazide",
+      "type": "TREATMENT",
+      "normalized_name": "hydrochlorothiazide",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "lisinopril",
+      "type": "TREATMENT",
+      "normalized_name": "lisinopril",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "naltrexone injection",
+      "type": "TREATMENT",
+      "normalized_name": "naltrexone injection",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "elevated blood pressure 150/100",
+      "type": "LAB_RESULT",
+      "normalized_name": "elevated blood pressure 150/100",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "headache",
+      "type": "SYMPTOM",
+      "normalized_name": "headache",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "swooshing in left ear",
+      "type": "SYMPTOM",
+      "normalized_name": "swooshing in left ear",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "lethargy",
+      "type": "SYMPTOM",
+      "normalized_name": "lethargy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "left ear",
+      "type": "LOCATION",
+      "normalized_name": "left ear",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "alcohol use",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "alcohol use",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "influenza vaccination",
+      "type": "TREATMENT",
+      "normalized_name": "influenza vaccination",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "Shingrix #2",
+      "type": "TREATMENT",
+      "normalized_name": "shingrix #2",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_004",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "After presenting at 150/100 she was prescribed hydrochlorothiazide 12.5 mg",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_005",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "and lisinopril 20 mg by mouth once daily",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_006",
+      "target": "N_002",
+      "relation": "TAKEN_FOR",
+      "evidence": "I will start her on naltrexone which we have previously discussed",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_007",
+      "target": "N_001",
+      "relation": "INDICATES",
+      "evidence": "After presenting at 150/100 she was prescribed",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_005",
+      "target": "N_008",
+      "relation": "CAUSES",
+      "evidence": "She experienced side effects from lisinopril, such as headaches",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_005",
+      "target": "N_009",
+      "relation": "CAUSES",
+      "evidence": "side effects from lisinopril, such as ... \"swooshing\" in her left ear",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_005",
+      "target": "N_010",
+      "relation": "CAUSES",
+      "evidence": "side effects from lisinopril, such as ... lethargy",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_009",
+      "target": "N_011",
+      "relation": "LOCATED_AT",
+      "evidence": "\"swooshing\" in her left ear",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_012",
+      "target": "N_001",
+      "relation": "CAUSES",
+      "evidence": "her blood pressure would likely improve if she stopped alcohol consumption",
+      "confidence": 0.7
+    }
+  ]
+}

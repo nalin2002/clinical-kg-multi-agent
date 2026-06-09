@@ -1,0 +1,204 @@
+{
+  "patient_id": "RES_D2N018",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "right upper arm pain",
+      "type": "SYMPTOM",
+      "normalized_name": "right upper arm pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "right upper arm",
+      "type": "LOCATION",
+      "normalized_name": "right upper arm",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "ibuprofen",
+      "type": "TREATMENT",
+      "normalized_name": "ibuprofen",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "swelling of right shoulder",
+      "type": "SYMPTOM",
+      "normalized_name": "swelling of right shoulder",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "erythema of right shoulder",
+      "type": "SYMPTOM",
+      "normalized_name": "erythema of right shoulder",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "tenderness over right shoulder",
+      "type": "SYMPTOM",
+      "normalized_name": "tenderness over right shoulder",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "right shoulder",
+      "type": "LOCATION",
+      "normalized_name": "right shoulder",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "X-ray of right humerus, 2 views",
+      "type": "PROCEDURE",
+      "normalized_name": "x-ray of right humerus, 2 views",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "right proximal humerus fracture",
+      "type": "DIAGNOSIS",
+      "normalized_name": "right proximal humerus fracture",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "gallstones",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "gallstones",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "Pepcid",
+      "type": "TREATMENT",
+      "normalized_name": "pepcid",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "lumbar fusion",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "lumbar fusion",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "long arm cast and sling",
+      "type": "TREATMENT",
+      "normalized_name": "long arm cast and sling",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "Lortab 5 mg",
+      "type": "TREATMENT",
+      "normalized_name": "lortab 5 mg",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_002",
+      "relation": "LOCATED_AT",
+      "evidence": "severe right upper arm pain",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_003",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "She has been taking ibuprofen every 6 hours",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_004",
+      "target": "N_007",
+      "relation": "LOCATED_AT",
+      "evidence": "swelling and erythema of the right shoulder",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_005",
+      "target": "N_007",
+      "relation": "LOCATED_AT",
+      "evidence": "swelling and erythema of the right shoulder",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_006",
+      "target": "N_007",
+      "relation": "LOCATED_AT",
+      "evidence": "Tenderness over the right shoulder",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_001",
+      "target": "N_009",
+      "relation": "INDICATES",
+      "evidence": "severe right upper arm pain ... proximal humerus fracture",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_004",
+      "target": "N_009",
+      "relation": "INDICATES",
+      "evidence": "swelling and erythema of the right shoulder",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_006",
+      "target": "N_009",
+      "relation": "INDICATES",
+      "evidence": "Tenderness over the right shoulder",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_008",
+      "target": "N_009",
+      "relation": "CONFIRMS",
+      "evidence": "X-rays of the right humerus, 2 views ... show a proximal humerus fracture",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_011",
+      "target": "N_010",
+      "relation": "TAKEN_FOR",
+      "evidence": "history of gallstones and takes Pepcid",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_013",
+      "target": "N_009",
+      "relation": "TAKEN_FOR",
+      "evidence": "place her into a long arm cast and sling",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_014",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "prescribe Lortab, 5 mg ... as needed for pain",
+      "confidence": 0.9
+    }
+  ]
+}

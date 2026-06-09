@@ -1,0 +1,266 @@
+{
+  "patient_id": "RES_D2N035",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "hypertension",
+      "type": "DIAGNOSIS",
+      "normalized_name": "hypertension",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "Bumex",
+      "type": "TREATMENT",
+      "normalized_name": "bumex",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "Cozaar",
+      "type": "TREATMENT",
+      "normalized_name": "cozaar",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "Norvasc",
+      "type": "TREATMENT",
+      "normalized_name": "norvasc",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "urinary incontinence",
+      "type": "SYMPTOM",
+      "normalized_name": "urinary incontinence",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "systolic ejection murmur",
+      "type": "SYMPTOM",
+      "normalized_name": "systolic ejection murmur",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "lower extremity edema",
+      "type": "SYMPTOM",
+      "normalized_name": "lower extremity edema",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "lower extremity",
+      "type": "LOCATION",
+      "normalized_name": "lower extremity",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "echocardiogram",
+      "type": "PROCEDURE",
+      "normalized_name": "echocardiogram",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "preserved ejection fraction 55%",
+      "type": "LAB_RESULT",
+      "normalized_name": "preserved ejection fraction 55%",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "abnormal diastolic filling",
+      "type": "LAB_RESULT",
+      "normalized_name": "abnormal diastolic filling",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "mitral regurgitation",
+      "type": "DIAGNOSIS",
+      "normalized_name": "mitral regurgitation",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "congestive heart failure",
+      "type": "DIAGNOSIS",
+      "normalized_name": "congestive heart failure",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "dietary indiscretion",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "dietary indiscretion",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "uncontrolled hypertension",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "uncontrolled hypertension",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "nutritionist consult",
+      "type": "PROCEDURE",
+      "normalized_name": "nutritionist consult",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "renal artery ultrasound",
+      "type": "PROCEDURE",
+      "normalized_name": "renal artery ultrasound",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "name": "renal artery stenosis",
+      "type": "DIAGNOSIS",
+      "normalized_name": "renal artery stenosis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_019",
+      "name": "kidney disease",
+      "type": "DIAGNOSIS",
+      "normalized_name": "kidney disease",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_020",
+      "name": "diuretic medication",
+      "type": "TREATMENT",
+      "normalized_name": "diuretic medication",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_020",
+      "target": "N_005",
+      "relation": "CAUSES",
+      "evidence": "Reports urinary incontinence in the setting of diuretic medication.",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_007",
+      "target": "N_008",
+      "relation": "LOCATED_AT",
+      "evidence": "Trace lower extremity edema.",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_009",
+      "target": "N_012",
+      "relation": "CONFIRMS",
+      "evidence": "Echocardiogram reveals ... mild-to-moderate mitral regurgitation.",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_010",
+      "target": "N_013",
+      "relation": "INDICATES",
+      "evidence": "Echocardiogram reveals a preserved ejection fraction of 55%, abnormal diastolic filling",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_011",
+      "target": "N_013",
+      "relation": "INDICATES",
+      "evidence": "abnormal diastolic filling",
+      "confidence": 0.75
+    },
+    {
+      "source": "N_014",
+      "target": "N_013",
+      "relation": "CAUSES",
+      "evidence": "This appears to have been caused by dietary indiscretion and uncontrolled hypertension.",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_015",
+      "target": "N_013",
+      "relation": "CAUSES",
+      "evidence": "caused by dietary indiscretion and uncontrolled hypertension",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_002",
+      "target": "N_013",
+      "relation": "TAKEN_FOR",
+      "evidence": "Continue with Bumex 2 mg once daily.",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_003",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "She can continue on Cozaar 100 mg daily",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_004",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "Norvasc 5 mg once daily",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_016",
+      "target": "N_013",
+      "relation": "TAKEN_FOR",
+      "evidence": "Referral placed for consult with a nutritionist",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_017",
+      "target": "N_018",
+      "relation": "RULES_OUT",
+      "evidence": "Renal artery ultrasound ordered to rule out any issues such as renal artery stenosis.",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_014",
+      "target": "N_001",
+      "relation": "CAUSES",
+      "evidence": "poorly controlled due to inconsistent compliance with medication and dietary indiscretion",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_006",
+      "target": "N_012",
+      "relation": "INDICATES",
+      "evidence": "Stable 2/6 systolic ejection murmur.",
+      "confidence": 0.5
+    }
+  ]
+}

@@ -1,0 +1,264 @@
+{
+  "patient_id": "RES_D2N042",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "right ankle pain",
+      "type": "SYMPTOM",
+      "normalized_name": "right ankle pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "lateral ligament complex sprain",
+      "type": "DIAGNOSIS",
+      "normalized_name": "lateral ligament complex sprain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "right ankle",
+      "type": "LOCATION",
+      "normalized_name": "right ankle",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "lateral malleolus",
+      "type": "LOCATION",
+      "normalized_name": "lateral malleolus",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "ecchymosis",
+      "type": "SYMPTOM",
+      "normalized_name": "ecchymosis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "trace edema",
+      "type": "SYMPTOM",
+      "normalized_name": "trace edema",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "tenderness to palpation over anterolateral soft tissue",
+      "type": "SYMPTOM",
+      "normalized_name": "tenderness anterolateral soft tissue",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "antalgic gait",
+      "type": "SYMPTOM",
+      "normalized_name": "antalgic gait",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "ankle injury",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "ankle injury",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "slip and fall on ice",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "slip and fall on ice",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "ibuprofen",
+      "type": "TREATMENT",
+      "normalized_name": "ibuprofen",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "ice",
+      "type": "TREATMENT",
+      "normalized_name": "ice",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "elevation",
+      "type": "TREATMENT",
+      "normalized_name": "elevation",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "Aircast",
+      "type": "TREATMENT",
+      "normalized_name": "aircast",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "crutches",
+      "type": "TREATMENT",
+      "normalized_name": "crutches",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "x-ray of right ankle",
+      "type": "PROCEDURE",
+      "normalized_name": "x-ray right ankle",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "fracture",
+      "type": "DIAGNOSIS",
+      "normalized_name": "fracture",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "name": "anterior talofibular ligament sprain",
+      "type": "DIAGNOSIS",
+      "normalized_name": "anterior talofibular ligament sprain",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_003",
+      "relation": "LOCATED_AT",
+      "evidence": "right ankle pain",
+      "confidence": 0.98
+    },
+    {
+      "source": "N_001",
+      "target": "N_002",
+      "relation": "INDICATES",
+      "evidence": "her symptoms are consistent with a right ankle sprain of the lateral ligament complex",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_005",
+      "target": "N_004",
+      "relation": "LOCATED_AT",
+      "evidence": "Ecchymosis over the lateral malleolus",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_006",
+      "target": "N_004",
+      "relation": "LOCATED_AT",
+      "evidence": "trace edema in that area",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_005",
+      "target": "N_002",
+      "relation": "INDICATES",
+      "evidence": "Ecchymosis over the lateral malleolus associated with trace edema",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_007",
+      "target": "N_002",
+      "relation": "INDICATES",
+      "evidence": "Tenderness to palpation over the anterolateral soft tissue",
+      "confidence": 0.75
+    },
+    {
+      "source": "N_008",
+      "target": "N_002",
+      "relation": "INDICATES",
+      "evidence": "ambulates with an antalgic gait",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_010",
+      "target": "N_002",
+      "relation": "CAUSES",
+      "evidence": "sustained an injury to her right ankle when she slipped and fell on ice",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_002",
+      "target": "N_001",
+      "relation": "CAUSES",
+      "evidence": "right ankle sprain ... right ankle pain",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_011",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "continue taking ibuprofen as-needed for pain",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_012",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "Ice, elevation, and ibuprofen have been helpful at reducing her pain",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_013",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "keep her leg elevated",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_014",
+      "target": "N_002",
+      "relation": "TAKEN_FOR",
+      "evidence": "placed in an Aircast to help stabilize her ankle",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_015",
+      "target": "N_002",
+      "relation": "TAKEN_FOR",
+      "evidence": "order crutches so she can remain non-weight-bearing",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_016",
+      "target": "N_017",
+      "relation": "RULES_OUT",
+      "evidence": "X-ray images of the right ankle ... reveal no evidence of fracture",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_018",
+      "target": "N_001",
+      "relation": "CAUSES",
+      "evidence": "more specifically the anterior talofibular ligament",
+      "confidence": 0.7
+    }
+  ]
+}

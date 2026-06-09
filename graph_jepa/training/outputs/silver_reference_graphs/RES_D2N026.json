@@ -1,0 +1,317 @@
+{
+  "patient_id": "RES_D2N026",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "left arm pain",
+      "type": "SYMPTOM",
+      "normalized_name": "left arm pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "left hand pain",
+      "type": "SYMPTOM",
+      "normalized_name": "left hand pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "left arm",
+      "type": "LOCATION",
+      "normalized_name": "left arm",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "left hand",
+      "type": "LOCATION",
+      "normalized_name": "left hand",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "pinched nerve",
+      "type": "DIAGNOSIS",
+      "normalized_name": "pinched nerve",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "x-ray of cervical spine",
+      "type": "PROCEDURE",
+      "normalized_name": "x-ray of cervical spine",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "gabapentin",
+      "type": "TREATMENT",
+      "normalized_name": "gabapentin",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "prednisone",
+      "type": "TREATMENT",
+      "normalized_name": "prednisone",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "left finger injury",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "left finger injury",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "peripheral neuropathy",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "peripheral neuropathy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "neck pain",
+      "type": "SYMPTOM",
+      "normalized_name": "neck pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "cervical spine",
+      "type": "LOCATION",
+      "normalized_name": "cervical spine",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "disc degeneration",
+      "type": "DIAGNOSIS",
+      "normalized_name": "disc degeneration",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "facet arthropathy",
+      "type": "DIAGNOSIS",
+      "normalized_name": "facet arthropathy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "left upper extremity neuropathy",
+      "type": "DIAGNOSIS",
+      "normalized_name": "left upper extremity neuropathy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "cervical radiculopathy",
+      "type": "DIAGNOSIS",
+      "normalized_name": "cervical radiculopathy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "arthritis",
+      "type": "DIAGNOSIS",
+      "normalized_name": "arthritis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "name": "cervical MRI",
+      "type": "PROCEDURE",
+      "normalized_name": "cervical mri",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_019",
+      "name": "C7-T1 epidural injection",
+      "type": "TREATMENT",
+      "normalized_name": "c7-t1 epidural injection",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_020",
+      "name": "home exercise program",
+      "type": "TREATMENT",
+      "normalized_name": "home exercise program",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_021",
+      "name": "cervical disc degeneration on x-ray",
+      "type": "LAB_RESULT",
+      "normalized_name": "cervical disc degeneration on x-ray",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_022",
+      "name": "lateral neck pain",
+      "type": "SYMPTOM",
+      "normalized_name": "lateral neck pain",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_003",
+      "relation": "LOCATED_AT",
+      "evidence": "intense pain in his left arm and hand",
+      "confidence": 0.97
+    },
+    {
+      "source": "N_002",
+      "target": "N_004",
+      "relation": "LOCATED_AT",
+      "evidence": "intense pain in his left arm and hand",
+      "confidence": 0.97
+    },
+    {
+      "source": "N_001",
+      "target": "N_005",
+      "relation": "INDICATES",
+      "evidence": "She suspected a pinched nerve",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_006",
+      "target": "N_005",
+      "relation": "RULES_OUT",
+      "evidence": "suspected a pinched nerve and completed x-rays of the cervical spine",
+      "confidence": 0.4
+    },
+    {
+      "source": "N_007",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "prescribed gabapentin... benefited from the gabapentin... reporting improvement of pain at night",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_008",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "prescribed gabapentin and prednisone... benefited from the gabapentin and prednisone",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_010",
+      "target": "N_015",
+      "relation": "CAUSES",
+      "evidence": "possible contribution of peripheral neuropathy",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_011",
+      "target": "N_012",
+      "relation": "LOCATED_AT",
+      "evidence": "mild lateral neck pain",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_001",
+      "target": "N_015",
+      "relation": "INDICATES",
+      "evidence": "Left upper extremity neuropathy, suspicious for cervical radiculopathy",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_015",
+      "target": "N_016",
+      "relation": "INDICATES",
+      "evidence": "Left upper extremity neuropathy, suspicious for cervical radiculopathy",
+      "confidence": 0.75
+    },
+    {
+      "source": "N_021",
+      "target": "N_013",
+      "relation": "CONFIRMS",
+      "evidence": "Significant disc degeneration at C5-6 and to a lesser extent C4-5 and C3-4",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_021",
+      "target": "N_014",
+      "relation": "CONFIRMS",
+      "evidence": "Significant lower facet arthropathy",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_013",
+      "target": "N_012",
+      "relation": "LOCATED_AT",
+      "evidence": "disc degeneration at C5-6 and to a lesser extent C4-5 and C3-4",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_017",
+      "target": "N_011",
+      "relation": "CAUSES",
+      "evidence": "Neck pain in the setting of arthritis and disc generation",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_013",
+      "target": "N_011",
+      "relation": "CAUSES",
+      "evidence": "Neck pain in the setting of arthritis and disc generation",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_018",
+      "target": "N_016",
+      "relation": "CONFIRMS",
+      "evidence": "I am going to set him up for a cervical MRI",
+      "confidence": 0.5
+    },
+    {
+      "source": "N_019",
+      "target": "N_016",
+      "relation": "TAKEN_FOR",
+      "evidence": "tentatively plan for a left C7-T1 epidural afterwards",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_020",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "continue his home exercise program",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_016",
+      "target": "N_001",
+      "relation": "CAUSES",
+      "evidence": "I suspect that this is a flare of cervical radiculopathy",
+      "confidence": 0.7
+    }
+  ]
+}

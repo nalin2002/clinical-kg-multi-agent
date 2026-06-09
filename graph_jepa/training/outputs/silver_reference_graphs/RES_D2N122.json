@@ -1,0 +1,190 @@
+{
+  "patient_id": "RES_D2N122",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "cough",
+      "type": "SYMPTOM",
+      "normalized_name": "cough",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "rheumatoid arthritis",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "rheumatoid arthritis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "methotrexate",
+      "type": "TREATMENT",
+      "normalized_name": "methotrexate",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "right upper lobe lung nodule",
+      "type": "DIAGNOSIS",
+      "normalized_name": "right upper lobe lung nodule",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "right upper lobe",
+      "type": "LOCATION",
+      "normalized_name": "right upper lobe",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "CT scan of chest",
+      "type": "PROCEDURE",
+      "normalized_name": "ct scan of chest",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "smoking history",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "smoking history",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "solitary 2 cm nodule",
+      "type": "LAB_RESULT",
+      "normalized_name": "solitary 2 cm nodule",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "video assisted thoracoscopy",
+      "type": "PROCEDURE",
+      "normalized_name": "video assisted thoracoscopy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "pulmonary function test",
+      "type": "PROCEDURE",
+      "normalized_name": "pulmonary function test",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "PET CT",
+      "type": "PROCEDURE",
+      "normalized_name": "pet ct",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "lung cancer",
+      "type": "DIAGNOSIS",
+      "normalized_name": "lung cancer",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "knuckle swelling",
+      "type": "SYMPTOM",
+      "normalized_name": "knuckle swelling",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "bilateral hands",
+      "type": "LOCATION",
+      "normalized_name": "bilateral hands",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_006",
+      "target": "N_004",
+      "relation": "CONFIRMS",
+      "evidence": "CT scan of chest... demonstrates a solitary 2 cm nodule in the lateral aspect of the right upper lobe",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_008",
+      "target": "N_004",
+      "relation": "CONFIRMS",
+      "evidence": "demonstrates a solitary 2 cm nodule in the lateral aspect of the right upper lobe",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_004",
+      "target": "N_005",
+      "relation": "LOCATED_AT",
+      "evidence": "right upper lobe lung nodule",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_008",
+      "target": "N_005",
+      "relation": "LOCATED_AT",
+      "evidence": "solitary 2 cm nodule in the lateral aspect of the right upper lobe",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_003",
+      "target": "N_002",
+      "relation": "TAKEN_FOR",
+      "evidence": "taking methotrexate 7.5 mg every week",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_007",
+      "target": "N_004",
+      "relation": "CAUSES",
+      "evidence": "because of his smoking history, I think it is best that he has it surgically removed",
+      "confidence": 0.5
+    },
+    {
+      "source": "N_009",
+      "target": "N_004",
+      "relation": "TAKEN_FOR",
+      "evidence": "Nodule will be removed via video assisted thoracoscopy",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_011",
+      "target": "N_012",
+      "relation": "RULES_OUT",
+      "evidence": "PET CT will also be scheduled to determine if the nodule is metabolically active, which can suggest if it is cancerous or inflammatory",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_013",
+      "target": "N_002",
+      "relation": "INDICATES",
+      "evidence": "Mild swelling to the 3rd digit knuckles on the bilateral hands, consistent with RA",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_013",
+      "target": "N_014",
+      "relation": "LOCATED_AT",
+      "evidence": "swelling to the 3rd digit knuckles on the bilateral hands",
+      "confidence": 0.9
+    }
+  ]
+}

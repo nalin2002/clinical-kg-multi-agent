@@ -1,0 +1,189 @@
+{
+  "patient_id": "RES_D2N005",
+  "source": "llm_transcript",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "right middle finger pain",
+      "type": "SYMPTOM",
+      "normalized_name": "right middle finger pain",
+      "evidence": "having a lot of pain at the end of my right middle finger",
+      "turn_id": "P-2"
+    },
+    {
+      "id": "N_002",
+      "name": "tenderness",
+      "type": "SYMPTOM",
+      "normalized_name": "tenderness",
+      "evidence": "tenderness over your distal phalanx of your right middle finger",
+      "turn_id": "D-15"
+    },
+    {
+      "id": "N_003",
+      "name": "right middle finger distal phalanx fracture",
+      "type": "DIAGNOSIS",
+      "normalized_name": "right middle finger distal phalanx fracture",
+      "evidence": "you have a distal phalanx fracture in the middle finger",
+      "turn_id": "D-11"
+    },
+    {
+      "id": "N_004",
+      "name": "tramadol",
+      "type": "TREATMENT",
+      "normalized_name": "tramadol",
+      "evidence": "tramadol, 50 milligrams, every six hours as needed for pain",
+      "turn_id": "D-15"
+    },
+    {
+      "id": "N_005",
+      "name": "finger splint",
+      "type": "TREATMENT",
+      "normalized_name": "finger splint",
+      "evidence": "i'm gon na put you in a finger splint",
+      "turn_id": "D-16"
+    },
+    {
+      "id": "N_006",
+      "name": "digoxin",
+      "type": "TREATMENT",
+      "normalized_name": "digoxin",
+      "evidence": "i'm taking digoxin for afib",
+      "turn_id": "P-17"
+    },
+    {
+      "id": "N_007",
+      "name": "right middle finger x-ray",
+      "type": "PROCEDURE",
+      "normalized_name": "right middle finger x-ray",
+      "evidence": "let's look at your x-ray",
+      "turn_id": "D-11"
+    },
+    {
+      "id": "N_008",
+      "name": "physical exam",
+      "type": "PROCEDURE",
+      "normalized_name": "physical exam",
+      "evidence": "your exam is normal other than you've got tenderness",
+      "turn_id": "D-15"
+    },
+    {
+      "id": "N_009",
+      "name": "right middle finger",
+      "type": "LOCATION",
+      "normalized_name": "right middle finger",
+      "evidence": "right middle finger",
+      "turn_id": "P-2"
+    },
+    {
+      "id": "N_010",
+      "name": "distal phalanx",
+      "type": "LOCATION",
+      "normalized_name": "distal phalanx",
+      "evidence": "distal phalanx of your right middle finger",
+      "turn_id": "D-15"
+    },
+    {
+      "id": "N_011",
+      "name": "atrial fibrillation",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "atrial fibrillation",
+      "evidence": "you have atrial fibrillation",
+      "turn_id": "D-17"
+    },
+    {
+      "id": "N_012",
+      "name": "motor vehicle accident",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "motor vehicle accident",
+      "evidence": "i got rear-ended, slow motor vehicle accident",
+      "turn_id": "P-3"
+    },
+    {
+      "id": "N_013",
+      "name": "comminuted distal phalanx fracture",
+      "type": "LAB_RESULT",
+      "normalized_name": "comminuted distal phalanx fracture",
+      "evidence": "X-rays of the right middle finger, 3 views obtained on today's visit shows a comminuted distal phalanx fracture",
+      "turn_id": "D-11"
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_003",
+      "relation": "INDICATES",
+      "evidence": "right middle finger pain",
+      "confidence": 1.0
+    },
+    {
+      "source": "N_002",
+      "target": "N_003",
+      "relation": "INDICATES",
+      "evidence": "tenderness over your distal phalanx",
+      "confidence": 1.0
+    },
+    {
+      "source": "N_007",
+      "target": "N_003",
+      "relation": "CONFIRMS",
+      "evidence": "you have a distal phalanx fracture in the middle finger",
+      "confidence": 1.0
+    },
+    {
+      "source": "N_013",
+      "target": "N_003",
+      "relation": "CONFIRMS",
+      "evidence": "shows a comminuted distal phalanx fracture",
+      "confidence": 1.0
+    },
+    {
+      "source": "N_012",
+      "target": "N_003",
+      "relation": "CAUSES",
+      "evidence": "got rear-ended, slow motor vehicle accident",
+      "confidence": 1.0
+    },
+    {
+      "source": "N_004",
+      "target": "N_003",
+      "relation": "TAKEN_FOR",
+      "evidence": "tramadol 50 milligrams every six hours as needed for pain",
+      "confidence": 1.0
+    },
+    {
+      "source": "N_005",
+      "target": "N_003",
+      "relation": "TAKEN_FOR",
+      "evidence": "i'm gon na put you in a finger splint",
+      "confidence": 1.0
+    },
+    {
+      "source": "N_006",
+      "target": "N_011",
+      "relation": "TAKEN_FOR",
+      "evidence": "i'm taking digoxin for afib",
+      "confidence": 1.0
+    },
+    {
+      "source": "N_001",
+      "target": "N_009",
+      "relation": "LOCATED_AT",
+      "evidence": "right middle finger",
+      "confidence": 1.0
+    },
+    {
+      "source": "N_002",
+      "target": "N_010",
+      "relation": "LOCATED_AT",
+      "evidence": "tenderness over your distal phalanx",
+      "confidence": 1.0
+    },
+    {
+      "source": "N_003",
+      "target": "N_010",
+      "relation": "LOCATED_AT",
+      "evidence": "distal phalanx fracture",
+      "confidence": 1.0
+    }
+  ]
+}

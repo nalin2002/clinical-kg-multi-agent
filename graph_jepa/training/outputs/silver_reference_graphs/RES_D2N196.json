@@ -1,0 +1,231 @@
+{
+  "patient_id": "RES_D2N196",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "elevated blood pressure",
+      "type": "DIAGNOSIS",
+      "normalized_name": "elevated blood pressure",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "essential hypertension",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "essential hypertension",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "hyperlipidemia",
+      "type": "DIAGNOSIS",
+      "normalized_name": "hyperlipidemia",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "osteoarthritis",
+      "type": "DIAGNOSIS",
+      "normalized_name": "osteoarthritis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "lisinopril",
+      "type": "TREATMENT",
+      "normalized_name": "lisinopril",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "atorvastatin",
+      "type": "TREATMENT",
+      "normalized_name": "atorvastatin",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "Tylenol",
+      "type": "TREATMENT",
+      "normalized_name": "tylenol",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "chest heaviness",
+      "type": "SYMPTOM",
+      "normalized_name": "chest heaviness",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "headache",
+      "type": "SYMPTOM",
+      "normalized_name": "headache",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "lightheadedness",
+      "type": "SYMPTOM",
+      "normalized_name": "lightheadedness",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "chest",
+      "type": "LOCATION",
+      "normalized_name": "chest",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "bibasilar rales",
+      "type": "SYMPTOM",
+      "normalized_name": "bibasilar rales",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "systolic ejection murmur",
+      "type": "SYMPTOM",
+      "normalized_name": "systolic ejection murmur",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "lower extremity edema",
+      "type": "SYMPTOM",
+      "normalized_name": "lower extremity edema",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "lower extremity",
+      "type": "LOCATION",
+      "normalized_name": "lower extremity",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "hydrochlorothiazide",
+      "type": "TREATMENT",
+      "normalized_name": "hydrochlorothiazide",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "cholesterol panel",
+      "type": "PROCEDURE",
+      "normalized_name": "cholesterol panel",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "name": "CBC with differential",
+      "type": "PROCEDURE",
+      "normalized_name": "cbc with differential",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_019",
+      "name": "comprehensive metabolic panel",
+      "type": "PROCEDURE",
+      "normalized_name": "comprehensive metabolic panel",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_020",
+      "name": "urinalysis",
+      "type": "PROCEDURE",
+      "normalized_name": "urinalysis",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_002",
+      "target": "N_001",
+      "relation": "CAUSES",
+      "evidence": "history of essential hypertension; Elevated blood pressure ... uncontrolled",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_005",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "I am going to increase his lisinopril to 60 mg twice per day",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_016",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "Prescription for 25 mg per day of hydrochlorothiazide provided",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_006",
+      "target": "N_003",
+      "relation": "TAKEN_FOR",
+      "evidence": "He will continue the current management with his atorvastatin",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_007",
+      "target": "N_004",
+      "relation": "TAKEN_FOR",
+      "evidence": "He can take Tylenol for any mild pain",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_008",
+      "target": "N_011",
+      "relation": "LOCATED_AT",
+      "evidence": "Reports heaviness in chest",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_014",
+      "target": "N_015",
+      "relation": "LOCATED_AT",
+      "evidence": "Trace lower extremity edema bilaterally",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_017",
+      "target": "N_003",
+      "relation": "TAKEN_FOR",
+      "evidence": "I will order a cholesterol panel",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_020",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "obtain an urinalysis to assess his kidney function",
+      "confidence": 0.6
+    }
+  ]
+}

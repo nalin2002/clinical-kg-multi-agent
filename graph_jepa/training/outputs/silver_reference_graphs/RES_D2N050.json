@@ -1,0 +1,317 @@
+{
+  "patient_id": "RES_D2N050",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "right kidney stone",
+      "type": "DIAGNOSIS",
+      "normalized_name": "right kidney stone",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "right back pain",
+      "type": "SYMPTOM",
+      "normalized_name": "right back pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "nausea",
+      "type": "SYMPTOM",
+      "normalized_name": "nausea",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "sweating",
+      "type": "SYMPTOM",
+      "normalized_name": "sweating",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "pain radiating to groin",
+      "type": "SYMPTOM",
+      "normalized_name": "pain radiating to groin",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "CVA tenderness",
+      "type": "SYMPTOM",
+      "normalized_name": "cva tenderness",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "hematuria",
+      "type": "SYMPTOM",
+      "normalized_name": "hematuria",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "hydronephrosis",
+      "type": "DIAGNOSIS",
+      "normalized_name": "hydronephrosis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "proximal right ureter",
+      "type": "LOCATION",
+      "normalized_name": "proximal right ureter",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "right back",
+      "type": "LOCATION",
+      "normalized_name": "right back",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "groin",
+      "type": "LOCATION",
+      "normalized_name": "groin",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "CT scan of abdomen",
+      "type": "PROCEDURE",
+      "normalized_name": "ct scan of abdomen",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "family history of kidney stones",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "family history of kidney stones",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "oxycodone",
+      "type": "TREATMENT",
+      "normalized_name": "oxycodone",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "Tylenol",
+      "type": "TREATMENT",
+      "normalized_name": "tylenol",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "urine strainer",
+      "type": "TREATMENT",
+      "normalized_name": "urine strainer",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "BMP",
+      "type": "PROCEDURE",
+      "normalized_name": "bmp",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "name": "urinalysis",
+      "type": "PROCEDURE",
+      "normalized_name": "urinalysis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_019",
+      "name": "urine culture",
+      "type": "PROCEDURE",
+      "normalized_name": "urine culture",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_020",
+      "name": "lithotripsy",
+      "type": "TREATMENT",
+      "normalized_name": "lithotripsy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_021",
+      "name": "infection",
+      "type": "DIAGNOSIS",
+      "normalized_name": "infection",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_022",
+      "name": "0.5 cm ureteral stone on CT",
+      "type": "LAB_RESULT",
+      "normalized_name": "0.5 cm ureteral stone on ct",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_002",
+      "target": "N_001",
+      "relation": "INDICATES",
+      "evidence": "sudden onset of right back pain ... told him that he had a kidney stone",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_006",
+      "target": "N_001",
+      "relation": "INDICATES",
+      "evidence": "There is CVA tenderness on the right side",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_001",
+      "target": "N_005",
+      "relation": "CAUSES",
+      "evidence": "when he had pain ... it would radiate almost to his groin",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_001",
+      "target": "N_002",
+      "relation": "CAUSES",
+      "evidence": "evaluation of kidney stones ... sudden onset of right back pain",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_002",
+      "target": "N_010",
+      "relation": "LOCATED_AT",
+      "evidence": "Reports right back pain",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_005",
+      "target": "N_011",
+      "relation": "LOCATED_AT",
+      "evidence": "it would radiate almost to his groin",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_006",
+      "target": "N_010",
+      "relation": "LOCATED_AT",
+      "evidence": "CVA tenderness on the right side",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_001",
+      "target": "N_009",
+      "relation": "LOCATED_AT",
+      "evidence": "a stone ... located in the proximal right ureter",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_012",
+      "target": "N_001",
+      "relation": "CONFIRMS",
+      "evidence": "The CT scan of the abdomen revealed a stone ... in the proximal right ureter",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_022",
+      "target": "N_001",
+      "relation": "CONFIRMS",
+      "evidence": "a stone that is measuring 0.5 cm located in the proximal right ureter",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_012",
+      "target": "N_008",
+      "relation": "RULES_OUT",
+      "evidence": "There is no evidence of hydronephrosis",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_013",
+      "target": "N_001",
+      "relation": "CAUSES",
+      "evidence": "his father has a history of kidney stones in the past",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_014",
+      "target": "N_002",
+      "relation": "TAKEN_FOR",
+      "evidence": "prescribed the patient oxycodone 5 mg every 6 to 8 hours for pain",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_015",
+      "target": "N_002",
+      "relation": "TAKEN_FOR",
+      "evidence": "continue to take Tylenol between the oxycodone doses for any breakthrough pain",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_016",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "continue to use the strainer when he urinates until the stone passes",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_020",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "discuss further treatment options including lithotripsy",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_017",
+      "target": "N_021",
+      "relation": "RULES_OUT",
+      "evidence": "obtain a BMP, urinalysis, and urine culture to evaluate for any signs of infection",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_018",
+      "target": "N_021",
+      "relation": "RULES_OUT",
+      "evidence": "urinalysis ... to evaluate for any signs of infection",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_019",
+      "target": "N_021",
+      "relation": "RULES_OUT",
+      "evidence": "urine culture ... to evaluate for any signs of infection",
+      "confidence": 0.65
+    }
+  ]
+}

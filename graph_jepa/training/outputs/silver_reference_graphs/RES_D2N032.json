@@ -1,0 +1,279 @@
+{
+  "patient_id": "RES_D2N032",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "right hip pain",
+      "type": "SYMPTOM",
+      "normalized_name": "right hip pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "groin pain",
+      "type": "SYMPTOM",
+      "normalized_name": "groin pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "right hip",
+      "type": "LOCATION",
+      "normalized_name": "right hip",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "groin region",
+      "type": "LOCATION",
+      "normalized_name": "groin region",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "hip catching",
+      "type": "SYMPTOM",
+      "normalized_name": "hip catching",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "falls",
+      "type": "SYMPTOM",
+      "normalized_name": "falls",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "bulging discs",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "bulging discs",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "PCOS",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "pcos",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "cholecystectomy",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "cholecystectomy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "right hip degenerative joint disease",
+      "type": "DIAGNOSIS",
+      "normalized_name": "right hip degenerative joint disease",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "high-grade chondromalacia of anterosuperior right acetabulum",
+      "type": "LAB_RESULT",
+      "normalized_name": "high-grade chondromalacia anterosuperior right acetabulum",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "subchondral marrow edema",
+      "type": "LAB_RESULT",
+      "normalized_name": "subchondral marrow edema",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "subchondral cyst formation",
+      "type": "LAB_RESULT",
+      "normalized_name": "subchondral cyst formation",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "MR arthrogram of the right hip",
+      "type": "PROCEDURE",
+      "normalized_name": "mr arthrogram right hip",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "cortisone injection into right hip joint",
+      "type": "TREATMENT",
+      "normalized_name": "cortisone injection right hip joint",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "NSAID",
+      "type": "TREATMENT",
+      "normalized_name": "nsaid",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "low impact exercises",
+      "type": "TREATMENT",
+      "normalized_name": "low impact exercises",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "name": "cane",
+      "type": "TREATMENT",
+      "normalized_name": "cane",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_019",
+      "name": "analgesics",
+      "type": "TREATMENT",
+      "normalized_name": "analgesics",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_003",
+      "relation": "LOCATED_AT",
+      "evidence": "pain in her right hip and groin region",
+      "confidence": 0.97
+    },
+    {
+      "source": "N_002",
+      "target": "N_004",
+      "relation": "LOCATED_AT",
+      "evidence": "pain in her right hip and groin region",
+      "confidence": 0.97
+    },
+    {
+      "source": "N_005",
+      "target": "N_003",
+      "relation": "LOCATED_AT",
+      "evidence": "her hip will sometimes \"catch\" when she moves",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_005",
+      "target": "N_006",
+      "relation": "CAUSES",
+      "evidence": "her hip will sometimes \"catch\" when she moves, causing her to fall on occasion",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_001",
+      "target": "N_010",
+      "relation": "INDICATES",
+      "evidence": "Right hip degenerative joint disease assessment following right hip pain",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_002",
+      "target": "N_010",
+      "relation": "INDICATES",
+      "evidence": "pain in the groin on internal and external rotation; assessment right hip DJD",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_005",
+      "target": "N_010",
+      "relation": "INDICATES",
+      "evidence": "hip catching with right hip degenerative joint disease",
+      "confidence": 0.75
+    },
+    {
+      "source": "N_011",
+      "target": "N_010",
+      "relation": "CONFIRMS",
+      "evidence": "MR arthrogram... reveals evidence of high-grade chondromalacia involving the anterosuperior right acetabulum",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_012",
+      "target": "N_010",
+      "relation": "INDICATES",
+      "evidence": "subchondral marrow edema",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_013",
+      "target": "N_010",
+      "relation": "INDICATES",
+      "evidence": "cyst formation",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_014",
+      "target": "N_010",
+      "relation": "CONFIRMS",
+      "evidence": "MR arthrogram of the right hip completed on 06/03/2021 reveals evidence of high-grade chondromalacia",
+      "confidence": 0.88
+    },
+    {
+      "source": "N_015",
+      "target": "N_010",
+      "relation": "TAKEN_FOR",
+      "evidence": "proceed with a cortisone injection into her right hip joint",
+      "confidence": 0.93
+    },
+    {
+      "source": "N_015",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "cortisone injection... to offload/treat right hip pain",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_016",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "NSAID PRN by mouth",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_017",
+      "target": "N_010",
+      "relation": "TAKEN_FOR",
+      "evidence": "Treatment options discussed are low impact exercises",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_018",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "use of a cane to offload the right hip",
+      "confidence": 0.88
+    },
+    {
+      "source": "N_019",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "use of analgesics as needed",
+      "confidence": 0.85
+    }
+  ]
+}

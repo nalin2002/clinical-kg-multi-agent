@@ -1,0 +1,281 @@
+{
+  "patient_id": "RES_D2N139",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "hypertension",
+      "type": "DIAGNOSIS",
+      "normalized_name": "hypertension",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "palpitations",
+      "type": "SYMPTOM",
+      "normalized_name": "palpitations",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "high blood pressure",
+      "type": "SYMPTOM",
+      "normalized_name": "high blood pressure",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "panic attack",
+      "type": "DIAGNOSIS",
+      "normalized_name": "panic attack",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "caffeine consumption",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "caffeine consumption",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "elevated systolic blood pressure 146-155",
+      "type": "LAB_RESULT",
+      "normalized_name": "elevated systolic blood pressure 146-155",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "family history of hypertension",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "family history of hypertension",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "Benicar HCT",
+      "type": "TREATMENT",
+      "normalized_name": "benicar hct",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "amlodipine",
+      "type": "TREATMENT",
+      "normalized_name": "amlodipine",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "thyroid profile",
+      "type": "PROCEDURE",
+      "normalized_name": "thyroid profile",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "resistant hypertension",
+      "type": "DIAGNOSIS",
+      "normalized_name": "resistant hypertension",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "spironolactone",
+      "type": "TREATMENT",
+      "normalized_name": "spironolactone",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "carvedilol",
+      "type": "TREATMENT",
+      "normalized_name": "carvedilol",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "basic metabolic panel",
+      "type": "PROCEDURE",
+      "normalized_name": "basic metabolic panel",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "gynecomastia",
+      "type": "SYMPTOM",
+      "normalized_name": "gynecomastia",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "electrolyte disturbances",
+      "type": "SYMPTOM",
+      "normalized_name": "electrolyte disturbances",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "dehydration",
+      "type": "DIAGNOSIS",
+      "normalized_name": "dehydration",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "name": "dizziness",
+      "type": "SYMPTOM",
+      "normalized_name": "dizziness",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_019",
+      "name": "erectile dysfunction",
+      "type": "SYMPTOM",
+      "normalized_name": "erectile dysfunction",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_020",
+      "name": "DASH diet",
+      "type": "TREATMENT",
+      "normalized_name": "dash diet",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_021",
+      "name": "sodium reduction",
+      "type": "TREATMENT",
+      "normalized_name": "sodium reduction",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_002",
+      "target": "N_004",
+      "relation": "INDICATES",
+      "evidence": "He attributed this to a panic attack",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_005",
+      "target": "N_002",
+      "relation": "CAUSES",
+      "evidence": "consumed several cups of coffee on an empty stomach the morning of",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_006",
+      "target": "N_011",
+      "relation": "INDICATES",
+      "evidence": "resistant hypertension, with systolic blood pressure readings between 146-155",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_007",
+      "target": "N_001",
+      "relation": "CAUSES",
+      "evidence": "family history of hypertension",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_008",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "started him on a new medication Benicar HCT",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_009",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "Amlodipine 10 mg daily",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_012",
+      "target": "N_011",
+      "relation": "TAKEN_FOR",
+      "evidence": "I have added spironolactone to his regimen",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_013",
+      "target": "N_011",
+      "relation": "TAKEN_FOR",
+      "evidence": "Next medication to consider adding is carvedilol",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_013",
+      "target": "N_019",
+      "relation": "CAUSES",
+      "evidence": "given the potential for issues with erectile dysfunction",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_012",
+      "target": "N_015",
+      "relation": "CAUSES",
+      "evidence": "spironolactone side effects, including gynecomastia",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_012",
+      "target": "N_016",
+      "relation": "CAUSES",
+      "evidence": "spironolactone side effects, including ... electrolyte disturbances",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_012",
+      "target": "N_017",
+      "relation": "CAUSES",
+      "evidence": "his increased risk of dehydration",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_017",
+      "target": "N_018",
+      "relation": "CAUSES",
+      "evidence": "increased risk of dehydration, with one sign to watch for being dizziness",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_020",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "provided materials to follow the DASH diet",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_021",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "Reduce sodium intake to 1500 to <2000 mg per day",
+      "confidence": 0.7
+    }
+  ]
+}

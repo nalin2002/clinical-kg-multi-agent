@@ -1,0 +1,273 @@
+{
+  "patient_id": "RES_D2N173",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "upper respiratory infection",
+      "type": "DIAGNOSIS",
+      "normalized_name": "upper respiratory infection",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "coronary artery bypass grafting",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "coronary artery bypass grafting",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "hyperlipidemia",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "hyperlipidemia",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "OCD",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "ocd",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "postnasal drip",
+      "type": "SYMPTOM",
+      "normalized_name": "postnasal drip",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "chest congestion",
+      "type": "SYMPTOM",
+      "normalized_name": "chest congestion",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "cervical lymphadenopathy",
+      "type": "SYMPTOM",
+      "normalized_name": "cervical lymphadenopathy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "rhonchi",
+      "type": "SYMPTOM",
+      "normalized_name": "rhonchi",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "wheezing",
+      "type": "SYMPTOM",
+      "normalized_name": "wheezing",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "neck",
+      "type": "LOCATION",
+      "normalized_name": "neck",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "chest",
+      "type": "LOCATION",
+      "normalized_name": "chest",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "lungs",
+      "type": "LOCATION",
+      "normalized_name": "lungs",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "COVID-19",
+      "type": "DIAGNOSIS",
+      "normalized_name": "covid-19",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "COVID-19 test",
+      "type": "PROCEDURE",
+      "normalized_name": "covid-19 test",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "Crestor 20 mg",
+      "type": "TREATMENT",
+      "normalized_name": "crestor 20 mg",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "lipid panel",
+      "type": "LAB_RESULT",
+      "normalized_name": "lipid panel",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "hypercholesterolemia",
+      "type": "DIAGNOSIS",
+      "normalized_name": "hypercholesterolemia",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "name": "coronary artery disease",
+      "type": "DIAGNOSIS",
+      "normalized_name": "coronary artery disease",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_019",
+      "name": "stress test",
+      "type": "PROCEDURE",
+      "normalized_name": "stress test",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_020",
+      "name": "oxygen saturation 96%",
+      "type": "LAB_RESULT",
+      "normalized_name": "oxygen saturation 96%",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_005",
+      "target": "N_001",
+      "relation": "INDICATES",
+      "evidence": "endorses postnasal drip ... presents with an upper respiratory infection",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_006",
+      "target": "N_001",
+      "relation": "INDICATES",
+      "evidence": "it has seemed to move into his chest ... chest congestion",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_006",
+      "target": "N_011",
+      "relation": "LOCATED_AT",
+      "evidence": "his chest congestion",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_007",
+      "target": "N_010",
+      "relation": "LOCATED_AT",
+      "evidence": "Neck: Positive cervical lymphadenopathy",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_008",
+      "target": "N_012",
+      "relation": "LOCATED_AT",
+      "evidence": "Respiratory: Rhonchi and wheezing bilaterally",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_009",
+      "target": "N_012",
+      "relation": "LOCATED_AT",
+      "evidence": "Respiratory: Rhonchi and wheezing bilaterally",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_014",
+      "target": "N_013",
+      "relation": "CONFIRMS",
+      "evidence": "COVID-19 test: Positive",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_005",
+      "target": "N_013",
+      "relation": "INDICATES",
+      "evidence": "upper respiratory symptoms and his COVID-19 test was positive today",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_006",
+      "target": "N_013",
+      "relation": "INDICATES",
+      "evidence": "upper respiratory symptoms and his COVID-19 test was positive today",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_020",
+      "target": "N_013",
+      "relation": "INDICATES",
+      "evidence": "His oxygenation is good at 96%",
+      "confidence": 0.4
+    },
+    {
+      "source": "N_015",
+      "target": "N_017",
+      "relation": "TAKEN_FOR",
+      "evidence": "He is doing well on Crestor 20 mg once a day. His cholesterol looked good",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_015",
+      "target": "N_003",
+      "relation": "TAKEN_FOR",
+      "evidence": "He is on Crestor 20 mg a day",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_016",
+      "target": "N_017",
+      "relation": "INDICATES",
+      "evidence": "His cholesterol looked good on his most recent lipid panel",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_002",
+      "target": "N_018",
+      "relation": "CAUSES",
+      "evidence": "He underwent coronary artery bypass grafting approximately 1 year ago. His coronary artery disease",
+      "confidence": 0.5
+    },
+    {
+      "source": "N_019",
+      "target": "N_018",
+      "relation": "RULES_OUT",
+      "evidence": "We will do a stress test in 6 months",
+      "confidence": 0.4
+    }
+  ]
+}

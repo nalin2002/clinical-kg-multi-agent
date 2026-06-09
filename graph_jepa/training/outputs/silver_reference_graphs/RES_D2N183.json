@@ -1,0 +1,263 @@
+{
+  "patient_id": "RES_D2N183",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "acne vulgaris",
+      "type": "DIAGNOSIS",
+      "normalized_name": "acne vulgaris",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "inflammatory papules",
+      "type": "SYMPTOM",
+      "normalized_name": "inflammatory papules",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "pustules",
+      "type": "SYMPTOM",
+      "normalized_name": "pustules",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "face",
+      "type": "LOCATION",
+      "normalized_name": "face",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "upper back",
+      "type": "LOCATION",
+      "normalized_name": "upper back",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "posterior shoulders",
+      "type": "LOCATION",
+      "normalized_name": "posterior shoulders",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "forehead",
+      "type": "LOCATION",
+      "normalized_name": "forehead",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "cheeks",
+      "type": "LOCATION",
+      "normalized_name": "cheeks",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "chin",
+      "type": "LOCATION",
+      "normalized_name": "chin",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "chest",
+      "type": "LOCATION",
+      "normalized_name": "chest",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "back",
+      "type": "LOCATION",
+      "normalized_name": "back",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "benzoyl peroxide facial wash",
+      "type": "TREATMENT",
+      "normalized_name": "benzoyl peroxide facial wash",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "clindamycin lotion",
+      "type": "TREATMENT",
+      "normalized_name": "clindamycin lotion",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "tretinoin cream",
+      "type": "TREATMENT",
+      "normalized_name": "tretinoin cream",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "sunscreen",
+      "type": "TREATMENT",
+      "normalized_name": "sunscreen",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "moisturizer",
+      "type": "TREATMENT",
+      "normalized_name": "moisturizer",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "PanOxyl 10% wash",
+      "type": "TREATMENT",
+      "normalized_name": "panoxyl 10% wash",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_002",
+      "target": "N_001",
+      "relation": "INDICATES",
+      "evidence": "scattered inflammatory papules and pustules across the upper back and posterior shoulders",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_003",
+      "target": "N_001",
+      "relation": "INDICATES",
+      "evidence": "scattered inflammatory papules and pustules across the upper back and posterior shoulders",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_002",
+      "target": "N_005",
+      "relation": "LOCATED_AT",
+      "evidence": "scattered inflammatory papules and pustules across the upper back",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_002",
+      "target": "N_006",
+      "relation": "LOCATED_AT",
+      "evidence": "inflammatory papules and pustules across the upper back and posterior shoulders",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_003",
+      "target": "N_005",
+      "relation": "LOCATED_AT",
+      "evidence": "inflammatory papules and pustules across the upper back",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_003",
+      "target": "N_006",
+      "relation": "LOCATED_AT",
+      "evidence": "pustules across the upper back and posterior shoulders",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_002",
+      "target": "N_007",
+      "relation": "LOCATED_AT",
+      "evidence": "less than five inflammatory papules on the forehead, cheeks, and chin",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_002",
+      "target": "N_008",
+      "relation": "LOCATED_AT",
+      "evidence": "less than five inflammatory papules on the forehead, cheeks, and chin",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_002",
+      "target": "N_009",
+      "relation": "LOCATED_AT",
+      "evidence": "less than five inflammatory papules on the forehead, cheeks, and chin",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_012",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "current treatment regimen for the face with 4-5 % benzoyl peroxide wash twice daily",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_013",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "clindamycin 1% lotion each morning",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_014",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "tretinoin 0.1 % cream each night",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_015",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "moisturizing sunscreen",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_016",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "applying moisturizer",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_017",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "Initiate treatment of PanOxyl 10 % wash to the back daily in the shower",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_001",
+      "target": "N_002",
+      "relation": "CAUSES",
+      "evidence": "mild flare with scattered inflammatory papules and pustules",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_001",
+      "target": "N_003",
+      "relation": "CAUSES",
+      "evidence": "mild flare with scattered inflammatory papules and pustules",
+      "confidence": 0.7
+    }
+  ]
+}

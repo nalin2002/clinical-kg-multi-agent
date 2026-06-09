@@ -1,0 +1,145 @@
+{
+  "patient_id": "RES_D2N013",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "anxiety",
+      "type": "DIAGNOSIS",
+      "normalized_name": "anxiety",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "epilepsy",
+      "type": "DIAGNOSIS",
+      "normalized_name": "epilepsy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "elevated blood sugar",
+      "type": "LAB_RESULT",
+      "normalized_name": "elevated blood sugar",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "metformin 500 mg twice daily",
+      "type": "TREATMENT",
+      "normalized_name": "metformin 500 mg twice daily",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "Keppra",
+      "type": "TREATMENT",
+      "normalized_name": "keppra",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "bilateral lower extremity pitting edema",
+      "type": "SYMPTOM",
+      "normalized_name": "bilateral lower extremity pitting edema",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "bilateral lower extremities",
+      "type": "LOCATION",
+      "normalized_name": "bilateral lower extremities",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "elevated hemoglobin A1c (8)",
+      "type": "LAB_RESULT",
+      "normalized_name": "elevated hemoglobin a1c",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "elevated non-fasting glucose",
+      "type": "LAB_RESULT",
+      "normalized_name": "elevated non-fasting glucose",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "diabetes",
+      "type": "DIAGNOSIS",
+      "normalized_name": "diabetes",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "seizures",
+      "type": "SYMPTOM",
+      "normalized_name": "seizures",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_008",
+      "target": "N_010",
+      "relation": "CONFIRMS",
+      "evidence": "his most recent level was 8",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_009",
+      "target": "N_010",
+      "relation": "INDICATES",
+      "evidence": "His blood glucose level is also elevated in clinic today.",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_003",
+      "target": "N_010",
+      "relation": "INDICATES",
+      "evidence": "elevated blood sugar levels",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_004",
+      "target": "N_010",
+      "relation": "TAKEN_FOR",
+      "evidence": "Continue metformin 500 mg twice daily.",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_005",
+      "target": "N_002",
+      "relation": "TAKEN_FOR",
+      "evidence": "Continue Keppra at current dosage.",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_006",
+      "target": "N_007",
+      "relation": "LOCATED_AT",
+      "evidence": "Trace pitting edema to the bilateral lower extremities.",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_002",
+      "target": "N_011",
+      "relation": "CAUSES",
+      "evidence": "Regarding his epilepsy, he has not had any seizures in a few months.",
+      "confidence": 0.7
+    }
+  ]
+}

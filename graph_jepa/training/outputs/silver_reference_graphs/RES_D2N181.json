@@ -1,0 +1,257 @@
+{
+  "patient_id": "RES_D2N181",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "acid reflux",
+      "type": "SYMPTOM",
+      "normalized_name": "acid reflux",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "heartburn",
+      "type": "SYMPTOM",
+      "normalized_name": "heartburn",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "chest",
+      "type": "LOCATION",
+      "normalized_name": "chest",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "esophagus",
+      "type": "LOCATION",
+      "normalized_name": "esophagus",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "loss of appetite",
+      "type": "SYMPTOM",
+      "normalized_name": "loss of appetite",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "stress",
+      "type": "SYMPTOM",
+      "normalized_name": "stress",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "GERD",
+      "type": "DIAGNOSIS",
+      "normalized_name": "gerd",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "functional etiology of heartburn",
+      "type": "DIAGNOSIS",
+      "normalized_name": "functional etiology of heartburn",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "omeprazole 40 mg twice daily",
+      "type": "TREATMENT",
+      "normalized_name": "omeprazole",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "ranitidine",
+      "type": "TREATMENT",
+      "normalized_name": "ranitidine",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "Nexium 40 mg twice daily",
+      "type": "TREATMENT",
+      "normalized_name": "nexium",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "Protonix",
+      "type": "TREATMENT",
+      "normalized_name": "protonix",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "dietary and lifestyle modifications",
+      "type": "TREATMENT",
+      "normalized_name": "dietary and lifestyle modifications",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "EGD",
+      "type": "PROCEDURE",
+      "normalized_name": "egd",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "pH impedance study",
+      "type": "PROCEDURE",
+      "normalized_name": "ph impedance study",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "anxiety",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "anxiety",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "abnormal acid reflux exposure",
+      "type": "DIAGNOSIS",
+      "normalized_name": "abnormal acid reflux exposure",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "name": "esophageal hypersensitivity",
+      "type": "DIAGNOSIS",
+      "normalized_name": "esophageal hypersensitivity",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_002",
+      "target": "N_007",
+      "relation": "INDICATES",
+      "evidence": "several year history of GERD that primarily manifests as heartburn",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_001",
+      "target": "N_007",
+      "relation": "INDICATES",
+      "evidence": "new patient evaluation of acid reflux ... history of GERD",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_002",
+      "target": "N_003",
+      "relation": "LOCATED_AT",
+      "evidence": "burning sensation in her chest that travels up her esophagus",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_002",
+      "target": "N_004",
+      "relation": "LOCATED_AT",
+      "evidence": "burning sensation in her chest that travels up her esophagus",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_002",
+      "target": "N_008",
+      "relation": "INDICATES",
+      "evidence": "Suspected underlying functional etiology of heartburn",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_009",
+      "target": "N_007",
+      "relation": "TAKEN_FOR",
+      "evidence": "taking omeprazole 40 mg twice daily ... poorly controlled with omeprazole",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_010",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "ranitidine which she took concurrently with omeprazole and she believes this helped",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_011",
+      "target": "N_007",
+      "relation": "TAKEN_FOR",
+      "evidence": "prescribed Nexium 40 mg twice daily to replace her current omeprazole",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_012",
+      "target": "N_007",
+      "relation": "TAKEN_FOR",
+      "evidence": "we can consider a trial of Protonix",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_013",
+      "target": "N_002",
+      "relation": "TAKEN_FOR",
+      "evidence": "dietary and lifestyle modifications like cutting out her known trigger foods ... to help with her symptoms",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_014",
+      "target": "N_007",
+      "relation": "CONFIRMS",
+      "evidence": "I also recommended she undergo an EGD",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_015",
+      "target": "N_017",
+      "relation": "RULES_OUT",
+      "evidence": "obtain a pH impedance study ... rule out abnormal acid reflux exposure",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_015",
+      "target": "N_008",
+      "relation": "CONFIRMS",
+      "evidence": "decipher between a functional etiology and hypersensitivity",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_015",
+      "target": "N_018",
+      "relation": "CONFIRMS",
+      "evidence": "decipher between a functional etiology and hypersensitivity",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_006",
+      "target": "N_001",
+      "relation": "CAUSES",
+      "evidence": "identified triggers for her symptoms, including stress",
+      "confidence": 0.75
+    }
+  ]
+}

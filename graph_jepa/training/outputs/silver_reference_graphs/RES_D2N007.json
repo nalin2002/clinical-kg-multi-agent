@@ -1,0 +1,235 @@
+{
+  "patient_id": "RES_D2N007",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "depression",
+      "type": "DIAGNOSIS",
+      "normalized_name": "depression",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "Prozac",
+      "type": "TREATMENT",
+      "normalized_name": "prozac",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "chronic back pain",
+      "type": "DIAGNOSIS",
+      "normalized_name": "chronic back pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "back stiffness",
+      "type": "SYMPTOM",
+      "normalized_name": "back stiffness",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "back pain",
+      "type": "SYMPTOM",
+      "normalized_name": "back pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "numbness in legs",
+      "type": "SYMPTOM",
+      "normalized_name": "numbness in legs",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "lumbar spine",
+      "type": "LOCATION",
+      "normalized_name": "lumbar spine",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "legs",
+      "type": "LOCATION",
+      "normalized_name": "legs",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "coronary artery bypass grafting",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "coronary artery bypass grafting",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "congenital artery defect",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "congenital artery defect",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "systolic ejection murmur",
+      "type": "SYMPTOM",
+      "normalized_name": "systolic ejection murmur",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "echocardiogram",
+      "type": "PROCEDURE",
+      "normalized_name": "echocardiogram",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "lumbar spine x-ray",
+      "type": "PROCEDURE",
+      "normalized_name": "lumbar spine x-ray",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "physical therapy referral",
+      "type": "TREATMENT",
+      "normalized_name": "physical therapy referral",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "aspirin",
+      "type": "TREATMENT",
+      "normalized_name": "aspirin",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "pain to palpation of lumbar spine",
+      "type": "SYMPTOM",
+      "normalized_name": "pain to palpation of lumbar spine",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "decreased back flexion",
+      "type": "SYMPTOM",
+      "normalized_name": "decreased back flexion",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_002",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "She is taking Prozac 20 mg ... Increase Prozac to 40 mg once daily.",
+      "confidence": 0.97
+    },
+    {
+      "source": "N_005",
+      "target": "N_003",
+      "relation": "INDICATES",
+      "evidence": "Endorses back pain ... Chronic back pain.",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_004",
+      "target": "N_003",
+      "relation": "INDICATES",
+      "evidence": "she experiences stiffness and pain when she sits or stands for long periods",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_005",
+      "target": "N_007",
+      "relation": "LOCATED_AT",
+      "evidence": "Pain to palpation of the lumbar spine",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_006",
+      "target": "N_008",
+      "relation": "LOCATED_AT",
+      "evidence": "a little bit of numbness down her legs",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_016",
+      "target": "N_003",
+      "relation": "INDICATES",
+      "evidence": "Pain to palpation of the lumbar spine",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_017",
+      "target": "N_003",
+      "relation": "INDICATES",
+      "evidence": "Decreased flexion of back",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_016",
+      "target": "N_007",
+      "relation": "LOCATED_AT",
+      "evidence": "Pain to palpation of the lumbar spine",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_010",
+      "target": "N_009",
+      "relation": "CAUSES",
+      "evidence": "she had a congenital artery when she was a baby and they had to do a CABG",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_014",
+      "target": "N_003",
+      "relation": "TAKEN_FOR",
+      "evidence": "Physical therapy referral ordered.",
+      "confidence": 0.92
+    },
+    {
+      "source": "N_015",
+      "target": "N_009",
+      "relation": "TAKEN_FOR",
+      "evidence": "Continue aspirin 81 mg daily.",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_013",
+      "target": "N_003",
+      "relation": "CONFIRMS",
+      "evidence": "X-rays of the lumbar spine stable in comparison to last year.",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_012",
+      "target": "N_009",
+      "relation": "CONFIRMS",
+      "evidence": "Echocardiogram appears unchanged in comparison to last year.",
+      "confidence": 0.6
+    }
+  ]
+}

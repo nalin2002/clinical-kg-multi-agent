@@ -1,0 +1,207 @@
+{
+  "patient_id": "RES_D2N198",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "back pain",
+      "type": "SYMPTOM",
+      "normalized_name": "back pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "left-side back pain",
+      "type": "SYMPTOM",
+      "normalized_name": "left-side back pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "recurrent strep throat",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "recurrent strep throat",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "increased urine output",
+      "type": "SYMPTOM",
+      "normalized_name": "increased urine output",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "increased water consumption",
+      "type": "SYMPTOM",
+      "normalized_name": "increased water consumption",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "glomerulonephritis",
+      "type": "DIAGNOSIS",
+      "normalized_name": "glomerulonephritis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "swelling",
+      "type": "SYMPTOM",
+      "normalized_name": "swelling",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "CT scan",
+      "type": "PROCEDURE",
+      "normalized_name": "ct scan",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "ENT referral",
+      "type": "TREATMENT",
+      "normalized_name": "ent referral",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "lipid panel",
+      "type": "PROCEDURE",
+      "normalized_name": "lipid panel",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "urinalysis",
+      "type": "PROCEDURE",
+      "normalized_name": "ua",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "CMP",
+      "type": "PROCEDURE",
+      "normalized_name": "cmp",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "CBC",
+      "type": "PROCEDURE",
+      "normalized_name": "cbc",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "vitamin D test",
+      "type": "PROCEDURE",
+      "normalized_name": "vitamin d",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "TSH",
+      "type": "PROCEDURE",
+      "normalized_name": "tsh",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "salt intake reduction",
+      "type": "TREATMENT",
+      "normalized_name": "salt intake reduction",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "back",
+      "type": "LOCATION",
+      "normalized_name": "back",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_002",
+      "target": "N_017",
+      "relation": "LOCATED_AT",
+      "evidence": "Reports left-side back pain.",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_003",
+      "target": "N_006",
+      "relation": "CAUSES",
+      "evidence": "history of recurrent strep throat and a recent CT scan with concerns of possible glomerulonephritis",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_008",
+      "target": "N_006",
+      "relation": "INDICATES",
+      "evidence": "Previous CT scan is reviewed and demonstrates evidence of swelling potentially related to glomerulonephritis.",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_007",
+      "target": "N_006",
+      "relation": "INDICATES",
+      "evidence": "evidence of swelling potentially related to glomerulonephritis",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_004",
+      "target": "N_006",
+      "relation": "INDICATES",
+      "evidence": "Reports increased urine output.",
+      "confidence": 0.4
+    },
+    {
+      "source": "N_005",
+      "target": "N_006",
+      "relation": "INDICATES",
+      "evidence": "Reports increased water consumption",
+      "confidence": 0.4
+    },
+    {
+      "source": "N_016",
+      "target": "N_006",
+      "relation": "TAKEN_FOR",
+      "evidence": "The patient was recommended to watch his salt intake.",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_009",
+      "target": "N_003",
+      "relation": "TAKEN_FOR",
+      "evidence": "We will refer him to an ENT for further evaluation and treatment.",
+      "confidence": 0.5
+    },
+    {
+      "source": "N_011",
+      "target": "N_006",
+      "relation": "CONFIRMS",
+      "evidence": "We will also order a lipid panel, UA, CMP, CBC, vitamin D, and a TSH.",
+      "confidence": 0.4
+    }
+  ]
+}

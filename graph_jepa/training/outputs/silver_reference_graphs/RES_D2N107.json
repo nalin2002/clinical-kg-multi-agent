@@ -1,0 +1,219 @@
+{
+  "patient_id": "RES_D2N107",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "low back pain",
+      "type": "SYMPTOM",
+      "normalized_name": "low back pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "tingling in right foot",
+      "type": "SYMPTOM",
+      "normalized_name": "tingling in right foot",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "low back",
+      "type": "LOCATION",
+      "normalized_name": "low back",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "right foot",
+      "type": "LOCATION",
+      "normalized_name": "right foot",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "lumbar spine L5",
+      "type": "LOCATION",
+      "normalized_name": "lumbar spine l5",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "low back sprain",
+      "type": "DIAGNOSIS",
+      "normalized_name": "low back sprain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "x-ray",
+      "type": "PROCEDURE",
+      "normalized_name": "x-ray",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "ice",
+      "type": "TREATMENT",
+      "normalized_name": "ice",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "Advil",
+      "type": "TREATMENT",
+      "normalized_name": "advil",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "hot shower",
+      "type": "TREATMENT",
+      "normalized_name": "hot shower",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "rest",
+      "type": "TREATMENT",
+      "normalized_name": "rest",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "meloxicam",
+      "type": "TREATMENT",
+      "normalized_name": "meloxicam",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "physical therapy",
+      "type": "TREATMENT",
+      "normalized_name": "physical therapy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "normal x-ray",
+      "type": "LAB_RESULT",
+      "normalized_name": "normal x-ray",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "MRI",
+      "type": "PROCEDURE",
+      "normalized_name": "mri",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_006",
+      "relation": "INDICATES",
+      "evidence": "Low back sprain.",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_002",
+      "target": "N_006",
+      "relation": "INDICATES",
+      "evidence": "tingling in his right foot",
+      "confidence": 0.5
+    },
+    {
+      "source": "N_001",
+      "target": "N_003",
+      "relation": "LOCATED_AT",
+      "evidence": "tightening sensation in his low back",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_002",
+      "target": "N_004",
+      "relation": "LOCATED_AT",
+      "evidence": "tingling in the right foot",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_006",
+      "target": "N_005",
+      "relation": "LOCATED_AT",
+      "evidence": "Pain with palpation around L5",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_008",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "Ice and Advil provided no relief",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_009",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "Ice and Advil provided no relief",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_010",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "taking a hot shower helped alleviate his pain",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_011",
+      "target": "N_006",
+      "relation": "TAKEN_FOR",
+      "evidence": "treat this conservatively with rest",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_012",
+      "target": "N_006",
+      "relation": "TAKEN_FOR",
+      "evidence": "treat this conservatively with ... meloxicam",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_013",
+      "target": "N_006",
+      "relation": "TAKEN_FOR",
+      "evidence": "formal physical therapy",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_007",
+      "target": "N_006",
+      "relation": "CONFIRMS",
+      "evidence": "X-rays obtained and reviewed in office today were normal",
+      "confidence": 0.4
+    },
+    {
+      "source": "N_014",
+      "target": "N_006",
+      "relation": "INDICATES",
+      "evidence": "x-rays ... were normal",
+      "confidence": 0.4
+    }
+  ]
+}

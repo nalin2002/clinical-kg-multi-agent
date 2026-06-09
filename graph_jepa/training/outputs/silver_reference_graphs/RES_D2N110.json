@@ -1,0 +1,250 @@
+{
+  "patient_id": "RES_D2N110",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "right foot wound",
+      "type": "SYMPTOM",
+      "normalized_name": "right foot wound",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "right foot",
+      "type": "LOCATION",
+      "normalized_name": "right foot",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "blister",
+      "type": "SYMPTOM",
+      "normalized_name": "blister",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "neuropathy",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "neuropathy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "diabetes",
+      "type": "DIAGNOSIS",
+      "normalized_name": "diabetes",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "right foot diabetic ulcer",
+      "type": "DIAGNOSIS",
+      "normalized_name": "right foot diabetic ulcer",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "osteomyelitis",
+      "type": "DIAGNOSIS",
+      "normalized_name": "osteomyelitis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "hemoglobin A1C of 8",
+      "type": "LAB_RESULT",
+      "normalized_name": "hemoglobin a1c 8",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "antibiotics",
+      "type": "TREATMENT",
+      "normalized_name": "antibiotics",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "stability issues",
+      "type": "SYMPTOM",
+      "normalized_name": "stability issues",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "x-ray of right foot",
+      "type": "PROCEDURE",
+      "normalized_name": "x-ray of right foot",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "ankle brachial index",
+      "type": "PROCEDURE",
+      "normalized_name": "ankle brachial index",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "debridement",
+      "type": "PROCEDURE",
+      "normalized_name": "debridement",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "collagenase ointment",
+      "type": "TREATMENT",
+      "normalized_name": "collagenase ointment",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "dry sterile dressing",
+      "type": "TREATMENT",
+      "normalized_name": "dry sterile dressing",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "surgical shoe",
+      "type": "TREATMENT",
+      "normalized_name": "surgical shoe",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "diabetic consultation",
+      "type": "TREATMENT",
+      "normalized_name": "diabetic consultation",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "name": "yellow slough",
+      "type": "SYMPTOM",
+      "normalized_name": "yellow slough",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_002",
+      "relation": "LOCATED_AT",
+      "evidence": "circular wound on the dorsal aspect of the lateral right foot",
+      "confidence": 0.97
+    },
+    {
+      "source": "N_001",
+      "target": "N_006",
+      "relation": "INDICATES",
+      "evidence": "Right foot diabetic ulcer",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_003",
+      "target": "N_001",
+      "relation": "CAUSES",
+      "evidence": "His blister soon became a wound",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_004",
+      "target": "N_003",
+      "relation": "CAUSES",
+      "evidence": "The patient does have neuropathy and notes this might be why he did not notice the tightness",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_005",
+      "target": "N_006",
+      "relation": "CAUSES",
+      "evidence": "Right foot diabetic ulcer; diabetes",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_008",
+      "target": "N_005",
+      "relation": "INDICATES",
+      "evidence": "his last hemoglobin A1C was 8",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_011",
+      "target": "N_007",
+      "relation": "RULES_OUT",
+      "evidence": "These reveal no evidence of osteomyelitis",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_009",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "He was placed on a round of antibiotics",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_013",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "performed a debridement in the office to remove some of the dead tissue",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_014",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "prescribed a collagenase ointment to be applied to the wound",
+      "confidence": 0.92
+    },
+    {
+      "source": "N_015",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "instructed him to cover with a dry sterile dressing",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_016",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "placed in a surgical shoe to take pressure off the area",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_017",
+      "target": "N_005",
+      "relation": "TAKEN_FOR",
+      "evidence": "recommended a diabetic consultation to discuss diet modifications",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_018",
+      "target": "N_006",
+      "relation": "INDICATES",
+      "evidence": "yellow slough present with minimal granulation tissue",
+      "confidence": 0.6
+    }
+  ]
+}

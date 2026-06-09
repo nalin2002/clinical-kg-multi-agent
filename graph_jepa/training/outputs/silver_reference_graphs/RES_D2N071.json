@@ -1,0 +1,231 @@
+{
+  "patient_id": "RES_D2N071",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "depression",
+      "type": "DIAGNOSIS",
+      "normalized_name": "depression",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "lobectomy",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "lobectomy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "hypertension",
+      "type": "DIAGNOSIS",
+      "normalized_name": "hypertension",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "Prozac",
+      "type": "TREATMENT",
+      "normalized_name": "prozac",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "Norvasc",
+      "type": "TREATMENT",
+      "normalized_name": "norvasc",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "shortness of breath with exertion",
+      "type": "SYMPTOM",
+      "normalized_name": "shortness of breath with exertion",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "difficulty breathing",
+      "type": "SYMPTOM",
+      "normalized_name": "difficulty breathing",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "allergies",
+      "type": "DIAGNOSIS",
+      "normalized_name": "allergies",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "nasal congestion",
+      "type": "SYMPTOM",
+      "normalized_name": "nasal congestion",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "palpitations",
+      "type": "SYMPTOM",
+      "normalized_name": "palpitations",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "chest pounding",
+      "type": "SYMPTOM",
+      "normalized_name": "chest pounding",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "cough",
+      "type": "SYMPTOM",
+      "normalized_name": "cough",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "sinus pain to palpation",
+      "type": "SYMPTOM",
+      "normalized_name": "sinus pain to palpation",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "systolic ejection murmur",
+      "type": "SYMPTOM",
+      "normalized_name": "systolic ejection murmur",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "sinuses",
+      "type": "LOCATION",
+      "normalized_name": "sinuses",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "chest",
+      "type": "LOCATION",
+      "normalized_name": "chest",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "electrocardiogram",
+      "type": "PROCEDURE",
+      "normalized_name": "electrocardiogram",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "name": "chest x-ray",
+      "type": "PROCEDURE",
+      "normalized_name": "chest x-ray",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_019",
+      "name": "echocardiogram",
+      "type": "PROCEDURE",
+      "normalized_name": "echocardiogram",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_020",
+      "name": "elevated home blood pressure",
+      "type": "LAB_RESULT",
+      "normalized_name": "elevated home blood pressure",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_004",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "He can continue Prozac 20 mg a day",
+      "confidence": 0.97
+    },
+    {
+      "source": "N_005",
+      "target": "N_003",
+      "relation": "TAKEN_FOR",
+      "evidence": "He can continue Norvasc",
+      "confidence": 0.97
+    },
+    {
+      "source": "N_008",
+      "target": "N_007",
+      "relation": "CAUSES",
+      "evidence": "The patient has difficulty breathing due to allergies",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_008",
+      "target": "N_009",
+      "relation": "CAUSES",
+      "evidence": "nasal congestion from the pollen",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_009",
+      "target": "N_015",
+      "relation": "LOCATED_AT",
+      "evidence": "Pain to palpation to the sinuses",
+      "confidence": 0.75
+    },
+    {
+      "source": "N_013",
+      "target": "N_015",
+      "relation": "LOCATED_AT",
+      "evidence": "Pain to palpation to the sinuses",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_011",
+      "target": "N_016",
+      "relation": "LOCATED_AT",
+      "evidence": "he will feel a little bit of a pounding in his chest",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_020",
+      "target": "N_003",
+      "relation": "INDICATES",
+      "evidence": "His hypertension has been slightly uncontrolled... it is running high",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_019",
+      "target": "N_014",
+      "relation": "CONFIRMS",
+      "evidence": "I ordered an echocardiogram to evaluate his murmur",
+      "confidence": 0.7
+    }
+  ]
+}

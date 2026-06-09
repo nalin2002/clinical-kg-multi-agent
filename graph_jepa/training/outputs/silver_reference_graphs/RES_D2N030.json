@@ -1,0 +1,265 @@
+{
+  "patient_id": "RES_D2N030",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "bilateral breast cysts",
+      "type": "DIAGNOSIS",
+      "normalized_name": "bilateral breast cysts",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "breast lumps",
+      "type": "SYMPTOM",
+      "normalized_name": "breast lumps",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "breast soreness",
+      "type": "SYMPTOM",
+      "normalized_name": "breast soreness",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "bilateral breasts",
+      "type": "LOCATION",
+      "normalized_name": "bilateral breasts",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "progesterone",
+      "type": "TREATMENT",
+      "normalized_name": "progesterone",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "abnormal menstruation",
+      "type": "SYMPTOM",
+      "normalized_name": "abnormal menstruation",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "vaginal cream",
+      "type": "TREATMENT",
+      "normalized_name": "vaginal cream",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "vaginal itching",
+      "type": "SYMPTOM",
+      "normalized_name": "vaginal itching",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "vaginal discomfort",
+      "type": "SYMPTOM",
+      "normalized_name": "vaginal discomfort",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "abnormal pap smear",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "abnormal pap smear",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "anxiety",
+      "type": "DIAGNOSIS",
+      "normalized_name": "anxiety",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "Buspar",
+      "type": "TREATMENT",
+      "normalized_name": "buspar",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "work related stress",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "work related stress",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "Singulair",
+      "type": "TREATMENT",
+      "normalized_name": "singulair",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "Camila birth control",
+      "type": "TREATMENT",
+      "normalized_name": "camila birth control",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "increased appetite",
+      "type": "SYMPTOM",
+      "normalized_name": "increased appetite",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "breast cancer",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "breast cancer",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "name": "breast density",
+      "type": "LAB_RESULT",
+      "normalized_name": "breast density",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_019",
+      "name": "pap smear",
+      "type": "PROCEDURE",
+      "normalized_name": "pap smear",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_002",
+      "target": "N_001",
+      "relation": "INDICATES",
+      "evidence": "continual presence of \"lumps\" in bilateral breasts",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_002",
+      "target": "N_004",
+      "relation": "LOCATED_AT",
+      "evidence": "\"lumps\" in bilateral breasts",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_003",
+      "target": "N_004",
+      "relation": "LOCATED_AT",
+      "evidence": "bilateral breasts with some soreness",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_001",
+      "target": "N_002",
+      "relation": "CAUSES",
+      "evidence": "follow-up surveillance of bilateral breast cysts ... lumps",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_001",
+      "target": "N_003",
+      "relation": "CAUSES",
+      "evidence": "lumps in bilateral breasts with some soreness",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_005",
+      "target": "N_006",
+      "relation": "TAKEN_FOR",
+      "evidence": "progesterone, which was initially prescribed to support normalization of menstruation",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_007",
+      "target": "N_008",
+      "relation": "TAKEN_FOR",
+      "evidence": "vaginal cream ... which has improved symptoms of itching and discomfort",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_007",
+      "target": "N_009",
+      "relation": "TAKEN_FOR",
+      "evidence": "vaginal cream ... improved symptoms of itching and discomfort",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_012",
+      "target": "N_011",
+      "relation": "TAKEN_FOR",
+      "evidence": "Dr. Brown started the patient on Buspar, which has successfully controlled her anxiety",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_013",
+      "target": "N_011",
+      "relation": "CAUSES",
+      "evidence": "patient relates her anxiety to work related stress",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_014",
+      "target": "N_011",
+      "relation": "CAUSES",
+      "evidence": "started on Singulair, which the patient was told could also cause anxiety",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_015",
+      "target": "N_016",
+      "relation": "CAUSES",
+      "evidence": "discontinued Camila birth control, which did result in a significant increase in appetite",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_017",
+      "target": "N_001",
+      "relation": "CAUSES",
+      "evidence": "Mother, deceased age 45, from complications of breast cancer",
+      "confidence": 0.3
+    },
+    {
+      "source": "N_018",
+      "target": "N_001",
+      "relation": "INDICATES",
+      "evidence": "Physical exam indicated stable breast density bilaterally",
+      "confidence": 0.5
+    },
+    {
+      "source": "N_019",
+      "target": "N_010",
+      "relation": "CONFIRMS",
+      "evidence": "abnormal pap smear in 2009",
+      "confidence": 0.5
+    }
+  ]
+}

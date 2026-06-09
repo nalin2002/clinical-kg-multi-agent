@@ -1,0 +1,281 @@
+{
+  "patient_id": "RES_D2N148",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "low back pain",
+      "type": "SYMPTOM",
+      "normalized_name": "low back pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "tingling in right toes",
+      "type": "SYMPTOM",
+      "normalized_name": "tingling in right toes",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "leg weakness",
+      "type": "SYMPTOM",
+      "normalized_name": "leg weakness",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "sharp pain in lower back",
+      "type": "SYMPTOM",
+      "normalized_name": "sharp pain in lower back",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "lower back",
+      "type": "LOCATION",
+      "normalized_name": "lower back",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "right toes",
+      "type": "LOCATION",
+      "normalized_name": "right toes",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "lumbar spine",
+      "type": "LOCATION",
+      "normalized_name": "lumbar spine",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "acute disc herniation",
+      "type": "DIAGNOSIS",
+      "normalized_name": "acute disc herniation",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "Tylenol",
+      "type": "TREATMENT",
+      "normalized_name": "tylenol",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "ibuprofen",
+      "type": "TREATMENT",
+      "normalized_name": "ibuprofen",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "heat",
+      "type": "TREATMENT",
+      "normalized_name": "heat",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "ice",
+      "type": "TREATMENT",
+      "normalized_name": "ice",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "physical therapy",
+      "type": "TREATMENT",
+      "normalized_name": "physical therapy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "meloxicam",
+      "type": "TREATMENT",
+      "normalized_name": "meloxicam",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "MRI of lumbar spine",
+      "type": "PROCEDURE",
+      "normalized_name": "mri of lumbar spine",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "X-ray of lumbar spine",
+      "type": "PROCEDURE",
+      "normalized_name": "x-ray of lumbar spine",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "fracture",
+      "type": "DIAGNOSIS",
+      "normalized_name": "fracture",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "name": "right total knee arthroplasty",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "right total knee arthroplasty",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_019",
+      "name": "positive straight leg raise",
+      "type": "SYMPTOM",
+      "normalized_name": "positive straight leg raise",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_020",
+      "name": "paraspinal muscle spasm",
+      "type": "SYMPTOM",
+      "normalized_name": "paraspinal muscle spasm",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_021",
+      "name": "decreased lumbar flexion and extension",
+      "type": "SYMPTOM",
+      "normalized_name": "decreased lumbar flexion and extension",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_005",
+      "relation": "LOCATED_AT",
+      "evidence": "evaluation of low back pain",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_002",
+      "target": "N_006",
+      "relation": "LOCATED_AT",
+      "evidence": "tingling in his right toes",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_004",
+      "target": "N_005",
+      "relation": "LOCATED_AT",
+      "evidence": "sharp pain in his lower back",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_001",
+      "target": "N_008",
+      "relation": "INDICATES",
+      "evidence": "Low back pain, possible acute disc herniation",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_019",
+      "target": "N_008",
+      "relation": "INDICATES",
+      "evidence": "Positive straight leg raise",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_020",
+      "target": "N_007",
+      "relation": "LOCATED_AT",
+      "evidence": "Spasm of the paraspinal muscles of the lumbar spine",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_021",
+      "target": "N_005",
+      "relation": "LOCATED_AT",
+      "evidence": "Decreased flexion and extension of the lower back",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_009",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "utilizing Tylenol... for pain",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_010",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "utilizing... ibuprofen... for pain",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_011",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "utilizing... heat... for pain",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_012",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "utilizing... ice for pain",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_013",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "attempted physical therapy... He will continue with physical therapy",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_014",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "prescribed the patient meloxicam 15 mg to treat his pain",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_015",
+      "target": "N_008",
+      "relation": "CONFIRMS",
+      "evidence": "obtain an MRI of the lumbar spine to evaluate for a possible acute disc herniation",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_016",
+      "target": "N_017",
+      "relation": "RULES_OUT",
+      "evidence": "His x-rays did not reveal any signs of a fracture",
+      "confidence": 0.9
+    }
+  ]
+}

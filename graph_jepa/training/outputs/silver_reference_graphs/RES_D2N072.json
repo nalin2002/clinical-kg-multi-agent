@@ -1,0 +1,228 @@
+{
+  "patient_id": "RES_D2N072",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "right finger pain",
+      "type": "SYMPTOM",
+      "normalized_name": "right finger pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "finger hyperextension injury",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "finger hyperextension injury",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "pain with movement",
+      "type": "SYMPTOM",
+      "normalized_name": "pain with movement",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "ibuprofen",
+      "type": "TREATMENT",
+      "normalized_name": "ibuprofen",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "ice application",
+      "type": "TREATMENT",
+      "normalized_name": "ice application",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "miralax",
+      "type": "TREATMENT",
+      "normalized_name": "miralax",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "constipation",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "constipation",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "appendectomy",
+      "type": "PROCEDURE",
+      "normalized_name": "appendectomy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "tenderness over distal phalanx",
+      "type": "SYMPTOM",
+      "normalized_name": "tenderness over distal phalanx",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "distal phalanx",
+      "type": "LOCATION",
+      "normalized_name": "distal phalanx",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "pain with flexion",
+      "type": "SYMPTOM",
+      "normalized_name": "pain with flexion",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "right hand x-ray",
+      "type": "PROCEDURE",
+      "normalized_name": "right hand x-ray",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "fracture",
+      "type": "DIAGNOSIS",
+      "normalized_name": "fracture",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "right index finger contusion",
+      "type": "DIAGNOSIS",
+      "normalized_name": "right index finger contusion",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "right index finger",
+      "type": "LOCATION",
+      "normalized_name": "right index finger",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "splint",
+      "type": "TREATMENT",
+      "normalized_name": "splint",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "motrin 600 mg",
+      "type": "TREATMENT",
+      "normalized_name": "motrin 600 mg",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_015",
+      "relation": "LOCATED_AT",
+      "evidence": "right finger pain ... right index finger",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_002",
+      "target": "N_014",
+      "relation": "CAUSES",
+      "evidence": "hyperextended her finger when it became caught in a strap on a jump",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_004",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "She has tried applying ice and taking Ibuprofen",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_005",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "She has tried applying ice",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_006",
+      "target": "N_007",
+      "relation": "TAKEN_FOR",
+      "evidence": "MiraLax ... Constipation",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_009",
+      "target": "N_010",
+      "relation": "LOCATED_AT",
+      "evidence": "tenderness over the distal phalanx",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_009",
+      "target": "N_014",
+      "relation": "INDICATES",
+      "evidence": "tenderness over the distal phalanx ... index finger contusion at the tip",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_011",
+      "target": "N_014",
+      "relation": "INDICATES",
+      "evidence": "Pain with flexion",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_012",
+      "target": "N_013",
+      "relation": "RULES_OUT",
+      "evidence": "X-rays of the right hand show no obvious signs of fracture",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_014",
+      "target": "N_015",
+      "relation": "LOCATED_AT",
+      "evidence": "Right hand index finger contusion at the tip of the finger",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_016",
+      "target": "N_014",
+      "relation": "TAKEN_FOR",
+      "evidence": "I have recommended a splint",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_017",
+      "target": "N_014",
+      "relation": "TAKEN_FOR",
+      "evidence": "She will take Motrin 600 mg every 6 hours for a week",
+      "confidence": 0.9
+    }
+  ]
+}

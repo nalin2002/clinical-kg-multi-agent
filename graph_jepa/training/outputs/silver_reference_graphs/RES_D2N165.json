@@ -1,0 +1,302 @@
+{
+  "patient_id": "RES_D2N165",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "bilateral knee pain",
+      "type": "SYMPTOM",
+      "normalized_name": "bilateral knee pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "deep achy pain",
+      "type": "SYMPTOM",
+      "normalized_name": "deep achy pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "crepitus",
+      "type": "SYMPTOM",
+      "normalized_name": "crepitus",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "pain aggravated by standing from seated and stairs",
+      "type": "SYMPTOM",
+      "normalized_name": "pain aggravated by transitioning and stairs",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "posterior patellae",
+      "type": "LOCATION",
+      "normalized_name": "posterior aspect of patellae",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "bilateral knees",
+      "type": "LOCATION",
+      "normalized_name": "bilateral knees",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "patellofemoral pain syndrome",
+      "type": "DIAGNOSIS",
+      "normalized_name": "patellofemoral pain syndrome",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "upper extremity fracture",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "upper extremity fracture",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "ibuprofen",
+      "type": "TREATMENT",
+      "normalized_name": "ibuprofen",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "Aleve",
+      "type": "TREATMENT",
+      "normalized_name": "aleve",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "icing",
+      "type": "TREATMENT",
+      "normalized_name": "icing",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "ACE bandage wrapping",
+      "type": "TREATMENT",
+      "normalized_name": "ace bandage wrapping",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "physical therapy",
+      "type": "TREATMENT",
+      "normalized_name": "physical therapy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "patellar grind test",
+      "type": "PROCEDURE",
+      "normalized_name": "patellar grind test",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "tenderness of retinaculum",
+      "type": "SYMPTOM",
+      "normalized_name": "tenderness to palpation of retinaculum",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "knee X-rays",
+      "type": "PROCEDURE",
+      "normalized_name": "knee x-rays",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "fracture",
+      "type": "DIAGNOSIS",
+      "normalized_name": "fracture",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "name": "osteoarthritis",
+      "type": "DIAGNOSIS",
+      "normalized_name": "osteoarthritis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_019",
+      "name": "abduction weakness 3/5",
+      "type": "SYMPTOM",
+      "normalized_name": "abduction weakness",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_020",
+      "name": "knee pain with squatting",
+      "type": "SYMPTOM",
+      "normalized_name": "knee pain with squatting",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_021",
+      "name": "positive patellar grind test",
+      "type": "LAB_RESULT",
+      "normalized_name": "positive patellar grind test",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_007",
+      "relation": "INDICATES",
+      "evidence": "her symptoms are consistent with patellofemoral pain syndrome",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_001",
+      "target": "N_006",
+      "relation": "LOCATED_AT",
+      "evidence": "bilateral knee pain",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_002",
+      "target": "N_005",
+      "relation": "LOCATED_AT",
+      "evidence": "She locates her pain to the posterior aspect of her patellae",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_003",
+      "target": "N_007",
+      "relation": "INDICATES",
+      "evidence": "Reports bilateral knee pain and crepitus",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_004",
+      "target": "N_007",
+      "relation": "INDICATES",
+      "evidence": "pain is aggravated by transitioning from a seated position to standing as well as ascending and descending stairs",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_015",
+      "target": "N_007",
+      "relation": "INDICATES",
+      "evidence": "Tenderness to palpation of the bilateral retinaculum",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_015",
+      "target": "N_006",
+      "relation": "LOCATED_AT",
+      "evidence": "Tenderness to palpation of the bilateral retinaculum",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_020",
+      "target": "N_007",
+      "relation": "INDICATES",
+      "evidence": "Knee pain with squatting",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_021",
+      "target": "N_007",
+      "relation": "CONFIRMS",
+      "evidence": "Positive patellar grind test",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_014",
+      "target": "N_007",
+      "relation": "CONFIRMS",
+      "evidence": "Positive patellar grind test",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_016",
+      "target": "N_017",
+      "relation": "RULES_OUT",
+      "evidence": "These demonstrate no evidence of any fractures",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_016",
+      "target": "N_018",
+      "relation": "RULES_OUT",
+      "evidence": "no evidence of any fractures or osteoarthritis",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_009",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "takes ibuprofen or Aleve occasionally for pain",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_010",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "takes ibuprofen or Aleve occasionally for pain",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_011",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "icing her knees",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_012",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "wrapping her knees with an ACE bandage",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_013",
+      "target": "N_007",
+      "relation": "TAKEN_FOR",
+      "evidence": "begin with conservative treatment in the form of formal physical therapy",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_007",
+      "target": "N_001",
+      "relation": "CAUSES",
+      "evidence": "symptoms are consistent with patellofemoral pain syndrome",
+      "confidence": 0.8
+    }
+  ]
+}

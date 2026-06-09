@@ -1,0 +1,197 @@
+{
+  "patient_id": "RES_D2N143",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "vaginal discomfort",
+      "type": "SYMPTOM",
+      "normalized_name": "vaginal discomfort",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "change in vaginal discharge",
+      "type": "SYMPTOM",
+      "normalized_name": "change in vaginal discharge",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "vaginal odor",
+      "type": "SYMPTOM",
+      "normalized_name": "vaginal odor",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "right-sided vaginal pain",
+      "type": "SYMPTOM",
+      "normalized_name": "right-sided vaginal pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "vagina",
+      "type": "LOCATION",
+      "normalized_name": "vagina",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "STD screening",
+      "type": "PROCEDURE",
+      "normalized_name": "std screening",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "gonorrhea",
+      "type": "DIAGNOSIS",
+      "normalized_name": "gonorrhea",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "chlamydia",
+      "type": "DIAGNOSIS",
+      "normalized_name": "chlamydia",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "trichomoniasis",
+      "type": "DIAGNOSIS",
+      "normalized_name": "trichomoniasis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "syphilis",
+      "type": "DIAGNOSIS",
+      "normalized_name": "syphilis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "HIV",
+      "type": "DIAGNOSIS",
+      "normalized_name": "hiv",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "hepatitis C",
+      "type": "DIAGNOSIS",
+      "normalized_name": "hepatitis c",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "abnormal Pap smear",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "abnormal pap smear",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "swab for STD testing",
+      "type": "PROCEDURE",
+      "normalized_name": "swab for std testing",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_005",
+      "relation": "LOCATED_AT",
+      "evidence": "discomfort ... in her vaginal region",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_002",
+      "target": "N_005",
+      "relation": "LOCATED_AT",
+      "evidence": "change in discharge ... in her vaginal region",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_003",
+      "target": "N_005",
+      "relation": "LOCATED_AT",
+      "evidence": "an odor in her vaginal region",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_004",
+      "target": "N_005",
+      "relation": "LOCATED_AT",
+      "evidence": "the right side of her vagina is starting to become painful",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_006",
+      "target": "N_007",
+      "relation": "RULES_OUT",
+      "evidence": "We will screen her today for gonorrhea",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_006",
+      "target": "N_008",
+      "relation": "RULES_OUT",
+      "evidence": "screen her today for ... chlamydia",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_006",
+      "target": "N_009",
+      "relation": "RULES_OUT",
+      "evidence": "screen her today for ... trichomoniasis",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_006",
+      "target": "N_010",
+      "relation": "RULES_OUT",
+      "evidence": "screen her today for ... syphilis",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_006",
+      "target": "N_011",
+      "relation": "RULES_OUT",
+      "evidence": "screen her today for ... HIV",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_006",
+      "target": "N_012",
+      "relation": "RULES_OUT",
+      "evidence": "screen her today for ... hepatitis C",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_014",
+      "target": "N_005",
+      "relation": "LOCATED_AT",
+      "evidence": "Swabs were obtained for sexual transmitted disease testing",
+      "confidence": 0.6
+    }
+  ]
+}

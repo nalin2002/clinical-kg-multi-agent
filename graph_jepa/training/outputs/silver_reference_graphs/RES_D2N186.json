@@ -1,0 +1,242 @@
+{
+  "patient_id": "RES_D2N186",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "left-sided low back pain",
+      "type": "SYMPTOM",
+      "normalized_name": "left-sided low back pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "low back",
+      "type": "LOCATION",
+      "normalized_name": "low back",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "lumbar microdiscectomy",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "lumbar microdiscectomy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "ibuprofen 800 mg",
+      "type": "TREATMENT",
+      "normalized_name": "ibuprofen 800 mg",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "stretching",
+      "type": "TREATMENT",
+      "normalized_name": "stretching",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "gabapentin",
+      "type": "TREATMENT",
+      "normalized_name": "gabapentin",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "severe nerve pain",
+      "type": "SYMPTOM",
+      "normalized_name": "severe nerve pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "pain with palpation at L5",
+      "type": "SYMPTOM",
+      "normalized_name": "pain with palpation at l5",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "L5",
+      "type": "LOCATION",
+      "normalized_name": "l5",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "pain with weight-bearing",
+      "type": "SYMPTOM",
+      "normalized_name": "pain with weight-bearing",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "lumbar spine x-ray",
+      "type": "PROCEDURE",
+      "normalized_name": "lumbar spine x-ray",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "fracture",
+      "type": "DIAGNOSIS",
+      "normalized_name": "fracture",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "muscle strain",
+      "type": "DIAGNOSIS",
+      "normalized_name": "muscle strain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "spinal misalignment",
+      "type": "DIAGNOSIS",
+      "normalized_name": "spinal misalignment",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "physical therapy",
+      "type": "TREATMENT",
+      "normalized_name": "physical therapy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "meloxicam",
+      "type": "TREATMENT",
+      "normalized_name": "meloxicam",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "Demerol",
+      "type": "TREATMENT",
+      "normalized_name": "demerol",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_002",
+      "relation": "LOCATED_AT",
+      "evidence": "pain in the left side of his low back",
+      "confidence": 0.97
+    },
+    {
+      "source": "N_001",
+      "target": "N_013",
+      "relation": "INDICATES",
+      "evidence": "his symptoms are related to a muscle strain",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_014",
+      "target": "N_013",
+      "relation": "CAUSES",
+      "evidence": "a muscle strain due to spinal misalignment",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_014",
+      "target": "N_001",
+      "relation": "CAUSES",
+      "evidence": "his symptoms are related to a muscle strain due to spinal misalignment",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_004",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "ibuprofen 800 mg daily are helpful",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_005",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "Stretching and ibuprofen 800 mg daily are helpful",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_006",
+      "target": "N_007",
+      "relation": "TAKEN_FOR",
+      "evidence": "taking high-dose gabapentin for severe nerve pain",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_007",
+      "target": "N_002",
+      "relation": "LOCATED_AT",
+      "evidence": "severe nerve pain through his back and lower extremities",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_008",
+      "target": "N_009",
+      "relation": "LOCATED_AT",
+      "evidence": "Pain with palpation on the left side around L5",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_011",
+      "target": "N_012",
+      "relation": "RULES_OUT",
+      "evidence": "no evidence of fracture or other abnormalities in the spine or vertebrae",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_015",
+      "target": "N_013",
+      "relation": "TAKEN_FOR",
+      "evidence": "treat the patient conservatively with formal physical therapy and meloxicam",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_016",
+      "target": "N_013",
+      "relation": "TAKEN_FOR",
+      "evidence": "treat the patient conservatively with formal physical therapy and meloxicam",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_017",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "I did provide him with a prescription for Demerol",
+      "confidence": 0.75
+    },
+    {
+      "source": "N_003",
+      "target": "N_001",
+      "relation": "CAUSES",
+      "evidence": "localized around the surgical site of his microdiscectomy",
+      "confidence": 0.5
+    }
+  ]
+}

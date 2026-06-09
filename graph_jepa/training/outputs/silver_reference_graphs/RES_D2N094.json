@@ -1,0 +1,190 @@
+{
+  "patient_id": "RES_D2N094",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "right index finger pain",
+      "type": "SYMPTOM",
+      "normalized_name": "right index finger pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "right index finger",
+      "type": "LOCATION",
+      "normalized_name": "right index finger",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "ibuprofen",
+      "type": "TREATMENT",
+      "normalized_name": "ibuprofen",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "MiraLAX",
+      "type": "TREATMENT",
+      "normalized_name": "miralax",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "chronic constipation",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "chronic constipation",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "appendectomy",
+      "type": "PROCEDURE",
+      "normalized_name": "appendectomy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "pain to palpation of MCP and DIP joints",
+      "type": "SYMPTOM",
+      "normalized_name": "pain to palpation of mcp and dip joints",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "MCP and DIP joints",
+      "type": "LOCATION",
+      "normalized_name": "mcp and dip joints",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "X-ray of right index finger",
+      "type": "PROCEDURE",
+      "normalized_name": "x-ray of right index finger",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "fracture",
+      "type": "DIAGNOSIS",
+      "normalized_name": "fracture",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "right index finger DIP joint sprain",
+      "type": "DIAGNOSIS",
+      "normalized_name": "right index finger dip joint sprain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "splint",
+      "type": "TREATMENT",
+      "normalized_name": "splint",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "Mobic 15 mg",
+      "type": "TREATMENT",
+      "normalized_name": "mobic 15 mg",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "hand therapy",
+      "type": "TREATMENT",
+      "normalized_name": "hand therapy",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_002",
+      "relation": "LOCATED_AT",
+      "evidence": "right index finger pain",
+      "confidence": 0.97
+    },
+    {
+      "source": "N_001",
+      "target": "N_011",
+      "relation": "INDICATES",
+      "evidence": "Right index finger DIP joint sprain",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_003",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "She took Ibuprofen on but it did not help her",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_004",
+      "target": "N_005",
+      "relation": "TAKEN_FOR",
+      "evidence": "CURRENT MEDICATIONS: MiraLAX; PAST MEDICAL HISTORY: Chronic constipation",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_007",
+      "target": "N_008",
+      "relation": "LOCATED_AT",
+      "evidence": "pain to palpation of the MCP and DIP joints",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_007",
+      "target": "N_011",
+      "relation": "INDICATES",
+      "evidence": "pain to palpation of the MCP and DIP joints; Right index finger DIP joint sprain",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_009",
+      "target": "N_010",
+      "relation": "RULES_OUT",
+      "evidence": "X-rays of the right index finger show no obvious signs of fracture",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_012",
+      "target": "N_011",
+      "relation": "TAKEN_FOR",
+      "evidence": "I have recommended a splint",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_013",
+      "target": "N_011",
+      "relation": "TAKEN_FOR",
+      "evidence": "A prescription is provided for Mobic 15 mg once a day",
+      "confidence": 0.88
+    },
+    {
+      "source": "N_014",
+      "target": "N_011",
+      "relation": "TAKEN_FOR",
+      "evidence": "If she is unimproved, we will consider hand therapy",
+      "confidence": 0.75
+    }
+  ]
+}

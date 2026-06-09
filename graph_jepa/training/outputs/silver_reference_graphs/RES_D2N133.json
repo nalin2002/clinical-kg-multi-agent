@@ -1,0 +1,175 @@
+{
+  "patient_id": "RES_D2N133",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "right knee pain",
+      "type": "SYMPTOM",
+      "normalized_name": "right knee pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "chronic back pain",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "chronic back pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "depression",
+      "type": "DIAGNOSIS",
+      "normalized_name": "depression",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "carpal tunnel release",
+      "type": "PROCEDURE",
+      "normalized_name": "carpal tunnel release",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "carpal tunnel syndrome",
+      "type": "DIAGNOSIS",
+      "normalized_name": "carpal tunnel syndrome",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "chondromalacia of right patella",
+      "type": "DIAGNOSIS",
+      "normalized_name": "chondromalacia of right patella",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "right knee",
+      "type": "LOCATION",
+      "normalized_name": "right knee",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "right knee x-ray",
+      "type": "PROCEDURE",
+      "normalized_name": "right knee x-ray",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "pain with patellar inhibition",
+      "type": "SYMPTOM",
+      "normalized_name": "pain with patellar inhibition",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "pain with range of motion of right knee",
+      "type": "SYMPTOM",
+      "normalized_name": "pain with range of motion of right knee",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "ibuprofen 600 mg",
+      "type": "TREATMENT",
+      "normalized_name": "ibuprofen 600 mg",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "straight leg raising exercises",
+      "type": "TREATMENT",
+      "normalized_name": "straight leg raising exercises",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "right patella",
+      "type": "LOCATION",
+      "normalized_name": "right patella",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_007",
+      "relation": "LOCATED_AT",
+      "evidence": "She has experienced bad right knee pain.",
+      "confidence": 0.97
+    },
+    {
+      "source": "N_001",
+      "target": "N_006",
+      "relation": "INDICATES",
+      "evidence": "presents today for evaluation of right knee pain. Chondromalacia of right patella.",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_009",
+      "target": "N_006",
+      "relation": "INDICATES",
+      "evidence": "Pain with patellar inhibition",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_010",
+      "target": "N_006",
+      "relation": "INDICATES",
+      "evidence": "Pain with range of motion of the right knee.",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_006",
+      "target": "N_013",
+      "relation": "LOCATED_AT",
+      "evidence": "Chondromalacia of right patella.",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_008",
+      "target": "N_006",
+      "relation": "RULES_OUT",
+      "evidence": "X-ray of the right knee is unremarkable.",
+      "confidence": 0.5
+    },
+    {
+      "source": "N_011",
+      "target": "N_006",
+      "relation": "TAKEN_FOR",
+      "evidence": "Prescribed ibuprofen 600 mg 4 times a day with food.",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_012",
+      "target": "N_006",
+      "relation": "TAKEN_FOR",
+      "evidence": "I do want her to do some straight leg raising exercises that will strengthen her quadriceps.",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_004",
+      "target": "N_005",
+      "relation": "TAKEN_FOR",
+      "evidence": "Relatively stable status post carpal tunnel release.",
+      "confidence": 0.85
+    }
+  ]
+}

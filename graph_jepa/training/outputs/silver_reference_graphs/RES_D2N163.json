@@ -1,0 +1,138 @@
+{
+  "patient_id": "RES_D2N163",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "hypercholesterolemia",
+      "type": "DIAGNOSIS",
+      "normalized_name": "hypercholesterolemia",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "elevated cholesterol",
+      "type": "LAB_RESULT",
+      "normalized_name": "elevated cholesterol 210",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "genetic testing",
+      "type": "PROCEDURE",
+      "normalized_name": "genetic testing",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "full cholesterol panel",
+      "type": "PROCEDURE",
+      "normalized_name": "full cholesterol panel",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "hemoglobin A1c",
+      "type": "PROCEDURE",
+      "normalized_name": "hemoglobin a1c",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "comprehensive metabolic panel",
+      "type": "PROCEDURE",
+      "normalized_name": "cmp",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "thyroid study",
+      "type": "PROCEDURE",
+      "normalized_name": "thyroid study",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "liver panel",
+      "type": "PROCEDURE",
+      "normalized_name": "liver panel",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "nutritionist referral",
+      "type": "TREATMENT",
+      "normalized_name": "nutritionist referral",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "low saturated fat diet",
+      "type": "TREATMENT",
+      "normalized_name": "low saturated fat and sugar diet",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "premature heart attack",
+      "type": "DIAGNOSIS",
+      "normalized_name": "premature heart attack",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_002",
+      "target": "N_001",
+      "relation": "CONFIRMS",
+      "evidence": "Recent cholesterol level is reviewed and shows patient is elevated at 210",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_002",
+      "target": "N_001",
+      "relation": "INDICATES",
+      "evidence": "The patient's previous tests are consistent with hypercholesterolemia",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_001",
+      "target": "N_011",
+      "relation": "CAUSES",
+      "evidence": "studies link high cholesterol to pre-mature heart attacks",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_009",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "Referral to nutritionist provided",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_010",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "follow a balanced diet with a variety of foods that are low in saturated fat and sugars",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_003",
+      "target": "N_001",
+      "relation": "CONFIRMS",
+      "evidence": "genetic testing can be done to see if the problem is genetic or a secondary cause",
+      "confidence": 0.6
+    }
+  ]
+}

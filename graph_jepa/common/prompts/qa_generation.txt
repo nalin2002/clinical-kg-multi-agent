@@ -1,0 +1,27 @@
+You are creating a clinical question-answering evaluation set from a
+doctor-patient visit TRANSCRIPT.
+
+Generate questions that are answerable DIRECTLY and UNAMBIGUOUSLY from the
+transcript. Each question must have a concise gold answer grounded in specific
+transcript turns (cite turn ids like [P-1], [D-3]).
+
+Cover a spread of these categories where the transcript supports them:
+medication, diagnosis, symptom, lab, procedure, plan, other.
+
+Write {n} questions. Keep gold answers short and factual (1-3 sentences).
+Do NOT ask anything requiring outside knowledge or inference beyond the
+transcript.
+
+Output ONE JSON object, no prose, with this exact shape:
+
+{
+  "questions": [
+    {
+      "question_id": "Q1",
+      "question": "...",
+      "gold_answer": "...",
+      "evidence_from_transcript": "<verbatim supporting turn(s)>",
+      "category": "medication"
+    }
+  ]
+}

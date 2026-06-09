@@ -1,0 +1,312 @@
+{
+  "patient_id": "RES_D2N004",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "back pain",
+      "type": "SYMPTOM",
+      "normalized_name": "back pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "congestive heart failure",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "congestive heart failure",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "type 2 diabetes",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "type 2 diabetes",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "right lower extremity weakness",
+      "type": "SYMPTOM",
+      "normalized_name": "right lower extremity weakness",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "drop foot",
+      "type": "SYMPTOM",
+      "normalized_name": "drop foot",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "weight gain",
+      "type": "SYMPTOM",
+      "normalized_name": "weight gain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "systolic ejection murmur",
+      "type": "SYMPTOM",
+      "normalized_name": "systolic ejection murmur",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "pain to palpation at L5",
+      "type": "SYMPTOM",
+      "normalized_name": "pain to palpation at l5",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "decreased range of motion",
+      "type": "SYMPTOM",
+      "normalized_name": "decreased range of motion",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "positive straight leg raise",
+      "type": "SYMPTOM",
+      "normalized_name": "positive straight leg raise",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "lumbar spine",
+      "type": "LOCATION",
+      "normalized_name": "lumbar spine",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "L5",
+      "type": "LOCATION",
+      "normalized_name": "l5",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "acute lumbar strain",
+      "type": "DIAGNOSIS",
+      "normalized_name": "acute lumbar strain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "X-ray lumbar spine",
+      "type": "PROCEDURE",
+      "normalized_name": "x-ray lumbar spine",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "hemoglobin A1c elevated at 8",
+      "type": "LAB_RESULT",
+      "normalized_name": "hemoglobin a1c 8",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "MRI",
+      "type": "PROCEDURE",
+      "normalized_name": "mri",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "meloxicam",
+      "type": "TREATMENT",
+      "normalized_name": "meloxicam",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "name": "physical therapy",
+      "type": "TREATMENT",
+      "normalized_name": "physical therapy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_019",
+      "name": "metformin",
+      "type": "TREATMENT",
+      "normalized_name": "metformin",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_020",
+      "name": "lisinopril",
+      "type": "TREATMENT",
+      "normalized_name": "lisinopril",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_021",
+      "name": "Lasix",
+      "type": "TREATMENT",
+      "normalized_name": "lasix",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_022",
+      "name": "Tylenol",
+      "type": "TREATMENT",
+      "normalized_name": "tylenol",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_023",
+      "name": "ibuprofen",
+      "type": "TREATMENT",
+      "normalized_name": "ibuprofen",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_024",
+      "name": "prior lower back surgery",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "prior lower back surgery",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_013",
+      "relation": "INDICATES",
+      "evidence": "presents today with back pain ... Acute lumbar strain",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_008",
+      "target": "N_013",
+      "relation": "INDICATES",
+      "evidence": "Examination of his back reveals pain to palpation at L5",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_010",
+      "target": "N_013",
+      "relation": "INDICATES",
+      "evidence": "Positive straight leg raise",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_009",
+      "target": "N_013",
+      "relation": "INDICATES",
+      "evidence": "Decreased range of motion with flexion and extension",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_001",
+      "target": "N_011",
+      "relation": "LOCATED_AT",
+      "evidence": "hurt his back ... lumbar spine",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_008",
+      "target": "N_012",
+      "relation": "LOCATED_AT",
+      "evidence": "pain to palpation at L5",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_014",
+      "target": "N_013",
+      "relation": "CONFIRMS",
+      "evidence": "X-ray lumbar spine ... unremarkable with good bony alignment",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_015",
+      "target": "N_003",
+      "relation": "INDICATES",
+      "evidence": "his recent hemoglobin A1c was 8",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_017",
+      "target": "N_013",
+      "relation": "TAKEN_FOR",
+      "evidence": "Initiate meloxicam 15 mg once daily",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_018",
+      "target": "N_013",
+      "relation": "TAKEN_FOR",
+      "evidence": "refer him to physical therapy to work on strengthening the area",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_022",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "He reports taking some Tylenol ... which did not relieve the pain",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_023",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "taking some Tylenol, ibuprofen ... which did not relieve the pain",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_019",
+      "target": "N_003",
+      "relation": "TAKEN_FOR",
+      "evidence": "He is still on his metformin ... Increase metformin",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_020",
+      "target": "N_002",
+      "relation": "TAKEN_FOR",
+      "evidence": "Continue lisinopril 20 mg once daily",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_021",
+      "target": "N_002",
+      "relation": "TAKEN_FOR",
+      "evidence": "Continue lisinopril 20 mg once daily and Lasix",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_016",
+      "target": "N_013",
+      "relation": "CONFIRMS",
+      "evidence": "If he continues to have pain, we will obtain an MRI for further evaluation",
+      "confidence": 0.5
+    }
+  ]
+}

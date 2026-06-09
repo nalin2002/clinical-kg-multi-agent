@@ -1,0 +1,122 @@
+{
+  "patient_id": "RES_D2N104",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "psoriatic arthritis",
+      "type": "DIAGNOSIS",
+      "normalized_name": "psoriatic arthritis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "methotrexate",
+      "type": "TREATMENT",
+      "normalized_name": "methotrexate",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "prednisone",
+      "type": "TREATMENT",
+      "normalized_name": "prednisone",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "joint pain",
+      "type": "SYMPTOM",
+      "normalized_name": "joint pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "bilateral foot pain",
+      "type": "SYMPTOM",
+      "normalized_name": "bilateral foot pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "feet",
+      "type": "LOCATION",
+      "normalized_name": "feet",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "nail dystrophy of toes",
+      "type": "SYMPTOM",
+      "normalized_name": "nail dystrophy of toes",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "toes",
+      "type": "LOCATION",
+      "normalized_name": "toes",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "high risk medication use",
+      "type": "DIAGNOSIS",
+      "normalized_name": "high risk medication use",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_002",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "currently taking methotrexate ... for ongoing management of psoriatic arthritis",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_003",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "currently taking methotrexate and prednisone 1 mg daily",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_002",
+      "target": "N_004",
+      "relation": "TAKEN_FOR",
+      "evidence": "She believes methotrexate has been relieving her joint pain",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_005",
+      "target": "N_006",
+      "relation": "LOCATED_AT",
+      "evidence": "increased pain in her bilateral feet",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_007",
+      "target": "N_008",
+      "relation": "LOCATED_AT",
+      "evidence": "Dystrophy of all the nails of the toes",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_007",
+      "target": "N_001",
+      "relation": "INDICATES",
+      "evidence": "Dystrophy of all the nails of the toes",
+      "confidence": 0.6
+    }
+  ]
+}

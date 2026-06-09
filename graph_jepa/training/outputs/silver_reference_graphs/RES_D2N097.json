@@ -1,0 +1,117 @@
+{
+  "patient_id": "RES_D2N097",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "depression",
+      "type": "DIAGNOSIS",
+      "normalized_name": "depression",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "hypertension",
+      "type": "DIAGNOSIS",
+      "normalized_name": "hypertension",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "nasal congestion",
+      "type": "SYMPTOM",
+      "normalized_name": "nasal congestion",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "lisinopril 20 mg daily",
+      "type": "TREATMENT",
+      "normalized_name": "lisinopril 20 mg daily",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "therapy",
+      "type": "TREATMENT",
+      "normalized_name": "therapy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "systolic ejection murmur",
+      "type": "SYMPTOM",
+      "normalized_name": "systolic ejection murmur",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "lower extremity edema",
+      "type": "SYMPTOM",
+      "normalized_name": "lower extremity edema",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "electrocardiogram",
+      "type": "PROCEDURE",
+      "normalized_name": "electrocardiogram",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "mammogram",
+      "type": "PROCEDURE",
+      "normalized_name": "mammogram",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "COVID-19 vaccination",
+      "type": "TREATMENT",
+      "normalized_name": "covid-19 vaccination",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "lower extremity",
+      "type": "LOCATION",
+      "normalized_name": "lower extremity",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_004",
+      "target": "N_002",
+      "relation": "TAKEN_FOR",
+      "evidence": "She has continued to utilize Lisinopril 20 mg daily, as prescribed.",
+      "confidence": 0.97
+    },
+    {
+      "source": "N_005",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "She is doing well with weekly therapy.",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_007",
+      "target": "N_011",
+      "relation": "LOCATED_AT",
+      "evidence": "Trace lower extremity edema bilaterally.",
+      "confidence": 0.9
+    }
+  ]
+}

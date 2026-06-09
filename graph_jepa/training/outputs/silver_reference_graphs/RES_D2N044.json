@@ -1,0 +1,159 @@
+{
+  "patient_id": "RES_D2N044",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "bilateral knee pain",
+      "type": "SYMPTOM",
+      "normalized_name": "bilateral knee pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "knee",
+      "type": "LOCATION",
+      "normalized_name": "knee",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "tenderness to palpation of knees",
+      "type": "SYMPTOM",
+      "normalized_name": "knee tenderness to palpation",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "positive patellar grind test",
+      "type": "PROCEDURE",
+      "normalized_name": "patellar grind test",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "X-ray of bilateral knees",
+      "type": "PROCEDURE",
+      "normalized_name": "knee x-ray",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "osteoarthritis",
+      "type": "DIAGNOSIS",
+      "normalized_name": "osteoarthritis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "fracture",
+      "type": "DIAGNOSIS",
+      "normalized_name": "fracture",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "patellofemoral pain syndrome",
+      "type": "DIAGNOSIS",
+      "normalized_name": "patellofemoral pain syndrome",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "NSAIDs",
+      "type": "TREATMENT",
+      "normalized_name": "nsaids",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "physical therapy",
+      "type": "TREATMENT",
+      "normalized_name": "physical therapy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "reduced abduction strength of lower extremities",
+      "type": "SYMPTOM",
+      "normalized_name": "reduced lower extremity abduction strength",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_002",
+      "relation": "LOCATED_AT",
+      "evidence": "Bilateral knee pain.",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_001",
+      "target": "N_008",
+      "relation": "INDICATES",
+      "evidence": "her symptoms are consistent with patellofemoral pain syndrome",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_003",
+      "target": "N_002",
+      "relation": "LOCATED_AT",
+      "evidence": "Bilateral knees: ... Tender to palpation.",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_004",
+      "target": "N_008",
+      "relation": "CONFIRMS",
+      "evidence": "Positive patellar grind test",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_005",
+      "target": "N_007",
+      "relation": "RULES_OUT",
+      "evidence": "X-ray of the bilateral knees are reviewed and reveal no fractures",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_005",
+      "target": "N_006",
+      "relation": "RULES_OUT",
+      "evidence": "reveal no fractures or osteoarthritis",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_011",
+      "target": "N_008",
+      "relation": "INDICATES",
+      "evidence": "3/5 abduction strength of the bilateral lower extremities ... consistent with patellofemoral pain syndrome",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_009",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "Continue with over-the-counter NSAIDs for pain relief",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_010",
+      "target": "N_008",
+      "relation": "TAKEN_FOR",
+      "evidence": "refer her to physical therapy to help strengthen her lower extremities",
+      "confidence": 0.85
+    }
+  ]
+}

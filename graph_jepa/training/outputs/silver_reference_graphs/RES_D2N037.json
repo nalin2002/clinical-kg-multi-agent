@@ -1,0 +1,219 @@
+{
+  "patient_id": "RES_D2N037",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "bilateral elbow pain",
+      "type": "SYMPTOM",
+      "normalized_name": "bilateral elbow pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "elbow",
+      "type": "LOCATION",
+      "normalized_name": "elbow",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "medial aspect of elbow",
+      "type": "LOCATION",
+      "normalized_name": "medial aspect of elbow",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "ibuprofen 800 mg",
+      "type": "TREATMENT",
+      "normalized_name": "ibuprofen 800 mg",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "ice application",
+      "type": "TREATMENT",
+      "normalized_name": "ice application",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "bilateral medial epicondylitis",
+      "type": "DIAGNOSIS",
+      "normalized_name": "bilateral medial epicondylitis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "X-ray of bilateral elbows",
+      "type": "PROCEDURE",
+      "normalized_name": "x-ray of bilateral elbows",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "fracture",
+      "type": "DIAGNOSIS",
+      "normalized_name": "fracture",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "bony misalignment",
+      "type": "DIAGNOSIS",
+      "normalized_name": "bony misalignment",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "MRI of bilateral elbows",
+      "type": "PROCEDURE",
+      "normalized_name": "mri of bilateral elbows",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "whole blood transfusion",
+      "type": "PROCEDURE",
+      "normalized_name": "whole blood transfusion",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "heavy weight strength training",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "heavy weight strength training",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "pain to palpation medial aspect",
+      "type": "SYMPTOM",
+      "normalized_name": "pain to palpation medial aspect",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "pain with supination",
+      "type": "SYMPTOM",
+      "normalized_name": "pain with supination",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "limited range of motion with extension",
+      "type": "SYMPTOM",
+      "normalized_name": "limited range of motion with extension",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_003",
+      "relation": "LOCATED_AT",
+      "evidence": "His pain is localized to the medial aspect of his elbows",
+      "confidence": 0.97
+    },
+    {
+      "source": "N_001",
+      "target": "N_002",
+      "relation": "LOCATED_AT",
+      "evidence": "bilateral elbow pain",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_001",
+      "target": "N_006",
+      "relation": "INDICATES",
+      "evidence": "bilateral elbow pain ... Bilateral medial epicondylitis",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_013",
+      "target": "N_006",
+      "relation": "INDICATES",
+      "evidence": "Pain to palpation along the medial aspect",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_014",
+      "target": "N_006",
+      "relation": "INDICATES",
+      "evidence": "Pain with supination",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_013",
+      "target": "N_003",
+      "relation": "LOCATED_AT",
+      "evidence": "Pain to palpation along the medial aspect",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_004",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "he does use ibuprofen 800 mg 3 times daily",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_005",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "Applying ice to the area has not been helpful",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_012",
+      "target": "N_006",
+      "relation": "CAUSES",
+      "evidence": "he utilizes heavy weights for strength training, worse with increased use of his upper extremities",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_007",
+      "target": "N_008",
+      "relation": "RULES_OUT",
+      "evidence": "X-ray ... reveal no evidence of fracture",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_007",
+      "target": "N_009",
+      "relation": "RULES_OUT",
+      "evidence": "no evidence of fracture or bony misalignment",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_011",
+      "target": "N_006",
+      "relation": "TAKEN_FOR",
+      "evidence": "performing a whole blood transfusion to encourage healing",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_015",
+      "target": "N_006",
+      "relation": "INDICATES",
+      "evidence": "Limited range of motion with extension with pain",
+      "confidence": 0.5
+    }
+  ]
+}

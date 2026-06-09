@@ -1,0 +1,130 @@
+{
+  "patient_id": "RES_D2N043",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "type 2 diabetes",
+      "type": "DIAGNOSIS",
+      "normalized_name": "type 2 diabetes",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "gout",
+      "type": "DIAGNOSIS",
+      "normalized_name": "gout",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "systolic ejection murmur",
+      "type": "SYMPTOM",
+      "normalized_name": "systolic ejection murmur",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "allopurinol",
+      "type": "TREATMENT",
+      "normalized_name": "allopurinol",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "nicotine dependence",
+      "type": "DIAGNOSIS",
+      "normalized_name": "nicotine dependence",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "smoking",
+      "type": "SYMPTOM",
+      "normalized_name": "smoking",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "nicotine patch 21 mg",
+      "type": "TREATMENT",
+      "normalized_name": "nicotine patch 21 mg",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "hemoglobin A1c",
+      "type": "LAB_RESULT",
+      "normalized_name": "hemoglobin a1c",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "heart",
+      "type": "LOCATION",
+      "normalized_name": "heart",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "skin irritation",
+      "type": "SYMPTOM",
+      "normalized_name": "skin irritation",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_006",
+      "target": "N_005",
+      "relation": "INDICATES",
+      "evidence": "Nicotine dependence. The patient has a long history of smoking cigarettes.",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_007",
+      "target": "N_005",
+      "relation": "TAKEN_FOR",
+      "evidence": "start him with a 21 mg nicotine patch",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_004",
+      "target": "N_002",
+      "relation": "TAKEN_FOR",
+      "evidence": "History of gout... He will continue his allopurinol.",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_003",
+      "target": "N_009",
+      "relation": "LOCATED_AT",
+      "evidence": "Auscultation of Heart: Regular rate. 2/6 systolic ejection murmur.",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_008",
+      "target": "N_001",
+      "relation": "INDICATES",
+      "evidence": "Hemoglobin A1c is ordered to be completed by his next visit",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_007",
+      "target": "N_010",
+      "relation": "CAUSES",
+      "evidence": "skin irritation that can occur if he re-uses the same location repeatedly",
+      "confidence": 0.8
+    }
+  ]
+}

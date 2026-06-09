@@ -1,0 +1,319 @@
+{
+  "patient_id": "RES_D2N127",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "neck pain",
+      "type": "SYMPTOM",
+      "normalized_name": "neck pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "back pain",
+      "type": "SYMPTOM",
+      "normalized_name": "back pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "headaches",
+      "type": "SYMPTOM",
+      "normalized_name": "headaches",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "dizziness",
+      "type": "SYMPTOM",
+      "normalized_name": "dizziness",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "numbness in left arm and right leg",
+      "type": "SYMPTOM",
+      "normalized_name": "numbness in left arm and right leg",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "spasms",
+      "type": "SYMPTOM",
+      "normalized_name": "spasms",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "fatigue",
+      "type": "SYMPTOM",
+      "normalized_name": "fatigue",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "neck stiffness",
+      "type": "SYMPTOM",
+      "normalized_name": "neck stiffness",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "swelling and bruising of the neck",
+      "type": "SYMPTOM",
+      "normalized_name": "swelling and bruising of the neck",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "neck sprain",
+      "type": "DIAGNOSIS",
+      "normalized_name": "neck sprain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "motor vehicle accident",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "motor vehicle accident",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "cervical spine",
+      "type": "LOCATION",
+      "normalized_name": "cervical spine",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "neck",
+      "type": "LOCATION",
+      "normalized_name": "neck",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "X-ray of the neck",
+      "type": "PROCEDURE",
+      "normalized_name": "x-ray of the neck",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "MRI",
+      "type": "PROCEDURE",
+      "normalized_name": "mri",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "fracture",
+      "type": "DIAGNOSIS",
+      "normalized_name": "fracture",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "Robaxin 1500 mg",
+      "type": "TREATMENT",
+      "normalized_name": "robaxin 1500 mg",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "name": "ice",
+      "type": "TREATMENT",
+      "normalized_name": "ice",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_019",
+      "name": "heating pad",
+      "type": "TREATMENT",
+      "normalized_name": "heating pad",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_020",
+      "name": "IcyHot",
+      "type": "TREATMENT",
+      "normalized_name": "icyhot",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_021",
+      "name": "Biofreeze",
+      "type": "TREATMENT",
+      "normalized_name": "biofreeze",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_022",
+      "name": "home exercise program",
+      "type": "TREATMENT",
+      "normalized_name": "home exercise program",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_023",
+      "name": "fentanyl",
+      "type": "TREATMENT",
+      "normalized_name": "fentanyl",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_024",
+      "name": "surgery",
+      "type": "PROCEDURE",
+      "normalized_name": "surgery",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_011",
+      "target": "N_001",
+      "relation": "CAUSES",
+      "evidence": "His pain began when he was involved in a motor vehicle accident",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_011",
+      "target": "N_002",
+      "relation": "CAUSES",
+      "evidence": "the third motor vehicle accident is when his neck and back pain began",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_011",
+      "target": "N_007",
+      "relation": "CAUSES",
+      "evidence": "he has been experiencing fatigue since the accident",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_001",
+      "target": "N_010",
+      "relation": "INDICATES",
+      "evidence": "neck pain ... ASSESSMENT Neck sprain",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_008",
+      "target": "N_010",
+      "relation": "INDICATES",
+      "evidence": "sharp and incapacitating with stiffness and pain ... Neck sprain",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_001",
+      "target": "N_013",
+      "relation": "LOCATED_AT",
+      "evidence": "evaluation of neck pain",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_001",
+      "target": "N_012",
+      "relation": "LOCATED_AT",
+      "evidence": "Examination of the cervical spine: Pain on palpation",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_009",
+      "target": "N_013",
+      "relation": "LOCATED_AT",
+      "evidence": "occasional swelling and bruising of the neck",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_014",
+      "target": "N_016",
+      "relation": "RULES_OUT",
+      "evidence": "X-rays of the neck reveal no fractures",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_017",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "prescribed the patient Robaxin 1500 mg ... to treat his pain",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_018",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "utilize ice ... on his neck as needed",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_019",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "utilize ... a heating pad ... on his neck as needed",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_020",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "utilize ... IcyHot ... on his neck as needed",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_021",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "utilize ... Biofreeze on his neck as needed",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_022",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "home exercise program to work on his range of motion",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_023",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "seen at a pain clinic secondary to neck and back pain. He was prescribed fentanyl",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_023",
+      "target": "N_002",
+      "relation": "TAKEN_FOR",
+      "evidence": "secondary to neck and back pain. He was prescribed fentanyl",
+      "confidence": 0.8
+    }
+  ]
+}

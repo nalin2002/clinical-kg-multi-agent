@@ -1,0 +1,241 @@
+{
+  "patient_id": "RES_D2N083",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "right elbow pain",
+      "type": "SYMPTOM",
+      "normalized_name": "right elbow pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "right elbow",
+      "type": "LOCATION",
+      "normalized_name": "right elbow",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "forearm",
+      "type": "LOCATION",
+      "normalized_name": "forearm",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "pain radiating into forearm",
+      "type": "SYMPTOM",
+      "normalized_name": "pain radiating into forearm",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "medial epicondyle tenderness",
+      "type": "SYMPTOM",
+      "normalized_name": "medial epicondyle tenderness",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "medial epicondyle",
+      "type": "LOCATION",
+      "normalized_name": "medial epicondyle",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "pain with pronation of forearm",
+      "type": "SYMPTOM",
+      "normalized_name": "pain with pronation of forearm",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "pain with resistance against wrist flexion",
+      "type": "SYMPTOM",
+      "normalized_name": "pain with resistance against wrist flexion",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "right medial epicondylitis",
+      "type": "DIAGNOSIS",
+      "normalized_name": "right medial epicondylitis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "pottery making",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "pottery making",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "fracture",
+      "type": "DIAGNOSIS",
+      "normalized_name": "fracture",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "x-ray of right elbow",
+      "type": "PROCEDURE",
+      "normalized_name": "x-ray of right elbow",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "ibuprofen",
+      "type": "TREATMENT",
+      "normalized_name": "ibuprofen",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "sling",
+      "type": "TREATMENT",
+      "normalized_name": "sling",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "ice",
+      "type": "TREATMENT",
+      "normalized_name": "ice",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "rest",
+      "type": "TREATMENT",
+      "normalized_name": "rest",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_002",
+      "relation": "LOCATED_AT",
+      "evidence": "pain in the \"inside\" of his right elbow",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_004",
+      "target": "N_003",
+      "relation": "LOCATED_AT",
+      "evidence": "The pain may radiate into his forearm on occasion",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_005",
+      "target": "N_006",
+      "relation": "LOCATED_AT",
+      "evidence": "Moderate tenderness at the medial epicondyle",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_001",
+      "target": "N_009",
+      "relation": "INDICATES",
+      "evidence": "Right medial epicondylitis",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_005",
+      "target": "N_009",
+      "relation": "INDICATES",
+      "evidence": "Moderate tenderness at the medial epicondyle",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_007",
+      "target": "N_009",
+      "relation": "INDICATES",
+      "evidence": "Pain with pronation of the forearm",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_008",
+      "target": "N_009",
+      "relation": "INDICATES",
+      "evidence": "Pain with resistance against flexion of the wrist",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_010",
+      "target": "N_009",
+      "relation": "CAUSES",
+      "evidence": "symptoms are likely caused by overuse... began making pottery",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_009",
+      "target": "N_001",
+      "relation": "CAUSES",
+      "evidence": "his symptoms are likely caused by overuse and potential damage of the tendons",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_012",
+      "target": "N_011",
+      "relation": "RULES_OUT",
+      "evidence": "X-ray... reveal no evidence of fracture or bony abnormality",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_013",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "Ibuprofen provides minimal symptomatic relief",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_013",
+      "target": "N_009",
+      "relation": "TAKEN_FOR",
+      "evidence": "take ibuprofen 600 mg every 6 hours",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_014",
+      "target": "N_009",
+      "relation": "TAKEN_FOR",
+      "evidence": "provide him with sling to be worn during the day",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_015",
+      "target": "N_009",
+      "relation": "TAKEN_FOR",
+      "evidence": "ice the elbow for 20 minutes, 3 times daily",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_016",
+      "target": "N_009",
+      "relation": "TAKEN_FOR",
+      "evidence": "advised the patient to rest his elbow",
+      "confidence": 0.85
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "patient_id": "RES_D2N038",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "hepatitis C",
+      "type": "DIAGNOSIS",
+      "normalized_name": "hepatitis c",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "hepatitis C antibody test positive",
+      "type": "LAB_RESULT",
+      "normalized_name": "hepatitis c antibody test positive",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "intravenous drug use",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "intravenous drug use",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "heavy alcohol use",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "heavy alcohol use",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "tobacco use",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "tobacco use",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "systolic ejection murmur",
+      "type": "SYMPTOM",
+      "normalized_name": "systolic ejection murmur",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "elevated AST",
+      "type": "LAB_RESULT",
+      "normalized_name": "elevated ast",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "hepatitis C RNA test",
+      "type": "PROCEDURE",
+      "normalized_name": "hepatitis c rna test",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "HCV genotype test",
+      "type": "PROCEDURE",
+      "normalized_name": "hcv genotype test",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "ultrasound elastography",
+      "type": "PROCEDURE",
+      "normalized_name": "ultrasound elastography",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "liver fibrosis",
+      "type": "DIAGNOSIS",
+      "normalized_name": "liver fibrosis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "liver",
+      "type": "LOCATION",
+      "normalized_name": "liver",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "anxiety",
+      "type": "SYMPTOM",
+      "normalized_name": "anxiety",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_002",
+      "target": "N_001",
+      "relation": "INDICATES",
+      "evidence": "The HCV antibody test was reviewed today and is positive. His initial labs were consistent with a hepatitis C diagnosis.",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_007",
+      "target": "N_001",
+      "relation": "INDICATES",
+      "evidence": "Liver panel revealed an elevated AST at 39 U/L",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_003",
+      "target": "N_001",
+      "relation": "CAUSES",
+      "evidence": "The patient admits to intravenous drug use in the past",
+      "confidence": 0.75
+    },
+    {
+      "source": "N_008",
+      "target": "N_001",
+      "relation": "CONFIRMS",
+      "evidence": "confirm the diagnosis with additional blood work including checking his hepatitis C RNA",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_009",
+      "target": "N_001",
+      "relation": "CONFIRMS",
+      "evidence": "confirm the diagnosis with additional blood work including ... HCV genotype",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_010",
+      "target": "N_011",
+      "relation": "RULES_OUT",
+      "evidence": "obtain an ultrasound elastography to evaluate for fibrosis of the liver",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_011",
+      "target": "N_012",
+      "relation": "LOCATED_AT",
+      "evidence": "fibrosis of the liver",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_001",
+      "target": "N_012",
+      "relation": "LOCATED_AT",
+      "evidence": "Liver panel revealed an elevated AST",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_006",
+      "target": "N_012",
+      "relation": "LOCATED_AT",
+      "evidence": "Grade 2 out of 6 systolic ejection murmur is appreciated",
+      "confidence": 0.3
+    },
+    {
+      "source": "N_001",
+      "target": "N_013",
+      "relation": "CAUSES",
+      "evidence": "He states he is anxious with the results",
+      "confidence": 0.6
+    }
+  ]
+}

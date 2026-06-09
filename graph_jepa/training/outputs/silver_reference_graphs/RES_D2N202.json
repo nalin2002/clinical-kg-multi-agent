@@ -1,0 +1,197 @@
+{
+  "patient_id": "RES_D2N202",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "right shoulder pain",
+      "type": "SYMPTOM",
+      "normalized_name": "right shoulder pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "right shoulder",
+      "type": "LOCATION",
+      "normalized_name": "right shoulder",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "numbness and tingling",
+      "type": "SYMPTOM",
+      "normalized_name": "numbness and tingling",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "Advil",
+      "type": "TREATMENT",
+      "normalized_name": "advil",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "icing",
+      "type": "TREATMENT",
+      "normalized_name": "icing",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "limited active and passive ROM",
+      "type": "SYMPTOM",
+      "normalized_name": "limited active and passive rom",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "tenderness over greater tuberosity of humerus",
+      "type": "SYMPTOM",
+      "normalized_name": "tenderness over greater tuberosity of humerus",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "greater tuberosity of the humerus",
+      "type": "LOCATION",
+      "normalized_name": "greater tuberosity of the humerus",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "X-ray of the right shoulder",
+      "type": "PROCEDURE",
+      "normalized_name": "x-ray of the right shoulder",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "fracture",
+      "type": "DIAGNOSIS",
+      "normalized_name": "fracture",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "rotator cuff tendinopathy",
+      "type": "DIAGNOSIS",
+      "normalized_name": "rotator cuff tendinopathy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "fall onto right arm",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "fall onto right arm",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "MRI of the right shoulder",
+      "type": "PROCEDURE",
+      "normalized_name": "mri of the right shoulder",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "physical therapy",
+      "type": "TREATMENT",
+      "normalized_name": "physical therapy",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_002",
+      "relation": "LOCATED_AT",
+      "evidence": "evaluation of right shoulder pain",
+      "confidence": 0.97
+    },
+    {
+      "source": "N_001",
+      "target": "N_011",
+      "relation": "INDICATES",
+      "evidence": "her symptoms are likely due to rotator cuff tendinopathy",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_007",
+      "target": "N_008",
+      "relation": "LOCATED_AT",
+      "evidence": "Tenderness over the greater tuberosity of the humerus",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_007",
+      "target": "N_011",
+      "relation": "INDICATES",
+      "evidence": "Tenderness over the greater tuberosity of the humerus; rotator cuff tendinopathy",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_006",
+      "target": "N_011",
+      "relation": "INDICATES",
+      "evidence": "limited active and passive ROM",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_009",
+      "target": "N_010",
+      "relation": "RULES_OUT",
+      "evidence": "X-ray of the right shoulder taken today reveals no fracture or bony abnormality",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_012",
+      "target": "N_011",
+      "relation": "CAUSES",
+      "evidence": "she reached out to catch herself because she fell... braced herself with her right arm",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_004",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "took Advil for pain",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_005",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "she iced her arm",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_014",
+      "target": "N_011",
+      "relation": "TAKEN_FOR",
+      "evidence": "referred her to formal physical therapy to strengthen her right shoulder",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_003",
+      "target": "N_002",
+      "relation": "LOCATED_AT",
+      "evidence": "numbness and tingling in her arm and hand when she initially injured her right shoulder",
+      "confidence": 0.7
+    }
+  ]
+}

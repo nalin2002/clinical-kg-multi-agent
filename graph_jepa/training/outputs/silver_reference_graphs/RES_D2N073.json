@@ -1,0 +1,274 @@
+{
+  "patient_id": "RES_D2N073",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "iron deficiency anemia",
+      "type": "DIAGNOSIS",
+      "normalized_name": "iron deficiency anemia",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "heavy menstruation",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "heavy menstruation",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "hysterectomy",
+      "type": "PROCEDURE",
+      "normalized_name": "hysterectomy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "colonoscopy",
+      "type": "PROCEDURE",
+      "normalized_name": "colonoscopy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "fatigue",
+      "type": "SYMPTOM",
+      "normalized_name": "fatigue",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "fever with chills",
+      "type": "SYMPTOM",
+      "normalized_name": "fever with chills",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "shortness of breath",
+      "type": "SYMPTOM",
+      "normalized_name": "shortness of breath",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "wheezing",
+      "type": "SYMPTOM",
+      "normalized_name": "wheezing",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "headache",
+      "type": "SYMPTOM",
+      "normalized_name": "headache",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "tingling sensations",
+      "type": "SYMPTOM",
+      "normalized_name": "tingling sensations",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "cold sensitivity",
+      "type": "SYMPTOM",
+      "normalized_name": "cold sensitivity",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "anxiety",
+      "type": "SYMPTOM",
+      "normalized_name": "anxiety",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "depression",
+      "type": "SYMPTOM",
+      "normalized_name": "depression",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "ferrous sulfate",
+      "type": "TREATMENT",
+      "normalized_name": "ferrous sulfate",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "vitamin B12",
+      "type": "TREATMENT",
+      "normalized_name": "vitamin b12",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "vitamin C",
+      "type": "TREATMENT",
+      "normalized_name": "vitamin c",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "low hemoglobin",
+      "type": "LAB_RESULT",
+      "normalized_name": "low hemoglobin",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "name": "low ferritin",
+      "type": "LAB_RESULT",
+      "normalized_name": "low ferritin",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_019",
+      "name": "upper endoscopy",
+      "type": "PROCEDURE",
+      "normalized_name": "upper endoscopy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_020",
+      "name": "capsule endoscopy",
+      "type": "PROCEDURE",
+      "normalized_name": "capsule endoscopy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_021",
+      "name": "GI bleed",
+      "type": "DIAGNOSIS",
+      "normalized_name": "gi bleed",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_002",
+      "target": "N_001",
+      "relation": "CAUSES",
+      "evidence": "She has a history of heavy menstruation",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_001",
+      "target": "N_005",
+      "relation": "CAUSES",
+      "evidence": "she feels fatigued often during the day",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_001",
+      "target": "N_007",
+      "relation": "CAUSES",
+      "evidence": "during activity feels she cannot catch her breath",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_001",
+      "target": "N_009",
+      "relation": "CAUSES",
+      "evidence": "She has been having some headaches which is uncommon for her",
+      "confidence": 0.5
+    },
+    {
+      "source": "N_001",
+      "target": "N_010",
+      "relation": "CAUSES",
+      "evidence": "she is noticing tingling sensations",
+      "confidence": 0.5
+    },
+    {
+      "source": "N_001",
+      "target": "N_011",
+      "relation": "CAUSES",
+      "evidence": "cold sensitivity",
+      "confidence": 0.5
+    },
+    {
+      "source": "N_017",
+      "target": "N_001",
+      "relation": "INDICATES",
+      "evidence": "follow-up blood work in 01/2020 revealed a low hemoglobin",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_018",
+      "target": "N_001",
+      "relation": "INDICATES",
+      "evidence": "ferritin was low",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_014",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "She has been taking ferrous sulfate 325 mg by mouth",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_015",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "Vitamin B12 OTC",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_016",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "continue each ferrous sulfate dose with vitamin C found in orange juice",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_019",
+      "target": "N_021",
+      "relation": "RULES_OUT",
+      "evidence": "We will plan for EGD and colonoscopy to assess for potential sources of anemia or GI bleed",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_004",
+      "target": "N_021",
+      "relation": "RULES_OUT",
+      "evidence": "plan for EGD and colonoscopy to assess for potential sources of anemia or GI bleed",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_021",
+      "target": "N_001",
+      "relation": "CAUSES",
+      "evidence": "potential sources of anemia or GI bleed",
+      "confidence": 0.5
+    }
+  ]
+}

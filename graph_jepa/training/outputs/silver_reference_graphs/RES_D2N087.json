@@ -1,0 +1,319 @@
+{
+  "patient_id": "RES_D2N087",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "tick bite",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "tick bite",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "arthritis",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "arthritis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "hypertension",
+      "type": "DIAGNOSIS",
+      "normalized_name": "hypertension",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "type 2 diabetes",
+      "type": "DIAGNOSIS",
+      "normalized_name": "type 2 diabetes",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "lisinopril",
+      "type": "TREATMENT",
+      "normalized_name": "lisinopril",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "metformin",
+      "type": "TREATMENT",
+      "normalized_name": "metformin",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "general ill feelings",
+      "type": "SYMPTOM",
+      "normalized_name": "general ill feelings",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "warmth on right knee",
+      "type": "SYMPTOM",
+      "normalized_name": "warmth on right knee",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "headache",
+      "type": "SYMPTOM",
+      "normalized_name": "headache",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "right knee",
+      "type": "LOCATION",
+      "normalized_name": "right knee",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "erythema over right patella",
+      "type": "SYMPTOM",
+      "normalized_name": "erythema",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "edema over right patella",
+      "type": "SYMPTOM",
+      "normalized_name": "edema",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "fluctuance over right patella",
+      "type": "SYMPTOM",
+      "normalized_name": "fluctuance",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "pain to palpation of right anterior knee",
+      "type": "SYMPTOM",
+      "normalized_name": "knee pain on palpation",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "bull's eye rash",
+      "type": "SYMPTOM",
+      "normalized_name": "bull's eye rash",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "Lyme disease",
+      "type": "DIAGNOSIS",
+      "normalized_name": "lyme disease",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "doxycycline",
+      "type": "TREATMENT",
+      "normalized_name": "doxycycline",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "name": "Lyme titer",
+      "type": "PROCEDURE",
+      "normalized_name": "lyme titer",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_019",
+      "name": "Western blot",
+      "type": "PROCEDURE",
+      "normalized_name": "western blot",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_020",
+      "name": "lipid panel",
+      "type": "PROCEDURE",
+      "normalized_name": "lipid panel",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_021",
+      "name": "hemoglobin A1c",
+      "type": "PROCEDURE",
+      "normalized_name": "hemoglobin a1c",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_022",
+      "name": "basic metabolic panel",
+      "type": "PROCEDURE",
+      "normalized_name": "basic metabolic panel",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_023",
+      "name": "kidney function within normal limits",
+      "type": "LAB_RESULT",
+      "normalized_name": "normal kidney function",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_024",
+      "name": "blood sugars in the 120s",
+      "type": "LAB_RESULT",
+      "normalized_name": "blood glucose 120s",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_015",
+      "target": "N_016",
+      "relation": "INDICATES",
+      "evidence": "evidence of a bull's eye rash over the right knee",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_008",
+      "target": "N_016",
+      "relation": "INDICATES",
+      "evidence": "concern that he might have Lyme disease based on the presentation of his right knee",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_011",
+      "target": "N_016",
+      "relation": "INDICATES",
+      "evidence": "Erythema and edema as well as an area of fluctuance noted over the right patella",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_008",
+      "target": "N_010",
+      "relation": "LOCATED_AT",
+      "evidence": "Reports warmth on the right knee",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_011",
+      "target": "N_010",
+      "relation": "LOCATED_AT",
+      "evidence": "Erythema ... noted over the right patella",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_012",
+      "target": "N_010",
+      "relation": "LOCATED_AT",
+      "evidence": "edema ... noted over the right patella",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_013",
+      "target": "N_010",
+      "relation": "LOCATED_AT",
+      "evidence": "area of fluctuance noted over the right patella",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_014",
+      "target": "N_010",
+      "relation": "LOCATED_AT",
+      "evidence": "pain to palpation of the right anterior knee",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_015",
+      "target": "N_010",
+      "relation": "LOCATED_AT",
+      "evidence": "bull's eye rash over the right knee",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_001",
+      "target": "N_016",
+      "relation": "CAUSES",
+      "evidence": "Tick bite ... concern that he might have Lyme disease",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_017",
+      "target": "N_016",
+      "relation": "TAKEN_FOR",
+      "evidence": "Prescription for doxycycline 100 mg twice a day for 3 weeks",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_018",
+      "target": "N_016",
+      "relation": "CONFIRMS",
+      "evidence": "Lyme titer and Western blot will be obtained to determine if he has Lyme disease",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_019",
+      "target": "N_016",
+      "relation": "CONFIRMS",
+      "evidence": "Lyme titer and Western blot will be obtained to determine if he has Lyme disease",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_005",
+      "target": "N_003",
+      "relation": "TAKEN_FOR",
+      "evidence": "Continue lisinopril 20 mg once a day",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_006",
+      "target": "N_004",
+      "relation": "TAKEN_FOR",
+      "evidence": "Continue metformin 1000 mg twice a day",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_024",
+      "target": "N_004",
+      "relation": "INDICATES",
+      "evidence": "doing a good job managing his diabetes since his blood sugars are running in the 120s",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_021",
+      "target": "N_004",
+      "relation": "CONFIRMS",
+      "evidence": "we will see what the hemoglobin A1c shows",
+      "confidence": 0.7
+    }
+  ]
+}

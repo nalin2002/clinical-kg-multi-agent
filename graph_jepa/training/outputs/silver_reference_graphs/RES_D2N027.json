@@ -1,0 +1,269 @@
+{
+  "patient_id": "RES_D2N027",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "fatigue",
+      "type": "SYMPTOM",
+      "normalized_name": "fatigue",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "snoring",
+      "type": "SYMPTOM",
+      "normalized_name": "snoring",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "pursed lip breathing",
+      "type": "SYMPTOM",
+      "normalized_name": "pursed lip breathing",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "low exhalation phase",
+      "type": "SYMPTOM",
+      "normalized_name": "low exhalation phase",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "right testicular nodule",
+      "type": "SYMPTOM",
+      "normalized_name": "right testicular nodule",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "lung field abnormal finding",
+      "type": "DIAGNOSIS",
+      "normalized_name": "lung field abnormal finding",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "aortic valve replacement",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "aortic valve replacement",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "ascending aortic aneurysm repair",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "ascending aortic aneurysm repair",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "elevated alkaline phosphatase",
+      "type": "LAB_RESULT",
+      "normalized_name": "elevated alkaline phosphatase",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "elevated alkaline phosphatase level",
+      "type": "DIAGNOSIS",
+      "normalized_name": "elevated alkaline phosphatase level",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "elevated total cholesterol",
+      "type": "LAB_RESULT",
+      "normalized_name": "elevated total cholesterol",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "elevated LDL",
+      "type": "LAB_RESULT",
+      "normalized_name": "elevated ldl",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "normal TSH",
+      "type": "LAB_RESULT",
+      "normalized_name": "normal tsh",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "echocardiogram",
+      "type": "PROCEDURE",
+      "normalized_name": "echocardiogram",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "stress test",
+      "type": "PROCEDURE",
+      "normalized_name": "stress test",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "pulmonary function testing",
+      "type": "PROCEDURE",
+      "normalized_name": "pulmonary function testing",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "testicular ultrasound",
+      "type": "PROCEDURE",
+      "normalized_name": "testicular ultrasound",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "name": "gamma GT",
+      "type": "PROCEDURE",
+      "normalized_name": "gamma gt",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_019",
+      "name": "clindamycin",
+      "type": "TREATMENT",
+      "normalized_name": "clindamycin",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_020",
+      "name": "vitamin D3",
+      "type": "TREATMENT",
+      "normalized_name": "vitamin d3",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_021",
+      "name": "shingles vaccine",
+      "type": "TREATMENT",
+      "normalized_name": "shingles vaccine",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_022",
+      "name": "right testicle",
+      "type": "LOCATION",
+      "normalized_name": "right testicle",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_023",
+      "name": "lungs",
+      "type": "LOCATION",
+      "normalized_name": "lungs",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_003",
+      "target": "N_006",
+      "relation": "INDICATES",
+      "evidence": "Pursed lip breathing noted. The exhalation phase is low.",
+      "confidence": 0.75
+    },
+    {
+      "source": "N_004",
+      "target": "N_006",
+      "relation": "INDICATES",
+      "evidence": "His exhalation phase was low on exam.",
+      "confidence": 0.75
+    },
+    {
+      "source": "N_003",
+      "target": "N_023",
+      "relation": "LOCATED_AT",
+      "evidence": "Pursed lip breathing noted",
+      "confidence": 0.5
+    },
+    {
+      "source": "N_005",
+      "target": "N_022",
+      "relation": "LOCATED_AT",
+      "evidence": "2 to 3 mm nodule in his right testicle",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_009",
+      "target": "N_010",
+      "relation": "CONFIRMS",
+      "evidence": "alkaline phosphatase was elevated at 156",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_014",
+      "target": "N_007",
+      "relation": "RULES_OUT",
+      "evidence": "Ordered echocardiogram and stress test.",
+      "confidence": 0.4
+    },
+    {
+      "source": "N_016",
+      "target": "N_006",
+      "relation": "CONFIRMS",
+      "evidence": "Ordered pulmonary function testing for further evaluation.",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_017",
+      "target": "N_005",
+      "relation": "CONFIRMS",
+      "evidence": "Referral placed to urology for possible ultrasound.",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_019",
+      "target": "N_005",
+      "relation": "TAKEN_FOR",
+      "evidence": "clindamycin prior to dental procedures",
+      "confidence": 0.3
+    },
+    {
+      "source": "N_021",
+      "target": "N_006",
+      "relation": "TAKEN_FOR",
+      "evidence": "Recommend shingles vaccine next month.",
+      "confidence": 0.2
+    },
+    {
+      "source": "N_018",
+      "target": "N_010",
+      "relation": "CONFIRMS",
+      "evidence": "Ordered an alkaline phosphatase and gamma GT.",
+      "confidence": 0.5
+    }
+  ]
+}

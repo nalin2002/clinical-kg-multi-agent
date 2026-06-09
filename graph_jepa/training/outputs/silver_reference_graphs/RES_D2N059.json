@@ -1,0 +1,213 @@
+{
+  "patient_id": "RES_D2N059",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "asthma",
+      "type": "DIAGNOSIS",
+      "normalized_name": "asthma",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "asthma history",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "asthma history",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "tonsillectomy",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "tonsillectomy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "seasonal allergies",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "seasonal allergies",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "albuterol inhaler",
+      "type": "TREATMENT",
+      "normalized_name": "albuterol inhaler",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "fatigue",
+      "type": "SYMPTOM",
+      "normalized_name": "fatigue",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "shortness of breath",
+      "type": "SYMPTOM",
+      "normalized_name": "shortness of breath",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "mood changes",
+      "type": "SYMPTOM",
+      "normalized_name": "mood changes",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "fluid in ears",
+      "type": "SYMPTOM",
+      "normalized_name": "fluid in ears",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "ears",
+      "type": "LOCATION",
+      "normalized_name": "ears",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "Singulair",
+      "type": "TREATMENT",
+      "normalized_name": "singulair",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "allergies",
+      "type": "DIAGNOSIS",
+      "normalized_name": "allergies",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "stress",
+      "type": "SYMPTOM",
+      "normalized_name": "stress",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "therapist referral",
+      "type": "TREATMENT",
+      "normalized_name": "therapist referral",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "screening questionnaire",
+      "type": "PROCEDURE",
+      "normalized_name": "screening questionnaire",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "mood disturbance",
+      "type": "DIAGNOSIS",
+      "normalized_name": "mood disturbance",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_002",
+      "target": "N_001",
+      "relation": "CAUSES",
+      "evidence": "Patient reports history of asthma.",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_005",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "Patient reports using an albuterol inhaler, 2 puffs as needed.",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_007",
+      "target": "N_001",
+      "relation": "INDICATES",
+      "evidence": "Respiratory: Reports shortness of breath.",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_009",
+      "target": "N_010",
+      "relation": "LOCATED_AT",
+      "evidence": "Examination of Ears: Mild fluid in ears.",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_011",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "We will start her on Singulair in about a month.",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_011",
+      "target": "N_012",
+      "relation": "TAKEN_FOR",
+      "evidence": "we will try a daily medication since it looks like she might be having some allergies",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_013",
+      "target": "N_016",
+      "relation": "INDICATES",
+      "evidence": "The patient reports being under a lot of stress with school. I believe this may be attributing to her mood.",
+      "confidence": 0.75
+    },
+    {
+      "source": "N_013",
+      "target": "N_008",
+      "relation": "CAUSES",
+      "evidence": "stress with school... may be attributing to her mood",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_014",
+      "target": "N_016",
+      "relation": "TAKEN_FOR",
+      "evidence": "I would like for the patient to be seen by a therapist.",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_015",
+      "target": "N_016",
+      "relation": "CONFIRMS",
+      "evidence": "She will also complete our screening questionnaire.",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_008",
+      "target": "N_016",
+      "relation": "INDICATES",
+      "evidence": "Psychiatric: Reports mood changes.",
+      "confidence": 0.7
+    }
+  ]
+}

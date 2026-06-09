@@ -1,0 +1,249 @@
+{
+  "patient_id": "RES_D2N033",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "right knee pain",
+      "type": "SYMPTOM",
+      "normalized_name": "right knee pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "right knee swelling",
+      "type": "SYMPTOM",
+      "normalized_name": "right knee swelling",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "right knee",
+      "type": "LOCATION",
+      "normalized_name": "right knee",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "diabetes",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "diabetes",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "torn MCL",
+      "type": "DIAGNOSIS",
+      "normalized_name": "torn mcl",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "pain on ambulation",
+      "type": "SYMPTOM",
+      "normalized_name": "pain on ambulation",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "trouble with weightbearing",
+      "type": "SYMPTOM",
+      "normalized_name": "trouble with weightbearing",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "audible pop",
+      "type": "SYMPTOM",
+      "normalized_name": "audible pop",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "limited range of motion",
+      "type": "SYMPTOM",
+      "normalized_name": "limited range of motion",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "straight leg brace",
+      "type": "TREATMENT",
+      "normalized_name": "straight leg brace",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "Mobic",
+      "type": "TREATMENT",
+      "normalized_name": "mobic",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "icing",
+      "type": "TREATMENT",
+      "normalized_name": "icing",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "knee MRI",
+      "type": "PROCEDURE",
+      "normalized_name": "knee mri",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "McMurray's test",
+      "type": "PROCEDURE",
+      "normalized_name": "mcmurray's test",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "type 2 diabetes",
+      "type": "DIAGNOSIS",
+      "normalized_name": "type 2 diabetes",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "metformin",
+      "type": "TREATMENT",
+      "normalized_name": "metformin",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "hemoglobin A1c",
+      "type": "LAB_RESULT",
+      "normalized_name": "hemoglobin a1c",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_003",
+      "relation": "LOCATED_AT",
+      "evidence": "Examination of the right knee",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_002",
+      "target": "N_003",
+      "relation": "LOCATED_AT",
+      "evidence": "right knee pain and swelling",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_006",
+      "target": "N_003",
+      "relation": "LOCATED_AT",
+      "evidence": "pain on ambulation",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_001",
+      "target": "N_005",
+      "relation": "INDICATES",
+      "evidence": "concerned about a torn MCL due to pain on ambulation",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_006",
+      "target": "N_005",
+      "relation": "INDICATES",
+      "evidence": "concerned about a torn MCL due to pain on ambulation",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_007",
+      "target": "N_005",
+      "relation": "INDICATES",
+      "evidence": "trouble with weightbearing",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_008",
+      "target": "N_005",
+      "relation": "INDICATES",
+      "evidence": "as well as the pop she heard",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_010",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "put her in a straight leg brace",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_011",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "prescribe some Mobic. She can start taking that as a pain reliever",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_011",
+      "target": "N_002",
+      "relation": "TAKEN_FOR",
+      "evidence": "to try to get some of the swelling down",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_012",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "ice her knee once an hour",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_013",
+      "target": "N_005",
+      "relation": "CONFIRMS",
+      "evidence": "send her out for an MRI",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_014",
+      "target": "N_005",
+      "relation": "RULES_OUT",
+      "evidence": "McMurray's Test: Negative",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_016",
+      "target": "N_015",
+      "relation": "TAKEN_FOR",
+      "evidence": "refill on the metformin",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_017",
+      "target": "N_015",
+      "relation": "INDICATES",
+      "evidence": "recheck her hemoglobin A1c",
+      "confidence": 0.7
+    }
+  ]
+}

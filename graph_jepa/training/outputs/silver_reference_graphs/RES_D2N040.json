@@ -1,0 +1,274 @@
+{
+  "patient_id": "RES_D2N040",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "headache",
+      "type": "SYMPTOM",
+      "normalized_name": "headache",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "dizziness",
+      "type": "SYMPTOM",
+      "normalized_name": "dizziness",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "ear flushing",
+      "type": "SYMPTOM",
+      "normalized_name": "ear flushing",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "type 2 diabetes mellitus",
+      "type": "DIAGNOSIS",
+      "normalized_name": "type 2 diabetes mellitus",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "metformin 500 mg",
+      "type": "TREATMENT",
+      "normalized_name": "metformin",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "tension headache",
+      "type": "DIAGNOSIS",
+      "normalized_name": "tension headache",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "paraspinal muscular tenderness",
+      "type": "SYMPTOM",
+      "normalized_name": "paraspinal muscular tenderness",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "muscular tightness",
+      "type": "SYMPTOM",
+      "normalized_name": "muscular tightness",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "cervical spine",
+      "type": "LOCATION",
+      "normalized_name": "cervical spine",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "trapezius musculature",
+      "type": "LOCATION",
+      "normalized_name": "trapezius musculature",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "systolic ejection murmur",
+      "type": "SYMPTOM",
+      "normalized_name": "systolic ejection murmur",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "neck",
+      "type": "LOCATION",
+      "normalized_name": "neck",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "stress",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "stress",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "Tylenol",
+      "type": "TREATMENT",
+      "normalized_name": "tylenol",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "Flexeril 5 mg",
+      "type": "TREATMENT",
+      "normalized_name": "flexeril",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "hemoglobin A1c",
+      "type": "PROCEDURE",
+      "normalized_name": "hemoglobin a1c",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "CBC",
+      "type": "PROCEDURE",
+      "normalized_name": "cbc",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "name": "CMP",
+      "type": "PROCEDURE",
+      "normalized_name": "cmp",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_019",
+      "name": "stroke",
+      "type": "DIAGNOSIS",
+      "normalized_name": "stroke",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_020",
+      "name": "brain bleeding",
+      "type": "DIAGNOSIS",
+      "normalized_name": "brain bleeding",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_021",
+      "name": "neck pain",
+      "type": "SYMPTOM",
+      "normalized_name": "neck pain",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_006",
+      "relation": "INDICATES",
+      "evidence": "Patient presents with symptoms similar to a tension headache.",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_006",
+      "target": "N_001",
+      "relation": "CAUSES",
+      "evidence": "her headaches may be caused by tension around the muscles around her neck and shoulders",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_007",
+      "target": "N_006",
+      "relation": "INDICATES",
+      "evidence": "On exam she has tension and tightness in her paraspinal muscles",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_008",
+      "target": "N_006",
+      "relation": "INDICATES",
+      "evidence": "tension and tightness in her paraspinal muscles",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_007",
+      "target": "N_009",
+      "relation": "LOCATED_AT",
+      "evidence": "Mild posterior paraspinal muscular tenderness in the cervical spine",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_007",
+      "target": "N_010",
+      "relation": "LOCATED_AT",
+      "evidence": "bilateral trapezius musculature",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_011",
+      "target": "N_012",
+      "relation": "LOCATED_AT",
+      "evidence": "Auscultation of Heart: Grade 3 out of 6 systolic ejection murmur",
+      "confidence": 0.5
+    },
+    {
+      "source": "N_013",
+      "target": "N_006",
+      "relation": "CAUSES",
+      "evidence": "I think her stress level is also a contributing factor",
+      "confidence": 0.75
+    },
+    {
+      "source": "N_014",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "She can continue to take Tylenol for the pain.",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_015",
+      "target": "N_006",
+      "relation": "TAKEN_FOR",
+      "evidence": "Prescription for Flexeril 5 mg 3 times a day is provided",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_005",
+      "target": "N_004",
+      "relation": "TAKEN_FOR",
+      "evidence": "She will continue taking metformin 500 mg daily.",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_016",
+      "target": "N_004",
+      "relation": "CONFIRMS",
+      "evidence": "Order for hemoglobin A1c, CBC, and CMP provided today.",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_017",
+      "target": "N_004",
+      "relation": "INDICATES",
+      "evidence": "Order for hemoglobin A1c, CBC, and CMP provided today.",
+      "confidence": 0.4
+    },
+    {
+      "source": "N_018",
+      "target": "N_004",
+      "relation": "INDICATES",
+      "evidence": "Order for hemoglobin A1c, CBC, and CMP provided today.",
+      "confidence": 0.4
+    }
+  ]
+}

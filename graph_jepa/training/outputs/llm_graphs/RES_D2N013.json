@@ -1,0 +1,218 @@
+{
+  "patient_id": "RES_D2N013",
+  "source": "llm_transcript",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "anxiety",
+      "type": "SYMPTOM",
+      "normalized_name": "anxiety",
+      "evidence": "Endorses anxiety",
+      "turn_id": "P-7"
+    },
+    {
+      "id": "N_002",
+      "name": "trace pitting edema",
+      "type": "SYMPTOM",
+      "normalized_name": "trace pitting edema",
+      "evidence": "Trace pitting edema to the bilateral lower extremities",
+      "turn_id": "D-15"
+    },
+    {
+      "id": "N_003",
+      "name": "absent chest pain",
+      "type": "SYMPTOM",
+      "normalized_name": "absent chest pain",
+      "evidence": "denies chest pain",
+      "turn_id": "P-7"
+    },
+    {
+      "id": "N_004",
+      "name": "absent shortness of breath",
+      "type": "SYMPTOM",
+      "normalized_name": "absent shortness of breath",
+      "evidence": "denies ... shortness of breath",
+      "turn_id": "P-7"
+    },
+    {
+      "id": "N_005",
+      "name": "absent vomiting",
+      "type": "SYMPTOM",
+      "normalized_name": "absent vomiting",
+      "evidence": "denies ... vomiting",
+      "turn_id": "P-7"
+    },
+    {
+      "id": "N_006",
+      "name": "absent dizziness",
+      "type": "SYMPTOM",
+      "normalized_name": "absent dizziness",
+      "evidence": "denies ... dizziness",
+      "turn_id": "P-7"
+    },
+    {
+      "id": "N_007",
+      "name": "absent fever",
+      "type": "SYMPTOM",
+      "normalized_name": "absent fever",
+      "evidence": "denies ... fevers",
+      "turn_id": "P-7"
+    },
+    {
+      "id": "N_008",
+      "name": "absent chills",
+      "type": "SYMPTOM",
+      "normalized_name": "absent chills",
+      "evidence": "denies ... chills",
+      "turn_id": "P-7"
+    },
+    {
+      "id": "N_009",
+      "name": "absent seizures",
+      "type": "SYMPTOM",
+      "normalized_name": "absent seizures",
+      "evidence": "he has not had any seizures in a few months",
+      "turn_id": "P-5"
+    },
+    {
+      "id": "N_010",
+      "name": "newly diagnosed diabetes",
+      "type": "DIAGNOSIS",
+      "normalized_name": "newly diagnosed diabetes",
+      "evidence": "Newly diagnosed diabetes",
+      "turn_id": "D-18"
+    },
+    {
+      "id": "N_011",
+      "name": "metformin",
+      "type": "TREATMENT",
+      "normalized_name": "metformin",
+      "evidence": "Continue metformin 500 mg twice daily",
+      "turn_id": "D-18"
+    },
+    {
+      "id": "N_012",
+      "name": "keppra",
+      "type": "TREATMENT",
+      "normalized_name": "keppra",
+      "evidence": "Continue Keppra at current dosage",
+      "turn_id": "D-19"
+    },
+    {
+      "id": "N_013",
+      "name": "hemoglobin a1c",
+      "type": "PROCEDURE",
+      "normalized_name": "hemoglobin a1c",
+      "evidence": "Repeat hemoglobin A1c",
+      "turn_id": "D-18"
+    },
+    {
+      "id": "N_014",
+      "name": "glucose test",
+      "type": "PROCEDURE",
+      "normalized_name": "glucose test",
+      "evidence": "Non-fasting glucose is elevated",
+      "turn_id": "D-15"
+    },
+    {
+      "id": "N_015",
+      "name": "physical exam",
+      "type": "PROCEDURE",
+      "normalized_name": "physical exam",
+      "evidence": "PHYSICAL EXAMINATION",
+      "turn_id": "D-15"
+    },
+    {
+      "id": "N_016",
+      "name": "bilateral lower extremities",
+      "type": "LOCATION",
+      "normalized_name": "bilateral lower extremities",
+      "evidence": "Trace pitting edema to the bilateral lower extremities",
+      "turn_id": "D-15"
+    },
+    {
+      "id": "N_017",
+      "name": "anxiety history",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "anxiety history",
+      "evidence": "past medical history significant for anxiety",
+      "turn_id": "D-3"
+    },
+    {
+      "id": "N_018",
+      "name": "epilepsy",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "epilepsy",
+      "evidence": "past medical history significant for ... epilepsy",
+      "turn_id": "D-3"
+    },
+    {
+      "id": "N_019",
+      "name": "stress",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "stress",
+      "evidence": "going from place to place for different events",
+      "turn_id": "P-3"
+    },
+    {
+      "id": "N_020",
+      "name": "hemoglobin a1c 8",
+      "type": "LAB_RESULT",
+      "normalized_name": "hemoglobin a1c 8",
+      "evidence": "Hemoglobin A1c is elevated at 8",
+      "turn_id": "D-15"
+    },
+    {
+      "id": "N_021",
+      "name": "elevated glucose",
+      "type": "LAB_RESULT",
+      "normalized_name": "elevated glucose",
+      "evidence": "Non-fasting glucose is elevated",
+      "turn_id": "D-15"
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_020",
+      "target": "N_010",
+      "relation": "CONFIRMS",
+      "evidence": "Hemoglobin A1c is elevated at 8",
+      "confidence": 1.0
+    },
+    {
+      "source": "N_021",
+      "target": "N_010",
+      "relation": "CONFIRMS",
+      "evidence": "blood glucose level is also elevated in clinic today",
+      "confidence": 1.0
+    },
+    {
+      "source": "N_001",
+      "target": "N_017",
+      "relation": "INDICATES",
+      "evidence": "Endorses anxiety",
+      "confidence": 1.0
+    },
+    {
+      "source": "N_011",
+      "target": "N_010",
+      "relation": "TAKEN_FOR",
+      "evidence": "Continue metformin 500 mg twice daily",
+      "confidence": 1.0
+    },
+    {
+      "source": "N_012",
+      "target": "N_018",
+      "relation": "TAKEN_FOR",
+      "evidence": "Continue Keppra at current dosage",
+      "confidence": 1.0
+    },
+    {
+      "source": "N_002",
+      "target": "N_016",
+      "relation": "LOCATED_AT",
+      "evidence": "Trace pitting edema to the bilateral lower extremities",
+      "confidence": 1.0
+    }
+  ]
+}

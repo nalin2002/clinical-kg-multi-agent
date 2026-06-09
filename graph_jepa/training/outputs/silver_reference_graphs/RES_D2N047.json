@@ -1,0 +1,273 @@
+{
+  "patient_id": "RES_D2N047",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "difficulty urinating",
+      "type": "SYMPTOM",
+      "normalized_name": "difficulty urinating",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "coronary artery disease",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "coronary artery disease",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "diabetes",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "diabetes",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "right coronary artery stent placement",
+      "type": "PROCEDURE",
+      "normalized_name": "right coronary artery stent placement",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "systolic ejection murmur",
+      "type": "SYMPTOM",
+      "normalized_name": "systolic ejection murmur",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "left base",
+      "type": "LOCATION",
+      "normalized_name": "left base",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "enlarged prostate",
+      "type": "DIAGNOSIS",
+      "normalized_name": "enlarged prostate",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "prostate",
+      "type": "LOCATION",
+      "normalized_name": "prostate",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "prostate cancer",
+      "type": "DIAGNOSIS",
+      "normalized_name": "prostate cancer",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "PSA",
+      "type": "PROCEDURE",
+      "normalized_name": "psa",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "urinalysis",
+      "type": "PROCEDURE",
+      "normalized_name": "urinalysis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "urine culture",
+      "type": "PROCEDURE",
+      "normalized_name": "urine culture",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "Flomax",
+      "type": "TREATMENT",
+      "normalized_name": "flomax",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "echocardiogram",
+      "type": "PROCEDURE",
+      "normalized_name": "echocardiogram",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "lipid panel",
+      "type": "PROCEDURE",
+      "normalized_name": "lipid panel",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "Lipitor",
+      "type": "TREATMENT",
+      "normalized_name": "lipitor",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "aspirin",
+      "type": "TREATMENT",
+      "normalized_name": "aspirin",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "name": "metoprolol",
+      "type": "TREATMENT",
+      "normalized_name": "metoprolol",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_019",
+      "name": "metformin",
+      "type": "TREATMENT",
+      "normalized_name": "metformin",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_020",
+      "name": "hemoglobin A1c",
+      "type": "PROCEDURE",
+      "normalized_name": "hemoglobin a1c",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_007",
+      "relation": "INDICATES",
+      "evidence": "history of difficulty with urination. His prostate also felt slightly enlarged on exam today.",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_005",
+      "target": "N_006",
+      "relation": "LOCATED_AT",
+      "evidence": "3/6 systolic ejection murmur heard at the left base",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_005",
+      "target": "N_002",
+      "relation": "INDICATES",
+      "evidence": "Coronary artery disease... 3/6 systolic ejection murmur heard at the left base on exam today",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_007",
+      "target": "N_008",
+      "relation": "LOCATED_AT",
+      "evidence": "Enlarged prostate appreciated",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_010",
+      "target": "N_009",
+      "relation": "RULES_OUT",
+      "evidence": "order a PSA to rule out prostate cancer",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_013",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "start him on Flomax 0.4 mg once at night",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_014",
+      "target": "N_005",
+      "relation": "TAKEN_FOR",
+      "evidence": "order an echocardiogram to follow up on his murmur",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_016",
+      "target": "N_002",
+      "relation": "TAKEN_FOR",
+      "evidence": "He will continue Lipitor 40 mg a day, aspirin and metoprolol",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_017",
+      "target": "N_002",
+      "relation": "TAKEN_FOR",
+      "evidence": "He will continue Lipitor 40 mg a day, aspirin and metoprolol",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_018",
+      "target": "N_002",
+      "relation": "TAKEN_FOR",
+      "evidence": "He will continue Lipitor 40 mg a day, aspirin and metoprolol",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_019",
+      "target": "N_003",
+      "relation": "TAKEN_FOR",
+      "evidence": "We will continue him on metformin 1000 mg twice a day",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_020",
+      "target": "N_003",
+      "relation": "INDICATES",
+      "evidence": "A hemoglobin A1c will be ordered to see if any medication adjustments are needed",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_004",
+      "target": "N_002",
+      "relation": "TAKEN_FOR",
+      "evidence": "right coronary artery stent placement in 2018",
+      "confidence": 0.75
+    },
+    {
+      "source": "N_011",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "order a urinalysis and urine culture",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_012",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "order a urinalysis and urine culture",
+      "confidence": 0.6
+    }
+  ]
+}

@@ -1,0 +1,226 @@
+{
+  "patient_id": "RES_D2N029",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "melanoma",
+      "type": "DIAGNOSIS",
+      "normalized_name": "melanoma",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "right inferior back",
+      "type": "LOCATION",
+      "normalized_name": "right inferior back",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "skin lesion",
+      "type": "SYMPTOM",
+      "normalized_name": "skin lesion",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "shave biopsy",
+      "type": "PROCEDURE",
+      "normalized_name": "shave biopsy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "family history of melanoma",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "family history of melanoma",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "right inguinal lymph node atypical consistency",
+      "type": "SYMPTOM",
+      "normalized_name": "right inguinal lymph node atypical consistency",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "right groin",
+      "type": "LOCATION",
+      "normalized_name": "right groin",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "metastatic disease",
+      "type": "DIAGNOSIS",
+      "normalized_name": "metastatic disease",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "ultrasound",
+      "type": "PROCEDURE",
+      "normalized_name": "ultrasound",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "wide local excision",
+      "type": "TREATMENT",
+      "normalized_name": "wide local excision",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "current smoker",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "current smoker",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "Breslow thickness 0.7 mm",
+      "type": "LAB_RESULT",
+      "normalized_name": "breslow thickness 0.7 mm",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "superficial spreading histology",
+      "type": "LAB_RESULT",
+      "normalized_name": "superficial spreading histology",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "positive peripheral margin",
+      "type": "LAB_RESULT",
+      "normalized_name": "positive peripheral margin",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "malignant melanoma pathology",
+      "type": "LAB_RESULT",
+      "normalized_name": "malignant melanoma pathology",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_003",
+      "target": "N_002",
+      "relation": "LOCATED_AT",
+      "evidence": "melanoma of the right inferior back",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_003",
+      "target": "N_001",
+      "relation": "INDICATES",
+      "evidence": "biopsied the 0.7 mm lesion ... diagnosed the melanoma",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_001",
+      "target": "N_002",
+      "relation": "LOCATED_AT",
+      "evidence": "melanoma of the right inferior back",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_004",
+      "target": "N_001",
+      "relation": "CONFIRMS",
+      "evidence": "Shave biopsy of right inferior back malignant melanoma, invasive, superficial spreading",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_015",
+      "target": "N_001",
+      "relation": "CONFIRMS",
+      "evidence": "Pathology: ... malignant melanoma, invasive, superficial spreading",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_012",
+      "target": "N_001",
+      "relation": "INDICATES",
+      "evidence": "Breslow thickness: 0.7 mm",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_013",
+      "target": "N_001",
+      "relation": "INDICATES",
+      "evidence": "Histology: Superficial spreading",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_005",
+      "target": "N_001",
+      "relation": "CAUSES",
+      "evidence": "There is a family history of melanoma in her mother and maternal aunt",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_006",
+      "target": "N_007",
+      "relation": "LOCATED_AT",
+      "evidence": "soft lymph node in the right groin ... right inguinal lymph node with slightly atypical consistency",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_006",
+      "target": "N_008",
+      "relation": "INDICATES",
+      "evidence": "right inguinal lymph node with slightly atypical consistency. I recommended an ultrasound to rule out metastatic disease",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_009",
+      "target": "N_008",
+      "relation": "RULES_OUT",
+      "evidence": "I recommended an ultrasound to rule out metastatic disease",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_010",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "candidate for a wide local excision with a 1-2 cm margin",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_011",
+      "target": "N_001",
+      "relation": "CAUSES",
+      "evidence": "Current smoker since teens",
+      "confidence": 0.3
+    },
+    {
+      "source": "N_014",
+      "target": "N_001",
+      "relation": "INDICATES",
+      "evidence": "Peripheral margin: positive",
+      "confidence": 0.6
+    }
+  ]
+}

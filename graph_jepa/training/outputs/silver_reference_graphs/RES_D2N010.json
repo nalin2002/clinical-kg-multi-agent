@@ -1,0 +1,259 @@
+{
+  "patient_id": "RES_D2N010",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "hyperglycemia",
+      "type": "DIAGNOSIS",
+      "normalized_name": "hyperglycemia",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "high blood sugar",
+      "type": "SYMPTOM",
+      "normalized_name": "high blood sugar",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "right knee pain",
+      "type": "SYMPTOM",
+      "normalized_name": "right knee pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "right knee",
+      "type": "LOCATION",
+      "normalized_name": "right knee",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "nausea",
+      "type": "SYMPTOM",
+      "normalized_name": "nausea",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "congestive heart failure",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "congestive heart failure",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "right rotator cuff issues",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "right rotator cuff issues",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "reflux",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "reflux",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "thyromegaly",
+      "type": "SYMPTOM",
+      "normalized_name": "thyromegaly",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "erythema",
+      "type": "SYMPTOM",
+      "normalized_name": "erythema",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "insect bite",
+      "type": "SYMPTOM",
+      "normalized_name": "insect bite",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "fluctuance",
+      "type": "SYMPTOM",
+      "normalized_name": "fluctuance",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "right lower extremity edema",
+      "type": "SYMPTOM",
+      "normalized_name": "right lower extremity edema",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "right lower extremity",
+      "type": "LOCATION",
+      "normalized_name": "right lower extremity",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "elevated Lyme titer",
+      "type": "LAB_RESULT",
+      "normalized_name": "elevated lyme titer",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "positive rapid strep test",
+      "type": "LAB_RESULT",
+      "normalized_name": "positive rapid strep test",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_017",
+      "name": "Lyme disease",
+      "type": "DIAGNOSIS",
+      "normalized_name": "lyme disease",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_018",
+      "name": "western blot PCR",
+      "type": "PROCEDURE",
+      "normalized_name": "western blot pcr",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_019",
+      "name": "amoxicillin",
+      "type": "TREATMENT",
+      "normalized_name": "amoxicillin",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_020",
+      "name": "inflammatory response",
+      "type": "DIAGNOSIS",
+      "normalized_name": "inflammatory response",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_002",
+      "target": "N_001",
+      "relation": "INDICATES",
+      "evidence": "presents for evaluation of high blood sugar",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_003",
+      "target": "N_004",
+      "relation": "LOCATED_AT",
+      "evidence": "joint pain in his right knee",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_010",
+      "target": "N_004",
+      "relation": "LOCATED_AT",
+      "evidence": "Right knee shows some erythema",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_011",
+      "target": "N_004",
+      "relation": "LOCATED_AT",
+      "evidence": "Right knee shows ... insect bite",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_012",
+      "target": "N_004",
+      "relation": "LOCATED_AT",
+      "evidence": "insect bite with associated fluctuance",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_013",
+      "target": "N_014",
+      "relation": "LOCATED_AT",
+      "evidence": "Trace edema in the right lower extremity",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_015",
+      "target": "N_017",
+      "relation": "INDICATES",
+      "evidence": "elevated Lyme titer ... order a western blot PCR to evaluate for Lyme disease",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_016",
+      "target": "N_020",
+      "relation": "INDICATES",
+      "evidence": "likely related to an inflammatory response as the patient had ... positive rapid strep test",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_015",
+      "target": "N_020",
+      "relation": "INDICATES",
+      "evidence": "likely related to an inflammatory response as the patient had an elevated Lyme titer",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_020",
+      "target": "N_001",
+      "relation": "CAUSES",
+      "evidence": "This is likely related to an inflammatory response",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_018",
+      "target": "N_017",
+      "relation": "CONFIRMS",
+      "evidence": "order a western blot PCR to evaluate for Lyme disease",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_019",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "treat him with amoxicillin 500 mg 3 times a day for 10 days",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_019",
+      "target": "N_020",
+      "relation": "TAKEN_FOR",
+      "evidence": "treat him with amoxicillin",
+      "confidence": 0.7
+    }
+  ]
+}

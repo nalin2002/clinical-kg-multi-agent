@@ -1,0 +1,189 @@
+{
+  "patient_id": "RES_D2N194",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "left shoulder pain",
+      "type": "SYMPTOM",
+      "normalized_name": "left shoulder pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "left shoulder",
+      "type": "LOCATION",
+      "normalized_name": "left shoulder",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "sleep disturbance",
+      "type": "SYMPTOM",
+      "normalized_name": "sleep disturbance",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "Tylenol Extra Strength",
+      "type": "TREATMENT",
+      "normalized_name": "tylenol extra strength",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "tenderness over greater tuberosity of humerus",
+      "type": "SYMPTOM",
+      "normalized_name": "tenderness over greater tuberosity of humerus",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "limited range of motion",
+      "type": "SYMPTOM",
+      "normalized_name": "limited range of motion",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "X-ray of left shoulder",
+      "type": "PROCEDURE",
+      "normalized_name": "x-ray of left shoulder",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "fracture",
+      "type": "DIAGNOSIS",
+      "normalized_name": "fracture",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "rotator cuff tendinopathy",
+      "type": "DIAGNOSIS",
+      "normalized_name": "rotator cuff tendinopathy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "MRI of left shoulder",
+      "type": "PROCEDURE",
+      "normalized_name": "mri of left shoulder",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "physical therapy",
+      "type": "TREATMENT",
+      "normalized_name": "physical therapy",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "steroid injection",
+      "type": "TREATMENT",
+      "normalized_name": "steroid injection",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "greater tuberosity of humerus",
+      "type": "LOCATION",
+      "normalized_name": "greater tuberosity of humerus",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_002",
+      "relation": "LOCATED_AT",
+      "evidence": "constant pain isolated to the left shoulder",
+      "confidence": 0.98
+    },
+    {
+      "source": "N_001",
+      "target": "N_009",
+      "relation": "INDICATES",
+      "evidence": "I believe this is most likely due to rotator cuff tendinopathy",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_001",
+      "target": "N_003",
+      "relation": "CAUSES",
+      "evidence": "exacerbated if she lays on her shoulder, which subsequently causes sleep disturbance",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_004",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "takes Tylenol Extra Strength... reduces her shoulder pain",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_005",
+      "target": "N_013",
+      "relation": "LOCATED_AT",
+      "evidence": "Tenderness over the greater tuberosity of the humerus",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_005",
+      "target": "N_009",
+      "relation": "INDICATES",
+      "evidence": "Tenderness over the greater tuberosity of the humerus... rotator cuff tendinopathy",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_006",
+      "target": "N_009",
+      "relation": "INDICATES",
+      "evidence": "Limited active and passive range of motion",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_007",
+      "target": "N_008",
+      "relation": "RULES_OUT",
+      "evidence": "X-ray... reveal no fracture or bony abnormality",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_011",
+      "target": "N_009",
+      "relation": "TAKEN_FOR",
+      "evidence": "referral for 6 to 8 weeks of physical therapy",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_012",
+      "target": "N_009",
+      "relation": "TAKEN_FOR",
+      "evidence": "we can consider administering a steroid injection",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_005",
+      "target": "N_002",
+      "relation": "LOCATED_AT",
+      "evidence": "Examination of the left shoulder: Tenderness over the greater tuberosity",
+      "confidence": 0.85
+    }
+  ]
+}

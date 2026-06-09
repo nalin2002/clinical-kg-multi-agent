@@ -1,0 +1,151 @@
+{
+  "patient_id": "RES_D2N114",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "headaches",
+      "type": "SYMPTOM",
+      "normalized_name": "headaches",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "right side of head",
+      "type": "LOCATION",
+      "normalized_name": "right side of head",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "behind the eye",
+      "type": "LOCATION",
+      "normalized_name": "behind the eye",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "tinnitus",
+      "type": "SYMPTOM",
+      "normalized_name": "tinnitus",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "blurred vision",
+      "type": "SYMPTOM",
+      "normalized_name": "blurred vision",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "papilledema",
+      "type": "SYMPTOM",
+      "normalized_name": "papilledema",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "idiopathic intracranial hypertension",
+      "type": "DIAGNOSIS",
+      "normalized_name": "idiopathic intracranial hypertension",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "MRI of the brain",
+      "type": "PROCEDURE",
+      "normalized_name": "mri of the brain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "spinal tap",
+      "type": "PROCEDURE",
+      "normalized_name": "spinal tap",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "pulsing pain",
+      "type": "SYMPTOM",
+      "normalized_name": "pulsing pain",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_007",
+      "relation": "INDICATES",
+      "evidence": "Headaches, concern for idiopathic intracranial hypertension.",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_001",
+      "target": "N_002",
+      "relation": "LOCATED_AT",
+      "evidence": "The patient locates her pain to the right side of her head",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_001",
+      "target": "N_003",
+      "relation": "LOCATED_AT",
+      "evidence": "and behind her eye",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_010",
+      "target": "N_007",
+      "relation": "INDICATES",
+      "evidence": "She describes her pain as a pulsing sensation.",
+      "confidence": 0.5
+    },
+    {
+      "source": "N_004",
+      "target": "N_007",
+      "relation": "INDICATES",
+      "evidence": "intermittent ringing in her ears for the last few months",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_005",
+      "target": "N_007",
+      "relation": "INDICATES",
+      "evidence": "intermittent blurred vision on the lateral aspect of her vision",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_006",
+      "target": "N_007",
+      "relation": "INDICATES",
+      "evidence": "Funduscopic exam: Positive for papilledema.",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_008",
+      "target": "N_007",
+      "relation": "RULES_OUT",
+      "evidence": "obtain an urgent MRI of the brain to evaluate for any other condition",
+      "confidence": 0.6
+    },
+    {
+      "source": "N_009",
+      "target": "N_007",
+      "relation": "CONFIRMS",
+      "evidence": "perform a spinal tap to evaluate the pressure in the brain",
+      "confidence": 0.7
+    }
+  ]
+}

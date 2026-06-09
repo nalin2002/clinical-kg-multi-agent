@@ -1,0 +1,227 @@
+{
+  "patient_id": "RES_D2N108",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "right foot ulcer",
+      "type": "SYMPTOM",
+      "normalized_name": "right foot ulcer",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "redness",
+      "type": "SYMPTOM",
+      "normalized_name": "redness",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "drainage",
+      "type": "SYMPTOM",
+      "normalized_name": "drainage",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "throbbing pain",
+      "type": "SYMPTOM",
+      "normalized_name": "throbbing pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "edema",
+      "type": "SYMPTOM",
+      "normalized_name": "edema",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "right foot",
+      "type": "LOCATION",
+      "normalized_name": "right foot",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "diabetes",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "diabetes",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "diabetic foot ulcer",
+      "type": "DIAGNOSIS",
+      "normalized_name": "diabetic foot ulcer",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "infection",
+      "type": "DIAGNOSIS",
+      "normalized_name": "infection",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "osteomyelitis",
+      "type": "DIAGNOSIS",
+      "normalized_name": "osteomyelitis",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "A1C around 10",
+      "type": "LAB_RESULT",
+      "normalized_name": "a1c around 10",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "right foot x-ray (3 views)",
+      "type": "PROCEDURE",
+      "normalized_name": "right foot x-ray",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "ankle brachial index",
+      "type": "PROCEDURE",
+      "normalized_name": "ankle brachial index",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "debridement",
+      "type": "PROCEDURE",
+      "normalized_name": "debridement",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "clindamycin",
+      "type": "TREATMENT",
+      "normalized_name": "clindamycin",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "surgical shoe",
+      "type": "TREATMENT",
+      "normalized_name": "surgical shoe",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_006",
+      "relation": "LOCATED_AT",
+      "evidence": "non-healing right foot ulcer",
+      "confidence": 0.97
+    },
+    {
+      "source": "N_004",
+      "target": "N_006",
+      "relation": "LOCATED_AT",
+      "evidence": "Musculoskeletal: Reports right foot pain",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_002",
+      "target": "N_006",
+      "relation": "LOCATED_AT",
+      "evidence": "right foot ulcer with redness and drainage",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_003",
+      "target": "N_006",
+      "relation": "LOCATED_AT",
+      "evidence": "right foot ulcer with redness and drainage",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_007",
+      "target": "N_008",
+      "relation": "CAUSES",
+      "evidence": "Right diabetic foot ulcer",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_001",
+      "target": "N_008",
+      "relation": "INDICATES",
+      "evidence": "Right diabetic foot ulcer",
+      "confidence": 0.92
+    },
+    {
+      "source": "N_002",
+      "target": "N_009",
+      "relation": "INDICATES",
+      "evidence": "redness and drainage present... he does seem to have an infection",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_003",
+      "target": "N_009",
+      "relation": "INDICATES",
+      "evidence": "redness and drainage present... he does seem to have an infection",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_011",
+      "target": "N_007",
+      "relation": "INDICATES",
+      "evidence": "His last A1C was around 10",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_012",
+      "target": "N_010",
+      "relation": "RULES_OUT",
+      "evidence": "3 views of the right foot were taken. These reveal no evidence of osteomyelitis",
+      "confidence": 0.95
+    },
+    {
+      "source": "N_015",
+      "target": "N_009",
+      "relation": "TAKEN_FOR",
+      "evidence": "prescription for clindamycin... as he does seem to have an infection",
+      "confidence": 0.92
+    },
+    {
+      "source": "N_014",
+      "target": "N_008",
+      "relation": "TAKEN_FOR",
+      "evidence": "Debridement will be performed",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_016",
+      "target": "N_008",
+      "relation": "TAKEN_FOR",
+      "evidence": "placed in a surgical shoe to provide increased support",
+      "confidence": 0.8
+    }
+  ]
+}

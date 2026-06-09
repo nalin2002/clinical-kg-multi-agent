@@ -1,0 +1,234 @@
+{
+  "patient_id": "RES_D2N036",
+  "source": "clinician_note",
+  "nodes": [
+    {
+      "id": "N_001",
+      "name": "left wrist and hand pain",
+      "type": "SYMPTOM",
+      "normalized_name": "left wrist and hand pain",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_002",
+      "name": "wrist",
+      "type": "LOCATION",
+      "normalized_name": "wrist",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_003",
+      "name": "hand",
+      "type": "LOCATION",
+      "normalized_name": "hand",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_004",
+      "name": "numbness in bilateral hands",
+      "type": "SYMPTOM",
+      "normalized_name": "numbness in bilateral hands",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_005",
+      "name": "finger numbness",
+      "type": "SYMPTOM",
+      "normalized_name": "finger numbness",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_006",
+      "name": "left hand weakness",
+      "type": "SYMPTOM",
+      "normalized_name": "left hand weakness",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_007",
+      "name": "repetitive motion at work",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "repetitive motion at work",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_008",
+      "name": "carpal tunnel syndrome",
+      "type": "DIAGNOSIS",
+      "normalized_name": "carpal tunnel syndrome",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_009",
+      "name": "positive Tinel sign",
+      "type": "LAB_RESULT",
+      "normalized_name": "positive tinel sign",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_010",
+      "name": "decreased grip strength left",
+      "type": "SYMPTOM",
+      "normalized_name": "decreased grip strength left",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_011",
+      "name": "decreased sensation right thumb and index finger",
+      "type": "SYMPTOM",
+      "normalized_name": "decreased sensation right thumb and index finger",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_012",
+      "name": "activity modification",
+      "type": "TREATMENT",
+      "normalized_name": "activity modification",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_013",
+      "name": "wrist splint",
+      "type": "TREATMENT",
+      "normalized_name": "wrist splint",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_014",
+      "name": "ibuprofen 600 mg",
+      "type": "TREATMENT",
+      "normalized_name": "ibuprofen 600 mg",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_015",
+      "name": "EMG of bilateral upper extremities",
+      "type": "PROCEDURE",
+      "normalized_name": "emg of bilateral upper extremities",
+      "evidence": "",
+      "turn_id": ""
+    },
+    {
+      "id": "N_016",
+      "name": "rheumatoid arthritis",
+      "type": "MEDICAL_HISTORY",
+      "normalized_name": "rheumatoid arthritis",
+      "evidence": "",
+      "turn_id": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "N_001",
+      "target": "N_002",
+      "relation": "LOCATED_AT",
+      "evidence": "Left wrist and hand pain.",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_001",
+      "target": "N_003",
+      "relation": "LOCATED_AT",
+      "evidence": "Left wrist and hand pain.",
+      "confidence": 0.9
+    },
+    {
+      "source": "N_001",
+      "target": "N_008",
+      "relation": "INDICATES",
+      "evidence": "left wrist and hand pain ... Bilateral carpal tunnel syndrome",
+      "confidence": 0.75
+    },
+    {
+      "source": "N_004",
+      "target": "N_008",
+      "relation": "INDICATES",
+      "evidence": "wakes with numbness in the bilateral hands",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_005",
+      "target": "N_008",
+      "relation": "INDICATES",
+      "evidence": "numbness in all fingers, but states it is the most noticeable in the left thumb and index finger",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_006",
+      "target": "N_008",
+      "relation": "INDICATES",
+      "evidence": "weakness in his left hand",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_007",
+      "target": "N_008",
+      "relation": "CAUSES",
+      "evidence": "he often engages in repetitive motions while performing his work duties",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_009",
+      "target": "N_008",
+      "relation": "INDICATES",
+      "evidence": "Positive Tinel sign bilaterally",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_010",
+      "target": "N_008",
+      "relation": "INDICATES",
+      "evidence": "Grip strength is less on the left in comparison to the right",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_011",
+      "target": "N_008",
+      "relation": "INDICATES",
+      "evidence": "Decreased sensation in the right thumb and index finger",
+      "confidence": 0.7
+    },
+    {
+      "source": "N_015",
+      "target": "N_008",
+      "relation": "CONFIRMS",
+      "evidence": "obtain an EMG of the bilateral upper extremities to evaluate for carpal tunnel syndrome",
+      "confidence": 0.75
+    },
+    {
+      "source": "N_012",
+      "target": "N_008",
+      "relation": "TAKEN_FOR",
+      "evidence": "importance of activity modification ... limit active repetitive motions",
+      "confidence": 0.8
+    },
+    {
+      "source": "N_013",
+      "target": "N_008",
+      "relation": "TAKEN_FOR",
+      "evidence": "wear a wrist splint to provide increased support",
+      "confidence": 0.85
+    },
+    {
+      "source": "N_014",
+      "target": "N_001",
+      "relation": "TAKEN_FOR",
+      "evidence": "take ibuprofen 600 mg every 6 hours",
+      "confidence": 0.8
+    }
+  ]
+}
