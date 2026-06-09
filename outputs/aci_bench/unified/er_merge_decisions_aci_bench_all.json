@@ -2,9 +2,9 @@
   "method": "embedding_similarity",
   "embedding_model": "cambridgeltl/SapBERT-from-PubMedBERT-fulltext",
   "similarity_threshold": 0.85,
-  "total_raw_entities": 9022,
-  "unique_before": 1891,
-  "unique_after": 1668,
+  "total_raw_entities": 9954,
+  "unique_before": 2012,
+  "unique_after": 1768,
   "pass1_totals": {
     "nodes": 0,
     "edges": 0
@@ -78,6 +78,17 @@
       "canonical_name": "chronic back pain",
       "similarities": {
         "chronic lumbar back pain": 0.8836
+      }
+    },
+    {
+      "entity_type": "DIAGNOSIS",
+      "cluster": [
+        "chronic constipation",
+        "constipation"
+      ],
+      "canonical_name": "constipation",
+      "similarities": {
+        "constipation": 0.8865
       }
     },
     {
@@ -320,6 +331,21 @@
     {
       "entity_type": "PROCEDURE",
       "cluster": [
+        "basic metabolic panel",
+        "complete metabolic panel",
+        "comprehensive metabolic panel",
+        "metabolic panel"
+      ],
+      "canonical_name": "metabolic panel",
+      "similarities": {
+        "complete metabolic panel": 0.9023,
+        "comprehensive metabolic panel": 0.8735,
+        "metabolic panel": 0.897
+      }
+    },
+    {
+      "entity_type": "PROCEDURE",
+      "cluster": [
         "blood sugar",
         "blood sugar testing"
       ],
@@ -331,14 +357,23 @@
     {
       "entity_type": "PROCEDURE",
       "cluster": [
-        "complete metabolic panel",
-        "comprehensive metabolic panel",
-        "metabolic panel"
+        "culture",
+        "cultures"
       ],
-      "canonical_name": "metabolic panel",
+      "canonical_name": "culture",
       "similarities": {
-        "comprehensive metabolic panel": 0.9672,
-        "metabolic panel": 0.9374
+        "cultures": 0.9756
+      }
+    },
+    {
+      "entity_type": "PROCEDURE",
+      "cluster": [
+        "kidney ultrasound",
+        "renal ultrasound"
+      ],
+      "canonical_name": "renal ultrasound",
+      "similarities": {
+        "renal ultrasound": 0.9435
       }
     },
     {
@@ -418,17 +453,6 @@
       "similarities": {
         "x-ray": 0.9194,
         "x-rays": 0.9017
-      }
-    },
-    {
-      "entity_type": "PROCEDURE",
-      "cluster": [
-        "renal artery ultrasound",
-        "renal ultrasound"
-      ],
-      "canonical_name": "renal ultrasound",
-      "similarities": {
-        "renal ultrasound": 0.8592
       }
     },
     {
@@ -601,6 +625,17 @@
     {
       "entity_type": "TREATMENT",
       "cluster": [
+        "nutrition referral",
+        "nutritionist referral"
+      ],
+      "canonical_name": "nutrition referral",
+      "similarities": {
+        "nutritionist referral": 0.9571
+      }
+    },
+    {
+      "entity_type": "TREATMENT",
+      "cluster": [
         "tylenol",
         "tylenol extra strength"
       ],
@@ -642,6 +677,17 @@
       "canonical_name": "absent heavy menstrual bleeding",
       "similarities": {
         "absent heavy menstrual bleeding": 0.9267
+      }
+    },
+    {
+      "entity_type": "SYMPTOM",
+      "cluster": [
+        "absent adenopathy",
+        "absent lymphadenopathy"
+      ],
+      "canonical_name": "absent adenopathy",
+      "similarities": {
+        "absent lymphadenopathy": 0.8755
       }
     },
     {
@@ -719,6 +765,17 @@
     {
       "entity_type": "SYMPTOM",
       "cluster": [
+        "absent bony exposure",
+        "no bony exposure"
+      ],
+      "canonical_name": "no bony exposure",
+      "similarities": {
+        "no bony exposure": 0.9016
+      }
+    },
+    {
+      "entity_type": "SYMPTOM",
+      "cluster": [
         "absent bowel control loss",
         "no bowel control loss"
       ],
@@ -784,6 +841,17 @@
     {
       "entity_type": "SYMPTOM",
       "cluster": [
+        "absent cervical lymphadenopathy",
+        "no cervical lymphadenopathy"
+      ],
+      "canonical_name": "no cervical lymphadenopathy",
+      "similarities": {
+        "no cervical lymphadenopathy": 0.9115
+      }
+    },
+    {
+      "entity_type": "SYMPTOM",
+      "cluster": [
         "absent chest pain",
         "absent chest pain at rest"
       ],
@@ -833,11 +901,13 @@
       "entity_type": "SYMPTOM",
       "cluster": [
         "absent edema",
+        "absent lower edema",
         "absent lower extremity edema",
         "no edema"
       ],
       "canonical_name": "no edema",
       "similarities": {
+        "absent lower edema": 0.8843,
         "absent lower extremity edema": 0.8755,
         "no edema": 0.8984
       }
@@ -880,11 +950,13 @@
       "cluster": [
         "absent heart murmur",
         "absent heart murmurs",
+        "absent murmurs",
         "no murmur"
       ],
       "canonical_name": "no murmur",
       "similarities": {
         "absent heart murmurs": 0.9946,
+        "absent murmurs": 0.9776,
         "no murmur": 0.8954
       }
     },
@@ -939,6 +1011,19 @@
     {
       "entity_type": "SYMPTOM",
       "cluster": [
+        "absent insomnia",
+        "absent sleep disturbance",
+        "absent sleep problems"
+      ],
+      "canonical_name": "absent insomnia",
+      "similarities": {
+        "absent sleep disturbance": 0.861,
+        "absent sleep problems": 0.8598
+      }
+    },
+    {
+      "entity_type": "SYMPTOM",
+      "cluster": [
         "absent jaundice",
         "no jaundice"
       ],
@@ -967,14 +1052,16 @@
         "absent kneecap pain",
         "absent lateral knee pain",
         "absent medial knee pain",
-        "absent pain with knee flexion"
+        "absent pain with knee flexion",
+        "no knee pain with palpation"
       ],
       "canonical_name": "absent knee pain",
       "similarities": {
         "absent kneecap pain": 0.9215,
         "absent lateral knee pain": 0.9047,
         "absent medial knee pain": 0.9089,
-        "absent pain with knee flexion": 0.874
+        "absent pain with knee flexion": 0.874,
+        "no knee pain with palpation": 0.8542
       }
     },
     {
@@ -1013,6 +1100,17 @@
     {
       "entity_type": "SYMPTOM",
       "cluster": [
+        "absent neck stiffness",
+        "absent stiffness"
+      ],
+      "canonical_name": "absent stiffness",
+      "similarities": {
+        "absent stiffness": 0.8984
+      }
+    },
+    {
+      "entity_type": "SYMPTOM",
+      "cluster": [
         "absent night sweats",
         "absent sweats"
       ],
@@ -1036,13 +1134,26 @@
       "entity_type": "SYMPTOM",
       "cluster": [
         "absent pain to palpation",
+        "absent tenderness",
         "no pain to palpation",
         "no pain with palpation"
       ],
-      "canonical_name": "no pain to palpation",
+      "canonical_name": "absent tenderness",
       "similarities": {
+        "absent tenderness": 0.8749,
         "no pain to palpation": 0.8961,
         "no pain with palpation": 0.8968
+      }
+    },
+    {
+      "entity_type": "SYMPTOM",
+      "cluster": [
+        "absent pain with walking",
+        "absent walking problems"
+      ],
+      "canonical_name": "absent walking problems",
+      "similarities": {
+        "absent walking problems": 0.8768
       }
     },
     {
@@ -1083,23 +1194,23 @@
     {
       "entity_type": "SYMPTOM",
       "cluster": [
-        "absent sleep disturbance",
-        "absent sleep problems"
-      ],
-      "canonical_name": "absent sleep problems",
-      "similarities": {
-        "absent sleep problems": 0.9701
-      }
-    },
-    {
-      "entity_type": "SYMPTOM",
-      "cluster": [
         "absent suicidal ideation",
         "no suicidal ideation"
       ],
       "canonical_name": "no suicidal ideation",
       "similarities": {
         "no suicidal ideation": 0.9226
+      }
+    },
+    {
+      "entity_type": "SYMPTOM",
+      "cluster": [
+        "absent supraclavicular adenopathy",
+        "no supraclavicular lymphadenopathy"
+      ],
+      "canonical_name": "absent supraclavicular adenopathy",
+      "similarities": {
+        "no supraclavicular lymphadenopathy": 0.8538
       }
     },
     {
@@ -1220,6 +1331,17 @@
       "canonical_name": "bruise",
       "similarities": {
         "bruising": 0.9701
+      }
+    },
+    {
+      "entity_type": "SYMPTOM",
+      "cluster": [
+        "bull's-eye rash",
+        "bulls eye rash"
+      ],
+      "canonical_name": "bulls eye rash",
+      "similarities": {
+        "bulls eye rash": 0.9767
       }
     },
     {
@@ -1400,6 +1522,17 @@
       "canonical_name": "epigastric pain",
       "similarities": {
         "epigastric tenderness": 0.9006
+      }
+    },
+    {
+      "entity_type": "SYMPTOM",
+      "cluster": [
+        "fever",
+        "subjective fever"
+      ],
+      "canonical_name": "fever",
+      "similarities": {
+        "subjective fever": 0.8873
       }
     },
     {
@@ -1614,6 +1747,17 @@
     {
       "entity_type": "SYMPTOM",
       "cluster": [
+        "no pop",
+        "no pop heard"
+      ],
+      "canonical_name": "no pop",
+      "similarities": {
+        "no pop heard": 0.8649
+      }
+    },
+    {
+      "entity_type": "SYMPTOM",
+      "cluster": [
         "no retinal holes",
         "no retinal tears"
       ],
@@ -1625,12 +1769,12 @@
     {
       "entity_type": "SYMPTOM",
       "cluster": [
-        "no subclavicular adenopathy",
-        "no supraclavicular lymphadenopathy"
+        "overhead pain",
+        "pain lifting overhead"
       ],
-      "canonical_name": "no subclavicular adenopathy",
+      "canonical_name": "overhead pain",
       "similarities": {
-        "no supraclavicular lymphadenopathy": 0.8815
+        "pain lifting overhead": 0.8752
       }
     },
     {
@@ -1730,6 +1874,17 @@
       "canonical_name": "sharp pain",
       "similarities": {
         "sharp stabbing pain": 0.8721
+      }
+    },
+    {
+      "entity_type": "SYMPTOM",
+      "cluster": [
+        "sinus pain",
+        "sinus tenderness"
+      ],
+      "canonical_name": "sinus pain",
+      "similarities": {
+        "sinus tenderness": 0.8707
       }
     },
     {
@@ -1946,6 +2101,17 @@
     {
       "entity_type": "MEDICAL_HISTORY",
       "cluster": [
+        "no alcohol use",
+        "no heavy alcohol use"
+      ],
+      "canonical_name": "no alcohol use",
+      "similarities": {
+        "no heavy alcohol use": 0.928
+      }
+    },
+    {
+      "entity_type": "MEDICAL_HISTORY",
+      "cluster": [
         "no allergies history",
         "no drug allergies",
         "no medication allergies",
@@ -2027,6 +2193,19 @@
     {
       "entity_type": "MEDICAL_HISTORY",
       "cluster": [
+        "no knee injury",
+        "no prior knee injuries",
+        "no prior knee injury"
+      ],
+      "canonical_name": "no knee injury",
+      "similarities": {
+        "no prior knee injuries": 0.9274,
+        "no prior knee injury": 0.9285
+      }
+    },
+    {
+      "entity_type": "MEDICAL_HISTORY",
+      "cluster": [
         "no pain medication",
         "no pain medications"
       ],
@@ -2073,19 +2252,6 @@
     {
       "entity_type": "MEDICAL_HISTORY",
       "cluster": [
-        "no prior knee injuries",
-        "no prior knee injury",
-        "no prior knee problems"
-      ],
-      "canonical_name": "no prior knee injury",
-      "similarities": {
-        "no prior knee injury": 0.9932,
-        "no prior knee problems": 0.8869
-      }
-    },
-    {
-      "entity_type": "MEDICAL_HISTORY",
-      "cluster": [
         "no prior shoulder injury",
         "no prior shoulder pain"
       ],
@@ -2125,6 +2291,17 @@
       "canonical_name": "prediabetes",
       "similarities": {
         "prediabetes": 0.8925
+      }
+    },
+    {
+      "entity_type": "MEDICAL_HISTORY",
+      "cluster": [
+        "prior tick bite",
+        "tick bite history"
+      ],
+      "canonical_name": "prior tick bite",
+      "similarities": {
+        "tick bite history": 0.8773
       }
     },
     {
