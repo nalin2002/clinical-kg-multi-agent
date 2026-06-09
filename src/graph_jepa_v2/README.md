@@ -25,12 +25,7 @@ PYTHONPATH=src python -m graph_jepa_v2.train \
 Train from ACI-Bench KG JSONs:
 
 ```bash
-PYTHONPATH=src python -m graph_jepa_v2.train \
-  --data aci-bench \
-  --aci-kg-path outputs/aci_bench/sub_kgs/ \
-  --gnn-backend pyg \
-  --conv gine \
-  --out checkpoints/
+PYTHONPATH=src python -m graph_jepa_v2.train   --data aci-bench   --aci-kg-path outputs/aci_bench/sub_kgs/   --gnn-backend pyg   --conv gine   --out ckpts/  --encoder sapbert --wandb   --wandb-project audio_mental_health  --wandb-run-name exp1  --wandb-entity mangoesai
 ```
 
 For the curated ACI-Bench reference KGs already present in this repo:

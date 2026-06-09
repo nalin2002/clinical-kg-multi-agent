@@ -1,0 +1,47 @@
+{
+  "model": {
+    "in_dim": 768,
+    "hidden_dim": 160,
+    "latent_dim": 160,
+    "num_gnn_layers": 2,
+    "conv": "gine",
+    "gnn_backend": "pyg",
+    "dropout": 0.1,
+    "num_relations": 6,
+    "ema_decay": 0.996,
+    "num_patches": 8,
+    "patch_pe_dim": 8,
+    "patch_layers": 2,
+    "patch_heads": 4,
+    "patch_mlp_ratio": 2.0,
+    "predictor_hidden": 256
+  },
+  "train": {
+    "epochs": 40,
+    "lr": 0.0008,
+    "weight_decay": 1e-05,
+    "grad_clip": 1.0,
+    "seed": 0,
+    "batch_size": 16,
+    "num_workers": 0,
+    "context_patches": 1,
+    "target_patches": 4,
+    "ema_start": 0.996,
+    "ema_end": 1.0,
+    "jepa_weight": 1.0,
+    "edge_head_weight": 0.7,
+    "vicreg_var_weight": 0.5,
+    "vicreg_cov_weight": 0.04,
+    "synthetic_graphs": 256,
+    "synthetic_min_nodes": 8,
+    "synthetic_max_nodes": 28
+  },
+  "score": {
+    "alpha": 0.5,
+    "weak_threshold": 0.5,
+    "inconsistent_threshold": 0.25,
+    "energy_temperature": 1.0,
+    "prune_threshold": null
+  },
+  "encoder": "sapbert"
+}
