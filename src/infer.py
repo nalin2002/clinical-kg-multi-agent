@@ -335,7 +335,7 @@ def build_arg_parser() -> argparse.ArgumentParser:
     p.add_argument(
         "--jepa-module",
         choices=["graph_jepa", "graph_jepa_v2"],
-        default="graph_jepa",
+        default="graph_jepa_v2",
         help="Graph-JEPA implementation to use for scoring (default: graph_jepa)",
     )
     p.add_argument("--device", default="cpu", help="Torch device for JEPA scoring")

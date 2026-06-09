@@ -217,6 +217,61 @@ Relation completeness is capped in the scorer, so the student graph benefits fro
 
 ## How to Run
 
+### End-to-end inference (`src/infer.py`)
+
+`src/infer.py` runs the full pipeline in one command:
+
+```text
+Transcripts
+  -> multi-agent extraction (sub-KGs)
+  -> dump_graph entity-resolution merge (unified KG)
+  -> Graph-JEPA v2 scoring (refined unified KG)
+```
+
+Smoke test on ACI-Bench transcripts (2 encounters):
+
+```bash
+PYTHONPATH=src python src/infer.py \
+  --transcripts-dir data/aci_bench_smoke/transcripts \
+  --output outputs/my_run \
+  --checkpoint ckpts/graph_jepa_v2.pt \
+  --provider anthropic \
+  --name aci_bench_smoke \
+  --encoder sapbert \
+  --jepa-module graph_jepa_v2
+```
+
+In-corpus 20-transcript run:
+
+```bash
+PYTHONPATH=src python src/infer.py \
+  --transcripts-dir data/transcripts \
+  --output outputs/cooperative_new \
+  --checkpoint ckpts/graph_jepa_v2.pt \
+  --name cooperative_new_all \
+  --encoder sapbert
+```
+
+Output layout under `--output`:
+
+- `sub_kgs/RES_*_cooperative_multi_agent.json` — per-transcript KGs
+- `unified_graph_<name>.json` — merged unified KG
+- `er_merge_decisions_<name>.json` — entity-resolution audit log
+- `unified_graph_<name>_refined.json` — JEPA-scored refined KG
+- `_infer_manifest.json` — run summary
+
+Useful flags:
+
+- `--no-batch` — disable Anthropic Message Batches API (batch is on by default)
+- `--skip-extract` / `--skip-unify` / `--skip-jepa` — resume from an intermediate stage
+- `--prune-threshold 0.25` — drop edges with `jepa_score` below the threshold
+- `--res-ids RES0198 RES0199` — process a subset of transcripts
+
+Requires `ANTHROPIC_API_KEY` (or `OPENROUTER_API_KEY` with `--no-batch`) in `.env`,
+and a trained Graph-JEPA checkpoint at `--checkpoint`.
+
+### Individual steps
+
 Run the cooperative multi-agent extractor:
 
 ```bash
