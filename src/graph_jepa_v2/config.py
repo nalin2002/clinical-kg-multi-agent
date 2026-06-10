@@ -73,6 +73,8 @@ class ScoreConfig:
     inconsistent_threshold: float = 0.25
     energy_temperature: float = 1.0
     prune_threshold: float | None = None
+    candidate_threshold: float = 0.7
+    max_candidate_edges: int = 50
 
 
 @dataclass

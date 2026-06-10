@@ -7,8 +7,9 @@ Data contract (verified against the pipeline outputs):
   * nodes : {id, text, type, evidence, turn_id}  (unified adds occurrences/res_id)
   * edges : {source_id, target_id, type, evidence, turn_id}  (+ occurrences/res_id)
 
-The refinement layer round-trips this exact shape and only *adds* fields
-(``jepa_score``, ``jepa_flag``) to edges.
+The refinement layer round-trips this exact shape and, by default, only adds
+fields (``jepa_score``, ``jepa_flag``) to edges. Graph-JEPA v2 can optionally
+append unverified ``jepa_suggested`` edges between existing nodes.
 """
 
 from __future__ import annotations

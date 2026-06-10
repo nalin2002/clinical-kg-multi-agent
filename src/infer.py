@@ -12,7 +12,8 @@ Steps:
   2. Merge sub-KGs into a unified graph via embedding entity resolution.
   3. Score the unified graph with a Graph-JEPA checkpoint to produce the
      final refined KG (annotate-only by default; pass --prune-threshold to drop
-     low-scoring edges).
+     low-scoring edges, or --add-jepa-candidates to append high-scoring missing
+     edges suggested by Graph-JEPA v2).
 """
 
 from __future__ import annotations
@@ -207,11 +208,16 @@ def run_jepa_refinement(
     device: str,
     encoder_cache: str | None,
     prune_threshold: float | None,
+    add_candidates: bool,
+    candidate_threshold: float | None,
+    max_candidates: int | None,
 ) -> dict:
     import torch
 
     if not checkpoint.is_file():
         raise SystemExit(f"JEPA checkpoint not found: {checkpoint}")
+    if add_candidates and jepa_module != "graph_jepa_v2":
+        raise SystemExit("--add-jepa-candidates is only supported with --jepa-module graph_jepa_v2")
 
     load_ckpt, score_graph, prune_fn, default_cache = _load_jepa(jepa_module)
     cache = encoder_cache or default_cache
@@ -223,16 +229,29 @@ def run_jepa_refinement(
     print(f"  Device     : {device}")
     if prune_threshold is not None:
         print(f"  Prune      : drop edges with jepa_score < {prune_threshold}")
+    if add_candidates:
+        print("  Candidates : add high-scoring missing schema-valid edges")
     print("=" * 60)
 
     torch_device = torch.device(device)
     model, encoder, cfg = load_ckpt(str(checkpoint), torch_device, cache)
     if prune_threshold is not None:
         cfg.score.prune_threshold = prune_threshold
+    if add_candidates:
+        from graph_jepa_v2.score import add_candidate_edges
+
+        if candidate_threshold is not None:
+            cfg.score.candidate_threshold = candidate_threshold
+        if max_candidates is not None:
+            cfg.score.max_candidate_edges = max_candidates
 
     graph = PatientGraph.load(unified_graph_path)
     scores, flags = score_graph(graph, model, encoder, cfg, torch_device)
     graph.annotate_edges(scores, flags)
+
+    added = 0
+    if add_candidates:
+        added = add_candidate_edges(graph, model, encoder, cfg, torch_device)
 
     pruned = 0
     if cfg.score.prune_threshold is not None:
@@ -245,7 +264,9 @@ def run_jepa_refinement(
     print(
         f"  Saved refined graph: {refined_graph_path} "
         f"({len(graph.nodes)} nodes, {len(graph.edges)} edges, "
-        f"{flagged} flagged" + (f", {pruned} pruned" if pruned else "") + ")"
+        f"{flagged} flagged"
+        + (f", {added} candidates added" if added else "")
+        + (f", {pruned} pruned" if pruned else "") + ")"
     )
 
     return {
@@ -256,6 +277,9 @@ def run_jepa_refinement(
         "edges": len(graph.edges),
         "edges_scored": len(scores),
         "edges_flagged": flagged,
+        "candidate_edges_added": added,
+        "candidate_threshold": cfg.score.candidate_threshold if add_candidates else None,
+        "max_candidate_edges": cfg.score.max_candidate_edges if add_candidates else None,
         "edges_pruned": pruned,
         "refined_graph": str(refined_graph_path),
     }
@@ -336,7 +360,7 @@ def build_arg_parser() -> argparse.ArgumentParser:
         "--jepa-module",
         choices=["graph_jepa", "graph_jepa_v2"],
         default="graph_jepa_v2",
-        help="Graph-JEPA implementation to use for scoring (default: graph_jepa)",
+        help="Graph-JEPA implementation to use for scoring (default: graph_jepa_v2)",
     )
     p.add_argument("--device", default="cpu", help="Torch device for JEPA scoring")
     p.add_argument(
@@ -349,6 +373,23 @@ def build_arg_parser() -> argparse.ArgumentParser:
         type=float,
         default=None,
         help="Drop unified-graph edges with jepa_score below this value",
+    )
+    p.add_argument(
+        "--add-jepa-candidates",
+        action="store_true",
+        help="Add high-scoring missing schema-valid edges suggested by Graph-JEPA v2",
+    )
+    p.add_argument(
+        "--candidate-threshold",
+        type=float,
+        default=None,
+        help="Minimum jepa_score for added candidate edges (v2 default: checkpoint config)",
+    )
+    p.add_argument(
+        "--max-candidates",
+        type=int,
+        default=None,
+        help="Maximum candidate edges to add (v2 default: checkpoint config)",
     )
     return p
 
@@ -410,6 +451,9 @@ def main(argv: list[str] | None = None) -> None:
             args.device,
             args.encoder_cache,
             args.prune_threshold,
+            args.add_jepa_candidates,
+            args.candidate_threshold,
+            args.max_candidates,
         )
         manifest["steps"]["jepa_refinement"] = jepa_stats
     else:

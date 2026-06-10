@@ -70,10 +70,26 @@ PYTHONPATH=src python -m graph_jepa_v2.score \
 
 The scorer writes the same edge fields as v1: `jepa_score` and `jepa_flag`.
 
+Optionally add high-scoring missing edges between existing nodes:
+
+```bash
+PYTHONPATH=src python -m graph_jepa_v2.score \
+  --input outputs/cooperative_20_enriched_v2/sub_kgs/RES0198_cooperative_multi_agent_enriched_v2.json \
+  --checkpoint checkpoints/graph_jepa_v2.pt \
+  --output RES0198_jepa_v2.json \
+  --add-candidates \
+  --candidate-threshold 0.7 \
+  --max-candidates 50
+```
+
+Candidate edges are restricted to the typed relation schema and are marked
+`jepa_suggested: true` / `jepa_unverified: true` because the model does not
+produce transcript evidence.
+
 ## Design note
 
 The implementation is conceptually inspired by the Graph-JEPA paper/repo shape:
 patch/subgraph encoding, context-to-target prediction, and EMA target encoders.
 It is written fresh for this clinical KG pipeline and keeps the current schema,
-encoders, synthetic graph adapter, MIMIC-IV stub, and annotate-only scoring
-contract.
+encoders, synthetic graph adapter, MIMIC-IV stub, and default annotate-only
+scoring contract. Candidate edge generation is opt-in.
