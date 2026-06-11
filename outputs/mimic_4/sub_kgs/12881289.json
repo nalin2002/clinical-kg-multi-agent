@@ -1,0 +1,277 @@
+{
+  "subject_id": "12881289",
+  "hadm_ids": [
+    "20374568",
+    "27293872",
+    "25985321",
+    "22098197",
+    "23525062",
+    "23514508",
+    "29885126",
+    "25605502",
+    "24795028",
+    "21629891",
+    "27237182",
+    "27647897"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 12881289",
+      "normalized_name": "PATIENT",
+      "source_tables": [],
+      "evidence": "subject_id",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Acute on chronic systolic heart failure",
+      "normalized_name": "HEART FAILURE",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "FUROSEMIDE",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "INSULIN",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "VANCOMYCIN",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "admission 27647897",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "LAB TEST",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "all admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "MICROBIOLOGY",
+      "name": "MRSA SCREEN",
+      "normalized_name": "MRSA",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "admission 21629891",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "admissions with MED service",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "SERVICE",
+      "name": "CMED",
+      "normalized_name": "CMED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "admissions with CMED service",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "diagnoses list",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "20374568",
+      "evidence": "medications list",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "20374568",
+      "evidence": "medications list",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "27647897",
+      "evidence": "medications list",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "20374568",
+      "evidence": "lab_tests list",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "21629891",
+      "evidence": "microbiology list",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "27293872",
+      "evidence": "services list",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "20374568",
+      "evidence": "services list",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N3",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "clinical guideline for diuresis in heart failure",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N5",
+      "target": "N7",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "21629891",
+      "evidence": "Vancomycin used for MRSA",
+      "source_tables": [],
+      "confidence": 0.85
+    },
+    {
+      "source": "N7",
+      "target": "N5",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "MEDICATION",
+      "hadm_id": "21629891",
+      "evidence": "MRSA SCREEN indicates need for Vancomycin",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N8",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "MED service manages heart failure patients",
+      "source_tables": [],
+      "confidence": 0.75
+    },
+    {
+      "source": "N9",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "CMED service manages cardiac patients",
+      "source_tables": [],
+      "confidence": 0.75
+    }
+  ]
+}

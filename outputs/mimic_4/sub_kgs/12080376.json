@@ -1,0 +1,553 @@
+{
+  "subject_id": "12080376",
+  "hadm_ids": [
+    "29287361",
+    "29987509",
+    "24034138",
+    "20915845",
+    "24730421",
+    "23444917",
+    "26858566",
+    "28628691",
+    "23068188",
+    "21692416",
+    "29532038",
+    "26846773"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 12080376",
+      "normalized_name": "Patient 12080376",
+      "source_tables": [
+        "demographics"
+      ],
+      "evidence": "subject_id 12080376",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Sepsis, unspecified organism",
+      "normalized_name": "Sepsis",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 29532038 diagnosis A419",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Urinary tract infection, site not specified",
+      "normalized_name": "UTI",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "multiple admissions diagnosis 5990 / N390",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Chronic diastolic (congestive) heart failure",
+      "normalized_name": "Heart failure",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 29532038 diagnosis I5032",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "Vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id 29987509 medication Vancomycin",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "MEDICATION",
+      "name": "Warfarin",
+      "normalized_name": "Warfarin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "multiple admissions medication Warfarin",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "Furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id 28628691 medication Furosemide",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "Lab test",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "multiple admissions lab test Laboratory testing",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "PROCEDURE",
+      "name": "Repair of inguinal hernia with graft or prosthesis, not otherwise specified",
+      "normalized_name": "Inguinal hernia repair",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "hadm_id 29287361 procedure 5305",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "MICROBIOLOGY",
+      "name": "URINE CULTURE - PSEUDOMONAS AERUGINOSA",
+      "normalized_name": "Pseudomonas urine culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "hadm_id 29987509 microbiology URINE CULTURE PSEUDOMONAS AERUGINOSA",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "MICROBIOLOGY",
+      "name": "URINE CULTURE - KLEBSIELLA PNEUMONIAE",
+      "normalized_name": "Klebsiella urine culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "hadm_id 28628691 microbiology URINE CULTURE KLEBSIELLA PNEUMONIAE",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "multiple admissions service MED",
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "SERVICE",
+      "name": "SURG",
+      "normalized_name": "SURG",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "hadm_id 29287361 service SURG",
+      "metadata": {}
+    },
+    {
+      "id": "N14",
+      "type": "SERVICE",
+      "name": "TRAUM",
+      "normalized_name": "TRAUM",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "hadm_id 26858566 service TRAUM",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29532038",
+      "evidence": "patient has sepsis",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "patient has urinary tract infection",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29532038",
+      "evidence": "patient has heart failure",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "29987509",
+      "evidence": "patient received Vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "patient received Warfarin",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "28628691",
+      "evidence": "patient received Furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "patient had lab testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "29287361",
+      "evidence": "patient underwent inguinal hernia repair",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "29987509",
+      "evidence": "patient had urine culture Pseudomonas",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "28628691",
+      "evidence": "patient had urine culture Klebsiella",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "patient managed by MED service",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "29287361",
+      "evidence": "patient managed by SURG service",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N14",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "26858566",
+      "evidence": "patient managed by TRAUM service",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N5",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "29987509",
+      "evidence": "Vancomycin used for sepsis",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N3",
+      "target": "N5",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "29987509",
+      "evidence": "Vancomycin used for urinary infection",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N3",
+      "target": "N10",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29987509",
+      "evidence": "Pseudomonas urine culture confirms UTI",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N3",
+      "target": "N11",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28628691",
+      "evidence": "Klebsiella urine culture confirms UTI",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N5",
+      "target": "N10",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "29987509",
+      "evidence": "Vancomycin targets Pseudomonas",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N5",
+      "target": "N11",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "28628691",
+      "evidence": "Vancomycin targets Klebsiella",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N12",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29532038",
+      "evidence": "MED service manages sepsis",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N3",
+      "target": "N12",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "MED service manages UTI",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N4",
+      "target": "N12",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29532038",
+      "evidence": "MED service manages heart failure",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N9",
+      "target": "N2",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29287361",
+      "evidence": "hernia repair performed for diagnosis inguinal hernia",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N9",
+      "target": "N12",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "PROCEDURE",
+      "hadm_id": "29287361",
+      "evidence": "SURG service performed procedure",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N3",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "sepsis co-occurs with UTI in same patient",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N2",
+      "target": "N4",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "sepsis co-occurs with heart failure",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N3",
+      "target": "N4",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "UTI co-occurs with heart failure",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N5",
+      "target": "N6",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Warfarin co-occurs with Vancomycin",
+      "source_tables": [],
+      "confidence": 0.5
+    },
+    {
+      "source": "N5",
+      "target": "N7",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Vancomycin co-occurs with Furosemide",
+      "source_tables": [],
+      "confidence": 0.5
+    },
+    {
+      "source": "N6",
+      "target": "N7",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Warfarin co-occurs with Furosemide",
+      "source_tables": [],
+      "confidence": 0.5
+    }
+  ]
+}

@@ -1,0 +1,540 @@
+{
+  "subject_id": "10460886",
+  "hadm_ids": [
+    "21625879",
+    "27759543",
+    "20933175",
+    "29914472",
+    "29167774",
+    "26350813",
+    "23311823",
+    "20943076"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 10460886",
+      "normalized_name": "patient_10460886",
+      "source_tables": [
+        "patients"
+      ],
+      "evidence": "subject_id 10460886",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Unspecified septicemia",
+      "normalized_name": "unspecified_septicemia",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "evidence": "hadm_id 21625879",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Acute systolic heart failure",
+      "normalized_name": "acute_systolic_heart_failure",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "evidence": "hadm_id 23311823",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Congestive heart failure, unspecified",
+      "normalized_name": "congestive_heart_failure_unspecified",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "evidence": "hadm_id 23311823",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "DIAGNOSIS",
+      "name": "Chronic vascular insufficiency of intestine",
+      "normalized_name": "chronic_vascular_insufficiency_intestine",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "furosemide",
+      "source_tables": [
+        "prescriptions"
+      ],
+      "evidence": "hadm_id 23311823",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "vancomycin",
+      "source_tables": [
+        "prescriptions"
+      ],
+      "evidence": "hadm_id 20943076",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "MEDICATION",
+      "name": "Potassium Chloride",
+      "normalized_name": "potassium_chloride",
+      "source_tables": [
+        "prescriptions"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "PROCEDURE",
+      "name": "Percutaneous abdominal drainage",
+      "normalized_name": "percutaneous_abdominal_drainage",
+      "source_tables": [
+        "procedures_icd"
+      ],
+      "evidence": "hadm_id 20943076",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "PROCEDURE",
+      "name": "Intra-abdominal venous shunt",
+      "normalized_name": "intra_abdominal_venous_shunt",
+      "source_tables": [
+        "procedures_icd"
+      ],
+      "evidence": "hadm_id 23311823",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "laboratory_testing",
+      "source_tables": [
+        "poe_lab"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture, Routine",
+      "normalized_name": "blood_culture_routine",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "hadm_id 21625879",
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "MICROBIOLOGY",
+      "name": "MRSA SCREEN",
+      "normalized_name": "mrsa_screen",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "hadm_id 23311823",
+      "metadata": {}
+    },
+    {
+      "id": "N14",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "med",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N15",
+      "type": "SERVICE",
+      "name": "VSURG",
+      "normalized_name": "vsurg",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "hadm_id 26350813, 23311823, 20943076",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21625879",
+      "evidence": "diagnoses list in admission 21625879",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23311823",
+      "evidence": "diagnoses list in admission 23311823",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23311823",
+      "evidence": "diagnoses list in admission 23311823",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "multiple",
+      "evidence": "diagnoses list in multiple admissions",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "23311823",
+      "evidence": "medications list in admission 23311823",
+      "source_tables": [
+        "prescriptions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "20943076",
+      "evidence": "medications list in admission 20943076",
+      "source_tables": [
+        "prescriptions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "multiple",
+      "evidence": "medications list in multiple admissions",
+      "source_tables": [
+        "prescriptions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "20943076",
+      "evidence": "procedures list in admission 20943076",
+      "source_tables": [
+        "procedures_icd"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "23311823",
+      "evidence": "procedures list in admission 23311823",
+      "source_tables": [
+        "procedures_icd"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "multiple",
+      "evidence": "lab_tests list in multiple admissions",
+      "source_tables": [
+        "poe_lab"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "21625879",
+      "evidence": "microbiology list in admission 21625879",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "23311823",
+      "evidence": "microbiology list in admission 23311823",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N14",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "multiple",
+      "evidence": "services list in multiple admissions",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N15",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "26350813",
+      "evidence": "services list in admission 26350813",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N6",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "21625879",
+      "evidence": "co‑occurrence of septicemia and furosemide in admission 21625879 (clinical plausibility)",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N3",
+      "target": "N6",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "23311823",
+      "evidence": "furosemide used for heart failure in admission 23311823",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N4",
+      "target": "N6",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "23311823",
+      "evidence": "furosemide used for congestive heart failure in admission 23311823",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N5",
+      "target": "N8",
+      "relation": "MONITORED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "multiple",
+      "evidence": "potassium chloride administered for hypopotassemia associated with chronic vascular insufficiency",
+      "source_tables": [],
+      "confidence": 0.7
+    },
+    {
+      "source": "N7",
+      "target": "N13",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "20943076",
+      "evidence": "vancomycin administered for cultures yielding gram‑positive organisms (MRSA screen)",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N9",
+      "target": "N2",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "20943076",
+      "evidence": "percutaneous abdominal drainage performed for peritoneal abscess (diagnosis)",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N10",
+      "target": "N3",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23311823",
+      "evidence": "intra‑abdominal venous shunt performed for heart failure complications",
+      "source_tables": [],
+      "confidence": 0.7
+    },
+    {
+      "source": "N14",
+      "target": "N5",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "multiple",
+      "evidence": "MED service manages chronic vascular insufficiency of intestine",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N15",
+      "target": "N9",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "PROCEDURE",
+      "hadm_id": "20943076",
+      "evidence": "VSURG service performed percutaneous abdominal drainage",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N14",
+      "target": "N6",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "MEDICATION",
+      "hadm_id": "23311823",
+      "evidence": "MED service administered furosemide",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N15",
+      "target": "N7",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "MEDICATION",
+      "hadm_id": "20943076",
+      "evidence": "VSURG service administered vancomycin",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N12",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "21625879",
+      "evidence": "blood culture ordered for septicemia",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N5",
+      "target": "N12",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "21625879",
+      "evidence": "blood culture ordered for chronic vascular insufficiency of intestine (possible bacteremia)",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N2",
+      "target": "N11",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "21625879",
+      "evidence": "laboratory testing ordered for septicemia",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N3",
+      "target": "N11",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "23311823",
+      "evidence": "laboratory testing ordered for acute systolic heart failure",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N4",
+      "target": "N11",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "23311823",
+      "evidence": "laboratory testing ordered for congestive heart failure",
+      "source_tables": [],
+      "confidence": 0.8
+    }
+  ]
+}

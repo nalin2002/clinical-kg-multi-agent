@@ -1,0 +1,557 @@
+{
+  "subject_id": "12793376",
+  "hadm_ids": [
+    "23285895",
+    "27982096",
+    "29578162",
+    "24808615",
+    "21882355",
+    "29355049",
+    "23886726",
+    "28811654",
+    "22716309"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient",
+      "normalized_name": "patient",
+      "source_tables": [],
+      "evidence": "subject_id 12793376",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Acute myocardial infarction",
+      "normalized_name": "acute myocardial infarction",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 23285895 seq_num 1",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Atrial fibrillation",
+      "normalized_name": "atrial fibrillation",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 23285895 seq_num 7; hadm_id 27982096 seq_num 5; hadm_id 29578162 seq_num 9; hadm_id 24808615 seq_num 6; hadm_id 29355049 seq_num 6; hadm_id 23886726 seq_num 5; hadm_id 22716309 seq_num 13",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Urinary tract infection",
+      "normalized_name": "urinary tract infection",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 23285895 seq_num 3; hadm_id 21882355 seq_num 2; hadm_id 29355049 seq_num 3; hadm_id 28811654 seq_num 2; hadm_id 22716309 seq_num 4",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "DIAGNOSIS",
+      "name": "Sepsis",
+      "normalized_name": "sepsis",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 21882355 seq_num 1; hadm_id 21882355 seq_num 15",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id 23285895 name Furosemide",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "insulin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id 23285895 name Insulin; hadm_id 28811654 name Insulin; hadm_id 22716309 name Insulin",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id 27982096 name Vancomycin; hadm_id 22716309 name Vancomycin",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "lab test orders across admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "PROCEDURE",
+      "name": "Percutaneous transluminal coronary angioplasty",
+      "normalized_name": "percutaneous transluminal coronary angioplasty",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "hadm_id 23285895 seq_num 1; hadm_id 24808615 seq_num 1; hadm_id 22716309 seq_num 1",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "PROCEDURE",
+      "name": "Mechanical ventilation",
+      "normalized_name": "mechanical ventilation",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "hadm_id 23285895 seq_num 6",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture",
+      "normalized_name": "blood culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "hadm_id 23285895 specimen BLOOD CULTURE",
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "MICROBIOLOGY",
+      "name": "Urine Culture - ESCHERICHIA COLI",
+      "normalized_name": "urine culture escherichia coli",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "hadm_id 23285895 specimen URINE organism ESCHERICHIA COLI",
+      "metadata": {}
+    },
+    {
+      "id": "N14",
+      "type": "MICROBIOLOGY",
+      "name": "MRSA SCREEN",
+      "normalized_name": "mrsa screen",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "hadm_id 23285895 specimen MRSA SCREEN",
+      "metadata": {}
+    },
+    {
+      "id": "N15",
+      "type": "SERVICE",
+      "name": "CMED",
+      "normalized_name": "cmed",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "hadm_id 23285895 service CMED; hadm_id 24808615 service CMED; hadm_id 23886726 service CMED; hadm_id 22716309 service CMED",
+      "metadata": {}
+    },
+    {
+      "id": "N16",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "med",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "hadm_id 27982096 service MED; hadm_id 29578162 service MED; hadm_id 29355049 service MED; hadm_id 23886726 service MED; hadm_id 28811654 service ORTHO",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23285895",
+      "evidence": "patient diagnosed with acute myocardial infarction",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23285895",
+      "evidence": "patient diagnosed with atrial fibrillation",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23285895",
+      "evidence": "patient diagnosed with urinary tract infection",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21882355",
+      "evidence": "patient diagnosed with sepsis",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "23285895",
+      "evidence": "patient received furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "23285895",
+      "evidence": "patient received insulin",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "27982096",
+      "evidence": "patient received vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "23285895",
+      "evidence": "patient had laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "23285895",
+      "evidence": "patient underwent PTCA",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "23285895",
+      "evidence": "patient underwent mechanical ventilation",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "23285895",
+      "evidence": "patient had blood culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "23285895",
+      "evidence": "patient had urine culture with E. coli",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N14",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "23285895",
+      "evidence": "patient had MRSA screen",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N15",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "23285895",
+      "evidence": "patient managed by CMED service",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N16",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "27982096",
+      "evidence": "patient managed by MED service",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N6",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "23285895",
+      "evidence": "furosemide used for myocardial infarction management",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N4",
+      "target": "N8",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "27982096",
+      "evidence": "vancomycin used for urinary tract infection",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N5",
+      "target": "N7",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "21882355",
+      "evidence": "insulin used for sepsis-associated hyperglycemia",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N3",
+      "target": "N10",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "PROCEDURE",
+      "hadm_id": "23285895",
+      "evidence": "PTCA performed for atrial fibrillation complications",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N4",
+      "target": "N12",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "23285895",
+      "evidence": "blood culture ordered for urinary tract infection workup",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N13",
+      "target": "N8",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "27982096",
+      "evidence": "vancomycin targets organisms identified in urine culture",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N15",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23285895",
+      "evidence": "CMED service manages myocardial infarction",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N16",
+      "target": "N4",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27982096",
+      "evidence": "MED service manages urinary tract infection",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N9",
+      "relation": "MONITORED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "23285895",
+      "evidence": "laboratory testing monitors myocardial infarction biomarkers",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N4",
+      "target": "N9",
+      "relation": "MONITORED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "23285895",
+      "evidence": "laboratory testing monitors urinary infection markers",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N5",
+      "target": "N9",
+      "relation": "MONITORED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "21882355",
+      "evidence": "laboratory testing monitors sepsis parameters",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N3",
+      "target": "N4",
+      "relation": "ASSOCIATED_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23285895",
+      "evidence": "atrial fibrillation co-occurs with urinary tract infection",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.55
+    },
+    {
+      "source": "N2",
+      "target": "N3",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23285895",
+      "evidence": "myocardial infarction co-occurs with atrial fibrillation",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.55
+    }
+  ]
+}

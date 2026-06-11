@@ -1,0 +1,449 @@
+{
+  "subject_id": "10823188",
+  "hadm_ids": [
+    "29649203",
+    "26905096",
+    "20163399",
+    "22972718",
+    "22643741",
+    "20143087",
+    "28132470",
+    "21810634",
+    "29131989",
+    "22519973",
+    "25575101",
+    "20412720"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 10823188",
+      "normalized_name": "Patient 10823188",
+      "source_tables": [
+        "subject"
+      ],
+      "evidence": "subject_id=10823188",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Urinary tract infection, site not specified",
+      "normalized_name": "Urinary tract infection",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id=29649203",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Septicemia due to Escherichia coli",
+      "normalized_name": "Sepsis",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id=20412720",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Asthma, unspecified type, unspecified",
+      "normalized_name": "Asthma",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "multiple",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "MEDICATION",
+      "name": "Doxepin HCl",
+      "normalized_name": "Doxepin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "multiple",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "Vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id=28132470",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "Lab test",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "multiple",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "PROCEDURE",
+      "name": "Hospital observation per hr",
+      "normalized_name": "Hospital observation",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "multiple",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "MICROBIOLOGY",
+      "name": "MRSA SCREEN",
+      "normalized_name": "MRSA screen",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "hadm_id=22972718",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "multiple",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29649203",
+      "evidence": "diagnosis listed in admission 29649203",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "20412720",
+      "evidence": "diagnosis listed in admission 20412720",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "multiple",
+      "evidence": "diagnosis appears in many admissions",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "multiple",
+      "evidence": "medication listed in multiple admissions",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "28132470",
+      "evidence": "medication listed in admission 28132470",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "multiple",
+      "evidence": "lab test orders present in all admissions",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "multiple",
+      "evidence": "procedure listed in many admissions",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22972718",
+      "evidence": "microbiology test listed in admission 22972718",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "multiple",
+      "evidence": "service MED listed in all admissions",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N4",
+      "target": "N5",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "multiple",
+      "evidence": "asthma commonly treated with doxepin for anxiety/comorbid depression",
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N3",
+      "target": "N6",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "28132470",
+      "evidence": "vancomycin used for severe sepsis",
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N3",
+      "target": "N9",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22972718",
+      "evidence": "MRSA screen can indicate sepsis etiology",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N4",
+      "target": "N8",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "multiple",
+      "evidence": "observation procedure for asthma monitoring",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N5",
+      "target": "N7",
+      "relation": "MONITORED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "multiple",
+      "evidence": "lab tests monitor medication safety",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N10",
+      "target": "N4",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "multiple",
+      "evidence": "MED service manages asthma",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N10",
+      "target": "N3",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "20412720",
+      "evidence": "MED service manages sepsis",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N10",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29649203",
+      "evidence": "MED service manages UTI",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N7",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "29649203",
+      "evidence": "lab test orders used to diagnose UTI",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N3",
+      "target": "N7",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "20412720",
+      "evidence": "lab test orders used to diagnose sepsis",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N4",
+      "target": "N7",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "multiple",
+      "evidence": "lab test orders used to assess asthma exacerbation",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N5",
+      "target": "N9",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22972718",
+      "evidence": "doxepin not an antimicrobial; no direct target, using CO_OCCURS_WITH",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.55
+    },
+    {
+      "source": "N6",
+      "target": "N9",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "28132470",
+      "evidence": "vancomycin targets MRSA",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N5",
+      "target": "N2",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29649203",
+      "evidence": "doxepin co‑occurs with UTI admission",
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.55
+    },
+    {
+      "source": "N6",
+      "target": "N3",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28132470",
+      "evidence": "vancomycin co‑occurs with sepsis admission",
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.55
+    }
+  ]
+}

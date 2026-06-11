@@ -1,0 +1,319 @@
+{
+  "subject_id": "10777749",
+  "hadm_ids": [
+    "24121545",
+    "25089256",
+    "20049626",
+    "25925387",
+    "22873595",
+    "28053506",
+    "29598041"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 10777749",
+      "normalized_name": "Patient 10777749",
+      "source_tables": [
+        "patients"
+      ],
+      "evidence": "subject_id 10777749",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Chronic obstructive pulmonary disease, unspecified",
+      "normalized_name": "chronic obstructive pulmonary disease",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "admission 24121545 diagnosis J449",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Chronic diastolic (congestive) heart failure",
+      "normalized_name": "chronic heart failure",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "admission 25925387 diagnosis I5032",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "admissions 25089256, 25925387, 22873595, 28053506 medication Furosemide",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "insulin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "admission 25925387 medication Insulin",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "admission 25089256 medication Vancomycin",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "all admissions lab_tests name 'Laboratory testing'",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture",
+      "normalized_name": "blood culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "admissions 24121545, 25089256, 25925387, 22873595, 29598041 microbiology Blood Culture",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "MICROBIOLOGY",
+      "name": "MRSA",
+      "normalized_name": "mrsa",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "admissions 25089256, 25925387 microbiology MRSA SCREEN",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "MICROBIOLOGY",
+      "name": "Escherichia coli",
+      "normalized_name": "escherichia coli",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "admission 24121545 microbiology URINE CULTURE organism E. coli",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "med",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "admissions 25089256, 20049626, 25925387, 22873595, 29598041 services MED",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "SERVICE",
+      "name": "OMED",
+      "normalized_name": "omed",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "admissions 25089256, 25925387, 29598041 services OMED",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24121545",
+      "evidence": "patient has COPD in admission 24121545",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25925387",
+      "evidence": "patient has chronic heart failure in admission 25925387",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "25089256",
+      "evidence": "patient receives Furosemide in admission 25089256",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "25925387",
+      "evidence": "patient receives Insulin in admission 25925387",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "25089256",
+      "evidence": "patient receives Vancomycin in admission 25089256",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "24121545",
+      "evidence": "patient had lab testing in admission 24121545",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "24121545",
+      "evidence": "patient had blood culture in admission 24121545",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "25089256",
+      "evidence": "patient had MRSA screen in admission 25089256",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "24121545",
+      "evidence": "patient had urine culture with Escherichia coli in admission 24121545",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "25089256",
+      "evidence": "patient managed by MED service in admission 25089256",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "25089256",
+      "evidence": "patient managed by OMED service in admission 25089256",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N3",
+      "target": "N4",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Furosemide is a standard therapy for chronic heart failure",
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N6",
+      "target": "N9",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "Vancomycin targets MRSA",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.8
+    }
+  ]
+}

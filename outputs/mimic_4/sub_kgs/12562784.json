@@ -1,0 +1,494 @@
+{
+  "subject_id": "12562784",
+  "hadm_ids": [
+    "20312200",
+    "28774529",
+    "28143239",
+    "22499849",
+    "21873759"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 12562784",
+      "normalized_name": "Patient",
+      "source_tables": [
+        "demographics"
+      ],
+      "evidence": "subject_id 12562784",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Bacteremia",
+      "normalized_name": "Bacteremia",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 20312200 seq_num 1",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Acute diastolic heart failure",
+      "normalized_name": "Acute diastolic heart failure",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 20312200 seq_num 8",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Diabetes mellitus without complication",
+      "normalized_name": "Diabetes mellitus",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 20312200 seq_num 19; hadm_id 28774529 seq_num 13; hadm_id 28143239 seq_num 2; hadm_id 22499849 seq_num 10; hadm_id 21873759 seq_num 1",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "Furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id 20312200; hadm_id 22499849; hadm_id 21873759",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "Vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id 28774529; hadm_id 28143239; hadm_id 22499849",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "Insulin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id 28774529; hadm_id 28143239; hadm_id 22499849; hadm_id 21873759",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "Laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "hadm_id 20312200; hadm_id 28774529; hadm_id 28143239; hadm_id 22499849; hadm_id 21873759",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "PROCEDURE",
+      "name": "Central venous catheter placement with guidance",
+      "normalized_name": "Central venous catheter placement",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "hadm_id 20312200 seq_num 10; hadm_id 22499849 seq_num 2",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture, Routine - STAPH AUREUS COAG +",
+      "normalized_name": "Blood Culture Staph aureus",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "hadm_id 20312200 specimen Blood Culture organism STAPH AUREUS COAG +",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "MICROBIOLOGY",
+      "name": "Urine Culture - ESCHERICHIA COLI",
+      "normalized_name": "Urine Culture E. coli",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "hadm_id 21873759 specimen URINE organism ESCHERICHIA COLI",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "hadm_id 20312200; hadm_id 28774529; hadm_id 22499849; hadm_id 21873759",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "20312200",
+      "evidence": "diagnosis Bacteremia",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "20312200",
+      "evidence": "diagnosis Acute diastolic heart failure",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "multiple admissions diabetes",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "20312200",
+      "evidence": "medication Furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "28774529",
+      "evidence": "medication Vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "medication Insulin across admissions",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "20312200",
+      "evidence": "lab testing orders",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "20312200",
+      "evidence": "procedure Central venous catheter placement",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "20312200",
+      "evidence": "blood culture Staph aureus",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "21873759",
+      "evidence": "urine culture E. coli",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "20312200",
+      "evidence": "service MED",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N5",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Furosemide used for bacteremia (fluid management)",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N4",
+      "target": "N7",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Insulin treats diabetes",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "source": "N4",
+      "target": "N8",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "lab tests monitor diabetes complications",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N2",
+      "target": "N10",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "20312200",
+      "evidence": "blood culture confirms bacteremia",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "source": "N10",
+      "target": "N2",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "20312200",
+      "evidence": "blood culture positive for Staph aureus confirms bacteremia",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "source": "N6",
+      "target": "N10",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "Vancomycin targets Staph aureus",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N6",
+      "target": "N11",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "Vancomycin not active against E. coli (clinical mismatch)",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.5
+    },
+    {
+      "source": "N12",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "20312200",
+      "evidence": "MED service manages bacteremia",
+      "source_tables": [
+        "services",
+        "diagnoses"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N12",
+      "target": "N4",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "MED service manages diabetes",
+      "source_tables": [
+        "services",
+        "diagnoses"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N9",
+      "target": "N2",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "20312200",
+      "evidence": "central line placed for bacteremia treatment",
+      "source_tables": [
+        "procedures",
+        "diagnoses"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N8",
+      "target": "N2",
+      "relation": "MONITORED_BY",
+      "source_type": "LAB_TEST",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "20312200",
+      "evidence": "lab tests monitor bacteremia",
+      "source_tables": [
+        "lab_tests",
+        "diagnoses"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N8",
+      "target": "N4",
+      "relation": "MONITORED_BY",
+      "source_type": "LAB_TEST",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "lab tests monitor diabetes",
+      "source_tables": [
+        "lab_tests",
+        "diagnoses"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N5",
+      "target": "N12",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "20312200",
+      "evidence": "Furosemide given under MED service",
+      "source_tables": [
+        "medications",
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N6",
+      "target": "N12",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "28774529",
+      "evidence": "Vancomycin given under MED service",
+      "source_tables": [
+        "medications",
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N7",
+      "target": "N12",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "Insulin administered under MED service",
+      "source_tables": [
+        "medications",
+        "services"
+      ],
+      "confidence": 0.8
+    }
+  ]
+}

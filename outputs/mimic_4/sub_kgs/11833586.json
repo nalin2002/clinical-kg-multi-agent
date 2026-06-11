@@ -1,0 +1,549 @@
+{
+  "subject_id": "11833586",
+  "hadm_ids": [
+    "29974135",
+    "25287333",
+    "22367148",
+    "21372369",
+    "23925167",
+    "26790385",
+    "29226803",
+    "27860987",
+    "29923490"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 11833586",
+      "normalized_name": "PATIENT",
+      "source_tables": [
+        "demographics"
+      ],
+      "evidence": "subject_id 11833586",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": "services [MED] in multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "SERVICE",
+      "name": "GU",
+      "normalized_name": "GU",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": "services [GU] in admission 29226803",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "LAB_TEST",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": "lab_tests name Laboratory testing in multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "DIAGNOSIS",
+      "name": "Acute kidney failure, unspecified",
+      "normalized_name": "Acute kidney failure, unspecified",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": "diagnosis 5849 in admission 29974135",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "DIAGNOSIS",
+      "name": "Sepsis due to Enterococcus",
+      "normalized_name": "Sepsis due to Enterococcus",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": "diagnosis A4181 in admission 27860987",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "DIAGNOSIS",
+      "name": "End stage renal disease",
+      "normalized_name": "End stage renal disease",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": "diagnosis N186 in admissions 27860987,26790385",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "DIAGNOSIS",
+      "name": "Type 2 diabetes mellitus with diabetic chronic kidney disease",
+      "normalized_name": "Type 2 diabetes mellitus with diabetic chronic kidney disease",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": "diagnosis E1122 in admissions 27860987,29923490,26790385",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "Insulin",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": "medication Insulin in multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "Vancomycin",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": "medication Vancomycin in admission 21372369 and 27860987",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "Furosemide",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": "medication Furosemide in admission 25287333",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "PROCEDURE",
+      "name": "Hospital observation services",
+      "normalized_name": "Hospital observation services",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": "procedure 99219 in admissions 22367148,26790385",
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture, Routine",
+      "normalized_name": "Blood Culture, Routine",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": "microbiology Blood Culture, Routine in admissions 21372369,27860987,29923490",
+      "metadata": {}
+    },
+    {
+      "id": "N14",
+      "type": "MICROBIOLOGY",
+      "name": "R/O VANCOMYCIN RESISTANT ENTEROCOCCUS",
+      "normalized_name": "R/O VANCOMYCIN RESISTANT ENTEROCOCCUS",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": "microbiology R/O VANCOMYCIN RESISTANT ENTEROCOCCUS in admissions 29974135,25287333,21372369",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "Patient managed by MED service in multiple admissions",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "29226803",
+      "evidence": "Patient managed by GU service in admission 29226803",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "Patient had laboratory testing in multiple admissions",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29974135",
+      "evidence": "Diagnosis Acute kidney failure, unspecified in admission 29974135",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27860987",
+      "evidence": "Diagnosis Sepsis due to Enterococcus in admission 27860987",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27860987",
+      "evidence": "Diagnosis End stage renal disease in admission 27860987",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27860987",
+      "evidence": "Diagnosis Type 2 diabetes mellitus with diabetic chronic kidney disease in admission 27860987",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Patient takes Insulin in multiple admissions",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "21372369",
+      "evidence": "Patient takes Vancomycin in admission 21372369",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "25287333",
+      "evidence": "Patient takes Furosemide in admission 25287333",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "22367148",
+      "evidence": "Patient underwent Hospital observation services in admission 22367148",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "21372369",
+      "evidence": "Patient had Blood Culture, Routine in admission 21372369",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N14",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "29974135",
+      "evidence": "Patient had R/O VANCOMYCIN RESISTANT ENTEROCOCCUS in admission 29974135",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N5",
+      "target": "N9",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "29974135",
+      "evidence": "Insulin used for Acute kidney failure (glycemic control)",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N6",
+      "target": "N10",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "27860987",
+      "evidence": "Vancomycin used for Sepsis due to Enterococcus",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "source": "N7",
+      "target": "N11",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "25287333",
+      "evidence": "Furosemide used for fluid overload in End stage renal disease",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N8",
+      "target": "N9",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "27860987",
+      "evidence": "Insulin used for Type 2 diabetes with CKD",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "source": "N6",
+      "target": "N13",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21372369",
+      "evidence": "Blood Culture positive for Enterococcus confirms Sepsis due to Enterococcus",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "source": "N14",
+      "target": "N6",
+      "relation": "INDICATES",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29974135",
+      "evidence": "R/O VANCOMYCIN RESISTANT ENTEROCOCCUS indicates risk for Enterococcus infection",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N5",
+      "target": "N4",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "29974135",
+      "evidence": "Laboratory testing used to assess Acute kidney failure",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N6",
+      "target": "N4",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "27860987",
+      "evidence": "Laboratory testing used to assess Sepsis",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N9",
+      "target": "N4",
+      "relation": "MONITORED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "Insulin dosing monitored by laboratory testing (glucose)",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N10",
+      "target": "N13",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "27860987",
+      "evidence": "Vancomycin targets Enterococcus in Blood Culture",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "source": "N2",
+      "target": "N5",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29974135",
+      "evidence": "MED service manages Acute kidney failure",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N2",
+      "target": "N6",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27860987",
+      "evidence": "MED service manages Sepsis due to Enterococcus",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N3",
+      "target": "N12",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29226803",
+      "evidence": "GU service manages urinary diagnoses (procedures)",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N5",
+      "target": "N7",
+      "relation": "ASSOCIATED_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Acute kidney failure associated with End stage renal disease",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N6",
+      "target": "N8",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27860987",
+      "evidence": "Sepsis co-occurs with diabetes in same admission",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.5
+    },
+    {
+      "source": "N9",
+      "target": "N11",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Insulin and Furosemide co-prescribed in same patient",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.5
+    }
+  ]
+}

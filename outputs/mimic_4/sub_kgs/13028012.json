@@ -1,0 +1,342 @@
+{
+  "subject_id": "13028012",
+  "hadm_ids": [
+    "27206541",
+    "23621441",
+    "21086633",
+    "28786778",
+    "22114255",
+    "23471437",
+    "20566197"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 13028012",
+      "normalized_name": "Patient 13028012",
+      "source_tables": [
+        "demographics"
+      ],
+      "evidence": "subject_id 13028012",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Acute on chronic diastolic heart failure",
+      "normalized_name": "Acute on chronic diastolic heart failure",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 23621441 diagnosis seq 1",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "Furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "multiple admissions medication entries",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "Vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id 23471437 medication entry",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "Laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "lab test entries across admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "PROCEDURE",
+      "name": "Continuous invasive mechanical ventilation",
+      "normalized_name": "Continuous invasive mechanical ventilation",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "hadm_id 23471437 procedure entry",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "MICROBIOLOGY",
+      "name": "MRSA SCREEN positive",
+      "normalized_name": "MRSA SCREEN positive",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "hadm_id 23471437 microbiology entry",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "service entries across admissions",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23621441",
+      "evidence": "patient diagnosed with acute on chronic diastolic heart failure",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "patient received furosemide in multiple admissions",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "23471437",
+      "evidence": "patient received vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "patient had laboratory testing orders",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "23471437",
+      "evidence": "patient underwent mechanical ventilation",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "23471437",
+      "evidence": "patient had MRSA screen",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "patient managed by MED service in several admissions",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N3",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "23621441",
+      "evidence": "furosemide used for heart failure",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N2",
+      "target": "N5",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "23621441",
+      "evidence": "lab testing used to evaluate heart failure",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N6",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23471437",
+      "evidence": "mechanical ventilation performed for acute heart failure exacerbation",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N2",
+      "target": "N7",
+      "relation": "INVESTIGATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "23471437",
+      "evidence": "MRSA screen investigated infection risk in heart failure patient",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N3",
+      "target": "N5",
+      "relation": "MONITORED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "furosemide therapy monitored by laboratory testing (electrolytes)",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N4",
+      "target": "N7",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "23471437",
+      "evidence": "vancomycin targets MRSA",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "source": "N8",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "MED service manages heart failure",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N8",
+      "target": "N3",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "furosemide administered under MED service",
+      "source_tables": [
+        "medications",
+        "services"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N8",
+      "target": "N4",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "vancomycin administered under MED service",
+      "source_tables": [
+        "medications",
+        "services"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N3",
+      "target": "N4",
+      "relation": "PART_OF_REGIMEN",
+      "source_type": "MEDICATION",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "furosemide and vancomycin co‑administered in same admission",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N5",
+      "target": "N7",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "LAB_TEST",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "23471437",
+      "evidence": "lab testing and MRSA screen ordered together",
+      "source_tables": [
+        "lab_tests",
+        "microbiology"
+      ],
+      "confidence": 0.55
+    }
+  ]
+}

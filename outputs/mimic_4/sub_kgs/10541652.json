@@ -1,0 +1,330 @@
+{
+  "subject_id": "10541652",
+  "hadm_ids": [
+    "22116264",
+    "28623999",
+    "20028011",
+    "25415960",
+    "24499876",
+    "26853789",
+    "21690356",
+    "22410242",
+    "28937606",
+    "22660107",
+    "23630660",
+    "27356810",
+    "25764695",
+    "25097507",
+    "26489597"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 10541652",
+      "normalized_name": "PATIENT",
+      "source_tables": [
+        "subject"
+      ],
+      "evidence": "subject_id 10541652",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Atrial fibrillation",
+      "normalized_name": "ATRIAL FIBRILLATION",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Diabetes mellitus without mention of complication, type II or unspecified type, not stated as uncontrolled",
+      "normalized_name": "DIABETES MELLITUS TYPE II",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Urinary tract infection, site not specified",
+      "normalized_name": "UTI",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "INSULIN",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "MEDICATION",
+      "name": "Warfarin",
+      "normalized_name": "WARFARIN",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "VANCOMYCIN",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "admission 26853789, 26489597",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "LAB TEST",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "all admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture, Routine",
+      "normalized_name": "BLOOD CULTURE",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "MICROBIOLOGY",
+      "name": "URINE CULTURE",
+      "normalized_name": "URINE CULTURE",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22116264",
+      "evidence": "diagnoses list",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22116264",
+      "evidence": "diagnoses list",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28623999",
+      "evidence": "diagnoses list",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "22116264",
+      "evidence": "medications list",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "22116264",
+      "evidence": "medications list",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "26853789",
+      "evidence": "medications list",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "22116264",
+      "evidence": "lab_tests list",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22116264",
+      "evidence": "microbiology list",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "26853789",
+      "evidence": "microbiology list",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "22116264",
+      "evidence": "services list",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N5",
+      "target": "N3",
+      "relation": "TREATED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "clinical knowledge: insulin treats diabetes",
+      "source_tables": [],
+      "confidence": 0.85
+    },
+    {
+      "source": "N6",
+      "target": "N2",
+      "relation": "TREATED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "clinical knowledge: warfarin used for atrial fibrillation anticoagulation",
+      "source_tables": [],
+      "confidence": 0.85
+    },
+    {
+      "source": "N7",
+      "target": "N4",
+      "relation": "TREATED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "clinical knowledge: vancomycin treats severe urinary tract infection",
+      "source_tables": [],
+      "confidence": 0.85
+    },
+    {
+      "source": "N9",
+      "target": "N4",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "blood culture performed in context of infection",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N10",
+      "target": "N4",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "urine culture performed for urinary tract infection",
+      "source_tables": [],
+      "confidence": 0.8
+    }
+  ]
+}

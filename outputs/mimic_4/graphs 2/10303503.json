@@ -1,0 +1,695 @@
+{
+  "subject_id": "10303503",
+  "hadm_ids": [
+    "25195059",
+    "27111159",
+    "27033776",
+    "22695223",
+    "24577165",
+    "28278201",
+    "26332667",
+    "29157742",
+    "23833277",
+    "25807064",
+    "20249009",
+    "23635813",
+    "24605685",
+    "24766136",
+    "20993185",
+    "25589249",
+    "26778837",
+    "29241832",
+    "26223425",
+    "25721282",
+    "21361796",
+    "27308864",
+    "27475740",
+    "24975738",
+    "27506410"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 10303503",
+      "normalized_name": "PATIENT_10303503",
+      "source_tables": [
+        "patients"
+      ],
+      "evidence": "subject_id",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Cholangitis",
+      "normalized_name": "CHOLANGITIS",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Ulcerative colitis, unspecified",
+      "normalized_name": "ULCERATIVE_COLITIS_UNSPECIFIED",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Cirrhosis of liver without mention of alcohol",
+      "normalized_name": "CIRRHOSIS_LIVER",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "DIAGNOSIS",
+      "name": "Sepsis, unspecified organism",
+      "normalized_name": "SEPSIS_UNSPECIFIED",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "admissions 27308864, 24975738, 27506410",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "DIAGNOSIS",
+      "name": "Acute kidney failure, unspecified",
+      "normalized_name": "AKF_UNSPECIFIED",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "MEDICATION",
+      "name": "Ursodiol",
+      "normalized_name": "URSODIOL",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "VANCOMYCIN",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "admissions 27111159, 27308864, 27475740, 27506410",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "FUROSEMIDE",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "admissions 27033776, 26332667, 26778837",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "MEDICATION",
+      "name": "Metronidazole",
+      "normalized_name": "METRONIDAZOLE",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "MEDICATION",
+      "name": "Hydromorphone (Dilaudid)",
+      "normalized_name": "HYDROMORPHONE",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "LAB_TEST",
+      "source_tables": [
+        "lab_events"
+      ],
+      "evidence": "all admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "PROCEDURE",
+      "name": "Closed [endoscopic] biopsy of large intestine",
+      "normalized_name": "BIopsy_LARGE_INTESTINE",
+      "source_tables": [
+        "procedures_icd"
+      ],
+      "evidence": "admissions 27111159, 27033776, 23833277, 26332667",
+      "metadata": {}
+    },
+    {
+      "id": "N14",
+      "type": "PROCEDURE",
+      "name": "Percutaneous abdominal drainage",
+      "normalized_name": "PERITONEAL_DRAINAGE",
+      "source_tables": [
+        "procedures_icd"
+      ],
+      "evidence": "admissions 28278201, 26332667",
+      "metadata": {}
+    },
+    {
+      "id": "N15",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture, Routine",
+      "normalized_name": "BLOOD_CULTURE_ROUTINE",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N16",
+      "type": "MICROBIOLOGY",
+      "name": "Stool Culture",
+      "normalized_name": "STOOL_CULTURE",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N17",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED_SERVICE",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "all admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N18",
+      "type": "SERVICE",
+      "name": "SURG",
+      "normalized_name": "SURG_SERVICE",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "admission 23833277",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "multiple admissions",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "multiple admissions",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "multiple admissions",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "admissions 27308864, 24975738, 27506410",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "multiple admissions",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "multiple admissions",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "admissions 27111159, 27308864, 27475740, 27506410",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "admissions 27033776, 26332667, 26778837",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "multiple admissions",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "multiple admissions",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "all admissions",
+      "source_tables": [
+        "lab_events"
+      ],
+      "confidence": 0.97
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "",
+      "evidence": "admissions 27111159, 27033776, 23833277, 26332667",
+      "source_tables": [
+        "procedures_icd"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N14",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "",
+      "evidence": "admissions 28278201, 26332667",
+      "source_tables": [
+        "procedures_icd"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N15",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "multiple admissions",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N16",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "multiple admissions",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N17",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "all admissions",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.98
+    },
+    {
+      "source": "N1",
+      "target": "N18",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "admission 23833277",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.98
+    },
+    {
+      "source": "N2",
+      "target": "N7",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "clinical guideline for cholangitis",
+      "source_tables": [],
+      "confidence": 0.78
+    },
+    {
+      "source": "N2",
+      "target": "N8",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "clinical guideline for severe infection",
+      "source_tables": [],
+      "confidence": 0.78
+    },
+    {
+      "source": "N2",
+      "target": "N10",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "metronidazole used for biliary infections",
+      "source_tables": [],
+      "confidence": 0.78
+    },
+    {
+      "source": "N3",
+      "target": "N7",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "ursodiol for ulcerative colitis complications",
+      "source_tables": [],
+      "confidence": 0.78
+    },
+    {
+      "source": "N5",
+      "target": "N8",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "vancomycin for sepsis",
+      "source_tables": [],
+      "confidence": 0.78
+    },
+    {
+      "source": "N5",
+      "target": "N11",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "hydromorphone for pain in sepsis",
+      "source_tables": [],
+      "confidence": 0.78
+    },
+    {
+      "source": "N6",
+      "target": "N9",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "furosemide for fluid overload in AKF",
+      "source_tables": [],
+      "confidence": 0.78
+    },
+    {
+      "source": "N12",
+      "target": "N2",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "LAB_TEST",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "lab testing ordered for cholangitis work‑up",
+      "source_tables": [],
+      "confidence": 0.75
+    },
+    {
+      "source": "N15",
+      "target": "N2",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "blood cultures obtained for cholangitis",
+      "source_tables": [],
+      "confidence": 0.78
+    },
+    {
+      "source": "N15",
+      "target": "N5",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "blood cultures positive in sepsis",
+      "source_tables": [],
+      "confidence": 0.78
+    },
+    {
+      "source": "N16",
+      "target": "N3",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "stool cultures for ulcerative colitis assessment",
+      "source_tables": [],
+      "confidence": 0.75
+    },
+    {
+      "source": "N13",
+      "target": "N3",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "biopsy to evaluate ulcerative colitis",
+      "source_tables": [],
+      "confidence": 0.78
+    },
+    {
+      "source": "N14",
+      "target": "N2",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "drainage for cholangitis complications",
+      "source_tables": [],
+      "confidence": 0.78
+    },
+    {
+      "source": "N17",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "MED service managed cholangitis",
+      "source_tables": [],
+      "confidence": 0.85
+    },
+    {
+      "source": "N18",
+      "target": "N13",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "PROCEDURE",
+      "hadm_id": "",
+      "evidence": "SURG service performed biopsy",
+      "source_tables": [],
+      "confidence": 0.85
+    },
+    {
+      "source": "N8",
+      "target": "N15",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "vancomycin active against gram‑positive organisms cultured",
+      "source_tables": [],
+      "confidence": 0.75
+    },
+    {
+      "source": "N9",
+      "target": "N6",
+      "relation": "MONITORED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "furosemide dosing monitored by labs",
+      "source_tables": [],
+      "confidence": 0.7
+    },
+    {
+      "source": "N11",
+      "target": "N5",
+      "relation": "MONITORED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "hydromorphone dosing monitored by labs",
+      "source_tables": [],
+      "confidence": 0.7
+    },
+    {
+      "source": "N2",
+      "target": "N3",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "both present in many admissions",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N2",
+      "target": "N4",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "both present in many admissions",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N7",
+      "target": "N2",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "ursodiol administered during cholangitis admissions",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N8",
+      "target": "N5",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "vancomycin administered during sepsis admissions",
+      "source_tables": [],
+      "confidence": 0.6
+    }
+  ]
+}

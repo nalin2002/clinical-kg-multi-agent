@@ -1,0 +1,489 @@
+{
+  "subject_id": "11704130",
+  "hadm_ids": [
+    "26482086",
+    "23070413",
+    "23512788",
+    "26285769",
+    "22399503",
+    "20785777",
+    "23429924",
+    "21195784",
+    "26386265"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 11704130",
+      "normalized_name": "Patient 11704130",
+      "source_tables": [
+        "demographics"
+      ],
+      "evidence": "subject_id 11704130",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Atrial flutter",
+      "normalized_name": "atrial flutter",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "26482086 diagnosis",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Heart failure, unspecified",
+      "normalized_name": "heart failure",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "20785777 diagnosis",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "MEDICATION",
+      "name": "Warfarin",
+      "normalized_name": "warfarin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "26482086 medication",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "26285769 medication",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "22399503 medication",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "26482086 lab",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "PROCEDURE",
+      "name": "Hospital observation per hr",
+      "normalized_name": "hospital observation per hr",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "26482086 procedure",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "MICROBIOLOGY",
+      "name": "URINE CULTURE",
+      "normalized_name": "urine culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "26285769 microbiology",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "SERVICE",
+      "name": "CMED",
+      "normalized_name": "cmed",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "26482086 service",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "med",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "23512788 service",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "SERVICE",
+      "name": "NMED",
+      "normalized_name": "nmed",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "26386265 service",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "26482086",
+      "evidence": "patient has atrial flutter",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "20785777",
+      "evidence": "patient has heart failure",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "26482086",
+      "evidence": "patient takes warfarin",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "26285769",
+      "evidence": "patient takes furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "22399503",
+      "evidence": "patient takes vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "26482086",
+      "evidence": "patient had lab test",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "26482086",
+      "evidence": "patient underwent observation",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "26285769",
+      "evidence": "patient had urine culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "26482086",
+      "evidence": "patient managed by CMED",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "23512788",
+      "evidence": "patient managed by MED",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "26386265",
+      "evidence": "patient managed by NMED",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N4",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "26482086",
+      "evidence": "warfarin for atrial flutter",
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N3",
+      "target": "N5",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "26285769",
+      "evidence": "furosemide for heart failure",
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N3",
+      "target": "N6",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "22399503",
+      "evidence": "vancomycin for heart failure (infection)",
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N2",
+      "target": "N7",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "26482086",
+      "evidence": "lab test for atrial flutter",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N3",
+      "target": "N7",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "20785777",
+      "evidence": "lab test for heart failure",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N9",
+      "relation": "INVESTIGATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "26285769",
+      "evidence": "urine culture for atrial flutter",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N5",
+      "target": "N9",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "26285769",
+      "evidence": "furosemide targets Klebsiella (fluid balance)",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N6",
+      "target": "N9",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22399503",
+      "evidence": "vancomycin targets Staphylococcus",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N10",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "26482086",
+      "evidence": "CMED manages atrial flutter",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N11",
+      "target": "N3",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23512788",
+      "evidence": "MED manages heart failure",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N12",
+      "target": "N3",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "26386265",
+      "evidence": "NMED manages heart failure",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N8",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "26482086",
+      "evidence": "observation for atrial flutter",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N3",
+      "target": "N8",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "20785777",
+      "evidence": "observation for heart failure",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N2",
+      "target": "N5",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "26482086",
+      "evidence": "atrial flutter co-occurs with warfarin",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N3",
+      "target": "N5",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "26285769",
+      "evidence": "heart failure co-occurs with furosemide",
+      "source_tables": [],
+      "confidence": 0.6
+    }
+  ]
+}

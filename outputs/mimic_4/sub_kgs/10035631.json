@@ -1,0 +1,570 @@
+{
+  "subject_id": "10035631",
+  "hadm_ids": [
+    "29462354",
+    "24912093",
+    "22732862",
+    "20385771",
+    "29654498",
+    "27496788",
+    "21476294",
+    "21599196",
+    "29276678"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 10035631",
+      "normalized_name": "Patient 10035631",
+      "source_tables": [],
+      "evidence": "subject_id 10035631",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Acute myeloid leukemia, without mention of having achieved remission",
+      "normalized_name": "Acute myeloid leukemia",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD9 20500 (hadm_id 29462354, 22732862, 20385771, 29654498, 27496788)",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Sepsis, unspecified organism",
+      "normalized_name": "Sepsis",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD10 A419 (hadm_id 29276678)",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Aspergillosis",
+      "normalized_name": "Aspergillosis",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD9 1173 (hadm_id 22732862, 20385771, 27496788)",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "DIAGNOSIS",
+      "name": "Pneumonia, organism unspecified",
+      "normalized_name": "Pneumonia",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD9 486 (hadm_id 27496788)",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "Vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Vancomycin (hadm_id 29462354, 22732862, 21476294, 29276678)",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "MEDICATION",
+      "name": "Voriconazole",
+      "normalized_name": "Voriconazole",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Voriconazole (hadm_id 22732862, 20385771, 21476294, 29276678)",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "Furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Furosemide (hadm_id 21476294, 29276678)",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "PROCEDURE",
+      "name": "Central venous catheter placement with guidance",
+      "normalized_name": "Central venous catheter placement",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "ICD9 3897 (hadm_id 29462354, 24912093, 22732862, 20385771, 21476294, 29276678)",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "PROCEDURE",
+      "name": "Respiratory Ventilation, Greater than 96 Consecutive Hours",
+      "normalized_name": "Mechanical ventilation",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "ICD10 5A1955Z (hadm_id 29276678)",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "Laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "Laboratory testing (all admissions)",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture, Routine (VIRIDANS STREPTOCOCCI) - S",
+      "normalized_name": "Blood Culture VIRIDANS STREPTOCOCCI",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "Blood Culture, Routine, organism VIRIDANS STREPTOCOCCI, interpretation S (hadm_id 29462354)",
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "Service MED (hadm_id 29462354)",
+      "metadata": {}
+    },
+    {
+      "id": "N14",
+      "type": "SERVICE",
+      "name": "OMED",
+      "normalized_name": "OMED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "Service OMED (hadm_id 24912093, 22732862, 20385771, 29654498, 27496788, 21599196)",
+      "metadata": {}
+    },
+    {
+      "id": "N15",
+      "type": "SERVICE",
+      "name": "SURG",
+      "normalized_name": "SURG",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "Service SURG (hadm_id 29654498)",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Patient diagnosed with AML in multiple admissions",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29276678",
+      "evidence": "Sepsis diagnosis in admission 29276678",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Aspergillosis present in admissions 22732862, 20385771, 27496788",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27496788",
+      "evidence": "Pneumonia diagnosis in admission 27496788",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Vancomycin administered in multiple admissions",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Voriconazole administered in multiple admissions",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Furosemide administered in admissions 21476294 and 29276678",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "",
+      "evidence": "Central venous catheter placement performed in multiple admissions",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "29276678",
+      "evidence": "Mechanical ventilation performed in admission 29276678",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "Laboratory testing ordered in all admissions",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "29462354",
+      "evidence": "Blood culture with VIRIDANS STREPTOCOCCI (susceptible) in admission 29462354",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "29462354",
+      "evidence": "Service MED managing admission 29462354",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N14",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "Service OMED managing multiple admissions",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N15",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "29654498",
+      "evidence": "Service SURG managing admission 29654498",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N6",
+      "target": "N3",
+      "relation": "TREATED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Vancomycin used for Gram‑positive sepsis (VIRIDANS STREPTOCOCCI)",
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N7",
+      "target": "N4",
+      "relation": "TREATED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Voriconazole used for Aspergillosis",
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N9",
+      "target": "N3",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Central venous catheter placement associated with bloodstream infection / sepsis",
+      "source_tables": [
+        "procedures",
+        "diagnoses"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N10",
+      "target": "N3",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29276678",
+      "evidence": "Mechanical ventilation for severe sepsis / respiratory failure",
+      "source_tables": [
+        "procedures",
+        "diagnoses"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N12",
+      "target": "N3",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29462354",
+      "evidence": "Blood culture grew VIRIDANS STREPTOCOCCI, confirming sepsis",
+      "source_tables": [
+        "microbiology",
+        "diagnoses"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N6",
+      "target": "N12",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "Vancomycin active against VIRIDANS STREPTOCOCCI (susceptible)",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N3",
+      "target": "N11",
+      "relation": "MONITORED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "Laboratory testing used to monitor sepsis parameters",
+      "source_tables": [
+        "diagnoses",
+        "lab_tests"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N4",
+      "target": "N11",
+      "relation": "MONITORED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "Laboratory testing used to monitor Aspergillosis (e.g., galactomannan)",
+      "source_tables": [
+        "diagnoses",
+        "lab_tests"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N2",
+      "target": "N4",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Acute myeloid leukemia co‑occurs with Aspergillosis in multiple admissions",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N2",
+      "target": "N5",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Acute myeloid leukemia co‑occurs with Pneumonia in admission 27496788",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N5",
+      "target": "N4",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Pneumonia and Aspergillosis co‑occur in admissions with AML",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N6",
+      "target": "N5",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Vancomycin administered during pneumonia‑related admissions",
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N7",
+      "target": "N5",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Voriconazole administered during pneumonia‑related admissions",
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N9",
+      "target": "N2",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Central venous catheter placement performed in AML admissions for chemotherapy",
+      "source_tables": [
+        "procedures",
+        "diagnoses"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N10",
+      "target": "N2",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Mechanical ventilation required in AML admissions with severe infection",
+      "source_tables": [
+        "procedures",
+        "diagnoses"
+      ],
+      "confidence": 0.6
+    }
+  ]
+}

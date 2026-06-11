@@ -1,0 +1,242 @@
+{
+  "subject_id": "10146735",
+  "hadm_ids": [
+    "20999450",
+    "20023500",
+    "27669890",
+    "21277496",
+    "23316035",
+    "26221231",
+    "29262636",
+    "21502169",
+    "24312330",
+    "29193915",
+    "24951509",
+    "22173775"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 10146735",
+      "normalized_name": "patient_10146735",
+      "source_tables": [
+        "subject"
+      ],
+      "evidence": "subject_id 10146735",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Alcoholic cirrhosis of liver with ascites",
+      "normalized_name": "alcoholic_cirrhosis_of_liver_with_ascites",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "laboratory_testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "PROCEDURE",
+      "name": "Drainage of Peritoneal Cavity, Percutaneous Approach",
+      "normalized_name": "drainage_of_peritoneal_cavity_percutaneous_approach",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture, Routine",
+      "normalized_name": "blood_culture_routine",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "unlinked admission",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "med",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "SERVICE",
+      "name": "SURG",
+      "normalized_name": "surg",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "diagnoses across admissions",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "medications across admissions",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "lab tests across admissions",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "",
+      "evidence": "procedures across admissions",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "microbiology from unlinked admission",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "services across admissions",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "services across admissions",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N3",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "co‑occurrence in same admissions",
+      "source_tables": [
+        "diagnoses",
+        "medications"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N2",
+      "target": "N5",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "PROCEDURE",
+      "hadm_id": "",
+      "evidence": "co‑occurrence in same admissions",
+      "source_tables": [
+        "diagnoses",
+        "procedures"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N3",
+      "target": "N5",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "PROCEDURE",
+      "hadm_id": "",
+      "evidence": "co‑occurrence in same admissions",
+      "source_tables": [
+        "medications",
+        "procedures"
+      ],
+      "confidence": 0.6
+    }
+  ]
+}

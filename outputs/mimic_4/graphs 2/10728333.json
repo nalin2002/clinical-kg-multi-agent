@@ -1,0 +1,463 @@
+{
+  "subject_id": "10728333",
+  "hadm_ids": [
+    "26249560",
+    "22391563",
+    "22954369",
+    "21450221",
+    "28427481",
+    "23067956",
+    "27224918",
+    "20937648",
+    "26433257",
+    "28002618",
+    "21251507",
+    "23234136",
+    "26646496"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 10728333",
+      "normalized_name": "patient_10728333",
+      "source_tables": [],
+      "evidence": "",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Severe persistent asthma with (acute) exacerbation",
+      "normalized_name": "severe_persistent_asthma_with_acute_exacerbation",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "21450221,22954369,26433257",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Pneumonia due to Methicillin susceptible Staphylococcus aureus",
+      "normalized_name": "pneumonia_due_to_methicillin_susceptible_staphylococcus_aureus",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "22954369",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Sepsis, unspecified organism",
+      "normalized_name": "sepsis_unspecified_organism",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "23067956",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "22391563,23067956",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "27224918,20937648",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "insulin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "22391563,21450221,23067956,28427481,28002618,21251507,23234136,26646496",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "PROCEDURE",
+      "name": "Respiratory ventilation, less than 24 consecutive hours",
+      "normalized_name": "respiratory_ventilation_less_than_24_consecutive_hours",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "27224918,21251507",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "laboratory_testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "26249560,22391563,22954369,21450221,28427481,23067956,27224918,20937648,26433257,28002618,21251507,23234136,26646496",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "MICROBIOLOGY",
+      "name": "BRONCHIAL WASHINGS - RESPIRATORY CULTURE - STAPH AUREUS COAG +",
+      "normalized_name": "bronchial_washings_respiratory_culture_staph_aureus_coag_positive",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "22391563,22954369,23067956,27224918",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "med",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "26249560,22391563,22954369,21450221,28427481,23067956,20937648,26433257,28002618,21251507,23234136,26646496",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "SERVICE",
+      "name": "TSURG",
+      "normalized_name": "tsurg",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "27224918,20937648",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "21450221,22954369,26433257",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "22954369",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "23067956",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "22391563,23067956",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "27224918,20937648",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "22391563,21450221,23067956,28427481,28002618,21251507,23234136,26646496",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "",
+      "evidence": "27224918,21251507",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "26249560,22391563,22954369,21450221,28427481,23067956,27224918,20937648,26433257,28002618,21251507,23234136,26646496",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "22391563,22954369,23067956,27224918",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "26249560,22391563,22954369,21450221,28427481,23067956,20937648,26433257,28002618,21251507,23234136,26646496",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "27224918,20937648",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N2",
+      "target": "N5",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "22391563",
+      "evidence": "Severe persistent asthma with (acute) exacerbation co‑occurs with Vancomycin in admission 22391563",
+      "source_tables": [
+        "diagnoses",
+        "medications"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N2",
+      "target": "N6",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "27224918",
+      "evidence": "Severe persistent asthma with (acute) exacerbation co‑occurs with Furosemide in admission 27224918",
+      "source_tables": [
+        "diagnoses",
+        "medications"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N3",
+      "target": "N5",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "22391563",
+      "evidence": "Pneumonia due to Methicillin susceptible Staphylococcus aureus co‑occurs with Vancomycin in admission 22391563",
+      "source_tables": [
+        "diagnoses",
+        "medications"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N3",
+      "target": "N10",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22391563",
+      "evidence": "Pneumonia due to Methicillin susceptible Staphylococcus aureus co‑occurs with STAPH AUREUS COAG + culture in admission 22391563",
+      "source_tables": [
+        "diagnoses",
+        "microbiology"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N4",
+      "target": "N7",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "23067956",
+      "evidence": "Sepsis, unspecified organism co‑occurs with Insulin in admission 23067956",
+      "source_tables": [
+        "diagnoses",
+        "medications"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N4",
+      "target": "N10",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "23067956",
+      "evidence": "Sepsis, unspecified organism co‑occurs with STAPH AUREUS COAG + culture in admission 23067956",
+      "source_tables": [
+        "diagnoses",
+        "microbiology"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N8",
+      "target": "N2",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27224918",
+      "evidence": "Respiratory ventilation procedure co‑occurs with Severe persistent asthma in admission 27224918",
+      "source_tables": [
+        "procedures",
+        "diagnoses"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N8",
+      "target": "N5",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "PROCEDURE",
+      "target_type": "MEDICATION",
+      "hadm_id": "27224918",
+      "evidence": "Respiratory ventilation procedure co‑occurs with Vancomycin in admission 27224918",
+      "source_tables": [
+        "procedures",
+        "medications"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N9",
+      "target": "N2",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "LAB_TEST",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21450221",
+      "evidence": "Laboratory testing co‑occurs with Severe persistent asthma in admission 21450221",
+      "source_tables": [
+        "lab_tests",
+        "diagnoses"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N9",
+      "target": "N5",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "LAB_TEST",
+      "target_type": "MEDICATION",
+      "hadm_id": "22391563",
+      "evidence": "Laboratory testing co‑occurs with Vancomycin in admission 22391563",
+      "source_tables": [
+        "lab_tests",
+        "medications"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N11",
+      "target": "N2",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21450221",
+      "evidence": "MED service co‑occurs with Severe persistent asthma in admission 21450221",
+      "source_tables": [
+        "services",
+        "diagnoses"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N12",
+      "target": "N8",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "SERVICE",
+      "target_type": "PROCEDURE",
+      "hadm_id": "27224918",
+      "evidence": "TSURG service co‑occurs with Respiratory ventilation procedure in admission 27224918",
+      "source_tables": [
+        "services",
+        "procedures"
+      ],
+      "confidence": 0.6
+    }
+  ]
+}

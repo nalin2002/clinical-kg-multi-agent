@@ -1,0 +1,626 @@
+{
+  "subject_id": "10641937",
+  "hadm_ids": [
+    "22804676"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 10641937",
+      "normalized_name": "patient 10641937",
+      "source_tables": [],
+      "evidence": "patient record",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Severe sepsis",
+      "normalized_name": "severe sepsis",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD-9 99592",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Septic shock",
+      "normalized_name": "septic shock",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD-9 78552",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Streptococcal septicemia",
+      "normalized_name": "streptococcal septicemia",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD-9 0380",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Vancomycin 1000 mg IV",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Furosemide 20 mg IV",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "insulin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Insulin 0 UNIT SC",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "PROCEDURE",
+      "name": "Mechanical ventilation",
+      "normalized_name": "mechanical ventilation",
+      "source_tables": [
+        "procedures_icd"
+      ],
+      "evidence": "Continuous invasive mechanical ventilation for 96 consecutive hours or more (ICD-9 9672)",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "Derived from POE 'Lab' orders",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture",
+      "normalized_name": "blood culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "Blood Culture, Routine (Enterococcus faecium)",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "med",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "Service MED",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "SERVICE",
+      "name": "OMED",
+      "normalized_name": "omed",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "Service OMED",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22804676",
+      "evidence": "diagnoses",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22804676",
+      "evidence": "diagnoses",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22804676",
+      "evidence": "diagnoses",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "22804676",
+      "evidence": "medications",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "22804676",
+      "evidence": "medications",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "22804676",
+      "evidence": "medications",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "22804676",
+      "evidence": "procedures_icd",
+      "source_tables": [
+        "procedures_icd"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "22804676",
+      "evidence": "lab_tests",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22804676",
+      "evidence": "microbiology",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "22804676",
+      "evidence": "services",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "22804676",
+      "evidence": "services",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N5",
+      "target": "N10",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22804676",
+      "evidence": "microbiology",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N5",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "22804676",
+      "evidence": "co-occurrence",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N2",
+      "target": "N6",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "22804676",
+      "evidence": "co-occurrence",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N2",
+      "target": "N7",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "22804676",
+      "evidence": "co-occurrence",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N3",
+      "target": "N5",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "22804676",
+      "evidence": "co-occurrence",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N3",
+      "target": "N6",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "22804676",
+      "evidence": "co-occurrence",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N3",
+      "target": "N7",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "22804676",
+      "evidence": "co-occurrence",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N4",
+      "target": "N5",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "22804676",
+      "evidence": "co-occurrence",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N4",
+      "target": "N6",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "22804676",
+      "evidence": "co-occurrence",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N4",
+      "target": "N7",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "22804676",
+      "evidence": "co-occurrence",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N2",
+      "target": "N8",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "PROCEDURE",
+      "hadm_id": "22804676",
+      "evidence": "co-occurrence",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N3",
+      "target": "N8",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "PROCEDURE",
+      "hadm_id": "22804676",
+      "evidence": "co-occurrence",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N4",
+      "target": "N8",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "PROCEDURE",
+      "hadm_id": "22804676",
+      "evidence": "co-occurrence",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N2",
+      "target": "N9",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "22804676",
+      "evidence": "co-occurrence",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N3",
+      "target": "N9",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "22804676",
+      "evidence": "co-occurrence",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N4",
+      "target": "N9",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "22804676",
+      "evidence": "co-occurrence",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N2",
+      "target": "N10",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22804676",
+      "evidence": "co-occurrence",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N3",
+      "target": "N10",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22804676",
+      "evidence": "co-occurrence",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N4",
+      "target": "N10",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22804676",
+      "evidence": "co-occurrence",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N5",
+      "target": "N8",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "PROCEDURE",
+      "hadm_id": "22804676",
+      "evidence": "co-occurrence",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N6",
+      "target": "N8",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "PROCEDURE",
+      "hadm_id": "22804676",
+      "evidence": "co-occurrence",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N7",
+      "target": "N8",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "PROCEDURE",
+      "hadm_id": "22804676",
+      "evidence": "co-occurrence",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N5",
+      "target": "N9",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "22804676",
+      "evidence": "co-occurrence",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N6",
+      "target": "N9",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "22804676",
+      "evidence": "co-occurrence",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N7",
+      "target": "N9",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "22804676",
+      "evidence": "co-occurrence",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N5",
+      "target": "N10",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22804676",
+      "evidence": "co-occurrence",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N6",
+      "target": "N10",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22804676",
+      "evidence": "co-occurrence",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N7",
+      "target": "N10",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22804676",
+      "evidence": "co-occurrence",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N8",
+      "target": "N9",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "PROCEDURE",
+      "target_type": "LAB_TEST",
+      "hadm_id": "22804676",
+      "evidence": "co-occurrence",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N8",
+      "target": "N10",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "PROCEDURE",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22804676",
+      "evidence": "co-occurrence",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N9",
+      "target": "N10",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "LAB_TEST",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22804676",
+      "evidence": "co-occurrence",
+      "source_tables": [],
+      "confidence": 0.6
+    }
+  ]
+}

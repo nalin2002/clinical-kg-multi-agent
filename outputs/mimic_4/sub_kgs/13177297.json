@@ -1,0 +1,868 @@
+{
+  "subject_id": "13177297",
+  "hadm_ids": [
+    "20802880",
+    "28403720",
+    "27303819"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 13177297",
+      "normalized_name": "PATIENT",
+      "source_tables": [],
+      "evidence": "subject_id",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Sepsis, unspecified organism",
+      "normalized_name": "Sepsis",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id=28403720, seq_num=1",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Pneumonia, unspecified organism",
+      "normalized_name": "Pneumonia",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id=28403720, seq_num=2",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Acute respiratory failure with hypoxia",
+      "normalized_name": "Acute respiratory failure",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id=28403720, seq_num=3",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "DIAGNOSIS",
+      "name": "Toxic encephalopathy",
+      "normalized_name": "Toxic encephalopathy",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id=28403720, seq_num=5",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "DIAGNOSIS",
+      "name": "Secondary malignant neoplasm of brain",
+      "normalized_name": "Secondary malignant neoplasm of brain",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id=20802880, seq_num=1; hadm_id=27303819, seq_num=11",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "DIAGNOSIS",
+      "name": "Pneumonia due to other Gram-negative bacteria",
+      "normalized_name": "Pneumonia",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id=27303819, seq_num=3",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "DIAGNOSIS",
+      "name": "Severe sepsis with septic shock",
+      "normalized_name": "Severe sepsis",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id=27303819, seq_num=4",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "Vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id=28403720, count=9; hadm_id=27303819, count=1",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "MEDICATION",
+      "name": "Piperacillin-Tazobactam",
+      "normalized_name": "Piperacillin-Tazobactam",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id=28403720, count=4",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "Furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id=28403720, count=22",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "Insulin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id=20802880, count=1",
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "PROCEDURE",
+      "name": "Insertion of Endotracheal Airway into Trachea",
+      "normalized_name": "Intubation",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "hadm_id=28403720, seq_num=1",
+      "metadata": {}
+    },
+    {
+      "id": "N14",
+      "type": "PROCEDURE",
+      "name": "Respiratory Ventilation, Greater than 96 Consecutive Hours",
+      "normalized_name": "Mechanical ventilation",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "hadm_id=28403720, seq_num=2",
+      "metadata": {}
+    },
+    {
+      "id": "N15",
+      "type": "PROCEDURE",
+      "name": "Drainage of Right Middle Lung Lobe",
+      "normalized_name": "Bronchoscopic drainage",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "hadm_id=28403720, seq_num=9",
+      "metadata": {}
+    },
+    {
+      "id": "N16",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "Lab test",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "hadm_id=28403720, num_lab_orders=181",
+      "metadata": {}
+    },
+    {
+      "id": "N17",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture, Routine",
+      "normalized_name": "Blood culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "hadm_id=28403720, specimen=Blood Culture",
+      "metadata": {}
+    },
+    {
+      "id": "N18",
+      "type": "MICROBIOLOGY",
+      "name": "MRSA SCREEN",
+      "normalized_name": "MRSA screen",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "hadm_id=28403720, specimen=MRSA SCREEN",
+      "metadata": {}
+    },
+    {
+      "id": "N19",
+      "type": "MICROBIOLOGY",
+      "name": "R/O VANCOMYCIN RESISTANT ENTEROCOCCUS",
+      "normalized_name": "Enterococcus resistant to Vancomycin",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "hadm_id=27303819, specimen=SWAB, organism=ENTEROCOCCUS SP.",
+      "metadata": {}
+    },
+    {
+      "id": "N20",
+      "type": "MICROBIOLOGY",
+      "name": "RESPIRATORY CULTURE - ACINETOBACTER BAUMANNII COMPLEX",
+      "normalized_name": "Acinetobacter baumannii",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "hadm_id=27303819, specimen=SPUTUM, organism=ACINETOBACTER BAUMANNII COMPLEX",
+      "metadata": {}
+    },
+    {
+      "id": "N21",
+      "type": "SERVICE",
+      "name": "NSURG",
+      "normalized_name": "Neurosurgery service",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "hadm_id=20802880",
+      "metadata": {}
+    },
+    {
+      "id": "N22",
+      "type": "SERVICE",
+      "name": "OMED",
+      "normalized_name": "General medicine service",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "hadm_id=28403720",
+      "metadata": {}
+    },
+    {
+      "id": "N23",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "Medical service",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "hadm_id=27303819",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28403720",
+      "evidence": "diagnoses",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28403720",
+      "evidence": "diagnoses",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28403720",
+      "evidence": "diagnoses",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28403720",
+      "evidence": "diagnoses",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "20802880",
+      "evidence": "diagnoses",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27303819",
+      "evidence": "diagnoses",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27303819",
+      "evidence": "diagnoses",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "28403720",
+      "evidence": "medications",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "28403720",
+      "evidence": "medications",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "28403720",
+      "evidence": "medications",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "20802880",
+      "evidence": "medications",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "28403720",
+      "evidence": "procedures",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N14",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "28403720",
+      "evidence": "procedures",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N15",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "28403720",
+      "evidence": "procedures",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N16",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "28403720",
+      "evidence": "lab_tests",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N17",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "28403720",
+      "evidence": "microbiology",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N18",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "28403720",
+      "evidence": "microbiology",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N19",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "27303819",
+      "evidence": "microbiology",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N20",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "27303819",
+      "evidence": "microbiology",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N21",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "20802880",
+      "evidence": "services",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N22",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "28403720",
+      "evidence": "services",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N23",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "27303819",
+      "evidence": "services",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N9",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "28403720",
+      "evidence": "clinical guideline",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N10",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "28403720",
+      "evidence": "clinical guideline",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N13",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "PROCEDURE",
+      "hadm_id": "28403720",
+      "evidence": "procedure for airway",
+      "source_tables": [],
+      "confidence": 0.75
+    },
+    {
+      "source": "N2",
+      "target": "N14",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "PROCEDURE",
+      "hadm_id": "28403720",
+      "evidence": "mechanical ventilation",
+      "source_tables": [],
+      "confidence": 0.75
+    },
+    {
+      "source": "N2",
+      "target": "N16",
+      "relation": "MONITORED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "28403720",
+      "evidence": "lab monitoring",
+      "source_tables": [],
+      "confidence": 0.7
+    },
+    {
+      "source": "N2",
+      "target": "N17",
+      "relation": "INDICATES",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28403720",
+      "evidence": "blood culture positive",
+      "source_tables": [],
+      "confidence": 0.75
+    },
+    {
+      "source": "N9",
+      "target": "N19",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "27303819",
+      "evidence": "vancomycin resistance",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N9",
+      "target": "N20",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "27303819",
+      "evidence": "vancomycin activity",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N10",
+      "target": "N20",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "27303819",
+      "evidence": "piperacillin-tazobactam activity",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N3",
+      "target": "N9",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "28403720",
+      "evidence": "antibiotic for pneumonia",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N3",
+      "target": "N13",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "PROCEDURE",
+      "hadm_id": "28403720",
+      "evidence": "intubation for airway protection",
+      "source_tables": [],
+      "confidence": 0.75
+    },
+    {
+      "source": "N4",
+      "target": "N14",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "PROCEDURE",
+      "hadm_id": "28403720",
+      "evidence": "ventilation for respiratory failure",
+      "source_tables": [],
+      "confidence": 0.75
+    },
+    {
+      "source": "N5",
+      "target": "N16",
+      "relation": "MONITORED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "28403720",
+      "evidence": "labs for encephalopathy",
+      "source_tables": [],
+      "confidence": 0.7
+    },
+    {
+      "source": "N6",
+      "target": "N21",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "20802880",
+      "evidence": "neurosurgery service",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N7",
+      "target": "N9",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "27303819",
+      "evidence": "vancomycin for gram-negative pneumonia",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N7",
+      "target": "N10",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "27303819",
+      "evidence": "piperacillin-tazobactam for gram-negative",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N8",
+      "target": "N14",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "PROCEDURE",
+      "hadm_id": "27303819",
+      "evidence": "ventilation for septic shock",
+      "source_tables": [],
+      "confidence": 0.75
+    },
+    {
+      "source": "N9",
+      "target": "N22",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "28403720",
+      "evidence": "medication administered under OMED",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N10",
+      "target": "N22",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "28403720",
+      "evidence": "medication administered under OMED",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N11",
+      "target": "N23",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "27303819",
+      "evidence": "medication administered under MED",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N12",
+      "target": "N21",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "20802880",
+      "evidence": "insulin given during neurosurgery",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N23",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27303819",
+      "evidence": "MED service manages sepsis",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N3",
+      "target": "N22",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28403720",
+      "evidence": "OMED service manages pneumonia",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N4",
+      "target": "N22",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28403720",
+      "evidence": "OMED service manages respiratory failure",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N5",
+      "target": "N22",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28403720",
+      "evidence": "OMED service manages encephalopathy",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N7",
+      "target": "N23",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27303819",
+      "evidence": "MED service manages gram-negative pneumonia",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N8",
+      "target": "N23",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27303819",
+      "evidence": "MED service manages septic shock",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N9",
+      "target": "N13",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "PROCEDURE",
+      "hadm_id": "28403720",
+      "evidence": "simultaneous administration",
+      "source_tables": [],
+      "confidence": 0.55
+    },
+    {
+      "source": "N10",
+      "target": "N14",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "PROCEDURE",
+      "hadm_id": "28403720",
+      "evidence": "simultaneous administration",
+      "source_tables": [],
+      "confidence": 0.55
+    }
+  ]
+}

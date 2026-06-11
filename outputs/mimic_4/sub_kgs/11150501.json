@@ -1,0 +1,530 @@
+{
+  "subject_id": "11150501",
+  "hadm_ids": [
+    "21270256",
+    "22829962",
+    "21203779",
+    "23622279",
+    "25463649",
+    "20525046",
+    "27213989",
+    "24574178",
+    "27254378"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 11150501",
+      "normalized_name": "PATIENT",
+      "source_tables": [],
+      "evidence": "subject_id",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "End stage renal disease",
+      "normalized_name": "END STAGE RENAL DISEASE",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "21270256",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Chronic systolic (congestive) heart failure",
+      "normalized_name": "CHRONIC SYSTOLIC HEART FAILURE",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "23622279",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Kidney transplant rejection",
+      "normalized_name": "KIDNEY TRANSPLANT REJECTION",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "27213989",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "FUROSEMIDE",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "21270256",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "VANCOMYCIN",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "21270256",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "MEDICATION",
+      "name": "Tacrolimus",
+      "normalized_name": "TACROLIMUS",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "21270256",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "LABORATORY TESTING",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "21270256",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "PROCEDURE",
+      "name": "Kidney transplantation",
+      "normalized_name": "KIDNEY TRANSPLANTATION",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "21270256",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "MICROBIOLOGY",
+      "name": "Blood culture Enterococcus",
+      "normalized_name": "BLOOD CULTURE ENTEROCOCCUS",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "22829962",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "SERVICE",
+      "name": "SURG",
+      "normalized_name": "SURG",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "21270256",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "23622279",
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "SERVICE",
+      "name": "CMED",
+      "normalized_name": "CMED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "20525046",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21270256",
+      "evidence": "diagnoses",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23622279",
+      "evidence": "diagnoses",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27213989",
+      "evidence": "diagnoses",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "21270256",
+      "evidence": "medications",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "21270256",
+      "evidence": "medications",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "21270256",
+      "evidence": "medications",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "21270256",
+      "evidence": "lab_tests",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "21270256",
+      "evidence": "procedures",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22829962",
+      "evidence": "microbiology",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "21270256",
+      "evidence": "services",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "23622279",
+      "evidence": "services",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "20525046",
+      "evidence": "services",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N5",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "21270256",
+      "evidence": "medications for ESRD (diuretic)",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N3",
+      "target": "N5",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "23622279",
+      "evidence": "furosemide for heart failure",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N3",
+      "target": "N6",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "23622279",
+      "evidence": "vancomycin for possible infection in HF patient",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N4",
+      "target": "N7",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "27213989",
+      "evidence": "tacrolimus for transplant rejection",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "source": "N2",
+      "target": "N8",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "21270256",
+      "evidence": "lab testing ordered for ESRD",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N3",
+      "target": "N8",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "23622279",
+      "evidence": "lab testing for heart failure",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N4",
+      "target": "N9",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21270256",
+      "evidence": "kidney transplantation for rejection",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N10",
+      "target": "N6",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22829962",
+      "evidence": "vancomycin targets Enterococcus",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N11",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21270256",
+      "evidence": "SURG service manages ESRD and transplant",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N12",
+      "target": "N3",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23622279",
+      "evidence": "MED service manages heart failure",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N13",
+      "target": "N4",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "20525046",
+      "evidence": "CMED service manages transplant complications",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N5",
+      "target": "N8",
+      "relation": "MONITORED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "21270256",
+      "evidence": "lab tests monitor diuretic effect",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N6",
+      "target": "N8",
+      "relation": "MONITORED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "23622279",
+      "evidence": "lab tests monitor vancomycin therapy",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N7",
+      "target": "N8",
+      "relation": "MONITORED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "27213989",
+      "evidence": "lab tests monitor tacrolimus levels",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N5",
+      "target": "N2",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21270256",
+      "evidence": "co‑occurrence",
+      "source_tables": [],
+      "confidence": 0.55
+    },
+    {
+      "source": "N6",
+      "target": "N3",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23622279",
+      "evidence": "co‑occurrence",
+      "source_tables": [],
+      "confidence": 0.55
+    },
+    {
+      "source": "N7",
+      "target": "N4",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27213989",
+      "evidence": "co‑occurrence",
+      "source_tables": [],
+      "confidence": 0.55
+    }
+  ]
+}

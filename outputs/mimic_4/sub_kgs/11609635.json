@@ -1,0 +1,624 @@
+{
+  "subject_id": "11609635",
+  "hadm_ids": [
+    "24188241",
+    "24723400"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient",
+      "normalized_name": "Patient",
+      "source_tables": [],
+      "evidence": [],
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Ventilator associated pneumonia",
+      "normalized_name": "Ventilator associated pneumonia",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": [
+        "hadm_id=24188241 seq_num=9"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Sepsis due to Methicillin susceptible Staphylococcus aureus",
+      "normalized_name": "Sepsis due to Methicillin susceptible Staphylococcus aureus",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": [
+        "hadm_id=24723400 seq_num=2"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Acute kidney failure with tubular necrosis",
+      "normalized_name": "Acute kidney failure with tubular necrosis",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": [
+        "hadm_id=24188241 seq_num=5"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "Vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": [
+        "hadm_id=24188241",
+        "hadm_id=24723400"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "MEDICATION",
+      "name": "Piperacillin-Tazobactam",
+      "normalized_name": "Piperacillin-Tazobactam",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": [
+        "hadm_id=24188241"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "Furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": [
+        "hadm_id=24188241"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "PROCEDURE",
+      "name": "Respiratory Ventilation, Greater than 96 Consecutive Hours",
+      "normalized_name": "Respiratory Ventilation, Greater than 96 Consecutive Hours",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": [
+        "hadm_id=24188241 seq_num=2"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "PROCEDURE",
+      "name": "Insertion of Endotracheal Airway into Trachea, Via Natural or Artificial Opening",
+      "normalized_name": "Insertion of Endotracheal Airway into Trachea",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": [
+        "hadm_id=24188241 seq_num=12"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing (24188241)",
+      "normalized_name": "Laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": [
+        "hadm_id=24188241"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing (24723400)",
+      "normalized_name": "Laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": [
+        "hadm_id=24723400"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture, Routine (specimen=BLOOD CULTURE)",
+      "normalized_name": "Blood Culture, Routine",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": [
+        "hadm_id=24188241"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture, Routine (specimen=BLOOD CULTURE) [second admission]",
+      "normalized_name": "Blood Culture, Routine",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": [
+        "hadm_id=24723400"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N14",
+      "type": "SERVICE",
+      "name": "VSURG",
+      "normalized_name": "VSURG",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": [
+        "hadm_id=24188241"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N15",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": [
+        "hadm_id=24723400"
+      ],
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24188241",
+      "evidence": [
+        "diagnosis seq_num=9"
+      ],
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24723400",
+      "evidence": [
+        "diagnosis seq_num=2"
+      ],
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24188241",
+      "evidence": [
+        "diagnosis seq_num=5"
+      ],
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "24188241",
+      "evidence": [
+        "medication Vancomycin"
+      ],
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "24188241",
+      "evidence": [
+        "medication Piperacillin-Tazobactam"
+      ],
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "24188241",
+      "evidence": [
+        "medication Furosemide"
+      ],
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "24188241",
+      "evidence": [
+        "procedure seq_num=2"
+      ],
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "24188241",
+      "evidence": [
+        "procedure seq_num=12"
+      ],
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "24188241",
+      "evidence": [
+        "lab testing"
+      ],
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "24723400",
+      "evidence": [
+        "lab testing"
+      ],
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "24188241",
+      "evidence": [
+        "microbiology Blood Culture"
+      ],
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "24723400",
+      "evidence": [
+        "microbiology Blood Culture"
+      ],
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N14",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "24188241",
+      "evidence": [
+        "service VSURG"
+      ],
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N15",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "24723400",
+      "evidence": [
+        "service MED"
+      ],
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N5",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "24188241",
+      "evidence": [
+        "Ventilator associated pneumonia treated with Vancomycin"
+      ],
+      "source_tables": [],
+      "confidence": 0.85
+    },
+    {
+      "source": "N3",
+      "target": "N5",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "24723400",
+      "evidence": [
+        "Sepsis treated with Vancomycin"
+      ],
+      "source_tables": [],
+      "confidence": 0.85
+    },
+    {
+      "source": "N3",
+      "target": "N6",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "24188241",
+      "evidence": [
+        "Sepsis treated with Piperacillin-Tazobactam"
+      ],
+      "source_tables": [],
+      "confidence": 0.85
+    },
+    {
+      "source": "N4",
+      "target": "N7",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "24188241",
+      "evidence": [
+        "Acute kidney failure treated with Furosemide"
+      ],
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N8",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24188241",
+      "evidence": [
+        "Ventilation performed for pneumonia"
+      ],
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N9",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24188241",
+      "evidence": [
+        "Airway insertion for pneumonia"
+      ],
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N10",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "24188241",
+      "evidence": [
+        "Lab testing used to diagnose pneumonia"
+      ],
+      "source_tables": [],
+      "confidence": 0.75
+    },
+    {
+      "source": "N3",
+      "target": "N12",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24188241",
+      "evidence": [
+        "Blood culture confirms sepsis"
+      ],
+      "source_tables": [],
+      "confidence": 0.85
+    },
+    {
+      "source": "N5",
+      "target": "N12",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "24188241",
+      "evidence": [
+        "Vancomycin targets organisms in blood culture"
+      ],
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N14",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24188241",
+      "evidence": [
+        "VSURG manages pneumonia"
+      ],
+      "source_tables": [],
+      "confidence": 0.75
+    },
+    {
+      "source": "N15",
+      "target": "N3",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24723400",
+      "evidence": [
+        "MED manages sepsis"
+      ],
+      "source_tables": [],
+      "confidence": 0.75
+    },
+    {
+      "source": "N2",
+      "target": "N3",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": [
+        "both present in patient"
+      ],
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N2",
+      "target": "N4",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": [],
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N3",
+      "target": "N4",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": [],
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N5",
+      "target": "N6",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "MEDICATION",
+      "hadm_id": "24188241",
+      "evidence": [],
+      "source_tables": [],
+      "confidence": 0.55
+    },
+    {
+      "source": "N5",
+      "target": "N7",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "MEDICATION",
+      "hadm_id": "24188241",
+      "evidence": [],
+      "source_tables": [],
+      "confidence": 0.55
+    },
+    {
+      "source": "N8",
+      "target": "N9",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "PROCEDURE",
+      "target_type": "PROCEDURE",
+      "hadm_id": "24188241",
+      "evidence": [],
+      "source_tables": [],
+      "confidence": 0.55
+    }
+  ]
+}

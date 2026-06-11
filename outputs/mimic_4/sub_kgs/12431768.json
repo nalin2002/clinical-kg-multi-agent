@@ -1,0 +1,353 @@
+{
+  "subject_id": "12431768",
+  "hadm_ids": [
+    "27316101",
+    "24575712",
+    "22555406",
+    "23720628",
+    "27054559",
+    "25881619",
+    "29703772",
+    "22910137",
+    "22935584",
+    "26463448",
+    "22828463",
+    "21955629"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 12431768",
+      "normalized_name": "PATIENT",
+      "source_tables": [],
+      "evidence": "subject_id",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Chronic obstructive asthma with (acute) exacerbation",
+      "normalized_name": "ASTHMA_EXACERBATION",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "icd_code:49322",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Diabetes with neurological manifestations, type II",
+      "normalized_name": "DIABETES_NEURO",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "icd_code:25060",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "INSULIN",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "name:Insulin",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "MEDICATION",
+      "name": "Azithromycin",
+      "normalized_name": "AZITHROMYCIN",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "name:Azithromycin",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "LAB_TEST",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "name:Laboratory testing",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED_SERVICE",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "services:MED",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture",
+      "normalized_name": "BLOOD_CULTURE",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "specimen:Blood Culture",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "PROCEDURE",
+      "name": "Hospital observation services",
+      "normalized_name": "OBSERVATION_SERVICE",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "icd_code:99219",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24575712",
+      "evidence": "diagnoses",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27316101",
+      "evidence": "diagnoses",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "24575712",
+      "evidence": "medications",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "24575712",
+      "evidence": "medications",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "24575712",
+      "evidence": "lab_tests",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.94
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "24575712",
+      "evidence": "services",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.93
+    },
+    {
+      "source": "N2",
+      "target": "N5",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "24575712",
+      "evidence": "Azithromycin used for respiratory infection",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N3",
+      "target": "N4",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "27316101",
+      "evidence": "Insulin for diabetes",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N2",
+      "target": "N6",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "24575712",
+      "evidence": "Lab tests ordered for asthma exacerbation",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.78
+    },
+    {
+      "source": "N5",
+      "target": "N8",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "21955629",
+      "evidence": "Azithromycin targets respiratory organisms",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N9",
+      "target": "N2",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24575712",
+      "evidence": "Observation service for asthma",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N9",
+      "target": "N3",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27316101",
+      "evidence": "Observation service for diabetes",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N8",
+      "target": "N2",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21955629",
+      "evidence": "Blood culture confirms infection",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.78
+    },
+    {
+      "source": "N4",
+      "target": "N6",
+      "relation": "MONITORED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "27316101",
+      "evidence": "Lab monitoring of insulin therapy",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N5",
+      "target": "N6",
+      "relation": "MONITORED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "24575712",
+      "evidence": "Lab monitoring of azithromycin therapy",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N2",
+      "target": "N7",
+      "relation": "MANAGED_FOR",
+      "source_type": "DIAGNOSIS",
+      "target_type": "SERVICE",
+      "hadm_id": "24575712",
+      "evidence": "MED service manages asthma",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N3",
+      "target": "N7",
+      "relation": "MANAGED_FOR",
+      "source_type": "DIAGNOSIS",
+      "target_type": "SERVICE",
+      "hadm_id": "27316101",
+      "evidence": "MED service manages diabetes",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "24575712",
+      "evidence": "Observation service co-occurs",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.55
+    }
+  ]
+}

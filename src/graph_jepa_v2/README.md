@@ -74,9 +74,9 @@ Optionally add high-scoring missing edges between existing nodes:
 
 ```bash
 PYTHONPATH=src python -m graph_jepa_v2.score \
-  --input outputs/cooperative_20_enriched_v2/sub_kgs/RES0198_cooperative_multi_agent_enriched_v2.json \
-  --checkpoint checkpoints/graph_jepa_v2.pt \
-  --output RES0198_jepa_v2.json \
+  --input outputs/aci_bench_val/sub_kgs/RES_D2N068_cooperative_multi_agent.json \
+  --checkpoint ckpts/graph_jepa_v2.pt \
+  --output outputs/aci_bench_val/sub_kgs/RES_D2N068_cooperative_multi_agent_updated.json \
   --add-candidates \
   --candidate-threshold 0.7 \
   --max-candidates 50

@@ -1,0 +1,771 @@
+{
+  "subject_id": "12036721",
+  "hadm_ids": [
+    "24443695"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient",
+      "normalized_name": "Patient",
+      "source_tables": [],
+      "evidence": "",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Sepsis, unspecified organism",
+      "normalized_name": "Sepsis",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "icd_code A419",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Severe sepsis with septic shock",
+      "normalized_name": "Severe sepsis",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "icd_code R6521",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Cardiogenic shock",
+      "normalized_name": "Cardiogenic shock",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "icd_code R570",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "DIAGNOSIS",
+      "name": "Acute systolic (congestive) heart failure",
+      "normalized_name": "Heart failure",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "icd_code I5021",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "DIAGNOSIS",
+      "name": "Acute kidney failure with tubular necrosis",
+      "normalized_name": "Acute kidney failure",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "icd_code N170",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "Furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "dose 250 mg IV DRIP",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "Vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "dose 1000 mg IV",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "Insulin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "dose 0-10 UNIT SC",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "MEDICATION",
+      "name": "Heparin",
+      "normalized_name": "Heparin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "dose 5000 UNIT SC",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "MEDICATION",
+      "name": "Aspirin",
+      "normalized_name": "Aspirin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "dose 81 mg PO/NG",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "PROCEDURE",
+      "name": "Respiratory Ventilation, Greater than 96 Consecutive Hours",
+      "normalized_name": "Mechanical ventilation",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "icd_code 5A1955Z",
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "PROCEDURE",
+      "name": "Bypass Coronary Artery, One Artery from Left Internal Mammary, Open Approach",
+      "normalized_name": "Coronary artery bypass",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "icd_code 02100Z9",
+      "metadata": {}
+    },
+    {
+      "id": "N14",
+      "type": "PROCEDURE",
+      "name": "Insertion of Endotracheal Airway into Trachea, Via Natural or Artificial Opening",
+      "normalized_name": "Intubation",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "icd_code 0BH17EZ",
+      "metadata": {}
+    },
+    {
+      "id": "N15",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "Lab test",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "Derived from POE 'Lab' orders",
+      "metadata": {}
+    },
+    {
+      "id": "N16",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture, Routine",
+      "normalized_name": "Blood culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "specimen BLOOD CULTURE",
+      "metadata": {}
+    },
+    {
+      "id": "N17",
+      "type": "MICROBIOLOGY",
+      "name": "URINE CULTURE (YEAST)",
+      "normalized_name": "Urine culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "specimen URINE, organism YEAST",
+      "metadata": {}
+    },
+    {
+      "id": "N18",
+      "type": "MICROBIOLOGY",
+      "name": "MRSA SCREEN",
+      "normalized_name": "MRSA screen",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "specimen MRSA SCREEN",
+      "metadata": {}
+    },
+    {
+      "id": "N19",
+      "type": "SERVICE",
+      "name": "CMED",
+      "normalized_name": "CMED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "",
+      "metadata": {}
+    },
+    {
+      "id": "N20",
+      "type": "SERVICE",
+      "name": "CSURG",
+      "normalized_name": "CSURG",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24443695",
+      "evidence": "diagnosis A419",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24443695",
+      "evidence": "diagnosis R6521",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24443695",
+      "evidence": "diagnosis R570",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24443695",
+      "evidence": "diagnosis I5021",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24443695",
+      "evidence": "diagnosis N170",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "24443695",
+      "evidence": "Furosemide IV DRIP",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "24443695",
+      "evidence": "Vancomycin IV",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "24443695",
+      "evidence": "Insulin SC",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "24443695",
+      "evidence": "Heparin SC",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "24443695",
+      "evidence": "Aspirin PO/NG",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "24443695",
+      "evidence": "Respiratory Ventilation",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "24443695",
+      "evidence": "Coronary Bypass",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N14",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "24443695",
+      "evidence": "Intubation",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N15",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "24443695",
+      "evidence": "Laboratory testing orders",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N16",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "24443695",
+      "evidence": "Blood Culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N17",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "24443695",
+      "evidence": "Urine Culture (YEAST)",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N18",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "24443695",
+      "evidence": "MRSA SCREEN",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N19",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "24443695",
+      "evidence": "CMED",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N20",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "24443695",
+      "evidence": "CSURG",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N8",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "24443695",
+      "evidence": "Vancomycin for Sepsis",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N2",
+      "target": "N16",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24443695",
+      "evidence": "Blood Culture confirms Sepsis",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N2",
+      "target": "N15",
+      "relation": "INDICATES",
+      "source_type": "LAB_TEST",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24443695",
+      "evidence": "Lab test indicates Sepsis",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N8",
+      "target": "N18",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "24443695",
+      "evidence": "Vancomycin targets MRSA",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N3",
+      "target": "N12",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24443695",
+      "evidence": "Ventilation for Severe sepsis",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N4",
+      "target": "N11",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "24443695",
+      "evidence": "Aspirin for Cardiogenic shock (antiplatelet)",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N5",
+      "target": "N7",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "24443695",
+      "evidence": "Furosemide for Heart failure",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N6",
+      "target": "N10",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "24443695",
+      "evidence": "Heparin for Kidney failure (anticoagulation)",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N2",
+      "target": "N12",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "PROCEDURE",
+      "hadm_id": "24443695",
+      "evidence": "",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N2",
+      "target": "N13",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "PROCEDURE",
+      "hadm_id": "24443695",
+      "evidence": "",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N2",
+      "target": "N14",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "PROCEDURE",
+      "hadm_id": "24443695",
+      "evidence": "",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N3",
+      "target": "N13",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "PROCEDURE",
+      "hadm_id": "24443695",
+      "evidence": "",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N4",
+      "target": "N13",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "PROCEDURE",
+      "hadm_id": "24443695",
+      "evidence": "",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N5",
+      "target": "N13",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "PROCEDURE",
+      "hadm_id": "24443695",
+      "evidence": "",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N6",
+      "target": "N13",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "PROCEDURE",
+      "hadm_id": "24443695",
+      "evidence": "",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N2",
+      "target": "N15",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "24443695",
+      "evidence": "",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N3",
+      "target": "N15",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "24443695",
+      "evidence": "",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N4",
+      "target": "N15",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "24443695",
+      "evidence": "",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N5",
+      "target": "N15",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "24443695",
+      "evidence": "",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N6",
+      "target": "N15",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "24443695",
+      "evidence": "",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N2",
+      "target": "N16",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "24443695",
+      "evidence": "",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N2",
+      "target": "N17",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "24443695",
+      "evidence": "",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N2",
+      "target": "N18",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "24443695",
+      "evidence": "",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N19",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24443695",
+      "evidence": "CMED manages Sepsis",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N20",
+      "target": "N3",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24443695",
+      "evidence": "CSURG manages Severe sepsis",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    }
+  ]
+}

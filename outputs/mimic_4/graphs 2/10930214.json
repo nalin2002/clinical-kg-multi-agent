@@ -1,0 +1,427 @@
+{
+  "subject_id": "10930214",
+  "hadm_ids": [
+    "27848252",
+    "29823489",
+    "27283110",
+    "25696207",
+    "21441177",
+    "22211479",
+    "25761758",
+    "21454664"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 10930214",
+      "normalized_name": "PATIENT",
+      "source_tables": [],
+      "evidence": "Patient identifier from evidence",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Malignant neoplasm of esophagus, unspecified",
+      "normalized_name": "MALIGNANT_NEOPLASM_ESOPHAGUS",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "Admission 27848252 diagnosis seq_num 1",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Alcohol withdrawal",
+      "normalized_name": "ALCOHOL_WITHDRAWAL",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "Admission 27848252 diagnosis seq_num 2",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "VANCOMYCIN",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Admission 21441177 medication Vancomycin count 3",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "FUROSEMIDE",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Admission 21441177 medication Furosemide count 4",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "INSULIN",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Admission 22211479 medication Insulin count 3",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "PROCEDURE",
+      "name": "Esophagogastroduodenoscopy [EGD] with closed biopsy",
+      "normalized_name": "EGD_BIOPSY",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "Admission 27848252 procedure seq_num 1",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "LAB_TEST",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "Admission 27848252 lab testing 37 orders",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture, Routine",
+      "normalized_name": "BLOOD_CULTURE",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "Admission 29823489 microbiology Blood Culture, Routine",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED_SERVICE",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "Admission 27848252 service MED",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "SERVICE",
+      "name": "OMED",
+      "normalized_name": "OMED_SERVICE",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "Admission 29823489 service OMED",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "SERVICE",
+      "name": "TSURG",
+      "normalized_name": "TSURG_SERVICE",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "Admission 21441177 service TSURG",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27848252",
+      "evidence": "Diagnosis Malignant neoplasm of esophagus, unspecified in admission 27848252",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27848252",
+      "evidence": "Diagnosis Alcohol withdrawal in admission 27848252",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "21441177",
+      "evidence": "Medication Vancomycin administered in admission 21441177",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "21441177",
+      "evidence": "Medication Furosemide administered in admission 21441177",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "22211479",
+      "evidence": "Medication Insulin administered in admission 22211479",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "27848252",
+      "evidence": "Procedure Esophagogastroduodenoscopy performed in admission 27848252",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "27848252",
+      "evidence": "Laboratory testing orders in admission 27848252",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "29823489",
+      "evidence": "Blood Culture performed in admission 29823489",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "27848252",
+      "evidence": "Service MED managed admission 27848252",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "29823489",
+      "evidence": "Service OMED managed admission 29823489",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "21441177",
+      "evidence": "Service TSURG managed admission 21441177",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N5",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "21441177",
+      "evidence": "Furosemide used for fluid overload related to esophageal malignancy",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N3",
+      "target": "N4",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "21441177",
+      "evidence": "Vancomycin used for possible infection in patient with alcohol withdrawal",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N4",
+      "target": "N9",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "29823489",
+      "evidence": "Vancomycin targets Gram-positive organisms such as MRSA in blood culture",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N5",
+      "target": "N8",
+      "relation": "MONITORED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "21441177",
+      "evidence": "Furosemide therapy monitored by laboratory electrolytes",
+      "source_tables": [
+        "medications",
+        "lab_tests"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N2",
+      "target": "N7",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "PROCEDURE",
+      "hadm_id": "27848252",
+      "evidence": "EGD with biopsy used to diagnose esophageal malignancy",
+      "source_tables": [
+        "diagnoses",
+        "procedures"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N2",
+      "target": "N8",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "27848252",
+      "evidence": "Laboratory tests ordered for workup of esophageal cancer",
+      "source_tables": [
+        "diagnoses",
+        "lab_tests"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N4",
+      "target": "N9",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29823489",
+      "evidence": "Blood culture result confirms infection requiring Vancomycin",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N10",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27848252",
+      "evidence": "MED service manages esophageal malignancy",
+      "source_tables": [
+        "services",
+        "diagnoses"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N11",
+      "target": "N3",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29823489",
+      "evidence": "OMED service manages alcohol withdrawal",
+      "source_tables": [
+        "services",
+        "diagnoses"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N12",
+      "target": "N4",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21441177",
+      "evidence": "TSURG service manages infection (pneumonia) treated with Vancomycin",
+      "source_tables": [
+        "services",
+        "diagnoses"
+      ],
+      "confidence": 0.75
+    }
+  ]
+}

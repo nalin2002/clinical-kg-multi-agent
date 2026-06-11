@@ -1,0 +1,523 @@
+{
+  "subject_id": "12833717",
+  "hadm_ids": [
+    "24438168",
+    "28988944",
+    "29508073",
+    "20784345",
+    "20909257",
+    "20729739",
+    "24510003",
+    "22137474",
+    "25517577"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 12833717",
+      "normalized_name": "PATIENT",
+      "source_tables": [
+        "patients"
+      ],
+      "evidence": "subject_id 12833717",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Burkitt's tumor or lymphoma, unspecified site, extranodal and solid organ sites",
+      "normalized_name": "Burkitt's tumor",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "icd_code 20020",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Neutropenia, unspecified",
+      "normalized_name": "Neutropenia",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "icd_code 28800",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Fever presenting with conditions classified elsewhere",
+      "normalized_name": "Fever",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "icd_code 78061",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "Vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Vancomycin administered",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "Furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Furosemide administered",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "MEDICATION",
+      "name": "Ciprofloxacin",
+      "normalized_name": "Ciprofloxacin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Ciprofloxacin administered",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "MEDICATION",
+      "name": "Acetaminophen",
+      "normalized_name": "Acetaminophen",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Acetaminophen administered",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "Lab",
+      "source_tables": [
+        "lab_orders"
+      ],
+      "evidence": "Laboratory testing orders",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "PROCEDURE",
+      "name": "Venous catheterization, not elsewhere classified",
+      "normalized_name": "Venous catheterization",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "icd_code 3893",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "PROCEDURE",
+      "name": "Injection of other agent into spinal canal",
+      "normalized_name": "Spinal injection",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "icd_code 0392",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture, Routine",
+      "normalized_name": "Blood culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "Blood Culture test",
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "MICROBIOLOGY",
+      "name": "URINE CULTURE",
+      "normalized_name": "Urine culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "Urine Culture test",
+      "metadata": {}
+    },
+    {
+      "id": "N14",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "Service MED",
+      "metadata": {}
+    },
+    {
+      "id": "N15",
+      "type": "SERVICE",
+      "name": "OMED",
+      "normalized_name": "OMED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "Service OMED",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Burkitt's tumor appears in multiple admissions",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Neutropenia appears in multiple admissions",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Fever appears in multiple admissions",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Vancomycin administered in several admissions",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Furosemide administered in admission 24438168",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Ciprofloxacin administered in admissions 24438168 and 28988944",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Acetaminophen administered in multiple admissions",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "Laboratory testing orders in all admissions",
+      "source_tables": [
+        "lab_orders"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "",
+      "evidence": "Venous catheterization performed in multiple admissions",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "",
+      "evidence": "Spinal injection performed in multiple admissions",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "Blood cultures ordered in multiple admissions",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "Urine cultures ordered in multiple admissions",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N14",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "Service MED used in admission 24438168",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N15",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "Service OMED used in many admissions",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N5",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Vancomycin used for infection associated with Burkitt's lymphoma",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N3",
+      "target": "N7",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Ciprofloxacin used for neutropenia‑related infection risk",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N4",
+      "target": "N8",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Acetaminophen used for fever control",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N2",
+      "target": "N9",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "Lab testing used to monitor Burkitt's lymphoma",
+      "source_tables": [
+        "lab_orders"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N5",
+      "target": "N12",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "Vancomycin targets Gram‑positive organisms cultured in blood",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N7",
+      "target": "N13",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "Ciprofloxacin targets urinary pathogens",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N14",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "MED service manages oncology diagnoses",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N15",
+      "target": "N3",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "OMED service manages neutropenia",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N10",
+      "target": "N2",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Venous catheterization performed for chemotherapy delivery in lymphoma",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N11",
+      "target": "N2",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Spinal injection for intrathecal chemotherapy in lymphoma",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N12",
+      "target": "N2",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Blood culture helps confirm infection in immunocompromised lymphoma patient",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N13",
+      "target": "N2",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Urine culture helps assess infection risk in lymphoma patient",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.75
+    }
+  ]
+}

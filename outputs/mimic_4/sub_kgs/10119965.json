@@ -1,0 +1,816 @@
+{
+  "subject_id": "10119965",
+  "hadm_ids": [
+    "27652606",
+    "23087780",
+    "21679991",
+    "29663474",
+    "21729859",
+    "22340656",
+    "29681825",
+    "24139922"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 10119965",
+      "normalized_name": "PATIENT_10119965",
+      "source_tables": [
+        "subject"
+      ],
+      "evidence": "Patient identifier from evidence",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Chronic kidney disease, unspecified",
+      "normalized_name": "CHRONIC_KIDNEY_DISEASE_UNSPECIFIED",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "Multiple admissions list CKD as diagnosis",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Hypertensive chronic kidney disease, unspecified, with chronic kidney disease stage I through stage IV, or unspecified",
+      "normalized_name": "HYPERTENSIVE_CHRONIC_KIDNEY_DISEASE",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "Multiple admissions list hypertensive CKD",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Diabetes mellitus without mention of complication, type II or unspecified type, not stated as uncontrolled",
+      "normalized_name": "DIABETES_MELLITUS_TYPE_II_UNCONTROLLED",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "Multiple admissions list diabetes mellitus",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "DIAGNOSIS",
+      "name": "Chronic systolic heart failure",
+      "normalized_name": "CHRONIC_SYSTOLIC_HEART_FAILURE",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "Admissions 23087780, 21679991, 29663474 list chronic systolic HF",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "DIAGNOSIS",
+      "name": "Congestive heart failure, unspecified",
+      "normalized_name": "CONGESTIVE_HEART_FAILURE_UNSPECIFIED",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "Multiple admissions list CHF unspecified",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "DIAGNOSIS",
+      "name": "Obstructive chronic bronchitis with (acute) exacerbation",
+      "normalized_name": "OBSTRUCTIVE_CHRONIC_BRONCHITIS_EXACERBATION",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "Admission 22340656",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "DIAGNOSIS",
+      "name": "Acute kidney failure, unspecified",
+      "normalized_name": "ACUTE_KIDNEY_FAILURE_UNSPECIFIED",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "Admissions 22340656, 29681825, 24139922 list AKF",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "INSULIN",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Insulin appears in many admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "FUROSEMIDE",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Furosemide appears in admissions 27652606, 22340656, 24139922",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "MEDICATION",
+      "name": "Vancomycin Oral Liquid",
+      "normalized_name": "VANCOMYCIN_ORAL",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Admission 29681825 includes Vancomycin Oral Liquid",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "MEDICATION",
+      "name": "Levofloxacin",
+      "normalized_name": "LEVOFLOXACIN",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Admission 23087780 includes Levofloxacin",
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "MEDICATION",
+      "name": "Metoprolol Tartrate",
+      "normalized_name": "METOPROLOL_TARTRATE",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Metoprolol appears in many admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N14",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "LABORATORY_TESTING",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "All admissions contain a generic laboratory testing POE",
+      "metadata": {}
+    },
+    {
+      "id": "N15",
+      "type": "PROCEDURE",
+      "name": "Continuous invasive mechanical ventilation for 96 consecutive hours or more",
+      "normalized_name": "MECHANICAL_VENTILATION_96HR",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "Admission 27652606 includes prolonged ventilation",
+      "metadata": {}
+    },
+    {
+      "id": "N16",
+      "type": "PROCEDURE",
+      "name": "Insertion of endotracheal tube",
+      "normalized_name": "ENDOTRACHEAL_TUBE_INSERTION",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "Admission 27652606 includes endotracheal tube insertion",
+      "metadata": {}
+    },
+    {
+      "id": "N17",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture, Routine",
+      "normalized_name": "BLOOD_CULTURE_ROUTINE",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "Blood culture appears in multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N18",
+      "type": "MICROBIOLOGY",
+      "name": "Urine Culture",
+      "normalized_name": "URINE_CULTURE",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "Urine culture appears in multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N19",
+      "type": "MICROBIOLOGY",
+      "name": "Sputum Gram Stain",
+      "normalized_name": "SPUTUM_GRAM_STAIN",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "Sputum Gram stain appears in multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N20",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "SERVICE_MED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "Service MED appears in admissions 27652606, 23087780, 24139922",
+      "metadata": {}
+    },
+    {
+      "id": "N21",
+      "type": "SERVICE",
+      "name": "CMED",
+      "normalized_name": "SERVICE_CMED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "Service CMED appears in admissions 27652606, 21729859, 22340656, 24139922",
+      "metadata": {}
+    },
+    {
+      "id": "N22",
+      "type": "SERVICE",
+      "name": "NSURG",
+      "normalized_name": "SERVICE_NSURG",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "Service NSURG appears in admissions 27652606, 21679991",
+      "metadata": {}
+    },
+    {
+      "id": "N23",
+      "type": "SERVICE",
+      "name": "ORTHO",
+      "normalized_name": "SERVICE_ORTHO",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "Service ORTHO appears in admission 29663474",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "CKD listed in multiple admissions",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Hypertensive CKD listed in multiple admissions",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Diabetes mellitus listed in multiple admissions",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Chronic systolic heart failure listed in multiple admissions",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Congestive heart failure unspecified listed in multiple admissions",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Obstructive chronic bronchitis with exacerbation listed in admission 22340656",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Acute kidney failure unspecified listed in multiple admissions",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Insulin administered in many admissions",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Furosemide administered in multiple admissions",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Vancomycin Oral Liquid administered in admission 29681825",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.94
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Levofloxacin administered in admission 23087780",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.94
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Metoprolol Tartrate administered in many admissions",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N14",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "Laboratory testing POE present in all admissions",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.97
+    },
+    {
+      "source": "N1",
+      "target": "N15",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "",
+      "evidence": "Prolonged mechanical ventilation in admission 27652606",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N16",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "",
+      "evidence": "Endotracheal tube insertion in admission 27652606",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N17",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "Blood culture ordered in multiple admissions",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.94
+    },
+    {
+      "source": "N1",
+      "target": "N18",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "Urine culture ordered in multiple admissions",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.94
+    },
+    {
+      "source": "N1",
+      "target": "N19",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "Sputum Gram stain ordered in multiple admissions",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.94
+    },
+    {
+      "source": "N1",
+      "target": "N20",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "Service MED present in multiple admissions",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N21",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "Service CMED present in multiple admissions",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N22",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "Service NSURG present in admissions 27652606, 21679991",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N23",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "Service ORTHO present in admission 29663474",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N9",
+      "target": "N4",
+      "relation": "TREATED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Insulin used for diabetes mellitus",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N10",
+      "target": "N5",
+      "relation": "TREATED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Furosemide used for heart failure (volume overload)",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N10",
+      "target": "N6",
+      "relation": "TREATED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Furosemide used for congestive heart failure",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N12",
+      "target": "N7",
+      "relation": "TREATED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Levofloxacin used for respiratory infection (pneumonitis)",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N13",
+      "target": "N5",
+      "relation": "TREATED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Metoprolol used for systolic heart failure",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N15",
+      "target": "N5",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Mechanical ventilation performed for severe heart failure / respiratory insufficiency",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N16",
+      "target": "N5",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Endotracheal tube insertion for respiratory failure associated with heart failure",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N17",
+      "target": "N2",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Blood culture ordered when CKD present (infection risk)",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N18",
+      "target": "N2",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Urine culture ordered when CKD present",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N19",
+      "target": "N7",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Sputum Gram stain ordered for bronchitis exacerbation",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N2",
+      "target": "N14",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "CKD diagnosis supported by laboratory testing",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N4",
+      "target": "N14",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "Diabetes diagnosis supported by laboratory testing",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N5",
+      "target": "N14",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "Heart failure diagnosis supported by laboratory testing",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N7",
+      "target": "N14",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "Bronchitis diagnosis supported by laboratory testing",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N8",
+      "target": "N14",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "Acute kidney failure diagnosis supported by laboratory testing",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N2",
+      "target": "N20",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "CKD co-occurs with service MED",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.55
+    },
+    {
+      "source": "N4",
+      "target": "N20",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "Diabetes co-occurs with service MED",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.55
+    },
+    {
+      "source": "N5",
+      "target": "N20",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "Heart failure co-occurs with service MED",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.55
+    },
+    {
+      "source": "N7",
+      "target": "N20",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "Bronchitis co-occurs with service MED",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.55
+    },
+    {
+      "source": "N8",
+      "target": "N20",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "Acute kidney failure co-occurs with service MED",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.55
+    }
+  ]
+}

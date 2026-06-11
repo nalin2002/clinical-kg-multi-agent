@@ -1,0 +1,601 @@
+{
+  "subject_id": "11941770",
+  "hadm_ids": [
+    "28641889",
+    "28045171",
+    "27860799",
+    "23233140",
+    "20995924",
+    "23582658",
+    "20654596"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 11941770",
+      "normalized_name": "Patient 11941770",
+      "source_tables": [
+        "demographics"
+      ],
+      "evidence": "patient identifier",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Malignant neoplasm of liver, primary",
+      "normalized_name": "Malignant neoplasm of liver, primary",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "icd_code 1550 in admission 28641889",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Chronic hepatitis C without mention of hepatic coma",
+      "normalized_name": "Chronic hepatitis C without mention of hepatic coma",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "icd_code 07054 in admissions 28641889,28045171",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Acute kidney failure, unspecified",
+      "normalized_name": "Acute kidney failure, unspecified",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "icd_code 5849 in admissions 27860799,20995924",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "DIAGNOSIS",
+      "name": "Chronic kidney disease, unspecified",
+      "normalized_name": "Chronic kidney disease, unspecified",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "icd_code 5859 in admissions 28641889,23233140,20995924",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "Furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "medication Furosemide in admissions 28641889,28045171",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "Vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "medication Vancomycin in admission 28045171",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "Insulin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "medication Insulin in admissions 28045171,27860799,20654596",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "Laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "lab test Laboratory testing in all admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "PROCEDURE",
+      "name": "Implantation of chemotherapeutic agent",
+      "normalized_name": "Implantation of chemotherapeutic agent",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "procedure Implantation of chemotherapeutic agent in admission 28641889",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "PROCEDURE",
+      "name": "Other transplant of liver",
+      "normalized_name": "Other transplant of liver",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "procedure Other transplant of liver in admission 28045171",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture",
+      "normalized_name": "Blood Culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "microbiology Blood Culture in admission 28045171",
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "MICROBIOLOGY",
+      "name": "Enterococcus sp. (VANCOMYCIN resistant)",
+      "normalized_name": "Enterococcus sp. (VANCOMYCIN resistant)",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "microbiology Enterococcus sp. in admission 27860799",
+      "metadata": {}
+    },
+    {
+      "id": "N14",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "service MED in admissions 28641889,23233140,20995924,23582658,20654596",
+      "metadata": {}
+    },
+    {
+      "id": "N15",
+      "type": "SERVICE",
+      "name": "SURG",
+      "normalized_name": "SURG",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "service SURG in admissions 28045171,27860799",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28641889",
+      "evidence": "patient has diagnosis Malignant neoplasm of liver, primary",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28641889",
+      "evidence": "patient has diagnosis Chronic hepatitis C without mention of hepatic coma",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27860799",
+      "evidence": "patient has diagnosis Acute kidney failure, unspecified",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28641889",
+      "evidence": "patient has diagnosis Chronic kidney disease, unspecified",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "28641889",
+      "evidence": "patient takes Furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "28045171",
+      "evidence": "patient takes Vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "28045171",
+      "evidence": "patient takes Insulin",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "28641889",
+      "evidence": "patient had lab test Laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "28641889",
+      "evidence": "patient underwent procedure Implantation of chemotherapeutic agent",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "28045171",
+      "evidence": "patient underwent procedure Other transplant of liver",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "28045171",
+      "evidence": "patient had microbiology Blood Culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "27860799",
+      "evidence": "patient had microbiology Enterococcus sp. (VANCOMYCIN resistant)",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N14",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "28641889",
+      "evidence": "patient managed by MED service",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N15",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "28045171",
+      "evidence": "patient managed by SURG service",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N6",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "28641889",
+      "evidence": "Furosemide used for fluid management in liver disease",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N3",
+      "target": "N7",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "28045171",
+      "evidence": "Vancomycin used for possible infection in hepatitis C patient",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N7",
+      "target": "N13",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "27860799",
+      "evidence": "Vancomycin targets Enterococcus sp.",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N2",
+      "target": "N9",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "28641889",
+      "evidence": "lab tests ordered for liver neoplasm workup",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N3",
+      "target": "N9",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "28641889",
+      "evidence": "lab tests ordered for hepatitis C workup",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N4",
+      "target": "N9",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "27860799",
+      "evidence": "lab tests ordered for acute kidney failure",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N5",
+      "target": "N9",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "28641889",
+      "evidence": "lab tests ordered for chronic kidney disease",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N10",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28641889",
+      "evidence": "procedure Implantation of chemotherapeutic agent for liver neoplasm",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N11",
+      "target": "N2",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28045171",
+      "evidence": "procedure Other transplant of liver for liver neoplasm",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N12",
+      "target": "N7",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "MEDICATION",
+      "hadm_id": "28045171",
+      "evidence": "Blood culture guides Vancomycin therapy",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N14",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28641889",
+      "evidence": "MED service manages liver neoplasm",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N15",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28045171",
+      "evidence": "SURG service manages liver transplant",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N6",
+      "target": "N14",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "28641889",
+      "evidence": "Furosemide administered under MED service",
+      "source_tables": [
+        "medications",
+        "services"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N7",
+      "target": "N15",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "28045171",
+      "evidence": "Vancomycin administered under SURG service",
+      "source_tables": [
+        "medications",
+        "services"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N2",
+      "target": "N3",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28641889",
+      "evidence": "both diagnoses present in same admission",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N4",
+      "target": "N5",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27860799",
+      "evidence": "both diagnoses present in same admission",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N6",
+      "target": "N8",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "MEDICATION",
+      "hadm_id": "28045171",
+      "evidence": "both medications administered in same admission",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N9",
+      "target": "N12",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "LAB_TEST",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "28045171",
+      "evidence": "lab test and microbiology ordered together",
+      "source_tables": [
+        "lab_tests",
+        "microbiology"
+      ],
+      "confidence": 0.6
+    }
+  ]
+}

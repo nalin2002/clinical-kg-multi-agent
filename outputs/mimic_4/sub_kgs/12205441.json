@@ -1,0 +1,895 @@
+{
+  "subject_id": "12205441",
+  "hadm_ids": [
+    "25774622",
+    "20149496",
+    "28210160",
+    "23208495",
+    "28258650",
+    "29505782",
+    "25566713",
+    "23980447",
+    "23940266",
+    "23928819"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient",
+      "normalized_name": "patient",
+      "source_tables": [],
+      "evidence": "subject_id 12205441",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Diabetes mellitus",
+      "normalized_name": "diabetes mellitus",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "multiple admissions with diabetes diagnosis",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Heart failure",
+      "normalized_name": "heart failure",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "multiple admissions with heart failure diagnosis",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Hypertension",
+      "normalized_name": "hypertension",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "multiple admissions with hypertension diagnosis",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "DIAGNOSIS",
+      "name": "Emphysema",
+      "normalized_name": "emphysema",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "multiple admissions with emphysema diagnosis",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "DIAGNOSIS",
+      "name": "Atherosclerosis",
+      "normalized_name": "atherosclerosis",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "multiple admissions with atherosclerosis diagnosis",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "insulin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "insulin prescribed in many admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "MEDICATION",
+      "name": "Metformin",
+      "normalized_name": "metformin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "metformin prescribed in many admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "furosemide prescribed in several admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "MEDICATION",
+      "name": "Atorvastatin",
+      "normalized_name": "atorvastatin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "atorvastatin prescribed in many admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "MEDICATION",
+      "name": "Aspirin",
+      "normalized_name": "aspirin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "aspirin prescribed in many admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "vancomycin prescribed in admission 29505782",
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "lab orders present in all admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N14",
+      "type": "PROCEDURE",
+      "name": "Endarterectomy",
+      "normalized_name": "endarterectomy",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "procedure code 3812 in admission 25774622",
+      "metadata": {}
+    },
+    {
+      "id": "N15",
+      "type": "PROCEDURE",
+      "name": "Angioplasty",
+      "normalized_name": "angioplasty",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "procedure codes 3950, 0045 etc. in admission 20149496",
+      "metadata": {}
+    },
+    {
+      "id": "N16",
+      "type": "PROCEDURE",
+      "name": "Coronary artery bypass graft",
+      "normalized_name": "coronary artery bypass graft",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "procedure codes 02100Z9 etc. in admission 23208495",
+      "metadata": {}
+    },
+    {
+      "id": "N17",
+      "type": "MICROBIOLOGY",
+      "name": "URINE CULTURE – E. coli",
+      "normalized_name": "urine culture e coli",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "urine culture with E. coli in admission 23208495 and 29505782",
+      "metadata": {}
+    },
+    {
+      "id": "N18",
+      "type": "MICROBIOLOGY",
+      "name": "BLOOD CULTURE",
+      "normalized_name": "blood culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "blood culture entry in admission 29505782",
+      "metadata": {}
+    },
+    {
+      "id": "N19",
+      "type": "SERVICE",
+      "name": "VSURG",
+      "normalized_name": "vsurg",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "service VSURG in admissions 25774622 and 20149496",
+      "metadata": {}
+    },
+    {
+      "id": "N20",
+      "type": "SERVICE",
+      "name": "CMED",
+      "normalized_name": "cmed",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "service CMED in admissions 23208495, 28258650, 29505782",
+      "metadata": {}
+    },
+    {
+      "id": "N21",
+      "type": "SERVICE",
+      "name": "SURG",
+      "normalized_name": "surg",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "service SURG in admission 28210160",
+      "metadata": {}
+    },
+    {
+      "id": "N22",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "med",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "service MED in admissions 23980447, 23940266, 23928819",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "diabetes diagnosis across admissions",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "heart failure diagnosis across admissions",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "hypertension diagnosis across admissions",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "emphysema diagnosis across admissions",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "atherosclerosis diagnosis across admissions",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "insulin prescribed",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "metformin prescribed",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "furosemide prescribed",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "atorvastatin prescribed",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "aspirin prescribed",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "vancomycin prescribed in admission 29505782",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "lab testing orders",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N14",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "",
+      "evidence": "endarterectomy performed",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N15",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "",
+      "evidence": "angioplasty performed",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N16",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "",
+      "evidence": "coronary artery bypass graft performed",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N17",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "urine culture with E. coli",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N18",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "blood culture entry",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N19",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "service VSURG",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N20",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "service CMED",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N21",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "service SURG",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N22",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "service MED",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N7",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "insulin treats diabetes",
+      "source_tables": [],
+      "confidence": 0.85
+    },
+    {
+      "source": "N2",
+      "target": "N8",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "metformin treats diabetes",
+      "source_tables": [],
+      "confidence": 0.85
+    },
+    {
+      "source": "N3",
+      "target": "N9",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "furosemide treats heart failure",
+      "source_tables": [],
+      "confidence": 0.85
+    },
+    {
+      "source": "N3",
+      "target": "N11",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "aspirin used for cardiovascular disease",
+      "source_tables": [],
+      "confidence": 0.75
+    },
+    {
+      "source": "N5",
+      "target": "N11",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "aspirin used for emphysema related COPD",
+      "source_tables": [],
+      "confidence": 0.65
+    },
+    {
+      "source": "N6",
+      "target": "N10",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "atorvastatin treats atherosclerosis",
+      "source_tables": [],
+      "confidence": 0.85
+    },
+    {
+      "source": "N14",
+      "target": "N2",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "endarterectomy for carotid artery stenosis (diabetes not directly related)",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N15",
+      "target": "N6",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "angioplasty for atherosclerosis",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N16",
+      "target": "N3",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "bypass graft for heart failure/ischemia",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N17",
+      "target": "N2",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "urine E. coli culture confirms urinary tract infection (diabetes predisposition)",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N18",
+      "target": "N3",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "blood culture may confirm sepsis secondary to heart failure",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N12",
+      "target": "N17",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "vancomycin targets gram‑positive organisms (not E. coli) – generic link",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N7",
+      "target": "N13",
+      "relation": "MONITORED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "insulin dosing monitored by labs",
+      "source_tables": [],
+      "confidence": 0.7
+    },
+    {
+      "source": "N9",
+      "target": "N13",
+      "relation": "MONITORED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "furosemide dosing monitored by labs",
+      "source_tables": [],
+      "confidence": 0.7
+    },
+    {
+      "source": "N19",
+      "target": "N6",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "VSURG manages vascular disease",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N20",
+      "target": "N3",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "CMED manages cardiac conditions",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N21",
+      "target": "N14",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "PROCEDURE",
+      "hadm_id": "",
+      "evidence": "SURG performs surgical procedures",
+      "source_tables": [],
+      "confidence": 0.9
+    },
+    {
+      "source": "N22",
+      "target": "N5",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "MED manages medical (non‑surgical) conditions like emphysema",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N4",
+      "relation": "ASSOCIATED_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "diabetes often co‑exists with hypertension",
+      "source_tables": [],
+      "confidence": 0.7
+    },
+    {
+      "source": "N3",
+      "target": "N4",
+      "relation": "ASSOCIATED_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "heart failure often co‑exists with hypertension",
+      "source_tables": [],
+      "confidence": 0.7
+    },
+    {
+      "source": "N5",
+      "target": "N4",
+      "relation": "ASSOCIATED_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "emphysema often co‑exists with hypertension",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N6",
+      "target": "N4",
+      "relation": "ASSOCIATED_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "atherosclerosis often co‑exists with hypertension",
+      "source_tables": [],
+      "confidence": 0.7
+    },
+    {
+      "source": "N2",
+      "target": "N6",
+      "relation": "COMPLICATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "diabetes complicates atherosclerosis",
+      "source_tables": [],
+      "confidence": 0.75
+    },
+    {
+      "source": "N3",
+      "target": "N6",
+      "relation": "COMPLICATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "heart failure complicates atherosclerosis",
+      "source_tables": [],
+      "confidence": 0.75
+    },
+    {
+      "source": "N7",
+      "target": "N2",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "insulin administered under CMED",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N9",
+      "target": "N20",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "furosemide administered under CMED",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N12",
+      "target": "N20",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "vancomycin administered under CMED",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N8",
+      "target": "N2",
+      "relation": "PART_OF_REGIMEN",
+      "source_type": "MEDICATION",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "metformin often used together with insulin",
+      "source_tables": [],
+      "confidence": 0.7
+    },
+    {
+      "source": "N9",
+      "target": "N11",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "furosemide and aspirin co‑prescribed",
+      "source_tables": [],
+      "confidence": 0.55
+    },
+    {
+      "source": "N10",
+      "target": "N11",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "atorvastatin and aspirin co‑prescribed",
+      "source_tables": [],
+      "confidence": 0.55
+    },
+    {
+      "source": "N14",
+      "target": "N15",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "PROCEDURE",
+      "target_type": "PROCEDURE",
+      "hadm_id": "",
+      "evidence": "endarterectomy and angioplasty performed in same admission",
+      "source_tables": [],
+      "confidence": 0.55
+    },
+    {
+      "source": "N15",
+      "target": "N16",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "PROCEDURE",
+      "target_type": "PROCEDURE",
+      "hadm_id": "",
+      "evidence": "angioplasty and bypass graft performed in same admission",
+      "source_tables": [],
+      "confidence": 0.55
+    },
+    {
+      "source": "N17",
+      "target": "N18",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "urine and blood cultures taken together",
+      "source_tables": [],
+      "confidence": 0.55
+    }
+  ]
+}

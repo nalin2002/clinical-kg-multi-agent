@@ -1,0 +1,556 @@
+{
+  "subject_id": "11044484",
+  "hadm_ids": [
+    "25164431",
+    "20321599",
+    "29087491",
+    "26319202",
+    "28735739",
+    "29561207",
+    "27668180",
+    "26591316",
+    "21069593",
+    "23820796",
+    "25209435"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 11044484",
+      "normalized_name": "patient",
+      "source_tables": [],
+      "evidence": "subject_id",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Congestive heart failure, unspecified",
+      "normalized_name": "congestive heart failure",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Atrial fibrillation",
+      "normalized_name": "atrial fibrillation",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Chronic obstructive asthma, unspecified",
+      "normalized_name": "chronic obstructive asthma",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "DIAGNOSIS",
+      "name": "Acute on chronic systolic heart failure",
+      "normalized_name": "acute on chronic systolic heart failure",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "admission 29087491",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "MEDICATION",
+      "name": "Warfarin",
+      "normalized_name": "warfarin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "admission 21069593",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "insulin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "admission 29561207",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "all admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "PROCEDURE",
+      "name": "Atrial cardioversion",
+      "normalized_name": "atrial cardioversion",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "admission 20321599",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "PROCEDURE",
+      "name": "Right heart cardiac catheterization",
+      "normalized_name": "right heart cardiac catheterization",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "admission 29087491",
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "MICROBIOLOGY",
+      "name": "URINE CULTURE – ENTEROCOCCUS SP.",
+      "normalized_name": "urine culture enterococcus",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "admission 29087491",
+      "metadata": {}
+    },
+    {
+      "id": "N14",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture – routine",
+      "normalized_name": "blood culture routine",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "admission 29087491",
+      "metadata": {}
+    },
+    {
+      "id": "N15",
+      "type": "MICROBIOLOGY",
+      "name": "URINE CULTURE – PSEUDOMONAS AERUGINOSA",
+      "normalized_name": "urine culture pseudomonas aeruginosa",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "admission 21069593",
+      "metadata": {}
+    },
+    {
+      "id": "N16",
+      "type": "SERVICE",
+      "name": "CMED",
+      "normalized_name": "cmed",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N17",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "med",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "admission 27668180",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "multiple admissions",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "multiple admissions",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "multiple admissions",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29087491",
+      "evidence": "admission 29087491",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "multiple admissions",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "multiple admissions",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "21069593",
+      "evidence": "admission 21069593",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "29561207",
+      "evidence": "admission 29561207",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "all admissions",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "20321599",
+      "evidence": "admission 20321599",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "29087491",
+      "evidence": "admission 29087491",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "29087491",
+      "evidence": "admission 29087491",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N14",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "29087491",
+      "evidence": "admission 29087491",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N15",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "21069593",
+      "evidence": "admission 21069593",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N16",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "multiple admissions",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N17",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "27668180",
+      "evidence": "admission 27668180",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N6",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "clinical guideline for heart failure",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N5",
+      "target": "N6",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "29087491",
+      "evidence": "clinical guideline for acute on chronic heart failure",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N4",
+      "target": "N6",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "co‑occurrence in same admissions",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N3",
+      "target": "N7",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "co‑occurrence in same admissions",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N13",
+      "target": "N8",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "21069593",
+      "evidence": "vancomycin active against gram‑positive organisms",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N15",
+      "target": "N8",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "21069593",
+      "evidence": "vancomycin active against Pseudomonas aeruginosa (clinical use)",
+      "source_tables": [],
+      "confidence": 0.7
+    },
+    {
+      "source": "N6",
+      "target": "N10",
+      "relation": "MONITORED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "furosemide therapy monitored by labs",
+      "source_tables": [],
+      "confidence": 0.7
+    },
+    {
+      "source": "N7",
+      "target": "N10",
+      "relation": "MONITORED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "warfarin therapy monitored by labs",
+      "source_tables": [],
+      "confidence": 0.7
+    },
+    {
+      "source": "N11",
+      "target": "N5",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "20321599",
+      "evidence": "atrial cardioversion for atrial fibrillation",
+      "source_tables": [],
+      "confidence": 0.85
+    },
+    {
+      "source": "N12",
+      "target": "N5",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29087491",
+      "evidence": "right heart catheterization for heart failure evaluation",
+      "source_tables": [],
+      "confidence": 0.85
+    },
+    {
+      "source": "N16",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "CMED manages heart failure",
+      "source_tables": [],
+      "confidence": 0.85
+    },
+    {
+      "source": "N16",
+      "target": "N3",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "CMED manages atrial fibrillation",
+      "source_tables": [],
+      "confidence": 0.85
+    },
+    {
+      "source": "N17",
+      "target": "N4",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27668180",
+      "evidence": "MED service manages COPD",
+      "source_tables": [],
+      "confidence": 0.85
+    }
+  ]
+}

@@ -1,0 +1,388 @@
+{
+  "subject_id": "13036647",
+  "hadm_ids": [
+    "27573045",
+    "29803530",
+    "23057179",
+    "22144353",
+    "26516381",
+    "28592859",
+    "21675425",
+    "22499146",
+    "23050347",
+    "21778007",
+    "28705601",
+    "22631347"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 13036647",
+      "normalized_name": "patient_13036647",
+      "source_tables": [
+        "patients"
+      ],
+      "evidence": "subject_id 13036647",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Acute venous embolism and thrombosis of deep vessels of distal lower extremity",
+      "normalized_name": "acute_venous_embolism_distal",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 27573045",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Ulcer of other part of lower limb",
+      "normalized_name": "ulcer_lower_limb",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "MEDICATION",
+      "name": "Warfarin",
+      "normalized_name": "warfarin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id 29803530, 21778007",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "lab_testing",
+      "source_tables": [
+        "lab_orders"
+      ],
+      "evidence": "all admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "PROCEDURE",
+      "name": "Excisional debridement of wound, infection, or burn",
+      "normalized_name": "excisional_debridement",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "hadm_id 29803530",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "MICROBIOLOGY",
+      "name": "WOUND CULTURE - PROTEUS MIRABILIS",
+      "normalized_name": "wound_culture_proteus_mirabilis",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "hadm_id 28592859",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "service_med",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "all admissions",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27573045",
+      "evidence": "diagnosis list in admission 27573045",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "ulcer appears in multiple admissions",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "warfarin prescribed in many admissions",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "vancomycin prescribed in admissions 29803530 and 21778007",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "lab testing orders in all admissions",
+      "source_tables": [
+        "lab_orders"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "29803530",
+      "evidence": "procedure list in admission 29803530",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "28592859",
+      "evidence": "microbiology list in admission 28592859",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "service MED listed for all admissions",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N4",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "warfarin used for venous thrombosis",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N6",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "lab testing ordered for venous embolism work‑up",
+      "source_tables": [
+        "lab_orders"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N3",
+      "target": "N6",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "lab testing ordered for ulcer evaluation",
+      "source_tables": [
+        "lab_orders"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N5",
+      "target": "N8",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "vancomycin active against gram‑positive organisms like proteus spp.",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N4",
+      "target": "N6",
+      "relation": "MONITORED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "warfarin therapy monitored by laboratory INR (lab testing)",
+      "source_tables": [
+        "medications",
+        "lab_orders"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N9",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "MED service manages venous embolism",
+      "source_tables": [
+        "services",
+        "diagnoses"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N9",
+      "target": "N5",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "vancomycin administered under MED service",
+      "source_tables": [
+        "medications",
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N7",
+      "target": "N2",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29803530",
+      "evidence": "debridement performed for wound infection related to venous disease",
+      "source_tables": [
+        "procedures",
+        "diagnoses"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N8",
+      "target": "N2",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28592859",
+      "evidence": "wound culture isolates proteus mirabilis confirming infection in venous ulcer",
+      "source_tables": [
+        "microbiology",
+        "diagnoses"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N3",
+      "relation": "ASSOCIATED_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "venous embolism and ulcer often co‑occur",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N2",
+      "target": "N5",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "vancomycin used in admissions where venous disease present",
+      "source_tables": [
+        "diagnoses",
+        "medications"
+      ],
+      "confidence": 0.55
+    },
+    {
+      "source": "N3",
+      "target": "N5",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "vancomycin used in admissions with ulcer",
+      "source_tables": [
+        "diagnoses",
+        "medications"
+      ],
+      "confidence": 0.55
+    }
+  ]
+}

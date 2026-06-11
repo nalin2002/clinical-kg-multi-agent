@@ -1,0 +1,591 @@
+{
+  "subject_id": "12147981",
+  "hadm_ids": [
+    "24026364",
+    "22488109",
+    "21737693",
+    "23523698",
+    "23826068",
+    "29652898",
+    "23466978",
+    "26883039",
+    "21028742",
+    "21308235",
+    "21094463"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 12147981",
+      "normalized_name": "Patient 12147981",
+      "source_tables": [
+        "demographics"
+      ],
+      "evidence": "subject_id 12147981",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Kidney transplant status",
+      "normalized_name": "Kidney transplant status",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "24026364",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Sepsis due to other specified staphylococcus",
+      "normalized_name": "Sepsis due to other specified staphylococcus",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "29652898",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "End stage renal disease",
+      "normalized_name": "End stage renal disease",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "23523698",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "DIAGNOSIS",
+      "name": "Major depressive disorder, single episode, unspecified",
+      "normalized_name": "Major depressive disorder, single episode, unspecified",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "24026364",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "DIAGNOSIS",
+      "name": "Post-traumatic stress disorder, unspecified",
+      "normalized_name": "Post-traumatic stress disorder, unspecified",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "24026364",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "DIAGNOSIS",
+      "name": "Hypertension",
+      "normalized_name": "Hypertension",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "24026364",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "Vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "29652898",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "Furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "23523698",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "Insulin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "26883039",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "Laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "all admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "PROCEDURE",
+      "name": "Performance of Urinary Filtration, Intermittent, Less than 6 Hours Per Day",
+      "normalized_name": "Performance of Urinary Filtration, Intermittent, Less than 6 Hours Per Day",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "23523698",
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture, Routine",
+      "normalized_name": "Blood Culture, Routine",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "29652898",
+      "metadata": {}
+    },
+    {
+      "id": "N14",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "all admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N15",
+      "type": "SERVICE",
+      "name": "SURG",
+      "normalized_name": "SURG",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "29652898",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24026364",
+      "evidence": "Kidney transplant status listed in diagnoses",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29652898",
+      "evidence": "Sepsis due to other specified staphylococcus listed in diagnoses",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23523698",
+      "evidence": "End stage renal disease listed in diagnoses",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24026364",
+      "evidence": "Major depressive disorder listed in diagnoses",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24026364",
+      "evidence": "Post-traumatic stress disorder listed in diagnoses",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24026364",
+      "evidence": "Essential hypertension listed in diagnoses",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "29652898",
+      "evidence": "Vancomycin prescribed",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "23523698",
+      "evidence": "Furosemide prescribed",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "26883039",
+      "evidence": "Insulin prescribed",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "Laboratory testing orders present in all admissions",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "23523698",
+      "evidence": "Urinary filtration procedure performed",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "29652898",
+      "evidence": "Blood culture ordered",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N14",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "MED service listed in all admissions",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N15",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "29652898",
+      "evidence": "SURG service listed in admission 29652898",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N3",
+      "target": "N8",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "29652898",
+      "evidence": "Vancomycin used for staphylococcal sepsis",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N3",
+      "target": "N13",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29652898",
+      "evidence": "Blood culture confirms sepsis",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N4",
+      "target": "N9",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "23523698",
+      "evidence": "Furosemide used for fluid overload in ESRD",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N4",
+      "target": "N12",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23523698",
+      "evidence": "Urinary filtration performed for ESRD",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N14",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24026364",
+      "evidence": "MED service manages transplant status",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N3",
+      "target": "N14",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29652898",
+      "evidence": "MED service manages sepsis",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N8",
+      "target": "N15",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "29652898",
+      "evidence": "Vancomycin administered under SURG service",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N9",
+      "target": "N14",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "23523698",
+      "evidence": "Furosemide administered under MED service",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N10",
+      "target": "N14",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "26883039",
+      "evidence": "Insulin administered under MED service",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N5",
+      "target": "N14",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24026364",
+      "evidence": "MED service manages depression",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N6",
+      "target": "N14",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24026364",
+      "evidence": "MED service manages PTSD",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N7",
+      "target": "N14",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24026364",
+      "evidence": "MED service manages hypertension",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N2",
+      "target": "N3",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24026364",
+      "evidence": "Kidney transplant status co‑occurs with sepsis in same patient",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N3",
+      "target": "N4",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29652898",
+      "evidence": "Sepsis co‑occurs with end stage renal disease",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N8",
+      "target": "N13",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "29652898",
+      "evidence": "Vancomycin administered during blood culture",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N9",
+      "target": "N12",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "PROCEDURE",
+      "hadm_id": "23523698",
+      "evidence": "Furosemide given around urinary filtration",
+      "source_tables": [
+        "medications",
+        "procedures"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N10",
+      "target": "N14",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "26883039",
+      "evidence": "Insulin co‑occurs with MED service",
+      "source_tables": [
+        "medications",
+        "services"
+      ],
+      "confidence": 0.6
+    }
+  ]
+}

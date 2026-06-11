@@ -1,0 +1,526 @@
+{
+  "subject_id": "10809663",
+  "hadm_ids": [
+    "24948162",
+    "27669905",
+    "23491799",
+    "28100982",
+    "28194009",
+    "29824248",
+    "26264356",
+    "24332645",
+    "27332247",
+    "22184051"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 10809663",
+      "normalized_name": "Patient 10809663",
+      "source_tables": [
+        "demographics"
+      ],
+      "evidence": "subject_id 10809663",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Secondary malignant neoplasm of brain",
+      "normalized_name": "Secondary malignant neoplasm of brain",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "C7931 in multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Secondary malignant neoplasm of left lung",
+      "normalized_name": "Secondary malignant neoplasm of left lung",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "C7802 in multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Secondary malignant neoplasm of right lung",
+      "normalized_name": "Secondary malignant neoplasm of right lung",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "C7801 in multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "DIAGNOSIS",
+      "name": "Neutropenia, unspecified",
+      "normalized_name": "Neutropenia, unspecified",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "D709 in multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "Vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Vancomycin administered in admission 23491799",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "MEDICATION",
+      "name": "Methotrexate",
+      "normalized_name": "Methotrexate",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Methotrexate administered in multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "MEDICATION",
+      "name": "Dexamethasone",
+      "normalized_name": "Dexamethasone",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Dexamethasone administered in multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "Laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "Lab orders present in all admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "PROCEDURE",
+      "name": "Introduction of Other Antineoplastic into Central Vein, Percutaneous Approach",
+      "normalized_name": "Introduction of Other Antineoplastic into Central Vein",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "Procedure code 3E04305 in multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture, Routine",
+      "normalized_name": "Blood Culture, Routine",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "Blood Culture performed in admission 27669905",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "SERVICE",
+      "name": "OMED",
+      "normalized_name": "OMED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "Service OMED in multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "SERVICE",
+      "name": "NSURG",
+      "normalized_name": "NSURG",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "Service NSURG in admission 27332247",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27669905",
+      "evidence": "Diagnosis C7931 listed",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27669905",
+      "evidence": "Diagnosis C7802 listed",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27669905",
+      "evidence": "Diagnosis C7801 listed",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28194009",
+      "evidence": "Diagnosis D709 listed",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "23491799",
+      "evidence": "Vancomycin administered",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "27669905",
+      "evidence": "Methotrexate administered",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "27669905",
+      "evidence": "Dexamethasone administered",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "27669905",
+      "evidence": "Lab testing orders",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.94
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "27669905",
+      "evidence": "Procedure 3E04305 performed",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.94
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "27669905",
+      "evidence": "Blood Culture performed",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.94
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "23491799",
+      "evidence": "Service OMED listed",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.93
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "27332247",
+      "evidence": "Service NSURG listed",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.93
+    },
+    {
+      "source": "N2",
+      "target": "N7",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "27669905",
+      "evidence": "Methotrexate used for neoplasm",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N3",
+      "target": "N7",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "27669905",
+      "evidence": "Methotrexate used for lung metastasis",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N4",
+      "target": "N7",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "27669905",
+      "evidence": "Methotrexate used for lung metastasis",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N5",
+      "target": "N8",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "27669905",
+      "evidence": "Dexamethasone for neutropenia complications",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N2",
+      "target": "N9",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "27669905",
+      "evidence": "Lab tests used to monitor neoplasm",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N6",
+      "target": "N11",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "23491799",
+      "evidence": "Vancomycin targets Gram‑positive organisms",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N12",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23491799",
+      "evidence": "OMED manages neoplastic diagnoses",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N13",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27332247",
+      "evidence": "NSURG manages brain neoplasm",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N10",
+      "relation": "PERFORMED_FOR",
+      "source_type": "DIAGNOSIS",
+      "target_type": "PROCEDURE",
+      "hadm_id": "27669905",
+      "evidence": "Central line placed for chemotherapy",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N3",
+      "target": "N10",
+      "relation": "PERFORMED_FOR",
+      "source_type": "DIAGNOSIS",
+      "target_type": "PROCEDURE",
+      "hadm_id": "27669905",
+      "evidence": "Central line placed for lung metastasis treatment",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N4",
+      "target": "N10",
+      "relation": "PERFORMED_FOR",
+      "source_type": "DIAGNOSIS",
+      "target_type": "PROCEDURE",
+      "hadm_id": "27669905",
+      "evidence": "Central line placed for brain neoplasm treatment",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N5",
+      "target": "N9",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "28194009",
+      "evidence": "Lab testing monitors neutropenia",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N5",
+      "target": "N11",
+      "relation": "INVESTIGATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "27669905",
+      "evidence": "Blood culture ordered for neutropenia work‑up",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.78
+    },
+    {
+      "source": "N6",
+      "target": "N2",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23491799",
+      "evidence": "Vancomycin given during neoplasm admission",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.55
+    },
+    {
+      "source": "N7",
+      "target": "N3",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27669905",
+      "evidence": "Methotrexate given during lung metastasis admission",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.55
+    },
+    {
+      "source": "N8",
+      "target": "N5",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27669905",
+      "evidence": "Dexamethasone given during neutropenia admission",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.55
+    }
+  ]
+}

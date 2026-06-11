@@ -1,0 +1,894 @@
+{
+  "subject_id": "11051753",
+  "hadm_ids": [
+    "22869758",
+    "21228487",
+    "23012232",
+    "20942559",
+    "24055954",
+    "23255027",
+    "26142849",
+    "23778593"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient",
+      "normalized_name": "Patient",
+      "source_tables": [
+        "demographics"
+      ],
+      "evidence": "subject_id 11051753",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Cellulitis and abscess of leg, except foot",
+      "normalized_name": "Cellulitis and abscess of leg, except foot",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 22869758 diagnosis 6826",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Diabetes mellitus without mention of complication, type I [juvenile type], uncontrolled",
+      "normalized_name": "Diabetes mellitus type I uncontrolled",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 22869758 diagnosis 25003; hadm_id 21228487 diagnosis 25013; hadm_id 23012232 diagnosis 25003; hadm_id 24055954 diagnosis 25013; hadm_id 23255027 diagnosis E1065; hadm_id 26142849 diagnosis E10649; hadm_id 23778593 diagnosis E109",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Meningitis, unspecified",
+      "normalized_name": "Meningitis unspecified",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 23012232 diagnosis 3229",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "DIAGNOSIS",
+      "name": "Acute respiratory failure",
+      "normalized_name": "Acute respiratory failure",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 23012232 diagnosis 51881",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "DIAGNOSIS",
+      "name": "Unspecified viral meningitis",
+      "normalized_name": "Unspecified viral meningitis",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 23012232 diagnosis 0479; hadm_id 20942559 diagnosis 0479",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "DIAGNOSIS",
+      "name": "Asthma, unspecified type, unspecified",
+      "normalized_name": "Asthma unspecified",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 23012232 diagnosis 49390; hadm_id 24055954 diagnosis 49390",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "DIAGNOSIS",
+      "name": "Acute kidney failure, unspecified",
+      "normalized_name": "Acute kidney failure unspecified",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 24055954 diagnosis 5849",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "DIAGNOSIS",
+      "name": "Pre-existing type 1 diabetes mellitus, in pregnancy, first trimester",
+      "normalized_name": "Pre-existing type 1 diabetes mellitus in pregnancy first trimester",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 23255027 diagnosis O24011",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "DIAGNOSIS",
+      "name": "Unspecified asthma, uncomplicated",
+      "normalized_name": "Unspecified asthma uncomplicated",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 23255027 diagnosis J45909",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "Insulin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "Vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id 22869758 medication Vancomycin; hadm_id 23012232 medication Vancomycin",
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "MEDICATION",
+      "name": "Ceftriaxone",
+      "normalized_name": "Ceftriaxone",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id 23012232 medication CeftriaXONE; hadm_id 20942559 medication CeftriaXONE",
+      "metadata": {}
+    },
+    {
+      "id": "N14",
+      "type": "MEDICATION",
+      "name": "Acyclovir",
+      "normalized_name": "Acyclovir",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id 23012232 medication Acyclovir; hadm_id 20942559 medication Acyclovir",
+      "metadata": {}
+    },
+    {
+      "id": "N15",
+      "type": "MEDICATION",
+      "name": "Heparin",
+      "normalized_name": "Heparin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id 22869758 medication Heparin; hadm_id 23012232 medication Heparin; hadm_id 20942559 medication Heparin; hadm_id 24055954 medication Heparin; hadm_id 23778593 medication Heparin",
+      "metadata": {}
+    },
+    {
+      "id": "N16",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "Laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "all admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N17",
+      "type": "PROCEDURE",
+      "name": "Arthrocentesis",
+      "normalized_name": "Arthrocentesis",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "hadm_id 22869758 procedure Arthrocentesis",
+      "metadata": {}
+    },
+    {
+      "id": "N18",
+      "type": "PROCEDURE",
+      "name": "Insertion of endotracheal tube",
+      "normalized_name": "Insertion of endotracheal tube",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "hadm_id 23012232 procedure 9604",
+      "metadata": {}
+    },
+    {
+      "id": "N19",
+      "type": "PROCEDURE",
+      "name": "Continuous invasive mechanical ventilation for less than 96 consecutive hours",
+      "normalized_name": "Mechanical ventilation",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "hadm_id 23012232 procedure 9671",
+      "metadata": {}
+    },
+    {
+      "id": "N20",
+      "type": "PROCEDURE",
+      "name": "Spinal tap",
+      "normalized_name": "Spinal tap",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "hadm_id 23012232 procedure 0331; hadm_id 20942559 procedure 0331",
+      "metadata": {}
+    },
+    {
+      "id": "N21",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture, Routine",
+      "normalized_name": "Blood Culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "hadm_id 23012232 microbiology Blood Culture; hadm_id 20942559 microbiology Blood Culture; hadm_id UNLINKED microbiology Blood Culture",
+      "metadata": {}
+    },
+    {
+      "id": "N22",
+      "type": "MICROBIOLOGY",
+      "name": "MRSA SCREEN",
+      "normalized_name": "MRSA SCREEN",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "hadm_id 23012232 microbiology MRSA SCREEN; hadm_id 24055954 microbiology MRSA SCREEN",
+      "metadata": {}
+    },
+    {
+      "id": "N23",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "hadm_id 22869758 service MED; hadm_id 21228487 service MED; hadm_id 23012232 service MED; hadm_id 24055954 service MED",
+      "metadata": {}
+    },
+    {
+      "id": "N24",
+      "type": "SERVICE",
+      "name": "NMED",
+      "normalized_name": "NMED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "hadm_id 20942559 service NMED",
+      "metadata": {}
+    },
+    {
+      "id": "N25",
+      "type": "SERVICE",
+      "name": "OBS",
+      "normalized_name": "OBS",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "hadm_id 23255027 service OBS; hadm_id 26142849 service OBS; hadm_id 23778593 service OBS",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22869758",
+      "evidence": "diagnosis 6826",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22869758",
+      "evidence": "diagnosis 25003",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23012232",
+      "evidence": "diagnosis 3229",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23012232",
+      "evidence": "diagnosis 51881",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23012232",
+      "evidence": "diagnosis 0479",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23012232",
+      "evidence": "diagnosis 49390",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24055954",
+      "evidence": "diagnosis 5849",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23255027",
+      "evidence": "diagnosis O24011",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23255027",
+      "evidence": "diagnosis J45909",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "22869758",
+      "evidence": "medication Insulin",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "22869758",
+      "evidence": "medication Vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "23012232",
+      "evidence": "medication CeftriaXONE",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N14",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "23012232",
+      "evidence": "medication Acyclovir",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N15",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "22869758",
+      "evidence": "medication Heparin",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N16",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "22869758",
+      "evidence": "lab testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N17",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "22869758",
+      "evidence": "procedure Arthrocentesis",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N18",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "23012232",
+      "evidence": "procedure Insertion of endotracheal tube",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N19",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "23012232",
+      "evidence": "procedure Mechanical ventilation",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N20",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "23012232",
+      "evidence": "procedure Spinal tap",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N21",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "23012232",
+      "evidence": "microbiology Blood Culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N22",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "23012232",
+      "evidence": "microbiology MRSA SCREEN",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N23",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "22869758",
+      "evidence": "service MED",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N24",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "20942559",
+      "evidence": "service NMED",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N25",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "23255027",
+      "evidence": "service OBS",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N3",
+      "target": "N11",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "22869758",
+      "evidence": "Insulin treats Diabetes",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N3",
+      "target": "N15",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "22869758",
+      "evidence": "Heparin used in Diabetes care",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N6",
+      "target": "N12",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "23012232",
+      "evidence": "Vancomycin for viral meningitis (empiric)",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N6",
+      "target": "N13",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "23012232",
+      "evidence": "Ceftriaxone for meningitis",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N6",
+      "target": "N14",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "23012232",
+      "evidence": "Acyclovir for viral meningitis",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N6",
+      "target": "N21",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23012232",
+      "evidence": "Blood Culture helps rule out bacterial meningitis",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N6",
+      "target": "N22",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23012232",
+      "evidence": "MRSA SCREEN informs infection control",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N11",
+      "target": "N21",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "23012232",
+      "evidence": "Vancomycin targets MRSA",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N13",
+      "target": "N21",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "23012232",
+      "evidence": "Ceftriaxone targets Gram-negative organisms in blood",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N23",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22869758",
+      "evidence": "MED service manages cellulitis",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N23",
+      "target": "N3",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22869758",
+      "evidence": "MED service manages diabetes",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N24",
+      "target": "N6",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "20942559",
+      "evidence": "NMED service manages viral meningitis",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N25",
+      "target": "N9",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23255027",
+      "evidence": "OBS service manages pregnancy diabetes",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N25",
+      "target": "N10",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23255027",
+      "evidence": "OBS service manages asthma in pregnancy",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N2",
+      "target": "N17",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "PROCEDURE",
+      "hadm_id": "22869758",
+      "evidence": "Arthrocentesis performed for cellulitis assessment",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N6",
+      "target": "N20",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "PROCEDURE",
+      "hadm_id": "23012232",
+      "evidence": "Spinal tap for meningitis diagnosis",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "source": "N6",
+      "target": "N18",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "PROCEDURE",
+      "hadm_id": "23012232",
+      "evidence": "Intubation for respiratory failure in meningitis",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N6",
+      "target": "N19",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "PROCEDURE",
+      "hadm_id": "23012232",
+      "evidence": "Mechanical ventilation for acute respiratory failure",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N3",
+      "target": "N16",
+      "relation": "MONITORED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "22869758",
+      "evidence": "Laboratory testing monitors diabetes",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N11",
+      "target": "N16",
+      "relation": "MONITORED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "22869758",
+      "evidence": "Insulin dosing guided by labs",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N12",
+      "target": "N21",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "23012232",
+      "evidence": "Vancomycin administered during blood culture workup",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.55
+    },
+    {
+      "source": "N13",
+      "target": "N21",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "23012232",
+      "evidence": "Ceftriaxone given while blood cultures pending",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.55
+    }
+  ]
+}

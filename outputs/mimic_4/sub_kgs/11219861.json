@@ -1,0 +1,808 @@
+{
+  "subject_id": "11219861",
+  "hadm_ids": [
+    "25840149",
+    "25328668",
+    "22097745",
+    "21984822",
+    "28536072",
+    "20510313",
+    "20709787",
+    "23477195",
+    "25457765",
+    "27858302",
+    "24080222",
+    "26917343"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 11219861",
+      "normalized_name": "PATIENT",
+      "source_tables": [
+        "demographics"
+      ],
+      "evidence": "subject_id 11219861",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Severe sepsis",
+      "normalized_name": "Severe sepsis",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "25840149 diagnosis icd_code 99592",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Acute kidney failure, unspecified",
+      "normalized_name": "Acute kidney failure",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "25840149 diagnosis icd_code 5849; 25328668 diagnosis icd_code 5849; 22097745 diagnosis icd_code 5849; 23477195 diagnosis icd_code 5849; 24080222 diagnosis icd_code 5849",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Septic shock",
+      "normalized_name": "Septic shock",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "24080222 diagnosis icd_code 78552",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "DIAGNOSIS",
+      "name": "Bacteremia",
+      "normalized_name": "Bacteremia",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "23477195 diagnosis icd_code 7907",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "DIAGNOSIS",
+      "name": "Clostridium difficile infection",
+      "normalized_name": "Clostridium difficile infection",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "24080222 diagnosis icd_code 00845; 20510313 diagnosis icd_code 00845",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "Vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "25840149 medication Vancomycin; 23477195 medication Vancomycin",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "Furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "25840149 medication Furosemide; 25328668 medication Furosemide; 23477195 medication Furosemide; 24080222 medication Furosemide",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "MEDICATION",
+      "name": "Tacrolimus",
+      "normalized_name": "Tacrolimus",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "25840149 medication Tacrolimus; 25328668 medication Tacrolimus; 22097745 medication Tacrolimus; 28536072 medication Tacrolimus; 20510313 medication Tacrolimus; 20709787 medication Tacrolimus; 23477195 medication Tacrolimus; 25457765 medication Tacrolimus; 27858302 medication Tacrolimus; 24080222 medication Tacrolimus; 26917343 medication Tacrolimus",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "Insulin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "25328668 medication Insulin; 22097745 medication Insulin; 21984822 medication Insulin; 24080222 medication Insulin; 26917343 medication Insulin",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "Laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "All admissions lab_tests name Laboratory testing",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "PROCEDURE",
+      "name": "Hemodialysis",
+      "normalized_name": "Hemodialysis",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "24080222 procedure icd_code 3995",
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "PROCEDURE",
+      "name": "Mechanical ventilation",
+      "normalized_name": "Mechanical ventilation",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "24080222 procedure icd_code 9672",
+      "metadata": {}
+    },
+    {
+      "id": "N14",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture",
+      "normalized_name": "Blood Culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "25840149 microbiology Blood Culture; 25328668 microbiology Blood Culture; 20709787 microbiology Blood Culture; 23477195 microbiology Blood Culture; 24080222 microbiology Blood Culture",
+      "metadata": {}
+    },
+    {
+      "id": "N15",
+      "type": "MICROBIOLOGY",
+      "name": "Urine Culture (Yeast)",
+      "normalized_name": "Urine Culture Yeast",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "25840149 microbiology URINE CULTURE organism YEAST; 24080222 microbiology URINE CULTURE organism YEAST",
+      "metadata": {}
+    },
+    {
+      "id": "N16",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "25840149 service MED; 20709787 service MED; 23477195 service MED; 24080222 service MED",
+      "metadata": {}
+    },
+    {
+      "id": "N17",
+      "type": "SERVICE",
+      "name": "SURG",
+      "normalized_name": "SURG",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "25840149 service SURG; 25328668 service SURG; 22097745 service SURG; 21984822 service SURG; 28536072 service PSURG; 20510313 service SURG; 20709787 service SURG; 23477195 service SURG; 25457765 service SURG; 27858302 service SURG; 24080222 service SURG; 26917343 service SURG",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25840149",
+      "evidence": "patient has severe sepsis",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25840149",
+      "evidence": "patient has acute kidney failure",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24080222",
+      "evidence": "patient has septic shock",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23477195",
+      "evidence": "patient has bacteremia",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24080222",
+      "evidence": "patient has C. difficile infection",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "25840149",
+      "evidence": "patient received Vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "25840149",
+      "evidence": "patient received Furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "25840149",
+      "evidence": "patient received Tacrolimus",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "25328668",
+      "evidence": "patient received Insulin",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "25840149",
+      "evidence": "patient had lab testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "24080222",
+      "evidence": "patient underwent Hemodialysis",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "24080222",
+      "evidence": "patient underwent Mechanical ventilation",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N14",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "25840149",
+      "evidence": "patient had Blood Culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N15",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "25840149",
+      "evidence": "patient had Urine Culture with Yeast",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N16",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "25840149",
+      "evidence": "patient managed by MED service",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N17",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "25840149",
+      "evidence": "patient managed by SURG service",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N7",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "25840149",
+      "evidence": "Severe sepsis treated with Vancomycin",
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N3",
+      "target": "N8",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "25840149",
+      "evidence": "Acute kidney failure treated with Furosemide",
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N4",
+      "target": "N7",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "24080222",
+      "evidence": "Septic shock treated with Vancomycin",
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N5",
+      "target": "N7",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "23477195",
+      "evidence": "Bacteremia treated with Vancomycin",
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N6",
+      "target": "N7",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "24080222",
+      "evidence": "C. difficile infection treated with Vancomycin",
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N3",
+      "target": "N12",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24080222",
+      "evidence": "Hemodialysis performed for acute kidney failure",
+      "source_tables": [
+        "procedures",
+        "diagnoses"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N4",
+      "target": "N13",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24080222",
+      "evidence": "Mechanical ventilation performed for septic shock",
+      "source_tables": [
+        "procedures",
+        "diagnoses"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N14",
+      "target": "N2",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25840149",
+      "evidence": "Blood culture confirms severe sepsis",
+      "source_tables": [
+        "microbiology",
+        "diagnoses"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N15",
+      "target": "N6",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25840149",
+      "evidence": "Urine culture yeast confirms C. difficile infection (co‑infection)",
+      "source_tables": [
+        "microbiology",
+        "diagnoses"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N9",
+      "target": "N2",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "25840149",
+      "evidence": "Severe sepsis managed with Tacrolimus (immunosuppression)",
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N9",
+      "target": "N5",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "23477195",
+      "evidence": "Bacteremia managed with Tacrolimus (post‑transplant)",
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N9",
+      "target": "N3",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "24080222",
+      "evidence": "Acute kidney failure managed with Tacrolimus (post‑transplant)",
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N10",
+      "target": "N3",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "24080222",
+      "evidence": "Acute kidney failure managed with Insulin (glycemic control)",
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N16",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25840149",
+      "evidence": "MED service manages severe sepsis",
+      "source_tables": [
+        "services",
+        "diagnoses"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N17",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25840149",
+      "evidence": "SURG service manages severe sepsis (surgical source control)",
+      "source_tables": [
+        "services",
+        "diagnoses"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N16",
+      "target": "N3",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24080222",
+      "evidence": "MED service manages acute kidney failure",
+      "source_tables": [
+        "services",
+        "diagnoses"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N17",
+      "target": "N3",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24080222",
+      "evidence": "SURG service manages acute kidney failure (dialysis)",
+      "source_tables": [
+        "services",
+        "diagnoses"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N14",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "25840149",
+      "evidence": "Severe sepsis diagnosed by Blood Culture",
+      "source_tables": [
+        "diagnoses",
+        "microbiology"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N6",
+      "target": "N15",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "25840149",
+      "evidence": "C. difficile infection diagnosed by Urine Culture (Yeast) as co‑pathogen",
+      "source_tables": [
+        "diagnoses",
+        "microbiology"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N2",
+      "target": "N11",
+      "relation": "MONITORED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "25840149",
+      "evidence": "Severe sepsis monitored by laboratory testing",
+      "source_tables": [
+        "diagnoses",
+        "lab_tests"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N3",
+      "target": "N11",
+      "relation": "MONITORED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "25840149",
+      "evidence": "Acute kidney failure monitored by laboratory testing",
+      "source_tables": [
+        "diagnoses",
+        "lab_tests"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N7",
+      "target": "N14",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "25840149",
+      "evidence": "Vancomycin targets organisms in Blood Culture",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N8",
+      "target": "N3",
+      "relation": "MONITORED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "25840149",
+      "evidence": "Acute kidney failure monitored by lab testing (electrolytes)",
+      "source_tables": [
+        "diagnoses",
+        "lab_tests"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N8",
+      "target": "N11",
+      "relation": "MONITORED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "25840149",
+      "evidence": "Furosemide therapy monitored by laboratory testing",
+      "source_tables": [
+        "medications",
+        "lab_tests"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N9",
+      "target": "N11",
+      "relation": "MONITORED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "25840149",
+      "evidence": "Tacrolimus levels monitored by laboratory testing",
+      "source_tables": [
+        "medications",
+        "lab_tests"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N10",
+      "target": "N11",
+      "relation": "MONITORED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "25328668",
+      "evidence": "Insulin therapy monitored by laboratory testing (glucose)",
+      "source_tables": [
+        "medications",
+        "lab_tests"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N13",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "PROCEDURE",
+      "hadm_id": "24080222",
+      "evidence": "Severe sepsis co‑occurs with mechanical ventilation",
+      "source_tables": [
+        "diagnoses",
+        "procedures"
+      ],
+      "confidence": 0.55
+    },
+    {
+      "source": "N3",
+      "target": "N12",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "PROCEDURE",
+      "hadm_id": "24080222",
+      "evidence": "Acute kidney failure co‑occurs with hemodialysis",
+      "source_tables": [
+        "diagnoses",
+        "procedures"
+      ],
+      "confidence": 0.55
+    }
+  ]
+}

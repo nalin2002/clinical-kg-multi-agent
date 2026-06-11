@@ -1,0 +1,578 @@
+{
+  "subject_id": "10547408",
+  "hadm_ids": [
+    "29435430",
+    "25050734",
+    "27351978"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 10547408",
+      "normalized_name": "patient_10547408",
+      "source_tables": [],
+      "evidence": "subject_id",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Congestive heart failure, unspecified",
+      "normalized_name": "congestive_heart_failure_unspecified",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "admission 29435430",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Sepsis due to streptococcus, group B",
+      "normalized_name": "sepsis_due_to_streptococcus_group_b",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "admission 25050734",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Sepsis, unspecified organism",
+      "normalized_name": "sepsis_unspecified_organism",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "admission 27351978",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "DIAGNOSIS",
+      "name": "Pneumonia, unspecified organism",
+      "normalized_name": "pneumonia_unspecified_organism",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "admission 27351978",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "DIAGNOSIS",
+      "name": "Acute respiratory failure with hypoxia",
+      "normalized_name": "acute_respiratory_failure_with_hypoxia",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "admission 27351978",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "DIAGNOSIS",
+      "name": "Urinary tract infection, site not specified",
+      "normalized_name": "urinary_tract_infection_unspecified",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "admission 27351978",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "admission 27351978",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "admissions 25050734, 27351978",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "insulin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "admission 27351978",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "laboratory_testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "all admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "PROCEDURE",
+      "name": "Enteral infusion of concentrated nutritional substances",
+      "normalized_name": "enteral_infusion_concentrated_nutritional_substances",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "admission 29435430",
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "PROCEDURE",
+      "name": "Insertion of Endotracheal Airway into Trachea, Via Natural or Artificial Opening",
+      "normalized_name": "insertion_endotracheal_airway",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "admission 27351978",
+      "metadata": {}
+    },
+    {
+      "id": "N14",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture, Routine - BETA STREPTOCOCCUS GROUP B",
+      "normalized_name": "blood_culture_beta_streptococcus_group_b",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "admission 25050734",
+      "metadata": {}
+    },
+    {
+      "id": "N15",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture, Routine - ESCHERICHIA COLI",
+      "normalized_name": "blood_culture_escherichia_coli",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "admission 27351978",
+      "metadata": {}
+    },
+    {
+      "id": "N16",
+      "type": "SERVICE",
+      "name": "SURG",
+      "normalized_name": "service_surg",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "admission 29435430",
+      "metadata": {}
+    },
+    {
+      "id": "N17",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "service_med",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "admissions 25050734, 27351978",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29435430",
+      "evidence": "diagnosis list",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25050734",
+      "evidence": "diagnosis list",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27351978",
+      "evidence": "diagnosis list",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27351978",
+      "evidence": "diagnosis list",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27351978",
+      "evidence": "diagnosis list",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27351978",
+      "evidence": "diagnosis list",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "27351978",
+      "evidence": "medication list",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "25050734",
+      "evidence": "medication list",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "27351978",
+      "evidence": "medication list",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "29435430",
+      "evidence": "lab_tests",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "29435430",
+      "evidence": "procedures",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "27351978",
+      "evidence": "procedures",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N14",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "25050734",
+      "evidence": "microbiology",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N15",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "27351978",
+      "evidence": "microbiology",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N16",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "29435430",
+      "evidence": "services",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N17",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "25050734",
+      "evidence": "services",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N3",
+      "target": "N9",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "25050734",
+      "evidence": "clinical knowledge (antibiotic for streptococcal sepsis)",
+      "source_tables": [],
+      "confidence": 0.85
+    },
+    {
+      "source": "N4",
+      "target": "N9",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "27351978",
+      "evidence": "clinical knowledge (antibiotic for sepsis)",
+      "source_tables": [],
+      "confidence": 0.85
+    },
+    {
+      "source": "N2",
+      "target": "N8",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "27351978",
+      "evidence": "clinical knowledge (diuretic for heart failure)",
+      "source_tables": [],
+      "confidence": 0.85
+    },
+    {
+      "source": "N14",
+      "target": "N3",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25050734",
+      "evidence": "blood culture grew BETA STREPTOCOCCUS GROUP B matching sepsis diagnosis",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N15",
+      "target": "N5",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27351978",
+      "evidence": "blood culture grew ESCHERICHIA COLI matching pneumonia diagnosis",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N9",
+      "target": "N14",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "25050734",
+      "evidence": "vancomycin susceptibility reported as susceptible for BETA STREPTOCOCCUS GROUP B",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N9",
+      "target": "N15",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "27351978",
+      "evidence": "vancomycin susceptibility reported as susceptible for ESCHERICHIA COLI (though not typical, recorded in data)",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N2",
+      "target": "N8",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "27351978",
+      "evidence": "co‑occurrence in same admission",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N3",
+      "target": "N9",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "25050734",
+      "evidence": "co‑occurrence in same admission",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N4",
+      "target": "N9",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "27351978",
+      "evidence": "co‑occurrence in same admission",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N5",
+      "target": "N15",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "27351978",
+      "evidence": "co‑occurrence in same admission",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N6",
+      "target": "N13",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "PROCEDURE",
+      "hadm_id": "27351978",
+      "evidence": "co‑occurrence in same admission",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N7",
+      "target": "N15",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "27351978",
+      "evidence": "co‑occurrence in same admission",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N12",
+      "target": "N2",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29435430",
+      "evidence": "co‑occurrence in same admission",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N13",
+      "target": "N6",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27351978",
+      "evidence": "co‑occurrence in same admission",
+      "source_tables": [],
+      "confidence": 0.6
+    }
+  ]
+}

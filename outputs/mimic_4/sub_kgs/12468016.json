@@ -1,0 +1,361 @@
+{
+  "subject_id": "12468016",
+  "hadm_ids": [
+    "21679796",
+    "24849739",
+    "22425786",
+    "21898022",
+    "26685440",
+    "21845835",
+    "28663086",
+    "28441739",
+    "21026864",
+    "20396478",
+    "21273643",
+    "22813532",
+    "24777024",
+    "22359887",
+    "20339873",
+    "26793067",
+    "20318456",
+    "22943751",
+    "24327298",
+    "22747420",
+    "29534443",
+    "20197050",
+    "22909240",
+    "25304780",
+    "28400468"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 12468016",
+      "normalized_name": "patient_12468016",
+      "source_tables": [
+        "patients"
+      ],
+      "evidence": "subject_id 12468016",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Unspecified septicemia",
+      "normalized_name": "unspecified_septicemia",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 21679796 seq_num 1 icd_code 0389",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Pneumonia, organism unspecified",
+      "normalized_name": "pneumonia_unspecified",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 21679796 seq_num 2 icd_code 486",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id 21679796 name Vancomycin dose 1000 mg route IV",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "MEDICATION",
+      "name": "Levofloxacin",
+      "normalized_name": "levofloxacin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id 21679796 name Levofloxacin dose 750 mg route IV",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "PROCEDURE",
+      "name": "Venous catheterization, not elsewhere classified",
+      "normalized_name": "venous_catheterization",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "hadm_id 21679796 seq_num 1 icd_code 3893",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "laboratory_testing",
+      "source_tables": [
+        "lab_orders"
+      ],
+      "evidence": "hadm_id 21679796 num_lab_orders 34",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "MICROBIOLOGY",
+      "name": "GRAM STAIN (SPUTUM)",
+      "normalized_name": "gram_stain_sputum",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "hadm_id 21679796 specimen SPUTUM test_name GRAM STAIN",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "med",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "hadm_id 21679796 service MED",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21679796",
+      "evidence": "patient has diagnosis Unspecified septicemia",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21679796",
+      "evidence": "patient has diagnosis Pneumonia, organism unspecified",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "21679796",
+      "evidence": "patient takes medication Vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "21679796",
+      "evidence": "patient takes medication Levofloxacin",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "21679796",
+      "evidence": "patient underwent procedure Venous catheterization",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "21679796",
+      "evidence": "patient had lab test Laboratory testing",
+      "source_tables": [
+        "lab_orders"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "21679796",
+      "evidence": "patient had microbiology GRAM STAIN (SPUTUM)",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "21679796",
+      "evidence": "patient managed by service MED",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N2",
+      "target": "N4",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "21679796",
+      "evidence": "Vancomycin used for Unspecified septicemia",
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.78
+    },
+    {
+      "source": "N3",
+      "target": "N5",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "21679796",
+      "evidence": "Levofloxacin used for Pneumonia, organism unspecified",
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.78
+    },
+    {
+      "source": "N6",
+      "target": "N2",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21679796",
+      "evidence": "Venous catheterization performed for Unspecified septicemia",
+      "source_tables": [
+        "procedures",
+        "diagnoses"
+      ],
+      "confidence": 0.78
+    },
+    {
+      "source": "N2",
+      "target": "N7",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "21679796",
+      "evidence": "Laboratory testing contributed to diagnosis Unspecified septicemia",
+      "source_tables": [
+        "diagnoses",
+        "lab_orders"
+      ],
+      "confidence": 0.78
+    },
+    {
+      "source": "N8",
+      "target": "N3",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21679796",
+      "evidence": "GRAM STAIN (SPUTUM) confirms Pneumonia, organism unspecified",
+      "source_tables": [
+        "microbiology",
+        "diagnoses"
+      ],
+      "confidence": 0.78
+    },
+    {
+      "source": "N4",
+      "target": "N8",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "21679796",
+      "evidence": "Vancomycin targets organisms identified by GRAM STAIN (SPUTUM)",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.78
+    },
+    {
+      "source": "N2",
+      "target": "N3",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21679796",
+      "evidence": "Both diagnoses present in same admission",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N4",
+      "target": "N5",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "MEDICATION",
+      "hadm_id": "21679796",
+      "evidence": "Both medications administered in same admission",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N6",
+      "target": "N7",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "PROCEDURE",
+      "target_type": "LAB_TEST",
+      "hadm_id": "21679796",
+      "evidence": "Procedure and lab test ordered together",
+      "source_tables": [
+        "procedures",
+        "lab_orders"
+      ],
+      "confidence": 0.6
+    }
+  ]
+}

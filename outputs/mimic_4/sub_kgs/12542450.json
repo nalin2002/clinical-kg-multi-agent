@@ -1,0 +1,650 @@
+{
+  "subject_id": "12542450",
+  "hadm_ids": [
+    "22289817",
+    "25647545",
+    "21037659",
+    "28881390",
+    "23782773",
+    "27510205",
+    "21674963",
+    "25065451",
+    "25009845",
+    "23506666",
+    "21610841",
+    "27776728"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 12542450",
+      "normalized_name": "Patient 12542450",
+      "source_tables": [
+        "demographics"
+      ],
+      "evidence": "subject_id 12542450",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Acute myeloblastic leukemia, not having achieved remission",
+      "normalized_name": "Acute myeloblastic leukemia, not having achieved remission",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "icd_code C9200",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Pneumonia, unspecified organism",
+      "normalized_name": "Pneumonia, unspecified organism",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "icd_code J189",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Thrombocytopenia, unspecified",
+      "normalized_name": "Thrombocytopenia, unspecified",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "icd_code D696",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "DIAGNOSIS",
+      "name": "Acute kidney failure, unspecified",
+      "normalized_name": "Acute kidney failure, unspecified",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "icd_code N179",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "DIAGNOSIS",
+      "name": "Acute graft-versus-host disease",
+      "normalized_name": "Acute graft-versus-host disease",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "icd_code D89810",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "DIAGNOSIS",
+      "name": "Unspecified systolic (congestive) heart failure",
+      "normalized_name": "Unspecified systolic (congestive) heart failure",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "icd_code I5020",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "DIAGNOSIS",
+      "name": "Type 2 diabetes mellitus without complications",
+      "normalized_name": "Type 2 diabetes mellitus without complications",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "icd_code E119",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "DIAGNOSIS",
+      "name": "Long term (current) use of insulin",
+      "normalized_name": "Long term (current) use of insulin",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "icd_code Z794",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "Insulin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "name Insulin",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "Vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "name Vancomycin",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "Furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "name Furosemide",
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "Laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "name Laboratory testing",
+      "metadata": {}
+    },
+    {
+      "id": "N14",
+      "type": "PROCEDURE",
+      "name": "Introduction of Other Antineoplastic into Central Vein, Percutaneous Approach",
+      "normalized_name": "Introduction of Other Antineoplastic into Central Vein, Percutaneous Approach",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "icd_code 3E04305",
+      "metadata": {}
+    },
+    {
+      "id": "N15",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture, Routine",
+      "normalized_name": "Blood Culture, Routine",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "test_name Blood Culture, Routine",
+      "metadata": {}
+    },
+    {
+      "id": "N16",
+      "type": "SERVICE",
+      "name": "OMED",
+      "normalized_name": "OMED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "service OMED",
+      "metadata": {}
+    },
+    {
+      "id": "N17",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "service MED",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22289817",
+      "evidence": "diagnosis C9200 in admission 22289817",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22289817",
+      "evidence": "diagnosis J189 in admission 22289817",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22289817",
+      "evidence": "diagnosis D696 in admission 22289817",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21037659",
+      "evidence": "diagnosis N179 in admission 21037659",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21037659",
+      "evidence": "diagnosis D89810 in admission 21037659",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21037659",
+      "evidence": "diagnosis I5020 in admission 21037659",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21037659",
+      "evidence": "diagnosis E119 in admission 21037659",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21037659",
+      "evidence": "diagnosis Z794 in admission 21037659",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "22289817",
+      "evidence": "medication Insulin in admission 22289817",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "22289817",
+      "evidence": "medication Vancomycin in admission 22289817",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "21037659",
+      "evidence": "medication Furosemide in admission 21037659",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "22289817",
+      "evidence": "lab test Laboratory testing in admission 22289817",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N14",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "22289817",
+      "evidence": "procedure 3E04305 in admission 22289817",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N15",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22289817",
+      "evidence": "microbiology Blood Culture, Routine in admission 22289817",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N16",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "22289817",
+      "evidence": "service OMED in admission 22289817",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N17",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "21610841",
+      "evidence": "service MED in admission 21610841",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N10",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "22289817",
+      "evidence": "Insulin used for leukemia",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N11",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "22289817",
+      "evidence": "Vancomycin used for infection in leukemia patient",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N5",
+      "target": "N12",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "21037659",
+      "evidence": "Furosemide used for kidney failure related fluid overload",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N5",
+      "target": "N13",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "21037659",
+      "evidence": "Lab testing ordered for kidney failure",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N6",
+      "target": "N15",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22289817",
+      "evidence": "Blood culture used to assess graft‑versus‑host infection",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N6",
+      "target": "N11",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22289817",
+      "evidence": "Vancomycin targets MRSA in blood culture",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N14",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22289817",
+      "evidence": "Central line insertion for chemotherapy in leukemia",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N16",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22289817",
+      "evidence": "OMED manages leukemia",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N5",
+      "target": "N16",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21037659",
+      "evidence": "OMED manages kidney failure",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N10",
+      "target": "N13",
+      "relation": "MONITORED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "22289817",
+      "evidence": "Insulin levels monitored by labs",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N11",
+      "target": "N15",
+      "relation": "MONITORED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22289817",
+      "evidence": "Vancomycin levels guided by blood cultures",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N12",
+      "target": "N13",
+      "relation": "MONITORED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "21037659",
+      "evidence": "Furosemide effect monitored by labs",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N2",
+      "target": "N3",
+      "relation": "ASSOCIATED_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22289817",
+      "evidence": "Leukemia patient also has pneumonia",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N5",
+      "target": "N4",
+      "relation": "COMPLICATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21037659",
+      "evidence": "Kidney failure complicated by thrombocytopenia",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N2",
+      "target": "N5",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21037659",
+      "evidence": "Leukemia co‑occurs with kidney failure",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.5
+    },
+    {
+      "source": "N10",
+      "target": "N17",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "22289817",
+      "evidence": "Insulin administered under OMED service",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N11",
+      "target": "N17",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "22289817",
+      "evidence": "Vancomycin administered under OMED service",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N12",
+      "target": "N16",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "21037659",
+      "evidence": "Furosemide administered under OMED service",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.7
+    }
+  ]
+}

@@ -1,0 +1,607 @@
+{
+  "subject_id": "12885435",
+  "hadm_ids": [
+    "27608221",
+    "25428639",
+    "23161050",
+    "23776093",
+    "25444146",
+    "22390150",
+    "26890692",
+    "28771229",
+    "29047584",
+    "28012963"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 12885435",
+      "normalized_name": "patient_12885435",
+      "source_tables": [
+        "patients"
+      ],
+      "evidence": "subject_id 12885435",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Pneumonia due to Pseudomonas",
+      "normalized_name": "pneumonia_due_to_pseudomonas",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 27608221 diagnosis name Pneumonia due to Pseudomonas",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Obstructive chronic bronchitis with (acute) exacerbation",
+      "normalized_name": "obstructive_chronic_bronchitis_exacerbation",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "multiple admissions diagnosis name Obstructive chronic bronchitis with (acute) exacerbation",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Septic shock",
+      "normalized_name": "septic_shock",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 22390150 diagnosis name Septic shock",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "DIAGNOSIS",
+      "name": "Congestive heart failure, unspecified",
+      "normalized_name": "congestive_heart_failure_unspecified",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 28012963 diagnosis name Congestive heart failure, unspecified",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "multiple admissions medication name Vancomycin",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "MEDICATION",
+      "name": "Piperacillin-Tazobactam",
+      "normalized_name": "piperacillin_tazobactam",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id 27608221 medication name Piperacillin-Tazobactam",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id 25444146 medication name Furosemide",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "laboratory_testing",
+      "source_tables": [
+        "lab_orders"
+      ],
+      "evidence": "all admissions lab_tests name Laboratory testing",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "PROCEDURE",
+      "name": "Venous catheterization, not elsewhere classified",
+      "normalized_name": "venous_catheterization",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "hadm_id 27608221 procedure name Venous catheterization, not elsewhere classified",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "MICROBIOLOGY",
+      "name": "Respiratory culture Pseudomonas aeruginosa",
+      "normalized_name": "respiratory_culture_pseudomonas_aeruginosa",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "hadm_id 27608221 microbiology organism PSEUDOMONAS AERUGINOSA",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "MICROBIOLOGY",
+      "name": "Blood culture",
+      "normalized_name": "blood_culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "unlinked microbiology specimen Blood Culture",
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "med",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "all admissions service MED",
+      "metadata": {}
+    },
+    {
+      "id": "N14",
+      "type": "SERVICE",
+      "name": "SURG",
+      "normalized_name": "surg",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "hadm_id 28771229 service SURG",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27608221",
+      "evidence": "patient has Pneumonia due to Pseudomonas",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25428639",
+      "evidence": "patient has Obstructive chronic bronchitis with (acute) exacerbation",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22390150",
+      "evidence": "patient has Septic shock",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28012963",
+      "evidence": "patient has Congestive heart failure, unspecified",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "27608221",
+      "evidence": "patient takes Vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "27608221",
+      "evidence": "patient takes Piperacillin-Tazobactam",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "25444146",
+      "evidence": "patient takes Furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "27608221",
+      "evidence": "patient had Laboratory testing",
+      "source_tables": [
+        "lab_orders"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "27608221",
+      "evidence": "patient underwent Venous catheterization, not elsewhere classified",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "27608221",
+      "evidence": "patient had Respiratory culture Pseudomonas aeruginosa",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "UNLINKED",
+      "evidence": "patient had Blood culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "27608221",
+      "evidence": "patient managed by MED service",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N14",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "28771229",
+      "evidence": "patient managed by SURG service",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N2",
+      "target": "N6",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "27608221",
+      "evidence": "Vancomycin used for Pneumonia due to Pseudomonas",
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.78
+    },
+    {
+      "source": "N2",
+      "target": "N7",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "27608221",
+      "evidence": "Piperacillin-Tazobactam used for Pneumonia due to Pseudomonas",
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.78
+    },
+    {
+      "source": "N3",
+      "target": "N6",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "22390150",
+      "evidence": "Vancomycin used for Obstructive chronic bronchitis exacerbation (bacterial coverage)",
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N4",
+      "target": "N6",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "22390150",
+      "evidence": "Vancomycin used for Septic shock (empiric therapy)",
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.78
+    },
+    {
+      "source": "N5",
+      "target": "N8",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "25444146",
+      "evidence": "Furosemide used for Congestive heart failure",
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.78
+    },
+    {
+      "source": "N2",
+      "target": "N9",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "27608221",
+      "evidence": "Laboratory testing ordered for Pneumonia due to Pseudomonas",
+      "source_tables": [
+        "lab_orders",
+        "diagnoses"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N2",
+      "target": "N11",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "27608221",
+      "evidence": "Respiratory culture identified Pseudomonas aeruginosa for Pneumonia",
+      "source_tables": [
+        "microbiology",
+        "diagnoses"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N3",
+      "target": "N9",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "25428639",
+      "evidence": "Laboratory testing ordered for Obstructive chronic bronchitis",
+      "source_tables": [
+        "lab_orders",
+        "diagnoses"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N4",
+      "target": "N9",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "22390150",
+      "evidence": "Laboratory testing ordered for Septic shock",
+      "source_tables": [
+        "lab_orders",
+        "diagnoses"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N5",
+      "target": "N9",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "28012963",
+      "evidence": "Laboratory testing ordered for Congestive heart failure",
+      "source_tables": [
+        "lab_orders",
+        "diagnoses"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N2",
+      "target": "N13",
+      "relation": "MANAGED_FOR",
+      "source_type": "DIAGNOSIS",
+      "target_type": "SERVICE",
+      "hadm_id": "27608221",
+      "evidence": "MED service manages Pneumonia due to Pseudomonas",
+      "source_tables": [
+        "services",
+        "diagnoses"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N3",
+      "target": "N13",
+      "relation": "MANAGED_FOR",
+      "source_type": "DIAGNOSIS",
+      "target_type": "SERVICE",
+      "hadm_id": "25428639",
+      "evidence": "MED service manages Obstructive chronic bronchitis",
+      "source_tables": [
+        "services",
+        "diagnoses"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N4",
+      "target": "N13",
+      "relation": "MANAGED_FOR",
+      "source_type": "DIAGNOSIS",
+      "target_type": "SERVICE",
+      "hadm_id": "22390150",
+      "evidence": "MED service manages Septic shock",
+      "source_tables": [
+        "services",
+        "diagnoses"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N5",
+      "target": "N13",
+      "relation": "MANAGED_FOR",
+      "source_type": "DIAGNOSIS",
+      "target_type": "SERVICE",
+      "hadm_id": "28012963",
+      "evidence": "MED service manages Congestive heart failure",
+      "source_tables": [
+        "services",
+        "diagnoses"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N2",
+      "target": "N10",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27608221",
+      "evidence": "Venous catheterization performed for Pneumonia due to Pseudomonas (IV access)",
+      "source_tables": [
+        "procedures",
+        "diagnoses"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N11",
+      "target": "N6",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "27608221",
+      "evidence": "Vancomycin tested against Pseudomonas aeruginosa (resistance)",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.78
+    },
+    {
+      "source": "N7",
+      "target": "N11",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "27608221",
+      "evidence": "Piperacillin-Tazobactam active against Pseudomonas aeruginosa (susceptible)",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.78
+    },
+    {
+      "source": "N6",
+      "target": "N12",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "UNLINKED",
+      "evidence": "Vancomycin and Blood culture present in same dataset",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.55
+    },
+    {
+      "source": "N13",
+      "target": "N14",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "SERVICE",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "Both MED and SURG services appear across admissions",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.55
+    }
+  ]
+}

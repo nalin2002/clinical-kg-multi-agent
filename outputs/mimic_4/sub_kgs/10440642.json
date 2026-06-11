@@ -1,0 +1,422 @@
+{
+  "subject_id": "10440642",
+  "hadm_ids": [
+    "23535818",
+    "29799190",
+    "21866571",
+    "20290512",
+    "29024763",
+    "21488003",
+    "26558653",
+    "23379166",
+    "24524595",
+    "21059695",
+    "29187727"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 10440642",
+      "normalized_name": "PATIENT",
+      "source_tables": [],
+      "evidence": "",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Unspecified septicemia",
+      "normalized_name": "Sepsis",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id:23535818, 29024763, 29187727",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Acute on chronic diastolic heart failure",
+      "normalized_name": "Heart failure",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id:21866571, 20290512, 21059695, 29187727",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Atrial fibrillation",
+      "normalized_name": "Atrial fibrillation",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id:23535818, 29799190, 21866571, 20290512, 29024763, 21488003, 26558653, 24524595, 21059695, 29187727",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "DIAGNOSIS",
+      "name": "Unspecified essential hypertension",
+      "normalized_name": "Hypertension",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id:23535818, 29799190, 20290512, 21488003, 26558653, 24524595, 29187727",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "Vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id:21866571, 20290512, 29024763, 21059695, 29187727",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "Furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id:29799190, 21866571, 20290512, 26558653, 24524595, 21059695, 29187727",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "MEDICATION",
+      "name": "Linezolid",
+      "normalized_name": "Linezolid",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id:29799190",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "MEDICATION",
+      "name": "Aztreonam",
+      "normalized_name": "Aztreonam",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id:20290512, 21059695, 29187727",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "PROCEDURE",
+      "name": "Insertion of endotracheal tube",
+      "normalized_name": "Insertion of endotracheal tube",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "hadm_id:29024763, 29187727",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "PROCEDURE",
+      "name": "Continuous invasive mechanical ventilation for less than 96 consecutive hours",
+      "normalized_name": "Mechanical ventilation",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "hadm_id:29024763, 29187727",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "Laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "hadm_id:23535818, 29799190, 21866571, 20290512, 29024763, 21488003, 26558653, 23379166, 24524595, 21059695, 29187727",
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture, Routine",
+      "normalized_name": "Blood Culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "hadm_id:29799190, 29024763, 29187727",
+      "metadata": {}
+    },
+    {
+      "id": "N14",
+      "type": "MICROBIOLOGY",
+      "name": "URINE CULTURE",
+      "normalized_name": "Urine Culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "hadm_id:23535818, 29799190, 29024763, 21059695, 29187727",
+      "metadata": {}
+    },
+    {
+      "id": "N15",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "hadm_id:29799190, 21866571, 20290512, 21488003, 23379166, 24524595, 21059695, 29187727",
+      "metadata": {}
+    },
+    {
+      "id": "N16",
+      "type": "SERVICE",
+      "name": "VSURG",
+      "normalized_name": "VSURG",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "hadm_id:23535818, 26558653",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23535818",
+      "evidence": "diagnoses in admission 23535818",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21866571",
+      "evidence": "diagnoses in admission 21866571",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23535818",
+      "evidence": "diagnoses in admission 23535818",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23535818",
+      "evidence": "diagnoses in admission 23535818",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "21866571",
+      "evidence": "medications in admission 21866571",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "29799190",
+      "evidence": "medications in admission 29799190",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "29799190",
+      "evidence": "medications in admission 29799190",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "20290512",
+      "evidence": "medications in admission 20290512",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "29024763",
+      "evidence": "procedures in admission 29024763",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "29024763",
+      "evidence": "procedures in admission 29024763",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "23535818",
+      "evidence": "lab_tests in admission 23535818",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "29799190",
+      "evidence": "microbiology in admission 29799190",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N14",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "23535818",
+      "evidence": "microbiology in admission 23535818",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N15",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "29799190",
+      "evidence": "services in admission 29799190",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N16",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "23535818",
+      "evidence": "services in admission 23535818",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N6",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "21866571",
+      "evidence": "Sepsis and Vancomycin co-occur in admission 21866571",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N3",
+      "target": "N7",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "21866571",
+      "evidence": "Heart failure and Furosemide co-occur in admission 21866571",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N4",
+      "target": "N5",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23535818",
+      "evidence": "Atrial fibrillation co-occurs with Hypertension in admission 23535818",
+      "source_tables": [],
+      "confidence": 0.6
+    }
+  ]
+}

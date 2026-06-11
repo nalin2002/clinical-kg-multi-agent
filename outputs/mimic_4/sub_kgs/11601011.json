@@ -1,0 +1,474 @@
+{
+  "subject_id": "11601011",
+  "hadm_ids": [
+    "23835385",
+    "24798517",
+    "27216772",
+    "29085030",
+    "21877754",
+    "21742298",
+    "21661584",
+    "29336897",
+    "28738962",
+    "26569631",
+    "27272127",
+    "21582502"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 11601011",
+      "normalized_name": "PATIENT",
+      "source_tables": [],
+      "evidence": "subject_id 11601011",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Sepsis, unspecified organism",
+      "normalized_name": "Sepsis",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 29336897 diagnosis A419",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Urinary tract infection, site not specified",
+      "normalized_name": "UTI",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 23835385 diagnosis 5990; hadm_id 21877754 diagnosis 5990; hadm_id 27272127 diagnosis N390",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Other and unspecified Escherichia coli [E. coli]",
+      "normalized_name": "E. coli infection",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 23835385 diagnosis 04149; hadm_id 27216772 diagnosis 04149; hadm_id 29085030 diagnosis 04149; hadm_id 21877754 diagnosis 04149; hadm_id 21582502 diagnosis A4151 (E. coli sepsis)",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "MEDICATION",
+      "name": "Meropenem",
+      "normalized_name": "Meropenem",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "MEDICATION",
+      "name": "Linezolid",
+      "normalized_name": "Linezolid",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id 29336897 medication Linezolid",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "MEDICATION",
+      "name": "Ertapenem Sodium",
+      "normalized_name": "Ertapenem",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id 28738962 medication Ertapenem Sodium; hadm_id 21582502 medication Ertapenem Sodium",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "Lab",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "all admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture, Routine",
+      "normalized_name": "Blood Culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "hadm_id 27216772 microbiology BLOOD CULTURE; hadm_id 29336897 microbiology Blood Culture, Routine",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "MICROBIOLOGY",
+      "name": "MRSA SCREEN",
+      "normalized_name": "MRSA Screen",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "hadm_id 29336897 microbiology MRSA SCREEN",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "all admissions",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29336897",
+      "evidence": "diagnosis A419",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23835385",
+      "evidence": "diagnosis 5990",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23835385",
+      "evidence": "diagnosis 04149",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "multiple admissions include Meropenem",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "29336897",
+      "evidence": "medication Linezolid",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "28738962",
+      "evidence": "medication Ertapenem Sodium",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "lab orders in all admissions",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "27216772",
+      "evidence": "Blood Culture, Routine",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "29336897",
+      "evidence": "MRSA SCREEN",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "service MED in all admissions",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N5",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "29336897",
+      "evidence": "Sepsis treated with Meropenem",
+      "source_tables": [
+        "diagnoses",
+        "medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N4",
+      "target": "N5",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "E. coli infection treated with Meropenem",
+      "source_tables": [
+        "diagnoses",
+        "medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N4",
+      "target": "N6",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "29336897",
+      "evidence": "E. coli infection treated with Linezolid (broad‑spectrum)",
+      "source_tables": [
+        "diagnoses",
+        "medications"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N3",
+      "target": "N5",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "UTI treated with Meropenem in several admissions",
+      "source_tables": [
+        "diagnoses",
+        "medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N9",
+      "target": "N2",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29336897",
+      "evidence": "Blood culture positive in sepsis admission",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N9",
+      "target": "N4",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27216772",
+      "evidence": "Blood culture performed for E. coli infection",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N10",
+      "target": "N4",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29336897",
+      "evidence": "MRSA screen positive in patient with E. coli infection (co‑infection risk)",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N5",
+      "target": "N9",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "Meropenem active against organisms cultured in blood",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N6",
+      "target": "N10",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "29336897",
+      "evidence": "Linezolid active against MRSA",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N11",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29336897",
+      "evidence": "MED service manages sepsis",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N11",
+      "target": "N3",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "MED service manages UTI",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N11",
+      "target": "N4",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "MED service manages E. coli infection",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N2",
+      "target": "N8",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "29336897",
+      "evidence": "Lab testing performed for sepsis workup",
+      "source_tables": [
+        "diagnoses",
+        "lab_tests"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N3",
+      "target": "N8",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "Lab testing performed for UTI",
+      "source_tables": [
+        "diagnoses",
+        "lab_tests"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N4",
+      "target": "N8",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "Lab testing performed for E. coli infection",
+      "source_tables": [
+        "diagnoses",
+        "lab_tests"
+      ],
+      "confidence": 0.8
+    }
+  ]
+}

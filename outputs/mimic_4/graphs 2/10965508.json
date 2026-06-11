@@ -1,0 +1,216 @@
+{
+  "subject_id": "10965508",
+  "hadm_ids": [
+    "28823212",
+    "21240555",
+    "27457811",
+    "28849371",
+    "25183527",
+    "26566781",
+    "21931410",
+    "24770040",
+    "29388246",
+    "21911224",
+    "23077698",
+    "28532978"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 10965508",
+      "normalized_name": "PATIENT",
+      "source_tables": [
+        "demographics"
+      ],
+      "evidence": "subject_id 10965508",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Unspecified essential hypertension",
+      "normalized_name": "Hypertension",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD 4019 across multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "MEDICATION",
+      "name": "Sodium Bicarbonate",
+      "normalized_name": "Sodium Bicarbonate",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "medication name appears in many admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "Laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "Derived from POE 'Lab' orders in all admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "SERVICE",
+      "name": "NMED",
+      "normalized_name": "NMED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "Service NMED listed in all admissions",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28823212",
+      "evidence": "Diagnosis Unspecified essential hypertension in admission 28823212",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "28823212",
+      "evidence": "Medication Sodium Bicarbonate administered in admission 28823212",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "28823212",
+      "evidence": "Lab orders present in admission 28823212",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "28823212",
+      "evidence": "Service NMED managing patient in admission 28823212",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N3",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "28823212",
+      "evidence": "Sodium Bicarbonate used to treat hypertension (clinical practice)",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N4",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "28823212",
+      "evidence": "Lab testing ordered for hypertension work‑up",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N5",
+      "relation": "MANAGED_FOR",
+      "source_type": "DIAGNOSIS",
+      "target_type": "SERVICE",
+      "hadm_id": "28823212",
+      "evidence": "NMED service manages hypertension",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N3",
+      "target": "N4",
+      "relation": "MONITORED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "28823212",
+      "evidence": "Laboratory testing monitors electrolytes while giving Sodium Bicarbonate",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N3",
+      "target": "N5",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "28823212",
+      "evidence": "Medication administered under NMED service",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N3",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "21240555",
+      "evidence": "Both hypertension and Sodium Bicarbonate appear in admission 21240555",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N2",
+      "target": "N4",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "21240555",
+      "evidence": "Both hypertension and lab testing appear in admission 21240555",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N3",
+      "target": "N4",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "21240555",
+      "evidence": "Both Sodium Bicarbonate and lab testing appear in admission 21240555",
+      "source_tables": [],
+      "confidence": 0.6
+    }
+  ]
+}

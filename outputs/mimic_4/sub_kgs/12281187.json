@@ -1,0 +1,523 @@
+{
+  "subject_id": "12281187",
+  "hadm_ids": [
+    "20293184"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 12281187",
+      "normalized_name": "patient",
+      "source_tables": [
+        "patients"
+      ],
+      "evidence": "subject_id 12281187",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Sepsis",
+      "normalized_name": "sepsis",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "Unspecified septicemia; Severe sepsis; Septic shock",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Heart failure",
+      "normalized_name": "heart failure",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "Rheumatic heart failure (congestive)",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Furosemide 40 mg IV count 9",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Vancomycin 1250 mg IV count 11",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "Laboratory testing derived from POE 'Lab' orders",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "PROCEDURE",
+      "name": "Mechanical ventilation",
+      "normalized_name": "mechanical ventilation",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "Continuous invasive mechanical ventilation for 96 consecutive hours or more",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "PROCEDURE",
+      "name": "Hemodialysis",
+      "normalized_name": "hemodialysis",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "Hemodialysis",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture",
+      "normalized_name": "blood culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "Blood Culture, Routine",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "MICROBIOLOGY",
+      "name": "MRSA SCREEN",
+      "normalized_name": "mrsa screen",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "MRSA SCREEN",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "med",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "MED",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "SERVICE",
+      "name": "CMED",
+      "normalized_name": "cmed",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "CMED",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "20293184",
+      "evidence": "Unspecified septicemia; Severe sepsis; Septic shock",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "20293184",
+      "evidence": "Rheumatic heart failure (congestive)",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "20293184",
+      "evidence": "Furosemide 40 mg IV",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "20293184",
+      "evidence": "Vancomycin 1250 mg IV",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "20293184",
+      "evidence": "Continuous invasive mechanical ventilation for 96 consecutive hours or more",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "20293184",
+      "evidence": "Hemodialysis",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "20293184",
+      "evidence": "Laboratory testing derived from POE 'Lab' orders",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "20293184",
+      "evidence": "Blood Culture, Routine",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "20293184",
+      "evidence": "MRSA SCREEN",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "20293184",
+      "evidence": "MED",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "20293184",
+      "evidence": "CMED",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N5",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "20293184",
+      "evidence": "Vancomycin used for septicemia",
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N3",
+      "target": "N4",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "20293184",
+      "evidence": "Furosemide used for heart failure",
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N2",
+      "target": "N9",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "20293184",
+      "evidence": "Blood Culture performed for septicemia",
+      "source_tables": [
+        "microbiology",
+        "diagnoses"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N6",
+      "target": "N2",
+      "relation": "INDICATES",
+      "source_type": "LAB_TEST",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "20293184",
+      "evidence": "Lab results indicative of sepsis",
+      "source_tables": [
+        "lab_tests",
+        "diagnoses"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N9",
+      "target": "N2",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "20293184",
+      "evidence": "Blood Culture confirms septicemia",
+      "source_tables": [
+        "microbiology",
+        "diagnoses"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N5",
+      "target": "N10",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "20293184",
+      "evidence": "Vancomycin targets MRSA",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N7",
+      "target": "N2",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "20293184",
+      "evidence": "Mechanical ventilation for septic respiratory failure",
+      "source_tables": [
+        "procedures",
+        "diagnoses"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N11",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "20293184",
+      "evidence": "MED service manages sepsis",
+      "source_tables": [
+        "services",
+        "diagnoses"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N11",
+      "target": "N3",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "20293184",
+      "evidence": "MED service manages heart failure",
+      "source_tables": [
+        "services",
+        "diagnoses"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N12",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "20293184",
+      "evidence": "CMED service manages sepsis",
+      "source_tables": [
+        "services",
+        "diagnoses"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N12",
+      "target": "N3",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "20293184",
+      "evidence": "CMED service manages heart failure",
+      "source_tables": [
+        "services",
+        "diagnoses"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N5",
+      "target": "N6",
+      "relation": "MONITORED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "20293184",
+      "evidence": "Vancomycin levels monitored by lab tests",
+      "source_tables": [
+        "medications",
+        "lab_tests"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N4",
+      "target": "N6",
+      "relation": "MONITORED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "20293184",
+      "evidence": "Furosemide therapy monitored by lab tests",
+      "source_tables": [
+        "medications",
+        "lab_tests"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N4",
+      "target": "N3",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "20293184",
+      "evidence": "Furosemide administered during heart failure admission",
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N5",
+      "target": "N2",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "20293184",
+      "evidence": "Vancomycin administered during sepsis admission",
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N7",
+      "target": "N6",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "PROCEDURE",
+      "target_type": "LAB_TEST",
+      "hadm_id": "20293184",
+      "evidence": "Mechanical ventilation and lab testing performed in same admission",
+      "source_tables": [
+        "procedures",
+        "lab_tests"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N8",
+      "target": "N9",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "PROCEDURE",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "20293184",
+      "evidence": "Hemodialysis and blood culture performed in same admission",
+      "source_tables": [
+        "procedures",
+        "microbiology"
+      ],
+      "confidence": 0.6
+    }
+  ]
+}

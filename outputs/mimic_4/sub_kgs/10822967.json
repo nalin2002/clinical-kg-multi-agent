@@ -1,0 +1,161 @@
+{
+  "subject_id": "10822967",
+  "hadm_ids": [
+    "26681360",
+    "23415665",
+    "26644131",
+    "21628789",
+    "22018869",
+    "21555795",
+    "22073546",
+    "22937724"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 10822967",
+      "normalized_name": "PATIENT",
+      "source_tables": [
+        "demographics"
+      ],
+      "evidence": "subject_id 10822967",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "Furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "medication name Furosemide appears in admissions 26644131 and 21555795",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "Laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "lab test name Laboratory testing appears in all admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "SERVICE",
+      "name": "OMED",
+      "normalized_name": "OMED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "service OMED appears in admissions 26681360, 23415665, 26644131, 21628789, 22018869, 21555795, 22073546",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "SERVICE",
+      "name": "SURG",
+      "normalized_name": "SURG",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "service SURG appears in admissions 21555795, 22018869",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "SERVICE",
+      "name": "GU",
+      "normalized_name": "GU",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "service GU appears in admission 22937724",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "26644131",
+      "evidence": "Furosemide prescribed in admission 26644131",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "26681360",
+      "evidence": "Laboratory testing ordered in admission 26681360",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "26681360",
+      "evidence": "service OMED managed admission 26681360",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "21555795",
+      "evidence": "service SURG managed admission 21555795",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "22937724",
+      "evidence": "service GU managed admission 22937724",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N4",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "26644131",
+      "evidence": "Furosemide administered under service OMED in admission 26644131",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.85
+    }
+  ]
+}

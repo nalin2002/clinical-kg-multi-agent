@@ -1,0 +1,296 @@
+{
+  "subject_id": "11842879",
+  "hadm_ids": [
+    "27547501",
+    "20768181",
+    "21855834",
+    "20115998",
+    "22229824",
+    "29617617"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 11842879",
+      "normalized_name": "Patient 11842879",
+      "source_tables": [
+        "demographics"
+      ],
+      "evidence": "Patient identifier",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Dermatomyositis",
+      "normalized_name": "Dermatomyositis",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD-9 7103 present in multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "Furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Medication record in admission 27547501 and 29617617",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "Laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "Lab orders listed in each admission",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "PROCEDURE",
+      "name": "Open biopsy of soft tissue",
+      "normalized_name": "Open biopsy of soft tissue",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "Procedure code 8321 in admission 27547501",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture, Routine",
+      "normalized_name": "Blood Culture, Routine",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "Blood culture entry in admission 29617617",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "Service MED listed in multiple admissions",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Dermatomyositis recorded for patient",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Furosemide administered to patient",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "Laboratory testing ordered for patient",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "",
+      "evidence": "Open biopsy performed on patient",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "Blood culture taken from patient",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "Patient managed by MED service",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N3",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Furosemide used for fluid overload associated with Dermatomyositis complications",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N2",
+      "target": "N4",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "Lab tests ordered to evaluate Dermatomyositis",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N2",
+      "target": "N5",
+      "relation": "PERFORMED_FOR",
+      "source_type": "DIAGNOSIS",
+      "target_type": "PROCEDURE",
+      "hadm_id": "",
+      "evidence": "Biopsy performed to assess Dermatomyositis skin involvement",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N2",
+      "target": "N6",
+      "relation": "INVESTIGATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "Blood culture obtained to rule out infection in Dermatomyositis patient",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N7",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "MED service manages Dermatomyositis",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N3",
+      "target": "N7",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "Furosemide given under MED service",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N3",
+      "target": "N6",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "Furosemide not an antimicrobial; no organism target",
+      "source_tables": [],
+      "confidence": 0.5
+    },
+    {
+      "source": "N5",
+      "target": "N4",
+      "relation": "MONITORED_BY",
+      "source_type": "PROCEDURE",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "Procedure outcomes monitored by lab tests",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N6",
+      "target": "N2",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Blood culture results can confirm infection as a complication of Dermatomyositis",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N2",
+      "target": "N2",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Dermatomyositis co-occurs with other diagnoses in same admissions",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.55
+    }
+  ]
+}

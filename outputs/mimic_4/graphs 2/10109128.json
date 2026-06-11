@@ -1,0 +1,355 @@
+{
+  "subject_id": "10109128",
+  "hadm_ids": [
+    "28656519",
+    "24392223",
+    "20000906",
+    "22831606"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 10109128",
+      "normalized_name": "PATIENT 10109128",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": "subject_id 10109128",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Ventilator associated pneumonia",
+      "normalized_name": "VENTILATOR ASSOCIATED PNEUMONIA",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": "diagnosis in admission 28656519",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Acute embolism and thrombosis of deep veins of right upper extremity",
+      "normalized_name": "ACUTE EMBOLISM AND THROMBOSIS OF DEEP VEINS OF RIGHT UPPER EXTREMITY",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": "diagnosis in admissions 28656519, 24392223",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Post-traumatic stress disorder, chronic",
+      "normalized_name": "POST-TRAUMATIC STRESS DISORDER, CHRONIC",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": "diagnosis in admission 28656519",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "VANCOMYCIN",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": "medication in admissions 28656519, 22831606",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "MEDICATION",
+      "name": "LORazepam",
+      "normalized_name": "LORAZEPAM",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": "medication in admissions 28656519, 24392223, 22831606",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "FUROSEMIDE",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": "medication in admission 22831606",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "LABORATORY TESTING",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": "lab orders in all admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "PROCEDURE",
+      "name": "Respiratory Ventilation, 24-96 Consecutive Hours",
+      "normalized_name": "RESPIRATORY VENTILATION, 24-96 CONSECUTIVE HOURS",
+      "source_tables": [
+        "procedures_icd"
+      ],
+      "evidence": "procedure in admission 28656519",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture, Routine",
+      "normalized_name": "BLOOD CULTURE, ROUTINE",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "microbiology in admission 22831606 (organism Staphylococcus, coagulase negative)",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": "service in admissions 28656519, 20000906, 22831606",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28656519",
+      "evidence": "patient diagnosed with Ventilator associated pneumonia",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28656519",
+      "evidence": "patient diagnosed with Acute embolism and thrombosis of deep veins of right upper extremity",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28656519",
+      "evidence": "patient diagnosed with Post-traumatic stress disorder, chronic",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "28656519",
+      "evidence": "patient received Vancomycin",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "28656519",
+      "evidence": "patient received LORazepam",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "22831606",
+      "evidence": "patient received Furosemide",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "28656519",
+      "evidence": "patient had laboratory testing",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.97
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "28656519",
+      "evidence": "patient underwent Respiratory Ventilation, 24-96 Consecutive Hours",
+      "source_tables": [
+        "procedures_icd"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22831606",
+      "evidence": "patient had Blood Culture, Routine",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "28656519",
+      "evidence": "patient managed by MED service",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N11",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28656519",
+      "evidence": "MED service managed Ventilator associated pneumonia",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N11",
+      "target": "N3",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28656519",
+      "evidence": "MED service managed Acute embolism and thrombosis of deep veins of right upper extremity",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N11",
+      "target": "N4",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28656519",
+      "evidence": "MED service managed Post-traumatic stress disorder, chronic",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N9",
+      "target": "N2",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28656519",
+      "evidence": "Respiratory Ventilation performed for Ventilator associated pneumonia",
+      "source_tables": [
+        "procedures_icd"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N10",
+      "target": "N3",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22831606",
+      "evidence": "Blood Culture grew Staphylococcus (coagulase negative) confirming embolic infection",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.78
+    },
+    {
+      "source": "N5",
+      "target": "N2",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "28656519",
+      "evidence": "Ventilator associated pneumonia treated with Vancomycin",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N5",
+      "target": "N3",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "22831606",
+      "evidence": "Embolic infection treated with Vancomycin",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.8
+    }
+  ]
+}

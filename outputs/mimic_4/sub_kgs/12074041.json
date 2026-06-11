@@ -1,0 +1,619 @@
+{
+  "subject_id": "12074041",
+  "hadm_ids": [
+    "26152738",
+    "29829814",
+    "27842518",
+    "29262502",
+    "24713885",
+    "25342969"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 12074041",
+      "normalized_name": "Patient 12074041",
+      "source_tables": [
+        "demographics"
+      ],
+      "evidence": "subject_id 12074041",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Acute kidney failure, unspecified",
+      "normalized_name": "Acute kidney failure, unspecified",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 26152738 seq_num 2",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Sepsis",
+      "normalized_name": "Sepsis",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 29829814 seq_num 4",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Ventricular fibrillation",
+      "normalized_name": "Ventricular fibrillation",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 27842518 seq_num 1",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "DIAGNOSIS",
+      "name": "Subendocardial infarction, initial episode of care",
+      "normalized_name": "Subendocardial infarction, initial episode of care",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 24713885 seq_num 1",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "DIAGNOSIS",
+      "name": "Urinary tract infection, site not specified",
+      "normalized_name": "Urinary tract infection, site not specified",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 29829814 seq_num 3",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "Insulin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id 26152738",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "Vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id 29829814",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "Furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id 27842518",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "Laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "hadm_id 26152738",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "Laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "hadm_id 29829814",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "PROCEDURE",
+      "name": "Hospital observation per hr",
+      "normalized_name": "Hospital observation per hr",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "hadm_id 26152738",
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "PROCEDURE",
+      "name": "Implantation or replacement of automatic cardioverter/defibrillator, total system [AICD]",
+      "normalized_name": "Implantation or replacement of automatic cardioverter/defibrillator, total system [AICD]",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "hadm_id 27842518 seq_num 1",
+      "metadata": {}
+    },
+    {
+      "id": "N14",
+      "type": "MICROBIOLOGY",
+      "name": "URINE CULTURE - KLEBSIELLA PNEUMONIAE",
+      "normalized_name": "URINE CULTURE - KLEBSIELLA PNEUMONIAE",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "hadm_id 26152738 specimen URINE organism KLEBSIELLA PNEUMONIAE",
+      "metadata": {}
+    },
+    {
+      "id": "N15",
+      "type": "MICROBIOLOGY",
+      "name": "URINE CULTURE - ESCHERICHIA COLI",
+      "normalized_name": "URINE CULTURE - ESCHERICHIA COLI",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "hadm_id 27842518 specimen URINE organism ESCHERICHIA COLI",
+      "metadata": {}
+    },
+    {
+      "id": "N16",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "hadm_id 26152738",
+      "metadata": {}
+    },
+    {
+      "id": "N17",
+      "type": "SERVICE",
+      "name": "CMED",
+      "normalized_name": "CMED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "hadm_id 27842518",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "26152738",
+      "evidence": "patient has acute kidney failure",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29829814",
+      "evidence": "patient has sepsis",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27842518",
+      "evidence": "patient has ventricular fibrillation",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24713885",
+      "evidence": "patient has subendocardial infarction",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29829814",
+      "evidence": "patient has urinary tract infection",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "26152738",
+      "evidence": "patient takes insulin",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "29829814",
+      "evidence": "patient takes vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "27842518",
+      "evidence": "patient takes furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "26152738",
+      "evidence": "lab testing ordered",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "29829814",
+      "evidence": "lab testing ordered",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "26152738",
+      "evidence": "observation per hour",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "27842518",
+      "evidence": "AICD implantation",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N14",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "26152738",
+      "evidence": "urine culture K. pneumoniae",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N15",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "27842518",
+      "evidence": "urine culture E. coli",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N16",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "26152738",
+      "evidence": "managed by MED service",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N17",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "27842518",
+      "evidence": "managed by CMED service",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N7",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "26152738",
+      "evidence": "insulin used for kidney failure management (blood glucose control)",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N3",
+      "target": "N8",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "29829814",
+      "evidence": "vancomycin treats sepsis",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N3",
+      "target": "N15",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "29829814",
+      "evidence": "sepsis diagnosed via blood culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N6",
+      "target": "N15",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "29829814",
+      "evidence": "UTI diagnosed via urine culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N6",
+      "target": "N9",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "29829814",
+      "evidence": "furosemide used for fluid overload in UTI context",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N4",
+      "target": "N13",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27842518",
+      "evidence": "AICD placed for ventricular fibrillation",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N14",
+      "target": "N8",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "26152738",
+      "evidence": "vancomycin targets K. pneumoniae (susceptible)",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N15",
+      "target": "N8",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "27842518",
+      "evidence": "vancomycin targets E. coli (susceptible)",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N10",
+      "relation": "MONITORED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "26152738",
+      "evidence": "kidney function monitored by labs",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N3",
+      "target": "N11",
+      "relation": "MONITORED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "29829814",
+      "evidence": "sepsis monitored by labs",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N16",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "26152738",
+      "evidence": "MED service manages acute kidney failure",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N17",
+      "target": "N4",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27842518",
+      "evidence": "CMED service manages ventricular fibrillation",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N3",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29829814",
+      "evidence": "acute kidney failure co-occurs with sepsis",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N6",
+      "target": "N9",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "29829814",
+      "evidence": "UTI co-occurs with furosemide use",
+      "source_tables": [
+        "diagnoses",
+        "medications"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N14",
+      "target": "N8",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "26152738",
+      "evidence": "urine culture confirms infection treated by vancomycin",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N15",
+      "target": "N8",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27842518",
+      "evidence": "urine culture confirms infection treated by vancomycin",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.75
+    }
+  ]
+}

@@ -1,0 +1,332 @@
+{
+  "subject_id": "13163471",
+  "hadm_ids": [
+    "29268156",
+    "20246340",
+    "24891090",
+    "27379094",
+    "21521878"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 13163471",
+      "normalized_name": "Patient",
+      "source_tables": [],
+      "evidence": [],
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Sepsis",
+      "normalized_name": "Sepsis",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": [
+        "hadm_id=29268156 seq_num=3",
+        "hadm_id=21521878 seq_num=16"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Methicillin resistant Staphylococcus aureus septicemia",
+      "normalized_name": "MRSA septicemia",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": [
+        "hadm_id=29268156 seq_num=2",
+        "hadm_id=21521878 seq_num=1"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "Vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": [
+        "hadm_id=29268156",
+        "hadm_id=20246340",
+        "hadm_id=27379094",
+        "hadm_id=21521878"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture (Staph aureus)",
+      "normalized_name": "Blood Culture - Staph aureus",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": [
+        "hadm_id=29268156 specimen=BLOOD CULTURE organism=STAPH AUREUS COAG +"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "Lab testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": [
+        "hadm_id=29268156",
+        "hadm_id=20246340",
+        "hadm_id=24891090",
+        "hadm_id=27379094",
+        "hadm_id=21521878"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": [
+        "hadm_id=29268156",
+        "hadm_id=20246340",
+        "hadm_id=24891090",
+        "hadm_id=27379094",
+        "hadm_id=21521878"
+      ],
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29268156",
+      "evidence": [
+        "diagnosis seq_num=3"
+      ],
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29268156",
+      "evidence": [
+        "diagnosis seq_num=2"
+      ],
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "29268156",
+      "evidence": [
+        "medication name=Vancomycin"
+      ],
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "29268156",
+      "evidence": [
+        "specimen=BLOOD CULTURE organism=STAPH AUREUS COAG +"
+      ],
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.94
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "29268156",
+      "evidence": [
+        "lab name=Laboratory testing"
+      ],
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.94
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "29268156",
+      "evidence": [
+        "service=MED"
+      ],
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N3",
+      "target": "N4",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "29268156",
+      "evidence": [
+        "MRSA septicemia treated with Vancomycin"
+      ],
+      "source_tables": [
+        "diagnoses",
+        "medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N3",
+      "target": "N5",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "29268156",
+      "evidence": [
+        "Blood culture grew Staph aureus"
+      ],
+      "source_tables": [
+        "diagnoses",
+        "microbiology"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N5",
+      "target": "N4",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "MEDICATION",
+      "hadm_id": "29268156",
+      "evidence": [
+        "Vancomycin active against Staph aureus"
+      ],
+      "source_tables": [
+        "microbiology",
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N5",
+      "target": "N2",
+      "relation": "INDICATES",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29268156",
+      "evidence": [
+        "Blood culture positive for Staph aureus indicates Sepsis"
+      ],
+      "source_tables": [
+        "microbiology",
+        "diagnoses"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N4",
+      "target": "N6",
+      "relation": "MONITORED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "29268156",
+      "evidence": [
+        "Vancomycin levels monitored via labs"
+      ],
+      "source_tables": [
+        "medications",
+        "lab_tests"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N2",
+      "target": "N6",
+      "relation": "MONITORED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "29268156",
+      "evidence": [
+        "Sepsis labs (CBC, cultures)"
+      ],
+      "source_tables": [
+        "diagnoses",
+        "lab_tests"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N7",
+      "target": "N3",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29268156",
+      "evidence": [
+        "MED service managed MRSA septicemia"
+      ],
+      "source_tables": [
+        "services",
+        "diagnoses"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N7",
+      "target": "N4",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "29268156",
+      "evidence": [
+        "Vancomycin administered by MED service"
+      ],
+      "source_tables": [
+        "medications",
+        "services"
+      ],
+      "confidence": 0.85
+    }
+  ]
+}

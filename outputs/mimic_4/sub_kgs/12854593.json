@@ -1,0 +1,327 @@
+{
+  "subject_id": "12854593",
+  "hadm_ids": [
+    "21980916",
+    "24172664",
+    "22237705",
+    "28341478",
+    "28763740",
+    "23840293",
+    "23492730",
+    "23496307",
+    "21644995",
+    "29979849"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 12854593",
+      "normalized_name": "PATIENT",
+      "source_tables": [],
+      "evidence": "patient identifier",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Influenza due to unidentified influenza virus with unspecified type of pneumonia",
+      "normalized_name": "Influenza",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id=22237705",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Hypo-osmolality and hyponatremia",
+      "normalized_name": "Hyponatremia",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id=22237705",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Essential (primary) hypertension",
+      "normalized_name": "Hypertension",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id=22237705",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "Vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id=22237705",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "MEDICATION",
+      "name": "Levofloxacin",
+      "normalized_name": "Levofloxacin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id=22237705",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "Lab",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "hadm_id=22237705",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture, Routine",
+      "normalized_name": "Blood Culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "hadm_id=22237705",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "hadm_id=22237705",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22237705",
+      "evidence": "diagnosis list",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22237705",
+      "evidence": "diagnosis list",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22237705",
+      "evidence": "diagnosis list",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "22237705",
+      "evidence": "medication list",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "22237705",
+      "evidence": "medication list",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "22237705",
+      "evidence": "lab test list",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22237705",
+      "evidence": "microbiology list",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "22237705",
+      "evidence": "service list",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N5",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "22237705",
+      "evidence": "antibiotic therapy for influenza complications",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N2",
+      "target": "N6",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "22237705",
+      "evidence": "antibiotic therapy for influenza complications",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N2",
+      "target": "N7",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "22237705",
+      "evidence": "lab testing ordered for influenza diagnosis",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N3",
+      "target": "N7",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "22237705",
+      "evidence": "lab testing ordered for hyponatremia",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N4",
+      "target": "N7",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "22237705",
+      "evidence": "lab testing ordered for hypertension",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N5",
+      "target": "N8",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22237705",
+      "evidence": "Vancomycin administered; culture performed",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N9",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22237705",
+      "evidence": "MED service managing influenza",
+      "source_tables": [
+        "services",
+        "diagnoses"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N9",
+      "target": "N5",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "SERVICE",
+      "target_type": "MEDICATION",
+      "hadm_id": "22237705",
+      "evidence": "MED service administered Vancomycin",
+      "source_tables": [
+        "services",
+        "medications"
+      ],
+      "confidence": 0.75
+    }
+  ]
+}

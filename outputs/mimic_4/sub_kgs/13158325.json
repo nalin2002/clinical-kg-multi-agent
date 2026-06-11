@@ -1,0 +1,658 @@
+{
+  "subject_id": "13158325",
+  "hadm_ids": [
+    "22855822",
+    "26496453"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 13158325",
+      "normalized_name": "PATIENT",
+      "source_tables": [],
+      "evidence": "subject_id",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Acute and subacute infective endocarditis",
+      "normalized_name": "Infective endocarditis",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id=22855822 seq_num=2 icd_code=I330",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Acute kidney failure, unspecified",
+      "normalized_name": "Acute kidney failure",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id=22855822 seq_num=5 icd_code=N179",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Acute systolic (congestive) heart failure",
+      "normalized_name": "Heart failure",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id=26496453 seq_num=3 icd_code=I5021",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "DIAGNOSIS",
+      "name": "Postprocedural septic shock, initial encounter",
+      "normalized_name": "Septic shock",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id=26496453 seq_num=9 icd_code=T8112XA",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "Vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id=22855822 name=Vancomycin",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "Furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id=22855822 name=Furosemide",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "Insulin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id=22855822 name=Insulin",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "Lab",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "hadm_id=22855822 name=Laboratory testing",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "Lab",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "hadm_id=26496453 name=Laboratory testing",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "PROCEDURE",
+      "name": "Replacement of Aortic Valve with Zooplastic Tissue, Open Approach",
+      "normalized_name": "Aortic valve replacement",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "hadm_id=22855822 icd_code=02RF08Z",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "PROCEDURE",
+      "name": "Replacement of Aortic Valve with Synthetic Substitute, Open Approach",
+      "normalized_name": "Aortic valve replacement",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "hadm_id=26496453 icd_code=02RF0JZ",
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture, Routine - BACTEROIDES FRAGILIS GROUP",
+      "normalized_name": "Bacteroides fragilis",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "hadm_id=22855822 organism=BACTEROIDES FRAGILIS GROUP",
+      "metadata": {}
+    },
+    {
+      "id": "N14",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture, Routine - ENTEROCOCCUS FAECIUM (Resistant to VANCOMYCIN)",
+      "normalized_name": "Enterococcus faecium",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "hadm_id=26496453 organism=ENTEROCOCCUS FAECIUM antibiotic=VANCOMYCIN interpretation=R",
+      "metadata": {}
+    },
+    {
+      "id": "N15",
+      "type": "SERVICE",
+      "name": "CMED",
+      "normalized_name": "CMED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "hadm_id=22855822 service=CMED",
+      "metadata": {}
+    },
+    {
+      "id": "N16",
+      "type": "SERVICE",
+      "name": "CSURG",
+      "normalized_name": "CSURG",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "hadm_id=22855822 service=CSURG",
+      "metadata": {}
+    },
+    {
+      "id": "N17",
+      "type": "SERVICE",
+      "name": "CSURG",
+      "normalized_name": "CSURG",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "hadm_id=26496453 service=CSURG",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22855822",
+      "evidence": "diagnosis I330",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22855822",
+      "evidence": "diagnosis N179",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "26496453",
+      "evidence": "diagnosis I5021",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "26496453",
+      "evidence": "diagnosis T8112XA",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "22855822",
+      "evidence": "medication Vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "22855822",
+      "evidence": "medication Furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "22855822",
+      "evidence": "medication Insulin",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "22855822",
+      "evidence": "lab Laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "26496453",
+      "evidence": "lab Laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "22855822",
+      "evidence": "procedure 02RF08Z",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "26496453",
+      "evidence": "procedure 02RF0JZ",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22855822",
+      "evidence": "microbiology BACTEROIDES FRAGILIS GROUP",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N14",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "26496453",
+      "evidence": "microbiology ENTEROCOCCUS FAECIUM resistant to VANCOMYCIN",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N15",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "22855822",
+      "evidence": "service CMED",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N16",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "22855822",
+      "evidence": "service CSURG",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N17",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "26496453",
+      "evidence": "service CSURG",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N6",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "22855822",
+      "evidence": "Vancomycin used for infective endocarditis",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N2",
+      "target": "N9",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "22855822",
+      "evidence": "lab testing ordered for endocarditis workup",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N13",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22855822",
+      "evidence": "blood culture grew Bacteroides fragilis",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N5",
+      "target": "N14",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "26496453",
+      "evidence": "Enterococcus faecium resistant to vancomycin confirms septic shock",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N6",
+      "target": "N14",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "26496453",
+      "evidence": "Vancomycin tested against Enterococcus faecium",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N15",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22855822",
+      "evidence": "CMED manages infective endocarditis",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N16",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22855822",
+      "evidence": "CSURG involved in valve surgery for endocarditis",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N12",
+      "target": "N2",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22855822",
+      "evidence": "Aortic valve replacement performed for infective endocarditis",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N11",
+      "target": "N2",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22855822",
+      "evidence": "Valve replacement for endocarditis",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N4",
+      "target": "N7",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "22855822",
+      "evidence": "Furosemide used for kidney failure management",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N4",
+      "target": "N9",
+      "relation": "MONITORED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "22855822",
+      "evidence": "Lab tests monitor kidney function",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N5",
+      "target": "N6",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "26496453",
+      "evidence": "Vancomycin used for septic shock",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N5",
+      "target": "N10",
+      "relation": "MONITORED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "26496453",
+      "evidence": "Lab testing ordered for septic shock",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N6",
+      "target": "N15",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "22855822",
+      "evidence": "Vancomycin administered under CMED service",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N6",
+      "target": "N16",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "22855822",
+      "evidence": "Vancomycin administered under CSURG service",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N7",
+      "target": "N15",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "22855822",
+      "evidence": "Furosemide administered under CMED",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N8",
+      "target": "N15",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "22855822",
+      "evidence": "Insulin administered under CMED",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N6",
+      "target": "N14",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "26496453",
+      "evidence": "Vancomycin and Enterococcus faecium present in same admission",
+      "source_tables": [],
+      "confidence": 0.55
+    },
+    {
+      "source": "N2",
+      "target": "N4",
+      "relation": "ASSOCIATED_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Both diagnoses present in patient",
+      "source_tables": [],
+      "confidence": 0.55
+    },
+    {
+      "source": "N5",
+      "target": "N2",
+      "relation": "COMPLICATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Septic shock complicates infective endocarditis",
+      "source_tables": [],
+      "confidence": 0.7
+    }
+  ]
+}

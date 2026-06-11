@@ -1,0 +1,598 @@
+{
+  "subject_id": "13036533",
+  "hadm_ids": [
+    "28397314",
+    "23001103",
+    "26616618"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 13036533",
+      "normalized_name": "Patient",
+      "source_tables": [],
+      "evidence": [],
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Severe sepsis",
+      "normalized_name": "Severe sepsis",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": [
+        "hadm_id=28397314 seq_num=3 icd_code=99592"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Unspecified septicemia",
+      "normalized_name": "Septicemia",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": [
+        "hadm_id=28397314 seq_num=2 icd_code=0389",
+        "hadm_id=26616618 seq_num=2 icd_code=0389"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Acute kidney failure with lesion of tubular necrosis",
+      "normalized_name": "Acute kidney failure",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": [
+        "hadm_id=28397314 seq_num=4 icd_code=5845"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "Vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": [
+        "hadm_id=28397314 name=Vancomycin"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "MEDICATION",
+      "name": "Meropenem",
+      "normalized_name": "Meropenem",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": [
+        "hadm_id=28397314 name=Meropenem"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "Insulin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": [
+        "hadm_id=28397314 name=Insulin",
+        "hadm_id=26616618 name=Insulin"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "PROCEDURE",
+      "name": "Continuous invasive mechanical ventilation for 96 consecutive hours or more",
+      "normalized_name": "Mechanical ventilation",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": [
+        "hadm_id=28397314 seq_num=19 icd_code=9672"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "PROCEDURE",
+      "name": "Hemodialysis",
+      "normalized_name": "Hemodialysis",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": [
+        "hadm_id=23001103 seq_num=1 icd_code=3995",
+        "hadm_id=26616618 seq_num=13 icd_code=3995"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "Lab",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": [
+        "hadm_id=28397314"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture, Routine",
+      "normalized_name": "Blood Culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": [
+        "hadm_id=28397314 specimen=Blood Culture test_name=Blood Culture, Routine"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "MICROBIOLOGY",
+      "name": "MRSA SCREEN",
+      "normalized_name": "MRSA Screen",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": [
+        "hadm_id=28397314 specimen=MRSA SCREEN"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "MICROBIOLOGY",
+      "name": "Respiratory culture (Klebsiella pneumoniae)",
+      "normalized_name": "Klebsiella pneumoniae",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": [
+        "hadm_id=28397314 specimen=SPUTUM organism=KLEBSIELLA PNEUMONIAE"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N14",
+      "type": "SERVICE",
+      "name": "SURG",
+      "normalized_name": "SURG",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": [
+        "hadm_id=28397314"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N15",
+      "type": "SERVICE",
+      "name": "ENT",
+      "normalized_name": "ENT",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": [
+        "hadm_id=23001103"
+      ],
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28397314",
+      "evidence": [
+        "Severe sepsis"
+      ],
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28397314",
+      "evidence": [
+        "Unspecified septicemia"
+      ],
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28397314",
+      "evidence": [
+        "Acute kidney failure"
+      ],
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "28397314",
+      "evidence": [
+        "Vancomycin"
+      ],
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "28397314",
+      "evidence": [
+        "Meropenem"
+      ],
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "28397314",
+      "evidence": [
+        "Insulin"
+      ],
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "28397314",
+      "evidence": [
+        "Mechanical ventilation"
+      ],
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "23001103",
+      "evidence": [
+        "Hemodialysis"
+      ],
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "28397314",
+      "evidence": [
+        "Lab orders"
+      ],
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "28397314",
+      "evidence": [
+        "Blood Culture"
+      ],
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "28397314",
+      "evidence": [
+        "MRSA Screen"
+      ],
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "28397314",
+      "evidence": [
+        "Klebsiella pneumoniae"
+      ],
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N14",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "28397314",
+      "evidence": [
+        "SURG"
+      ],
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N15",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "23001103",
+      "evidence": [
+        "ENT"
+      ],
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N5",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "28397314",
+      "evidence": [
+        "Vancomycin for sepsis"
+      ],
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N6",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "28397314",
+      "evidence": [
+        "Meropenem for sepsis"
+      ],
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N3",
+      "target": "N5",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "28397314",
+      "evidence": [
+        "Vancomycin for septicemia"
+      ],
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N3",
+      "target": "N6",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "28397314",
+      "evidence": [
+        "Meropenem for septicemia"
+      ],
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N10",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "28397314",
+      "evidence": [
+        "Lab tests for sepsis"
+      ],
+      "source_tables": [],
+      "confidence": 0.75
+    },
+    {
+      "source": "N2",
+      "target": "N11",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "28397314",
+      "evidence": [
+        "Blood culture for sepsis"
+      ],
+      "source_tables": [],
+      "confidence": 0.75
+    },
+    {
+      "source": "N2",
+      "target": "N12",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "28397314",
+      "evidence": [
+        "MRSA screen for sepsis"
+      ],
+      "source_tables": [],
+      "confidence": 0.75
+    },
+    {
+      "source": "N5",
+      "target": "N13",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "28397314",
+      "evidence": [
+        "Vancomycin targets MRSA"
+      ],
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N6",
+      "target": "N13",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "28397314",
+      "evidence": [
+        "Meropenem targets Klebsiella"
+      ],
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N14",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28397314",
+      "evidence": [
+        "SURG manages sepsis"
+      ],
+      "source_tables": [],
+      "confidence": 0.7
+    },
+    {
+      "source": "N15",
+      "target": "N9",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23001103",
+      "evidence": [
+        "Hemodialysis for renal disease"
+      ],
+      "source_tables": [],
+      "confidence": 0.7
+    },
+    {
+      "source": "N9",
+      "target": "N3",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23001103",
+      "evidence": [
+        "Hemodialysis for septicemia"
+      ],
+      "source_tables": [],
+      "confidence": 0.7
+    },
+    {
+      "source": "N8",
+      "target": "N2",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28397314",
+      "evidence": [
+        "Ventilation for sepsis"
+      ],
+      "source_tables": [],
+      "confidence": 0.7
+    },
+    {
+      "source": "N8",
+      "target": "N3",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28397314",
+      "evidence": [
+        "Ventilation for septicemia"
+      ],
+      "source_tables": [],
+      "confidence": 0.7
+    }
+  ]
+}

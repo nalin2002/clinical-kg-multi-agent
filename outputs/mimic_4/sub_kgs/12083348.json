@@ -1,0 +1,447 @@
+{
+  "subject_id": "12083348",
+  "hadm_ids": [
+    "22447452"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 12083348",
+      "normalized_name": "PATIENT",
+      "source_tables": [],
+      "evidence": "subject_id",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Sepsis due to Enterococcus",
+      "normalized_name": "Sepsis",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "A4181",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "End stage renal disease",
+      "normalized_name": "End stage renal disease",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "N186",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Chronic systolic (congestive) heart failure",
+      "normalized_name": "Heart failure",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "I5022",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "Vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Vancomycin",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "Insulin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Insulin",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "MEDICATION",
+      "name": "Heparin",
+      "normalized_name": "Heparin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Heparin",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "Lab test",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "Laboratory testing",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "PROCEDURE",
+      "name": "Respiratory Ventilation, Greater than 96 Consecutive Hours",
+      "normalized_name": "Mechanical ventilation",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "5A1955Z",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "PROCEDURE",
+      "name": "Drainage of Pericardial Cavity with Drainage Device, Open Approach",
+      "normalized_name": "Pericardial drainage",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "0W9D00Z",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "MICROBIOLOGY",
+      "name": "URINE culture Enterococcus faecalis",
+      "normalized_name": "Enterococcus faecalis urine culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "ENTEROCOCCUS FAECALIS",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "MICROBIOLOGY",
+      "name": "URINE culture Stenotrophomonas maltophilia",
+      "normalized_name": "Stenotrophomonas maltophilia urine culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "STENOTROPHOMONAS MALTOPHILIA",
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "MED",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22447452",
+      "evidence": "A4181",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22447452",
+      "evidence": "N186",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22447452",
+      "evidence": "I5022",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "22447452",
+      "evidence": "Vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "22447452",
+      "evidence": "Insulin",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "22447452",
+      "evidence": "Heparin",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "22447452",
+      "evidence": "Laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "22447452",
+      "evidence": "5A1955Z",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "22447452",
+      "evidence": "0W9D00Z",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22447452",
+      "evidence": "ENTEROCOCCUS FAECALIS",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22447452",
+      "evidence": "STENOTROPHOMONAS MALTOPHILIA",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "22447452",
+      "evidence": "MED",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N5",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "22447452",
+      "evidence": "Vancomycin for Enterococcus sepsis",
+      "source_tables": [
+        "diagnoses",
+        "medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N2",
+      "target": "N8",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "22447452",
+      "evidence": "Lab testing supports sepsis workup",
+      "source_tables": [
+        "diagnoses",
+        "lab_tests"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N11",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22447452",
+      "evidence": "Enterococcus faecalis urine culture",
+      "source_tables": [
+        "diagnoses",
+        "microbiology"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N5",
+      "target": "N11",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22447452",
+      "evidence": "Vancomycin active against Enterococcus",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N9",
+      "target": "N2",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22447452",
+      "evidence": "Mechanical ventilation for severe sepsis",
+      "source_tables": [
+        "procedures",
+        "diagnoses"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N13",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22447452",
+      "evidence": "MED service manages sepsis",
+      "source_tables": [
+        "services",
+        "diagnoses"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N13",
+      "target": "N5",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "22447452",
+      "evidence": "Vancomycin given under MED service",
+      "source_tables": [
+        "medications",
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N4",
+      "target": "N6",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "22447452",
+      "evidence": "Insulin for diabetes related heart failure",
+      "source_tables": [
+        "diagnoses",
+        "medications"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N3",
+      "target": "N7",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "22447452",
+      "evidence": "Heparin anticoagulation for renal disease",
+      "source_tables": [
+        "diagnoses",
+        "medications"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N2",
+      "target": "N12",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22447452",
+      "evidence": "Co‑infection noted",
+      "source_tables": [
+        "diagnoses",
+        "microbiology"
+      ],
+      "confidence": 0.6
+    }
+  ]
+}

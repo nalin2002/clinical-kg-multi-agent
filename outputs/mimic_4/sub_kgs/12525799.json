@@ -1,0 +1,47 @@
+{
+  "subject_id": "12525799",
+  "hadm_ids": [
+    "21410365",
+    "28177142",
+    "27384336",
+    "20185285",
+    "21424843"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 12525799",
+      "normalized_name": "PATIENT",
+      "source_tables": [],
+      "evidence": "Patient identifier from evidence",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "Service listed in each admission",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "Patient managed by MED service in all admissions",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    }
+  ]
+}

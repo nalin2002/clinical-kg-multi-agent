@@ -1,0 +1,288 @@
+{
+  "subject_id": "11617629",
+  "hadm_ids": [
+    "27409048",
+    "26891033",
+    "24644771",
+    "21926559",
+    "23419769",
+    "22752986",
+    "20419267",
+    "29815056"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 11617629",
+      "normalized_name": "PATIENT",
+      "source_tables": [
+        "demographics"
+      ],
+      "evidence": "subject_id 11617629",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Heart failure",
+      "normalized_name": "HEART FAILURE",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "Acute on chronic systolic heart failure (27409048), Congestive heart failure, unspecified (27409048), Chronic systolic heart failure (26891033), Acute on chronic systolic (congestive) heart failure (21926559), Heart failure, unspecified (23419769), Hypertensive heart disease with heart failure (22752986), Chronic systolic (congestive) heart failure (20419267)",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "VANCOMYCIN",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Vancomycin (27409048), Vancomycin (26891033), Vancomycin (21926559), Vancomycin (23419769), Vancomycin (29815056)",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "LABORATORY TESTING",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "Laboratory testing (27409048), Laboratory testing (26891033), Laboratory testing (24644771), Laboratory testing (21926559), Laboratory testing (23419769), Laboratory testing (22752986), Laboratory testing (20419267), Laboratory testing (29815056)",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture",
+      "normalized_name": "BLOOD CULTURE",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "Blood Culture, Routine (27409048), Blood Culture, Routine (24644771), Blood Culture, Routine (21926559), Blood Culture, Routine (UNLINKED)",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "SERVICE",
+      "name": "CMED",
+      "normalized_name": "CMED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "CMED (27409048), CMED (26891033), CMED (24644771), CMED (21926559), CMED (23419769), CMED (22752986), CMED (20419267)",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "multiple admissions with heart failure diagnoses",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Vancomycin administered in several admissions",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "Laboratory testing orders in all admissions",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "Blood culture performed in multiple admissions",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "CMED service listed for several admissions",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N2",
+      "target": "N3",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Vancomycin used for infection related to heart failure complications (e.g., VAP, sepsis)",
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N2",
+      "target": "N4",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "Laboratory testing ordered to monitor heart failure parameters",
+      "source_tables": [
+        "diagnoses",
+        "lab_tests"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N2",
+      "target": "N5",
+      "relation": "INVESTIGATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "Blood cultures obtained to evaluate infection in heart failure patients",
+      "source_tables": [
+        "diagnoses",
+        "microbiology"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N3",
+      "target": "N5",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "Vancomycin susceptibility reported for Staphylococcus aureus in cultures",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N6",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "CMED service manages heart failure diagnoses",
+      "source_tables": [
+        "services",
+        "diagnoses"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N6",
+      "target": "N3",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "Vancomycin administered under CMED service",
+      "source_tables": [
+        "medications",
+        "services"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N4",
+      "target": "N2",
+      "relation": "MONITORED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "Lab tests monitor heart failure status",
+      "source_tables": [
+        "diagnoses",
+        "lab_tests"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N4",
+      "target": "N3",
+      "relation": "MONITORED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "Lab tests monitor vancomycin levels and renal function",
+      "source_tables": [
+        "medications",
+        "lab_tests"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N5",
+      "target": "N2",
+      "relation": "INDICATES",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Positive blood cultures indicate infection complicating heart failure",
+      "source_tables": [
+        "microbiology",
+        "diagnoses"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N5",
+      "target": "N3",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Blood culture organism (e.g., MRSA) confirms need for vancomycin therapy",
+      "source_tables": [
+        "microbiology",
+        "medications"
+      ],
+      "confidence": 0.85
+    }
+  ]
+}

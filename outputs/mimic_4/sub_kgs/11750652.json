@@ -1,0 +1,680 @@
+{
+  "subject_id": "11750652",
+  "hadm_ids": [
+    "23233799",
+    "26088164",
+    "28943142",
+    "23530882",
+    "26007523",
+    "27236098",
+    "20667385",
+    "24487026"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 11750652",
+      "normalized_name": "Patient 11750652",
+      "source_tables": [
+        "demographics"
+      ],
+      "evidence": "subject_id 11750652",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Chronic obstructive pulmonary disease, unspecified",
+      "normalized_name": "COPD",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD10 J449",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Acute on chronic systolic (congestive) heart failure",
+      "normalized_name": "Heart failure",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD10 I5023",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Acute respiratory failure with hypoxia",
+      "normalized_name": "Acute respiratory failure",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD10 J9601",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "DIAGNOSIS",
+      "name": "Acute kidney failure, unspecified",
+      "normalized_name": "Acute kidney failure",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD10 N179",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "DIAGNOSIS",
+      "name": "Pneumonia, unspecified organism",
+      "normalized_name": "Pneumonia",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD10 J189",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "DIAGNOSIS",
+      "name": "Urinary tract infection, site not specified",
+      "normalized_name": "UTI",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD10 N390",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "Furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "medication list",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "MEDICATION",
+      "name": "Torsemide",
+      "normalized_name": "Torsemide",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "medication list",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "MEDICATION",
+      "name": "Metoprolol Tartrate",
+      "normalized_name": "Metoprolol Tartrate",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "medication list",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "MEDICATION",
+      "name": "Warfarin",
+      "normalized_name": "Warfarin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "medication list",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "Vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "medication list",
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "MEDICATION",
+      "name": "Azithromycin",
+      "normalized_name": "Azithromycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "medication list",
+      "metadata": {}
+    },
+    {
+      "id": "N14",
+      "type": "MEDICATION",
+      "name": "Meropenem",
+      "normalized_name": "Meropenem",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "medication list",
+      "metadata": {}
+    },
+    {
+      "id": "N15",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "Laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "lab orders",
+      "metadata": {}
+    },
+    {
+      "id": "N16",
+      "type": "PROCEDURE",
+      "name": "Drainage of Right Pleural Cavity with Drainage Device, Percutaneous Approach",
+      "normalized_name": "Pleural drainage",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "procedure code 0W9930Z",
+      "metadata": {}
+    },
+    {
+      "id": "N17",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture",
+      "normalized_name": "Blood Culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "specimen Blood Culture",
+      "metadata": {}
+    },
+    {
+      "id": "N18",
+      "type": "MICROBIOLOGY",
+      "name": "Urine Culture - Klebsiella pneumoniae",
+      "normalized_name": "Klebsiella pneumoniae",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "specimen URINE organism Klebsiella pneumoniae",
+      "metadata": {}
+    },
+    {
+      "id": "N19",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "service MED",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23233799",
+      "evidence": "diagnosis J449",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "26088164",
+      "evidence": "diagnosis I5023",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28943142",
+      "evidence": "diagnosis J9601",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "26088164",
+      "evidence": "diagnosis N179",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "26088164",
+      "evidence": "diagnosis J189",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23530882",
+      "evidence": "diagnosis N390",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "28943142",
+      "evidence": "medication Furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "24487026",
+      "evidence": "medication Torsemide",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "26088164",
+      "evidence": "medication Metoprolol Tartrate",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "26088164",
+      "evidence": "medication Warfarin",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "24487026",
+      "evidence": "medication Vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "24487026",
+      "evidence": "medication Azithromycin",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N14",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "24487026",
+      "evidence": "medication Meropenem",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N15",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "26088164",
+      "evidence": "lab testing orders",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N16",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "24487026",
+      "evidence": "procedure 0W9930Z",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N17",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "23530882",
+      "evidence": "blood culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N18",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "23530882",
+      "evidence": "urine culture Klebsiella",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N19",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "service MED",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N8",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "COPD treated with loop diuretic",
+      "source_tables": [],
+      "confidence": 0.85
+    },
+    {
+      "source": "N3",
+      "target": "N8",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Heart failure treated with Furosemide",
+      "source_tables": [],
+      "confidence": 0.85
+    },
+    {
+      "source": "N3",
+      "target": "N9",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Heart failure treated with Torsemide",
+      "source_tables": [],
+      "confidence": 0.85
+    },
+    {
+      "source": "N4",
+      "target": "N13",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Pneumonia treated with Azithromycin",
+      "source_tables": [],
+      "confidence": 0.85
+    },
+    {
+      "source": "N6",
+      "target": "N13",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Pneumonia treated with Azithromycin",
+      "source_tables": [],
+      "confidence": 0.85
+    },
+    {
+      "source": "N6",
+      "target": "N14",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Severe infection treated with Meropenem",
+      "source_tables": [],
+      "confidence": 0.85
+    },
+    {
+      "source": "N7",
+      "target": "N18",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Klebsiella pneumoniae confirms UTI",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N5",
+      "target": "N15",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "Acute kidney failure diagnosed by labs",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N3",
+      "target": "N15",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "Heart failure monitored by labs",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N15",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "COPD monitored by labs",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N16",
+      "target": "N3",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Pleural drainage for heart failure effusion",
+      "source_tables": [],
+      "confidence": 0.75
+    },
+    {
+      "source": "N12",
+      "target": "N18",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "Vancomycin targets Klebsiella (broad spectrum)",
+      "source_tables": [],
+      "confidence": 0.7
+    },
+    {
+      "source": "N14",
+      "target": "N18",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "Meropenem targets Klebsiella",
+      "source_tables": [],
+      "confidence": 0.9
+    },
+    {
+      "source": "N19",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "MED service manages COPD",
+      "source_tables": [],
+      "confidence": 0.85
+    },
+    {
+      "source": "N19",
+      "target": "N3",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "MED service manages heart failure",
+      "source_tables": [],
+      "confidence": 0.85
+    },
+    {
+      "source": "N19",
+      "target": "N4",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "MED service manages respiratory failure",
+      "source_tables": [],
+      "confidence": 0.85
+    },
+    {
+      "source": "N2",
+      "target": "N3",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "26088164",
+      "evidence": "COPD co-occurs with heart failure",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N3",
+      "target": "N4",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "26088164",
+      "evidence": "Heart failure co-occurs with respiratory failure",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N4",
+      "target": "N6",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "26088164",
+      "evidence": "Respiratory failure co-occurs with pneumonia",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N7",
+      "target": "N5",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23530882",
+      "evidence": "UTI co-occurs with acute kidney failure",
+      "source_tables": [],
+      "confidence": 0.6
+    }
+  ]
+}

@@ -1,0 +1,321 @@
+{
+  "subject_id": "11888614",
+  "hadm_ids": [
+    "29444409",
+    "20487808",
+    "28746301",
+    "27265740",
+    "25995501",
+    "22663082",
+    "29800813",
+    "22213973",
+    "22883234",
+    "22200412",
+    "23752065",
+    "24558744"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 11888614",
+      "normalized_name": "Patient 11888614",
+      "source_tables": [
+        "patients"
+      ],
+      "evidence": "subject_id 11888614",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Chest pain, unspecified",
+      "normalized_name": "Chest pain, unspecified",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "evidence": "hadm_id 29444409 seq_num 1",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Alcohol abuse, unspecified",
+      "normalized_name": "Alcohol abuse, unspecified",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "evidence": "hadm_id 29444409 seq_num 2",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "MEDICATION",
+      "name": "Diazepam",
+      "normalized_name": "Diazepam",
+      "source_tables": [
+        "prescriptions"
+      ],
+      "evidence": "hadm_id 20487808 name Diazepam",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "Laboratory testing",
+      "source_tables": [
+        "lab_events"
+      ],
+      "evidence": "hadm_id 20487808 Laboratory testing",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "PROCEDURE",
+      "name": "Electrocardiogram",
+      "normalized_name": "Electrocardiogram",
+      "source_tables": [
+        "procedures_icd"
+      ],
+      "evidence": "hadm_id 20487808 seq_num 1",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture, Routine",
+      "normalized_name": "Blood Culture, Routine",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "hadm_id 20487808 specimen Blood Culture test_name Blood Culture, Routine",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "hadm_id 20487808 service MED",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29444409",
+      "evidence": "patient has chest pain",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29444409",
+      "evidence": "patient has alcohol abuse",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "20487808",
+      "evidence": "patient took Diazepam",
+      "source_tables": [
+        "prescriptions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "20487808",
+      "evidence": "patient had lab test",
+      "source_tables": [
+        "lab_events"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "20487808",
+      "evidence": "patient underwent ECG",
+      "source_tables": [
+        "procedures_icd"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "20487808",
+      "evidence": "patient had blood culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "20487808",
+      "evidence": "patient managed by MED",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N4",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "20487808",
+      "evidence": "chest pain co-occurs with diazepam",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N2",
+      "target": "N5",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "20487808",
+      "evidence": "chest pain co-occurs with lab test",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N2",
+      "target": "N6",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "PROCEDURE",
+      "hadm_id": "20487808",
+      "evidence": "chest pain co-occurs with ECG",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N2",
+      "target": "N7",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "20487808",
+      "evidence": "chest pain co-occurs with blood culture",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N3",
+      "target": "N4",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "20487808",
+      "evidence": "alcohol abuse co-occurs with diazepam",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N3",
+      "target": "N5",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "20487808",
+      "evidence": "alcohol abuse co-occurs with lab test",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N3",
+      "target": "N6",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "PROCEDURE",
+      "hadm_id": "20487808",
+      "evidence": "alcohol abuse co-occurs with ECG",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N3",
+      "target": "N7",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "20487808",
+      "evidence": "alcohol abuse co-occurs with blood culture",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N8",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "20487808",
+      "evidence": "MED manages chest pain",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N8",
+      "target": "N3",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "20487808",
+      "evidence": "MED manages alcohol abuse",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N8",
+      "target": "N4",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "SERVICE",
+      "target_type": "MEDICATION",
+      "hadm_id": "20487808",
+      "evidence": "MED administers diazepam",
+      "source_tables": [],
+      "confidence": 0.8
+    }
+  ]
+}

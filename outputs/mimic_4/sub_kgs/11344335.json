@@ -1,0 +1,667 @@
+{
+  "subject_id": "11344335",
+  "hadm_ids": [
+    "26497610",
+    "22843804",
+    "27660128",
+    "29609275",
+    "21475844",
+    "25316363",
+    "27295420",
+    "26654549",
+    "26139648",
+    "24231069",
+    "22961354",
+    "24490696"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 11344335",
+      "normalized_name": "Patient 11344335",
+      "source_tables": [],
+      "evidence": "subject_id",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Heart failure",
+      "normalized_name": "heart failure",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "multiple admissions list heart failure diagnoses (e.g., I5022, I5023, I5020)",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Diabetes mellitus",
+      "normalized_name": "diabetes mellitus",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "multiple admissions list diabetes diagnoses (e.g., 25000, E1140, E1122)",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Kidney transplant status",
+      "normalized_name": "kidney transplant status",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "diagnoses contain Z940 / kidney transplant status",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "DIAGNOSIS",
+      "name": "Hypertension",
+      "normalized_name": "hypertension",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "diagnoses contain 4019 / unspecified essential hypertension",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "DIAGNOSIS",
+      "name": "Gout",
+      "normalized_name": "gout",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "diagnoses contain M109 / gout unspecified",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "medication list includes Furosemide in many admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "insulin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "medication list includes Insulin in many admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "MEDICATION",
+      "name": "Warfarin",
+      "normalized_name": "warfarin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "medication list includes Warfarin in many admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "medication list includes Vancomycin Oral Liquid in later admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "lab_tests entries across all admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "PROCEDURE",
+      "name": "Cardiac catheterization",
+      "normalized_name": "cardiac catheterization",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "procedures include left heart cardiac catheterization, coronary arteriography",
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture",
+      "normalized_name": "blood culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "microbiology entries contain Blood Culture specimens",
+      "metadata": {}
+    },
+    {
+      "id": "N14",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "services list includes MED in many admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N15",
+      "type": "SERVICE",
+      "name": "CMED",
+      "normalized_name": "CMED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "services list includes CMED in several admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N16",
+      "type": "SERVICE",
+      "name": "CSURG",
+      "normalized_name": "CSURG",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "services list includes CSURG in admission 29609275",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "multiple admissions contain heart failure diagnoses",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "multiple admissions contain diabetes diagnoses",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "multiple admissions contain kidney transplant status",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "multiple admissions contain hypertension",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "multiple admissions contain gout",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Furosemide appears in many medication lists",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Insulin appears in many medication lists",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Warfarin appears in many medication lists",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Vancomycin appears in later admissions",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.94
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "Laboratory testing listed for each admission",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "",
+      "evidence": "Procedures include cardiac catheterization, valve replacement, etc.",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.94
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "Blood Culture specimens recorded",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.94
+    },
+    {
+      "source": "N1",
+      "target": "N14",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "Service MED present in many admissions",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N15",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "Service CMED present in several admissions",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N16",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "Service CSURG present in admission 29609275",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N2",
+      "target": "N7",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Furosemide is standard therapy for heart failure and appears in admissions with heart failure",
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N2",
+      "target": "N12",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Cardiac catheterization performed for valve disease / heart failure",
+      "source_tables": [
+        "procedures",
+        "diagnoses"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N11",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "Laboratory testing used to monitor heart failure biomarkers (BNP, electrolytes)",
+      "source_tables": [
+        "lab_tests",
+        "diagnoses"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N3",
+      "target": "N8",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Insulin used for diabetes management in many admissions",
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "source": "N3",
+      "target": "N11",
+      "relation": "MONITORED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "Laboratory testing monitors glucose and HbA1c for diabetes",
+      "source_tables": [
+        "lab_tests",
+        "diagnoses"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N4",
+      "target": "N9",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Warfarin used for anticoagulation in transplant patients",
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N4",
+      "target": "N13",
+      "relation": "INVESTIGATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "Blood cultures ordered to detect infection in transplant patients",
+      "source_tables": [
+        "microbiology",
+        "diagnoses"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N5",
+      "target": "N9",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Warfarin (or other anticoagulants) used for hypertensive heart disease",
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N6",
+      "target": "N10",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Vancomycin used for gout-associated infection in some admissions",
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N13",
+      "target": "N2",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Blood culture can confirm septic complications of heart failure",
+      "source_tables": [
+        "microbiology",
+        "diagnoses"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N14",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "MED service manages heart failure patients",
+      "source_tables": [
+        "services",
+        "diagnoses"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N15",
+      "target": "N4",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "CMED service manages transplant patients",
+      "source_tables": [
+        "services",
+        "diagnoses"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N16",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "CSURG service manages surgical cardiac procedures for heart failure",
+      "source_tables": [
+        "services",
+        "diagnoses"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N7",
+      "target": "N11",
+      "relation": "MONITORED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "Furosemide dosing is monitored by labs (electrolytes, renal function)",
+      "source_tables": [
+        "medications",
+        "lab_tests"
+      ],
+      "confidence": 0.78
+    },
+    {
+      "source": "N8",
+      "target": "N11",
+      "relation": "MONITORED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "Insulin therapy monitored by glucose labs",
+      "source_tables": [
+        "medications",
+        "lab_tests"
+      ],
+      "confidence": 0.88
+    },
+    {
+      "source": "N9",
+      "target": "N11",
+      "relation": "MONITORED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "Warfarin therapy monitored by coagulation labs (INR)",
+      "source_tables": [
+        "medications",
+        "lab_tests"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N10",
+      "target": "N13",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "Vancomycin targets gram‑positive organisms cultured from blood",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N5",
+      "relation": "ASSOCIATED_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Heart failure often co‑exists with hypertension",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N2",
+      "target": "N4",
+      "relation": "COMPLICATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Heart failure can be complicated by kidney transplant status (renal dysfunction)",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N3",
+      "target": "N2",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Diabetes frequently co‑occurs with heart failure",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.55
+    }
+  ]
+}

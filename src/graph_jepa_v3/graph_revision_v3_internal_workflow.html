@@ -1,0 +1,989 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Graph-JEPA v3 Internal Workflow</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #15202b;
+      --muted: #5a6875;
+      --line: #d7e1ea;
+      --panel: #f7f9fb;
+      --panel-strong: #edf4fb;
+      --accent: #0b6bcb;
+      --accent-dark: #084f94;
+      --good: #0f7b4f;
+      --warn: #9a5b00;
+      --bad: #a83232;
+      --code: #101923;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: #ffffff;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 42px 28px 72px;
+    }
+
+    header {
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 6vw, 4.4rem);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 42px 0 12px;
+      padding-top: 8px;
+      font-size: 1.45rem;
+      line-height: 1.25;
+      letter-spacing: 0;
+      border-top: 1px solid var(--line);
+    }
+
+    h3 {
+      margin: 24px 0 8px;
+      font-size: 1.05rem;
+      letter-spacing: 0;
+    }
+
+    p {
+      max-width: 900px;
+      margin: 0 0 14px;
+    }
+
+    a {
+      color: var(--accent-dark);
+    }
+
+    .lede {
+      max-width: 940px;
+      color: var(--muted);
+      font-size: 1.12rem;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: var(--panel-strong);
+      color: var(--accent-dark);
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .toc {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin: 22px 0 28px;
+    }
+
+    .toc a {
+      display: block;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 10px 12px;
+      background: var(--panel);
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .toc a:hover {
+      border-color: var(--accent);
+      color: var(--accent-dark);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 18px 0 24px;
+    }
+
+    .tri-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin: 18px 0 24px;
+    }
+
+    .box {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 15px;
+      background: var(--panel);
+    }
+
+    .box h3 {
+      margin-top: 0;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin: 18px 0 24px;
+    }
+
+    .step {
+      min-height: 138px;
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--accent);
+      border-radius: 8px;
+      padding: 13px;
+      background: #ffffff;
+    }
+
+    .step strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 26px;
+      font-size: 0.95rem;
+    }
+
+    th,
+    td {
+      border-bottom: 1px solid var(--line);
+      padding: 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--panel);
+      font-weight: 700;
+    }
+
+    code,
+    pre {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    }
+
+    code {
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      padding: 1px 5px;
+      background: var(--panel);
+      font-size: 0.9em;
+    }
+
+    pre {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      background: var(--code);
+      color: #edf4fb;
+      line-height: 1.45;
+    }
+
+    pre code {
+      display: block;
+      border: 0;
+      border-radius: 0;
+      padding: 0;
+      background: transparent;
+      color: inherit;
+      font-size: inherit;
+    }
+
+    ul,
+    ol {
+      padding-left: 24px;
+      max-width: 900px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .good {
+      color: var(--good);
+      font-weight: 700;
+    }
+
+    .warn {
+      color: var(--warn);
+      font-weight: 700;
+    }
+
+    .bad {
+      color: var(--bad);
+      font-weight: 700;
+    }
+
+    .formula {
+      border-left: 4px solid var(--accent);
+      padding: 12px 14px;
+      margin: 16px 0 22px;
+      background: var(--panel);
+      max-width: 900px;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 900px) {
+      main {
+        padding: 30px 18px 54px;
+      }
+
+      .toc,
+      .grid,
+      .tri-grid,
+      .flow {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="tag">Detailed internals</div>
+      <h1>Graph-JEPA v3 Internal Workflow</h1>
+      <p class="lede">
+        This document explains how the v3 clinical KG revision model works from
+        graph preprocessing through patch construction, masking, architecture,
+        losses, candidate addition, and pruning.
+      </p>
+      <p class="small">
+        Companion overview:
+        <a href="./graph_revision_v3.html">graph_revision_v3.html</a>
+      </p>
+    </header>
+
+    <nav class="toc" aria-label="Table of contents">
+      <a href="#goal">1. Goal</a>
+      <a href="#preprocessing">2. Graph Preprocessing</a>
+      <a href="#patches">3. Patch Creation</a>
+      <a href="#masking">4. Masking</a>
+      <a href="#architecture">5. Architecture</a>
+      <a href="#jepa-loss">6. Patch-JEPA Loss</a>
+      <a href="#revision-loss">7. Edge Revision Loss</a>
+      <a href="#training-step">8. Training Step</a>
+      <a href="#inference">9. Inference</a>
+      <a href="#example">10. Example</a>
+      <a href="#why-better">11. Why v3 Helps</a>
+      <a href="#limits">12. Limits</a>
+    </nav>
+
+    <section id="goal">
+      <h2>1. Goal</h2>
+      <p>
+        v3 reframes refinement as one edge-existence question:
+      </p>
+      <div class="formula">
+        <code>Should this typed edge exist in this specific patient graph?</code>
+      </div>
+      <p>
+        The same learned score is used for all graph revision decisions:
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Case</th>
+            <th>Score</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Existing edge</td>
+            <td>High</td>
+            <td class="good">Keep</td>
+          </tr>
+          <tr>
+            <td>Existing edge</td>
+            <td>Low</td>
+            <td class="warn">Review or prune</td>
+          </tr>
+          <tr>
+            <td>Missing edge</td>
+            <td>High</td>
+            <td class="good">Add candidate</td>
+          </tr>
+          <tr>
+            <td>Missing edge</td>
+            <td>Low</td>
+            <td class="bad">Reject / ignore</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        The training objective combines representation learning and graph revision:
+      </p>
+      <pre><code>total_loss = jepa_weight * patch_jepa_loss
+           + revision_weight * edge_revision_loss</code></pre>
+    </section>
+
+    <section id="preprocessing">
+      <h2>2. Graph Preprocessing</h2>
+      <p>
+        Input graphs use the shared <code>PatientGraph</code> JSON contract:
+      </p>
+      <pre><code>{
+  "nodes": [
+    {"id": "N_006", "text": "shortness of breath", "type": "SYMPTOM"}
+  ],
+  "edges": [
+    {"source_id": "N_006", "target_id": "N_001", "type": "INDICATES"}
+  ]
+}</code></pre>
+      <p>
+        In <code>src/graph_jepa_v3/data.py</code>, each graph is converted to a
+        tensor object with node features, node types, edge endpoints, and edge types.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Tensor</th>
+            <th>Shape</th>
+            <th>Meaning</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>x</code></td>
+            <td><code>[num_nodes, encoder_dim]</code></td>
+            <td>Embedding of each <code>(node.type, node.text)</code> pair.</td>
+          </tr>
+          <tr>
+            <td><code>node_type</code></td>
+            <td><code>[num_nodes]</code></td>
+            <td>Integer schema type for each node. v3 uses this for hard negatives.</td>
+          </tr>
+          <tr>
+            <td><code>edge_index</code></td>
+            <td><code>[2, num_edges]</code></td>
+            <td>Source and target node indices for valid KG edges.</td>
+          </tr>
+          <tr>
+            <td><code>edge_type</code></td>
+            <td><code>[num_edges]</code></td>
+            <td>Integer relation ID for each edge.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        Invalid tensor edges are skipped when endpoints are missing or the relation
+        type is unknown. The original JSON is not modified during training.
+      </p>
+      <div class="box">
+        <h3>Mini-batching</h3>
+        <p>
+          PyTorch Geometric batches multiple patient graphs into one object. The
+          batch contains <code>data.batch</code> and <code>data.ptr</code>, which
+          tell v3 where each graph begins and ends. This is important because hard
+          negatives must be sampled inside the same patient graph, not across patients.
+        </p>
+      </div>
+    </section>
+
+    <section id="patches">
+      <h2>3. Patch Creation</h2>
+      <p>
+        Patches are created in <code>src/graph_jepa_v3/patches.py</code>.
+        The default number of patches is:
+      </p>
+      <pre><code>num_patches = 8
+patch_pe_dim = 8</code></pre>
+      <p>
+        The actual number of patches is:
+      </p>
+      <pre><code>actual_patches = min(num_patches, num_nodes)</code></pre>
+      <p>
+        So a 60-node graph gets 8 patches, while a 5-node graph gets 5 patches.
+      </p>
+
+      <h3>Balanced multi-source BFS</h3>
+      <p>
+        v3 partitions nodes with a balanced BFS procedure:
+      </p>
+      <ol>
+        <li>Select seed nodes, starting with high-degree nodes and then far-apart nodes.</li>
+        <li>Grow each seed into a local patch using BFS over the graph.</li>
+        <li>Keep patch sizes roughly balanced.</li>
+        <li>Handle disconnected components by assigning leftover nodes to the smallest patch.</li>
+      </ol>
+
+      <h3>Patch tensors</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Object</th>
+            <th>Shape / type</th>
+            <th>Meaning</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>assignment</code></td>
+            <td><code>[num_nodes]</code></td>
+            <td>Maps every node to a patch ID.</td>
+          </tr>
+          <tr>
+            <td><code>patch_nodes</code></td>
+            <td>list of node lists</td>
+            <td>Which nodes belong to each patch.</td>
+          </tr>
+          <tr>
+            <td><code>patch_edge_index</code></td>
+            <td><code>[2, num_patch_edges]</code></td>
+            <td>Coarsened edges between patches.</td>
+          </tr>
+          <tr>
+            <td><code>patch_adj</code></td>
+            <td><code>[num_patches, num_patches]</code></td>
+            <td>Dense patch adjacency matrix.</td>
+          </tr>
+          <tr>
+            <td><code>patch_pos</code></td>
+            <td><code>[num_patches, patch_pe_dim]</code></td>
+            <td>Patch positional and structural features.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Patch positional features</h3>
+      <p>
+        Each patch gets a compact structural descriptor:
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Column</th>
+            <th>Feature</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>0</code></td>
+            <td>Patch size divided by total node count.</td>
+          </tr>
+          <tr>
+            <td><code>1</code></td>
+            <td>Patch degree divided by maximum possible patch degree.</td>
+          </tr>
+          <tr>
+            <td><code>2+</code></td>
+            <td>Random-walk self-return style features on the patch graph.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="masking">
+      <h2>4. Two Kinds of Masking</h2>
+      <p>
+        v3 uses two masks, and they serve different purposes.
+      </p>
+      <div class="grid">
+        <div class="box">
+          <h3>Patch masking</h3>
+          <p>
+            Used by the JEPA representation objective. Some patches are visible
+            as context. Target patches have their content replaced by a learned
+            mask token.
+          </p>
+        </div>
+        <div class="box">
+          <h3>Edge hiding</h3>
+          <p>
+            Used by the graph-revision objective. Some true edges are hidden from
+            message passing, then still scored as positive edges. This teaches
+            missing-edge recovery.
+          </p>
+        </div>
+      </div>
+
+      <h3>Patch task sampling</h3>
+      <p>
+        Default values:
+      </p>
+      <pre><code>context_patches = 1
+target_patches = 4</code></pre>
+      <p>
+        v3 samples a connected group of target patches, then chooses nearby
+        context patches. For an 8-patch graph:
+      </p>
+      <pre><code>target patches:  [2, 3, 4, 5]
+context patches: [1]
+visible mask:    [False, True, False, False, False, False, False, False]</code></pre>
+      <p>
+        Non-visible patches keep their position but not their real content:
+      </p>
+      <pre><code>if visible:
+    token = patch_content + patch_position
+else:
+    token = mask_token + patch_position</code></pre>
+    </section>
+
+    <section id="architecture">
+      <h2>5. Architecture</h2>
+      <p>
+        The model is implemented in <code>src/graph_jepa_v3/model.py</code>.
+      </p>
+
+      <div class="flow">
+        <div class="step">
+          <strong>1. Node encoder</strong>
+          Typed-edge GNN turns node text embeddings into contextual node latents.
+        </div>
+        <div class="step">
+          <strong>2. Patch pooling</strong>
+          Node latents are mean-pooled into patch latents.
+        </div>
+        <div class="step">
+          <strong>3. Patch transformer</strong>
+          Context and target branches encode patch-level structure.
+        </div>
+        <div class="step">
+          <strong>4. Edge head</strong>
+          Scores typed triples for keep, prune, add, or reject.
+        </div>
+      </div>
+
+      <h3>Typed node encoder</h3>
+      <p>
+        Each node embedding goes through a typed-edge GNN. The pure-torch backend
+        sends both forward and reverse messages:
+      </p>
+      <pre><code>source -> target message uses relation embedding
+target -> source reverse message also uses relation embedding</code></pre>
+      <p>
+        This keeps edge direction visible while letting evidence flow both ways
+        through a small clinical graph.
+      </p>
+
+      <h3>Context and target branches</h3>
+      <p>
+        v3 uses a JEPA-style online/target design:
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Branch</th>
+            <th>Gradient?</th>
+            <th>Input visibility</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Context branch</td>
+            <td>Yes</td>
+            <td>Masked patch content. Only context patches are visible.</td>
+          </tr>
+          <tr>
+            <td>Target branch</td>
+            <td>No, EMA teacher</td>
+            <td>Full unmasked graph.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        The target branch is updated by exponential moving average:
+      </p>
+      <pre><code>target_weights = decay * target_weights
+               + (1 - decay) * context_weights</code></pre>
+    </section>
+
+    <section id="jepa-loss">
+      <h2>6. Patch-JEPA Loss</h2>
+      <p>
+        The context branch produces:
+      </p>
+      <pre><code>ctx: [num_patches, latent_dim]</code></pre>
+      <p>
+        The target branch produces:
+      </p>
+      <pre><code>tgt: [num_patches, latent_dim]</code></pre>
+      <p>
+        For each target patch, v3 predicts the target branch representation:
+      </p>
+      <pre><code>pred_input = concat(ctx[target_patch], pos[target_patch])
+pred = predictor(pred_input)
+target = tgt[target_patch].detach()</code></pre>
+      <p>
+        The patch-JEPA loss is:
+      </p>
+      <pre><code>patch_jepa_loss = smooth_l1(pred, target)
+                + var_weight * variance_loss
+                + cov_weight * covariance_loss</code></pre>
+      <p>
+        The main term asks the context branch to infer hidden target patch
+        representations. The variance and covariance terms prevent representation
+        collapse.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Term</th>
+            <th>Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>smooth_l1(pred, target)</code></td>
+            <td>Predict hidden target patch representation.</td>
+          </tr>
+          <tr>
+            <td><code>variance_loss</code></td>
+            <td>Keep latent dimensions from becoming constant.</td>
+          </tr>
+          <tr>
+            <td><code>covariance_loss</code></td>
+            <td>Discourage duplicate information across latent dimensions.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="revision-loss">
+      <h2>7. Edge Revision Loss</h2>
+      <p>
+        The edge revision objective is what makes v3 different from v2.
+      </p>
+      <p>
+        Default values:
+      </p>
+      <pre><code>revision_mask_ratio = 0.25
+revision_neg_per_pos = 3
+revision_weight = 1.0</code></pre>
+
+      <h3>Positive edges</h3>
+      <p>
+        Existing KG edges are positives. v3 splits them into two useful cases:
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Positive type</th>
+            <th>How created</th>
+            <th>What it teaches</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Visible true edge</td>
+            <td>Original edge remains in message passing.</td>
+            <td>Keep good existing edges.</td>
+          </tr>
+          <tr>
+            <td>Hidden true edge</td>
+            <td>Original edge is removed from message passing but still scored positive.</td>
+            <td>Add missing true edges back.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Edge hiding</h3>
+      <p>
+        With a 32-edge graph and <code>revision_mask_ratio = 0.25</code>, v3 hides
+        about 8 true edges from message passing:
+      </p>
+      <pre><code>hidden = random_boolean_mask(num_edges, probability=0.25)
+keep = ~hidden
+
+z = context_node_encoder(
+      data.x,
+      data.edge_index[:, keep],
+      data.edge_type[keep]
+)</code></pre>
+      <p>
+        All original edges are still scored as positives afterward. Hidden edges
+        therefore become "recover this missing edge" training examples.
+      </p>
+
+      <h3>Hard negative edges</h3>
+      <p>
+        v3 samples schema-valid false edges from the same graph. These are harder
+        than random type violations.
+      </p>
+      <p>
+        Example true edge:
+      </p>
+      <pre><code>chest x-ray -> CONFIRMS -> congestive heart failure</code></pre>
+      <p>
+        Possible hard negative:
+      </p>
+      <pre><code>chest x-ray -> CONFIRMS -> hypertension</code></pre>
+      <p>
+        This negative obeys the type schema:
+      </p>
+      <pre><code>PROCEDURE -> CONFIRMS -> DIAGNOSIS</code></pre>
+      <p>
+        but the exact triple is absent from the graph.
+      </p>
+
+      <h3>Edge head</h3>
+      <p>
+        The edge head scores a typed triple:
+      </p>
+      <pre><code>input = concat(z_source, z_target, relation_embedding)
+logit = MLP(input)
+probability = sigmoid(logit)</code></pre>
+
+      <h3>Binary revision loss</h3>
+      <p>
+        Positives get label 1. Hard negatives get label 0.
+      </p>
+      <pre><code>revision_loss = binary_cross_entropy_with_logits(logits, labels)</code></pre>
+      <table>
+        <thead>
+          <tr>
+            <th>Training example</th>
+            <th>Label</th>
+            <th>Desired score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>True visible edge</td>
+            <td>1</td>
+            <td class="good">High</td>
+          </tr>
+          <tr>
+            <td>True hidden edge</td>
+            <td>1</td>
+            <td class="good">High</td>
+          </tr>
+          <tr>
+            <td>Schema-valid absent edge</td>
+            <td>0</td>
+            <td class="bad">Low</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="training-step">
+      <h2>8. One Training Step</h2>
+      <p>
+        A single batch update performs both representation learning and graph
+        revision learning.
+      </p>
+      <ol>
+        <li>Load one or more patient graphs as a PyG batch.</li>
+        <li>Create balanced BFS patches per graph.</li>
+        <li>Sample context and target patches.</li>
+        <li>Run masked context branch and unmasked EMA target branch.</li>
+        <li>Compute patch-JEPA prediction loss.</li>
+        <li>Hide a subset of true edges from message passing.</li>
+        <li>Sample schema-valid absent edges as hard negatives.</li>
+        <li>Score true edges and hard negatives with the edge head.</li>
+        <li>Compute binary edge revision loss.</li>
+        <li>Combine losses, backpropagate, and update context model.</li>
+        <li>Update target model with EMA.</li>
+      </ol>
+      <div class="formula">
+        <code>loss = jepa_weight * patch_jepa_loss + revision_weight * edge_revision_loss</code>
+      </div>
+    </section>
+
+    <section id="inference">
+      <h2>9. Inference and Evaluation</h2>
+      <h3>Scoring existing edges</h3>
+      <p>
+        At inference, v3 encodes the full graph and scores each existing edge:
+      </p>
+      <pre><code>p_head = sigmoid(edge_head(z_source, z_target, relation))</code></pre>
+      <p>
+        It also computes a patch structural score:
+      </p>
+      <pre><code>structural = exp(-patch_prediction_energy / temperature)</code></pre>
+      <p>
+        The final score is:
+      </p>
+      <pre><code>score = alpha * p_head + (1 - alpha) * structural</code></pre>
+      <p>
+        v3 defaults to:
+      </p>
+      <pre><code>alpha = 0.9</code></pre>
+      <p>
+        So the trained edge-revision head dominates the final decision.
+      </p>
+
+      <h3>Revision actions</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Action</th>
+            <th>Meaning</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>keep</code></td>
+            <td>Existing edge scores high enough to keep.</td>
+          </tr>
+          <tr>
+            <td><code>review</code></td>
+            <td>Existing edge is weak but not necessarily pruned.</td>
+          </tr>
+          <tr>
+            <td><code>prune_candidate</code></td>
+            <td>Existing edge falls below the chosen prune threshold.</td>
+          </tr>
+          <tr>
+            <td><code>add_candidate</code></td>
+            <td>Missing edge scored high enough to add as an unverified candidate.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Candidate addition</h3>
+      <p>
+        v3 does not create new nodes. It enumerates missing schema-valid triples
+        between existing nodes, then filters and scores them.
+      </p>
+      <ol>
+        <li>Enumerate source, relation, target combinations allowed by <code>RELATION_SCHEMA</code>.</li>
+        <li>Skip triples already present in the graph.</li>
+        <li>Skip negated or absence sources by default.</li>
+        <li>For unified graphs, require shared <code>res_id</code> when occurrence metadata exists.</li>
+        <li>Score each candidate with the same edge-revision score.</li>
+        <li>Add candidates above <code>candidate_threshold</code>.</li>
+      </ol>
+      <p>
+        Added candidates are explicitly marked unverified:
+      </p>
+      <pre><code>{
+  "jepa_suggested": true,
+  "jepa_unverified": true,
+  "jepa_revision_action": "add_candidate",
+  "jepa_source": "graph_jepa_v3_candidate_generation",
+  "evidence": "",
+  "turn_id": ""
+}</code></pre>
+    </section>
+
+    <section id="example">
+      <h2>10. Concrete Example</h2>
+      <p>
+        For a graph like <code>RES_D2N068</code>:
+      </p>
+      <pre><code>nodes = 60
+edges = 32
+num_patches = 8
+target_patches = 4
+context_patches = 1
+revision_mask_ratio = 0.25
+revision_neg_per_pos = 3</code></pre>
+      <p>
+        One training step looks like this:
+      </p>
+      <ol>
+        <li>Partition the 60 nodes into 8 patches.</li>
+        <li>Select 4 connected target patches.</li>
+        <li>Select 1 nearby context patch.</li>
+        <li>Predict target patch representations from context.</li>
+        <li>Hide about 8 of the 32 true edges from message passing.</li>
+        <li>Score all 32 true edges as positives.</li>
+        <li>Sample up to 96 schema-valid false edges as negatives.</li>
+        <li>Combine patch-JEPA loss and revision loss.</li>
+      </ol>
+
+      <div class="grid">
+        <div class="box">
+          <h3>Good hidden positive</h3>
+          <pre><code>decreased ejection fraction
+  -> CONFIRMS
+  -> pumping dysfunction</code></pre>
+          <p>
+            If hidden, v3 still learns to score it high. This is the add-back signal.
+          </p>
+        </div>
+        <div class="box">
+          <h3>Hard false negative</h3>
+          <pre><code>right elbow x-ray
+  -> CONFIRMS
+  -> congestive heart failure</code></pre>
+          <p>
+            Schema-valid but clinically weak. v3 learns to score this low.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="why-better">
+      <h2>11. Why v3 Helps Compared With v2</h2>
+      <p>
+        v2 mainly learned broad edge plausibility. That allowed many candidates
+        that were type-valid but clinically incoherent.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Problem seen in v2</th>
+            <th>v3 response</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Unified graph candidates crossed unrelated encounters.</td>
+            <td>Default candidate filter requires shared <code>res_id</code> when occurrence metadata exists.</td>
+          </tr>
+          <tr>
+            <td>Absent findings became positive indications.</td>
+            <td>Default candidate filter skips negated/absence sources.</td>
+          </tr>
+          <tr>
+            <td>Schema-valid but false edges scored too high.</td>
+            <td>Training uses schema-valid absent triples as hard negatives.</td>
+          </tr>
+          <tr>
+            <td>Addition and pruning were treated as separate modes.</td>
+            <td>v3 uses one edge-existence score for keep, prune, add, and reject.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="limits">
+      <h2>12. Current Limits</h2>
+      <ul>
+        <li>v3 does not generate transcript evidence for added edges.</li>
+        <li>Added edges should remain <code>jepa_unverified: true</code> until validated.</li>
+        <li>The training signal assumes the extracted KG is mostly correct.</li>
+        <li>Negation handling is lexical and conservative, not a full clinical NLP model.</li>
+        <li>If the original KGs contain systematic mistakes, v3 can learn those mistakes.</li>
+      </ul>
+      <p>
+        The intended use is therefore:
+      </p>
+      <pre><code>v3 suggests keep / review / prune / add decisions
+human or evidence-backed validation decides final curated graph</code></pre>
+    </section>
+  </main>
+</body>
+</html>

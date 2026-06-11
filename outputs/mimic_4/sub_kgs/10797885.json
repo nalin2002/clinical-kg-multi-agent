@@ -1,0 +1,569 @@
+{
+  "subject_id": "10797885",
+  "hadm_ids": [
+    "22419621",
+    "20865551",
+    "28539928",
+    "21968691",
+    "26096980"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 10797885",
+      "normalized_name": "patient_10797885",
+      "source_tables": [
+        "patients"
+      ],
+      "evidence": [],
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Type 2 diabetes mellitus with diabetic peripheral angiopathy with gangrene",
+      "normalized_name": "type_2_diabetes_mellitus_with_diabetic_peripheral_angiopathy_with_gangrene",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": [
+        "22419621"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Essential (primary) hypertension",
+      "normalized_name": "essential_primary_hypertension",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": [
+        "22419621",
+        "28539928",
+        "21968691",
+        "26096980"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Sepsis due to Enterococcus",
+      "normalized_name": "sepsis_due_to_enterococcus",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": [
+        "26096980"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "DIAGNOSIS",
+      "name": "Urinary tract infection, site not specified",
+      "normalized_name": "urinary_tract_infection_site_not_specified",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": [
+        "20865551"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "insulin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": [
+        "22419621",
+        "20865551",
+        "28539928",
+        "21968691",
+        "26096980"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": [
+        "28539928",
+        "26096980"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "MEDICATION",
+      "name": "CefTRIAXone",
+      "normalized_name": "ceftrixone",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": [
+        "20865551"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "laboratory_testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": [
+        "22419621",
+        "20865551",
+        "28539928",
+        "21968691",
+        "26096980"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "PROCEDURE",
+      "name": "Dilation of Right Popliteal Artery, Percutaneous Approach",
+      "normalized_name": "dilation_of_right_popliteal_artery_percutaneous_approach",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": [
+        "22419621"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture, Routine – Enterococcus faecalis",
+      "normalized_name": "blood_culture_enterococcus_faecalis",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": [
+        "26096980"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "MICROBIOLOGY",
+      "name": "Urine Culture – Enterococcus sp.",
+      "normalized_name": "urine_culture_enterococcus_sp",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": [
+        "20865551"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "med",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": [
+        "22419621"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N14",
+      "type": "SERVICE",
+      "name": "OMED",
+      "normalized_name": "omed",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": [
+        "20865551",
+        "28539928",
+        "21968691",
+        "26096980"
+      ],
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22419621",
+      "evidence": [
+        "22419621"
+      ],
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22419621",
+      "evidence": [
+        "22419621"
+      ],
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "26096980",
+      "evidence": [
+        "26096980"
+      ],
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "20865551",
+      "evidence": [
+        "20865551"
+      ],
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "22419621",
+      "evidence": [
+        "22419621"
+      ],
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "28539928",
+      "evidence": [
+        "28539928"
+      ],
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "20865551",
+      "evidence": [
+        "20865551"
+      ],
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "22419621",
+      "evidence": [
+        "22419621"
+      ],
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "22419621",
+      "evidence": [
+        "22419621"
+      ],
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "26096980",
+      "evidence": [
+        "26096980"
+      ],
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "20865551",
+      "evidence": [
+        "20865551"
+      ],
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "22419621",
+      "evidence": [
+        "22419621"
+      ],
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N14",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "20865551",
+      "evidence": [
+        "20865551"
+      ],
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N6",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "22419621",
+      "evidence": [
+        "22419621"
+      ],
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N3",
+      "target": "N6",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "22419621",
+      "evidence": [
+        "22419621"
+      ],
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N4",
+      "target": "N7",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "26096980",
+      "evidence": [
+        "26096980"
+      ],
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N5",
+      "target": "N8",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "20865551",
+      "evidence": [
+        "20865551"
+      ],
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N11",
+      "target": "N4",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "26096980",
+      "evidence": [
+        "26096980"
+      ],
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N12",
+      "target": "N5",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "20865551",
+      "evidence": [
+        "20865551"
+      ],
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N7",
+      "target": "N11",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "26096980",
+      "evidence": [
+        "26096980"
+      ],
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N8",
+      "target": "N12",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "20865551",
+      "evidence": [
+        "20865551"
+      ],
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N10",
+      "target": "N2",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22419621",
+      "evidence": [
+        "22419621"
+      ],
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N13",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22419621",
+      "evidence": [
+        "22419621"
+      ],
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N14",
+      "target": "N4",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "26096980",
+      "evidence": [
+        "26096980"
+      ],
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.75
+    }
+  ]
+}

@@ -1,0 +1,653 @@
+{
+  "subject_id": "10402406",
+  "hadm_ids": [
+    "23726139",
+    "28883903",
+    "27034101",
+    "21907397",
+    "22756110",
+    "28625117",
+    "UNLINKED"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 10402406",
+      "normalized_name": "patient_10402406",
+      "source_tables": [],
+      "evidence": "subject_id 10402406",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Sepsis due to Enterococcus",
+      "normalized_name": "sepsis_due_to_enterococcus",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 23726139 seq_num 2",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Acute kidney failure, unspecified",
+      "normalized_name": "acute_kidney_failure_unspecified",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 23726139 seq_num 5",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Pyonephrosis",
+      "normalized_name": "pyonephrosis",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 23726139 seq_num 7; hadm_id 21907397 seq_num 1; hadm_id 28883903 seq_num 5; hadm_id 28625117 seq_num 1",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "DIAGNOSIS",
+      "name": "Calculus of kidney",
+      "normalized_name": "calculus_of_kidney",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 21907397 seq_num 5; hadm_id 22756110 seq_num 1; hadm_id 28625117 seq_num 1",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "DIAGNOSIS",
+      "name": "Acute on chronic diastolic (congestive) heart failure",
+      "normalized_name": "acute_on_chronic_diastolic_congestive_heart_failure",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 28625117 seq_num 5",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "DIAGNOSIS",
+      "name": "Sepsis, unspecified organism",
+      "normalized_name": "sepsis_unspecified_organism",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 28883903 seq_num 1; hadm_id 28625117 seq_num 6",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id 23726139 count 1; hadm_id 28883903 count 2; hadm_id 21907397 count 1; hadm_id 28625117 count 4",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "MEDICATION",
+      "name": "Meropenem",
+      "normalized_name": "meropenem",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id 23726139 count 1; hadm_id 28883903 count 1; hadm_id 21907397 count 2; hadm_id 22756110 count 3; hadm_id 28625117 count 2",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id 28625117 count 9",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "MEDICATION",
+      "name": "Acetaminophen",
+      "normalized_name": "acetaminophen",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id 23726139 count 2; hadm_id 28883903 count 3; hadm_id 27034101 count 2; hadm_id 21907397 count 1; hadm_id 22756110 count 1; hadm_id 28625117 count 2",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "PROCEDURE",
+      "name": "Drainage of Left Kidney with Drainage Device, Percutaneous Approach",
+      "normalized_name": "drainage_of_left_kidney_percutaneous",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "hadm_id 23726139 seq_num 1",
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "PROCEDURE",
+      "name": "Insertion of Infusion Device into Superior Vena Cava, Percutaneous Approach",
+      "normalized_name": "insertion_of_infusion_device_svc_percutaneous",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "hadm_id 23726139 seq_num 2; hadm_id 28883903 seq_num 1; hadm_id 27034101 seq_num 1",
+      "metadata": {}
+    },
+    {
+      "id": "N14",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "laboratory_testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "hadm_id 23726139; hadm_id 28883903; hadm_id 27034101; hadm_id 21907397; hadm_id 22756110; hadm_id 28625117",
+      "metadata": {}
+    },
+    {
+      "id": "N15",
+      "type": "MICROBIOLOGY",
+      "name": "URINE CULTURE",
+      "normalized_name": "urine_culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "hadm_id 23726139 specimen URINE; hadm_id 28883903 specimen URINE; hadm_id 28625117 specimen URINE; UNLINKED specimen URINE",
+      "metadata": {}
+    },
+    {
+      "id": "N16",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture, Routine",
+      "normalized_name": "blood_culture_routine",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "hadm_id 28883903 specimen BLOOD; hadm_id 28625117 specimen BLOOD; UNLINKED specimen BLOOD",
+      "metadata": {}
+    },
+    {
+      "id": "N17",
+      "type": "MICROBIOLOGY",
+      "name": "MRSA SCREEN",
+      "normalized_name": "mrsa_screen",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "UNLINKED specimen MRSA SCREEN",
+      "metadata": {}
+    },
+    {
+      "id": "N18",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "med",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "hadm_id 23726139",
+      "metadata": {}
+    },
+    {
+      "id": "N19",
+      "type": "SERVICE",
+      "name": "GU",
+      "normalized_name": "gu",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "hadm_id 28883903; hadm_id 27034101; hadm_id 21907397; hadm_id 22756110; hadm_id 28625117",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23726139",
+      "evidence": "Sepsis due to Enterococcus in admission 23726139",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23726139",
+      "evidence": "Acute kidney failure in admission 23726139",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23726139",
+      "evidence": "Pyonephrosis in admission 23726139",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21907397",
+      "evidence": "Calculus of kidney in admission 21907397",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28625117",
+      "evidence": "Acute on chronic diastolic heart failure in admission 28625117",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28883903",
+      "evidence": "Sepsis unspecified organism in admission 28883903",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "23726139",
+      "evidence": "Vancomycin administered in admission 23726139",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "23726139",
+      "evidence": "Meropenem administered in admission 23726139",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "28625117",
+      "evidence": "Furosemide administered in admission 28625117",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "23726139",
+      "evidence": "Acetaminophen administered in admission 23726139",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "23726139",
+      "evidence": "Drainage of Left Kidney performed in admission 23726139",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "23726139",
+      "evidence": "Insertion of Infusion Device performed in admission 23726139",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N14",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "23726139",
+      "evidence": "Laboratory testing ordered in admission 23726139",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N15",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "23726139",
+      "evidence": "URINE CULTURE performed in admission 23726139",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N16",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "28883903",
+      "evidence": "Blood Culture performed in admission 28883903",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N17",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "UNLINKED",
+      "evidence": "MRSA SCREEN performed (unlinked)",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N18",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "23726139",
+      "evidence": "Managed by MED service in admission 23726139",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N19",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "28883903",
+      "evidence": "Managed by GU service in admission 28883903",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N8",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "23726139",
+      "evidence": "Vancomycin used for Sepsis due to Enterococcus",
+      "source_tables": [
+        "diagnoses",
+        "medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N2",
+      "target": "N9",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "23726139",
+      "evidence": "Meropenem used for Sepsis due to Enterococcus",
+      "source_tables": [
+        "diagnoses",
+        "medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N4",
+      "target": "N12",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23726139",
+      "evidence": "Drainage of Left Kidney performed for Pyonephrosis",
+      "source_tables": [
+        "procedures",
+        "diagnoses"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N5",
+      "target": "N13",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23726139",
+      "evidence": "Insertion of Infusion Device associated with Calculus of kidney (co‑occurrence)",
+      "source_tables": [
+        "procedures",
+        "diagnoses"
+      ],
+      "confidence": 0.55
+    },
+    {
+      "source": "N2",
+      "target": "N14",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "23726139",
+      "evidence": "Sepsis diagnosed via Laboratory testing",
+      "source_tables": [
+        "diagnoses",
+        "lab_tests"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N2",
+      "target": "N16",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28883903",
+      "evidence": "Blood Culture confirms Sepsis (organism not specified)",
+      "source_tables": [
+        "microbiology",
+        "diagnoses"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N8",
+      "target": "N17",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "UNLINKED",
+      "evidence": "Vancomycin targets MRSA in MRSA SCREEN",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N3",
+      "target": "N10",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "28625117",
+      "evidence": "Furosemide used for Acute kidney failure",
+      "source_tables": [
+        "diagnoses",
+        "medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N6",
+      "target": "N10",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "28625117",
+      "evidence": "Furosemide used for acute on chronic diastolic heart failure",
+      "source_tables": [
+        "diagnoses",
+        "medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N7",
+      "target": "N9",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "28883903",
+      "evidence": "Meropenem used for Sepsis unspecified organism",
+      "source_tables": [
+        "diagnoses",
+        "medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N7",
+      "target": "N8",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "28883903",
+      "evidence": "Vancomycin used for Sepsis unspecified organism",
+      "source_tables": [
+        "diagnoses",
+        "medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N4",
+      "target": "N15",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23726139",
+      "evidence": "URINE CULTURE confirms Pyonephrosis (urine source)",
+      "source_tables": [
+        "microbiology",
+        "diagnoses"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N5",
+      "target": "N13",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "PROCEDURE",
+      "hadm_id": "28625117",
+      "evidence": "Calculus of kidney co‑occurs with Insertion of Infusion Device",
+      "source_tables": [
+        "diagnoses",
+        "procedures"
+      ],
+      "confidence": 0.55
+    },
+    {
+      "source": "N4",
+      "target": "N11",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "23726139",
+      "evidence": "Pyonephrosis co‑occurs with Acetaminophen",
+      "source_tables": [
+        "diagnoses",
+        "medications"
+      ],
+      "confidence": 0.55
+    }
+  ]
+}

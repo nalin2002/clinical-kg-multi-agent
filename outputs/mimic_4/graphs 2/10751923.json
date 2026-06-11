@@ -1,0 +1,550 @@
+{
+  "subject_id": "10751923",
+  "hadm_ids": [
+    "25548436",
+    "24965866",
+    "25335557",
+    "20209034",
+    "25715199",
+    "28472663",
+    "25661805",
+    "28023087",
+    "24277715",
+    "24230125",
+    "24555160",
+    "22587031",
+    "22804071",
+    "24156001"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 10751923",
+      "normalized_name": "patient 10751923",
+      "source_tables": [
+        "demographics"
+      ],
+      "evidence": "subject_id:10751923",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Diabetes mellitus",
+      "normalized_name": "diabetes mellitus",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "evidence": "ICD-9 25002 Diabetes mellitus without mention of complication, type II or unspecified type, uncontrolled",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Human immunodeficiency virus [HIV] disease",
+      "normalized_name": "hiv disease",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "evidence": "ICD-9 042 Human immunodeficiency virus [HIV] disease",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Major depressive disorder",
+      "normalized_name": "major depressive disorder",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "evidence": "ICD-9 29620 Major depressive affective disorder, single episode, unspecified",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "DIAGNOSIS",
+      "name": "Cellulitis and abscess of leg",
+      "normalized_name": "cellulitis",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "evidence": "ICD-9 6826 Cellulitis and abscess of leg, except foot",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "DIAGNOSIS",
+      "name": "Acute kidney failure",
+      "normalized_name": "acute kidney failure",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "evidence": "ICD-9 5849 Acute kidney failure, unspecified",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "DIAGNOSIS",
+      "name": "Hyperkalemia",
+      "normalized_name": "hyperkalemia",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "evidence": "ICD-9 2767 Hyperpotassemia",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "DIAGNOSIS",
+      "name": "Chronic osteomyelitis",
+      "normalized_name": "chronic osteomyelitis",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "evidence": "ICD-9 73017 Chronic osteomyelitis, ankle and foot",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "DIAGNOSIS",
+      "name": "Ulcer of foot",
+      "normalized_name": "foot ulcer",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "evidence": "ICD-9 70715 Ulcer of other part of foot",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "insulin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Insulin SC 15 UNIT (count 13) in admission 25548436",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Vancomycin IV 1000 mg (count 1) in admission 25335557",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "MEDICATION",
+      "name": "Fluoxetine",
+      "normalized_name": "fluoxetine",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Fluoxetine PO/NG 20 mg (count 4) in admission 25548436",
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "laboratory testing",
+      "source_tables": [
+        "lab_orders"
+      ],
+      "evidence": "Derived from POE 'Lab' orders; numeric results unavailable",
+      "metadata": {}
+    },
+    {
+      "id": "N14",
+      "type": "PROCEDURE",
+      "name": "Amputation of toe",
+      "normalized_name": "amputation of toe",
+      "source_tables": [
+        "procedures_icd"
+      ],
+      "evidence": "ICD-9 8411 Amputation of toe (seq_num 1) in admission 25335557",
+      "metadata": {}
+    },
+    {
+      "id": "N15",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture, Routine",
+      "normalized_name": "blood culture routine",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "Specimen: BLOOD CULTURE; Test: Blood Culture, Routine (admission 25548436)",
+      "metadata": {}
+    },
+    {
+      "id": "N16",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "med",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "Service MED (multiple admissions)",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25548436",
+      "evidence": "Patient diagnosed with diabetes mellitus",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25548436",
+      "evidence": "Patient diagnosed with HIV disease",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25548436",
+      "evidence": "Patient diagnosed with major depressive disorder",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "20209034",
+      "evidence": "Patient diagnosed with cellulitis and abscess of leg",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25715199",
+      "evidence": "Patient diagnosed with acute kidney failure",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25661805",
+      "evidence": "Patient diagnosed with hyperkalemia",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25335557",
+      "evidence": "Patient diagnosed with chronic osteomyelitis",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25335557",
+      "evidence": "Patient diagnosed with foot ulcer",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "25548436",
+      "evidence": "Patient received insulin",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "25335557",
+      "evidence": "Patient received vancomycin",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "25548436",
+      "evidence": "Patient received fluoxetine",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "25548436",
+      "evidence": "Laboratory testing ordered",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N14",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "25335557",
+      "evidence": "Patient underwent amputation of toe",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N15",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "25548436",
+      "evidence": "Blood culture performed",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N16",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "25548436",
+      "evidence": "Patient managed by MED service",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N10",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "25548436",
+      "evidence": "Insulin used to treat diabetes mellitus",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N5",
+      "target": "N11",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "20209034",
+      "evidence": "Vancomycin used to treat cellulitis",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N4",
+      "target": "N12",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "25548436",
+      "evidence": "Fluoxetine used to treat major depressive disorder",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N14",
+      "target": "N9",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25335557",
+      "evidence": "Amputation of toe performed for foot ulcer",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N15",
+      "target": "N5",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25548436",
+      "evidence": "Blood culture supports diagnosis of cellulitis",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N10",
+      "target": "N16",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "25548436",
+      "evidence": "Insulin administered under MED service",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N11",
+      "target": "N16",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "25335557",
+      "evidence": "Vancomycin administered under MED service",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N16",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25548436",
+      "evidence": "MED service manages diabetes mellitus",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N2",
+      "target": "N13",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "25548436",
+      "evidence": "Laboratory testing used to diagnose diabetes mellitus",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N5",
+      "target": "N13",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "20209034",
+      "evidence": "Laboratory testing used to diagnose cellulitis",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N10",
+      "target": "N13",
+      "relation": "MONITORED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "25548436",
+      "evidence": "Laboratory testing monitors insulin therapy",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N11",
+      "target": "N13",
+      "relation": "MONITORED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "25335557",
+      "evidence": "Laboratory testing monitors vancomycin therapy",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.75
+    }
+  ]
+}

@@ -1,0 +1,444 @@
+{
+  "subject_id": "10790510",
+  "hadm_ids": [
+    "26850909",
+    "24851394",
+    "20462153",
+    "21369889",
+    "25984892",
+    "24911835",
+    "25994033",
+    "22273692",
+    "28361325",
+    "25413015",
+    "29904159",
+    "22519705",
+    "20281822",
+    "23353492",
+    "26418707",
+    "20647203",
+    "24239228"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 10790510",
+      "normalized_name": "Patient 10790510",
+      "source_tables": [
+        "demographics"
+      ],
+      "evidence": [
+        "subject_id:10790510"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Sepsis",
+      "normalized_name": "Sepsis",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": [
+        "hadm_id:20647203",
+        "hadm_id:24239228"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "Furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": [
+        "hadm_id:23353492",
+        "hadm_id:24239228"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "Insulin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": [
+        "hadm_id:23353492"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "Vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": [
+        "hadm_id:23353492",
+        "hadm_id:24239228"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "Laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": [
+        "hadm_id:26850909",
+        "hadm_id:24851394",
+        "hadm_id:20462153",
+        "hadm_id:21369889",
+        "hadm_id:25984892",
+        "hadm_id:24911835",
+        "hadm_id:25994033",
+        "hadm_id:22273692",
+        "hadm_id:28361325",
+        "hadm_id:25413015",
+        "hadm_id:29904159",
+        "hadm_id:22519705",
+        "hadm_id:20281822",
+        "hadm_id:23353492",
+        "hadm_id:26418707",
+        "hadm_id:20647203",
+        "hadm_id:24239228"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "PROCEDURE",
+      "name": "Respiratory Ventilation, Greater than 96 Consecutive Hours",
+      "normalized_name": "Respiratory Ventilation",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": [
+        "hadm_id:23353492"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture, Routine",
+      "normalized_name": "Blood Culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": [
+        "hadm_id:23353492",
+        "hadm_id:24239228",
+        "hadm_id:20647203"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "MICROBIOLOGY",
+      "name": "MRSA SCREEN",
+      "normalized_name": "MRSA",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": [
+        "hadm_id:23353492",
+        "hadm_id:24239228"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": [
+        "hadm_id:20462153",
+        "hadm_id:21369889",
+        "hadm_id:25984892",
+        "hadm_id:24911835",
+        "hadm_id:25994033",
+        "hadm_id:22273692",
+        "hadm_id:28361325",
+        "hadm_id:26418707",
+        "hadm_id:20647203",
+        "hadm_id:24239228"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "SERVICE",
+      "name": "SURG",
+      "normalized_name": "SURG",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": [
+        "hadm_id:26850909",
+        "hadm_id:24851394",
+        "hadm_id:29904159",
+        "hadm_id:23353492",
+        "hadm_id:20281822"
+      ],
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "20647203",
+      "evidence": [
+        "Sepsis diagnosis in admission 20647203"
+      ],
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "23353492",
+      "evidence": [
+        "Furosemide administered in admission 23353492"
+      ],
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "23353492",
+      "evidence": [
+        "Insulin administered in admission 23353492"
+      ],
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "23353492",
+      "evidence": [
+        "Vancomycin administered in admission 23353492"
+      ],
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "26850909",
+      "evidence": [
+        "Lab orders in admission 26850909"
+      ],
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.97
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "23353492",
+      "evidence": [
+        "Respiratory Ventilation performed in admission 23353492"
+      ],
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "23353492",
+      "evidence": [
+        "Blood Culture ordered in admission 23353492"
+      ],
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "23353492",
+      "evidence": [
+        "MRSA SCREEN performed in admission 23353492"
+      ],
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "20462153",
+      "evidence": [
+        "Managed by MED service in admission 20462153"
+      ],
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "26850909",
+      "evidence": [
+        "Managed by SURG service in admission 26850909"
+      ],
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N8",
+      "target": "N2",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23353492",
+      "evidence": [
+        "Blood Culture positive in admission 23353492 confirming Sepsis"
+      ],
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N5",
+      "target": "N9",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "23353492",
+      "evidence": [
+        "Vancomycin used to treat MRSA in admission 23353492"
+      ],
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N8",
+      "relation": "INVESTIGATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "23353492",
+      "evidence": [
+        "Sepsis investigated with Blood Culture in admission 23353492"
+      ],
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N7",
+      "target": "N2",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23353492",
+      "evidence": [
+        "Mechanical ventilation administered for Sepsis in admission 23353492"
+      ],
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N11",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23353492",
+      "evidence": [
+        "SURG service managing Sepsis in admission 23353492"
+      ],
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N10",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23353492",
+      "evidence": [
+        "MED service managing Sepsis in admission 23353492"
+      ],
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.7
+    }
+  ]
+}

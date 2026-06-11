@@ -1,0 +1,761 @@
+{
+  "subject_id": "11725800",
+  "hadm_ids": [
+    "21342597",
+    "21908915",
+    "26799234",
+    "28009509",
+    "23427118",
+    "21632192",
+    "28300213",
+    "29122413",
+    "25960968",
+    "20624617"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 11725800",
+      "normalized_name": "PATIENT_11725800",
+      "source_tables": [
+        "demographics"
+      ],
+      "evidence": "subject_id 11725800",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Sepsis, unspecified organism",
+      "normalized_name": "SEPSIS",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD A419 (10) in admissions 28009509,23427118,21632192,20624617",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Severe sepsis with septic shock",
+      "normalized_name": "SEVERE_SEPSIS_SHOCK",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD R6521 (10) in admissions 28009509,23427118,21632192,20624617",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Pneumonia due to Escherichia coli",
+      "normalized_name": "PNEUMONIA_ECOLI",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD J155 (10) in admissions 28009509,23427118,21632192",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "DIAGNOSIS",
+      "name": "Chronic obstructive pulmonary disease, unspecified",
+      "normalized_name": "COPD",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD J449 (10) in admissions 28009509,23427118,21632192,25960968,29122413",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "DIAGNOSIS",
+      "name": "Unspecified systolic (congestive) heart failure",
+      "normalized_name": "HEART_FAILURE",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD I5020 (10) in admission 29122413; I5022 (10) in admission 25960968",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "FUROSEMIDE",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Furosemide appears in many admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "INSULIN",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Insulin appears in admissions 29122413,20624617,25960968",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "VANCOMYCIN",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Vancomycin appears in admissions 21632192,29122413,20624617",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "LAB_TEST",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "Laboratory testing orders in all admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "PROCEDURE",
+      "name": "Respiratory ventilation >96h (Mechanical ventilation)",
+      "normalized_name": "MECHANICAL_VENTILATION",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "Procedure code 5A1955Z in admissions 28009509,23427118,21632192,29122413,20624617",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture",
+      "normalized_name": "BLOOD_CULTURE",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "Blood Culture specimen in admissions 21632192,20624617",
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "MICROBIOLOGY",
+      "name": "MRSA SCREEN",
+      "normalized_name": "MRSA_SCREEN",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "MRSA SCREEN specimen in admissions 28300213,29122413,20624617",
+      "metadata": {}
+    },
+    {
+      "id": "N14",
+      "type": "MICROBIOLOGY",
+      "name": "Escherichia coli (E. coli)",
+      "normalized_name": "ECOLI",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "E. coli organism in Mini-BAL culture (admission 21632192) and in Pneumonia diagnosis",
+      "metadata": {}
+    },
+    {
+      "id": "N15",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "Service MED in admissions 26799234,28300213,29122413,25960968,20624617",
+      "metadata": {}
+    },
+    {
+      "id": "N16",
+      "type": "SERVICE",
+      "name": "CMED",
+      "normalized_name": "CMED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "Service CMED in admission 21908915",
+      "metadata": {}
+    },
+    {
+      "id": "N17",
+      "type": "SERVICE",
+      "name": "TSURG",
+      "normalized_name": "TSURG",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "Service TSURG in admissions 21342597,28009509,21632192,20624617",
+      "metadata": {}
+    },
+    {
+      "id": "N18",
+      "type": "SERVICE",
+      "name": "SURG",
+      "normalized_name": "SURG",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "Service SURG in admission 23427118",
+      "metadata": {}
+    },
+    {
+      "id": "N19",
+      "type": "SERVICE",
+      "name": "OMED",
+      "normalized_name": "OMED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "Service OMED in admission 28300213",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28009509",
+      "evidence": "Sepsis present in admission 28009509",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28009509",
+      "evidence": "Severe sepsis present in admission 28009509",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28009509",
+      "evidence": "Pneumonia due to E. coli in admission 28009509",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28009509",
+      "evidence": "COPD in admission 28009509",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29122413",
+      "evidence": "Heart failure in admission 29122413",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "21342597",
+      "evidence": "Furosemide administered in admission 21342597",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "29122413",
+      "evidence": "Insulin administered in admission 29122413",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "21632192",
+      "evidence": "Vancomycin administered in admission 21632192",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "21342597",
+      "evidence": "Lab orders in admission 21342597",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "28009509",
+      "evidence": "Mechanical ventilation >96h in admission 28009509",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "21632192",
+      "evidence": "Blood Culture in admission 21632192",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "28300213",
+      "evidence": "MRSA SCREEN in admission 28300213",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N14",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "21632192",
+      "evidence": "E. coli organism in Mini-BAL culture admission 21632192",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N15",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "26799234",
+      "evidence": "Service MED in admission 26799234",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N16",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "21908915",
+      "evidence": "Service CMED in admission 21908915",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N17",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "21342597",
+      "evidence": "Service TSURG in admission 21342597",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N18",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "23427118",
+      "evidence": "Service SURG in admission 23427118",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N19",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "28300213",
+      "evidence": "Service OMED in admission 28300213",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N9",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "21632192",
+      "evidence": "Vancomycin used for sepsis in admission 21632192",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N3",
+      "target": "N9",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "21632192",
+      "evidence": "Vancomycin used for severe sepsis in admission 21632192",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N4",
+      "target": "N14",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21632192",
+      "evidence": "E. coli organism confirms pneumonia due to E. coli",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N5",
+      "target": "N7",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "25960968",
+      "evidence": "Furosemide used for COPD exacerbation (fluid overload)",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N6",
+      "target": "N7",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "25960968",
+      "evidence": "Furosemide used for heart failure fluid management",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N6",
+      "target": "N8",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "29122413",
+      "evidence": "Insulin used for diabetes comorbidity",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N2",
+      "target": "N12",
+      "relation": "INVESTIGATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "21632192",
+      "evidence": "Blood culture ordered for sepsis",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N3",
+      "target": "N12",
+      "relation": "INVESTIGATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "20624617",
+      "evidence": "Blood culture ordered for severe sepsis",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N4",
+      "target": "N14",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "21632192",
+      "evidence": "Antibiotics (e.g., Ceftriaxone) target E. coli; Vancomycin not active but recorded",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N9",
+      "target": "N14",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "21632192",
+      "evidence": "Vancomycin does not target E. coli (recorded for completeness)",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.5
+    },
+    {
+      "source": "N7",
+      "target": "N11",
+      "relation": "MONITORED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "25960968",
+      "evidence": "Furosemide dosing monitored by labs (electrolytes)",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N8",
+      "target": "N11",
+      "relation": "MONITORED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "29122413",
+      "evidence": "Insulin dosing monitored by labs (glucose)",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N9",
+      "target": "N11",
+      "relation": "MONITORED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "21632192",
+      "evidence": "Vancomycin trough levels monitored by labs",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N15",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28009509",
+      "evidence": "MED service manages sepsis",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N15",
+      "target": "N5",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25960968",
+      "evidence": "MED service manages COPD",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N15",
+      "target": "N6",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29122413",
+      "evidence": "MED service manages heart failure",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N16",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21908915",
+      "evidence": "CMED service manages sepsis in emergency",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N17",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21342597",
+      "evidence": "TSURG service manages sepsis related to surgery",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N18",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23427118",
+      "evidence": "SURG service manages sepsis post‑operative",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N19",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28300213",
+      "evidence": "OMED service manages sepsis in oncology patient",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N11",
+      "target": "N2",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28009509",
+      "evidence": "Mechanical ventilation performed for sepsis respiratory failure",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N11",
+      "target": "N3",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21632192",
+      "evidence": "Mechanical ventilation performed for severe sepsis shock",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N11",
+      "target": "N4",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28009509",
+      "evidence": "Mechanical ventilation performed for pneumonia respiratory failure",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.8
+    }
+  ]
+}

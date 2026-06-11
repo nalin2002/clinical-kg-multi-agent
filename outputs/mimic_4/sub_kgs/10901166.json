@@ -1,0 +1,925 @@
+{
+  "subject_id": "10901166",
+  "hadm_ids": [
+    "23424393"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 10901166",
+      "normalized_name": "patient",
+      "source_tables": [
+        "patients"
+      ],
+      "evidence": "subject_id 10901166",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Acute and subacute hepatic failure without coma",
+      "normalized_name": "hepatic failure",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "evidence": "icd_code K7200",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Sepsis, unspecified organism",
+      "normalized_name": "sepsis",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "evidence": "icd_code A419",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Severe sepsis with septic shock",
+      "normalized_name": "septic shock",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "evidence": "icd_code R6521",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "DIAGNOSIS",
+      "name": "Toxic encephalopathy",
+      "normalized_name": "toxic encephalopathy",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "evidence": "icd_code G92",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "DIAGNOSIS",
+      "name": "ST elevation (STEMI) myocardial infarction of unspecified site",
+      "normalized_name": "myocardial infarction",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "evidence": "icd_code I213",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "DIAGNOSIS",
+      "name": "Hepatorenal syndrome",
+      "normalized_name": "hepatorenal syndrome",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "evidence": "icd_code K767",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "DIAGNOSIS",
+      "name": "Acute respiratory failure with hypoxia",
+      "normalized_name": "respiratory failure",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "evidence": "icd_code J9601",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "DIAGNOSIS",
+      "name": "Intracranial abscess and granuloma",
+      "normalized_name": "intracranial abscess",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "evidence": "icd_code G060",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "DIAGNOSIS",
+      "name": "Pneumonia due to other Gram-negative bacteria",
+      "normalized_name": "gram-negative pneumonia",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "evidence": "icd_code J156",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "DIAGNOSIS",
+      "name": "Acute kidney failure with tubular necrosis",
+      "normalized_name": "acute kidney failure",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "evidence": "icd_code N170",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "DIAGNOSIS",
+      "name": "Disseminated aspergillosis",
+      "normalized_name": "aspergillosis",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "evidence": "icd_code B447",
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "DIAGNOSIS",
+      "name": "Cytomegaloviral disease, unspecified",
+      "normalized_name": "CMV disease",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "evidence": "icd_code B259",
+      "metadata": {}
+    },
+    {
+      "id": "N14",
+      "type": "DIAGNOSIS",
+      "name": "Ventilator associated pneumonia",
+      "normalized_name": "VAP",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "evidence": "icd_code J95851",
+      "metadata": {}
+    },
+    {
+      "id": "N15",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Vancomycin count 13",
+      "metadata": {}
+    },
+    {
+      "id": "N16",
+      "type": "MEDICATION",
+      "name": "Meropenem",
+      "normalized_name": "meropenem",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Meropenem count 9",
+      "metadata": {}
+    },
+    {
+      "id": "N17",
+      "type": "MEDICATION",
+      "name": "Voriconazole",
+      "normalized_name": "voriconazole",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Voriconazole count 8",
+      "metadata": {}
+    },
+    {
+      "id": "N18",
+      "type": "MEDICATION",
+      "name": "Ganciclovir",
+      "normalized_name": "ganciclovir",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Ganciclovir count 3",
+      "metadata": {}
+    },
+    {
+      "id": "N19",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "insulin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Insulin count 3",
+      "metadata": {}
+    },
+    {
+      "id": "N20",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "lab test",
+      "source_tables": [
+        "lab_events"
+      ],
+      "evidence": "Laboratory testing num_lab_orders 289",
+      "metadata": {}
+    },
+    {
+      "id": "N21",
+      "type": "PROCEDURE",
+      "name": "Respiratory Ventilation, Greater than 96 Consecutive Hours",
+      "normalized_name": "mechanical ventilation",
+      "source_tables": [
+        "procedures_icd"
+      ],
+      "evidence": "icd_code 5A1955Z seq_num 3",
+      "metadata": {}
+    },
+    {
+      "id": "N22",
+      "type": "PROCEDURE",
+      "name": "Insertion of Endotracheal Airway into Trachea, Via Natural or Artificial Opening",
+      "normalized_name": "tracheostomy",
+      "source_tables": [
+        "procedures_icd"
+      ],
+      "evidence": "icd_code 0BH17EZ seq_num 14",
+      "metadata": {}
+    },
+    {
+      "id": "N23",
+      "type": "PROCEDURE",
+      "name": "Performance of Urinary Filtration, Continuous, Greater than 18 hours Per Day",
+      "normalized_name": "continuous renal replacement therapy",
+      "source_tables": [
+        "procedures_icd"
+      ],
+      "evidence": "icd_code 5A1D90Z seq_num 9",
+      "metadata": {}
+    },
+    {
+      "id": "N24",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture, Routine",
+      "normalized_name": "blood culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "specimen BLOOD CULTURE test_name Blood Culture, Routine",
+      "metadata": {}
+    },
+    {
+      "id": "N25",
+      "type": "MICROBIOLOGY",
+      "name": "Respiratory Culture - ENTEROBACTER CLOACAE COMPLEX",
+      "normalized_name": "enterobacter cloacae complex",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "specimen SPUTUM organism ENTEROBACTER CLOACAE COMPLEX",
+      "metadata": {}
+    },
+    {
+      "id": "N26",
+      "type": "MICROBIOLOGY",
+      "name": "Respiratory Culture - STENOTROPHOMONAS MALTOPHILIA",
+      "normalized_name": "stenotrophomonas maltophilia",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "specimen SPUTUM organism STENOTROPHOMONAS MALTOPHILIA",
+      "metadata": {}
+    },
+    {
+      "id": "N27",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "medicine service",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "service MED",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23424393",
+      "evidence": "diagnoses seq_num 1",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23424393",
+      "evidence": "diagnoses seq_num 2",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23424393",
+      "evidence": "diagnoses seq_num 3",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23424393",
+      "evidence": "diagnoses seq_num 4",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23424393",
+      "evidence": "diagnoses seq_num 5",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23424393",
+      "evidence": "diagnoses seq_num 6",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23424393",
+      "evidence": "diagnoses seq_num 7",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23424393",
+      "evidence": "diagnoses seq_num 8",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23424393",
+      "evidence": "diagnoses seq_num 10",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23424393",
+      "evidence": "diagnoses seq_num 12",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23424393",
+      "evidence": "diagnoses seq_num 13",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23424393",
+      "evidence": "diagnoses seq_num 15",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N14",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23424393",
+      "evidence": "diagnoses seq_num 20",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N15",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "23424393",
+      "evidence": "medication Vancomycin count 13",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N16",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "23424393",
+      "evidence": "medication Meropenem count 9",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N17",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "23424393",
+      "evidence": "medication Voriconazole count 8",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N18",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "23424393",
+      "evidence": "medication Ganciclovir count 3",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N19",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "23424393",
+      "evidence": "medication Insulin count 3",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N20",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "23424393",
+      "evidence": "lab_tests name Laboratory testing",
+      "source_tables": [
+        "lab_events"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N21",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "23424393",
+      "evidence": "procedure seq_num 3 icd_code 5A1955Z",
+      "source_tables": [
+        "procedures_icd"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N22",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "23424393",
+      "evidence": "procedure seq_num 14 icd_code 0BH17EZ",
+      "source_tables": [
+        "procedures_icd"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N23",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "23424393",
+      "evidence": "procedure seq_num 9 icd_code 5A1D90Z",
+      "source_tables": [
+        "procedures_icd"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N24",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "23424393",
+      "evidence": "microbiology specimen BLOOD CULTURE test_name Blood Culture, Routine",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N25",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "23424393",
+      "evidence": "microbiology specimen SPUTUM organism ENTEROBACTER CLOACAE COMPLEX",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N26",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "23424393",
+      "evidence": "microbiology specimen SPUTUM organism STENOTROPHOMONAS MALTOPHILIA",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N27",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "23424393",
+      "evidence": "service MED",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N3",
+      "target": "N15",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "23424393",
+      "evidence": "Sepsis treated with Vancomycin (broad‑spectrum gram‑positive coverage)",
+      "source_tables": [
+        "medications",
+        "diagnoses_icd"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N10",
+      "target": "N16",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "23424393",
+      "evidence": "Gram‑negative pneumonia treated with Meropenem",
+      "source_tables": [
+        "medications",
+        "diagnoses_icd"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N12",
+      "target": "N17",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "23424393",
+      "evidence": "Aspergillosis treated with Voriconazole",
+      "source_tables": [
+        "medications",
+        "diagnoses_icd"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N13",
+      "target": "N18",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "23424393",
+      "evidence": "CMV disease treated with Ganciclovir",
+      "source_tables": [
+        "medications",
+        "diagnoses_icd"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N8",
+      "target": "N21",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23424393",
+      "evidence": "Mechanical ventilation for acute respiratory failure",
+      "source_tables": [
+        "procedures_icd",
+        "diagnoses_icd"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N22",
+      "target": "N8",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23424393",
+      "evidence": "Tracheostomy performed for respiratory failure",
+      "source_tables": [
+        "procedures_icd",
+        "diagnoses_icd"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N23",
+      "target": "N11",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23424393",
+      "evidence": "CRRT for acute kidney failure",
+      "source_tables": [
+        "procedures_icd",
+        "diagnoses_icd"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N25",
+      "target": "N10",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23424393",
+      "evidence": "Enterobacter cloacae complex isolated from sputum confirms gram‑negative pneumonia",
+      "source_tables": [
+        "microbiology",
+        "diagnoses_icd"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N26",
+      "target": "N10",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23424393",
+      "evidence": "Stenotrophomonas maltophilia isolated from sputum contributes to pneumonia",
+      "source_tables": [
+        "microbiology",
+        "diagnoses_icd"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N15",
+      "target": "N25",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "23424393",
+      "evidence": "Vancomycin active against gram‑positive organisms (not the Enterobacter isolate)",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N16",
+      "target": "N25",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "23424393",
+      "evidence": "Meropenem susceptible (S) to Enterobacter cloacae complex",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N17",
+      "target": "N12",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "23424393",
+      "evidence": "Voriconazole treats Aspergillosis",
+      "source_tables": [
+        "medications",
+        "diagnoses_icd"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N27",
+      "target": "N3",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23424393",
+      "evidence": "MED service manages sepsis",
+      "source_tables": [
+        "services",
+        "diagnoses_icd"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N27",
+      "target": "N10",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23424393",
+      "evidence": "MED service manages pneumonia",
+      "source_tables": [
+        "services",
+        "diagnoses_icd"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N27",
+      "target": "N12",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23424393",
+      "evidence": "MED service manages aspergillosis",
+      "source_tables": [
+        "services",
+        "diagnoses_icd"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N20",
+      "target": "N3",
+      "relation": "MONITORED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "23424393",
+      "evidence": "Lab tests monitor sepsis parameters",
+      "source_tables": [
+        "lab_events",
+        "diagnoses_icd"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N20",
+      "target": "N8",
+      "relation": "MONITORED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "23424393",
+      "evidence": "Lab tests monitor respiratory failure",
+      "source_tables": [
+        "lab_events",
+        "diagnoses_icd"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N20",
+      "target": "N11",
+      "relation": "MONITORED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "23424393",
+      "evidence": "Lab tests monitor kidney failure",
+      "source_tables": [
+        "lab_events",
+        "diagnoses_icd"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N15",
+      "target": "N3",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23424393",
+      "evidence": "Vancomycin administered during sepsis admission",
+      "source_tables": [
+        "medications",
+        "diagnoses_icd"
+      ],
+      "confidence": 0.55
+    },
+    {
+      "source": "N16",
+      "target": "N10",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23424393",
+      "evidence": "Meropenem administered during pneumonia admission",
+      "source_tables": [
+        "medications",
+        "diagnoses_icd"
+      ],
+      "confidence": 0.55
+    }
+  ]
+}

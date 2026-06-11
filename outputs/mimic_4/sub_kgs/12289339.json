@@ -1,0 +1,731 @@
+{
+  "subject_id": "12289339",
+  "hadm_ids": [
+    "25409103",
+    "24464563",
+    "21972039",
+    "21108028",
+    "21039656",
+    "21221285",
+    "21007288",
+    "29529718"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 12289339",
+      "normalized_name": "PATIENT",
+      "source_tables": [
+        "demographics"
+      ],
+      "evidence": "patient record",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Unspecified B-cell lymphoma, lymph nodes of multiple sites",
+      "normalized_name": "LYMPHOMA",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id=25409103",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Tumor lysis syndrome",
+      "normalized_name": "TUMOR_LYSIS_SYNDROME",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id=25409103",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Acute kidney failure, unspecified",
+      "normalized_name": "AKI",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id=25409103;hadm_id=21972039;hadm_id=21221285;hadm_id=21007288",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "DIAGNOSIS",
+      "name": "Type 2 diabetes mellitus with hyperglycemia",
+      "normalized_name": "TYPE_2_DM",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id=25409103;hadm_id=24464563;hadm_id=21039656;hadm_id=21221285;hadm_id=29529718",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "DIAGNOSIS",
+      "name": "Essential (primary) hypertension",
+      "normalized_name": "HYPERTENSION",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id=25409103;hadm_id=24464563;hadm_id=21972039;hadm_id=21039656;hadm_id=21221285;hadm_id=21007288",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "DIAGNOSIS",
+      "name": "Hyperlipidemia, unspecified",
+      "normalized_name": "HYPERLIPIDEMIA",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id=25409103;hadm_id=24464563;hadm_id=21972039;hadm_id=21039656;hadm_id=21221285;hadm_id=21007288;hadm_id=29529718",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "DIAGNOSIS",
+      "name": "Neutropenia due to infection",
+      "normalized_name": "NEUTROPENIA_INFECTION",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id=29529718",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "DIAGNOSIS",
+      "name": "Pyonephrosis",
+      "normalized_name": "PYONEPHROSIS",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id=29529718",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "DIAGNOSIS",
+      "name": "Methicillin susceptible Staphylococcus aureus infection as the cause of diseases classified elsewhere",
+      "normalized_name": "MSSA_INFECTION",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id=29529718",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "INSULIN",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "VANCOMYCIN",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id=29529718",
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "MEDICATION",
+      "name": "LevoFLOXacin",
+      "normalized_name": "LEVOFLOXACIN",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id=29529718",
+      "metadata": {}
+    },
+    {
+      "id": "N14",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "LAB_TEST",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "all admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N15",
+      "type": "PROCEDURE",
+      "name": "Introduction of Other Antineoplastic into Central Vein, Percutaneous Approach",
+      "normalized_name": "ANTINEOPLASTIC_CENTRAL_VEIN",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N16",
+      "type": "MICROBIOLOGY",
+      "name": "URINE CULTURE - STAPHYLOCOCCUS, COAGULASE NEGATIVE",
+      "normalized_name": "URINE_STAPH_NEG",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "hadm_id=21221285;hadm_id=UNLINKED",
+      "metadata": {}
+    },
+    {
+      "id": "N17",
+      "type": "MICROBIOLOGY",
+      "name": "MRSA SCREEN",
+      "normalized_name": "MRSA_SCREEN",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "hadm_id=29529718",
+      "metadata": {}
+    },
+    {
+      "id": "N18",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture, Routine",
+      "normalized_name": "BLOOD_CULTURE",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "hadm_id=29529718;hadm_id=UNLINKED",
+      "metadata": {}
+    },
+    {
+      "id": "N19",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED_SERVICE",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "hadm_id=25409103",
+      "metadata": {}
+    },
+    {
+      "id": "N20",
+      "type": "SERVICE",
+      "name": "OMED",
+      "normalized_name": "OMED_SERVICE",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "hadm_id=24464563;hadm_id=21972039;hadm_id=21108028;hadm_id=21039656;hadm_id=21221285;hadm_id=21007288;hadm_id=29529718",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25409103",
+      "evidence": "patient has lymphoma",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25409103",
+      "evidence": "patient has tumor lysis syndrome",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25409103",
+      "evidence": "patient has acute kidney failure",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25409103",
+      "evidence": "patient has type 2 diabetes with hyperglycemia",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25409103",
+      "evidence": "patient has hypertension",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25409103",
+      "evidence": "patient has hyperlipidemia",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29529718",
+      "evidence": "patient has neutropenia due to infection",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29529718",
+      "evidence": "patient has pyonephrosis",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29529718",
+      "evidence": "patient has MSSA infection",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "insulin administered across multiple admissions",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "29529718",
+      "evidence": "vancomycin administered",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "29529718",
+      "evidence": "levofloxacin administered",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N14",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "lab testing orders present",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N15",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "",
+      "evidence": "central venous catheter placement",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N16",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "21221285",
+      "evidence": "urine culture positive for coagulase negative staph",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N17",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "29529718",
+      "evidence": "MRSA screen performed",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N18",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "29529718",
+      "evidence": "blood culture performed",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N19",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "25409103",
+      "evidence": "managed by MED service",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N20",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "24464563",
+      "evidence": "managed by OMED service",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N5",
+      "target": "N11",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "insulin treats type 2 diabetes",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N8",
+      "target": "N12",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "29529718",
+      "evidence": "vancomycin treats neutropenic infection",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N8",
+      "target": "N13",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "29529718",
+      "evidence": "levofloxacin treats neutropenic infection",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N4",
+      "target": "N14",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "AKI diagnosed via lab tests",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N5",
+      "target": "N14",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "diabetes diagnosed via lab tests",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N6",
+      "target": "N14",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "hypertension diagnosed via lab tests",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N7",
+      "target": "N14",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "hyperlipidemia diagnosed via lab tests",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N8",
+      "target": "N14",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "infection diagnosed via lab tests",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N8",
+      "target": "N16",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21221285",
+      "evidence": "urine culture confirms infection",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N10",
+      "target": "N18",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29529718",
+      "evidence": "blood culture confirms MSSA infection",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N12",
+      "target": "N16",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "29529718",
+      "evidence": "vancomycin targets MRSA",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N13",
+      "target": "N16",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "29529718",
+      "evidence": "levofloxacin targets coagulase negative staph",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N19",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25409103",
+      "evidence": "MED service manages lymphoma",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N20",
+      "target": "N5",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24464563",
+      "evidence": "OMED service manages diabetes",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N20",
+      "target": "N8",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29529718",
+      "evidence": "OMED service manages neutropenic infection",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N15",
+      "target": "N2",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "central line placed for lymphoma chemotherapy",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N15",
+      "target": "N5",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "central line placed for diabetes management",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.5
+    },
+    {
+      "source": "N2",
+      "target": "N5",
+      "relation": "ASSOCIATED_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "lymphoma and diabetes co-occur",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N4",
+      "target": "N6",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "AKI co-occurs with hypertension",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.55
+    }
+  ]
+}

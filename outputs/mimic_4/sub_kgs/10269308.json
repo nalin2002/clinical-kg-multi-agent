@@ -1,0 +1,420 @@
+{
+  "subject_id": "10269308",
+  "hadm_ids": [
+    "24361132",
+    "23492376",
+    "22182884",
+    "26979049",
+    "29042615",
+    "26322272",
+    "24041957",
+    "20262635",
+    "27810172",
+    "24595466",
+    "23597362",
+    "26869989",
+    "20482046",
+    "26787110"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 10269308",
+      "normalized_name": "PATIENT",
+      "source_tables": [
+        "demographics"
+      ],
+      "evidence": "subject_id 10269308",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Heart failure",
+      "normalized_name": "HEART FAILURE",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "Admissions 24041957, 20262635, 23597362, 26869989, 20482046, 26787110",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "FUROSEMIDE",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Admissions 24361132, 23492376, 22182884, 26979049, 29042615, 26322272, 24041957, 20262635, 27810172, 24595466, 26869989, 20482046, 26787110",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "INSULIN",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Admissions 24361132, 23492376",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "VANCOMYCIN",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Admissions 23492376, 26322272, 26869989, 26787110",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "LABORATORY TESTING",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "All admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "PROCEDURE",
+      "name": "Hemodialysis",
+      "normalized_name": "HEMODIALYSIS",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "Admissions 24361132, 23492376",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture",
+      "normalized_name": "BLOOD CULTURE",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "Admissions 24595466, 26869989, 26787110, UNLINKED",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "MICROBIOLOGY",
+      "name": "MRSA SCREEN",
+      "normalized_name": "MRSA SCREEN",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "Admission 23492376",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "SERVICE",
+      "name": "NMED",
+      "normalized_name": "NMED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "Admission 24361132",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "SERVICE",
+      "name": "SURG",
+      "normalized_name": "SURG",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "Admission 23492376",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "Admissions 29042615, 23597362",
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "SERVICE",
+      "name": "CMED",
+      "normalized_name": "CMED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "Admissions 26322272, 24595466, 26869989, 20482046",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Heart failure diagnoses across multiple admissions",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Furosemide prescribed in many admissions",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Insulin prescribed in admissions 24361132 and 23492376",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Vancomycin prescribed in several admissions",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "Laboratory testing orders in all admissions",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.97
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "",
+      "evidence": "Hemodialysis performed in admissions 24361132 and 23492376",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "Blood Culture performed in multiple admissions",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "MRSA SCREEN performed in admission 23492376",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "Service NMED managed admission 24361132",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.94
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "Service SURG managed admission 23492376",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.94
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "Service MED managed admissions 29042615 and 23597362",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.94
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "Service CMED managed admissions 26322272, 24595466, 26869989, 20482046",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.94
+    },
+    {
+      "source": "N2",
+      "target": "N3",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Furosemide is a loop diuretic used to treat heart failure",
+      "source_tables": [
+        "diagnoses",
+        "medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N5",
+      "target": "N9",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "Vancomycin is active against MRSA",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N3",
+      "target": "N6",
+      "relation": "MONITORED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "Furosemide dosing is monitored by laboratory electrolytes",
+      "source_tables": [
+        "medications",
+        "lab_tests"
+      ],
+      "confidence": 0.65
+    },
+    {
+      "source": "N4",
+      "target": "N6",
+      "relation": "MONITORED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "Insulin therapy is monitored by laboratory glucose measurements",
+      "source_tables": [
+        "medications",
+        "lab_tests"
+      ],
+      "confidence": 0.65
+    },
+    {
+      "source": "N5",
+      "target": "N6",
+      "relation": "MONITORED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "Vancomycin therapy is monitored by laboratory renal function tests",
+      "source_tables": [
+        "medications",
+        "lab_tests"
+      ],
+      "confidence": 0.65
+    },
+    {
+      "source": "N12",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "MED service manages heart failure patients",
+      "source_tables": [
+        "services",
+        "diagnoses"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N11",
+      "target": "N7",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "PROCEDURE",
+      "hadm_id": "",
+      "evidence": "SURG service performs hemodialysis procedures",
+      "source_tables": [
+        "services",
+        "procedures"
+      ],
+      "confidence": 0.75
+    }
+  ]
+}

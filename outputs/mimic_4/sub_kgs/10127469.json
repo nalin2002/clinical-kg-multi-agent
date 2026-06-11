@@ -1,0 +1,452 @@
+{
+  "subject_id": "10127469",
+  "hadm_ids": [
+    "24785079",
+    "23079904",
+    "21644595",
+    "21405846",
+    "26610237",
+    "21289537",
+    "24362861"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 10127469",
+      "normalized_name": "PATIENT_10127469",
+      "source_tables": [],
+      "evidence": [],
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Sepsis",
+      "normalized_name": "SEPSIS",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": [
+        "21644595",
+        "21405846",
+        "24362861"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "VANCOMYCIN",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": [
+        "21644595",
+        "21405846",
+        "24362861",
+        "21289537"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "FUROSEMIDE",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": [
+        "21405846"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "INSULIN",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": [
+        "23079904",
+        "21644595",
+        "21289537",
+        "21405846"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "LABORATORY_TESTING",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": [
+        "24785079",
+        "23079904",
+        "21644595",
+        "21405846",
+        "26610237",
+        "21289537",
+        "24362861"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "SERVICE",
+      "name": "OMED",
+      "normalized_name": "OMED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": [
+        "24785079"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "SERVICE",
+      "name": "SURG",
+      "normalized_name": "SURG",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": [
+        "23079904",
+        "21644595"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": [
+        "21405846",
+        "26610237",
+        "21289537",
+        "24362861"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture, Routine",
+      "normalized_name": "BLOOD_CULTURE_ROUTINE",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": [
+        "21644595",
+        "21405846",
+        "21289537",
+        "24362861"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "MICROBIOLOGY",
+      "name": "URINE CULTURE",
+      "normalized_name": "URINE_CULTURE",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": [
+        "24785079",
+        "21644595",
+        "21405846"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "MICROBIOLOGY",
+      "name": "MRSA SCREEN",
+      "normalized_name": "MRSA_SCREEN",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": [
+        "23079904",
+        "21405846",
+        "24362861"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "MICROBIOLOGY",
+      "name": "C. difficile PCR",
+      "normalized_name": "C_DIFFICILE_PCR",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": [
+        "24785079",
+        "21405846",
+        "21644595"
+      ],
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21644595",
+      "evidence": "Sepsis diagnosis",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "21644595",
+      "evidence": "Vancomycin administered",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.97
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "21405846",
+      "evidence": "Furosemide administered",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "23079904",
+      "evidence": "Insulin administered",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "24785079",
+      "evidence": "Lab orders",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.98
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "24785079",
+      "evidence": "Managed by OMED",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.97
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "23079904",
+      "evidence": "Managed by SURG",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.97
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "21405846",
+      "evidence": "Managed by MED",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.97
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "21644595",
+      "evidence": "Blood Culture performed",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "24785079",
+      "evidence": "Urine Culture performed",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "23079904",
+      "evidence": "MRSA SCREEN performed",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "24785079",
+      "evidence": "C. difficile PCR performed",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N3",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Vancomycin used for sepsis",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N6",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "Laboratory testing used to diagnose sepsis",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N3",
+      "target": "N12",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "Vancomycin targets MRSA",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N10",
+      "target": "N2",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Blood culture confirms sepsis",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N6",
+      "target": "N2",
+      "relation": "INDICATES",
+      "source_type": "LAB_TEST",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Lab results indicate sepsis",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N7",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "OMED manages sepsis",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N8",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "SURG manages sepsis",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N9",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "MED manages sepsis",
+      "source_tables": [],
+      "confidence": 0.8
+    }
+  ]
+}

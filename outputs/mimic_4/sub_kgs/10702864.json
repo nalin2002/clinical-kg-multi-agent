@@ -1,0 +1,294 @@
+{
+  "subject_id": "10702864",
+  "hadm_ids": [
+    "27115570",
+    "23252015",
+    "20481995",
+    "25073123",
+    "29010045",
+    "22606326",
+    "25728579",
+    "23206825",
+    "22324648"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 10702864",
+      "normalized_name": "patient_10702864",
+      "source_tables": [],
+      "evidence": "subject_id 10702864",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Other streptococcal sepsis",
+      "normalized_name": "other_streptococcal_sepsis",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 22606326 diagnosis \"Other streptococcal sepsis\"",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Acute on chronic diastolic (congestive) heart failure",
+      "normalized_name": "acute_on_chronic_diastolic_congestive_heart_failure",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 22324648 diagnosis \"Acute on chronic diastolic (congestive) heart failure\"",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "multiple admissions medication \"Vancomycin\"",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "laboratory_testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "multiple admissions lab test \"Laboratory testing\"",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "PROCEDURE",
+      "name": "Drainage of Left Pleural Cavity with Drainage Device, Percutaneous Approach",
+      "normalized_name": "drainage_of_left_pleural_cavity_percutaneous",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "hadm_id 22606326 procedure \"Drainage of Left Pleural Cavity with Drainage Device, Percutaneous Approach\"",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture, Routine",
+      "normalized_name": "blood_culture_routine",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "multiple admissions microbiology test \"Blood Culture, Routine\"",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "med",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "multiple admissions service \"MED\"",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22606326",
+      "evidence": "patient has diagnosis Other streptococcal sepsis",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22324648",
+      "evidence": "patient has diagnosis Acute on chronic diastolic (congestive) heart failure",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "22606326",
+      "evidence": "patient takes medication Vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "22606326",
+      "evidence": "patient had lab test Laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "22606326",
+      "evidence": "patient underwent procedure Drainage of Left Pleural Cavity with Drainage Device, Percutaneous Approach",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22606326",
+      "evidence": "patient had microbiology Blood Culture, Routine",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "22606326",
+      "evidence": "patient managed by service MED",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N4",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "22606326",
+      "evidence": "sepsis treated with Vancomycin (clinical practice)",
+      "source_tables": [],
+      "confidence": 0.75
+    },
+    {
+      "source": "N2",
+      "target": "N7",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22606326",
+      "evidence": "Blood Culture confirms sepsis",
+      "source_tables": [],
+      "confidence": 0.75
+    },
+    {
+      "source": "N3",
+      "target": "N4",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "22324648",
+      "evidence": "heart failure treated with Vancomycin (clinical practice)",
+      "source_tables": [],
+      "confidence": 0.75
+    },
+    {
+      "source": "N4",
+      "target": "N7",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22606326",
+      "evidence": "Vancomycin targets organisms identified in Blood Culture",
+      "source_tables": [],
+      "confidence": 0.75
+    },
+    {
+      "source": "N2",
+      "target": "N5",
+      "relation": "MONITORED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "22606326",
+      "evidence": "sepsis monitored by laboratory testing",
+      "source_tables": [],
+      "confidence": 0.7
+    },
+    {
+      "source": "N3",
+      "target": "N5",
+      "relation": "MONITORED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "22324648",
+      "evidence": "heart failure monitored by laboratory testing",
+      "source_tables": [],
+      "confidence": 0.7
+    },
+    {
+      "source": "N2",
+      "target": "N6",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "PROCEDURE",
+      "hadm_id": "22606326",
+      "evidence": "sepsis co-occurs with drainage procedure",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N4",
+      "target": "N6",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "PROCEDURE",
+      "hadm_id": "22606326",
+      "evidence": "Vancomycin co-occurs with drainage procedure",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N5",
+      "target": "N6",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "LAB_TEST",
+      "target_type": "PROCEDURE",
+      "hadm_id": "22606326",
+      "evidence": "lab testing co-occurs with drainage procedure",
+      "source_tables": [],
+      "confidence": 0.6
+    }
+  ]
+}

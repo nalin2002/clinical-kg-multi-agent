@@ -1,0 +1,511 @@
+{
+  "subject_id": "10441608",
+  "hadm_ids": [
+    "28167833",
+    "20619240",
+    "28877350",
+    "28218766",
+    "22138484",
+    "26057351",
+    "27693962",
+    "20811763",
+    "29854717",
+    "28706197",
+    "22547649"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 10441608",
+      "normalized_name": "patient_10441608",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": "subject_id 10441608",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Encounter for antineoplastic chemotherapy",
+      "normalized_name": "encounter_for_antineoplastic_chemotherapy",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Diffuse large B-cell lymphoma, lymph nodes of multiple sites",
+      "normalized_name": "diffuse_large_b_cell_lymphoma_lymph_nodes_multiple_sites",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Hypothyroidism, unspecified",
+      "normalized_name": "hypothyroidism_unspecified",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "DIAGNOSIS",
+      "name": "Migraine, unspecified, not intractable, without status migrainosus",
+      "normalized_name": "migraine_unspecified_not_intractable",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "admission 28167833",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "DIAGNOSIS",
+      "name": "Adverse effect of antineoplastic and immunosuppressive drugs, initial encounter",
+      "normalized_name": "adverse_effect_antineoplastic_immunosuppressive_drugs_initial",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "DIAGNOSIS",
+      "name": "Personal history of nicotine dependence",
+      "normalized_name": "personal_history_nicotine_dependence",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "admissions 28167833, 20619240",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "admission 29854717",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "MEDICATION",
+      "name": "Ondansetron",
+      "normalized_name": "ondansetron",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "MEDICATION",
+      "name": "LORazepam",
+      "normalized_name": "lorazepam",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "laboratory_testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "all admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "PROCEDURE",
+      "name": "Introduction of Other Antineoplastic into Central Vein, Percutaneous Approach",
+      "normalized_name": "introduction_other_antineoplastic_central_vein",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "all admissions with this procedure",
+      "metadata": {}
+    },
+    {
+      "id": "N14",
+      "type": "PROCEDURE",
+      "name": "Insertion of Totally Implantable Vascular Access Device into Chest Subcutaneous Tissue and Fascia, Open Approach",
+      "normalized_name": "insertion_totally_implantable_vad_chest",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "admission 20619240",
+      "metadata": {}
+    },
+    {
+      "id": "N15",
+      "type": "PROCEDURE",
+      "name": "Insertion of Infusion Device into Right Atrium, Percutaneous Approach",
+      "normalized_name": "insertion_infusion_device_right_atrium",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "admission 20619240",
+      "metadata": {}
+    },
+    {
+      "id": "N16",
+      "type": "PROCEDURE",
+      "name": "Drainage of Spinal Canal, Percutaneous Approach, Diagnostic",
+      "normalized_name": "drainage_spinal_canal_percutaneous_diagnostic",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "admission 27693962",
+      "metadata": {}
+    },
+    {
+      "id": "N17",
+      "type": "PROCEDURE",
+      "name": "Introduction of Lisocabtagene Maraleucel Immunotherapy into Central Vein, Percutaneous Approach, New Technology Group 7",
+      "normalized_name": "introduction_lisocabtagene_maraleucel_immunotherapy",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "admission 28706197",
+      "metadata": {}
+    },
+    {
+      "id": "N18",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture",
+      "normalized_name": "blood_culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "admission 29854717 and UNLINKED",
+      "metadata": {}
+    },
+    {
+      "id": "N19",
+      "type": "MICROBIOLOGY",
+      "name": "MRSA SCREEN",
+      "normalized_name": "mrsa_screen",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "admission 29854717 and UNLINKED",
+      "metadata": {}
+    },
+    {
+      "id": "N20",
+      "type": "MICROBIOLOGY",
+      "name": "URINE CULTURE",
+      "normalized_name": "urine_culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "admission 28706197 and UNLINKED",
+      "metadata": {}
+    },
+    {
+      "id": "N21",
+      "type": "SERVICE",
+      "name": "OMED",
+      "normalized_name": "omed",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "all admissions",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "patient has diagnosis Encounter for antineoplastic chemotherapy",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "patient has diagnosis Diffuse large B-cell lymphoma, lymph nodes of multiple sites",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "patient has diagnosis Hypothyroidism, unspecified",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "patient has diagnosis Migraine, unspecified, not intractable, without status migrainosus",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "patient has diagnosis Adverse effect of antineoplastic and immunosuppressive drugs, initial encounter",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "patient has diagnosis Personal history of nicotine dependence",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "patient takes medication Furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "patient takes medication Vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "patient takes medication Ondansetron",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "patient takes medication LORazepam",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "patient had lab test Laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "",
+      "evidence": "patient underwent procedure Introduction of Other Antineoplastic into Central Vein, Percutaneous Approach",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N14",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "",
+      "evidence": "patient underwent procedure Insertion of Totally Implantable Vascular Access Device into Chest Subcutaneous Tissue and Fascia, Open Approach",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N15",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "",
+      "evidence": "patient underwent procedure Insertion of Infusion Device into Right Atrium, Percutaneous Approach",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N16",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "",
+      "evidence": "patient underwent procedure Drainage of Spinal Canal, Percutaneous Approach, Diagnostic",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N17",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "",
+      "evidence": "patient underwent procedure Introduction of Lisocabtagene Maraleucel Immunotherapy into Central Vein, Percutaneous Approach, New Technology Group 7",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N18",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "patient had microbiology Blood Culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N19",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "patient had microbiology MRSA SCREEN",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N20",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "patient had microbiology URINE CULTURE",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N21",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "patient managed by service OMED",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.96
+    }
+  ]
+}

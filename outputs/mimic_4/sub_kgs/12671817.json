@@ -1,0 +1,635 @@
+{
+  "subject_id": "12671817",
+  "hadm_ids": [
+    "25682013",
+    "28536576",
+    "20004072",
+    "27162855",
+    "22994573",
+    "24841220",
+    "27676941",
+    "24458400",
+    "21227321",
+    "20221473",
+    "20321410"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 12671817",
+      "normalized_name": "Patient 12671817",
+      "source_tables": [],
+      "evidence": [],
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Acute myeloblastic leukemia, not having achieved remission",
+      "normalized_name": "Acute myeloblastic leukemia",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": [
+        "hadm_id=25682013 seq_num=1"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Severe sepsis with septic shock",
+      "normalized_name": "Severe sepsis",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": [
+        "hadm_id=27162855 seq_num=2"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Other specified sepsis",
+      "normalized_name": "Sepsis",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": [
+        "hadm_id=27162855 seq_num=1"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "Vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": [
+        "hadm_id=25682013"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "Insulin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": [
+        "hadm_id=25682013",
+        "hadm_id=28536576",
+        "hadm_id=20004072",
+        "hadm_id=27162855",
+        "hadm_id=22994573",
+        "hadm_id=24841220",
+        "hadm_id=27676941",
+        "hadm_id=21227321",
+        "hadm_id=20221473",
+        "hadm_id=20321410"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "Furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": [
+        "hadm_id=22994573"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "Laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": [
+        "hadm_id=25682013",
+        "hadm_id=28536576",
+        "hadm_id=20004072",
+        "hadm_id=27162855",
+        "hadm_id=22994573",
+        "hadm_id=24841220",
+        "hadm_id=27676941",
+        "hadm_id=24458400",
+        "hadm_id=21227321",
+        "hadm_id=20221473",
+        "hadm_id=20321410"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "PROCEDURE",
+      "name": "Introduction of Other Antineoplastic into Central Vein, Percutaneous Approach",
+      "normalized_name": "Antineoplastic central line insertion",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": [
+        "hadm_id=25682013 seq_num=1"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture, Routine",
+      "normalized_name": "Blood culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": [
+        "hadm_id=25682013",
+        "hadm_id=28536576",
+        "hadm_id=27162855",
+        "hadm_id=22994573",
+        "hadm_id=27676941",
+        "hadm_id=UNLINKED"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "SERVICE",
+      "name": "OMED",
+      "normalized_name": "OMED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": [
+        "hadm_id=25682013",
+        "hadm_id=28536576",
+        "hadm_id=20004072",
+        "hadm_id=27162855",
+        "hadm_id=22994573",
+        "hadm_id=24841220",
+        "hadm_id=27676941",
+        "hadm_id=24458400",
+        "hadm_id=21227321",
+        "hadm_id=20221473",
+        "hadm_id=20321410"
+      ],
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25682013",
+      "evidence": [
+        "patient has acute myeloblastic leukemia"
+      ],
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27162855",
+      "evidence": [
+        "patient has severe sepsis"
+      ],
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27162855",
+      "evidence": [
+        "patient has other specified sepsis"
+      ],
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "25682013",
+      "evidence": [
+        "patient received vancomycin"
+      ],
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": [
+        "patient received insulin across multiple admissions"
+      ],
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "22994573",
+      "evidence": [
+        "patient received furosemide"
+      ],
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": [
+        "patient had lab testing"
+      ],
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "25682013",
+      "evidence": [
+        "patient underwent antineoplastic central line insertion"
+      ],
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": [
+        "patient had blood cultures"
+      ],
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": [
+        "patient managed by OMED"
+      ],
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N5",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "25682013",
+      "evidence": [
+        "vancomycin used for leukemia‑related infection"
+      ],
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N3",
+      "target": "N5",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "27162855",
+      "evidence": [
+        "vancomycin used for severe sepsis"
+      ],
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N4",
+      "target": "N5",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "27162855",
+      "evidence": [
+        "vancomycin used for sepsis"
+      ],
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N3",
+      "target": "N8",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "27162855",
+      "evidence": [
+        "lab testing ordered for sepsis"
+      ],
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N4",
+      "target": "N8",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "27162855",
+      "evidence": [
+        "lab testing ordered for sepsis"
+      ],
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N3",
+      "target": "N10",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "27162855",
+      "evidence": [
+        "blood culture performed for sepsis"
+      ],
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N5",
+      "target": "N10",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "25682013",
+      "evidence": [
+        "vancomycin targets gram‑positive organisms"
+      ],
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N9",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25682013",
+      "evidence": [
+        "central line placed for leukemia therapy"
+      ],
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N11",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25682013",
+      "evidence": [
+        "OMED manages leukemia"
+      ],
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N11",
+      "target": "N3",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27162855",
+      "evidence": [
+        "OMED manages sepsis"
+      ],
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N5",
+      "target": "N11",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "25682013",
+      "evidence": [
+        "vancomycin given under OMED"
+      ],
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N6",
+      "target": "N2",
+      "relation": "MONITORED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25682013",
+      "evidence": [
+        "insulin used for diabetes in leukemia patient"
+      ],
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N6",
+      "target": "N8",
+      "relation": "MONITORED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "25682013",
+      "evidence": [
+        "insulin therapy monitored by labs"
+      ],
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N6",
+      "target": "N11",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": [
+        "insulin administered under OMED"
+      ],
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N7",
+      "target": "N2",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "22994573",
+      "evidence": [
+        "furosemide for fluid overload in leukemia"
+      ],
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N7",
+      "target": "N11",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "22994573",
+      "evidence": [
+        "furosemide given under OMED"
+      ],
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N5",
+      "target": "N3",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27162855",
+      "evidence": [
+        "vancomycin and sepsis co‑occur"
+      ],
+      "source_tables": [],
+      "confidence": 0.55
+    },
+    {
+      "source": "N5",
+      "target": "N4",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27162855",
+      "evidence": [
+        "vancomycin and sepsis co‑occur"
+      ],
+      "source_tables": [],
+      "confidence": 0.55
+    },
+    {
+      "source": "N6",
+      "target": "N4",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27162855",
+      "evidence": [
+        "insulin and sepsis co‑occur"
+      ],
+      "source_tables": [],
+      "confidence": 0.55
+    },
+    {
+      "source": "N6",
+      "target": "N3",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27162855",
+      "evidence": [
+        "insulin and sepsis co‑occur"
+      ],
+      "source_tables": [],
+      "confidence": 0.55
+    }
+  ]
+}

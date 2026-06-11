@@ -1,0 +1,435 @@
+{
+  "subject_id": "10824441",
+  "hadm_ids": [
+    "24160706"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 10824441",
+      "normalized_name": "patient",
+      "source_tables": [],
+      "evidence": "subject_id 10824441",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Sepsis",
+      "normalized_name": "sepsis",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "Unspecified septicemia; Severe sepsis; Septic shock",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Vancomycin 1000 mg IV count 11",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "PROCEDURE",
+      "name": "Mechanical ventilation",
+      "normalized_name": "mechanical ventilation",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "Continuous invasive mechanical ventilation for 96 consecutive hours or more",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "PROCEDURE",
+      "name": "Hemodialysis",
+      "normalized_name": "hemodialysis",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "Hemodialysis",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "Laboratory testing derived from POE 'Lab' orders",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture",
+      "normalized_name": "blood culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "Blood Culture, Routine",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "MICROBIOLOGY",
+      "name": "MRSA SCREEN",
+      "normalized_name": "mrsa screen",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "MRSA SCREEN",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "med",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "MED",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24160706",
+      "evidence": "Sepsis related diagnoses present",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "24160706",
+      "evidence": "Vancomycin administered",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "24160706",
+      "evidence": "Continuous invasive mechanical ventilation",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "24160706",
+      "evidence": "Hemodialysis performed",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "24160706",
+      "evidence": "Laboratory testing orders",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "24160706",
+      "evidence": "Blood Culture performed",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "24160706",
+      "evidence": "MRSA SCREEN performed",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "24160706",
+      "evidence": "Service MED listed",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N3",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "24160706",
+      "evidence": "Vancomycin used for septic infection",
+      "source_tables": [
+        "diagnoses",
+        "medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N2",
+      "target": "N4",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24160706",
+      "evidence": "Mechanical ventilation for severe sepsis/respiratory failure",
+      "source_tables": [
+        "procedures",
+        "diagnoses"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N2",
+      "target": "N5",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24160706",
+      "evidence": "Hemodialysis for acute kidney failure secondary to sepsis",
+      "source_tables": [
+        "procedures",
+        "diagnoses"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N2",
+      "target": "N6",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "24160706",
+      "evidence": "Lab tests ordered to evaluate sepsis",
+      "source_tables": [
+        "diagnoses",
+        "lab_tests"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N2",
+      "target": "N7",
+      "relation": "INVESTIGATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "24160706",
+      "evidence": "Blood culture to identify septic pathogen",
+      "source_tables": [
+        "diagnoses",
+        "microbiology"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N2",
+      "target": "N8",
+      "relation": "INVESTIGATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "24160706",
+      "evidence": "MRSA screen relevant to septic infection",
+      "source_tables": [
+        "diagnoses",
+        "microbiology"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N3",
+      "target": "N7",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "24160706",
+      "evidence": "Vancomycin targets MRSA (and Gram‑positive organisms)",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N3",
+      "target": "N8",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "24160706",
+      "evidence": "Vancomycin targets MRSA",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N9",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24160706",
+      "evidence": "MED service managing sepsis",
+      "source_tables": [
+        "services",
+        "diagnoses"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N9",
+      "target": "N3",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "24160706",
+      "evidence": "Vancomycin administered under MED service",
+      "source_tables": [
+        "medications",
+        "services"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N9",
+      "target": "N4",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "PROCEDURE",
+      "hadm_id": "24160706",
+      "evidence": "MED service overseeing mechanical ventilation",
+      "source_tables": [
+        "services",
+        "procedures"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N9",
+      "target": "N5",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "PROCEDURE",
+      "hadm_id": "24160706",
+      "evidence": "MED service overseeing hemodialysis",
+      "source_tables": [
+        "services",
+        "procedures"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N4",
+      "target": "N6",
+      "relation": "MONITORED_BY",
+      "source_type": "PROCEDURE",
+      "target_type": "LAB_TEST",
+      "hadm_id": "24160706",
+      "evidence": "Lab tests monitor ventilation status",
+      "source_tables": [
+        "procedures",
+        "lab_tests"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N5",
+      "target": "N6",
+      "relation": "MONITORED_BY",
+      "source_type": "PROCEDURE",
+      "target_type": "LAB_TEST",
+      "hadm_id": "24160706",
+      "evidence": "Lab tests monitor dialysis adequacy",
+      "source_tables": [
+        "procedures",
+        "lab_tests"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N4",
+      "target": "N2",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24160706",
+      "evidence": "Mechanical ventilation co‑occurs with sepsis",
+      "source_tables": [
+        "procedures",
+        "diagnoses"
+      ],
+      "confidence": 0.55
+    },
+    {
+      "source": "N5",
+      "target": "N2",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24160706",
+      "evidence": "Hemodialysis co‑occurs with sepsis",
+      "source_tables": [
+        "procedures",
+        "diagnoses"
+      ],
+      "confidence": 0.55
+    }
+  ]
+}

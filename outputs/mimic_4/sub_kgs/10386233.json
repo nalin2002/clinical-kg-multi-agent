@@ -1,0 +1,715 @@
+{
+  "subject_id": "10386233",
+  "hadm_ids": [
+    "27496362",
+    "22164804",
+    "29018741",
+    "20719288",
+    "21983314"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 10386233",
+      "normalized_name": "patient_10386233",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": "Patient identifier from MIMIC-IV",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Sepsis",
+      "normalized_name": "sepsis",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": "Diagnoses including septicemia, septic shock, severe sepsis (hadm_id 22164804)",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Heart failure",
+      "normalized_name": "heart_failure",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": "Diagnoses of heart failure across admissions 29018741, 20719288, 21983314",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "COPD",
+      "normalized_name": "copd",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": "Diagnoses of chronic obstructive pulmonary disease / bronchitis across all admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "insulin",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": "Insulin medication listed in every admission",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "furosemide",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": "Furosemide medication listed in admissions 22164804, 29018741, 20719288, 21983314",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "vancomycin",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": "Vancomycin medication listed in admission 22164804",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "laboratory_testing",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": "Lab POE orders (Laboratory testing) present in all admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "PROCEDURE",
+      "name": "Mechanical ventilation",
+      "normalized_name": "mechanical_ventilation",
+      "source_tables": [
+        "procedures_icd"
+      ],
+      "evidence": "Continuous invasive mechanical ventilation (hadm_id 22164804, 21983314)",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "PROCEDURE",
+      "name": "Hemodialysis",
+      "normalized_name": "hemodialysis",
+      "source_tables": [
+        "procedures_icd"
+      ],
+      "evidence": "Hemodialysis procedure (hadm_id 22164804)",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "PROCEDURE",
+      "name": "Central venous catheter placement",
+      "normalized_name": "central_venous_catheter_placement",
+      "source_tables": [
+        "procedures_icd"
+      ],
+      "evidence": "Central venous catheter placement with guidance (hadm_id 22164804)",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "PROCEDURE",
+      "name": "Enteral infusion",
+      "normalized_name": "enteral_infusion",
+      "source_tables": [
+        "procedures_icd"
+      ],
+      "evidence": "Enteral infusion of concentrated nutritional substances (hadm_id 22164804)",
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "PROCEDURE",
+      "name": "Liver excision",
+      "normalized_name": "liver_excision",
+      "source_tables": [
+        "procedures_icd"
+      ],
+      "evidence": "Excision of Liver, Percutaneous Approach, Diagnostic (hadm_id 20719288)",
+      "metadata": {}
+    },
+    {
+      "id": "N14",
+      "type": "PROCEDURE",
+      "name": "Endotracheal airway insertion",
+      "normalized_name": "endotracheal_airway_insertion",
+      "source_tables": [
+        "procedures_icd"
+      ],
+      "evidence": "Insertion of Endotracheal Airway into Trachea (hadm_id 21983314)",
+      "metadata": {}
+    },
+    {
+      "id": "N15",
+      "type": "PROCEDURE",
+      "name": "Respiratory ventilation (24-96h)",
+      "normalized_name": "respiratory_ventilation_24_96h",
+      "source_tables": [
+        "procedures_icd"
+      ],
+      "evidence": "Respiratory Ventilation, 24-96 Consecutive Hours (hadm_id 21983314)",
+      "metadata": {}
+    },
+    {
+      "id": "N16",
+      "type": "PROCEDURE",
+      "name": "Infusion device insertion",
+      "normalized_name": "infusion_device_insertion",
+      "source_tables": [
+        "procedures_icd"
+      ],
+      "evidence": "Insertion of Infusion Device into Superior Vena Cava (hadm_id 21983314)",
+      "metadata": {}
+    },
+    {
+      "id": "N17",
+      "type": "MICROBIOLOGY",
+      "name": "Blood culture (routine)",
+      "normalized_name": "blood_culture_routine",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "Blood Culture, Routine specimen (hadm_id 22164804, 29018741, 21983314)",
+      "metadata": {}
+    },
+    {
+      "id": "N18",
+      "type": "MICROBIOLOGY",
+      "name": "MRSA screen",
+      "normalized_name": "mrsa_screen",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "MRSA SCREEN (hadm_id 22164804)",
+      "metadata": {}
+    },
+    {
+      "id": "N19",
+      "type": "MICROBIOLOGY",
+      "name": "Urine culture (E. coli)",
+      "normalized_name": "urine_culture_ecoli",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "URINE CULTURE with E. coli (hadm_id 21983314)",
+      "metadata": {}
+    },
+    {
+      "id": "N20",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "med",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": "Service MED listed for all admissions",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22164804",
+      "evidence": "Sepsis diagnosis in admission 22164804",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29018741",
+      "evidence": "Heart failure diagnosis in admission 29018741",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27496362",
+      "evidence": "COPD diagnosis in admission 27496362",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "27496362",
+      "evidence": "Insulin administered in admission 27496362",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "22164804",
+      "evidence": "Furosemide administered in admission 22164804",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "22164804",
+      "evidence": "Vancomycin administered in admission 22164804",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "27496362",
+      "evidence": "Laboratory testing orders in admission 27496362",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "22164804",
+      "evidence": "Mechanical ventilation (continuous invasive) in admission 22164804",
+      "source_tables": [
+        "procedures_icd"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "22164804",
+      "evidence": "Hemodialysis in admission 22164804",
+      "source_tables": [
+        "procedures_icd"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "22164804",
+      "evidence": "Central venous catheter placement in admission 22164804",
+      "source_tables": [
+        "procedures_icd"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "22164804",
+      "evidence": "Enteral infusion of concentrated nutritional substances in admission 22164804",
+      "source_tables": [
+        "procedures_icd"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "20719288",
+      "evidence": "Excision of Liver, Percutaneous Approach, Diagnostic in admission 20719288",
+      "source_tables": [
+        "procedures_icd"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N14",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "21983314",
+      "evidence": "Insertion of Endotracheal Airway into Trachea in admission 21983314",
+      "source_tables": [
+        "procedures_icd"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N15",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "21983314",
+      "evidence": "Respiratory Ventilation, 24-96 Consecutive Hours in admission 21983314",
+      "source_tables": [
+        "procedures_icd"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N16",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "21983314",
+      "evidence": "Insertion of Infusion Device into Superior Vena Cava in admission 21983314",
+      "source_tables": [
+        "procedures_icd"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N17",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22164804",
+      "evidence": "Blood Culture, Routine in admission 22164804",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N18",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22164804",
+      "evidence": "MRSA SCREEN in admission 22164804",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N19",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "21983314",
+      "evidence": "URINE CULTURE with E. coli in admission 21983314",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N20",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "Service MED managed patient across all admissions",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N7",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "22164804",
+      "evidence": "Vancomycin used to treat sepsis in admission 22164804",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N17",
+      "relation": "INVESTIGATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22164804",
+      "evidence": "Blood culture ordered for sepsis workup in admission 22164804",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N17",
+      "target": "N2",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22164804",
+      "evidence": "Positive blood culture confirming sepsis in admission 22164804",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N8",
+      "target": "N2",
+      "relation": "INDICATES",
+      "source_type": "LAB_TEST",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22164804",
+      "evidence": "Laboratory testing results indicating sepsis in admission 22164804",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N3",
+      "target": "N6",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Furosemide used for heart failure management",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N20",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "MED service manages sepsis patients",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N20",
+      "target": "N3",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "MED service manages heart failure patients",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N20",
+      "target": "N4",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "MED service manages COPD patients",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N7",
+      "target": "N18",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22164804",
+      "evidence": "Vancomycin targets MRSA screened organism",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N9",
+      "target": "N2",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22164804",
+      "evidence": "Mechanical ventilation performed during sepsis admission",
+      "source_tables": [
+        "procedures_icd"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N10",
+      "target": "N2",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22164804",
+      "evidence": "Hemodialysis performed during sepsis admission",
+      "source_tables": [
+        "procedures_icd"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N11",
+      "target": "N2",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22164804",
+      "evidence": "Central venous catheter placement performed during sepsis admission",
+      "source_tables": [
+        "procedures_icd"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N14",
+      "target": "N4",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21983314",
+      "evidence": "Endotracheal airway insertion during COPD admission",
+      "source_tables": [
+        "procedures_icd"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N15",
+      "target": "N4",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21983314",
+      "evidence": "Respiratory ventilation performed during COPD admission",
+      "source_tables": [
+        "procedures_icd"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N16",
+      "target": "N4",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21983314",
+      "evidence": "Infusion device insertion during COPD admission",
+      "source_tables": [
+        "procedures_icd"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N18",
+      "target": "N2",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22164804",
+      "evidence": "MRSA screen performed during sepsis admission",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N3",
+      "target": "N4",
+      "relation": "ASSOCIATED_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Heart failure frequently co-occurs with COPD in this patient",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N2",
+      "target": "N4",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Sepsis co-occurs with COPD in this patient",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.5
+    }
+  ]
+}

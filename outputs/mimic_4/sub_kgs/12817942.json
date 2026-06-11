@@ -1,0 +1,495 @@
+{
+  "subject_id": "12817942",
+  "hadm_ids": [
+    "28991579",
+    "28776732",
+    "24978772",
+    "26920128",
+    "22740443",
+    "23646892",
+    "24595896",
+    "28419622",
+    "21019046",
+    "28086821",
+    "26758223",
+    "21490022"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 12817942",
+      "normalized_name": "Patient 12817942",
+      "source_tables": [
+        "demographics"
+      ],
+      "evidence": [
+        "subject_id:12817942"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Diabetes with peripheral circulatory disorders, type II or unspecified type, not stated as uncontrolled",
+      "normalized_name": "Diabetes with peripheral circulatory disorders",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": [
+        "hadm_id:28991579"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "Vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": [
+        "hadm_id:28991579",
+        "hadm_id:28776732",
+        "hadm_id:24978772",
+        "hadm_id:26920128",
+        "hadm_id:24595896",
+        "hadm_id:28419622",
+        "hadm_id:21019046",
+        "hadm_id:28086821"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "PROCEDURE",
+      "name": "Endarterectomy, lower limb arteries",
+      "normalized_name": "Endarterectomy lower limb arteries",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": [
+        "hadm_id:28991579",
+        "hadm_id:24978772"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "Laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": [
+        "hadm_id:28991579",
+        "hadm_id:28776732",
+        "hadm_id:24978772",
+        "hadm_id:26920128",
+        "hadm_id:23646892",
+        "hadm_id:24595896",
+        "hadm_id:28419622",
+        "hadm_id:21019046",
+        "hadm_id:28086821",
+        "hadm_id:26758223",
+        "hadm_id:21490022"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "MICROBIOLOGY",
+      "name": "WOUND CULTURE - BETA STREPTOCOCCUS GROUP B",
+      "normalized_name": "Wound culture beta streptococcus group B",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": [
+        "hadm_id:28991579"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "SERVICE",
+      "name": "VSURG",
+      "normalized_name": "VSURG",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": [
+        "hadm_id:28991579",
+        "hadm_id:28776732",
+        "hadm_id:24978772",
+        "hadm_id:26920128",
+        "hadm_id:22740443",
+        "hadm_id:24595896",
+        "hadm_id:21019046",
+        "hadm_id:26758223",
+        "hadm_id:21490022"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": [
+        "hadm_id:28086821"
+      ],
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28991579",
+      "evidence": [
+        "patient has diagnosis"
+      ],
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "28991579",
+      "evidence": [
+        "patient takes medication"
+      ],
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "28991579",
+      "evidence": [
+        "patient underwent procedure"
+      ],
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "28991579",
+      "evidence": [
+        "patient had lab test"
+      ],
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "28991579",
+      "evidence": [
+        "patient had microbiology"
+      ],
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "28991579",
+      "evidence": [
+        "patient managed by service"
+      ],
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "28086821",
+      "evidence": [
+        "patient managed by service"
+      ],
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N3",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "28991579",
+      "evidence": [
+        "diagnosis treated by medication"
+      ],
+      "source_tables": [
+        "diagnoses",
+        "medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N2",
+      "target": "N4",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "PROCEDURE",
+      "hadm_id": "28991579",
+      "evidence": [
+        "diagnosis diagnosed by procedure"
+      ],
+      "source_tables": [
+        "diagnoses",
+        "procedures"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N2",
+      "target": "N5",
+      "relation": "MONITORED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "28991579",
+      "evidence": [
+        "diagnosis monitored by lab test"
+      ],
+      "source_tables": [
+        "diagnoses",
+        "lab_tests"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N3",
+      "target": "N5",
+      "relation": "MONITORED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "28991579",
+      "evidence": [
+        "medication monitored by lab test"
+      ],
+      "source_tables": [
+        "medications",
+        "lab_tests"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N6",
+      "target": "N2",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28991579",
+      "evidence": [
+        "microbiology confirms diagnosis"
+      ],
+      "source_tables": [
+        "microbiology",
+        "diagnoses"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N3",
+      "target": "N6",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "28991579",
+      "evidence": [
+        "medication targets organism"
+      ],
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N7",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28991579",
+      "evidence": [
+        "service manages diagnosis"
+      ],
+      "source_tables": [
+        "services",
+        "diagnoses"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N7",
+      "target": "N3",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "28991579",
+      "evidence": [
+        "medication given under service"
+      ],
+      "source_tables": [
+        "medications",
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N4",
+      "target": "N2",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28991579",
+      "evidence": [
+        "procedure performed for diagnosis"
+      ],
+      "source_tables": [
+        "procedures",
+        "diagnoses"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N5",
+      "target": "N2",
+      "relation": "INDICATES",
+      "source_type": "LAB_TEST",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28991579",
+      "evidence": [
+        "lab test indicates diagnosis"
+      ],
+      "source_tables": [
+        "lab_tests",
+        "diagnoses"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N5",
+      "target": "N3",
+      "relation": "INDICATES",
+      "source_type": "LAB_TEST",
+      "target_type": "MEDICATION",
+      "hadm_id": "28991579",
+      "evidence": [
+        "lab test indicates medication"
+      ],
+      "source_tables": [
+        "lab_tests",
+        "medications"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N5",
+      "target": "N4",
+      "relation": "INDICATES",
+      "source_type": "LAB_TEST",
+      "target_type": "PROCEDURE",
+      "hadm_id": "28991579",
+      "evidence": [
+        "lab test indicates procedure"
+      ],
+      "source_tables": [
+        "lab_tests",
+        "procedures"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N5",
+      "target": "N6",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "LAB_TEST",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "28991579",
+      "evidence": [
+        "lab test co-occurs with microbiology"
+      ],
+      "source_tables": [
+        "lab_tests",
+        "microbiology"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N3",
+      "target": "N8",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "28086821",
+      "evidence": [
+        "medication given under service"
+      ],
+      "source_tables": [
+        "medications",
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N7",
+      "target": "N8",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "SERVICE",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": [
+        "services co-occur"
+      ],
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.55
+    }
+  ]
+}

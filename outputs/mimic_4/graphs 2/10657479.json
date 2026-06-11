@@ -1,0 +1,448 @@
+{
+  "subject_id": "10657479",
+  "hadm_ids": [
+    "28118033",
+    "25491249",
+    "29381397",
+    "23783281",
+    "24497001",
+    "28487640",
+    "25854207",
+    "25767873",
+    "22533847"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 10657479",
+      "normalized_name": "PATIENT",
+      "source_tables": [
+        "demographics"
+      ],
+      "evidence": "subject_id 10657479",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Chronic obstructive pulmonary disease, unspecified",
+      "normalized_name": "CHRONIC OBSTRUCTIVE PULMONARY DISEASE",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD-10 J449",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Pneumonia due to Methicillin resistant Staphylococcus aureus",
+      "normalized_name": "MRSA PNEUMONIA",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD-10 J15212",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Malignant neoplasm of upper lobe, left bronchus or lung",
+      "normalized_name": "LUNG CANCER UPPER LOBE LEFT",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD-10 C3412",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "DIAGNOSIS",
+      "name": "Acute respiratory failure with hypoxia",
+      "normalized_name": "ACUTE RESPIRATORY FAILURE",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD-10 J9601",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "VANCOMYCIN",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "medication name Vancomycin",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "MEDICATION",
+      "name": "Linezolid",
+      "normalized_name": "LINEZOLID",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "medication name Linezolid",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "MEDICATION",
+      "name": "Azithromycin",
+      "normalized_name": "AZITHROMYCIN",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "medication name Azithromycin",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "LAB TEST",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "Derived from POE 'Lab' orders",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "PROCEDURE",
+      "name": "Excision of Carina, Via Natural or Artificial Opening Endoscopic, Diagnostic",
+      "normalized_name": "EXCISION OF CARINA",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "ICD-10 0BB28ZX",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "MICROBIOLOGY",
+      "name": "MRSA SCREEN (Positive for Methicillin resistant Staph aureus)",
+      "normalized_name": "MRSA SCREEN",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "specimen MRSA SCREEN, organism POSITIVE FOR METHICILLIN RESISTANT STAPH AUREUS",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture, Routine (Cancelled)",
+      "normalized_name": "BLOOD CULTURE",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "specimen BLOOD CULTURE, organism CANCELLED",
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "service MED",
+      "metadata": {}
+    },
+    {
+      "id": "N14",
+      "type": "SERVICE",
+      "name": "OMED",
+      "normalized_name": "OMED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "service OMED",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28118033",
+      "evidence": "diagnosis J449 in admission 28118033",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25767873",
+      "evidence": "diagnosis J15212 in admission 25767873",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28118033",
+      "evidence": "diagnosis C3412 in admission 28118033",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24497001",
+      "evidence": "diagnosis J9601 in admission 24497001",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "25767873",
+      "evidence": "medication Vancomycin in admission 25767873",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "25767873",
+      "evidence": "medication Linezolid in admission 25767873",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "25491249",
+      "evidence": "medication Azithromycin in admission 25491249",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "28118033",
+      "evidence": "lab orders in admission 28118033",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "28118033",
+      "evidence": "procedure 0BB28ZX in admission 28118033",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "25767873",
+      "evidence": "MRSA SCREEN in admission 25767873",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "UNLINKED",
+      "evidence": "Blood Culture, Routine (Cancelled)",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "28118033",
+      "evidence": "service MED in admission 28118033",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N14",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "25491249",
+      "evidence": "service OMED in admission 25491249",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N3",
+      "target": "N6",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "25767873",
+      "evidence": "Vancomycin used for MRSA pneumonia in admission 25767873",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N11",
+      "target": "N3",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25767873",
+      "evidence": "MRSA SCREEN positive confirms MRSA pneumonia",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N6",
+      "target": "N11",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "25767873",
+      "evidence": "Vancomycin targets MRSA organism",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N8",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "25491249",
+      "evidence": "Azithromycin used for COPD exacerbation",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N2",
+      "target": "N7",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "25767873",
+      "evidence": "Linezolid used for severe COPD infection",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N2",
+      "target": "N9",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "25491249",
+      "evidence": "COPD diagnosis and lab testing in same admission",
+      "source_tables": [
+        "diagnoses",
+        "lab_tests"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N3",
+      "target": "N9",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "25767873",
+      "evidence": "MRSA pneumonia and lab testing in same admission",
+      "source_tables": [
+        "diagnoses",
+        "lab_tests"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N3",
+      "target": "N10",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "PROCEDURE",
+      "hadm_id": "25767873",
+      "evidence": "MRSA pneumonia and procedures in same admission",
+      "source_tables": [
+        "diagnoses",
+        "procedures"
+      ],
+      "confidence": 0.6
+    }
+  ]
+}

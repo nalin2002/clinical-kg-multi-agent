@@ -10,6 +10,8 @@ from __future__ import annotations
 from dataclasses import asdict, dataclass, field
 from typing import Any, Dict
 
+from graph_jepa.schema import NUM_EDGE_TYPES
+
 
 @dataclass
 class ModelConfig:
@@ -22,7 +24,7 @@ class ModelConfig:
     conv: str = "gine"  # "gine" | "gat"
     gnn_backend: str = "pyg"  # "pyg" | "torch"
     dropout: float = 0.1
-    num_relations: int = 6
+    num_relations: int = NUM_EDGE_TYPES
     ema_decay: float = 0.996
 
     # Patch/subgraph representation.

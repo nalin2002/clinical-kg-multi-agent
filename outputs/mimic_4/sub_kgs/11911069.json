@@ -1,0 +1,639 @@
+{
+  "subject_id": "11911069",
+  "hadm_ids": [
+    "25056440",
+    "24722083",
+    "20813064",
+    "24424592",
+    "21813052"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 11911069",
+      "normalized_name": "Patient 11911069",
+      "source_tables": [
+        "demographics"
+      ],
+      "evidence": "patient record",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Asthma, unspecified type, with (acute) exacerbation",
+      "normalized_name": "Asthma",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "25056440",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Liver replaced by transplant",
+      "normalized_name": "Liver transplant",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "25056440",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Influenza with other respiratory manifestations",
+      "normalized_name": "Influenza",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "25056440",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "DIAGNOSIS",
+      "name": "Diabetes mellitus without mention of complication, type II or unspecified type, not stated as uncontrolled",
+      "normalized_name": "Diabetes",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "25056440",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "DIAGNOSIS",
+      "name": "Unspecified acquired hypothyroidism",
+      "normalized_name": "Hypothyroidism",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "25056440",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "Insulin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "25056440",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "MEDICATION",
+      "name": "Albuterol 0.083% Neb Soln",
+      "normalized_name": "Albuterol",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "25056440",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "Furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "24424592",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "Vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "24424592",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "Laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "25056440",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "PROCEDURE",
+      "name": "Venous catheterization, not elsewhere classified",
+      "normalized_name": "Venous catheterization",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "25056440",
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "25056440",
+      "metadata": {}
+    },
+    {
+      "id": "N14",
+      "type": "DIAGNOSIS",
+      "name": "Severe sepsis",
+      "normalized_name": "Severe sepsis",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "21813052",
+      "metadata": {}
+    },
+    {
+      "id": "N15",
+      "type": "DIAGNOSIS",
+      "name": "Septic shock",
+      "normalized_name": "Septic shock",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "21813052",
+      "metadata": {}
+    },
+    {
+      "id": "N16",
+      "type": "DIAGNOSIS",
+      "name": "Acute respiratory failure",
+      "normalized_name": "Acute respiratory failure",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "21813052",
+      "metadata": {}
+    },
+    {
+      "id": "N17",
+      "type": "PROCEDURE",
+      "name": "Continuous invasive mechanical ventilation for 96 consecutive hours or more",
+      "normalized_name": "Mechanical ventilation",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "21813052",
+      "metadata": {}
+    },
+    {
+      "id": "N18",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture, Routine",
+      "normalized_name": "Blood culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "21813052",
+      "metadata": {}
+    },
+    {
+      "id": "N19",
+      "type": "MICROBIOLOGY",
+      "name": "URINE CULTURE",
+      "normalized_name": "Urine culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "21813052",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25056440",
+      "evidence": "diagnosis list",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25056440",
+      "evidence": "diagnosis list",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25056440",
+      "evidence": "diagnosis list",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25056440",
+      "evidence": "diagnosis list",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25056440",
+      "evidence": "diagnosis list",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "25056440",
+      "evidence": "medication list",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "25056440",
+      "evidence": "medication list",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "25056440",
+      "evidence": "lab test list",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "25056440",
+      "evidence": "procedure list",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "25056440",
+      "evidence": "service list",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N7",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "25056440",
+      "evidence": "clinical guideline (asthma treated with albuterol, insulin unrelated)",
+      "source_tables": [],
+      "confidence": 0.7
+    },
+    {
+      "source": "N2",
+      "target": "N8",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "25056440",
+      "evidence": "asthma treated with albuterol",
+      "source_tables": [],
+      "confidence": 0.9
+    },
+    {
+      "source": "N5",
+      "target": "N7",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "25056440",
+      "evidence": "diabetes treated with insulin",
+      "source_tables": [],
+      "confidence": 0.9
+    },
+    {
+      "source": "N5",
+      "target": "N9",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "24424592",
+      "evidence": "diabetes may be managed with insulin, not furosemide (placeholder)",
+      "source_tables": [],
+      "confidence": 0.5
+    },
+    {
+      "source": "N14",
+      "target": "N10",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "21813052",
+      "evidence": "severe sepsis treated with vancomycin",
+      "source_tables": [],
+      "confidence": 0.9
+    },
+    {
+      "source": "N15",
+      "target": "N10",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "21813052",
+      "evidence": "septic shock treated with vancomycin",
+      "source_tables": [],
+      "confidence": 0.9
+    },
+    {
+      "source": "N16",
+      "target": "N17",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21813052",
+      "evidence": "mechanical ventilation for acute respiratory failure",
+      "source_tables": [],
+      "confidence": 0.9
+    },
+    {
+      "source": "N14",
+      "target": "N18",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21813052",
+      "evidence": "blood culture may identify sepsis pathogens",
+      "source_tables": [],
+      "confidence": 0.7
+    },
+    {
+      "source": "N14",
+      "target": "N19",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21813052",
+      "evidence": "urine culture may identify source of infection",
+      "source_tables": [],
+      "confidence": 0.7
+    },
+    {
+      "source": "N9",
+      "target": "N18",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "21813052",
+      "evidence": "vancomycin targets gram‑positive organisms like Staph aureus",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N9",
+      "target": "N19",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "21813052",
+      "evidence": "vancomycin targets Enterococcus spp.",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N7",
+      "target": "N13",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "25056440",
+      "evidence": "insulin administered under MED service",
+      "source_tables": [],
+      "confidence": 0.9
+    },
+    {
+      "source": "N10",
+      "target": "N13",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "24424592",
+      "evidence": "vancomycin administered under MED service",
+      "source_tables": [],
+      "confidence": 0.9
+    },
+    {
+      "source": "N2",
+      "target": "N11",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "25056440",
+      "evidence": "lab testing may support asthma work‑up",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N5",
+      "target": "N11",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "25056440",
+      "evidence": "lab testing for diabetes monitoring",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N14",
+      "target": "N11",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "21813052",
+      "evidence": "lab testing for sepsis markers",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N14",
+      "target": "N12",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "PROCEDURE",
+      "hadm_id": "25056440",
+      "evidence": "co‑occurrence in same admission",
+      "source_tables": [],
+      "confidence": 0.55
+    },
+    {
+      "source": "N14",
+      "target": "N9",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "21813052",
+      "evidence": "co‑occurrence in same admission",
+      "source_tables": [],
+      "confidence": 0.55
+    },
+    {
+      "source": "N10",
+      "target": "N13",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "24424592",
+      "evidence": "co‑occurrence in same admission",
+      "source_tables": [],
+      "confidence": 0.55
+    },
+    {
+      "source": "N7",
+      "target": "N5",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25056440",
+      "evidence": "co‑occurrence in same admission",
+      "source_tables": [],
+      "confidence": 0.55
+    },
+    {
+      "source": "N8",
+      "target": "N2",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25056440",
+      "evidence": "co‑occurrence in same admission",
+      "source_tables": [],
+      "confidence": 0.55
+    },
+    {
+      "source": "N9",
+      "target": "N14",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21813052",
+      "evidence": "co‑occurrence in same admission",
+      "source_tables": [],
+      "confidence": 0.55
+    },
+    {
+      "source": "N10",
+      "target": "N15",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21813052",
+      "evidence": "co‑occurrence in same admission",
+      "source_tables": [],
+      "confidence": 0.55
+    },
+    {
+      "source": "N13",
+      "target": "N1",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "SERVICE",
+      "target_type": "PATIENT",
+      "hadm_id": "25056440",
+      "evidence": "service managing patient",
+      "source_tables": [],
+      "confidence": 0.95
+    },
+    {
+      "source": "N13",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25056440",
+      "evidence": "service managing asthma",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N13",
+      "target": "N5",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25056440",
+      "evidence": "service managing diabetes",
+      "source_tables": [],
+      "confidence": 0.8
+    }
+  ]
+}

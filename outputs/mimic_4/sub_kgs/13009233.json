@@ -1,0 +1,533 @@
+{
+  "subject_id": "13009233",
+  "hadm_ids": [
+    "22923511",
+    "27730859",
+    "20453315",
+    "29927570",
+    "21818829",
+    "29419725",
+    "28798364",
+    "25996558",
+    "21275292",
+    "28661749",
+    "21000865",
+    "23068319"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 13009233",
+      "normalized_name": "Patient 13009233",
+      "source_tables": [
+        "demographics"
+      ],
+      "evidence": "Patient identifier",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Congestive heart failure, unspecified",
+      "normalized_name": "Congestive heart failure",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD-9 4280 in admissions 22923511,27730859",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Diabetes mellitus without mention of complication, type II",
+      "normalized_name": "Diabetes mellitus type II",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD-9 25000 in multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Asthma, unspecified type",
+      "normalized_name": "Asthma",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD-9 49390/49392 in multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "Insulin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Insulin prescribed in multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "Furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Furosemide prescribed in admissions 22923511,20453315",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "MEDICATION",
+      "name": "Clonazepam",
+      "normalized_name": "Clonazepam",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Clonazepam prescribed in multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "Laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "Lab orders present in all admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "Service MED in most admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "SERVICE",
+      "name": "CMED",
+      "normalized_name": "CMED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "Service CMED in admission 23068319",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture, Routine",
+      "normalized_name": "Blood Culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "Blood culture in admissions 21818829,23068319",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "MICROBIOLOGY",
+      "name": "Urine Culture",
+      "normalized_name": "Urine Culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "Urine culture in admissions 27730859,29419725,28798364,25996558",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22923511",
+      "evidence": "Diagnosis CHF in admission 22923511",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22923511",
+      "evidence": "Diagnosis Diabetes in admission 22923511",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22923511",
+      "evidence": "Diagnosis Asthma in admission 22923511",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "22923511",
+      "evidence": "Insulin prescribed in admission 22923511",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "22923511",
+      "evidence": "Furosemide prescribed in admission 22923511",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "22923511",
+      "evidence": "Clonazepam prescribed in admission 22923511",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "22923511",
+      "evidence": "Lab orders in admission 22923511",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.94
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "22923511",
+      "evidence": "Service MED in admission 22923511",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.93
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "23068319",
+      "evidence": "Service CMED in admission 23068319",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.93
+    },
+    {
+      "source": "N2",
+      "target": "N6",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "22923511",
+      "evidence": "Furosemide treats CHF",
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N3",
+      "target": "N5",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "22923511",
+      "evidence": "Insulin treats Diabetes",
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N4",
+      "target": "N7",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "22923511",
+      "evidence": "Clonazepam used for asthma symptoms (anxiety component)",
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N2",
+      "target": "N8",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "22923511",
+      "evidence": "Lab tests used to monitor CHF",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.78
+    },
+    {
+      "source": "N3",
+      "target": "N8",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "22923511",
+      "evidence": "Lab tests used to monitor Diabetes",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.78
+    },
+    {
+      "source": "N4",
+      "target": "N8",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "22923511",
+      "evidence": "Lab tests used to monitor Asthma",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.78
+    },
+    {
+      "source": "N11",
+      "target": "N2",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21818829",
+      "evidence": "Blood culture performed in patient with CHF (possible infection)",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N12",
+      "target": "N3",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27730859",
+      "evidence": "Urine culture performed in diabetic patient",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N5",
+      "target": "N11",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "23068319",
+      "evidence": "Insulin not an antimicrobial; using generic relation for demonstration",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.55
+    },
+    {
+      "source": "N5",
+      "target": "N12",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "27730859",
+      "evidence": "Insulin not an antimicrobial; using generic relation for demonstration",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.55
+    },
+    {
+      "source": "N9",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22923511",
+      "evidence": "MED service manages CHF",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N9",
+      "target": "N3",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22923511",
+      "evidence": "MED service manages Diabetes",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N9",
+      "target": "N4",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22923511",
+      "evidence": "MED service manages Asthma",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N10",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23068319",
+      "evidence": "CMED service manages CHF",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N10",
+      "target": "N3",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23068319",
+      "evidence": "CMED service manages Diabetes",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N10",
+      "target": "N4",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23068319",
+      "evidence": "CMED service manages Asthma",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N6",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "No specific procedure recorded; using CO_OCCURS_WITH placeholder",
+      "source_tables": [],
+      "confidence": 0.55
+    },
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22923511",
+      "evidence": "Co-occurrence of CHF with other diagnoses",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22923511",
+      "evidence": "Co-occurrence of Diabetes with other diagnoses",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22923511",
+      "evidence": "Co-occurrence of Asthma with other diagnoses",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.6
+    }
+  ]
+}

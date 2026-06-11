@@ -1,0 +1,558 @@
+{
+  "subject_id": "10936728",
+  "hadm_ids": [
+    "24482607",
+    "22100797",
+    "20040911",
+    "26378150",
+    "23224097"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 10936728",
+      "normalized_name": "Patient 10936728",
+      "source_tables": [
+        "demographics"
+      ],
+      "evidence": "Patient identifier",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Sepsis",
+      "normalized_name": "Sepsis",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD-9 99591 in admission 24482607",
+      "metadata": {
+        "hadm_id": "24482607"
+      }
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Chronic diastolic heart failure",
+      "normalized_name": "Chronic diastolic heart failure",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD-9 42832 in admissions 24482607,26378150,20040911",
+      "metadata": {
+        "hadm_id": "24482607"
+      }
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Acute kidney failure with lesion of tubular necrosis",
+      "normalized_name": "Acute kidney failure with lesion of tubular necrosis",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD-9 5845 in admissions 24482607,23224097",
+      "metadata": {
+        "hadm_id": "24482607"
+      }
+    },
+    {
+      "id": "N5",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "Vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Vancomycin administered in admissions 24482607,26378150,23224097",
+      "metadata": {
+        "hadm_id": "24482607"
+      }
+    },
+    {
+      "id": "N6",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "Furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Furosemide administered in admissions 24482607,26378150,23224097",
+      "metadata": {
+        "hadm_id": "24482607"
+      }
+    },
+    {
+      "id": "N7",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "Insulin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Insulin administered in all admissions",
+      "metadata": {
+        "hadm_id": "24482607"
+      }
+    },
+    {
+      "id": "N8",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "Laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "Lab orders in admission 24482607",
+      "metadata": {
+        "hadm_id": "24482607"
+      }
+    },
+    {
+      "id": "N9",
+      "type": "PROCEDURE",
+      "name": "Other cholecystostomy",
+      "normalized_name": "Other cholecystostomy",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "Procedure ICD-9 5103 in admission 24482607",
+      "metadata": {
+        "hadm_id": "24482607"
+      }
+    },
+    {
+      "id": "N10",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture",
+      "normalized_name": "Blood Culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "Blood Culture specimen in admission 24482607",
+      "metadata": {
+        "hadm_id": "24482607"
+      }
+    },
+    {
+      "id": "N11",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "Service MED in admission 24482607",
+      "metadata": {
+        "hadm_id": "24482607"
+      }
+    },
+    {
+      "id": "N12",
+      "type": "DIAGNOSIS",
+      "name": "Atrial fibrillation",
+      "normalized_name": "Atrial fibrillation",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD-9 42731 in admissions 24482607,22100797,20040911,23224097",
+      "metadata": {
+        "hadm_id": "24482607"
+      }
+    },
+    {
+      "id": "N13",
+      "type": "SERVICE",
+      "name": "CMED",
+      "normalized_name": "CMED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "Service CMED in admissions 22100797,20040911,23224097",
+      "metadata": {
+        "hadm_id": "22100797"
+      }
+    },
+    {
+      "id": "N14",
+      "type": "PROCEDURE",
+      "name": "Cholecystectomy",
+      "normalized_name": "Cholecystectomy",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "Procedure ICD-9 5122 in admission 26378150",
+      "metadata": {
+        "hadm_id": "26378150"
+      }
+    },
+    {
+      "id": "N15",
+      "type": "PROCEDURE",
+      "name": "Continuous invasive mechanical ventilation",
+      "normalized_name": "Continuous invasive mechanical ventilation",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "Procedure ICD-9 9671 in admission 23224097",
+      "metadata": {
+        "hadm_id": "23224097"
+      }
+    },
+    {
+      "id": "N16",
+      "type": "MICROBIOLOGY",
+      "name": "MRSA SCREEN",
+      "normalized_name": "MRSA SCREEN",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "MRSA SCREEN positive in admission 23224097",
+      "metadata": {
+        "hadm_id": "23224097"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24482607",
+      "evidence": "Sepsis recorded",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24482607",
+      "evidence": "Chronic diastolic heart failure recorded",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24482607",
+      "evidence": "Acute kidney failure recorded",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "24482607",
+      "evidence": "Vancomycin administered",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "24482607",
+      "evidence": "Furosemide administered",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "24482607",
+      "evidence": "Insulin administered",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "24482607",
+      "evidence": "Lab orders present",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "24482607",
+      "evidence": "Other cholecystostomy performed",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "24482607",
+      "evidence": "Blood culture taken",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "24482607",
+      "evidence": "Managed by MED service",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24482607",
+      "evidence": "Atrial fibrillation recorded",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "22100797",
+      "evidence": "Managed by CMED service",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N5",
+      "target": "N2",
+      "relation": "TREATED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24482607",
+      "evidence": "Vancomycin used for sepsis",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N6",
+      "target": "N4",
+      "relation": "TREATED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24482607",
+      "evidence": "Furosemide for acute kidney failure (fluid management)",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N7",
+      "target": "N12",
+      "relation": "TREATED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24482607",
+      "evidence": "Insulin for diabetes comorbidity",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N8",
+      "target": "N2",
+      "relation": "INDICATES",
+      "source_type": "LAB_TEST",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24482607",
+      "evidence": "Lab testing supports sepsis diagnosis",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N9",
+      "target": "N3",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24482607",
+      "evidence": "Cholecystostomy for gallbladder disease",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N10",
+      "target": "N2",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24482607",
+      "evidence": "Blood culture confirms septicemia",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N5",
+      "target": "N10",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "24482607",
+      "evidence": "Vancomycin targets Gram‑positive organisms in blood culture",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N14",
+      "target": "N3",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "26378150",
+      "evidence": "Cholecystectomy for gallbladder disease",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N15",
+      "target": "N12",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23224097",
+      "evidence": "Mechanical ventilation for respiratory failure in atrial fibrillation patient",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N16",
+      "target": "N2",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23224097",
+      "evidence": "MRSA screen positive supports infection",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N5",
+      "target": "N16",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "23224097",
+      "evidence": "Vancomycin targets MRSA",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N2",
+      "target": "N3",
+      "relation": "ASSOCIATED_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24482607",
+      "evidence": "Sepsis co‑occurs with heart failure",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N3",
+      "target": "N4",
+      "relation": "COMPLICATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24482607",
+      "evidence": "Heart failure complicated by acute kidney injury",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N12",
+      "target": "N4",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24482607",
+      "evidence": "Atrial fibrillation co‑occurs with kidney failure",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.55
+    }
+  ]
+}

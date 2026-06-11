@@ -1,0 +1,345 @@
+{
+  "subject_id": "12165147",
+  "hadm_ids": [
+    "29206437",
+    "29676469",
+    "27978728",
+    "25521903",
+    "25730136",
+    "25138659",
+    "25422737",
+    "25334423",
+    "24242757",
+    "20999110",
+    "27425539"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 12165147",
+      "normalized_name": "PATIENT",
+      "source_tables": [
+        "subject"
+      ],
+      "evidence": "subject_id 12165147",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "INSULIN",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "multiple admissions list Insulin",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "FUROSEMIDE",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "admission 25138659, 25422737 list Furosemide",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "VANCOMYCIN",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "admission 25334423 list Vancomycin",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "multiple admissions list MED service",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "SERVICE",
+      "name": "NMED",
+      "normalized_name": "NMED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "admission 29676469, 25730136 list NMED service",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "SERVICE",
+      "name": "ORTHO",
+      "normalized_name": "ORTHO",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "admissions 27978728, 25521903 list ORTHO service",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture",
+      "normalized_name": "BLOOD CULTURE",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "UNLINKED admission blood culture entries",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "MICROBIOLOGY",
+      "name": "MRSA",
+      "normalized_name": "MRSA",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "UNLINKED admission MRSA screen entry",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "MICROBIOLOGY",
+      "name": "Escherichia coli",
+      "normalized_name": "ESCHERICHIA COLI",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "UNLINKED admission E. coli urine culture entries",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Insulin prescribed in multiple admissions",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Furosemide prescribed in admissions 25138659 and 25422737",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Vancomycin prescribed in admission 25334423",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "MED service listed in many admissions",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "NMED service listed in admissions 29676469 and 25730136",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "ORTHO service listed in admissions 27978728 and 25521903",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N5",
+      "target": "N2",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "Insulin administered under MED service in multiple admissions",
+      "source_tables": [
+        "medications",
+        "services"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N5",
+      "target": "N3",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "Furosemide administered under MED service in admissions 25138659, 25422737",
+      "source_tables": [
+        "medications",
+        "services"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N5",
+      "target": "N4",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "Vancomycin administered under MED service in admission 25334423",
+      "source_tables": [
+        "medications",
+        "services"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N2",
+      "target": "N8",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "Insulin not an antimicrobial; using generic CO_OCCURS_WITH fallback",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.55
+    },
+    {
+      "source": "N3",
+      "target": "N8",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "Furosemide not an antimicrobial; using generic CO_OCCURS_WITH fallback",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.55
+    },
+    {
+      "source": "N4",
+      "target": "N9",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "Vancomycin targets MRSA organisms",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N4",
+      "target": "N10",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "Vancomycin active against Gram‑positive organisms; E. coli is Gram‑negative, but co‑occurrence noted",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.55
+    },
+    {
+      "source": "N8",
+      "target": "N9",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "Both blood and MRSA cultures present in UNLINKED data",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.55
+    },
+    {
+      "source": "N8",
+      "target": "N10",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "Blood culture and E. coli urine culture co‑occur in UNLINKED data",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.55
+    },
+    {
+      "source": "N9",
+      "target": "N10",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "MRSA and E. coli cultures co‑occur in UNLINKED data",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.55
+    }
+  ]
+}

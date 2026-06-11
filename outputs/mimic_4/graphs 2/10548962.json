@@ -1,0 +1,541 @@
+{
+  "subject_id": "10548962",
+  "hadm_ids": [
+    "28073373",
+    "28535794",
+    "28106830",
+    "25861331",
+    "23966001"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 10548962",
+      "normalized_name": "patient_10548962",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": "subject_id:10548962",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Urinary tract infection, site not specified",
+      "normalized_name": "urinary_tract_infection",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD-9 5990",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Diabetes mellitus without mention of complication, type II or unspecified type, not stated as uncontrolled",
+      "normalized_name": "diabetes_mellitus",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD-9 25000",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Unspecified essential hypertension",
+      "normalized_name": "essential_hypertension",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD-9 4019",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "DIAGNOSIS",
+      "name": "Primary central nervous system lymphoma, unspecified site, extranodal and solid organ sites",
+      "normalized_name": "primary_cns_lymphoma",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD-9 20050",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "insulin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "dose 0 UNIT SC",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "dose varies mg PO/IV",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "dose 1000 mg IV",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "laboratory_testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "Derived from POE 'Lab' orders",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "PROCEDURE",
+      "name": "Injection or infusion of cancer chemotherapeutic substance",
+      "normalized_name": "cancer_chemotherapy_infusion",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "ICD-9 9925",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "MICROBIOLOGY",
+      "name": "URINE CULTURE - PSEUDOMONAS AERUGINOSA",
+      "normalized_name": "urine_culture_pseudomonas_aeruginosa",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "specimen URINE, test URINE CULTURE, organism PSEUDOMONAS AERUGINOSA",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "MICROBIOLOGY",
+      "name": "URINE CULTURE - PROTEUS MIRABILIS",
+      "normalized_name": "urine_culture_proteus_mirabilis",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "specimen URINE, test URINE CULTURE, organism PROTEUS MIRABILIS",
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "MICROBIOLOGY",
+      "name": "URINE CULTURE - ESCHERICHIA COLI",
+      "normalized_name": "urine_culture_escherichia_coli",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "specimen URINE, test URINE CULTURE, organism ESCHERICHIA COLI",
+      "metadata": {}
+    },
+    {
+      "id": "N14",
+      "type": "SERVICE",
+      "name": "NMED",
+      "normalized_name": "nmed",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "service NMED",
+      "metadata": {}
+    },
+    {
+      "id": "N15",
+      "type": "SERVICE",
+      "name": "OMED",
+      "normalized_name": "omed",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "service OMED",
+      "metadata": {}
+    },
+    {
+      "id": "N16",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "med",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "service MED",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28073373",
+      "evidence": "Diagnosis Urinary tract infection present in admission 28073373",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28073373",
+      "evidence": "Diagnosis Diabetes mellitus present in admission 28073373",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28073373",
+      "evidence": "Diagnosis Unspecified essential hypertension present in admission 28073373",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28106830",
+      "evidence": "Diagnosis Primary CNS lymphoma present in admission 28106830",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "28073373",
+      "evidence": "Medication Insulin administered in admission 28073373",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "28535794",
+      "evidence": "Medication Furosemide administered in admission 28535794",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "28106830",
+      "evidence": "Medication Vancomycin administered in admission 28106830",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "28073373",
+      "evidence": "Lab test Laboratory testing ordered in admission 28073373",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "28073373",
+      "evidence": "Procedure Injection or infusion of cancer chemotherapeutic substance performed in admission 28073373",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "28535794",
+      "evidence": "Microbiology URINE CULTURE - PSEUDOMONAS AERUGINOSA in admission 28535794",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "25861331",
+      "evidence": "Microbiology URINE CULTURE - PROTEUS MIRABILIS in admission 25861331",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "23966001",
+      "evidence": "Microbiology URINE CULTURE - ESCHERICHIA COLI in admission 23966001",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N14",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "28073373",
+      "evidence": "Service NMED managing admission 28073373",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N15",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "28106830",
+      "evidence": "Service OMED managing admission 28106830",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N16",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "28535794",
+      "evidence": "Service MED managing admission 28535794",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N6",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "28073373",
+      "evidence": "Urinary tract infection and Insulin co‑occur in admission 28073373",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N2",
+      "target": "N7",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "28535794",
+      "evidence": "Urinary tract infection and Furosemide co‑occur in admission 28535794",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N3",
+      "target": "N6",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "28073373",
+      "evidence": "Diabetes mellitus and Insulin co‑occur in admission 28073373",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N3",
+      "target": "N7",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "28535794",
+      "evidence": "Diabetes mellitus and Furosemide co‑occur in admission 28535794",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N4",
+      "target": "N7",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "28535794",
+      "evidence": "Unspecified essential hypertension and Furosemide co‑occur in admission 28535794",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N2",
+      "target": "N10",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "PROCEDURE",
+      "hadm_id": "28073373",
+      "evidence": "Urinary tract infection and cancer chemotherapeutic infusion co‑occur in admission 28073373",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N11",
+      "target": "N2",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28535794",
+      "evidence": "URINE CULTURE Pseudomonas and Urinary tract infection co‑occur in admission 28535794",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N12",
+      "target": "N2",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25861331",
+      "evidence": "URINE CULTURE Proteus and Urinary tract infection co‑occur in admission 25861331",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N13",
+      "target": "N7",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "MEDICATION",
+      "hadm_id": "23966001",
+      "evidence": "URINE CULTURE E.coli and Furosemide co‑occur in admission 23966001",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N14",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28073373",
+      "evidence": "Service NMED manages Urinary tract infection in admission 28073373",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N10",
+      "target": "N5",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28073373",
+      "evidence": "Cancer chemotherapeutic infusion performed for Primary CNS lymphoma in admission 28073373",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N11",
+      "target": "N2",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28535794",
+      "evidence": "URINE CULTURE Pseudomonas confirms Urinary tract infection in admission 28535794",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.8
+    }
+  ]
+}

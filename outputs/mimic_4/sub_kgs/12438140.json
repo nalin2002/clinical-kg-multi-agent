@@ -1,0 +1,433 @@
+{
+  "subject_id": "12438140",
+  "hadm_ids": [
+    "29159917",
+    "23743321",
+    "26356699",
+    "24168883",
+    "22558333",
+    "23899331"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 12438140",
+      "normalized_name": "Patient 12438140",
+      "source_tables": [
+        "demographics"
+      ],
+      "evidence": [
+        "subject_id:12438140"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Atrial fibrillation",
+      "normalized_name": "atrial fibrillation",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": [
+        "hadm_id:29159917",
+        "seq_num:4"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Diabetes mellitus without mention of complication, type II",
+      "normalized_name": "diabetes mellitus type ii",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": [
+        "hadm_id:29159917",
+        "seq_num:5"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "insulin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": [
+        "hadm_id:29159917",
+        "name:Insulin"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": [
+        "hadm_id:24168883",
+        "name:Vancomycin"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": [
+        "hadm_id:24168883",
+        "name:Laboratory testing"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "PROCEDURE",
+      "name": "Percutaneous aspiration of gallbladder",
+      "normalized_name": "percutaneous aspiration of gallbladder",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": [
+        "hadm_id:24168883",
+        "seq_num:1"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture - STREPTOCOCCUS ANGINOSUS (MILLERI) GROUP",
+      "normalized_name": "strep. anginosus group",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": [
+        "hadm_id:UNLINKED",
+        "specimen:BLOOD CULTURE",
+        "organism:STREPTOCOCCUS ANGINOSUS (MILLERI) GROUP"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "med",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": [
+        "hadm_id:29159917",
+        "service:MED"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "SERVICE",
+      "name": "OMED",
+      "normalized_name": "omed",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": [
+        "hadm_id:24168883",
+        "service:OMED"
+      ],
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29159917",
+      "evidence": [
+        "patient has atrial fibrillation"
+      ],
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29159917",
+      "evidence": [
+        "patient has diabetes"
+      ],
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "29159917",
+      "evidence": [
+        "patient takes insulin"
+      ],
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "24168883",
+      "evidence": [
+        "patient takes vancomycin"
+      ],
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "24168883",
+      "evidence": [
+        "patient had lab testing"
+      ],
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "24168883",
+      "evidence": [
+        "patient underwent percutaneous aspiration"
+      ],
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "UNLINKED",
+      "evidence": [
+        "patient had blood culture"
+      ],
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "29159917",
+      "evidence": [
+        "patient managed by MED"
+      ],
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "24168883",
+      "evidence": [
+        "patient managed by OMED"
+      ],
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N3",
+      "target": "N4",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "29159917",
+      "evidence": [
+        "insulin treats diabetes"
+      ],
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N2",
+      "target": "N7",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24168883",
+      "evidence": [
+        "procedure for atrial fibrillation"
+      ],
+      "source_tables": [
+        "procedures",
+        "diagnoses"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N5",
+      "target": "N8",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "24168883",
+      "evidence": [
+        "vancomycin targets strep anginosus"
+      ],
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N6",
+      "target": "N3",
+      "relation": "MONITORED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "24168883",
+      "evidence": [
+        "lab tests monitor diabetes"
+      ],
+      "source_tables": [
+        "lab_tests",
+        "diagnoses"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N8",
+      "target": "N5",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "MEDICATION",
+      "hadm_id": "UNLINKED",
+      "evidence": [
+        "blood culture confirms need for vancomycin"
+      ],
+      "source_tables": [
+        "microbiology",
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N9",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29159917",
+      "evidence": [
+        "MED manages atrial fibrillation"
+      ],
+      "source_tables": [
+        "services",
+        "diagnoses"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N10",
+      "target": "N5",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "MEDICATION",
+      "hadm_id": "24168883",
+      "evidence": [
+        "OMED manages vancomycin"
+      ],
+      "source_tables": [
+        "services",
+        "medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N2",
+      "target": "N3",
+      "relation": "ASSOCIATED_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29159917",
+      "evidence": [
+        "atrial fibrillation associated with diabetes"
+      ],
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N5",
+      "target": "N7",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "PROCEDURE",
+      "hadm_id": "24168883",
+      "evidence": [
+        "vancomycin co-occurs with gallbladder aspiration"
+      ],
+      "source_tables": [
+        "medications",
+        "procedures"
+      ],
+      "confidence": 0.55
+    }
+  ]
+}

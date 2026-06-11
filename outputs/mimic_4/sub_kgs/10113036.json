@@ -1,0 +1,383 @@
+{
+  "subject_id": "10113036",
+  "hadm_ids": [
+    "29077439",
+    "21335145",
+    "23554252",
+    "21746949",
+    "24053360",
+    "21468512",
+    "27653597",
+    "20558872",
+    "20919648",
+    "20733483",
+    "20313505",
+    "22623984",
+    "29632836",
+    "25435571",
+    "29712125",
+    "21445017",
+    "28278541",
+    "28446028",
+    "24403360"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 10113036",
+      "normalized_name": "patient_10113036",
+      "source_tables": "subject",
+      "evidence": "subject_id 10113036",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Sepsis, unspecified organism",
+      "normalized_name": "sepsis_unspecified_organism",
+      "source_tables": "diagnoses",
+      "evidence": "ICD A419",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Other Gram-negative sepsis",
+      "normalized_name": "other_gram_negative_sepsis",
+      "source_tables": "diagnoses",
+      "evidence": "ICD A4159",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Heart failure",
+      "normalized_name": "heart_failure",
+      "source_tables": "diagnoses",
+      "evidence": "ICD I110/I5030/I5032/I509",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "insulin",
+      "source_tables": "medications",
+      "evidence": "medication name Insulin",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "furosemide",
+      "source_tables": "medications",
+      "evidence": "medication name Furosemide",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "vancomycin",
+      "source_tables": "medications",
+      "evidence": "medication name Vancomycin",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "laboratory_testing",
+      "source_tables": "lab_tests",
+      "evidence": "lab test name Laboratory testing",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture, Routine",
+      "normalized_name": "blood_culture_routine",
+      "source_tables": "microbiology",
+      "evidence": "specimen Blood Culture, test_name Blood Culture, Routine",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "MICROBIOLOGY",
+      "name": "MRSA SCREEN",
+      "normalized_name": "mrsa_screen",
+      "source_tables": "microbiology",
+      "evidence": "specimen MRSA SCREEN, test_name MRSA SCREEN",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "med",
+      "source_tables": "services",
+      "evidence": "service MED",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "SERVICE",
+      "name": "CMED",
+      "normalized_name": "cmed",
+      "source_tables": "services",
+      "evidence": "service CMED",
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "SERVICE",
+      "name": "SURG",
+      "normalized_name": "surg",
+      "source_tables": "services",
+      "evidence": "service SURG",
+      "metadata": {}
+    },
+    {
+      "id": "N14",
+      "type": "SERVICE",
+      "name": "VSURG",
+      "normalized_name": "vsurg",
+      "source_tables": "services",
+      "evidence": "service VSURG",
+      "metadata": {}
+    },
+    {
+      "id": "N15",
+      "type": "SERVICE",
+      "name": "ORTHO",
+      "normalized_name": "ortho",
+      "source_tables": "services",
+      "evidence": "service ORTHO",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29077439",
+      "evidence": "diagnoses include heart failure codes",
+      "source_tables": "diagnoses",
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "29077439",
+      "evidence": "medication list includes Insulin",
+      "source_tables": "medications",
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "29077439",
+      "evidence": "medication list includes Furosemide",
+      "source_tables": "medications",
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "29077439",
+      "evidence": "lab_tests list includes Laboratory testing",
+      "source_tables": "lab_tests",
+      "confidence": 0.97
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "29077439",
+      "evidence": "services list includes CMED",
+      "source_tables": "services",
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21335145",
+      "evidence": "diagnoses include Sepsis, unspecified organism",
+      "source_tables": "diagnoses",
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "21335145",
+      "evidence": "medications include Vancomycin",
+      "source_tables": "medications",
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "21335145",
+      "evidence": "services list includes MED",
+      "source_tables": "services",
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "21335145",
+      "evidence": "microbiology includes Blood Culture, Routine",
+      "source_tables": "microbiology",
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N14",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "27653597",
+      "evidence": "services list includes VSURG",
+      "source_tables": "services",
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N15",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "20733483",
+      "evidence": "services list includes ORTHO",
+      "source_tables": "services",
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "25435571",
+      "evidence": "services list includes SURG",
+      "source_tables": "services",
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24403360",
+      "evidence": "diagnoses include Other Gram-negative sepsis",
+      "source_tables": "diagnoses",
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "24403360",
+      "evidence": "microbiology includes MRSA SCREEN",
+      "source_tables": "microbiology",
+      "confidence": 0.96
+    },
+    {
+      "source": "N2",
+      "target": "N7",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Vancomycin used for sepsis treatment",
+      "source_tables": "medications",
+      "confidence": 0.85
+    },
+    {
+      "source": "N3",
+      "target": "N7",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Vancomycin used for gram‑negative sepsis treatment",
+      "source_tables": "medications",
+      "confidence": 0.85
+    },
+    {
+      "source": "N4",
+      "target": "N6",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Furosemide used for heart failure management",
+      "source_tables": "medications",
+      "confidence": 0.85
+    },
+    {
+      "source": "N9",
+      "target": "N2",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Blood Culture positive in sepsis admissions",
+      "source_tables": "microbiology",
+      "confidence": 0.85
+    },
+    {
+      "source": "N9",
+      "target": "N3",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Blood Culture positive in gram‑negative sepsis admissions",
+      "source_tables": "microbiology",
+      "confidence": 0.85
+    },
+    {
+      "source": "N7",
+      "target": "N10",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "Vancomycin active against MRSA",
+      "source_tables": "medications",
+      "confidence": 0.85
+    }
+  ]
+}

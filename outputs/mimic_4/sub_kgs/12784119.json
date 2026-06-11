@@ -1,0 +1,402 @@
+{
+  "subject_id": "12784119",
+  "hadm_ids": [
+    "28192108",
+    "22108443",
+    "20892393",
+    "27383409",
+    "29790914",
+    "29945533",
+    "27961557",
+    "21332083",
+    "20929987",
+    "23698733",
+    "21003827",
+    "25818320"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 12784119",
+      "normalized_name": "Patient 12784119",
+      "source_tables": [
+        "demographics"
+      ],
+      "evidence": [
+        "subject_id:12784119"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Sepsis, unspecified organism",
+      "normalized_name": "Sepsis",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": [
+        "hadm_id:21003827 icd_code:A419"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "Vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": [
+        "hadm_id:28192108 name:Vancomycin",
+        "hadm_id:20929987 name:Vancomycin"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "Laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": [
+        "hadm_id:28192108",
+        "hadm_id:27383409",
+        "hadm_id:20929987",
+        "hadm_id:21003827",
+        "hadm_id:25818320"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "PROCEDURE",
+      "name": "Open reduction of fracture with internal fixation, femur",
+      "normalized_name": "Open reduction of fracture",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": [
+        "hadm_id:28192108 icd_code:7935"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture, Routine",
+      "normalized_name": "Blood Culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": [
+        "hadm_id:20929987 specimen:BLOOD CULTURE test_name:Blood Culture, Routine"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": [
+        "hadm_id:22108443",
+        "hadm_id:20892393",
+        "hadm_id:27383409",
+        "hadm_id:29790914",
+        "hadm_id:29945533",
+        "hadm_id:27961557",
+        "hadm_id:21332083",
+        "hadm_id:20929987",
+        "hadm_id:23698733",
+        "hadm_id:21003827",
+        "hadm_id:25818320"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "SERVICE",
+      "name": "ORTHO",
+      "normalized_name": "ORTHO",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": [
+        "hadm_id:28192108"
+      ],
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21003827",
+      "evidence": [
+        "patient has sepsis"
+      ],
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": [
+        "patient received vancomycin"
+      ],
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": [
+        "patient had lab testing"
+      ],
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "28192108",
+      "evidence": [
+        "patient underwent open reduction"
+      ],
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "20929987",
+      "evidence": [
+        "patient had blood culture"
+      ],
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": [
+        "patient managed by MED service"
+      ],
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "28192108",
+      "evidence": [
+        "patient managed by ORTHO service"
+      ],
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N3",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": [
+        "vancomycin treats sepsis"
+      ],
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N2",
+      "target": "N4",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": [
+        "lab testing used to diagnose sepsis"
+      ],
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N5",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28192108",
+      "evidence": [
+        "procedure performed for sepsis (fracture fixation)"
+      ],
+      "source_tables": [
+        "procedures",
+        "diagnoses"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N2",
+      "target": "N6",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "20929987",
+      "evidence": [
+        "blood culture confirms sepsis"
+      ],
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N2",
+      "target": "N7",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": [
+        "MED service manages sepsis"
+      ],
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N3",
+      "target": "N7",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": [
+        "vancomycin administered during MED service"
+      ],
+      "source_tables": [
+        "medications",
+        "services"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N3",
+      "target": "N4",
+      "relation": "MONITORED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": [
+        "vancomycin levels monitored by lab testing"
+      ],
+      "source_tables": [
+        "medications",
+        "lab_tests"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N5",
+      "target": "N4",
+      "relation": "MONITORED_BY",
+      "source_type": "PROCEDURE",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": [
+        "procedure outcomes monitored by lab testing"
+      ],
+      "source_tables": [
+        "procedures",
+        "lab_tests"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N6",
+      "target": "N4",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": [
+        "blood culture ordered alongside lab testing"
+      ],
+      "source_tables": [
+        "microbiology",
+        "lab_tests"
+      ],
+      "confidence": 0.55
+    },
+    {
+      "source": "N8",
+      "target": "N5",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "PROCEDURE",
+      "hadm_id": "28192108",
+      "evidence": [
+        "ORTHO service performed fracture fixation"
+      ],
+      "source_tables": [
+        "services",
+        "procedures"
+      ],
+      "confidence": 0.8
+    }
+  ]
+}

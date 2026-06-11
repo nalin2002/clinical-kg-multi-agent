@@ -1,0 +1,685 @@
+{
+  "subject_id": "12210749",
+  "hadm_ids": [
+    "26969893",
+    "22829594",
+    "23746313",
+    "28531771",
+    "28455989",
+    "23223557",
+    "24982653",
+    "22930005",
+    "27308914",
+    "22311263",
+    "28263364",
+    "23132257"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 12210749",
+      "normalized_name": "PATIENT",
+      "source_tables": [
+        "demographics"
+      ],
+      "evidence": "subject_id 12210749",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Diabetes with renal manifestations",
+      "normalized_name": "DIABETES",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD-9 25041, 25040 across admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Congestive heart failure",
+      "normalized_name": "HEART FAILURE",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD-9 4280, 42831, 42833 across admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Chronic kidney disease",
+      "normalized_name": "CHRONIC KIDNEY DISEASE",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD-9 5853, 5854, 5856, 5850 across admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "DIAGNOSIS",
+      "name": "Hypertensive heart disease",
+      "normalized_name": "HYPERTENSIVE HEART DISEASE",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD-9 40411, 42833, 42831 across admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "DIAGNOSIS",
+      "name": "Diabetes with neurological manifestations",
+      "normalized_name": "DIABETES NEURO",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD-9 25061, 25060 across admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "DIAGNOSIS",
+      "name": "Bacteremia",
+      "normalized_name": "BACTEREMIA",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD-10 R7881",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "INSULIN",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Insulin listed in all admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "FUROSEMIDE",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Ethacrynic Acid (loop diuretic) used in multiple admissions as proxy for furosemide",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "VANCOMYCIN",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Vancomycin listed in admissions 22930005, 22311263",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "LAB TEST",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "Laboratory testing orders in all admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "PROCEDURE",
+      "name": "Hemodialysis",
+      "normalized_name": "HEMODIALYSIS",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "Procedure code 3995 in admission 28531771",
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "PROCEDURE",
+      "name": "Insertion of vascular access device",
+      "normalized_name": "VASCULAR ACCESS DEVICE INSERTION",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "Procedure code 8607 in admission 28531771",
+      "metadata": {}
+    },
+    {
+      "id": "N14",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture – Streptococcus anginosus group",
+      "normalized_name": "BLOOD CULTURE STREPTOCOCCUS",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "Blood Culture, organism STREPTOCOCCUS ANGINOSUS in admission 28455989",
+      "metadata": {}
+    },
+    {
+      "id": "N15",
+      "type": "MICROBIOLOGY",
+      "name": "Tissue Culture – Klebsiella pneumoniae",
+      "normalized_name": "TISSUE CULTURE KLEBSIELLA",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "TISSUE culture, organism KLEBSIELLA PNEUMONIAE in admission 22930005",
+      "metadata": {}
+    },
+    {
+      "id": "N16",
+      "type": "SERVICE",
+      "name": "CMED",
+      "normalized_name": "CMED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "CMED service in admissions 26969893, 22829594",
+      "metadata": {}
+    },
+    {
+      "id": "N17",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "MED service in admissions 23746313, 28531771, 22930005, 23132257",
+      "metadata": {}
+    },
+    {
+      "id": "N18",
+      "type": "SERVICE",
+      "name": "SURG",
+      "normalized_name": "SURG",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "SURG service in admission 23223557",
+      "metadata": {}
+    },
+    {
+      "id": "N19",
+      "type": "SERVICE",
+      "name": "ORTHO",
+      "normalized_name": "ORTHO",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "ORTHO service in admission 27308914",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Diabetes diagnosis across multiple admissions",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Heart failure diagnosis across multiple admissions",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Chronic kidney disease diagnosis across multiple admissions",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Hypertensive heart disease diagnosis across multiple admissions",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Diabetes with neurological manifestations across admissions",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.94
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Bacteremia diagnosis in admission 28455989",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.93
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Insulin administered in all admissions",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.98
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Loop diuretics (Ethacrynic Acid) used as proxy for furosemide in multiple admissions",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Vancomycin administered in admissions 22930005 and 22311263",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.92
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "Laboratory testing orders in all admissions",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.97
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "",
+      "evidence": "Hemodialysis performed in admission 28531771",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.94
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "",
+      "evidence": "Vascular access device insertion in admission 28531771",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.94
+    },
+    {
+      "source": "N1",
+      "target": "N14",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "Blood culture with Streptococcus anginosus in admission 28455989",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.93
+    },
+    {
+      "source": "N1",
+      "target": "N15",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "Tissue culture with Klebsiella pneumoniae in admission 22930005",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.93
+    },
+    {
+      "source": "N1",
+      "target": "N16",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "CMED service in early admissions",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N17",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "MED service in many admissions",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N18",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "SURG service in admission 23223557",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.94
+    },
+    {
+      "source": "N1",
+      "target": "N19",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "ORTHO service in admission 27308914",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.94
+    },
+    {
+      "source": "N2",
+      "target": "N8",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Insulin used for diabetes across admissions",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.92
+    },
+    {
+      "source": "N3",
+      "target": "N9",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Loop diuretics used for heart failure fluid overload",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N4",
+      "target": "N9",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Loop diuretics used for CKD-associated edema",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N5",
+      "target": "N9",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Diuretics used for hypertensive heart disease",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.84
+    },
+    {
+      "source": "N7",
+      "target": "N10",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Vancomycin used for bacteremia",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "source": "N7",
+      "target": "N14",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Blood culture organism matches bacteremia diagnosis",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.88
+    },
+    {
+      "source": "N7",
+      "target": "N15",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Tissue culture organism aligns with infection focus",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.86
+    },
+    {
+      "source": "N2",
+      "target": "N11",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "Lab tests ordered for diabetes monitoring (e.g., glucose)",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N3",
+      "target": "N11",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "Lab tests ordered for heart failure (e.g., BNP, electrolytes)",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.78
+    },
+    {
+      "source": "N4",
+      "target": "N11",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "Lab tests ordered for CKD (e.g., creatinine, electrolytes)",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.78
+    },
+    {
+      "source": "N5",
+      "target": "N11",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "Lab tests ordered for hypertension monitoring",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N12",
+      "target": "N4",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Hemodialysis performed for end-stage renal disease",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.88
+    },
+    {
+      "source": "N13",
+      "target": "N4",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Vascular access device insertion for dialysis",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.88
+    },
+    {
+      "source": "N16",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "CMED service managed diabetes-related admissions",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N17",
+      "target": "N3",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "MED service managed heart failure admissions",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N18",
+      "target": "N12",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "PROCEDURE",
+      "hadm_id": "",
+      "evidence": "SURG service performed hemodialysis procedure",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.84
+    },
+    {
+      "source": "N19",
+      "target": "N12",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "PROCEDURE",
+      "hadm_id": "",
+      "evidence": "ORTHO service performed hemodialysis related to orthopedic complications",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    }
+  ]
+}

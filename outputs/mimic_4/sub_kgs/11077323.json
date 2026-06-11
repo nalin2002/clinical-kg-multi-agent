@@ -1,0 +1,641 @@
+{
+  "subject_id": "11077323",
+  "hadm_ids": [
+    "22506207",
+    "22347918",
+    "25665961"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 11077323",
+      "normalized_name": "Patient",
+      "source_tables": [],
+      "evidence": [],
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Calculus of gallbladder without cholecystitis with obstruction",
+      "normalized_name": "Gallbladder calculus",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": [
+        "hadm_id:22506207"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Biliary acute pancreatitis without necrosis or infection",
+      "normalized_name": "Acute pancreatitis",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": [
+        "hadm_id:22506207"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Sepsis following a procedure, initial encounter",
+      "normalized_name": "Sepsis",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": [
+        "hadm_id:22347918"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "DIAGNOSIS",
+      "name": "Ventilator associated pneumonia",
+      "normalized_name": "VAP",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": [
+        "hadm_id:22347918"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "DIAGNOSIS",
+      "name": "Urinary tract infection, site not specified",
+      "normalized_name": "UTI",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": [
+        "hadm_id:25665961"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "Furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": [
+        "hadm_id:22506207",
+        "hadm_id:22347918",
+        "hadm_id:25665961"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "Vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": [
+        "hadm_id:22347918"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "MEDICATION",
+      "name": "CefTRIAXone",
+      "normalized_name": "Ceftriaxone",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": [
+        "hadm_id:22506207",
+        "hadm_id:25665961"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "Lab testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": [
+        "hadm_id:22506207",
+        "hadm_id:22347918",
+        "hadm_id:25665961"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "PROCEDURE",
+      "name": "Resection of Gallbladder, Open Approach",
+      "normalized_name": "Gallbladder resection",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": [
+        "hadm_id:22347918"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "PROCEDURE",
+      "name": "Respiratory Ventilation, Greater than 96 Consecutive Hours",
+      "normalized_name": "Mechanical ventilation",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": [
+        "hadm_id:22347918"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture, Routine",
+      "normalized_name": "Blood culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": [
+        "hadm_id:22506207",
+        "hadm_id:22347918"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N14",
+      "type": "MICROBIOLOGY",
+      "name": "URINE CULTURE",
+      "normalized_name": "Urine culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": [
+        "hadm_id:22506207",
+        "hadm_id:25665961"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N15",
+      "type": "MICROBIOLOGY",
+      "name": "Pseudomonas aeruginosa (respiratory culture)",
+      "normalized_name": "Pseudomonas aeruginosa",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": [
+        "hadm_id:22347918"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N16",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "Medical service",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": [
+        "hadm_id:22506207"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N17",
+      "type": "SERVICE",
+      "name": "SURG",
+      "normalized_name": "Surgical service",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": [
+        "hadm_id:22506207",
+        "hadm_id:22347918",
+        "hadm_id:25665961"
+      ],
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22506207",
+      "evidence": [
+        "patient has diagnosis"
+      ],
+      "source_tables": [],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22506207",
+      "evidence": [
+        "patient has diagnosis"
+      ],
+      "source_tables": [],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22347918",
+      "evidence": [
+        "patient has diagnosis"
+      ],
+      "source_tables": [],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22347918",
+      "evidence": [
+        "patient has diagnosis"
+      ],
+      "source_tables": [],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25665961",
+      "evidence": [
+        "patient has diagnosis"
+      ],
+      "source_tables": [],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "22506207",
+      "evidence": [
+        "medication administered"
+      ],
+      "source_tables": [],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "22347918",
+      "evidence": [
+        "medication administered"
+      ],
+      "source_tables": [],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "22506207",
+      "evidence": [
+        "medication administered"
+      ],
+      "source_tables": [],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "22506207",
+      "evidence": [
+        "lab ordered"
+      ],
+      "source_tables": [],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "22347918",
+      "evidence": [
+        "procedure performed"
+      ],
+      "source_tables": [],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "22347918",
+      "evidence": [
+        "procedure performed"
+      ],
+      "source_tables": [],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22506207",
+      "evidence": [
+        "microbiology performed"
+      ],
+      "source_tables": [],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N14",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22506207",
+      "evidence": [
+        "microbiology performed"
+      ],
+      "source_tables": [],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N15",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22347918",
+      "evidence": [
+        "microbiology performed"
+      ],
+      "source_tables": [],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N16",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "22506207",
+      "evidence": [
+        "service"
+      ],
+      "source_tables": [],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N17",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "22506207",
+      "evidence": [
+        "service"
+      ],
+      "source_tables": [],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N7",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "22506207",
+      "evidence": [
+        "clinical guideline"
+      ],
+      "source_tables": [],
+      "confidence": 0.75
+    },
+    {
+      "source": "N4",
+      "target": "N8",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "22347918",
+      "evidence": [
+        "antibiotic for sepsis"
+      ],
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N5",
+      "target": "N9",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "22347918",
+      "evidence": [
+        "antibiotic for pneumonia"
+      ],
+      "source_tables": [],
+      "confidence": 0.75
+    },
+    {
+      "source": "N6",
+      "target": "N14",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "25665961",
+      "evidence": [
+        "urine culture"
+      ],
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N15",
+      "target": "N8",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22347918",
+      "evidence": [
+        "vancomycin activity"
+      ],
+      "source_tables": [],
+      "confidence": 0.7
+    },
+    {
+      "source": "N4",
+      "target": "N13",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22506207",
+      "evidence": [
+        "blood culture"
+      ],
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N10",
+      "relation": "MONITORED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "22506207",
+      "evidence": [
+        "lab monitoring"
+      ],
+      "source_tables": [],
+      "confidence": 0.7
+    },
+    {
+      "source": "N4",
+      "target": "N10",
+      "relation": "MONITORED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "22347918",
+      "evidence": [
+        "lab monitoring"
+      ],
+      "source_tables": [],
+      "confidence": 0.7
+    },
+    {
+      "source": "N2",
+      "target": "N11",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22347918",
+      "evidence": [
+        "procedure for gallbladder disease"
+      ],
+      "source_tables": [],
+      "confidence": 0.75
+    },
+    {
+      "source": "N12",
+      "target": "N5",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22347918",
+      "evidence": [
+        "ventilation for pneumonia"
+      ],
+      "source_tables": [],
+      "confidence": 0.75
+    },
+    {
+      "source": "N16",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22506207",
+      "evidence": [
+        "medical service manages"
+      ],
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N17",
+      "target": "N4",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22347918",
+      "evidence": [
+        "surgical service manages"
+      ],
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N3",
+      "relation": "ASSOCIATED_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22506207",
+      "evidence": [
+        "co-occurring"
+      ],
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N4",
+      "target": "N5",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22347918",
+      "evidence": [
+        "same admission"
+      ],
+      "source_tables": [],
+      "confidence": 0.55
+    },
+    {
+      "source": "N6",
+      "target": "N14",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "25665961",
+      "evidence": [
+        "same admission"
+      ],
+      "source_tables": [],
+      "confidence": 0.55
+    }
+  ]
+}

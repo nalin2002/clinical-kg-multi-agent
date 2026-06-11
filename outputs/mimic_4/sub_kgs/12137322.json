@@ -1,0 +1,219 @@
+{
+  "subject_id": "12137322",
+  "hadm_ids": [
+    "29065635",
+    "20584942",
+    "23539722",
+    "28076131",
+    "27206113",
+    "25981913",
+    "24833816",
+    "21096484",
+    "25854014",
+    "27715103",
+    "28659915",
+    "27794641"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 12137322",
+      "normalized_name": "patient_12137322",
+      "source_tables": [
+        "demographics"
+      ],
+      "evidence": "subject_id 12137322",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "medication name \"Furosemide\" appears in admissions 27715103, 28659915",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "medication name \"Vancomycin\" appears in admissions 25981913, 24833816",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture",
+      "normalized_name": "blood_culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "microbiology specimen \"Blood Culture\" appears in admissions 25981913, 24833816",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "med",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "service \"MED\" appears in all admissions except 25854014",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "SERVICE",
+      "name": "SURG",
+      "normalized_name": "surg",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "service \"SURG\" appears in admission 25854014",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "27715103",
+      "evidence": "Furosemide prescribed in admission 27715103",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "25981913",
+      "evidence": "Vancomycin prescribed in admission 25981913",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "25981913",
+      "evidence": "Blood Culture ordered in admission 25981913",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "29065635",
+      "evidence": "Service MED managing admission 29065635",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "25854014",
+      "evidence": "Service SURG managing admission 25854014",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N5",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "27715103",
+      "evidence": "Furosemide administered under service MED in admission 27715103",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N3",
+      "target": "N5",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "25981913",
+      "evidence": "Vancomycin administered under service MED in admission 25981913",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N4",
+      "target": "N5",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "SERVICE",
+      "hadm_id": "25981913",
+      "evidence": "Blood Culture ordered during service MED in admission 25981913",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N2",
+      "target": "N4",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "27715103",
+      "evidence": "Furosemide and Blood Culture co-occur in admission 27715103 (no direct clinical link)",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.55
+    },
+    {
+      "source": "N3",
+      "target": "N4",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "25981913",
+      "evidence": "Vancomycin and Blood Culture co-occur in admission 25981913 (no direct clinical link)",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.55
+    }
+  ]
+}

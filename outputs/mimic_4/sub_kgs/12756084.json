@@ -1,0 +1,872 @@
+{
+  "subject_id": "12756084",
+  "hadm_ids": [
+    "29857051",
+    "20280165",
+    "29583320",
+    "22993953",
+    "25619722",
+    "29838830",
+    "26753480",
+    "26456833"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 12756084",
+      "normalized_name": "Patient 12756084",
+      "source_tables": [
+        "subject"
+      ],
+      "evidence": "subject_id",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Acute pancreatitis",
+      "normalized_name": "Acute pancreatitis",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 29857051,20280165",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Unspecified essential hypertension",
+      "normalized_name": "Unspecified essential hypertension",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 29857051,20280165,29583320,25619722,29838830,26456833",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Tobacco use disorder",
+      "normalized_name": "Tobacco use disorder",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 29857051,20280165,25619722",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "DIAGNOSIS",
+      "name": "Atherosclerosis of native arteries of the extremities with intermittent claudication",
+      "normalized_name": "Atherosclerosis of native arteries of the extremities with intermittent claudication",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 29583320,25619722,29838830",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "DIAGNOSIS",
+      "name": "Pain in joint, shoulder region",
+      "normalized_name": "Pain in joint, shoulder region",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 22993953",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "DIAGNOSIS",
+      "name": "Shortness of breath",
+      "normalized_name": "Shortness of breath",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 22993953",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "DIAGNOSIS",
+      "name": "Chest pain, unspecified",
+      "normalized_name": "Chest pain, unspecified",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 22993953",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "DIAGNOSIS",
+      "name": "Inflammatory polyarthropathy",
+      "normalized_name": "Inflammatory polyarthropathy",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 26753480",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "DIAGNOSIS",
+      "name": "Acute respiratory failure with hypoxia",
+      "normalized_name": "Acute respiratory failure with hypoxia",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 26753480,26456833",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "DIAGNOSIS",
+      "name": "Malignant neoplasm of ascending colon",
+      "normalized_name": "Malignant neoplasm of ascending colon",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 26753480,26456833",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "DIAGNOSIS",
+      "name": "Severe sepsis with septic shock",
+      "normalized_name": "Severe sepsis with septic shock",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 26456833",
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "Furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id 26753480,26456833",
+      "metadata": {}
+    },
+    {
+      "id": "N14",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "Vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id 26456833",
+      "metadata": {}
+    },
+    {
+      "id": "N15",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "Insulin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id 26456833",
+      "metadata": {}
+    },
+    {
+      "id": "N16",
+      "type": "MEDICATION",
+      "name": "Heparin",
+      "normalized_name": "Heparin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N17",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "Laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "all admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N18",
+      "type": "PROCEDURE",
+      "name": "Angioplasty of other non-coronary vessel(s)",
+      "normalized_name": "Angioplasty of other non-coronary vessel(s)",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "hadm_id 29583320,25619722,29838830",
+      "metadata": {}
+    },
+    {
+      "id": "N19",
+      "type": "PROCEDURE",
+      "name": "Insertion of non-drug-eluting peripheral (non-coronary) vessel stent(s)",
+      "normalized_name": "Insertion of non-drug-eluting peripheral (non-coronary) vessel stent(s)",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "hadm_id 29583320,25619722",
+      "metadata": {}
+    },
+    {
+      "id": "N20",
+      "type": "PROCEDURE",
+      "name": "Resection of Right Large Intestine, Open Approach",
+      "normalized_name": "Resection of Right Large Intestine, Open Approach",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "hadm_id 26456833",
+      "metadata": {}
+    },
+    {
+      "id": "N21",
+      "type": "MICROBIOLOGY",
+      "name": "Mini-BAL Respiratory Culture - ENTEROBACTER CLOACAE COMPLEX (R)",
+      "normalized_name": "Enterobacter cloacae complex resistant",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "hadm_id 26456833",
+      "metadata": {}
+    },
+    {
+      "id": "N22",
+      "type": "MICROBIOLOGY",
+      "name": "Mini-BAL Respiratory Culture - YEAST",
+      "normalized_name": "Yeast",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "hadm_id 26456833",
+      "metadata": {}
+    },
+    {
+      "id": "N23",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "hadm_id 29857051,20280165",
+      "metadata": {}
+    },
+    {
+      "id": "N24",
+      "type": "SERVICE",
+      "name": "VSURG",
+      "normalized_name": "VSURG",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "hadm_id 29583320,25619722,29838830",
+      "metadata": {}
+    },
+    {
+      "id": "N25",
+      "type": "SERVICE",
+      "name": "CMED",
+      "normalized_name": "CMED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "hadm_id 22993953",
+      "metadata": {}
+    },
+    {
+      "id": "N26",
+      "type": "SERVICE",
+      "name": "OMED",
+      "normalized_name": "OMED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "hadm_id 26753480",
+      "metadata": {}
+    },
+    {
+      "id": "N27",
+      "type": "SERVICE",
+      "name": "SURG",
+      "normalized_name": "SURG",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "hadm_id 26456833",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29857051",
+      "evidence": "diagnoses list",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "multiple admissions",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29857051",
+      "evidence": "diagnoses list",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29583320",
+      "evidence": "diagnoses list",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22993953",
+      "evidence": "diagnoses list",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22993953",
+      "evidence": "diagnoses list",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22993953",
+      "evidence": "diagnoses list",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "26753480",
+      "evidence": "diagnoses list",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "26753480",
+      "evidence": "diagnoses list",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "26753480",
+      "evidence": "diagnoses list",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "26456833",
+      "evidence": "diagnoses list",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "26753480",
+      "evidence": "medications list",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N14",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "26456833",
+      "evidence": "medications list",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N15",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "26456833",
+      "evidence": "medications list",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N16",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "multiple admissions",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N17",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "lab testing orders",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N18",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "29583320",
+      "evidence": "procedures list",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N19",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "29583320",
+      "evidence": "procedures list",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N20",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "26456833",
+      "evidence": "procedures list",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N21",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "26456833",
+      "evidence": "microbiology list",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N22",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "26456833",
+      "evidence": "microbiology list",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N23",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "29857051",
+      "evidence": "services list",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N24",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "29583320",
+      "evidence": "services list",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N25",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "22993953",
+      "evidence": "services list",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N26",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "26753480",
+      "evidence": "services list",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N27",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "26456833",
+      "evidence": "services list",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N13",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "26753480",
+      "evidence": "clinical guideline for pancreatitis fluid resuscitation",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N12",
+      "target": "N14",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "26456833",
+      "evidence": "vancomycin used for severe sepsis",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N12",
+      "target": "N15",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "26456833",
+      "evidence": "insulin for stress hyperglycemia in sepsis",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N5",
+      "target": "N18",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29583320",
+      "evidence": "angioplasty for peripheral artery disease",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N5",
+      "target": "N19",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29583320",
+      "evidence": "stent placement for peripheral artery disease",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N10",
+      "target": "N21",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "26456833",
+      "evidence": "Enterobacter cloacae complex cultured from respiratory sample in ARF",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N10",
+      "target": "N22",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "26456833",
+      "evidence": "Yeast cultured from respiratory sample in ARF",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N13",
+      "target": "N21",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "26456833",
+      "evidence": "furosemide not an antimicrobial; placeholder for clinical co‑occurrence",
+      "source_tables": [],
+      "confidence": 0.5
+    },
+    {
+      "source": "N14",
+      "target": "N21",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "26456833",
+      "evidence": "vancomycin active against Gram‑positive organisms, not Enterobacter; still co‑occurs",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N23",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29857051",
+      "evidence": "MED service managed pancreatitis admission",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N24",
+      "target": "N5",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29583320",
+      "evidence": "VSURG service managed peripheral artery disease",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N26",
+      "target": "N9",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "26753480",
+      "evidence": "OMED service managed inflammatory polyarthropathy",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N27",
+      "target": "N12",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "26456833",
+      "evidence": "SURG service managed severe sepsis admission",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N17",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "29857051",
+      "evidence": "lab testing ordered for pancreatitis workup",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N12",
+      "target": "N17",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "26456833",
+      "evidence": "lab testing ordered for sepsis workup",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N5",
+      "target": "N17",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "29583320",
+      "evidence": "lab testing ordered for peripheral artery disease",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N9",
+      "target": "N17",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "26753480",
+      "evidence": "lab testing ordered for inflammatory polyarthropathy",
+      "source_tables": [],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N13",
+      "relation": "MONITORED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "26753480",
+      "evidence": "fluid management with furosemide in pancreatitis",
+      "source_tables": [],
+      "confidence": 0.7
+    },
+    {
+      "source": "N12",
+      "target": "N14",
+      "relation": "MONITORED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "26456833",
+      "evidence": "vancomycin used for sepsis; therapeutic drug monitoring",
+      "source_tables": [],
+      "confidence": 0.7
+    },
+    {
+      "source": "N3",
+      "target": "N16",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "heparin frequently co‑prescribed with hypertension management",
+      "source_tables": [],
+      "confidence": 0.5
+    }
+  ]
+}

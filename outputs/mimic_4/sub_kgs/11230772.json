@@ -1,0 +1,218 @@
+{
+  "subject_id": "11230772",
+  "hadm_ids": [
+    "24774283",
+    "23263331",
+    "29762310",
+    "20298161",
+    "28806261",
+    "25310750",
+    "23317507",
+    "29496768",
+    "29333864",
+    "25333864",
+    "25340780",
+    "25321341",
+    "23404687"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 11230772",
+      "normalized_name": "Patient 11230772",
+      "source_tables": [
+        "demographics"
+      ],
+      "evidence": "Patient identifier",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Other chest pain",
+      "normalized_name": "Other chest pain",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD 78659 in admission 24774283",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Diabetes mellitus without complication",
+      "normalized_name": "Diabetes mellitus without complication",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD 25000 in admission 24774283",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "Insulin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Insulin administered in admission 24774283",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "Laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "Lab orders in admission 24774283",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "Service MED in admission 24774283",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24774283",
+      "evidence": "Patient has diagnosis Other chest pain",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24774283",
+      "evidence": "Patient has diagnosis Diabetes mellitus without complication",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "24774283",
+      "evidence": "Patient takes Insulin",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "24774283",
+      "evidence": "Patient had lab testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "24774283",
+      "evidence": "Patient managed by MED service",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N3",
+      "target": "N4",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "24774283",
+      "evidence": "Insulin treats Diabetes mellitus without complication",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N3",
+      "target": "N5",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "24774283",
+      "evidence": "Lab testing used to diagnose Diabetes mellitus without complication",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N2",
+      "target": "N5",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "24774283",
+      "evidence": "Lab testing used to diagnose Other chest pain",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N6",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24774283",
+      "evidence": "MED service manages Other chest pain",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N6",
+      "target": "N3",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24774283",
+      "evidence": "MED service manages Diabetes mellitus without complication",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    }
+  ]
+}

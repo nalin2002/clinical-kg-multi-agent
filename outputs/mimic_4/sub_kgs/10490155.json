@@ -1,0 +1,615 @@
+{
+  "subject_id": "10490155",
+  "hadm_ids": [
+    "20530650",
+    "20931633",
+    "25520548",
+    "27580009",
+    "29015950",
+    "29533459",
+    "29612785",
+    "29191264"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 10490155",
+      "normalized_name": "PATIENT_10490155",
+      "source_tables": [],
+      "evidence": "subject_id 10490155",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Liver transplant status",
+      "normalized_name": "LIVER_TRANSPLANT_STATUS",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 20931633, seq_num 2, icd_code Z944",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Liver transplant rejection",
+      "normalized_name": "LIVER_TRANSPLANT_REJECTION",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 25520548, seq_num 1, icd_code T8641",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Spontaneous bacterial peritonitis",
+      "normalized_name": "SPONTANEOUS_BACTERIAL_PERITONITIS",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 20530650, seq_num 2, icd_code K652",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "DIAGNOSIS",
+      "name": "Acute kidney failure, unspecified",
+      "normalized_name": "ACUTE_KIDNEY_FAILURE_UNSPECIFIED",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 20530650, seq_num 8, icd_code N179; also hadm_id 27580009, seq_num 5",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "DIAGNOSIS",
+      "name": "Infection and inflammatory reaction due to internal right knee prosthesis, initial encounter",
+      "normalized_name": "KNEE_PROSTHESIS_INFECTION",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 29533459, seq_num 1, icd_code T8453XA",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "DIAGNOSIS",
+      "name": "Essential (primary) hypertension",
+      "normalized_name": "ESSENTIAL_HYPERTENSION",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 25520548, seq_num 5, icd_code I10; also present in other admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "MEDICATION",
+      "name": "Tacrolimus",
+      "normalized_name": "TACROLIMUS",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "multiple admissions, e.g., hadm_id 20530650 count 19",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "VANCOMYCIN",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id 20530650 count 3; also in later admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "FUROSEMIDE",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id 20931633 count 9; also in later admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "INSULIN",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "multiple admissions, e.g., hadm_id 20530650 count 10",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "PROCEDURE",
+      "name": "Transplantation of Liver, Allogeneic, Open Approach",
+      "normalized_name": "LIVER_TRANSPLANT_OPEN",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "hadm_id 20530650, seq_num 1, icd_code 0FY00Z0",
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "PROCEDURE",
+      "name": "Drainage of Peritoneal Cavity, Percutaneous Approach, Diagnostic",
+      "normalized_name": "PERITONEAL_DRAINAGE_DIAGNOSTIC",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "hadm_id 20530650, seq_num 2, icd_code 0W9G3ZX",
+      "metadata": {}
+    },
+    {
+      "id": "N14",
+      "type": "PROCEDURE",
+      "name": "Removal of Synthetic Substitute from Right Knee Joint, Open Approach",
+      "normalized_name": "KNEE_PROSTHESIS_REMOVAL_OPEN",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "hadm_id 29533459, seq_num 1, icd_code 0SPC0JZ",
+      "metadata": {}
+    },
+    {
+      "id": "N15",
+      "type": "MICROBIOLOGY",
+      "name": "Joint Fluid - FLUID CULTURE (STAPHYLOCOCCUS EPIDERMIDIS)",
+      "normalized_name": "JOINT_FLUID_FLUID_CULTURE_STAPH_EPIDERMIDIS",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "UNLINKED specimen JOINT FLUID, test_name FLUID CULTURE, organism STAPHYLOCOCCUS EPIDERMIDIS",
+      "metadata": {}
+    },
+    {
+      "id": "N16",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "LAB_TEST",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "Derived from POE 'Lab' orders in multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N17",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "SERVICE_MED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "services list in admissions 20530650, 20931633, 27580009, 29191264",
+      "metadata": {}
+    },
+    {
+      "id": "N18",
+      "type": "SERVICE",
+      "name": "SURG",
+      "normalized_name": "SERVICE_SURG",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "services list in admissions 20530650, 20931633, 25520548",
+      "metadata": {}
+    },
+    {
+      "id": "N19",
+      "type": "SERVICE",
+      "name": "ORTHO",
+      "normalized_name": "SERVICE_ORTHO",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "services list in admissions 29533459, 29612785",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "20931633",
+      "evidence": "diagnosis present in admission 20931633",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25520548",
+      "evidence": "diagnosis present in admission 25520548",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "20530650",
+      "evidence": "diagnosis present in admission 20530650",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "20530650",
+      "evidence": "diagnosis present in admission 20530650",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29533459",
+      "evidence": "diagnosis present in admission 29533459",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25520548",
+      "evidence": "diagnosis present in admission 25520548",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "20530650",
+      "evidence": "medication Tacrolimus listed in admission 20530650",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "20530650",
+      "evidence": "medication Vancomycin listed in admission 20530650",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "20931633",
+      "evidence": "medication Furosemide listed in admission 20931633",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "20530650",
+      "evidence": "medication Insulin listed in admission 20530650",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "20530650",
+      "evidence": "procedure Transplantation of Liver listed in admission 20530650",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "20530650",
+      "evidence": "procedure Drainage of Peritoneal Cavity listed in admission 20530650",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N14",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "29533459",
+      "evidence": "procedure Removal of Synthetic Substitute from Right Knee Joint listed in admission 29533459",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N15",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "UNLINKED",
+      "evidence": "microbiology Joint Fluid FLUID CULTURE with Staph epidermidis",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N16",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "20530650",
+      "evidence": "lab test Laboratory testing in admission 20530650",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N17",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "20530650",
+      "evidence": "service MED listed in admission 20530650",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N18",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "20530650",
+      "evidence": "service SURG listed in admission 20530650",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N19",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "29533459",
+      "evidence": "service ORTHO listed in admission 29533459",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N6",
+      "target": "N9",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "29533459",
+      "evidence": "Vancomycin administered during admission with knee prosthesis infection",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N6",
+      "target": "N14",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29533459",
+      "evidence": "Removal of Synthetic Substitute performed for knee prosthesis infection",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N15",
+      "target": "N6",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "UNLINKED",
+      "evidence": "Staphylococcus epidermidis cultured from joint fluid confirms prosthetic joint infection",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N9",
+      "target": "N15",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "UNLINKED",
+      "evidence": "Vancomycin active against Staphylococcus epidermidis",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N4",
+      "target": "N13",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "20530650",
+      "evidence": "Drainage of Peritoneal Cavity performed for spontaneous bacterial peritonitis",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N4",
+      "target": "N8",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "20530650",
+      "evidence": "Tacrolimus administered during admission with spontaneous bacterial peritonitis (immunosuppression context)",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N2",
+      "target": "N8",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "20931633",
+      "evidence": "Tacrolimus used for liver transplant maintenance",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N3",
+      "target": "N8",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "25520548",
+      "evidence": "Tacrolimus used for liver transplant rejection treatment",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N5",
+      "target": "N10",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "20931633",
+      "evidence": "Furosemide administered for fluid overload in acute kidney failure",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N5",
+      "target": "N11",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "27580009",
+      "evidence": "Insulin administered for hyperglycemia associated with acute kidney failure",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N7",
+      "target": "N10",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "25520548",
+      "evidence": "Furosemide used for hypertension management",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N7",
+      "target": "N11",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "25520548",
+      "evidence": "Insulin used for hyperglycemia in hypertensive patient",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.7
+    }
+  ]
+}

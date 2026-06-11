@@ -1,0 +1,837 @@
+{
+  "subject_id": "11953959",
+  "hadm_ids": [
+    "24424895",
+    "21257516",
+    "20020537",
+    "28898019",
+    "23026686",
+    "28737282",
+    "20310487",
+    "21497357",
+    "22031218",
+    "25633270"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 11953959",
+      "normalized_name": "PATIENT",
+      "source_tables": [],
+      "evidence": "subject_id 11953959",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Chronic obstructive asthma with (acute) exacerbation",
+      "normalized_name": "COPD",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 24424895 diagnosis icd_code 49322",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Obstructive chronic bronchitis with (acute) exacerbation",
+      "normalized_name": "COPD",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 21257516 diagnosis icd_code 49121",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Acute respiratory failure",
+      "normalized_name": "Acute respiratory failure",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 20020537 diagnosis icd_code 51881",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "DIAGNOSIS",
+      "name": "Urinary tract infection, site not specified",
+      "normalized_name": "UTI",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 20020537 diagnosis icd_code 5990",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "DIAGNOSIS",
+      "name": "Chronic obstructive pulmonary disease, unspecified",
+      "normalized_name": "COPD",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 28898019 diagnosis icd_code J449",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "DIAGNOSIS",
+      "name": "Type 2 diabetes mellitus without complications",
+      "normalized_name": "Diabetes",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 28898019 diagnosis icd_code E119",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "DIAGNOSIS",
+      "name": "Essential (primary) hypertension",
+      "normalized_name": "Hypertension",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 28898019 diagnosis icd_code I10",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "DIAGNOSIS",
+      "name": "Pneumonia, unspecified organism",
+      "normalized_name": "Pneumonia",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 21497357 diagnosis icd_code J189",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "DIAGNOSIS",
+      "name": "Acute kidney failure, unspecified",
+      "normalized_name": "Acute kidney failure",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 21497357 diagnosis icd_code N179",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "DIAGNOSIS",
+      "name": "Chronic diastolic (congestive) heart failure",
+      "normalized_name": "Heart failure",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 25633270 diagnosis icd_code I5032",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "Insulin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "multiple admissions medication Insulin",
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "MEDICATION",
+      "name": "Levofloxacin",
+      "normalized_name": "Levofloxacin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id 24424895 medication Levofloxacin",
+      "metadata": {}
+    },
+    {
+      "id": "N14",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "Furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id 21257516 medication Furosemide",
+      "metadata": {}
+    },
+    {
+      "id": "N15",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "Vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id 21497357 medication Vancomycin",
+      "metadata": {}
+    },
+    {
+      "id": "N16",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "Lab",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "multiple admissions lab_tests Laboratory testing",
+      "metadata": {}
+    },
+    {
+      "id": "N17",
+      "type": "PROCEDURE",
+      "name": "Fiber-optic bronchoscopy",
+      "normalized_name": "Bronchoscopy",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "hadm_id 24424895 procedure icd_code 3322",
+      "metadata": {}
+    },
+    {
+      "id": "N18",
+      "type": "PROCEDURE",
+      "name": "Other intubation of respiratory tract",
+      "normalized_name": "Intubation",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "hadm_id 24424895 procedure icd_code 9605",
+      "metadata": {}
+    },
+    {
+      "id": "N19",
+      "type": "PROCEDURE",
+      "name": "Mechanical ventilation",
+      "normalized_name": "Mechanical ventilation",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "hadm_id 20020537 procedure icd_code 9671",
+      "metadata": {}
+    },
+    {
+      "id": "N20",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture",
+      "normalized_name": "Blood Culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "hadm_id 21257516 microbiology specimen Blood Culture",
+      "metadata": {}
+    },
+    {
+      "id": "N21",
+      "type": "MICROBIOLOGY",
+      "name": "MRSA SCREEN",
+      "normalized_name": "MRSA SCREEN",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "hadm_id 24424895 microbiology specimen MRSA SCREEN",
+      "metadata": {}
+    },
+    {
+      "id": "N22",
+      "type": "MICROBIOLOGY",
+      "name": "URINE CULTURE - ESCHERICHIA COLI",
+      "normalized_name": "E. coli",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "hadm_id 20020537 microbiology organism ESCHERICHIA COLI",
+      "metadata": {}
+    },
+    {
+      "id": "N23",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "multiple admissions service MED",
+      "metadata": {}
+    },
+    {
+      "id": "N24",
+      "type": "SERVICE",
+      "name": "TSURG",
+      "normalized_name": "TSURG",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "hadm_id 20310487 service TSURG",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24424895",
+      "evidence": "diagnosis icd_code 49322",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21257516",
+      "evidence": "diagnosis icd_code 49121",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "20020537",
+      "evidence": "diagnosis icd_code 51881",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "20020537",
+      "evidence": "diagnosis icd_code 5990",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28898019",
+      "evidence": "diagnosis icd_code J449",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28898019",
+      "evidence": "diagnosis icd_code E119",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28898019",
+      "evidence": "diagnosis icd_code I10",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21497357",
+      "evidence": "diagnosis icd_code J189",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21497357",
+      "evidence": "diagnosis icd_code N179",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25633270",
+      "evidence": "diagnosis icd_code I5032",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "multiple admissions medication Insulin",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "24424895",
+      "evidence": "medication Levofloxacin",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N14",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "21257516",
+      "evidence": "medication Furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N15",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "21497357",
+      "evidence": "medication Vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N16",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "multiple admissions lab testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N17",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "24424895",
+      "evidence": "procedure icd_code 3322",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N18",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "24424895",
+      "evidence": "procedure icd_code 9605",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N19",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "20020537",
+      "evidence": "procedure icd_code 9671",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N20",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "21257516",
+      "evidence": "microbiology specimen Blood Culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N21",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "24424895",
+      "evidence": "microbiology specimen MRSA SCREEN",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N22",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "20020537",
+      "evidence": "microbiology organism ESCHERICHIA COLI",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N23",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "service MED across admissions",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N24",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "service TSURG in surgical admission",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N13",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "24424895",
+      "evidence": "Levofloxacin used for COPD exacerbation",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N3",
+      "target": "N14",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "21257516",
+      "evidence": "Furosemide used for COPD exacerbation",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N9",
+      "target": "N15",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "21497357",
+      "evidence": "Vancomycin used for pneumonia",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N4",
+      "target": "N19",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "PROCEDURE",
+      "hadm_id": "20020537",
+      "evidence": "Mechanical ventilation for acute respiratory failure",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N5",
+      "target": "N22",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "20020537",
+      "evidence": "Urine culture identified E. coli for UTI",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N14",
+      "target": "N22",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "20020537",
+      "evidence": "Furosemide not an antimicrobial; using CO_OCCURS_WITH",
+      "source_tables": [],
+      "confidence": 0.5
+    },
+    {
+      "source": "N15",
+      "target": "N21",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "21497357",
+      "evidence": "Vancomycin targets MRSA",
+      "source_tables": [],
+      "confidence": 0.85
+    },
+    {
+      "source": "N2",
+      "target": "N17",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "PROCEDURE",
+      "hadm_id": "24424895",
+      "evidence": "Bronchoscopy performed for COPD exacerbation evaluation",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N3",
+      "target": "N18",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "PROCEDURE",
+      "hadm_id": "21257516",
+      "evidence": "Intubation performed for COPD exacerbation",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N23",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24424895",
+      "evidence": "MED service manages COPD",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N3",
+      "target": "N23",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21257516",
+      "evidence": "MED service manages COPD",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N9",
+      "target": "N24",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21497357",
+      "evidence": "TSURG service manages pneumonia",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N11",
+      "target": "N14",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "25633270",
+      "evidence": "Furosemide used for heart failure",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N12",
+      "target": "N4",
+      "relation": "MONITORED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Insulin used in diabetic patients with respiratory diagnoses",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N12",
+      "target": "N5",
+      "relation": "MONITORED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Insulin used in diabetic patients with UTI",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N12",
+      "target": "N7",
+      "relation": "MONITORED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Insulin for diabetes",
+      "source_tables": [],
+      "confidence": 0.9
+    },
+    {
+      "source": "N12",
+      "target": "N11",
+      "relation": "MONITORED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Insulin for heart failure patients with diabetes",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N13",
+      "target": "N2",
+      "relation": "INDICATES",
+      "source_type": "MEDICATION",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24424895",
+      "evidence": "Levofloxacin indicates bacterial COPD exacerbation",
+      "source_tables": [],
+      "confidence": 0.75
+    },
+    {
+      "source": "N15",
+      "target": "N9",
+      "relation": "INDICATES",
+      "source_type": "MEDICATION",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21497357",
+      "evidence": "Vancomycin indicates MRSA pneumonia",
+      "source_tables": [],
+      "confidence": 0.85
+    },
+    {
+      "source": "N21",
+      "target": "N9",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21497357",
+      "evidence": "MRSA SCREEN positive confirms pneumonia pathogen",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N22",
+      "target": "N5",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "20020537",
+      "evidence": "Urine culture E. coli confirms UTI",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.85
+    }
+  ]
+}

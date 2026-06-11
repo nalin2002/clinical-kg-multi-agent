@@ -1,0 +1,517 @@
+{
+  "subject_id": "11760205",
+  "hadm_ids": [
+    "22985988",
+    "26072341",
+    "24552251",
+    "27414574",
+    "29227282",
+    "20547999",
+    "24646310",
+    "28596522"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 11760205",
+      "normalized_name": "PATIENT",
+      "source_tables": [],
+      "evidence": [],
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Aseptic necrosis of head and neck of femur",
+      "normalized_name": "ASEPTIC_NECROSIS",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": [
+        "hadm_id=22985988",
+        "hadm_id=26072341"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Diabetes mellitus without mention of complication, type II or unspecified type, uncontrolled",
+      "normalized_name": "DIABETES_UNCONTROLLED",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": [
+        "hadm_id=22985988",
+        "hadm_id=26072341",
+        "hadm_id=24552251",
+        "hadm_id=27414574",
+        "hadm_id=29227282",
+        "hadm_id=20547999",
+        "hadm_id=24646310",
+        "hadm_id=28596522"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Alcohol withdrawal",
+      "normalized_name": "ALCOHOL_WITHDRAWAL",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": [
+        "hadm_id=24552251",
+        "hadm_id=27414574",
+        "hadm_id=29227282",
+        "hadm_id=24646310"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "INSULIN",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": [
+        "hadm_id=24552251",
+        "hadm_id=27414574",
+        "hadm_id=29227282",
+        "hadm_id=20547999",
+        "hadm_id=24646310",
+        "hadm_id=28596522"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "MEDICATION",
+      "name": "Vancomycin Oral Liquid",
+      "normalized_name": "VANCOMYCIN",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": [
+        "hadm_id=28596522"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "LAB_TEST",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": [
+        "hadm_id=22985988",
+        "hadm_id=26072341",
+        "hadm_id=24552251",
+        "hadm_id=27414574",
+        "hadm_id=29227282",
+        "hadm_id=20547999",
+        "hadm_id=24646310",
+        "hadm_id=28596522"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "PROCEDURE",
+      "name": "Total hip replacement",
+      "normalized_name": "TOTAL_HIP_REPLACEMENT",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": [
+        "hadm_id=22985988",
+        "hadm_id=26072341"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "MICROBIOLOGY",
+      "name": "C. difficile PCR",
+      "normalized_name": "C_DIFFICILE_PCR",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": [
+        "hadm_id=24552251",
+        "hadm_id=27414574",
+        "hadm_id=29227282",
+        "hadm_id=28596522"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED_SERVICE",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": [
+        "hadm_id=24552251",
+        "hadm_id=27414574",
+        "hadm_id=29227282",
+        "hadm_id=20547999",
+        "hadm_id=24646310",
+        "hadm_id=28596522"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "SERVICE",
+      "name": "ORTHO",
+      "normalized_name": "ORTHO_SERVICE",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": [
+        "hadm_id=22985988",
+        "hadm_id=26072341"
+      ],
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22985988",
+      "evidence": [
+        "Aseptic necrosis present"
+      ],
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22985988",
+      "evidence": [
+        "Diabetes uncontrolled"
+      ],
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24552251",
+      "evidence": [
+        "Alcohol withdrawal"
+      ],
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "24552251",
+      "evidence": [
+        "Insulin administered"
+      ],
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "28596522",
+      "evidence": [
+        "Vancomycin Oral Liquid"
+      ],
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "22985988",
+      "evidence": [
+        "Lab orders"
+      ],
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.94
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "22985988",
+      "evidence": [
+        "Total hip replacement"
+      ],
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "24552251",
+      "evidence": [
+        "C. difficile PCR"
+      ],
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.94
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "24552251",
+      "evidence": [
+        "MED service"
+      ],
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.93
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "22985988",
+      "evidence": [
+        "ORTHO service"
+      ],
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.93
+    },
+    {
+      "source": "N2",
+      "target": "N8",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22985988",
+      "evidence": [
+        "Hip replacement for aseptic necrosis"
+      ],
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N3",
+      "target": "N5",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "24552251",
+      "evidence": [
+        "Insulin for diabetes"
+      ],
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.88
+    },
+    {
+      "source": "N4",
+      "target": "N5",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "24552251",
+      "evidence": [
+        "Insulin not directly for alcohol withdrawal"
+      ],
+      "source_tables": [],
+      "confidence": 0.55
+    },
+    {
+      "source": "N9",
+      "target": "N4",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24552251",
+      "evidence": [
+        "C. difficile PCR confirms infection in alcohol withdrawal patient"
+      ],
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N6",
+      "target": "N9",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "28596522",
+      "evidence": [
+        "Vancomycin targets C. difficile"
+      ],
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N10",
+      "target": "N3",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24552251",
+      "evidence": [
+        "MED service manages diabetes"
+      ],
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N11",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22985988",
+      "evidence": [
+        "ORTHO service manages aseptic necrosis"
+      ],
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N5",
+      "target": "N7",
+      "relation": "MONITORED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "24552251",
+      "evidence": [
+        "Insulin dosing monitored by labs"
+      ],
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N4",
+      "target": "N7",
+      "relation": "MONITORED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "24552251",
+      "evidence": [
+        "Alcohol withdrawal monitored by labs"
+      ],
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N2",
+      "target": "N7",
+      "relation": "MONITORED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "22985988",
+      "evidence": [
+        "Aseptic necrosis monitored by labs"
+      ],
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "N8",
+      "target": "N2",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22985988",
+      "evidence": [
+        "Hip replacement confirms necrosis"
+      ],
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N9",
+      "target": "N4",
+      "relation": "INVESTIGATED_BY",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24552251",
+      "evidence": [
+        "C. difficile PCR ordered for alcohol withdrawal"
+      ],
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.7
+    }
+  ]
+}

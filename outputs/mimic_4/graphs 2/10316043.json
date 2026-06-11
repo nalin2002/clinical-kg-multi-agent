@@ -1,0 +1,410 @@
+{
+  "subject_id": "10316043",
+  "hadm_ids": [
+    "22236906",
+    "22044486",
+    "27888407",
+    "28800844",
+    "25620869",
+    "28822172",
+    "26254542",
+    "21862547",
+    "25348350",
+    "29450973",
+    "23844451",
+    "20178331",
+    "25691469",
+    "23940425",
+    "27759431",
+    "26254542",
+    "21862547",
+    "25348350",
+    "29450973",
+    "23844451"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 10316043",
+      "normalized_name": "Patient 10316043",
+      "source_tables": [
+        "demographics"
+      ],
+      "evidence": [
+        "subject_id:10316043"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Chronic obstructive pulmonary disease, unspecified",
+      "normalized_name": "chronic obstructive pulmonary disease",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": [
+        "22044486",
+        "27888407",
+        "28800844",
+        "25620869",
+        "20178331",
+        "25691469",
+        "23940425",
+        "27759431",
+        "26254542",
+        "21862547",
+        "25348350",
+        "29450973",
+        "23844451"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "insulin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": [
+        "25691469",
+        "21862547",
+        "23844451"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": [
+        "26254542"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": [
+        "22044486",
+        "28800844",
+        "20178331",
+        "25691469",
+        "23940425",
+        "27759431",
+        "26254542",
+        "21862547",
+        "25348350",
+        "29450973",
+        "23844451",
+        "28822172"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture",
+      "normalized_name": "blood culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": [
+        "UNLINKED"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "med",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": [
+        "22236906",
+        "22044486",
+        "27888407",
+        "25620869",
+        "20178331",
+        "23940425",
+        "27759431",
+        "26254542",
+        "23844451"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "SERVICE",
+      "name": "CMED",
+      "normalized_name": "cmed",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": [
+        "25348350"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "SERVICE",
+      "name": "SURG",
+      "normalized_name": "surg",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": [
+        "29450973"
+      ],
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22044486",
+      "evidence": "Diagnosis COPD recorded in admission 22044486",
+      "source_tables": [],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "25691469",
+      "evidence": "Insulin administered in admission 25691469",
+      "source_tables": [],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "26254542",
+      "evidence": "Furosemide administered in admission 26254542",
+      "source_tables": [],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "22044486",
+      "evidence": "Laboratory testing ordered in admission 22044486",
+      "source_tables": [],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "UNLINKED",
+      "evidence": "Blood Culture recorded in UNLINKED entry",
+      "source_tables": [],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "22236906",
+      "evidence": "Managed by MED service in admission 22236906",
+      "source_tables": [],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "25348350",
+      "evidence": "Managed by CMED service in admission 25348350",
+      "source_tables": [],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "29450973",
+      "evidence": "Managed by SURG service in admission 29450973",
+      "source_tables": [],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N5",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "22044486",
+      "evidence": "COPD co-occurred with laboratory testing in admission 22044486",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N2",
+      "target": "N7",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "SERVICE",
+      "hadm_id": "22044486",
+      "evidence": "COPD co-occurred with MED service in admission 22044486",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N5",
+      "target": "N7",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "LAB_TEST",
+      "target_type": "SERVICE",
+      "hadm_id": "22044486",
+      "evidence": "Laboratory testing co-occurred with MED service in admission 22044486",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N2",
+      "target": "N3",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "25691469",
+      "evidence": "COPD co-occurred with Insulin in admission 25691469",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N3",
+      "target": "N5",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "25691469",
+      "evidence": "Insulin co-occurred with laboratory testing in admission 25691469",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N2",
+      "target": "N4",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "26254542",
+      "evidence": "COPD co-occurred with Furosemide in admission 26254542",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N4",
+      "target": "N5",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "26254542",
+      "evidence": "Furosemide co-occurred with laboratory testing in admission 26254542",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N4",
+      "target": "N7",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "26254542",
+      "evidence": "Furosemide co-occurred with MED service in admission 26254542",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N2",
+      "target": "N8",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "SERVICE",
+      "hadm_id": "25348350",
+      "evidence": "COPD co-occurred with CMED service in admission 25348350",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N5",
+      "target": "N8",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "LAB_TEST",
+      "target_type": "SERVICE",
+      "hadm_id": "25348350",
+      "evidence": "Laboratory testing co-occurred with CMED service in admission 25348350",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N2",
+      "target": "N9",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "SERVICE",
+      "hadm_id": "29450973",
+      "evidence": "COPD co-occurred with SURG service in admission 29450973",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N3",
+      "target": "N9",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "29450973",
+      "evidence": "Insulin co-occurred with SURG service in admission 29450973",
+      "source_tables": [],
+      "confidence": 0.6
+    },
+    {
+      "source": "N5",
+      "target": "N9",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "LAB_TEST",
+      "target_type": "SERVICE",
+      "hadm_id": "29450973",
+      "evidence": "Laboratory testing co-occurred with SURG service in admission 29450973",
+      "source_tables": [],
+      "confidence": 0.6
+    }
+  ]
+}

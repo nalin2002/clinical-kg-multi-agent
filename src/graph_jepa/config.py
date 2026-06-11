@@ -9,6 +9,8 @@ from __future__ import annotations
 from dataclasses import asdict, dataclass, field
 from typing import Any, Dict
 
+from .schema import NUM_EDGE_TYPES, NUM_NODE_TYPES
+
 
 @dataclass
 class ModelConfig:
@@ -26,8 +28,8 @@ class ModelConfig:
     num_layers: int = 2
     conv: str = "gine"  # "gine" | "gat"
     dropout: float = 0.1
-    num_node_types: int = 7
-    num_relations: int = 6
+    num_node_types: int = NUM_NODE_TYPES
+    num_relations: int = NUM_EDGE_TYPES
     ema_decay: float = 0.99
     predictor_hidden: int = 128
 

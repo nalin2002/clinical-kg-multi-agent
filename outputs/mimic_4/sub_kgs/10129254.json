@@ -1,0 +1,901 @@
+{
+  "subject_id": "10129254",
+  "hadm_ids": [
+    "29023346",
+    "28498998",
+    "24703145"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 10129254",
+      "normalized_name": "patient",
+      "source_tables": [],
+      "evidence": "Patient identifier",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Sepsis",
+      "normalized_name": "sepsis",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "Septicemia, septic shock, severe sepsis in admission 29023346",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "insulin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Insulin administered in all three admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Vancomycin administered in admission 29023346",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "Lab orders in all three admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "PROCEDURE",
+      "name": "Hemodialysis",
+      "normalized_name": "hemodialysis",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "Hemodialysis procedure in admission 29023346",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "PROCEDURE",
+      "name": "Mechanical ventilation",
+      "normalized_name": "mechanical ventilation",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "Continuous invasive mechanical ventilation in admission 29023346",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture",
+      "normalized_name": "blood culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "Blood Culture specimens in admission 29023346",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "MICROBIOLOGY",
+      "name": "MRSA SCREEN",
+      "normalized_name": "mrsa screen",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "MRSA SCREEN test in admission 29023346",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "med",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "MED service managing patient in all admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "SERVICE",
+      "name": "SURG",
+      "normalized_name": "surg",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "SURG service managing patient in admission 29023346",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29023346",
+      "evidence": "Septicemia and related codes in admission 29023346",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "29023346",
+      "evidence": "Insulin administered in admission 29023346",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "29023346",
+      "evidence": "Vancomycin administered in admission 29023346",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "29023346",
+      "evidence": "Laboratory testing orders in admission 29023346",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "29023346",
+      "evidence": "Hemodialysis procedure in admission 29023346",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "29023346",
+      "evidence": "Mechanical ventilation procedure in admission 29023346",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "29023346",
+      "evidence": "Blood Culture specimens in admission 29023346",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "29023346",
+      "evidence": "MRSA SCREEN test in admission 29023346",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "29023346",
+      "evidence": "MED service managing patient in admission 29023346",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "29023346",
+      "evidence": "SURG service managing patient in admission 29023346",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N4",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Vancomycin is used to treat sepsis",
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N7",
+      "target": "N2",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Mechanical ventilation performed for sepsis",
+      "source_tables": [
+        "procedures",
+        "diagnoses"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N8",
+      "target": "N2",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Blood culture confirms sepsis",
+      "source_tables": [
+        "microbiology",
+        "diagnoses"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N4",
+      "target": "N9",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "Vancomycin targets MRSA organisms",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N5",
+      "relation": "MONITORED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "Sepsis monitored by laboratory testing",
+      "source_tables": [
+        "diagnoses",
+        "lab_tests"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N5",
+      "target": "N2",
+      "relation": "INDICATES",
+      "source_type": "LAB_TEST",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Laboratory testing indicates sepsis",
+      "source_tables": [
+        "lab_tests",
+        "diagnoses"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N2",
+      "target": "N3",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "29023346",
+      "evidence": "Co-occurrence of sepsis and insulin in admission 29023346",
+      "source_tables": [
+        "diagnoses",
+        "medications"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N2",
+      "target": "N6",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "PROCEDURE",
+      "hadm_id": "29023346",
+      "evidence": "Co-occurrence of sepsis and hemodialysis in admission 29023346",
+      "source_tables": [
+        "diagnoses",
+        "procedures"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N2",
+      "target": "N9",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "29023346",
+      "evidence": "Co-occurrence of sepsis and MRSA screen in admission 29023346",
+      "source_tables": [
+        "diagnoses",
+        "microbiology"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N2",
+      "target": "N10",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "SERVICE",
+      "hadm_id": "29023346",
+      "evidence": "Co-occurrence of sepsis and MED service in admission 29023346",
+      "source_tables": [
+        "diagnoses",
+        "services"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N2",
+      "target": "N11",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "SERVICE",
+      "hadm_id": "29023346",
+      "evidence": "Co-occurrence of sepsis and SURG service in admission 29023346",
+      "source_tables": [
+        "diagnoses",
+        "services"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N3",
+      "target": "N4",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "MEDICATION",
+      "hadm_id": "29023346",
+      "evidence": "Co-occurrence of insulin and vancomycin in admission 29023346",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N3",
+      "target": "N5",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "29023346",
+      "evidence": "Co-occurrence of insulin and laboratory testing in admission 29023346",
+      "source_tables": [
+        "medications",
+        "lab_tests"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N3",
+      "target": "N6",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "PROCEDURE",
+      "hadm_id": "29023346",
+      "evidence": "Co-occurrence of insulin and hemodialysis in admission 29023346",
+      "source_tables": [
+        "medications",
+        "procedures"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N3",
+      "target": "N7",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "PROCEDURE",
+      "hadm_id": "29023346",
+      "evidence": "Co-occurrence of insulin and mechanical ventilation in admission 29023346",
+      "source_tables": [
+        "medications",
+        "procedures"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N3",
+      "target": "N8",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "29023346",
+      "evidence": "Co-occurrence of insulin and blood culture in admission 29023346",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N3",
+      "target": "N9",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "29023346",
+      "evidence": "Co-occurrence of insulin and MRSA screen in admission 29023346",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N3",
+      "target": "N10",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "29023346",
+      "evidence": "Co-occurrence of insulin and MED service in admission 29023346",
+      "source_tables": [
+        "medications",
+        "services"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N3",
+      "target": "N11",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "29023346",
+      "evidence": "Co-occurrence of insulin and SURG service in admission 29023346",
+      "source_tables": [
+        "medications",
+        "services"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N4",
+      "target": "N5",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "29023346",
+      "evidence": "Co-occurrence of vancomycin and laboratory testing in admission 29023346",
+      "source_tables": [
+        "medications",
+        "lab_tests"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N4",
+      "target": "N6",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "PROCEDURE",
+      "hadm_id": "29023346",
+      "evidence": "Co-occurrence of vancomycin and hemodialysis in admission 29023346",
+      "source_tables": [
+        "medications",
+        "procedures"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N4",
+      "target": "N7",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "PROCEDURE",
+      "hadm_id": "29023346",
+      "evidence": "Co-occurrence of vancomycin and mechanical ventilation in admission 29023346",
+      "source_tables": [
+        "medications",
+        "procedures"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N4",
+      "target": "N8",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "29023346",
+      "evidence": "Co-occurrence of vancomycin and blood culture in admission 29023346",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N4",
+      "target": "N10",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "29023346",
+      "evidence": "Co-occurrence of vancomycin and MED service in admission 29023346",
+      "source_tables": [
+        "medications",
+        "services"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N4",
+      "target": "N11",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "29023346",
+      "evidence": "Co-occurrence of vancomycin and SURG service in admission 29023346",
+      "source_tables": [
+        "medications",
+        "services"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N5",
+      "target": "N6",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "LAB_TEST",
+      "target_type": "PROCEDURE",
+      "hadm_id": "29023346",
+      "evidence": "Co-occurrence of laboratory testing and hemodialysis in admission 29023346",
+      "source_tables": [
+        "lab_tests",
+        "procedures"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N5",
+      "target": "N7",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "LAB_TEST",
+      "target_type": "PROCEDURE",
+      "hadm_id": "29023346",
+      "evidence": "Co-occurrence of laboratory testing and mechanical ventilation in admission 29023346",
+      "source_tables": [
+        "lab_tests",
+        "procedures"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N5",
+      "target": "N8",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "LAB_TEST",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "29023346",
+      "evidence": "Co-occurrence of laboratory testing and blood culture in admission 29023346",
+      "source_tables": [
+        "lab_tests",
+        "microbiology"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N5",
+      "target": "N9",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "LAB_TEST",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "29023346",
+      "evidence": "Co-occurrence of laboratory testing and MRSA screen in admission 29023346",
+      "source_tables": [
+        "lab_tests",
+        "microbiology"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N5",
+      "target": "N10",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "LAB_TEST",
+      "target_type": "SERVICE",
+      "hadm_id": "29023346",
+      "evidence": "Co-occurrence of laboratory testing and MED service in admission 29023346",
+      "source_tables": [
+        "lab_tests",
+        "services"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N5",
+      "target": "N11",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "LAB_TEST",
+      "target_type": "SERVICE",
+      "hadm_id": "29023346",
+      "evidence": "Co-occurrence of laboratory testing and SURG service in admission 29023346",
+      "source_tables": [
+        "lab_tests",
+        "services"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N6",
+      "target": "N7",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "PROCEDURE",
+      "target_type": "PROCEDURE",
+      "hadm_id": "29023346",
+      "evidence": "Co-occurrence of hemodialysis and mechanical ventilation in admission 29023346",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N6",
+      "target": "N8",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "PROCEDURE",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "29023346",
+      "evidence": "Co-occurrence of hemodialysis and blood culture in admission 29023346",
+      "source_tables": [
+        "procedures",
+        "microbiology"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N6",
+      "target": "N9",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "PROCEDURE",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "29023346",
+      "evidence": "Co-occurrence of hemodialysis and MRSA screen in admission 29023346",
+      "source_tables": [
+        "procedures",
+        "microbiology"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N6",
+      "target": "N10",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "PROCEDURE",
+      "target_type": "SERVICE",
+      "hadm_id": "29023346",
+      "evidence": "Co-occurrence of hemodialysis and MED service in admission 29023346",
+      "source_tables": [
+        "procedures",
+        "services"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N6",
+      "target": "N11",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "PROCEDURE",
+      "target_type": "SERVICE",
+      "hadm_id": "29023346",
+      "evidence": "Co-occurrence of hemodialysis and SURG service in admission 29023346",
+      "source_tables": [
+        "procedures",
+        "services"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N7",
+      "target": "N8",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "PROCEDURE",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "29023346",
+      "evidence": "Co-occurrence of mechanical ventilation and blood culture in admission 29023346",
+      "source_tables": [
+        "procedures",
+        "microbiology"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N7",
+      "target": "N9",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "PROCEDURE",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "29023346",
+      "evidence": "Co-occurrence of mechanical ventilation and MRSA screen in admission 29023346",
+      "source_tables": [
+        "procedures",
+        "microbiology"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N7",
+      "target": "N10",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "PROCEDURE",
+      "target_type": "SERVICE",
+      "hadm_id": "29023346",
+      "evidence": "Co-occurrence of mechanical ventilation and MED service in admission 29023346",
+      "source_tables": [
+        "procedures",
+        "services"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N7",
+      "target": "N11",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "PROCEDURE",
+      "target_type": "SERVICE",
+      "hadm_id": "29023346",
+      "evidence": "Co-occurrence of mechanical ventilation and SURG service in admission 29023346",
+      "source_tables": [
+        "procedures",
+        "services"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N8",
+      "target": "N9",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "29023346",
+      "evidence": "Co-occurrence of blood culture and MRSA screen in admission 29023346",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N8",
+      "target": "N10",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "SERVICE",
+      "hadm_id": "29023346",
+      "evidence": "Co-occurrence of blood culture and MED service in admission 29023346",
+      "source_tables": [
+        "microbiology",
+        "services"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N8",
+      "target": "N11",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "SERVICE",
+      "hadm_id": "29023346",
+      "evidence": "Co-occurrence of blood culture and SURG service in admission 29023346",
+      "source_tables": [
+        "microbiology",
+        "services"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N9",
+      "target": "N10",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "SERVICE",
+      "hadm_id": "29023346",
+      "evidence": "Co-occurrence of MRSA screen and MED service in admission 29023346",
+      "source_tables": [
+        "microbiology",
+        "services"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N9",
+      "target": "N11",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "SERVICE",
+      "hadm_id": "29023346",
+      "evidence": "Co-occurrence of MRSA screen and SURG service in admission 29023346",
+      "source_tables": [
+        "microbiology",
+        "services"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N10",
+      "target": "N11",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "SERVICE",
+      "target_type": "SERVICE",
+      "hadm_id": "29023346",
+      "evidence": "Co-occurrence of MED and SURG services in admission 29023346",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.6
+    }
+  ]
+}

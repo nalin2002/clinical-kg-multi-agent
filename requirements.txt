@@ -8,3 +8,19 @@ torch-geometric>=2.5
 FlagEmbedding>=1.2  # BGE-M3 node encoder (optional; --encoder bge only)
 transformers>=4.36.0  # SapBERT node encoder (optional; --encoder sapbert only)
 wandb>=0.16
+
+
+PYTHONPATH=src python -m graph_jepa_v3.score \
+  --input outputs/aci_bench_val/sub_kgs/RES_D2N068_cooperative_multi_agent.json \
+  --checkpoint ckpts/graph_jepa_v3.pt \
+  --output outputs/aci_bench_val/sub_kgs/RES_D2N068_cooperative_multi_agent_v3.json \
+  --add-candidates \
+  --candidate-threshold 0.85 \
+  --max-candidates 25
+
+  PYTHONPATH=src python -m graph_jepa_v3.train \
+  --data mimic-subkgs \
+  --mimic-subkg-path outputs/mimic_4/sub_kgs \
+  --out ckpts/    \
+  --encoder sapbert \
+  --epochs 75 

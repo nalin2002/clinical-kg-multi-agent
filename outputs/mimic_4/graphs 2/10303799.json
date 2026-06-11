@@ -1,0 +1,507 @@
+{
+  "subject_id": "10303799",
+  "hadm_ids": [
+    "20004408",
+    "28321136",
+    "29639874",
+    "24058031",
+    "22595254",
+    "25185691",
+    "29420386",
+    "28272943"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 10303799",
+      "normalized_name": "patient 10303799",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": [],
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Sepsis due to Escherichia coli",
+      "normalized_name": "sepsis due to escherichia coli",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": [
+        "28272943"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Heart failure",
+      "normalized_name": "heart failure",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": [
+        "20004408",
+        "28321136",
+        "24058031",
+        "25185691",
+        "29420386"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Chronic obstructive pulmonary disease",
+      "normalized_name": "chronic obstructive pulmonary disease",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": [
+        "24058031",
+        "22595254",
+        "25185691",
+        "28272943"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "DIAGNOSIS",
+      "name": "Urinary tract infection",
+      "normalized_name": "urinary tract infection",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": [
+        "25185691",
+        "29420386"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "furosemide",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": [
+        "28321136",
+        "29639874",
+        "29420386",
+        "28272943"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "insulin",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": [
+        "20004408",
+        "28272943",
+        "29420386"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "vancomycin",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": [
+        "28272943"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "PROCEDURE",
+      "name": "Respiratory Ventilation",
+      "normalized_name": "respiratory ventilation",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": [
+        "28272943"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture",
+      "normalized_name": "blood culture",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": [
+        "28272943"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "MICROBIOLOGY",
+      "name": "URINE CULTURE",
+      "normalized_name": "urine culture",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": [
+        "20004408",
+        "28321136",
+        "29639874",
+        "25185691",
+        "29420386"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "MICROBIOLOGY",
+      "name": "MRSA SCREEN",
+      "normalized_name": "mrsa screen",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": [
+        "28272943"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "SERVICE",
+      "name": "CMED",
+      "normalized_name": "cmed",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": [
+        "28321136",
+        "29639874",
+        "24058031",
+        "22595254",
+        "25185691",
+        "29420386",
+        "28272943"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N14",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "med",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": [
+        "29420386",
+        "28272943"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N15",
+      "type": "SERVICE",
+      "name": "NMED",
+      "normalized_name": "nmed",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": [
+        "20004408"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N16",
+      "type": "SERVICE",
+      "name": "NSURG",
+      "normalized_name": "nsurg",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": [
+        "29420386"
+      ],
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28272943",
+      "evidence": "28272943",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "20004408",
+      "evidence": "20004408",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24058031",
+      "evidence": "24058031",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25185691",
+      "evidence": "25185691",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "28321136",
+      "evidence": "28321136",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "20004408",
+      "evidence": "20004408",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "28272943",
+      "evidence": "28272943",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "28272943",
+      "evidence": "28272943",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "20004408",
+      "evidence": "20004408",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "28272943",
+      "evidence": "28272943",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "28272943",
+      "evidence": "28272943",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "28321136",
+      "evidence": "28321136",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N14",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "29420386",
+      "evidence": "29420386",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N15",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "20004408",
+      "evidence": "20004408",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N16",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "29420386",
+      "evidence": "29420386",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N3",
+      "target": "N6",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "standard of care for heart failure",
+      "source_tables": [
+        "clinical_knowledge"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N8",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "standard of care for sepsis",
+      "source_tables": [
+        "clinical_knowledge"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N10",
+      "target": "N2",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "blood culture positive in sepsis case",
+      "source_tables": [
+        "clinical_knowledge"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N11",
+      "target": "N5",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "urine culture positive in UTI case",
+      "source_tables": [
+        "clinical_knowledge"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N8",
+      "target": "N12",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": "vancomycin active against MRSA",
+      "source_tables": [
+        "clinical_knowledge"
+      ],
+      "confidence": 0.8
+    }
+  ]
+}

@@ -1,0 +1,312 @@
+{
+  "subject_id": "10959084",
+  "hadm_ids": [
+    "29192417",
+    "21149817",
+    "27038021",
+    "23316721",
+    "21423601",
+    "21117216",
+    "29638259",
+    "29944848"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 10959084",
+      "normalized_name": "patient",
+      "source_tables": [
+        "demographics"
+      ],
+      "evidence": "subject_id 10959084",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Sepsis",
+      "normalized_name": "sepsis",
+      "source_tables": [
+        "admissions.diagnoses"
+      ],
+      "evidence": "hadm_id 29638259 diagnosis A419; hadm_id 29944848 diagnosis A4151",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "vancomycin",
+      "source_tables": [
+        "admissions.medications"
+      ],
+      "evidence": "hadm_id 27038021 medication Vancomycin; hadm_id 23316721 medication Vancomycin; hadm_id 29638259 medication Vancomycin",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "furosemide",
+      "source_tables": [
+        "admissions.medications"
+      ],
+      "evidence": "hadm_id 29638259 medication Furosemide",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "insulin",
+      "source_tables": [
+        "admissions.medications"
+      ],
+      "evidence": "multiple admissions medication Insulin",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "laboratory testing",
+      "source_tables": [
+        "admissions.lab_tests"
+      ],
+      "evidence": "all admissions lab_tests name 'Laboratory testing'",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "PROCEDURE",
+      "name": "Respiratory Ventilation, 24-96 Consecutive Hours",
+      "normalized_name": "respiratory ventilation",
+      "source_tables": [
+        "admissions.procedures"
+      ],
+      "evidence": "hadm_id 29638259 procedure 5A1945Z",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture",
+      "normalized_name": "blood culture",
+      "source_tables": [
+        "admissions.microbiology"
+      ],
+      "evidence": "hadm_id 27038021 microbiology Blood Culture; hadm_id 23316721 microbiology Blood Culture; hadm_id UNLINKED microbiology Blood Culture",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "med",
+      "source_tables": [
+        "admissions.services"
+      ],
+      "evidence": "all admissions services ['MED'] (except one NMED)",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29638259",
+      "evidence": "Sepsis diagnosis in admission 29638259",
+      "source_tables": [
+        "admissions.diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "27038021",
+      "evidence": "Vancomycin administered in admission 27038021",
+      "source_tables": [
+        "admissions.medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "29638259",
+      "evidence": "Furosemide administered in admission 29638259",
+      "source_tables": [
+        "admissions.medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "27038021",
+      "evidence": "Insulin administered in admission 27038021",
+      "source_tables": [
+        "admissions.medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "29638259",
+      "evidence": "Laboratory testing orders in admission 29638259",
+      "source_tables": [
+        "admissions.lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "29638259",
+      "evidence": "Respiratory Ventilation performed in admission 29638259",
+      "source_tables": [
+        "admissions.procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "27038021",
+      "evidence": "Blood Culture performed in admission 27038021",
+      "source_tables": [
+        "admissions.microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "29638259",
+      "evidence": "Service MED managing admission 29638259",
+      "source_tables": [
+        "admissions.services"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N2",
+      "target": "N3",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "27038021",
+      "evidence": "Vancomycin used for sepsis in admission 27038021",
+      "source_tables": [
+        "admissions.medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N2",
+      "target": "N7",
+      "relation": "PERFORMED_FOR",
+      "source_type": "DIAGNOSIS",
+      "target_type": "PROCEDURE",
+      "hadm_id": "29638259",
+      "evidence": "Respiratory ventilation performed for sepsis in admission 29638259",
+      "source_tables": [
+        "admissions.procedures"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N8",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "27038021",
+      "evidence": "Blood culture positive for organism associated with sepsis in admission 27038021",
+      "source_tables": [
+        "admissions.microbiology"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N9",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29638259",
+      "evidence": "MED service managing sepsis admission 29638259",
+      "source_tables": [
+        "admissions.services"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "source": "N3",
+      "target": "N8",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "27038021",
+      "evidence": "Vancomycin administered against organisms identified in blood culture (gram‑positive coverage) in admission 27038021",
+      "source_tables": [
+        "admissions.medications",
+        "admissions.microbiology"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N4",
+      "target": "N2",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29638259",
+      "evidence": "Furosemide given during sepsis admission 29638259",
+      "source_tables": [
+        "admissions.medications"
+      ],
+      "confidence": 0.55
+    },
+    {
+      "source": "N5",
+      "target": "N2",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29638259",
+      "evidence": "Insulin given during sepsis admission 29638259",
+      "source_tables": [
+        "admissions.medications"
+      ],
+      "confidence": 0.55
+    }
+  ]
+}

@@ -1,0 +1,482 @@
+{
+  "subject_id": "10688510",
+  "hadm_ids": [
+    "28805457",
+    "20714337",
+    "29530766",
+    "21683465",
+    "25338406",
+    "29844798",
+    "21429489",
+    "25046247",
+    "25991746",
+    "28658738",
+    "26156121",
+    "23603448",
+    "23297564",
+    "28168342",
+    "20610563",
+    "27123605",
+    "23922839",
+    "20025379",
+    "21174031",
+    "26905473"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 10688510",
+      "normalized_name": "patient_10688510",
+      "source_tables": [
+        "patient"
+      ],
+      "evidence": "subject_id 10688510",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Sepsis",
+      "normalized_name": "sepsis",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "evidence": "A419 Sepsis, unspecified organism (hadm_id 21683465, 26905473, 28658738)",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Heart failure",
+      "normalized_name": "heart_failure",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "evidence": "Acute on chronic systolic heart failure (multiple admissions)",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "insulin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Insulin listed in medication tables of many admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Furosemide listed in medication tables of many admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Vancomycin listed in medication tables of admissions 21683465, 28658738, 26905473",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "laboratory_testing",
+      "source_tables": [
+        "lab_events"
+      ],
+      "evidence": "Derived from POE 'Lab' orders in every admission",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "PROCEDURE",
+      "name": "Mechanical ventilation",
+      "normalized_name": "mechanical_ventilation",
+      "source_tables": [
+        "procedures_icd"
+      ],
+      "evidence": "Procedure code 5A1955Z Respiratory Ventilation, Greater than 96 Consecutive Hours (hadm_id 21683465, 26905473, 28168342)",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture",
+      "normalized_name": "blood_culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "Blood Culture, Routine listed in microbiology tables of admissions 21683465, 28658738, 26905473, 28168342",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "MICROBIOLOGY",
+      "name": "MRSA SCREEN",
+      "normalized_name": "mrsa_screen",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "MRSA SCREEN listed in microbiology tables of admissions 21683465, 28658738, 28168342",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "SERVICE",
+      "name": "CMED",
+      "normalized_name": "cmed",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "CMED present in services list of most admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "med",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "MED present in services list of admissions 21683465, 28658738, 26905473",
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "SERVICE",
+      "name": "CSURG",
+      "normalized_name": "csurg",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "CSURG present in services list of admission 28168342",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21683465",
+      "evidence": "Sepsis diagnosis (A419) in admission 21683465",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28805457",
+      "evidence": "Acute on chronic systolic heart failure in admission 28805457",
+      "source_tables": [
+        "diagnoses_icd"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "28805457",
+      "evidence": "Insulin administered in admission 28805457",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "28805457",
+      "evidence": "Furosemide administered in admission 28805457",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "21683465",
+      "evidence": "Vancomycin administered in admission 21683465",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "28805457",
+      "evidence": "Laboratory testing orders in admission 28805457",
+      "source_tables": [
+        "lab_events"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "21683465",
+      "evidence": "Mechanical ventilation (procedure 5A1955Z) in admission 21683465",
+      "source_tables": [
+        "procedures_icd"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "21683465",
+      "evidence": "Blood Culture, Routine in admission 21683465",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "21683465",
+      "evidence": "MRSA SCREEN in admission 21683465",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "28805457",
+      "evidence": "CMED service listed in admission 28805457",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "21683465",
+      "evidence": "MED service listed in admission 21683465",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "28168342",
+      "evidence": "CSURG service listed in admission 28168342",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N6",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "21683465",
+      "evidence": "Vancomycin used in sepsis treatment (admission 21683465)",
+      "source_tables": [
+        "medications",
+        "diagnoses_icd"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N3",
+      "target": "N5",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "28805457",
+      "evidence": "Furosemide used for heart failure (admission 28805457)",
+      "source_tables": [
+        "medications",
+        "diagnoses_icd"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N8",
+      "target": "N2",
+      "relation": "PERFORMED_FOR",
+      "source_type": "PROCEDURE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21683465",
+      "evidence": "Mechanical ventilation performed for sepsis (admission 21683465)",
+      "source_tables": [
+        "procedures_icd",
+        "diagnoses_icd"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N9",
+      "target": "N2",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21683465",
+      "evidence": "Blood culture positive for organisms confirming sepsis (admission 21683465)",
+      "source_tables": [
+        "microbiology",
+        "diagnoses_icd"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N6",
+      "target": "N10",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "21683465",
+      "evidence": "Vancomycin targets MRSA (admission 21683465)",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N11",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21683465",
+      "evidence": "CMED service manages sepsis (admission 21683465)",
+      "source_tables": [
+        "services",
+        "diagnoses_icd"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N11",
+      "target": "N3",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21683465",
+      "evidence": "CMED service manages heart failure (admission 21683465)",
+      "source_tables": [
+        "services",
+        "diagnoses_icd"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N12",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21683465",
+      "evidence": "MED service manages sepsis (admission 21683465)",
+      "source_tables": [
+        "services",
+        "diagnoses_icd"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N4",
+      "target": "N12",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "21683465",
+      "evidence": "Insulin administered under MED service (admission 21683465)",
+      "source_tables": [
+        "medications",
+        "services"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N5",
+      "target": "N11",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "21683465",
+      "evidence": "Furosemide administered under CMED service (admission 21683465)",
+      "source_tables": [
+        "medications",
+        "services"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N6",
+      "target": "N11",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "21683465",
+      "evidence": "Vancomycin administered under CMED service (admission 21683465)",
+      "source_tables": [
+        "medications",
+        "services"
+      ],
+      "confidence": 0.85
+    }
+  ]
+}

@@ -1,0 +1,843 @@
+{
+  "subject_id": "10431794",
+  "hadm_ids": [
+    "23397571",
+    "21422091",
+    "25884391",
+    "25996213",
+    "27375045",
+    "29641877",
+    "28648551",
+    "29420595",
+    "25422401",
+    "24354583",
+    "25953022",
+    "28069113",
+    "20648728",
+    "23788391",
+    "26572626",
+    "22295124",
+    "25451834",
+    "26608138",
+    "26310207",
+    "28503933",
+    "22608939",
+    "27970600",
+    "UNLINKED"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 10431794",
+      "normalized_name": "PATIENT_10431794",
+      "source_tables": [
+        "patients"
+      ],
+      "evidence": "subject_id 10431794",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": "service MED in multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "SERVICE",
+      "name": "NMED",
+      "normalized_name": "NMED",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": "service NMED in multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "SERVICE",
+      "name": "NSURG",
+      "normalized_name": "NSURG",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": "service NSURG in surgical admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "LAB_TEST",
+      "source_tables": [
+        "lab_orders"
+      ],
+      "evidence": "derived from POE 'Lab' orders in all admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "DIAGNOSIS",
+      "name": "Anxiety state, unspecified",
+      "normalized_name": "ANXIETY_STATE_UNSPECIFIED",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD-9 30000 in admissions 23397571, 25996213, 28648551",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "DIAGNOSIS",
+      "name": "Unspecified essential hypertension",
+      "normalized_name": "ESSENTIAL_HYPERTENSION_UNSPECIFIED",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD-9 4019 in multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "DIAGNOSIS",
+      "name": "Chest pain, unspecified",
+      "normalized_name": "CHEST_PAIN_UNSPECIFIED",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD-9 78650 in many admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "DIAGNOSIS",
+      "name": "Essential (primary) hypertension",
+      "normalized_name": "ESSENTIAL_HYPERTENSION_PRIMARY",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD-10 I10 in many admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "DIAGNOSIS",
+      "name": "Esophageal reflux",
+      "normalized_name": "ESOPHAGEAL_REFLUX",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD-9 53081 in admissions 23397571, 25996213, 28648551",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "DIAGNOSIS",
+      "name": "Anxiety disorder, unspecified",
+      "normalized_name": "ANXIETY_DISORDER_UNSPECIFIED",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD-10 F419 in many admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "DIAGNOSIS",
+      "name": "Gastro-esophageal reflux disease without esophagitis",
+      "normalized_name": "GERD_WITHOUT_ESOPHAGITIS",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD-10 K219 in many admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "DIAGNOSIS",
+      "name": "Obstructive sleep apnea (adult) (pediatric)",
+      "normalized_name": "OSA_ADULT_PEDIATRIC",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD-10 G4733 in many admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N14",
+      "type": "DIAGNOSIS",
+      "name": "Occlusion and stenosis of bilateral carotid arteries",
+      "normalized_name": "CAROTID_OCCLUSION_STENOSIS_BILATERAL",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD-10 I6523 in many admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N15",
+      "type": "DIAGNOSIS",
+      "name": "Moyamoya disease",
+      "normalized_name": "MOYAMOYA_DISEASE",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD-10 I675 in surgical admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N16",
+      "type": "MEDICATION",
+      "name": "Lorazepam",
+      "normalized_name": "LORAZEPAM",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "medication Lorazepam in admissions 23397571, 25996213, 23788391, 22608939, 27970600",
+      "metadata": {}
+    },
+    {
+      "id": "N17",
+      "type": "MEDICATION",
+      "name": "Losartan Potassium",
+      "normalized_name": "LOSARTAN_POTASSIUM",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "medication Losartan Potassium in many admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N18",
+      "type": "MEDICATION",
+      "name": "Metoprolol XL (Toprol XL)",
+      "normalized_name": "METOPROLOL_XL",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "medication Metoprolol XL in admission 23397571",
+      "metadata": {}
+    },
+    {
+      "id": "N19",
+      "type": "MEDICATION",
+      "name": "Metoprolol Tartrate",
+      "normalized_name": "METOPROLOL_TARTRATE",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "medication Metoprolol Tartrate in many admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N20",
+      "type": "MEDICATION",
+      "name": "Hydrochlorothiazide",
+      "normalized_name": "HYDROCHLOROTHIAZIDE",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "medication Hydrochlorothiazide in admissions 23397571, 25996213",
+      "metadata": {}
+    },
+    {
+      "id": "N21",
+      "type": "MEDICATION",
+      "name": "Sodium Chloride 0.9% Flush",
+      "normalized_name": "SODIUM_CHLORIDE_0_9_FLUSH",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "medication Sodium Chloride 0.9% Flush in many admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N22",
+      "type": "MEDICATION",
+      "name": "Omeprazole",
+      "normalized_name": "OMEPRAZOLE",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "medication Omeprazole in many admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N23",
+      "type": "MEDICATION",
+      "name": "Aspirin",
+      "normalized_name": "ASPIRIN",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "medication Aspirin in many admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N24",
+      "type": "MEDICATION",
+      "name": "Heparin",
+      "normalized_name": "HEPARIN",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "medication Heparin in many admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N25",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "INSULIN",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "medication Insulin in admissions 24354583, 25953022, 22608939, 27970600",
+      "metadata": {}
+    },
+    {
+      "id": "N26",
+      "type": "PROCEDURE",
+      "name": "Electrocardiogram",
+      "normalized_name": "ELECTROCARDIOGRAM",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "procedure Electrocardiogram in many admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N27",
+      "type": "PROCEDURE",
+      "name": "Routine chest x-ray, so described",
+      "normalized_name": "CHEST_XRAY",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "procedure Routine chest x-ray in many admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N28",
+      "type": "PROCEDURE",
+      "name": "Hospital observation services",
+      "normalized_name": "HOSPITAL_OBSERVATION_SERVICES",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "procedure Hospital observation services in many admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N29",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture, Routine",
+      "normalized_name": "BLOOD_CULTURE_ROUTINE",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "microbiology Blood Culture, Routine in admission 25422401 and UNLINKED",
+      "metadata": {}
+    },
+    {
+      "id": "N30",
+      "type": "MICROBIOLOGY",
+      "name": "URINE CULTURE (ESCHERICHIA COLI)",
+      "normalized_name": "URINE_CULTURE_ECOLI",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "microbiology URINE CULTURE with organism ESCHERICHIA COLI in UNLINKED",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "patient managed by MED service in multiple admissions",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "patient managed by NMED service in multiple admissions",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "patient managed by NSURG service in surgical admissions",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "patient had laboratory testing in all admissions",
+      "source_tables": [
+        "lab_orders"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23397571",
+      "evidence": "diagnosis Anxiety state, unspecified in admission 23397571",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23397571",
+      "evidence": "diagnosis Unspecified essential hypertension in admission 23397571",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21422091",
+      "evidence": "diagnosis Chest pain, unspecified in admission 21422091",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29420595",
+      "evidence": "diagnosis Essential (primary) hypertension in admission 29420595",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23397571",
+      "evidence": "diagnosis Esophageal reflux in admission 23397571",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29420595",
+      "evidence": "diagnosis Anxiety disorder, unspecified in admission 29420595",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25422401",
+      "evidence": "diagnosis Gastro-esophageal reflux disease without esophagitis in admission 25422401",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24354583",
+      "evidence": "diagnosis Obstructive sleep apnea (adult) (pediatric) in admission 24354583",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N14",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24354583",
+      "evidence": "diagnosis Occlusion and stenosis of bilateral carotid arteries in admission 24354583",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N15",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22608939",
+      "evidence": "diagnosis Moyamoya disease in admission 22608939",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N16",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "23397571",
+      "evidence": "patient received Lorazepam in admission 23397571",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N17",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "23397571",
+      "evidence": "patient received Losartan Potassium in admission 23397571",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N18",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "23397571",
+      "evidence": "patient received Metoprolol XL (Toprol XL) in admission 23397571",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N19",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "25996213",
+      "evidence": "patient received Metoprolol Tartrate in admission 25996213",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N20",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "23397571",
+      "evidence": "patient received Hydrochlorothiazide in admission 23397571",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N21",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "23397571",
+      "evidence": "patient received Sodium Chloride 0.9% Flush in admission 23397571",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N22",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "25996213",
+      "evidence": "patient received Omeprazole in admission 25996213",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N23",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "25422401",
+      "evidence": "patient received Aspirin in admission 25422401",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N24",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "25422401",
+      "evidence": "patient received Heparin in admission 25422401",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N25",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "24354583",
+      "evidence": "patient received Insulin in admission 24354583",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N26",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "21422091",
+      "evidence": "patient underwent Electrocardiogram in admission 21422091",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N27",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "21422091",
+      "evidence": "patient underwent Routine chest x-ray in admission 21422091",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N28",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "21422091",
+      "evidence": "patient underwent Hospital observation services in admission 21422091",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N29",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "25422401",
+      "evidence": "patient had Blood Culture, Routine in admission 25422401",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N30",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "UNLINKED",
+      "evidence": "patient had URINE CULTURE (ESCHERICHIA COLI) in UNLINKED microbiology data",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N6",
+      "target": "N7",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23397571",
+      "evidence": "both diagnoses present in admission 23397571",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N6",
+      "target": "N8",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25996213",
+      "evidence": "both diagnoses present in admission 25996213",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N7",
+      "target": "N8",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25996213",
+      "evidence": "both diagnoses present in admission 25996213",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N8",
+      "target": "N9",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29420595",
+      "evidence": "both diagnoses present in admission 29420595",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N9",
+      "target": "N10",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25996213",
+      "evidence": "both diagnoses present in admission 25996213",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N11",
+      "target": "N12",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25422401",
+      "evidence": "both diagnoses present in admission 25422401",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N13",
+      "target": "N14",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "24354583",
+      "evidence": "both diagnoses present in admission 24354583",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N15",
+      "target": "N14",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22608939",
+      "evidence": "both diagnoses present in admission 22608939",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.6
+    }
+  ]
+}

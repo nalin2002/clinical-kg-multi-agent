@@ -1,0 +1,470 @@
+{
+  "subject_id": "10052769",
+  "hadm_ids": [
+    "22087051"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 10052769",
+      "normalized_name": "patient 10052769",
+      "source_tables": [
+        "patients"
+      ],
+      "evidence": "subject_id 10052769",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Furosemide 20 mg IV",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Vancomycin 1500 mg IV",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "Laboratory testing (400 orders)",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture",
+      "normalized_name": "blood culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "Specimen: BLOOD CULTURE, Test: Blood Culture, Routine",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "MICROBIOLOGY",
+      "name": "MRSA SCREEN",
+      "normalized_name": "mrsa screen",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "Specimen: MRSA SCREEN, Test: MRSA SCREEN",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "MICROBIOLOGY",
+      "name": "Urine culture – VIRIDANS STREPTOCOCCI",
+      "normalized_name": "urine culture viridans streptococci",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "Specimen: URINE, Test: REFLEX URINE CULTURE, Organism: VIRIDANS STREPTOCOCCI",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "MICROBIOLOGY",
+      "name": "Mini-BAL culture – STAPH AUREUS COAG +",
+      "normalized_name": "mini-bal culture staph aureus coag +",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "Specimen: Mini-BAL, Test: RESPIRATORY CULTURE, Organism: STAPH AUREUS COAG +",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "MICROBIOLOGY",
+      "name": "Urine culture – ENTEROCOCCUS SP. (VANCOMYCIN)",
+      "normalized_name": "urine culture enterococcus sp vancomycin",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "Specimen: URINE, Test: REFLEX URINE CULTURE, Organism: ENTEROCOCCUS SP., Antibiotic: VANCOMYCIN, Interpretation: R",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "med",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "Service: MED",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "SERVICE",
+      "name": "SURG",
+      "normalized_name": "surg",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "Service: SURG",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "22087051",
+      "evidence": "Patient received Furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "22087051",
+      "evidence": "Patient received Vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "22087051",
+      "evidence": "Patient had laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22087051",
+      "evidence": "Patient had Blood Culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22087051",
+      "evidence": "Patient had MRSA SCREEN",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22087051",
+      "evidence": "Patient had Urine culture – VIRIDANS STREPTOCOCCI",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22087051",
+      "evidence": "Patient had Mini-BAL culture – STAPH AUREUS COAG +",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22087051",
+      "evidence": "Patient had Urine culture – ENTEROCOCCUS SP. (VANCOMYCIN)",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "22087051",
+      "evidence": "Patient managed by MED service",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "22087051",
+      "evidence": "Patient managed by SURG service",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N3",
+      "target": "N9",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22087051",
+      "evidence": "Vancomycin used against ENTEROCOCCUS SP. in urine culture",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N3",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "MEDICATION",
+      "hadm_id": "22087051",
+      "evidence": "Both medications administered during same admission",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N2",
+      "target": "N4",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "22087051",
+      "evidence": "Medication and lab test co‑occurred",
+      "source_tables": [
+        "medications",
+        "lab_tests"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N3",
+      "target": "N4",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "22087051",
+      "evidence": "Medication and lab test co‑occurred",
+      "source_tables": [
+        "medications",
+        "lab_tests"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N2",
+      "target": "N5",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22087051",
+      "evidence": "Medication and microbiology co‑occurred",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N3",
+      "target": "N5",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22087051",
+      "evidence": "Medication and microbiology co‑occurred",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N4",
+      "target": "N5",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "LAB_TEST",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22087051",
+      "evidence": "Lab test and microbiology co‑occurred",
+      "source_tables": [
+        "lab_tests",
+        "microbiology"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N10",
+      "target": "N2",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "SERVICE",
+      "target_type": "MEDICATION",
+      "hadm_id": "22087051",
+      "evidence": "Service and medication co‑occurred",
+      "source_tables": [
+        "services",
+        "medications"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N10",
+      "target": "N3",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "SERVICE",
+      "target_type": "MEDICATION",
+      "hadm_id": "22087051",
+      "evidence": "Service and medication co‑occurred",
+      "source_tables": [
+        "services",
+        "medications"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N11",
+      "target": "N2",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "SERVICE",
+      "target_type": "MEDICATION",
+      "hadm_id": "22087051",
+      "evidence": "Service and medication co‑occurred",
+      "source_tables": [
+        "services",
+        "medications"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N11",
+      "target": "N3",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "SERVICE",
+      "target_type": "MEDICATION",
+      "hadm_id": "22087051",
+      "evidence": "Service and medication co‑occurred",
+      "source_tables": [
+        "services",
+        "medications"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N10",
+      "target": "N4",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "SERVICE",
+      "target_type": "LAB_TEST",
+      "hadm_id": "22087051",
+      "evidence": "Service and lab test co‑occurred",
+      "source_tables": [
+        "services",
+        "lab_tests"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N11",
+      "target": "N4",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "SERVICE",
+      "target_type": "LAB_TEST",
+      "hadm_id": "22087051",
+      "evidence": "Service and lab test co‑occurred",
+      "source_tables": [
+        "services",
+        "lab_tests"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N10",
+      "target": "N5",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "SERVICE",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22087051",
+      "evidence": "Service and microbiology co‑occurred",
+      "source_tables": [
+        "services",
+        "microbiology"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N11",
+      "target": "N5",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "SERVICE",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "22087051",
+      "evidence": "Service and microbiology co‑occurred",
+      "source_tables": [
+        "services",
+        "microbiology"
+      ],
+      "confidence": 0.6
+    }
+  ]
+}

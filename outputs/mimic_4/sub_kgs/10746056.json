@@ -1,0 +1,235 @@
+{
+  "subject_id": "10746056",
+  "hadm_ids": [
+    "27426194",
+    "26949369",
+    "25890123",
+    "26663573",
+    "29256625",
+    "28932362",
+    "28539070",
+    "24027961",
+    "24242202",
+    "20291758",
+    "22071854",
+    "26175231",
+    "28363723",
+    "26181871",
+    "23139903",
+    "27513734",
+    "21996056",
+    "21328209",
+    "29840369"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 10746056",
+      "normalized_name": "patient_10746056",
+      "source_tables": [
+        "patients"
+      ],
+      "evidence": [
+        "10746056"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "insulin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": [
+        "27426194",
+        "26949369",
+        "25890123",
+        "26663573",
+        "29256625",
+        "28932362",
+        "28539070",
+        "24027961",
+        "24242202",
+        "20291758",
+        "22071854",
+        "26175231",
+        "28363723",
+        "26181871",
+        "23139903",
+        "27513734",
+        "21996056",
+        "21328209",
+        "29840369"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": [
+        "27426194",
+        "26949369",
+        "25890123",
+        "26663573",
+        "29256625",
+        "28932362",
+        "28539070",
+        "24027961",
+        "24242202",
+        "20291758",
+        "22071854",
+        "26175231",
+        "28363723",
+        "26181871",
+        "23139903",
+        "27513734",
+        "21996056",
+        "21328209",
+        "29840369"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture",
+      "normalized_name": "blood culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": [
+        "28539070",
+        "26181871"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "med",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": [
+        "27426194",
+        "26949369",
+        "25890123",
+        "26663573",
+        "29256625",
+        "28932362",
+        "28539070",
+        "24027961",
+        "20291758",
+        "22071854",
+        "26175231",
+        "28363723",
+        "26181871",
+        "23139903",
+        "27513734",
+        "21996056",
+        "21328209",
+        "29840369"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "SERVICE",
+      "name": "SURG",
+      "normalized_name": "surg",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": [
+        "24242202"
+      ],
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": [
+        "Insulin administered across multiple admissions"
+      ],
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": [
+        "Laboratory testing ordered in all admissions"
+      ],
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "",
+      "evidence": [
+        "Blood culture performed in two admissions"
+      ],
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": [
+        "Managed by MED service in most admissions"
+      ],
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": [
+        "Managed by SURG service in admission 24242202"
+      ],
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    }
+  ]
+}

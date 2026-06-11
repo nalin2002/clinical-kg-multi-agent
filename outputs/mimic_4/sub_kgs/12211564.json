@@ -1,0 +1,370 @@
+{
+  "subject_id": "12211564",
+  "hadm_ids": [
+    "23129042"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 12211564",
+      "normalized_name": "PATIENT",
+      "source_tables": [],
+      "evidence": "subject_id:12211564",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Secondary malignant neoplasm of lung",
+      "normalized_name": "SECONDARY MALIGNANT NEOPLASM OF LUNG",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id:23129042, seq_num:1, icd_code:1970, name:Secondary malignant neoplasm of lung",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Esophageal reflux",
+      "normalized_name": "ESOPHAGEAL REFLUX",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id:23129042, seq_num:3, icd_code:53081, name:Esophageal reflux",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "MEDICATION",
+      "name": "Pantoprazole",
+      "normalized_name": "PANTOPRAZOLE",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id:23129042, name:Pantoprazole, dose:40, dose_unit:mg, route:PO",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "MEDICATION",
+      "name": "Cefazolin",
+      "normalized_name": "CEFazolin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id:23129042, name:CefazoLIN, dose:1, dose_unit:g, route:IV",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "LABORATORY TESTING",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "hadm_id:23129042, name:Laboratory testing, num_lab_orders:2",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "PROCEDURE",
+      "name": "Thoracoscopic excision of lesion or tissue of lung",
+      "normalized_name": "THORACOSCOPIC EXCISION OF LESION OR TISSUE OF LUNG",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "hadm_id:23129042, seq_num:1, icd_code:3220, name:Thoracoscopic excision of lesion or tissue of lung",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "MICROBIOLOGY",
+      "name": "TISSUE GRAM STAIN",
+      "normalized_name": "TISSUE GRAM STAIN",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "hadm_id:23129042, specimen:TISSUE, test_name:GRAM STAIN",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "SERVICE",
+      "name": "TSURG",
+      "normalized_name": "TSURG",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "hadm_id:23129042, services:TSURG",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23129042",
+      "evidence": "patient has diagnosis secondary malignant neoplasm of lung",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23129042",
+      "evidence": "patient has diagnosis esophageal reflux",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "23129042",
+      "evidence": "patient takes pantoprazole",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "23129042",
+      "evidence": "patient takes cefazolin",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "23129042",
+      "evidence": "patient had laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "23129042",
+      "evidence": "patient underwent thoracoscopic excision",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "23129042",
+      "evidence": "patient had tissue gram stain",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "23129042",
+      "evidence": "patient managed by TSURG service",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N7",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "PROCEDURE",
+      "hadm_id": "23129042",
+      "evidence": "procedure thoracoscopic excision used to diagnose secondary malignant neoplasm of lung",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N6",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "23129042",
+      "evidence": "lab testing used to diagnose secondary malignant neoplasm of lung",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N8",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "23129042",
+      "evidence": "tissue gram stain used to diagnose secondary malignant neoplasm of lung",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N3",
+      "target": "N4",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "23129042",
+      "evidence": "pantoprazole used to treat esophageal reflux",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N3",
+      "target": "N6",
+      "relation": "DIAGNOSED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "23129042",
+      "evidence": "lab testing used to diagnose esophageal reflux",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N4",
+      "target": "N9",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "23129042",
+      "evidence": "pantoprazole administered during TSURG service",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N5",
+      "target": "N9",
+      "relation": "ADMINISTERED_DURING",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "23129042",
+      "evidence": "cefazolin administered during TSURG service",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N9",
+      "target": "N2",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23129042",
+      "evidence": "TSURG service manages secondary malignant neoplasm of lung",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N9",
+      "target": "N3",
+      "relation": "MANAGED_FOR",
+      "source_type": "SERVICE",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "23129042",
+      "evidence": "TSURG service manages esophageal reflux",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N5",
+      "target": "N8",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "23129042",
+      "evidence": "cefazolin targets organisms identified in tissue gram stain",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "N4",
+      "target": "N8",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "23129042",
+      "evidence": "pantoprazole co-occurs with tissue gram stain",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.55
+    },
+    {
+      "source": "N5",
+      "target": "N7",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "PROCEDURE",
+      "hadm_id": "23129042",
+      "evidence": "cefazolin co-occurs with thoracoscopic excision",
+      "source_tables": [
+        "medications",
+        "procedures"
+      ],
+      "confidence": 0.55
+    }
+  ]
+}

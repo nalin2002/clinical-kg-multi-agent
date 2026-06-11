@@ -1,0 +1,586 @@
+{
+  "subject_id": "10913302",
+  "hadm_ids": [
+    "29788532",
+    "22993347",
+    "23490353",
+    "28435518",
+    "27991259",
+    "26049989",
+    "29016622",
+    "21224288",
+    "27258167",
+    "24083917",
+    "27613952",
+    "29967963",
+    "22051838",
+    "26345046",
+    "25365365",
+    "20180791",
+    "25257207",
+    "28547453",
+    "27688437",
+    "26835663",
+    "25836200",
+    "22678858",
+    "22783741",
+    "23831315",
+    "22285031"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 10913302",
+      "normalized_name": "patient_10913302",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": "subject_id 10913302",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Sepsis",
+      "normalized_name": "sepsis",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD-9 99591 Sepsis",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Pneumonia, organism unspecified",
+      "normalized_name": "pneumonia_unspecified",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD-9 486 Pneumonia, organism unspecified",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Acute myeloid leukemia, in remission",
+      "normalized_name": "aml_remission",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD-9 20501 Acute myeloid leukemia, in remission",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "DIAGNOSIS",
+      "name": "Chronic graft-versus-host disease",
+      "normalized_name": "graft_versus_host_disease",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD-9 27952 Chronic graft-versus-host disease",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "DIAGNOSIS",
+      "name": "Complications of transplanted bone marrow",
+      "normalized_name": "complications_transplanted_bone_marrow",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD-9 99685 Complications of transplanted bone marrow",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "DIAGNOSIS",
+      "name": "Pseudomonas infection in conditions classified elsewhere and of unspecified site",
+      "normalized_name": "pseudomonas_infection_unspecified",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD-9 0417 Pseudomonas infection in conditions classified elsewhere and of unspecified site",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "DIAGNOSIS",
+      "name": "Methicillin susceptible Staphylococcus aureus infection",
+      "normalized_name": "methicillin_susceptible_staph_aureus",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD-9 04111 Methicillin susceptible Staphylococcus aureus in conditions classified elsewhere and of unspecified site",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Vancomycin 1000 mg IV",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "MEDICATION",
+      "name": "Piperacillin-Tazobactam",
+      "normalized_name": "piperacillin_tazobactam",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Piperacillin-Tazobactam 4.5 g IV",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "MEDICATION",
+      "name": "Posaconazole Suspension",
+      "normalized_name": "posaconazole_suspension",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Posaconazole Suspension 200 mg PO",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "laboratory_testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "Derived from POE 'Lab' orders",
+      "metadata": {}
+    },
+    {
+      "id": "N13",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture, Routine",
+      "normalized_name": "blood_culture_routine",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "Specimen: BLOOD CULTURE; Test: Blood Culture, Routine",
+      "metadata": {}
+    },
+    {
+      "id": "N14",
+      "type": "MICROBIOLOGY",
+      "name": "Respiratory Viral Culture",
+      "normalized_name": "respiratory_viral_culture",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "Specimen: Rapid Respiratory Viral Screen & Culture; Test: Respiratory Viral Culture",
+      "metadata": {}
+    },
+    {
+      "id": "N15",
+      "type": "SERVICE",
+      "name": "OMED",
+      "normalized_name": "omed",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "Service OMED",
+      "metadata": {}
+    },
+    {
+      "id": "N16",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "med",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "Service MED",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29788532",
+      "evidence": "Patient diagnosed with Sepsis (ICD-9 99591)",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29788532",
+      "evidence": "Patient diagnosed with Pneumonia, organism unspecified (ICD-9 48230)",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29788532",
+      "evidence": "Patient diagnosed with Acute myeloid leukemia, in remission (ICD-9 20501)",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29788532",
+      "evidence": "Patient diagnosed with Chronic graft-versus-host disease (ICD-9 27952)",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29788532",
+      "evidence": "Patient diagnosed with Complications of transplanted bone marrow (ICD-9 99685)",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28435518",
+      "evidence": "Patient diagnosed with Pseudomonas infection (ICD-9 0417)",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28435518",
+      "evidence": "Patient diagnosed with Methicillin susceptible Staphylococcus aureus infection (ICD-9 04111)",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "29788532",
+      "evidence": "Patient received Vancomycin 1000 mg IV",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "28435518",
+      "evidence": "Patient received Piperacillin-Tazobactam 4.5 g IV",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "29788532",
+      "evidence": "Patient received Posaconazole Suspension 200 mg PO",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "29788532",
+      "evidence": "Patient had Laboratory testing orders",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.97
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "29788532",
+      "evidence": "Blood Culture, Routine performed",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.97
+    },
+    {
+      "source": "N1",
+      "target": "N14",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "29788532",
+      "evidence": "Respiratory Viral Culture performed",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.97
+    },
+    {
+      "source": "N1",
+      "target": "N15",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "29788532",
+      "evidence": "Managed by OMED service",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.98
+    },
+    {
+      "source": "N1",
+      "target": "N16",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "22051838",
+      "evidence": "Managed by MED service",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.98
+    },
+    {
+      "source": "N9",
+      "target": "N2",
+      "relation": "TREATED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29788532",
+      "evidence": "Vancomycin used for Sepsis",
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N10",
+      "target": "N7",
+      "relation": "TREATED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28435518",
+      "evidence": "Piperacillin-Tazobactam used for Pseudomonas infection",
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N10",
+      "target": "N8",
+      "relation": "TREATED_BY",
+      "source_type": "MEDICATION",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28435518",
+      "evidence": "Piperacillin-Tazobactam used for Methicillin susceptible Staphylococcus aureus infection",
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N13",
+      "target": "N2",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29788532",
+      "evidence": "Blood Culture helps confirm Sepsis",
+      "source_tables": [
+        "microbiology",
+        "diagnoses"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N14",
+      "target": "N7",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28435518",
+      "evidence": "Respiratory Viral Culture helps confirm Pseudomonas infection",
+      "source_tables": [
+        "microbiology",
+        "diagnoses"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "N2",
+      "target": "N3",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "29788532",
+      "evidence": "Sepsis co-occurs with Pneumonia in same admission",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N2",
+      "target": "N9",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "29788532",
+      "evidence": "Sepsis co-occurs with Vancomycin in same admission",
+      "source_tables": [
+        "diagnoses",
+        "medications"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N3",
+      "target": "N9",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "29788532",
+      "evidence": "Pneumonia co-occurs with Vancomycin in same admission",
+      "source_tables": [
+        "diagnoses",
+        "medications"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N7",
+      "target": "N10",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "28435518",
+      "evidence": "Pseudomonas infection co-occurs with Piperacillin-Tazobactam in same admission",
+      "source_tables": [
+        "diagnoses",
+        "medications"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N8",
+      "target": "N10",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "28435518",
+      "evidence": "Methicillin susceptible Staph aureus infection co-occurs with Piperacillin-Tazobactam in same admission",
+      "source_tables": [
+        "diagnoses",
+        "medications"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N2",
+      "target": "N12",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "29788532",
+      "evidence": "Sepsis co-occurs with Laboratory testing in same admission",
+      "source_tables": [
+        "diagnoses",
+        "lab_tests"
+      ],
+      "confidence": 0.55
+    },
+    {
+      "source": "N9",
+      "target": "N13",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "29788532",
+      "evidence": "Vancomycin co-occurs with Blood Culture in same admission",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.55
+    },
+    {
+      "source": "N10",
+      "target": "N14",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "28435518",
+      "evidence": "Piperacillin-Tazobactam co-occurs with Respiratory Viral Culture in same admission",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.55
+    }
+  ]
+}

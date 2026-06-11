@@ -1,0 +1,260 @@
+{
+  "subject_id": "10751641",
+  "hadm_ids": [
+    "29692862",
+    "29386966",
+    "28342970",
+    "26458620",
+    "21124564",
+    "26957509",
+    "26953714",
+    "24993143",
+    "24386315",
+    "21170230",
+    "20881745",
+    "25461605",
+    "21484242",
+    "27926847",
+    "22347408",
+    "26736794",
+    "27075020",
+    "22769735",
+    "26921466",
+    "25120627",
+    "21317772",
+    "21280967"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 10751641",
+      "normalized_name": "PATIENT_10751641",
+      "source_tables": [
+        "subject"
+      ],
+      "evidence": "Patient identifier",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Coronary atherosclerosis of native coronary artery",
+      "normalized_name": "CORONARY_ATHEROSCLEROSIS_NATIVE_CORONARY_ARTERY",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "Multiple admissions list this diagnosis",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "FUROSEMIDE",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "Medication administered in several admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "LABORATORY_TESTING",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "Derived from POE 'Lab' orders in all admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "PROCEDURE",
+      "name": "Angioplasty of other non-coronary vessel(s)",
+      "normalized_name": "ANGIOPLASTY_OTHER_NON_CORONARY_VESSELS",
+      "source_tables": [
+        "procedures"
+      ],
+      "evidence": "Procedure performed in admission 29692862",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "SERVICE",
+      "name": "CMED",
+      "normalized_name": "CMED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "Clinical service managing the patient in many admissions",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "",
+      "evidence": "Patient diagnosed with coronary atherosclerosis",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "",
+      "evidence": "Patient received furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "Laboratory testing ordered for patient",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "UNDERWENT_PROCEDURE",
+      "source_type": "PATIENT",
+      "target_type": "PROCEDURE",
+      "hadm_id": "",
+      "evidence": "Patient underwent angioplasty of other non-coronary vessels",
+      "source_tables": [
+        "procedures"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "Patient managed by CMED service",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N2",
+      "target": "N3",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "29692862",
+      "evidence": "Diagnosis and medication co‑occur in admission 29692862",
+      "source_tables": [
+        "diagnoses",
+        "medications"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N2",
+      "target": "N5",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "PROCEDURE",
+      "hadm_id": "29692862",
+      "evidence": "Diagnosis and procedure co‑occur in admission 29692862",
+      "source_tables": [
+        "diagnoses",
+        "procedures"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N3",
+      "target": "N4",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "LAB_TEST",
+      "hadm_id": "29692862",
+      "evidence": "Medication and lab test co‑occur in admission 29692862",
+      "source_tables": [
+        "medications",
+        "lab_tests"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N5",
+      "target": "N4",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "PROCEDURE",
+      "target_type": "LAB_TEST",
+      "hadm_id": "29692862",
+      "evidence": "Procedure and lab test co‑occur in admission 29692862",
+      "source_tables": [
+        "procedures",
+        "lab_tests"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N2",
+      "target": "N6",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "SERVICE",
+      "hadm_id": "29692862",
+      "evidence": "Diagnosis and service co‑occur in admission 29692862",
+      "source_tables": [
+        "diagnoses",
+        "services"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N3",
+      "target": "N6",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "SERVICE",
+      "hadm_id": "29692862",
+      "evidence": "Medication and service co‑occur in admission 29692862",
+      "source_tables": [
+        "medications",
+        "services"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N5",
+      "target": "N6",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "PROCEDURE",
+      "target_type": "SERVICE",
+      "hadm_id": "29692862",
+      "evidence": "Procedure and service co‑occur in admission 29692862",
+      "source_tables": [
+        "procedures",
+        "services"
+      ],
+      "confidence": 0.6
+    }
+  ]
+}

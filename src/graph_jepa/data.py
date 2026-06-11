@@ -63,6 +63,56 @@ RELATION_SCHEMA: Dict[Tuple[str, str], Set[str]] = {
     (NodeType.LAB_RESULT.value, EdgeType.CONFIRMS.value): {
         NodeType.DIAGNOSIS.value,
     },
+    # MIMIC-IV sub-KG relations.
+    (NodeType.PATIENT.value, EdgeType.HAS_DIAGNOSIS.value): {
+        NodeType.DIAGNOSIS.value,
+    },
+    (NodeType.PATIENT.value, EdgeType.TAKES_MEDICATION.value): {
+        NodeType.MEDICATION.value,
+    },
+    (NodeType.PATIENT.value, EdgeType.UNDERWENT_PROCEDURE.value): {
+        NodeType.PROCEDURE.value,
+    },
+    (NodeType.PATIENT.value, EdgeType.HAD_LAB_TEST.value): {
+        NodeType.LAB_TEST.value,
+    },
+    (NodeType.PATIENT.value, EdgeType.HAD_MICROBIOLOGY.value): {
+        NodeType.MICROBIOLOGY.value,
+    },
+    (NodeType.PATIENT.value, EdgeType.MANAGED_BY_SERVICE.value): {
+        NodeType.SERVICE.value,
+    },
+    (NodeType.DIAGNOSIS.value, EdgeType.TREATED_BY.value): {
+        NodeType.MEDICATION.value,
+    },
+    (NodeType.DIAGNOSIS.value, EdgeType.DIAGNOSED_BY.value): {
+        NodeType.LAB_TEST.value,
+        NodeType.MICROBIOLOGY.value,
+        NodeType.PROCEDURE.value,
+    },
+    (NodeType.DIAGNOSIS.value, EdgeType.INVESTIGATED_BY.value): {
+        NodeType.LAB_TEST.value,
+        NodeType.MICROBIOLOGY.value,
+        NodeType.PROCEDURE.value,
+    },
+    (NodeType.DIAGNOSIS.value, EdgeType.MONITORED_BY.value): {
+        NodeType.LAB_TEST.value,
+    },
+    (NodeType.MICROBIOLOGY.value, EdgeType.CONFIRMS.value): {
+        NodeType.DIAGNOSIS.value,
+    },
+    (NodeType.MEDICATION.value, EdgeType.TARGETS_ORGANISM.value): {
+        NodeType.MICROBIOLOGY.value,
+    },
+    (NodeType.PROCEDURE.value, EdgeType.PERFORMED_FOR.value): {
+        NodeType.DIAGNOSIS.value,
+    },
+    (NodeType.SERVICE.value, EdgeType.MANAGED_FOR.value): {
+        NodeType.DIAGNOSIS.value,
+    },
+    (NodeType.MEDICATION.value, EdgeType.ADMINISTERED_DURING.value): {
+        NodeType.SERVICE.value,
+    },
 }
 
 
@@ -105,6 +155,68 @@ VOCAB: Dict[str, List[str]] = {
         "elevated crp", "abnormal chest imaging",
     ],
 }
+
+
+def _adapt_mimic_node(node: dict) -> dict:
+    source_type = str(node.get("type", "")).upper()
+
+    adapted = dict(node)
+    adapted["type"] = source_type
+    adapted["text"] = str(
+        adapted.get("text")
+        or adapted.get("name")
+        or adapted.get("normalized_name")
+        or adapted.get("id")
+        or ""
+    )
+    adapted["mimic_type"] = source_type
+    return adapted
+
+
+def _adapt_mimic_edge(
+    edge: dict,
+) -> dict | None:
+    source_id = edge.get("source_id") or edge.get("source")
+    target_id = edge.get("target_id") or edge.get("target")
+    relation = str(edge.get("type") or edge.get("relation") or "").upper()
+    if not source_id or not target_id or not relation:
+        return None
+
+    adapted = dict(edge)
+    adapted["source_id"] = source_id
+    adapted["target_id"] = target_id
+    adapted["type"] = relation
+    adapted["mimic_relation"] = edge.get("relation") or edge.get("type")
+    return adapted
+
+
+def adapt_mimic_subkg(data: dict, source_path: str | Path | None = None) -> PatientGraph:
+    """Normalize a MIMIC sub-KG JSON object without dropping raw KG semantics."""
+
+    nodes: List[dict] = []
+    for node in data.get("nodes", []):
+        adapted = _adapt_mimic_node(node)
+        node_id = adapted.get("id")
+        if not node_id:
+            continue
+        nodes.append(adapted)
+
+    edges: List[dict] = []
+    for edge in data.get("edges", []):
+        adapted_edge = _adapt_mimic_edge(edge)
+        if adapted_edge is None:
+            continue
+        edges.append(adapted_edge)
+
+    extra = {k: v for k, v in data.items() if k not in ("nodes", "edges")}
+    extra["_method"] = "mimic_subkg_adapter"
+    if source_path is not None:
+        extra["_source_path"] = str(source_path)
+    extra["_mimic_adapter"] = {
+        "dropped_nodes": len(data.get("nodes", [])) - len(nodes),
+        "dropped_edges": len(data.get("edges", [])) - len(edges),
+    }
+    return PatientGraph(nodes=nodes, edges=edges, extra=extra)
 
 
 class SyntheticGraphGenerator:
@@ -237,6 +349,71 @@ class MimicGraphBuilder:
             f"({self.TABLE_MAPPING}). The PatientGraph schema and the rest of the "
             "Graph-JEPA pipeline are unchanged; only this builder needs filling in."
         )
+
+
+class MimicSubKGGraphBuilder:
+    """Load MIMIC sub-KG JSONs and adapt them to the shared JEPA schema."""
+
+    DEFAULT_CANDIDATES = (
+        Path("outputs/mimic_4/sub_kgs"),
+    )
+
+    def __init__(
+        self,
+        kg_path: str | Path | None = None,
+        *,
+        limit: int | None = None,
+        pattern: str = "*.json",
+    ):
+        self.kg_path = Path(kg_path) if kg_path else None
+        self.limit = limit
+        self.pattern = pattern
+
+    def _roots(self) -> List[Path]:
+        if self.kg_path is not None:
+            return [self.kg_path]
+        return [p for p in self.DEFAULT_CANDIDATES if p.exists()]
+
+    def _paths(self, root: Path) -> List[Path]:
+        if root.is_file():
+            return [root]
+        if root.is_dir():
+            return sorted(root.rglob(self.pattern))
+        return []
+
+    @staticmethod
+    def _load_graph(path: Path) -> PatientGraph | None:
+        try:
+            with open(path, "r") as f:
+                data = json.load(f)
+        except (OSError, json.JSONDecodeError):
+            return None
+        if "nodes" not in data or "edges" not in data:
+            return None
+
+        graph = adapt_mimic_subkg(data, source_path=path)
+        if not graph.nodes:
+            return None
+        return graph
+
+    def build(self) -> List[PatientGraph]:
+        graphs: List[PatientGraph] = []
+        for root in self._roots():
+            for path in self._paths(root):
+                graph = self._load_graph(path)
+                if graph is None:
+                    continue
+                graphs.append(graph)
+                if self.limit is not None and len(graphs) >= self.limit:
+                    return graphs
+        if not graphs:
+            roots = self._roots()
+            root_msg = ", ".join(str(p) for p in roots) if roots else "no existing default paths"
+            raise ValueError(
+                "No MIMIC sub-KG graphs found. Pass --mimic-subkg-path to a "
+                f"sub-KG JSON file/directory. Checked: {root_msg}"
+            )
+        return graphs
 
 
 class AciBenchGraphBuilder:

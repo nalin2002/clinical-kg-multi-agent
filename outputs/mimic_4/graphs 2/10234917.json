@@ -1,0 +1,454 @@
+{
+  "subject_id": "10234917",
+  "hadm_ids": [
+    "25951404",
+    "24291254"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 10234917",
+      "normalized_name": "patient 10234917",
+      "source_tables": [
+        "demographics"
+      ],
+      "evidence": "subject_id 10234917, gender F, age 77",
+      "metadata": {}
+    },
+    {
+      "id": "D1",
+      "type": "DIAGNOSIS",
+      "name": "Bacteremia",
+      "normalized_name": "bacteremia",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 25951404 diagnosis Bacteremia (ICD 7907)",
+      "metadata": {}
+    },
+    {
+      "id": "D2",
+      "type": "DIAGNOSIS",
+      "name": "Acute myeloid leukemia, without mention of having achieved remission",
+      "normalized_name": "acute myeloid leukemia, without mention of having achieved remission",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "multiple admissions diagnosis Acute myeloid leukemia, without mention of having achieved remission (ICD 20500)",
+      "metadata": {}
+    },
+    {
+      "id": "D3",
+      "type": "DIAGNOSIS",
+      "name": "Unspecified essential hypertension",
+      "normalized_name": "unspecified essential hypertension",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "hadm_id 25951404 diagnosis Unspecified essential hypertension (ICD 4019)",
+      "metadata": {}
+    },
+    {
+      "id": "M1",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id 25951404 medication Vancomycin 1000 mg IV",
+      "metadata": {}
+    },
+    {
+      "id": "M2",
+      "type": "MEDICATION",
+      "name": "Daptomycin",
+      "normalized_name": "daptomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id 25951404 medication Daptomycin 350 mg IV",
+      "metadata": {}
+    },
+    {
+      "id": "M3",
+      "type": "MEDICATION",
+      "name": "Linezolid",
+      "normalized_name": "linezolid",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id 24291254 medication Linezolid 600 mg IV",
+      "metadata": {}
+    },
+    {
+      "id": "M4",
+      "type": "MEDICATION",
+      "name": "Levofloxacin",
+      "normalized_name": "levofloxacin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "hadm_id 25951404 medication Levofloxacin 250 mg PO",
+      "metadata": {}
+    },
+    {
+      "id": "L1",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "laboratory testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "hadm_id 25951404 lab test Laboratory testing (34 orders)",
+      "metadata": {}
+    },
+    {
+      "id": "B1",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture, Routine",
+      "normalized_name": "blood culture, routine",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "hadm_id 25951404 microbiology Blood Culture, Routine (specimen BLOOD CULTURE)",
+      "metadata": {}
+    },
+    {
+      "id": "S1",
+      "type": "SERVICE",
+      "name": "OMED",
+      "normalized_name": "omed",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "hadm_id 25951404 service OMED",
+      "metadata": {}
+    },
+    {
+      "id": "S2",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "med",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "hadm_id 24291254 service MED",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "D1",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25951404",
+      "evidence": "Bacteremia listed in diagnoses of admission 25951404",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "D2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25951404",
+      "evidence": "Acute myeloid leukemia listed in diagnoses of admission 25951404",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "D3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25951404",
+      "evidence": "Unspecified essential hypertension listed in diagnoses of admission 25951404",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "M1",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "25951404",
+      "evidence": "Vancomycin administered in admission 25951404",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "M2",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "25951404",
+      "evidence": "Daptomycin administered in admission 25951404",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "M3",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "24291254",
+      "evidence": "Linezolid administered in admission 24291254",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "M4",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "25951404",
+      "evidence": "Levofloxacin administered in admission 25951404",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "L1",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "25951404",
+      "evidence": "Laboratory testing orders recorded in admission 25951404",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "B1",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "25951404",
+      "evidence": "Blood Culture, Routine performed in admission 25951404",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "S1",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "25951404",
+      "evidence": "Service OMED managed admission 25951404",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "N1",
+      "target": "S2",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "24291254",
+      "evidence": "Service MED managed admission 24291254",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.96
+    },
+    {
+      "source": "D1",
+      "target": "M1",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "25951404",
+      "evidence": "Vancomycin used for Bacteremia in admission 25951404",
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "D1",
+      "target": "M2",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "25951404",
+      "evidence": "Daptomycin used for Bacteremia in admission 25951404",
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "D1",
+      "target": "M3",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "24291254",
+      "evidence": "Linezolid used for Bacteremia in admission 24291254",
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "source": "D1",
+      "target": "M4",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "25951404",
+      "evidence": "Levofloxacin used for Bacteremia in admission 25951404",
+      "source_tables": [
+        "medications",
+        "diagnoses"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "source": "B1",
+      "target": "D1",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "25951404",
+      "evidence": "Blood Culture, Routine positive for bacteremia in admission 25951404",
+      "source_tables": [
+        "microbiology",
+        "diagnoses"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "M1",
+      "target": "B1",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "24291254",
+      "evidence": "Vancomycin active against Enterococcus faecium identified in Blood Culture (admission 24291254)",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "M2",
+      "target": "B1",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "24291254",
+      "evidence": "Daptomycin active against Enterococcus faecium identified in Blood Culture (admission 24291254)",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "source": "D1",
+      "target": "M1",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "25951404",
+      "evidence": "Bacteremia and Vancomycin co‑occur in admission 25951404",
+      "source_tables": [
+        "diagnoses",
+        "medications"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "D1",
+      "target": "M2",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "25951404",
+      "evidence": "Bacteremia and Daptomycin co‑occur in admission 25951404",
+      "source_tables": [
+        "diagnoses",
+        "medications"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "D1",
+      "target": "M3",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "24291254",
+      "evidence": "Bacteremia and Linezolid co‑occur in admission 24291254",
+      "source_tables": [
+        "diagnoses",
+        "medications"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "D1",
+      "target": "L1",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "LAB_TEST",
+      "hadm_id": "25951404",
+      "evidence": "Bacteremia and Laboratory testing co‑occur in admission 25951404",
+      "source_tables": [
+        "diagnoses",
+        "lab_tests"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "D1",
+      "target": "B1",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "25951404",
+      "evidence": "Bacteremia and Blood Culture co‑occur in admission 25951404",
+      "source_tables": [
+        "diagnoses",
+        "microbiology"
+      ],
+      "confidence": 0.6
+    }
+  ]
+}

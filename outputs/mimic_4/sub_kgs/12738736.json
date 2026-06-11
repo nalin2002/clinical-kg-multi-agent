@@ -1,0 +1,117 @@
+{
+  "subject_id": "12738736",
+  "hadm_ids": [
+    "27820882",
+    "26439341",
+    "29590053",
+    "27367602",
+    "22067514",
+    "27023597",
+    "28159086",
+    "23767892",
+    "28524072",
+    "23932865",
+    "27837453",
+    "26279315"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 12738736",
+      "normalized_name": "PATIENT",
+      "source_tables": [
+        "demographics"
+      ],
+      "evidence": "subject_id 12738736",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "Furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "medication name Furosemide appears in admissions 27023597, 28159086, 26279315",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "Insulin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "medication name Insulin appears in admissions 27820882, 26439341, 27367602, 27023597, 28159086, 26279315",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "service MED present in all admissions",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "27023597",
+      "evidence": "Furosemide prescribed in admission 27023597",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "27820882",
+      "evidence": "Insulin prescribed in admission 27820882",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "27820882",
+      "evidence": "service MED in admission 27820882",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "source": "N2",
+      "target": "N3",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "MEDICATION",
+      "target_type": "MEDICATION",
+      "hadm_id": "27023597",
+      "evidence": "Furosemide and Insulin both prescribed in admission 27023597",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.6
+    }
+  ]
+}

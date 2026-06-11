@@ -1,0 +1,143 @@
+{
+  "subject_id": "12843152",
+  "hadm_ids": [
+    "23529032",
+    "27655392",
+    "27612005",
+    "25737331",
+    "22250033",
+    "25395468",
+    "28874692",
+    "21650564",
+    "26077714",
+    "22843792",
+    "20081262",
+    "24756779"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 12843152",
+      "normalized_name": "Patient 12843152",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": "subject_id 12843152",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "SERVICE",
+      "name": "NMED",
+      "normalized_name": "NMED",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": "services in admissions 23529032, 22250033, 28874692",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "MED",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": "services in admissions 27612005, 25737331, 24756779",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "SERVICE",
+      "name": "SURG",
+      "normalized_name": "SURG",
+      "source_tables": [
+        "admissions"
+      ],
+      "evidence": "services in admissions 25737331, 22250033, 25395468, 21650564, 26077714, 22843792, 20081262",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "Patient managed by NMED in multiple admissions",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "Patient managed by MED in multiple admissions",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "Patient managed by SURG in multiple admissions",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N2",
+      "target": "N3",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "SERVICE",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "NMED and MED co-occur in same patient admissions",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N2",
+      "target": "N4",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "SERVICE",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "NMED and SURG co-occur in same patient admissions",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N3",
+      "target": "N4",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "SERVICE",
+      "target_type": "SERVICE",
+      "hadm_id": "",
+      "evidence": "MED and SURG co-occur in same patient admissions",
+      "source_tables": [
+        "admissions"
+      ],
+      "confidence": 0.6
+    }
+  ]
+}

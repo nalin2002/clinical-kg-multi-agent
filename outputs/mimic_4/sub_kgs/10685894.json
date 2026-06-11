@@ -1,0 +1,446 @@
+{
+  "subject_id": "10685894",
+  "hadm_ids": [
+    "20488628",
+    "21835217",
+    "24522321",
+    "23256075",
+    "20036009",
+    "25893229",
+    "27237288",
+    "28767863",
+    "27226111",
+    "23279749",
+    "20957328",
+    "20487563",
+    "21649391",
+    "23518555",
+    "21628143",
+    "22921167",
+    "27221752",
+    "23876122",
+    "27175179",
+    "26379847",
+    "22549877",
+    "26772496",
+    "20460059",
+    "29319625",
+    "21623314"
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 10685894",
+      "normalized_name": "patient 10685894",
+      "source_tables": [
+        "subject"
+      ],
+      "evidence": "subject_id 10685894",
+      "metadata": {}
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Chronic obstructive asthma, unspecified",
+      "normalized_name": "chronic obstructive asthma unspecified",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD-9 49320 / ICD-10 J45909",
+      "metadata": {}
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Chronic obstructive pulmonary disease, unspecified",
+      "normalized_name": "chronic obstructive pulmonary disease unspecified",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "ICD-10 J449",
+      "metadata": {}
+    },
+    {
+      "id": "N4",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "IV administration in multiple admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N5",
+      "type": "MEDICATION",
+      "name": "Insulin",
+      "normalized_name": "insulin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "SC administration in admission 23518555",
+      "metadata": {}
+    },
+    {
+      "id": "N6",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "PO/NG administration in admission 21623314",
+      "metadata": {}
+    },
+    {
+      "id": "N7",
+      "type": "MICROBIOLOGY",
+      "name": "MRSA",
+      "normalized_name": "mrsa",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "MRSA SCREEN in admission 23876122",
+      "metadata": {}
+    },
+    {
+      "id": "N8",
+      "type": "MICROBIOLOGY",
+      "name": "Escherichia coli",
+      "normalized_name": "escherichia coli",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "URINE CULTURE with E. coli in admission 23876122",
+      "metadata": {}
+    },
+    {
+      "id": "N9",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "med",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "Medical service in most admissions",
+      "metadata": {}
+    },
+    {
+      "id": "N10",
+      "type": "SERVICE",
+      "name": "CMED",
+      "normalized_name": "cmed",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "CMED service in admission 21623314",
+      "metadata": {}
+    },
+    {
+      "id": "N11",
+      "type": "SERVICE",
+      "name": "SURG",
+      "normalized_name": "surg",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "SURG service in admission 24522321",
+      "metadata": {}
+    },
+    {
+      "id": "N12",
+      "type": "SERVICE",
+      "name": "ORTHO",
+      "normalized_name": "ortho",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "ORTHO service in admission 20488628",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": [
+        "23876122",
+        "21623314",
+        "27175179",
+        "23518555",
+        "21649391",
+        "20957328",
+        "20487563"
+      ],
+      "evidence": "diagnosis recorded in listed admissions",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": [
+        "23876122",
+        "21623314",
+        "27175179",
+        "23518555",
+        "21649391",
+        "20957328",
+        "20487563"
+      ],
+      "evidence": "diagnosis recorded in listed admissions",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": [
+        "20957328",
+        "20487563",
+        "21623314"
+      ],
+      "evidence": "medication administered in listed admissions",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": [
+        "23518555"
+      ],
+      "evidence": "medication administered in admission 23518555",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": [
+        "21623314"
+      ],
+      "evidence": "medication administered in admission 21623314",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": [
+        "23876122"
+      ],
+      "evidence": "microbiology test performed in admission 23876122",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": [
+        "23876122"
+      ],
+      "evidence": "microbiology test performed in admission 23876122",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": [
+        "20488628",
+        "21835217",
+        "23256075",
+        "20036009",
+        "25893229",
+        "27237288",
+        "28767863",
+        "27226111",
+        "23279749",
+        "20957328",
+        "20487563",
+        "21649391",
+        "23518555",
+        "21628143",
+        "22921167",
+        "27221752",
+        "27175179",
+        "26379847",
+        "22549877",
+        "26772496",
+        "20460059",
+        "29319625"
+      ],
+      "evidence": "service MED used in listed admissions",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": [
+        "21623314"
+      ],
+      "evidence": "service CMED used in admission 21623314",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": [
+        "24522321"
+      ],
+      "evidence": "service SURG used in admission 24522321",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": [
+        "20488628"
+      ],
+      "evidence": "service ORTHO used in admission 20488628",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "source": "N4",
+      "target": "N7",
+      "relation": "TARGETS_ORGANISM",
+      "source_type": "MEDICATION",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": [
+        "23876122"
+      ],
+      "evidence": "Vancomycin targets MRSA",
+      "source_tables": [
+        "medications",
+        "microbiology"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "source": "N2",
+      "target": "N4",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": [
+        "23876122"
+      ],
+      "evidence": "COPD asthma and Vancomycin co‑occur in admission 23876122",
+      "source_tables": [
+        "diagnoses",
+        "medications"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N2",
+      "target": "N5",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": [
+        "23518555"
+      ],
+      "evidence": "COPD asthma and Insulin co‑occur in admission 23518555",
+      "source_tables": [
+        "diagnoses",
+        "medications"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N2",
+      "target": "N6",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": [
+        "21623314"
+      ],
+      "evidence": "COPD asthma and Furosemide co‑occur in admission 21623314",
+      "source_tables": [
+        "diagnoses",
+        "medications"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "source": "N3",
+      "target": "N4",
+      "relation": "CO_OCCURS_WITH",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": [
+        "23876122"
+      ],
+      "evidence": "COPD pulmonary disease and Vancomycin co‑occur in admission 23876122",
+      "source_tables": [
+        "diagnoses",
+        "medications"
+      ],
+      "confidence": 0.6
+    }
+  ]
+}
