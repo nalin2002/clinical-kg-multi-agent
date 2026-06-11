@@ -123,24 +123,26 @@ class ScoreConfig:
     candidate_threshold: float = 0.85
     candidate_threshold_by_relation: Dict[str, float] = field(default_factory=lambda: {
         "INDICATES": 0.95,
-        "CONFIRMS": 0.96,
+        "CONFIRMS": 0.98,
         "TAKEN_FOR": 0.95,
         "CAUSES": 0.98,
         "LOCATED_AT": 0.95,
         "RULES_OUT": 0.99,
-        "ADMINISTERED_DURING": 0.94,
-        "DIAGNOSED_BY": 0.92,
+        "ADMINISTERED_DURING": 0.98,
+        "COMPLICATED_BY": 0.995,
+        "DIAGNOSED_BY": 0.985,
         "HAD_LAB_TEST": 0.97,
         "HAD_MICROBIOLOGY": 0.97,
         "HAS_DIAGNOSIS": 0.96,
-        "INVESTIGATED_BY": 0.93,
+        "INVESTIGATED_BY": 0.99,
         "MANAGED_BY_SERVICE": 0.97,
-        "MANAGED_FOR": 0.94,
-        "MONITORED_BY": 0.93,
-        "PERFORMED_FOR": 0.93,
+        "MANAGED_FOR": 0.99,
+        "MONITORED_BY": 0.98,
+        "PART_OF_REGIMEN": 0.995,
+        "PERFORMED_FOR": 0.995,
         "TAKES_MEDICATION": 0.96,
-        "TARGETS_ORGANISM": 0.94,
-        "TREATED_BY": 0.92,
+        "TARGETS_ORGANISM": 0.985,
+        "TREATED_BY": 0.975,
         "UNDERWENT_PROCEDURE": 0.96,
     })
     disabled_candidate_relations: list[str] = field(default_factory=lambda: [
@@ -183,12 +185,19 @@ class Config:
         for key in (
             "weak_threshold_by_relation",
             "inconsistent_threshold_by_relation",
-            "candidate_threshold_by_relation",
         ):
             if key in score_dict:
                 merged = dict(getattr(default_score, key))
                 merged.update(score_dict[key])
                 score_dict[key] = merged
+        if "candidate_threshold_by_relation" in score_dict:
+            merged = dict(default_score.candidate_threshold_by_relation)
+            for relation, threshold in score_dict["candidate_threshold_by_relation"].items():
+                merged[relation] = max(
+                    float(threshold),
+                    merged.get(relation, default_score.candidate_threshold),
+                )
+            score_dict["candidate_threshold_by_relation"] = merged
 
         return cls(
             model=ModelConfig(**model_dict),

@@ -52,10 +52,12 @@ class GraphJEPAv4ScoringTests(unittest.TestCase):
     def test_mimic_candidate_thresholds_are_relation_specific(self):
         cfg = Config()
 
-        self.assertEqual(_candidate_threshold("TREATED_BY", cfg), 0.92)
-        self.assertEqual(_candidate_threshold("DIAGNOSED_BY", cfg), 0.92)
-        self.assertEqual(_candidate_threshold("INVESTIGATED_BY", cfg), 0.93)
-        self.assertEqual(_candidate_threshold("PERFORMED_FOR", cfg), 0.93)
+        self.assertEqual(_candidate_threshold("TREATED_BY", cfg), 0.975)
+        self.assertEqual(_candidate_threshold("DIAGNOSED_BY", cfg), 0.985)
+        self.assertEqual(_candidate_threshold("INVESTIGATED_BY", cfg), 0.99)
+        self.assertEqual(_candidate_threshold("PERFORMED_FOR", cfg), 0.995)
+        self.assertEqual(_candidate_threshold("COMPLICATED_BY", cfg), 0.995)
+        self.assertEqual(_candidate_threshold("PART_OF_REGIMEN", cfg), 0.995)
         self.assertEqual(_candidate_threshold("HAS_DIAGNOSIS", cfg), 0.96)
 
     def test_legacy_checkpoint_thresholds_merge_with_mimic_defaults(self):
@@ -63,12 +65,14 @@ class GraphJEPAv4ScoringTests(unittest.TestCase):
             "score": {
                 "candidate_threshold_by_relation": {
                     "INDICATES": 0.91,
+                    "CONFIRMS": 0.99,
                 },
             },
         })
 
-        self.assertEqual(_candidate_threshold("INDICATES", cfg), 0.91)
-        self.assertEqual(_candidate_threshold("TREATED_BY", cfg), 0.92)
+        self.assertEqual(_candidate_threshold("INDICATES", cfg), 0.95)
+        self.assertEqual(_candidate_threshold("CONFIRMS", cfg), 0.99)
+        self.assertEqual(_candidate_threshold("TREATED_BY", cfg), 0.975)
 
     def test_schema_error_identifies_missing_relation_rule(self):
         graph = PatientGraph(

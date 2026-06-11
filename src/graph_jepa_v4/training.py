@@ -23,7 +23,7 @@ from graph_jepa.schema import PatientGraph
 
 from .config import Config
 from .data import PatientGraphDataset
-from .model import GraphJEPAv4
+from .model import GraphJEPAv4, sanitized_graph_data
 from .patches import build_patch_data, sample_patch_task
 
 PRETRAIN_CHECKPOINT_NAME = "graph_jepa_v4_pretrain.pt"
@@ -174,6 +174,8 @@ def train_epochs(
             "jepa_var": 0.0,
             "revision_bce": 0.0,
             "patch_std": 0.0,
+            "schema_dropped": 0.0,
+            "revision_invalid_neg": 0.0,
         }
         n = 0
         progress = tqdm(
@@ -188,9 +190,11 @@ def train_epochs(
             data = data.to(device)
             if data.num_nodes < 2:
                 continue
+            message_data = sanitized_graph_data(data)
+            schema_dropped = int(data.edge_index.size(1) - message_data.edge_index.size(1))
 
             patch_data = build_patch_data(
-                data,
+                message_data,
                 num_patches=cfg.model.num_patches,
                 patch_pe_dim=cfg.model.patch_pe_dim,
                 generator=generator,
@@ -203,7 +207,7 @@ def train_epochs(
             ).to(device)
 
             jepa, jlog = model.jepa_loss(
-                data,
+                message_data,
                 patch_data,
                 task,
                 var_weight=cfg.train.vicreg_var_weight,
@@ -232,6 +236,8 @@ def train_epochs(
             agg["jepa_var"] += jlog["jepa_var"]
             agg["patch_std"] += jlog["patch_std"]
             agg["revision_bce"] += rlog["revision_bce"]
+            agg["schema_dropped"] += schema_dropped
+            agg["revision_invalid_neg"] += rlog.get("revision_invalid_neg", 0.0)
             n += 1
             progress.set_postfix(
                 loss=f"{agg['loss']/n:.4f}",
@@ -247,6 +253,8 @@ def train_epochs(
             "train/jepa_inv": agg["jepa_inv"] / denom,
             "train/jepa_var": agg["jepa_var"] / denom,
             "train/revision_bce": agg["revision_bce"] / denom,
+            "train/revision_invalid_neg": agg["revision_invalid_neg"] / denom,
+            "train/schema_dropped_edges": agg["schema_dropped"] / denom,
             "train/patch_std": agg["patch_std"] / denom,
             "train/lr": cfg.train.lr,
             "train/global_step": global_step,
