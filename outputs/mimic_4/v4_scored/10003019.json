@@ -1,0 +1,601 @@
+{
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "PATIENT",
+      "name": "Patient 10003019",
+      "normalized_name": "patient_10003019",
+      "source_tables": [],
+      "evidence": "",
+      "metadata": {},
+      "text": "Patient 10003019",
+      "mimic_type": "PATIENT"
+    },
+    {
+      "id": "N2",
+      "type": "DIAGNOSIS",
+      "name": "Unspecified septicemia",
+      "normalized_name": "unspecified_septicemia",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "22774359",
+      "metadata": {},
+      "text": "Unspecified septicemia",
+      "mimic_type": "DIAGNOSIS"
+    },
+    {
+      "id": "N3",
+      "type": "DIAGNOSIS",
+      "name": "Septic shock",
+      "normalized_name": "septic_shock",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "22774359",
+      "metadata": {},
+      "text": "Septic shock",
+      "mimic_type": "DIAGNOSIS"
+    },
+    {
+      "id": "N4",
+      "type": "DIAGNOSIS",
+      "name": "Severe sepsis",
+      "normalized_name": "severe_sepsis",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "22774359",
+      "metadata": {},
+      "text": "Severe sepsis",
+      "mimic_type": "DIAGNOSIS"
+    },
+    {
+      "id": "N5",
+      "type": "DIAGNOSIS",
+      "name": "Chronic diastolic (congestive) heart failure",
+      "normalized_name": "chronic_diastolic_congestive_heart_failure",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "28836362",
+      "metadata": {},
+      "text": "Chronic diastolic (congestive) heart failure",
+      "mimic_type": "DIAGNOSIS"
+    },
+    {
+      "id": "N6",
+      "type": "DIAGNOSIS",
+      "name": "Chronic obstructive asthma",
+      "normalized_name": "chronic_obstructive_asthma",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "evidence": "21223482",
+      "metadata": {},
+      "text": "Chronic obstructive asthma",
+      "mimic_type": "DIAGNOSIS"
+    },
+    {
+      "id": "N7",
+      "type": "MEDICATION",
+      "name": "Vancomycin",
+      "normalized_name": "vancomycin",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "22774359,20962108",
+      "metadata": {},
+      "text": "Vancomycin",
+      "mimic_type": "MEDICATION"
+    },
+    {
+      "id": "N8",
+      "type": "MEDICATION",
+      "name": "Furosemide",
+      "normalized_name": "furosemide",
+      "source_tables": [
+        "medications"
+      ],
+      "evidence": "28836362",
+      "metadata": {},
+      "text": "Furosemide",
+      "mimic_type": "MEDICATION"
+    },
+    {
+      "id": "N9",
+      "type": "MICROBIOLOGY",
+      "name": "Blood Culture, Routine",
+      "normalized_name": "blood_culture_routine",
+      "source_tables": [
+        "microbiology"
+      ],
+      "evidence": "21616816,22774359,20962108",
+      "metadata": {},
+      "text": "Blood Culture, Routine",
+      "mimic_type": "MICROBIOLOGY"
+    },
+    {
+      "id": "N10",
+      "type": "SERVICE",
+      "name": "MED",
+      "normalized_name": "med",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "21616816,27683372,21213148,25179393",
+      "metadata": {},
+      "text": "MED",
+      "mimic_type": "SERVICE"
+    },
+    {
+      "id": "N11",
+      "type": "SERVICE",
+      "name": "OMED",
+      "normalized_name": "omed",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "25573783,21616816,27683372,21223482,20277210,21213148,25179393,20962108",
+      "metadata": {},
+      "text": "OMED",
+      "mimic_type": "SERVICE"
+    },
+    {
+      "id": "N12",
+      "type": "SERVICE",
+      "name": "CMED",
+      "normalized_name": "cmed",
+      "source_tables": [
+        "services"
+      ],
+      "evidence": "28836362",
+      "metadata": {},
+      "text": "CMED",
+      "mimic_type": "SERVICE"
+    },
+    {
+      "id": "N13",
+      "type": "LAB_TEST",
+      "name": "Laboratory testing",
+      "normalized_name": "laboratory_testing",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "evidence": "All admissions",
+      "metadata": {},
+      "text": "Laboratory testing",
+      "mimic_type": "LAB_TEST"
+    }
+  ],
+  "edges": [
+    {
+      "source": "N1",
+      "target": "N2",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22774359",
+      "evidence": "diagnoses",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95,
+      "source_id": "N1",
+      "target_id": "N2",
+      "type": "HAS_DIAGNOSIS",
+      "mimic_relation": "HAS_DIAGNOSIS",
+      "jepa_schema_valid": true,
+      "jepa_score": 0.96254,
+      "jepa_flag": "ok",
+      "jepa_revision_action": "keep"
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22774359",
+      "evidence": "diagnoses",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95,
+      "source_id": "N1",
+      "target_id": "N3",
+      "type": "HAS_DIAGNOSIS",
+      "mimic_relation": "HAS_DIAGNOSIS",
+      "jepa_schema_valid": true,
+      "jepa_score": 0.9427,
+      "jepa_flag": "ok",
+      "jepa_revision_action": "keep"
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "22774359",
+      "evidence": "diagnoses",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95,
+      "source_id": "N1",
+      "target_id": "N4",
+      "type": "HAS_DIAGNOSIS",
+      "mimic_relation": "HAS_DIAGNOSIS",
+      "jepa_schema_valid": true,
+      "jepa_score": 0.948015,
+      "jepa_flag": "ok",
+      "jepa_revision_action": "keep"
+    },
+    {
+      "source": "N1",
+      "target": "N5",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "28836362",
+      "evidence": "diagnoses",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95,
+      "source_id": "N1",
+      "target_id": "N5",
+      "type": "HAS_DIAGNOSIS",
+      "mimic_relation": "HAS_DIAGNOSIS",
+      "jepa_schema_valid": true,
+      "jepa_score": 0.981051,
+      "jepa_flag": "ok",
+      "jepa_revision_action": "keep"
+    },
+    {
+      "source": "N1",
+      "target": "N6",
+      "relation": "HAS_DIAGNOSIS",
+      "source_type": "PATIENT",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21223482",
+      "evidence": "diagnoses",
+      "source_tables": [
+        "diagnoses"
+      ],
+      "confidence": 0.95,
+      "source_id": "N1",
+      "target_id": "N6",
+      "type": "HAS_DIAGNOSIS",
+      "mimic_relation": "HAS_DIAGNOSIS",
+      "jepa_schema_valid": true,
+      "jepa_score": 0.972546,
+      "jepa_flag": "ok",
+      "jepa_revision_action": "keep"
+    },
+    {
+      "source": "N1",
+      "target": "N7",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "22774359",
+      "evidence": "medications",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95,
+      "source_id": "N1",
+      "target_id": "N7",
+      "type": "TAKES_MEDICATION",
+      "mimic_relation": "TAKES_MEDICATION",
+      "jepa_schema_valid": true,
+      "jepa_score": 0.989001,
+      "jepa_flag": "ok",
+      "jepa_revision_action": "keep"
+    },
+    {
+      "source": "N1",
+      "target": "N8",
+      "relation": "TAKES_MEDICATION",
+      "source_type": "PATIENT",
+      "target_type": "MEDICATION",
+      "hadm_id": "28836362",
+      "evidence": "medications",
+      "source_tables": [
+        "medications"
+      ],
+      "confidence": 0.95,
+      "source_id": "N1",
+      "target_id": "N8",
+      "type": "TAKES_MEDICATION",
+      "mimic_relation": "TAKES_MEDICATION",
+      "jepa_schema_valid": true,
+      "jepa_score": 0.985558,
+      "jepa_flag": "ok",
+      "jepa_revision_action": "keep"
+    },
+    {
+      "source": "N1",
+      "target": "N9",
+      "relation": "HAD_MICROBIOLOGY",
+      "source_type": "PATIENT",
+      "target_type": "MICROBIOLOGY",
+      "hadm_id": "21616816",
+      "evidence": "microbiology",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.95,
+      "source_id": "N1",
+      "target_id": "N9",
+      "type": "HAD_MICROBIOLOGY",
+      "mimic_relation": "HAD_MICROBIOLOGY",
+      "jepa_schema_valid": true,
+      "jepa_score": 0.964131,
+      "jepa_flag": "ok",
+      "jepa_revision_action": "keep"
+    },
+    {
+      "source": "N1",
+      "target": "N10",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "21616816",
+      "evidence": "services",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95,
+      "source_id": "N1",
+      "target_id": "N10",
+      "type": "MANAGED_BY_SERVICE",
+      "mimic_relation": "MANAGED_BY_SERVICE",
+      "jepa_schema_valid": true,
+      "jepa_score": 0.985488,
+      "jepa_flag": "ok",
+      "jepa_revision_action": "keep"
+    },
+    {
+      "source": "N1",
+      "target": "N11",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "25573783",
+      "evidence": "services",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95,
+      "source_id": "N1",
+      "target_id": "N11",
+      "type": "MANAGED_BY_SERVICE",
+      "mimic_relation": "MANAGED_BY_SERVICE",
+      "jepa_schema_valid": true,
+      "jepa_score": 0.989441,
+      "jepa_flag": "ok",
+      "jepa_revision_action": "keep"
+    },
+    {
+      "source": "N1",
+      "target": "N12",
+      "relation": "MANAGED_BY_SERVICE",
+      "source_type": "PATIENT",
+      "target_type": "SERVICE",
+      "hadm_id": "28836362",
+      "evidence": "services",
+      "source_tables": [
+        "services"
+      ],
+      "confidence": 0.95,
+      "source_id": "N1",
+      "target_id": "N12",
+      "type": "MANAGED_BY_SERVICE",
+      "mimic_relation": "MANAGED_BY_SERVICE",
+      "jepa_schema_valid": true,
+      "jepa_score": 0.9892,
+      "jepa_flag": "ok",
+      "jepa_revision_action": "keep"
+    },
+    {
+      "source": "N1",
+      "target": "N13",
+      "relation": "HAD_LAB_TEST",
+      "source_type": "PATIENT",
+      "target_type": "LAB_TEST",
+      "hadm_id": "",
+      "evidence": "lab_tests",
+      "source_tables": [
+        "lab_tests"
+      ],
+      "confidence": 0.95,
+      "source_id": "N1",
+      "target_id": "N13",
+      "type": "HAD_LAB_TEST",
+      "mimic_relation": "HAD_LAB_TEST",
+      "jepa_schema_valid": true,
+      "jepa_score": 0.972387,
+      "jepa_flag": "ok",
+      "jepa_revision_action": "keep"
+    },
+    {
+      "source": "N2",
+      "target": "N7",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "22774359",
+      "evidence": "treatment",
+      "source_tables": [],
+      "confidence": 0.8,
+      "source_id": "N2",
+      "target_id": "N7",
+      "type": "TREATED_BY",
+      "mimic_relation": "TREATED_BY",
+      "jepa_schema_valid": true,
+      "jepa_score": 0.987373,
+      "jepa_flag": "ok",
+      "jepa_revision_action": "keep"
+    },
+    {
+      "source": "N3",
+      "target": "N7",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "22774359",
+      "evidence": "treatment",
+      "source_tables": [],
+      "confidence": 0.8,
+      "source_id": "N3",
+      "target_id": "N7",
+      "type": "TREATED_BY",
+      "mimic_relation": "TREATED_BY",
+      "jepa_schema_valid": true,
+      "jepa_score": 0.986817,
+      "jepa_flag": "ok",
+      "jepa_revision_action": "keep"
+    },
+    {
+      "source": "N4",
+      "target": "N7",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "22774359",
+      "evidence": "treatment",
+      "source_tables": [],
+      "confidence": 0.8,
+      "source_id": "N4",
+      "target_id": "N7",
+      "type": "TREATED_BY",
+      "mimic_relation": "TREATED_BY",
+      "jepa_schema_valid": true,
+      "jepa_score": 0.988381,
+      "jepa_flag": "ok",
+      "jepa_revision_action": "keep"
+    },
+    {
+      "source": "N5",
+      "target": "N8",
+      "relation": "TREATED_BY",
+      "source_type": "DIAGNOSIS",
+      "target_type": "MEDICATION",
+      "hadm_id": "28836362",
+      "evidence": "treatment",
+      "source_tables": [],
+      "confidence": 0.8,
+      "source_id": "N5",
+      "target_id": "N8",
+      "type": "TREATED_BY",
+      "mimic_relation": "TREATED_BY",
+      "jepa_schema_valid": true,
+      "jepa_score": 0.956106,
+      "jepa_flag": "ok",
+      "jepa_revision_action": "keep"
+    },
+    {
+      "source": "N9",
+      "target": "N2",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21616816",
+      "evidence": "microbiology",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.8,
+      "source_id": "N9",
+      "target_id": "N2",
+      "type": "CONFIRMS",
+      "mimic_relation": "CONFIRMS",
+      "jepa_schema_valid": true,
+      "jepa_score": 0.98126,
+      "jepa_flag": "ok",
+      "jepa_revision_action": "keep"
+    },
+    {
+      "source": "N9",
+      "target": "N3",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21616816",
+      "evidence": "microbiology",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.8,
+      "source_id": "N9",
+      "target_id": "N3",
+      "type": "CONFIRMS",
+      "mimic_relation": "CONFIRMS",
+      "jepa_schema_valid": true,
+      "jepa_score": 0.971642,
+      "jepa_flag": "ok",
+      "jepa_revision_action": "keep"
+    },
+    {
+      "source": "N9",
+      "target": "N4",
+      "relation": "CONFIRMS",
+      "source_type": "MICROBIOLOGY",
+      "target_type": "DIAGNOSIS",
+      "hadm_id": "21616816",
+      "evidence": "microbiology",
+      "source_tables": [
+        "microbiology"
+      ],
+      "confidence": 0.8,
+      "source_id": "N9",
+      "target_id": "N4",
+      "type": "CONFIRMS",
+      "mimic_relation": "CONFIRMS",
+      "jepa_schema_valid": true,
+      "jepa_score": 0.972571,
+      "jepa_flag": "ok",
+      "jepa_revision_action": "keep"
+    },
+    {
+      "source_id": "N2",
+      "target_id": "N3",
+      "type": "COMPLICATED_BY",
+      "evidence": "",
+      "turn_id": "",
+      "jepa_score": 0.872546,
+      "jepa_flag": "ok",
+      "jepa_revision_action": "add_candidate",
+      "jepa_suggested": true,
+      "jepa_unverified": true,
+      "jepa_candidate_rank": 1,
+      "jepa_source": "graph_jepa_v4_candidate_generation",
+      "jepa_schema_valid": true
+    }
+  ],
+  "subject_id": "10003019",
+  "hadm_ids": [
+    "23693618",
+    "25573783",
+    "21616816",
+    "24646702",
+    "20030125",
+    "27683372",
+    "22774359",
+    "21223482",
+    "20277210",
+    "21213148",
+    "25179393",
+    "20962108",
+    "28836362"
+  ],
+  "_method": "mimic_subkg_adapter",
+  "_source_path": "outputs/mimic_4/eval/10003019.json",
+  "_mimic_adapter": {
+    "dropped_nodes": 0,
+    "dropped_edges": 0
+  }
+}

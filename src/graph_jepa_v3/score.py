@@ -15,7 +15,7 @@ from typing import List, Tuple
 
 import torch
 
-from graph_jepa.data import RELATION_SCHEMA, adapt_mimic_subkg
+from graph_jepa.data import RELATION_SCHEMA, adapt_mimic_subkg, normalize_graph_edges
 from graph_jepa.encoders import build_encoder
 from graph_jepa.schema import EDGE_TYPE_TO_IDX, NODE_TYPE_TO_IDX, PatientGraph
 
@@ -424,13 +424,13 @@ def _load_graph_for_scoring(path: Path) -> PatientGraph:
     graph = PatientGraph.from_pipeline_json(data)
     errors = _schema_compatibility_errors(graph)
     if not errors:
-        return graph
+        return normalize_graph_edges(graph)
 
     if _looks_like_mimic_subkg(data):
         graph = adapt_mimic_subkg(data, source_path=path)
         errors = _schema_compatibility_errors(graph)
         if not errors:
-            return graph
+            return normalize_graph_edges(graph)
 
     raise ValueError(
         "KG is not compatible with the JEPA scoring schema "

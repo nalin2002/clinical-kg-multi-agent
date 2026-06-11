@@ -80,13 +80,46 @@ class ScoreConfig:
     weak_threshold_by_relation: Dict[str, float] = field(default_factory=lambda: {
         "CONFIRMS": 0.30,
         "LOCATED_AT": 0.15,
+        "ADMINISTERED_DURING": 0.85,
+        "DIAGNOSED_BY": 0.88,
+        "HAD_LAB_TEST": 0.90,
+        "HAD_MICROBIOLOGY": 0.90,
+        "HAS_DIAGNOSIS": 0.90,
+        "INVESTIGATED_BY": 0.88,
+        "MANAGED_BY_SERVICE": 0.90,
+        "MANAGED_FOR": 0.85,
+        "MONITORED_BY": 0.88,
+        "PERFORMED_FOR": 0.88,
+        "TAKES_MEDICATION": 0.90,
+        "TARGETS_ORGANISM": 0.90,
+        "TREATED_BY": 0.88,
+        "UNDERWENT_PROCEDURE": 0.90,
     })
     inconsistent_threshold_by_relation: Dict[str, float] = field(default_factory=lambda: {
         "CONFIRMS": 0.15,
         "LOCATED_AT": 0.08,
+        "ADMINISTERED_DURING": 0.65,
+        "DIAGNOSED_BY": 0.65,
+        "HAD_LAB_TEST": 0.75,
+        "HAD_MICROBIOLOGY": 0.75,
+        "HAS_DIAGNOSIS": 0.75,
+        "INVESTIGATED_BY": 0.65,
+        "MANAGED_BY_SERVICE": 0.75,
+        "MANAGED_FOR": 0.65,
+        "MONITORED_BY": 0.65,
+        "PERFORMED_FOR": 0.65,
+        "TAKES_MEDICATION": 0.75,
+        "TARGETS_ORGANISM": 0.70,
+        "TREATED_BY": 0.65,
+        "UNDERWENT_PROCEDURE": 0.75,
     })
     energy_temperature: float = 1.0
     prune_threshold: float | None = None
+    schema_invalid_score: float = 0.0
+    schema_unconstrained_relations: list[str] = field(default_factory=lambda: [
+        "ASSOCIATED_WITH",
+        "CO_OCCURS_WITH",
+    ])
     candidate_threshold: float = 0.85
     candidate_threshold_by_relation: Dict[str, float] = field(default_factory=lambda: {
         "INDICATES": 0.95,
@@ -95,6 +128,20 @@ class ScoreConfig:
         "CAUSES": 0.98,
         "LOCATED_AT": 0.95,
         "RULES_OUT": 0.99,
+        "ADMINISTERED_DURING": 0.94,
+        "DIAGNOSED_BY": 0.92,
+        "HAD_LAB_TEST": 0.97,
+        "HAD_MICROBIOLOGY": 0.97,
+        "HAS_DIAGNOSIS": 0.96,
+        "INVESTIGATED_BY": 0.93,
+        "MANAGED_BY_SERVICE": 0.97,
+        "MANAGED_FOR": 0.94,
+        "MONITORED_BY": 0.93,
+        "PERFORMED_FOR": 0.93,
+        "TAKES_MEDICATION": 0.96,
+        "TARGETS_ORGANISM": 0.94,
+        "TREATED_BY": 0.92,
+        "UNDERWENT_PROCEDURE": 0.96,
     })
     disabled_candidate_relations: list[str] = field(default_factory=lambda: [
     ])
@@ -131,9 +178,21 @@ class Config:
             int(train_dict["pretrain_epochs"]) + int(train_dict["finetune_epochs"])
         )
 
+        score_dict = dict(d.get("score", {}))
+        default_score = ScoreConfig()
+        for key in (
+            "weak_threshold_by_relation",
+            "inconsistent_threshold_by_relation",
+            "candidate_threshold_by_relation",
+        ):
+            if key in score_dict:
+                merged = dict(getattr(default_score, key))
+                merged.update(score_dict[key])
+                score_dict[key] = merged
+
         return cls(
             model=ModelConfig(**model_dict),
             train=TrainConfig(**train_dict),
-            score=ScoreConfig(**d.get("score", {})),
+            score=ScoreConfig(**score_dict),
             encoder=d.get("encoder", "mock"),
         )

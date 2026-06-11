@@ -10,6 +10,7 @@ from typing import List, Tuple
 import torch
 
 import graph_jepa_v3.score as _v3
+from graph_jepa.data import RELATION_SCHEMA, canonical_relation
 from graph_jepa.encoders import build_encoder
 from graph_jepa.schema import EDGE_TYPE_TO_IDX, PatientGraph
 
@@ -34,7 +35,63 @@ _schema_compatibility_errors = _v3._schema_compatibility_errors
 _update_disabled_relations = _v3._update_disabled_relations
 _update_relation_thresholds = _v3._update_relation_thresholds
 _validate_checkpoint_relation_capacity = _v3._validate_checkpoint_relation_capacity
-score_graph = _v3.score_graph
+
+
+def _edge_schema_error(graph: PatientGraph, edge: dict, cfg: Config) -> str | None:
+    id_to_idx = graph.id_to_index()
+    s_idx = id_to_idx.get(edge.get("source_id"))
+    t_idx = id_to_idx.get(edge.get("target_id"))
+    if s_idx is None:
+        return f"missing source node {edge.get('source_id')!r}"
+    if t_idx is None:
+        return f"missing target node {edge.get('target_id')!r}"
+
+    relation = canonical_relation(edge.get("type"))
+    unconstrained = {_normalise_relation(r) for r in cfg.score.schema_unconstrained_relations}
+    if relation and _normalise_relation(relation) in unconstrained:
+        return None
+
+    src_type = graph.nodes[s_idx].get("type")
+    tgt_type = graph.nodes[t_idx].get("type")
+    allowed_targets = RELATION_SCHEMA.get((src_type, relation))
+    if not allowed_targets:
+        return f"no schema rule for {src_type} --{relation}-->"
+    if tgt_type not in allowed_targets:
+        allowed = ", ".join(sorted(allowed_targets))
+        return f"{src_type} --{relation}--> {tgt_type} violates schema target {{{allowed}}}"
+    return None
+
+
+def _apply_schema_guard(
+    graph: PatientGraph,
+    scores: List[float],
+    flags: List[str],
+    cfg: Config,
+) -> None:
+    for idx, edge in enumerate(graph.edges):
+        error = _edge_schema_error(graph, edge, cfg)
+        if error is None:
+            edge["jepa_schema_valid"] = True
+            edge.pop("jepa_schema_error", None)
+            continue
+
+        edge["jepa_schema_valid"] = False
+        edge["jepa_schema_error"] = error
+        scores[idx] = min(scores[idx], cfg.score.schema_invalid_score)
+        flags[idx] = "inconsistent"
+
+
+@torch.no_grad()
+def score_graph(
+    graph: PatientGraph,
+    model: GraphJEPAv4,
+    encoder,
+    cfg: Config,
+    device: torch.device,
+) -> Tuple[List[float], List[str]]:
+    scores, flags = _v3.score_graph(graph, model, encoder, cfg, device)
+    _apply_schema_guard(graph, scores, flags, cfg)
+    return scores, flags
 
 
 def _load(checkpoint: str, device: torch.device, encoder_cache: str):
@@ -75,6 +132,7 @@ def _append_candidate_edges(
                 "jepa_unverified": True,
                 "jepa_candidate_rank": rank,
                 "jepa_source": "graph_jepa_v4_candidate_generation",
+                "jepa_schema_valid": True,
             }
         )
     return len(scored)

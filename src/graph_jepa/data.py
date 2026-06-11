@@ -41,15 +41,22 @@ RELATION_SCHEMA: Dict[Tuple[str, str], Set[str]] = {
     (NodeType.SYMPTOM.value, EdgeType.LOCATED_AT.value): {
         NodeType.LOCATION.value,
     },
+    (NodeType.DIAGNOSIS.value, EdgeType.LOCATED_AT.value): {
+        NodeType.LOCATION.value,
+    },
     (NodeType.TREATMENT.value, EdgeType.TAKEN_FOR.value): {
         NodeType.SYMPTOM.value,
         NodeType.DIAGNOSIS.value,
+        NodeType.MEDICAL_HISTORY.value,
     },
     (NodeType.PROCEDURE.value, EdgeType.RULES_OUT.value): {
         NodeType.DIAGNOSIS.value,
     },
     (NodeType.PROCEDURE.value, EdgeType.CONFIRMS.value): {
         NodeType.DIAGNOSIS.value,
+    },
+    (NodeType.PROCEDURE.value, EdgeType.LOCATED_AT.value): {
+        NodeType.LOCATION.value,
     },
     (NodeType.MEDICAL_HISTORY.value, EdgeType.CAUSES.value): {
         NodeType.DIAGNOSIS.value,
@@ -61,6 +68,10 @@ RELATION_SCHEMA: Dict[Tuple[str, str], Set[str]] = {
         NodeType.DIAGNOSIS.value,
     },
     (NodeType.LAB_RESULT.value, EdgeType.CONFIRMS.value): {
+        NodeType.SYMPTOM.value,
+        NodeType.DIAGNOSIS.value,
+    },
+    (NodeType.LAB_RESULT.value, EdgeType.RULES_OUT.value): {
         NodeType.DIAGNOSIS.value,
     },
     # MIMIC-IV sub-KG relations.
@@ -98,11 +109,17 @@ RELATION_SCHEMA: Dict[Tuple[str, str], Set[str]] = {
     (NodeType.DIAGNOSIS.value, EdgeType.MONITORED_BY.value): {
         NodeType.LAB_TEST.value,
     },
+    (NodeType.DIAGNOSIS.value, EdgeType.COMPLICATED_BY.value): {
+        NodeType.DIAGNOSIS.value,
+    },
     (NodeType.MICROBIOLOGY.value, EdgeType.CONFIRMS.value): {
         NodeType.DIAGNOSIS.value,
     },
     (NodeType.MEDICATION.value, EdgeType.TARGETS_ORGANISM.value): {
         NodeType.MICROBIOLOGY.value,
+    },
+    (NodeType.MEDICATION.value, EdgeType.PART_OF_REGIMEN.value): {
+        NodeType.MEDICATION.value,
     },
     (NodeType.PROCEDURE.value, EdgeType.PERFORMED_FOR.value): {
         NodeType.DIAGNOSIS.value,
@@ -116,9 +133,96 @@ RELATION_SCHEMA: Dict[Tuple[str, str], Set[str]] = {
 }
 
 
+RELATION_ALIASES: Dict[str, str] = {
+    EdgeType.DIAGNORED_BY.value: EdgeType.DIAGNOSED_BY.value,
+    EdgeType.HAD_PROCEDURE.value: EdgeType.UNDERWENT_PROCEDURE.value,
+    EdgeType.HAS_MEDICATION.value: EdgeType.TAKES_MEDICATION.value,
+    EdgeType.HAS_MICROBIOLOGY.value: EdgeType.HAD_MICROBIOLOGY.value,
+    EdgeType.MANAGES_FOR.value: EdgeType.MANAGED_FOR.value,
+    EdgeType.TARGET_ORGANISM.value: EdgeType.TARGETS_ORGANISM.value,
+}
+
+
+def canonical_relation(relation: str) -> str:
+    """Return the canonical relation label for known aliases/typos."""
+
+    normalized = str(relation or "").strip().upper()
+    return RELATION_ALIASES.get(normalized, normalized)
+
+
 def is_plausible_typed(src_type: str, relation: str, tgt_type: str) -> bool:
     """True if ``(src_type) -[relation]-> (tgt_type)`` obeys the typed schema."""
-    return tgt_type in RELATION_SCHEMA.get((src_type, relation), set())
+    return tgt_type in RELATION_SCHEMA.get((src_type, canonical_relation(relation)), set())
+
+
+def normalize_edge_for_schema(edge: dict, node_type_by_id: Dict[str, str]) -> dict:
+    """Canonicalize relation aliases and common reverse-direction edge forms."""
+
+    source_id = str(edge.get("source_id") or edge.get("source") or "")
+    target_id = str(edge.get("target_id") or edge.get("target") or "")
+    relation = canonical_relation(str(edge.get("type") or edge.get("relation") or ""))
+    if not source_id or not target_id or not relation:
+        return edge
+
+    original_source_id = source_id
+    original_target_id = target_id
+    original_relation = str(edge.get("type") or edge.get("relation") or "").strip().upper()
+    src_type = node_type_by_id.get(source_id)
+    tgt_type = node_type_by_id.get(target_id)
+
+    if (
+        src_type == NodeType.DIAGNOSIS.value
+        and relation == EdgeType.TAKES_MEDICATION.value
+        and tgt_type == NodeType.MEDICATION.value
+    ):
+        relation = EdgeType.TREATED_BY.value
+    elif (
+        src_type == NodeType.DIAGNOSIS.value
+        and relation == EdgeType.MANAGED_BY_SERVICE.value
+        and tgt_type == NodeType.SERVICE.value
+    ):
+        source_id, target_id = target_id, source_id
+        relation = EdgeType.MANAGED_FOR.value
+        src_type, tgt_type = tgt_type, src_type
+
+    if (
+        src_type
+        and tgt_type
+        and not is_plausible_typed(src_type, relation, tgt_type)
+        and is_plausible_typed(tgt_type, relation, src_type)
+    ):
+        source_id, target_id = target_id, source_id
+
+    if (
+        source_id != original_source_id
+        or target_id != original_target_id
+        or relation != original_relation
+    ):
+        edge.setdefault(
+            "jepa_normalized_from",
+            {
+                "source_id": original_source_id,
+                "target_id": original_target_id,
+                "type": original_relation,
+            },
+        )
+    edge["source_id"] = source_id
+    edge["target_id"] = target_id
+    edge["type"] = relation
+    return edge
+
+
+def normalize_graph_edges(graph: PatientGraph) -> PatientGraph:
+    """Normalize edge labels/directions in-place and return ``graph``."""
+
+    node_type_by_id = {
+        str(node["id"]): str(node.get("type", "")).upper()
+        for node in graph.nodes
+        if node.get("id")
+    }
+    for edge in graph.edges:
+        normalize_edge_for_schema(edge, node_type_by_id)
+    return graph
 
 
 # --------------------------------------------------------------------------- #
@@ -175,6 +279,7 @@ def _adapt_mimic_node(node: dict) -> dict:
 
 def _adapt_mimic_edge(
     edge: dict,
+    node_type_by_id: Dict[str, str],
 ) -> dict | None:
     source_id = edge.get("source_id") or edge.get("source")
     target_id = edge.get("target_id") or edge.get("target")
@@ -187,7 +292,7 @@ def _adapt_mimic_edge(
     adapted["target_id"] = target_id
     adapted["type"] = relation
     adapted["mimic_relation"] = edge.get("relation") or edge.get("type")
-    return adapted
+    return normalize_edge_for_schema(adapted, node_type_by_id)
 
 
 def adapt_mimic_subkg(data: dict, source_path: str | Path | None = None) -> PatientGraph:
@@ -201,9 +306,13 @@ def adapt_mimic_subkg(data: dict, source_path: str | Path | None = None) -> Pati
             continue
         nodes.append(adapted)
 
+    node_type_by_id = {
+        str(node["id"]): str(node.get("type", "")).upper()
+        for node in nodes
+    }
     edges: List[dict] = []
     for edge in data.get("edges", []):
-        adapted_edge = _adapt_mimic_edge(edge)
+        adapted_edge = _adapt_mimic_edge(edge, node_type_by_id)
         if adapted_edge is None:
             continue
         edges.append(adapted_edge)
