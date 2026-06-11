@@ -1,0 +1,757 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Graph-JEPA v4 Internal Workflow</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #15202b;
+      --muted: #5a6875;
+      --line: #d7e1ea;
+      --panel: #f7f9fb;
+      --panel-strong: #edf4fb;
+      --accent: #0b6bcb;
+      --accent-dark: #084f94;
+      --good: #0f7b4f;
+      --warn: #9a5b00;
+      --bad: #a83232;
+      --code: #101923;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: #ffffff;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 42px 28px 72px;
+    }
+
+    header {
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 6vw, 4.4rem);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 42px 0 12px;
+      padding-top: 8px;
+      font-size: 1.45rem;
+      line-height: 1.25;
+      letter-spacing: 0;
+      border-top: 1px solid var(--line);
+    }
+
+    h3 {
+      margin: 24px 0 8px;
+      font-size: 1.05rem;
+      letter-spacing: 0;
+    }
+
+    p {
+      max-width: 900px;
+      margin: 0 0 14px;
+    }
+
+    a {
+      color: var(--accent-dark);
+    }
+
+    .lede {
+      max-width: 940px;
+      color: var(--muted);
+      font-size: 1.12rem;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: var(--panel-strong);
+      color: var(--accent-dark);
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .toc {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin: 22px 0 28px;
+    }
+
+    .toc a {
+      display: block;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 10px 12px;
+      background: var(--panel);
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .toc a:hover {
+      border-color: var(--accent);
+      color: var(--accent-dark);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 18px 0 24px;
+    }
+
+    .tri-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin: 18px 0 24px;
+    }
+
+    .box {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 15px;
+      background: var(--panel);
+    }
+
+    .box h3 {
+      margin-top: 0;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin: 18px 0 24px;
+    }
+
+    .step {
+      min-height: 138px;
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--accent);
+      border-radius: 8px;
+      padding: 13px;
+      background: #ffffff;
+    }
+
+    .step strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 26px;
+      font-size: 0.95rem;
+    }
+
+    th,
+    td {
+      border-bottom: 1px solid var(--line);
+      padding: 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--panel);
+      font-weight: 700;
+    }
+
+    code,
+    pre {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    }
+
+    code {
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      padding: 1px 5px;
+      background: var(--panel);
+      font-size: 0.9em;
+    }
+
+    pre {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      background: var(--code);
+      color: #edf4fb;
+      line-height: 1.45;
+    }
+
+    pre code {
+      display: block;
+      border: 0;
+      border-radius: 0;
+      padding: 0;
+      background: transparent;
+      color: inherit;
+      font-size: inherit;
+    }
+
+    ul,
+    ol {
+      padding-left: 24px;
+      max-width: 900px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .good {
+      color: var(--good);
+      font-weight: 700;
+    }
+
+    .warn {
+      color: var(--warn);
+      font-weight: 700;
+    }
+
+    .bad {
+      color: var(--bad);
+      font-weight: 700;
+    }
+
+    .formula {
+      border-left: 4px solid var(--accent);
+      padding: 12px 14px;
+      margin: 16px 0 22px;
+      background: var(--panel);
+      max-width: 900px;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 900px) {
+      main {
+        padding: 30px 18px 54px;
+      }
+
+      .toc,
+      .grid,
+      .tri-grid,
+      .flow {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="tag">Detailed internals</div>
+      <h1>Graph-JEPA v4 Internal Workflow</h1>
+      <p class="lede">
+        This document explains the v4 clinical KG revision pipeline from graph
+        loading through schema sanitization, masked pretraining, joint fine-tuning,
+        schema-aware edge revision, scoring, candidate generation, and pruning.
+      </p>
+      <p class="small">
+        Companion overview:
+        <a href="./graph_revision_v4.html">graph_revision_v4.html</a>
+      </p>
+    </header>
+
+    <nav class="toc" aria-label="Table of contents">
+      <a href="#goal">1. Goal</a>
+      <a href="#inputs">2. Inputs and Setup</a>
+      <a href="#preprocessing">3. Graph Preprocessing</a>
+      <a href="#patches">4. Patch Creation</a>
+      <a href="#architecture">5. Architecture</a>
+      <a href="#pretrain">6. Stage 1 Pretraining</a>
+      <a href="#finetune">7. Stage 2 Fine-tuning</a>
+      <a href="#revision-loss">8. Schema Revision Loss</a>
+      <a href="#inference">9. Inference</a>
+      <a href="#commands">10. Commands</a>
+      <a href="#improvements">11. Improvements over v3</a>
+      <a href="#limits">12. Limits</a>
+    </nav>
+
+    <section id="goal">
+      <h2>1. Goal</h2>
+      <p>
+        v4 keeps the v3 revision question:
+      </p>
+      <div class="formula">
+        <code>Should this typed edge exist in this specific patient graph?</code>
+      </div>
+      <p>
+        The difference is how the model is trained and how schema mistakes are
+        handled. v4 first learns graph patch representations without the edge
+        revision objective. Then it fine-tunes with both representation and
+        revision losses while treating schema-invalid observed edges as negatives.
+      </p>
+      <pre><code>pretrain_loss = jepa_weight * patch_jepa_loss
+
+finetune_loss = jepa_weight * patch_jepa_loss
+              + revision_weight * schema_aware_revision_loss</code></pre>
+    </section>
+
+    <section id="inputs">
+      <h2>2. Inputs and Setup</h2>
+      <p>
+        v4 uses the same patient KG JSON contract as the earlier Graph-JEPA
+        versions. It can train from synthetic graphs, MIMIC graphs, MIMIC
+        sub-KGs, or ACI-Bench KGs.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Data option</th>
+            <th>Builder</th>
+            <th>Typical source</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>synthetic</code></td>
+            <td><code>SyntheticGraphGenerator</code></td>
+            <td>Generated toy graphs for smoke tests.</td>
+          </tr>
+          <tr>
+            <td><code>mimic</code></td>
+            <td><code>MimicGraphBuilder</code></td>
+            <td>MIMIC source tables and optional notes.</td>
+          </tr>
+          <tr>
+            <td><code>mimic-subkgs</code></td>
+            <td><code>MimicSubKGGraphBuilder</code></td>
+            <td>JSON sub-KGs such as <code>outputs/graphs_multi_agent/sub_kgs</code>.</td>
+          </tr>
+          <tr>
+            <td><code>aci-bench</code></td>
+            <td><code>AciBenchGraphBuilder</code></td>
+            <td>Cooperative multi-agent ACI-Bench output KGs.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        The saved checkpoints are deliberately separated:
+      </p>
+      <pre><code>graph_jepa_v4_pretrain.pt  # masked pretraining checkpoint
+graph_jepa_v4.pt           # final joint fine-tuned checkpoint</code></pre>
+    </section>
+
+    <section id="preprocessing">
+      <h2>3. Graph Preprocessing</h2>
+      <p>
+        Tensor conversion is inherited from v3 through
+        <code>src/graph_jepa_v4/data.py</code>. Each node receives a typed text
+        embedding and each valid relation name receives an integer edge type.
+      </p>
+      <pre><code>{
+  "nodes": [
+    {"id": "N_006", "text": "shortness of breath", "type": "SYMPTOM"}
+  ],
+  "edges": [
+    {"source_id": "N_006", "target_id": "N_001", "type": "INDICATES"}
+  ]
+}</code></pre>
+      <table>
+        <thead>
+          <tr>
+            <th>Tensor</th>
+            <th>Shape</th>
+            <th>Meaning</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>x</code></td>
+            <td><code>[num_nodes, encoder_dim]</code></td>
+            <td>Embedding of each <code>(node.type, node.text)</code> pair.</td>
+          </tr>
+          <tr>
+            <td><code>node_type</code></td>
+            <td><code>[num_nodes]</code></td>
+            <td>Integer schema type for each node.</td>
+          </tr>
+          <tr>
+            <td><code>edge_index</code></td>
+            <td><code>[2, num_edges]</code></td>
+            <td>Source and target node indices.</td>
+          </tr>
+          <tr>
+            <td><code>edge_type</code></td>
+            <td><code>[num_edges]</code></td>
+            <td>Integer relation ID for each edge.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Schema masks</h3>
+      <p>
+        v4 adds a schema pass in <code>src/graph_jepa_v4/model.py</code>. For
+        each observed edge, it compares the source node type, relation, and target
+        node type against <code>RELATION_SCHEMA</code>.
+      </p>
+      <pre><code>schema_valid, schema_invalid, unconstrained = _schema_edge_masks(data)
+message_mask = schema_valid | unconstrained</code></pre>
+      <p>
+        Unconstrained relations such as <code>ASSOCIATED_WITH</code> and
+        <code>CO_OCCURS_WITH</code> are allowed to remain in message passing.
+        Typed-invalid edges are removed from message passing and later used as
+        negative training examples.
+      </p>
+    </section>
+
+    <section id="patches">
+      <h2>4. Patch Creation</h2>
+      <p>
+        Patch construction is inherited from v3 through
+        <code>src/graph_jepa_v4/patches.py</code>. v4 builds patches after
+        schema sanitization, so masked pretraining sees a cleaner graph.
+      </p>
+      <pre><code>message_data = sanitized_graph_data(data)
+patch_data = build_patch_data(
+    message_data,
+    num_patches=8,
+    patch_pe_dim=8,
+)</code></pre>
+      <p>
+        The patcher uses balanced multi-source BFS: seed high-degree and far-apart
+        nodes, grow local BFS regions, keep patch sizes roughly balanced, and
+        assign leftover disconnected nodes to the smallest available patch.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Patch object</th>
+            <th>Meaning</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>assignment</code></td>
+            <td>Node-to-patch mapping.</td>
+          </tr>
+          <tr>
+            <td><code>patch_nodes</code></td>
+            <td>Original node indices inside each patch.</td>
+          </tr>
+          <tr>
+            <td><code>patch_edge_index</code></td>
+            <td>Coarsened patch graph edges.</td>
+          </tr>
+          <tr>
+            <td><code>patch_pos</code></td>
+            <td>Patch size, degree, and random-walk style structural features.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="architecture">
+      <h2>5. Architecture</h2>
+      <p>
+        <code>GraphJEPAv4</code> subclasses <code>GraphJEPAv3</code>. The node
+        encoder, patch transformer, EMA target branch, predictor, and edge
+        plausibility head are the same architecture. The v4 difference is in the
+        training pipeline, schema-aware loss, and scoring guard.
+      </p>
+      <div class="flow">
+        <div class="step">
+          <strong>1. Node encoder</strong>
+          Typed-edge GNN turns node text embeddings into contextual node latents.
+        </div>
+        <div class="step">
+          <strong>2. Patch pooling</strong>
+          Node latents are mean-pooled into patch latents.
+        </div>
+        <div class="step">
+          <strong>3. Patch transformer</strong>
+          Context and target branches encode masked and unmasked patch structure.
+        </div>
+        <div class="step">
+          <strong>4. Edge head</strong>
+          Scores typed triples for keep, prune, add, or reject decisions.
+        </div>
+      </div>
+      <p>
+        The context branch receives masked patch content and learns by gradient.
+        The target branch receives the full graph and is updated by exponential
+        moving average:
+      </p>
+      <pre><code>target_weights = decay * target_weights
+               + (1 - decay) * context_weights</code></pre>
+    </section>
+
+    <section id="pretrain">
+      <h2>6. Stage 1 Pretraining</h2>
+      <p>
+        The first stage runs <code>graph_jepa_v4.pretrain</code>. It trains only
+        the masked patch prediction objective.
+      </p>
+      <pre><code>use_revision = False
+loss = jepa_weight * patch_jepa_loss</code></pre>
+      <p>
+        In each batch:
+      </p>
+      <ol>
+        <li>Load a PyG batch of patient graphs.</li>
+        <li>Remove typed-invalid edges from message passing with <code>sanitized_graph_data</code>.</li>
+        <li>Build balanced BFS patches on the sanitized graph.</li>
+        <li>Sample context and target patches.</li>
+        <li>Predict EMA target patch representations from masked context representations.</li>
+        <li>Update the online model by gradient and the target model by EMA.</li>
+      </ol>
+      <p>
+        The checkpoint stores the model weights and config in
+        <code>graph_jepa_v4_pretrain.pt</code> plus <code>config_v4_pretrain.json</code>.
+      </p>
+    </section>
+
+    <section id="finetune">
+      <h2>7. Stage 2 Fine-tuning</h2>
+      <p>
+        The second stage runs <code>graph_jepa_v4.finetune</code>. It loads the
+        masked-pretrained checkpoint, preserves the recorded pretrain epoch count,
+        and trains both losses together.
+      </p>
+      <pre><code>model, cfg = load_model_checkpoint(pretrain_checkpoint)
+cfg.train.finetune_epochs = args.epochs
+cfg.train.epochs = cfg.train.pretrain_epochs + cfg.train.finetune_epochs
+
+loss = jepa_weight * patch_jepa_loss
+     + revision_weight * schema_aware_revision_loss</code></pre>
+      <p>
+        Fine-tuning still builds patches from sanitized message data, but the
+        revision loss receives the original graph so observed schema-invalid
+        edges can become negative examples.
+      </p>
+    </section>
+
+    <section id="revision-loss">
+      <h2>8. Schema Revision Loss</h2>
+      <p>
+        v4 changes the edge-revision objective while keeping the same keep,
+        prune, add, and reject semantics.
+      </p>
+
+      <h3>Positive examples</h3>
+      <p>
+        Only schema-valid observed typed edges are positives. Some of those
+        positives are hidden from message passing with
+        <code>revision_mask_ratio</code> so the model learns missing-edge recovery.
+      </p>
+      <pre><code>pos_mask = schema_valid
+hidden[pos_idx] = random_mask(probability=revision_mask_ratio)
+keep = message_mask &amp; ~hidden</code></pre>
+
+      <h3>Negative examples</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Negative source</th>
+            <th>How it is created</th>
+            <th>What it teaches</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Schema-valid absent triples</td>
+            <td>Sampled from the same graph using v3 hard-negative logic.</td>
+            <td>Do not add plausible but unsupported edges.</td>
+          </tr>
+          <tr>
+            <td>Observed schema-invalid triples</td>
+            <td>Already present in the input KG but incompatible with <code>RELATION_SCHEMA</code>.</td>
+            <td>Do not learn extractor artifacts as truth.</td>
+          </tr>
+          <tr>
+            <td>Reversed invalid triples</td>
+            <td>Reverse valid positives when the reversed relation would violate the schema.</td>
+            <td>Respect edge direction.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Relation-balanced BCE</h3>
+      <p>
+        v4 computes binary cross entropy per example, then averages by relation
+        and label cells. This prevents frequent relation types from washing out
+        rare relation mistakes.
+      </p>
+      <pre><code>for relation in unique(relations):
+    for label in [0, 1]:
+        cell_loss = mean(bce[relation == rel and labels == label])
+    relation_loss = mean(cell_losses)
+
+revision_loss = mean(relation_losses)</code></pre>
+      <p>
+        The training logs expose <code>revision_invalid_neg</code>,
+        <code>revision_reverse_neg</code>, <code>revision_hidden</code>, and
+        <code>schema_dropped_edges</code>, which are useful for checking that the
+        schema-aware path is active.
+      </p>
+    </section>
+
+    <section id="inference">
+      <h2>9. Inference</h2>
+      <h3>Existing edge scoring</h3>
+      <p>
+        v4 calls the v3 scorer, then applies a schema guard. The base score still
+        combines the edge head probability with a patch structural score:
+      </p>
+      <pre><code>p_head = sigmoid(edge_head(z_source, z_target, relation))
+structural = exp(-patch_prediction_energy / energy_temperature)
+score = alpha * p_head + (1 - alpha) * structural</code></pre>
+      <p>
+        The default <code>alpha</code> is <code>0.9</code>, so the edge head
+        dominates while patch energy remains a small structural signal.
+      </p>
+
+      <h3>Schema guard</h3>
+      <p>
+        After scoring, each edge is checked against <code>RELATION_SCHEMA</code>.
+        Invalid typed edges are annotated and forced into the inconsistent band.
+      </p>
+      <pre><code>if edge_schema_error(edge):
+    edge["jepa_schema_valid"] = False
+    edge["jepa_schema_error"] = error
+    score = min(score, schema_invalid_score)
+    flag = "inconsistent"
+else:
+    edge["jepa_schema_valid"] = True</code></pre>
+
+      <h3>Candidate addition</h3>
+      <p>
+        Candidate generation reuses the v3 candidate iterator and then writes v4
+        metadata for accepted additions:
+      </p>
+      <pre><code>{
+  "jepa_suggested": true,
+  "jepa_unverified": true,
+  "jepa_source": "graph_jepa_v4_candidate_generation",
+  "jepa_schema_valid": true
+}</code></pre>
+      <p>
+        Relation-specific thresholds are stricter for many MIMIC-style relations,
+        such as <code>DIAGNOSED_BY</code>, <code>INVESTIGATED_BY</code>, and
+        <code>PERFORMED_FOR</code>. This keeps candidate additions conservative.
+      </p>
+    </section>
+
+    <section id="commands">
+      <h2>10. Commands</h2>
+      <h3>Pretrain on ACI-Bench KGs</h3>
+      <pre><code>PYTHONPATH=src python -m graph_jepa_v4.pretrain \
+  --data aci-bench \
+  --aci-kg-path outputs/aci_bench/sub_kgs \
+  --out ckpts \
+  --encoder mock \
+  --gnn-backend pyg \
+  --epochs 50</code></pre>
+
+      <h3>Fine-tune from the pretrain checkpoint</h3>
+      <pre><code>PYTHONPATH=src python -m graph_jepa_v4.finetune \
+  --data aci-bench \
+  --aci-kg-path outputs/aci_bench/sub_kgs \
+  --checkpoint ckpts/graph_jepa_v4_pretrain.pt \
+  --out ckpts \
+  --epochs 50 \
+  --revision-weight 1.0 \
+  --revision-mask-ratio 0.25 \
+  --revision-neg-per-pos 3</code></pre>
+
+      <h3>Score a directory of KGs</h3>
+      <pre><code>PYTHONPATH=src python -m graph_jepa_v4.score \
+  --input outputs/aci_bench_val/sub_kgs \
+  --checkpoint ckpts/graph_jepa_v4.pt \
+  --output outputs/aci_bench_val/v4_scored \
+  --add-candidates \
+  --max-candidates 50</code></pre>
+
+      <h3>Use v4 in the end-to-end wrapper</h3>
+      <pre><code>GRAPH_JEPA_MODULE=graph_jepa_v4 \
+GRAPH_JEPA_CKPT=ckpts/graph_jepa_v4.pt \
+./run_aci_bench.sh</code></pre>
+    </section>
+
+    <section id="improvements">
+      <h2>11. Improvements over v3</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Problem in v3</th>
+            <th>v4 change</th>
+            <th>Effect</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Representation learning and revision learning started together.</td>
+            <td>Masked pretraining runs first; revision fine-tuning starts from that checkpoint.</td>
+            <td>Patch representations get a cleaner warm start before edge decisions dominate training.</td>
+          </tr>
+          <tr>
+            <td>All observed edges were effectively positive training signal.</td>
+            <td>Only schema-valid typed observed edges are positive.</td>
+            <td>Extractor or adapter artifacts are less likely to be reinforced.</td>
+          </tr>
+          <tr>
+            <td>Invalid observed edges could still participate in message passing.</td>
+            <td><code>sanitized_graph_data</code> removes typed-invalid edges from message passing.</td>
+            <td>Bad edge directions do not contaminate node and patch latents.</td>
+          </tr>
+          <tr>
+            <td>Hard negatives were mostly schema-valid absent triples.</td>
+            <td>v4 adds observed-invalid and reversed-invalid negatives.</td>
+            <td>The model learns both plausibility and clinical schema direction.</td>
+          </tr>
+          <tr>
+            <td>Frequent relations could dominate the edge loss.</td>
+            <td>Relation-balanced BCE averages by relation and label cell.</td>
+            <td>Rare relation mistakes receive a clearer learning signal.</td>
+          </tr>
+          <tr>
+            <td>High model scores could override type-schema impossibility.</td>
+            <td>The scoring guard caps invalid edges and records <code>jepa_schema_error</code>.</td>
+            <td>Outputs are easier to audit and safer for downstream review.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="limits">
+      <h2>12. Limits</h2>
+      <ul>
+        <li>Schema validity is not the same as clinical correctness.</li>
+        <li>Candidate additions still carry empty evidence and must remain unverified.</li>
+        <li>The schema guard depends on node typing quality in the input KG.</li>
+        <li>Training quality still depends on source KG coverage and extractor consistency.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

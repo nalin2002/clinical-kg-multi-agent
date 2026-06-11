@@ -142,6 +142,9 @@ RELATION_ALIASES: Dict[str, str] = {
     EdgeType.TARGET_ORGANISM.value: EdgeType.TARGETS_ORGANISM.value,
 }
 
+UNSCORED_MIMIC_NODE_TYPES = {"DRG"}
+UNSCORED_MIMIC_EDGE_TYPES = {"HAS_DRG"}
+
 
 def canonical_relation(relation: str) -> str:
     """Return the canonical relation label for known aliases/typos."""
@@ -299,7 +302,12 @@ def adapt_mimic_subkg(data: dict, source_path: str | Path | None = None) -> Pati
     """Normalize a MIMIC sub-KG JSON object without dropping raw KG semantics."""
 
     nodes: List[dict] = []
+    dropped_unsupported_nodes = 0
     for node in data.get("nodes", []):
+        source_type = str(node.get("type", "")).upper()
+        if source_type in UNSCORED_MIMIC_NODE_TYPES:
+            dropped_unsupported_nodes += 1
+            continue
         adapted = _adapt_mimic_node(node)
         node_id = adapted.get("id")
         if not node_id:
@@ -311,9 +319,22 @@ def adapt_mimic_subkg(data: dict, source_path: str | Path | None = None) -> Pati
         for node in nodes
     }
     edges: List[dict] = []
+    dropped_unsupported_edges = 0
+    dropped_dangling_edges = 0
     for edge in data.get("edges", []):
+        relation = canonical_relation(str(edge.get("type") or edge.get("relation") or ""))
+        if relation in UNSCORED_MIMIC_EDGE_TYPES:
+            dropped_unsupported_edges += 1
+            continue
+
         adapted_edge = _adapt_mimic_edge(edge, node_type_by_id)
         if adapted_edge is None:
+            continue
+        if (
+            adapted_edge["source_id"] not in node_type_by_id
+            or adapted_edge["target_id"] not in node_type_by_id
+        ):
+            dropped_dangling_edges += 1
             continue
         edges.append(adapted_edge)
 
@@ -324,6 +345,9 @@ def adapt_mimic_subkg(data: dict, source_path: str | Path | None = None) -> Pati
     extra["_mimic_adapter"] = {
         "dropped_nodes": len(data.get("nodes", [])) - len(nodes),
         "dropped_edges": len(data.get("edges", [])) - len(edges),
+        "dropped_unsupported_nodes": dropped_unsupported_nodes,
+        "dropped_unsupported_edges": dropped_unsupported_edges,
+        "dropped_dangling_edges": dropped_dangling_edges,
     }
     return PatientGraph(nodes=nodes, edges=edges, extra=extra)
 

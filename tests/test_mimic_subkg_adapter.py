@@ -145,6 +145,30 @@ class MimicSubKGAdapterTests(unittest.TestCase):
             {"source_id": "M", "target_id": "D", "type": "TREATED_BY"},
         )
 
+    def test_adapter_drops_unsupported_drg_metadata(self):
+        raw = {
+            "subject_id": "10000000",
+            "nodes": [
+                {"id": "P", "type": "PATIENT", "name": "Patient 10000000"},
+                {"id": "D", "type": "DIAGNOSIS", "name": "sepsis"},
+                {"id": "G", "type": "DRG", "name": "SEPTICEMIA W MCC"},
+            ],
+            "edges": [
+                {"source": "P", "target": "D", "relation": "HAS_DIAGNOSIS"},
+                {"source": "P", "target": "G", "relation": "HAS_DRG"},
+            ],
+        }
+
+        graph = adapt_mimic_subkg(raw)
+
+        self.assertEqual({node["id"] for node in graph.nodes}, {"P", "D"})
+        self.assertEqual(
+            [(edge["source_id"], edge["type"], edge["target_id"]) for edge in graph.edges],
+            [("P", "HAS_DIAGNOSIS", "D")],
+        )
+        self.assertEqual(graph.extra["_mimic_adapter"]["dropped_unsupported_nodes"], 1)
+        self.assertEqual(graph.extra["_mimic_adapter"]["dropped_unsupported_edges"], 1)
+
     def test_targeted_relation_schema_additions_are_plausible(self):
         self.assertTrue(is_plausible_typed("DIAGNOSIS", "LOCATED_AT", "LOCATION"))
         self.assertTrue(is_plausible_typed("PROCEDURE", "LOCATED_AT", "LOCATION"))
