@@ -68,6 +68,8 @@ class EdgeType(enum.Enum):
     TARGET_ORGANISM = "TARGET_ORGANISM"
     TREATED_BY = "TREATED_BY"
     UNDERWENT_PROCEDURE = "UNDERWENT_PROCEDURE"
+    USED_DURING = "USED_DURING"
+    DETECTS = "DETECTS"
 
 
 # Stable index maps (used to build embeddings / one-hots consistently).

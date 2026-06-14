@@ -54,6 +54,7 @@ RELATION_SCHEMA: Dict[Tuple[str, str], Set[str]] = {
     },
     (NodeType.PROCEDURE.value, EdgeType.CONFIRMS.value): {
         NodeType.DIAGNOSIS.value,
+        NodeType.SYMPTOM.value,
     },
     (NodeType.PROCEDURE.value, EdgeType.LOCATED_AT.value): {
         NodeType.LOCATION.value,
@@ -129,6 +130,12 @@ RELATION_SCHEMA: Dict[Tuple[str, str], Set[str]] = {
     },
     (NodeType.MEDICATION.value, EdgeType.ADMINISTERED_DURING.value): {
         NodeType.SERVICE.value,
+    },
+    (NodeType.MEDICATION.value, EdgeType.USED_DURING.value): {
+        NodeType.PROCEDURE.value,
+    },
+    (NodeType.PROCEDURE.value, EdgeType.DETECTS.value): {
+        NodeType.MICROBIOLOGY.value,
     },
 }
 
