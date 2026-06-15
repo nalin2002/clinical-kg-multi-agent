@@ -20,8 +20,8 @@ from pathlib import Path
 from huggingface_hub import snapshot_download
 
 
-DATASET_ID = "wmatbooth/fawkes-mimic-graphs-complete-v8-rows4000-5000-260613"
-DEFAULT_OUT = Path("data/fawkes-mimic-graphs-complete-v8-rows4000-5000-260613")
+DATASET_ID = "wmatbooth/fawkes-mimic-graphs-complete-v8-rows2000-3000-260613WMCopy3_260614"
+DEFAULT_OUT = Path("data/fawkes-mimic-graphs-complete-v8-rows2000-3000-260613WMCopy3_260614")
 DATA_FILE_SUFFIXES = (
     ".json",
     ".jsonl",

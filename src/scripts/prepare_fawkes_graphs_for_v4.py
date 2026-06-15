@@ -30,11 +30,30 @@ from typing import Any
 import pandas as pd
 
 
-DEFAULT_ROOT = Path("data/fawkes-mimic-graphs-complete-v8-rows4000-5000-260613")
-DEFAULT_OUT = Path("outputs/fawkes_mimic_graphs/v8_sub_kgs")
+DEFAULT_ROOT = Path("data/fawkes-mimic-graphs-complete-v8-rows2000-3000-260613")
+DEFAULT_OUT = Path("outputs/fawkes_mimic_graphs_2k_3k/sub_kgs")
 METHOD = "fawkes_mimic_graphs_complete_v8_parquet"
 REPAIRED_METHOD = f"{METHOD}_v4_schema_repaired"
-HIGH_CONFIDENCE_THRESHOLD = 0.90
+HIGH_CONFIDENCE_THRESHOLD = 0.80
+INFECTION_LIKE_TERMS = (
+    "abscess",
+    "bacteremia",
+    "bacteriuria",
+    "cellulitis",
+    "cholangitis",
+    "cystitis",
+    "empyema",
+    "endocarditis",
+    "infect",
+    "meningitis",
+    "osteomyelitis",
+    "peritonitis",
+    "pneumonia",
+    "pyelonephritis",
+    "sepsis",
+    "septic",
+    "urinary tract infection",
+)
 
 
 def normalize_text(value: Any) -> str:
@@ -174,12 +193,59 @@ def node_name(node: dict[str, Any] | None, fallback: str) -> str:
     )
 
 
+def is_infection_like_problem(node: dict[str, Any] | None) -> bool:
+    if not node:
+        return False
+    text = normalize_text(
+        " ".join(
+            str(node.get(key) or "")
+            for key in ("name", "normalized_name", "text")
+        )
+    )
+    return any(term in text for term in INFECTION_LIKE_TERMS)
+
+
 def confidence_at_least(value: Any, threshold: float = HIGH_CONFIDENCE_THRESHOLD) -> bool:
     value = clean_value(value)
     try:
         return float(value) >= threshold
     except (TypeError, ValueError):
         return False
+
+
+def confidence_value(edge: dict[str, Any]) -> float:
+    try:
+        return float(clean_value(edge.get("confidence")))
+    except (TypeError, ValueError):
+        return float("-inf")
+
+
+def deduplicate_edges(
+    edges: list[dict[str, Any]],
+    *,
+    repair_counts: Counter[str],
+) -> list[dict[str, Any]]:
+    grouped: dict[tuple[str, str, str], list[dict[str, Any]]] = {}
+    for edge in edges:
+        key = (
+            str(edge.get("source_id") or ""),
+            str(edge.get("target_id") or ""),
+            str(edge.get("type") or ""),
+        )
+        grouped.setdefault(key, []).append(edge)
+
+    deduped: list[dict[str, Any]] = []
+    for group in grouped.values():
+        if len(group) == 1:
+            deduped.append(group[0])
+            continue
+        kept = max(group, key=confidence_value)
+        kept = dict(kept)
+        kept["deduplicated_count"] = len(group)
+        repair_counts["duplicate_edge_groups_collapsed"] += 1
+        repair_counts["duplicate_edges_removed"] += len(group) - 1
+        deduped.append(kept)
+    return deduped
 
 
 def build_edge(
@@ -356,6 +422,46 @@ def build_edge(
             },
         }
     elif (
+        source_type == "MEDICATION"
+        and raw_relation == "COMPLICATED_BY"
+        and target_type == "DIAGNOSIS"
+    ):
+        relation = "CAUSES"
+        repair_counts["medication_complicated_by_to_diagnosis_causes_edges"] += 1
+        schema_repair = {
+            "action": "remap_medication_complication_to_causes",
+            "from": {
+                "source_id": raw_source_id,
+                "target_id": raw_target_id,
+                "type": raw_relation,
+            },
+            "to": {
+                "source_id": source_id,
+                "target_id": target_id,
+                "type": relation,
+            },
+        }
+    elif (
+        source_type == "PATIENT"
+        and raw_relation == "MANAGED_FOR"
+        and target_type == "MEDICATION"
+    ):
+        relation = "TAKES_MEDICATION"
+        repair_counts["patient_managed_for_medication_takes_edges"] += 1
+        schema_repair = {
+            "action": "remap_patient_managed_for_medication_to_takes_medication",
+            "from": {
+                "source_id": raw_source_id,
+                "target_id": raw_target_id,
+                "type": raw_relation,
+            },
+            "to": {
+                "source_id": source_id,
+                "target_id": target_id,
+                "type": relation,
+            },
+        }
+    elif (
         source_type == "DIAGNOSIS"
         and raw_relation == "INDICATES"
         and target_type == "DIAGNOSIS"
@@ -387,6 +493,72 @@ def build_edge(
         repair_counts["diagnosis_microbiology_complicated_by_to_confirms_edges"] += 1
         schema_repair = {
             "action": "remap_diagnosis_microbiology_complication_to_confirms",
+            "from": {
+                "source_id": raw_source_id,
+                "target_id": raw_target_id,
+                "type": raw_relation,
+            },
+            "to": {
+                "source_id": source_id,
+                "target_id": target_id,
+                "type": relation,
+            },
+        }
+    elif (
+        source_type == "DIAGNOSIS"
+        and raw_relation == "COMPLICATED_BY"
+        and target_type == "MEDICATION"
+    ):
+        relation = "ASSOCIATED_WITH"
+        repair_counts["diagnosis_complicated_by_medication_associated_edges"] += 1
+        schema_repair = {
+            "action": "remap_diagnosis_medication_complication_to_associated_with",
+            "from": {
+                "source_id": raw_source_id,
+                "target_id": raw_target_id,
+                "type": raw_relation,
+            },
+            "to": {
+                "source_id": source_id,
+                "target_id": target_id,
+                "type": relation,
+            },
+        }
+    elif (
+        source_type == "MICROBIOLOGY"
+        and raw_relation in {"CONFIRMS", "INDICATES"}
+        and target_type == "SYMPTOM"
+    ):
+        if is_infection_like_problem(target_node):
+            relation = "CONFIRMS"
+            repair_counts["microbiology_evidence_to_symptom_confirms_edges"] += 1
+            action = "remap_microbiology_symptom_evidence_to_confirms"
+        else:
+            relation = "ASSOCIATED_WITH"
+            repair_counts["microbiology_evidence_to_symptom_associated_edges"] += 1
+            action = "remap_microbiology_symptom_evidence_to_associated_with"
+        schema_repair = {
+            "action": action,
+            "from": {
+                "source_id": raw_source_id,
+                "target_id": raw_target_id,
+                "type": raw_relation,
+            },
+            "to": {
+                "source_id": source_id,
+                "target_id": target_id,
+                "type": relation,
+            },
+        }
+    elif (
+        source_type == "MICROBIOLOGY"
+        and raw_relation == "INDICATES"
+        and target_type == "DIAGNOSIS"
+    ):
+        relation = "CONFIRMS"
+        repair_counts["microbiology_indicates_diagnosis_confirms_edges"] += 1
+        schema_repair = {
+            "action": "remap_microbiology_indicates_diagnosis_to_confirms",
             "from": {
                 "source_id": raw_source_id,
                 "target_id": raw_target_id,
@@ -511,12 +683,84 @@ def build_edge(
     elif (
         source_type == "PROCEDURE"
         and target_type == "SYMPTOM"
-        and raw_relation in {"COMPLICATED_BY", "INDICATES"}
+        and raw_relation == "COMPLICATED_BY"
     ):
-        relation = "ASSOCIATED_WITH"
-        repair_counts["procedure_relation_to_symptom_associated_edges"] += 1
+        relation = "COMPLICATED_BY"
+        repair_counts["procedure_complicated_by_symptom_edges"] += 1
         schema_repair = {
-            "action": "remap_procedure_symptom_edge_to_associated_with",
+            "action": "retain_procedure_complicated_by_symptom",
+            "from": {
+                "source_id": raw_source_id,
+                "target_id": raw_target_id,
+                "type": raw_relation,
+            },
+            "to": {
+                "source_id": source_id,
+                "target_id": target_id,
+                "type": relation,
+            },
+        }
+    elif (
+        source_type == "PROCEDURE"
+        and target_type == "SYMPTOM"
+        and raw_relation == "INDICATES"
+    ):
+        relation = "PERFORMED_FOR"
+        repair_counts["procedure_indicates_symptom_performed_for_edges"] += 1
+        schema_repair = {
+            "action": "remap_procedure_indicates_symptom_to_performed_for",
+            "from": {
+                "source_id": raw_source_id,
+                "target_id": raw_target_id,
+                "type": raw_relation,
+            },
+            "to": {
+                "source_id": source_id,
+                "target_id": target_id,
+                "type": relation,
+            },
+        }
+    elif (
+        source_type == "SYMPTOM"
+        and raw_relation == "COMPLICATED_BY"
+        and target_type == "MICROBIOLOGY"
+    ):
+        if is_infection_like_problem(source_node):
+            source_id, target_id = target_id, source_id
+            source_node, target_node = target_node, source_node
+            source_type, target_type = target_type, source_type
+            relation = "CONFIRMS"
+            repair_counts["symptom_microbiology_complication_to_confirms_edges"] += 1
+            action = "remap_symptom_microbiology_complication_to_confirms"
+        else:
+            relation = "ASSOCIATED_WITH"
+            repair_counts["symptom_microbiology_complication_associated_edges"] += 1
+            action = "remap_symptom_microbiology_complication_to_associated_with"
+        schema_repair = {
+            "action": action,
+            "from": {
+                "source_id": raw_source_id,
+                "target_id": raw_target_id,
+                "type": raw_relation,
+            },
+            "to": {
+                "source_id": source_id,
+                "target_id": target_id,
+                "type": relation,
+            },
+        }
+    elif (
+        source_type == "SYMPTOM"
+        and raw_relation == "COMPLICATED_BY"
+        and target_type == "PROCEDURE"
+    ):
+        source_id, target_id = target_id, source_id
+        source_node, target_node = target_node, source_node
+        source_type, target_type = target_type, source_type
+        relation = "PERFORMED_FOR"
+        repair_counts["symptom_procedure_complication_to_performed_for_edges"] += 1
+        schema_repair = {
+            "action": "remap_symptom_procedure_complication_to_performed_for",
             "from": {
                 "source_id": raw_source_id,
                 "target_id": raw_target_id,
@@ -733,6 +977,7 @@ def main() -> None:
             build_edge(row, node_by_id=node_by_id, repair_counts=repair_counts)
             for _, row in edge_groups.get(raw_key, pd.DataFrame()).iterrows()
         ]
+        graph_edges = deduplicate_edges(graph_edges, repair_counts=repair_counts)
         if not graph_nodes:
             continue
 

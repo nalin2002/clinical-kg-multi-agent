@@ -1,4 +1,4 @@
-"""Pretrain Graph-JEPA v4 with masked patch prediction only."""
+"""Pretrain Graph-JEPA v5 with masked patch prediction only."""
 
 from __future__ import annotations
 
@@ -10,7 +10,7 @@ import torch
 from graph_jepa.encoders import build_encoder
 
 from .config import Config
-from .model import GraphJEPAv4
+from .model import GraphJEPAv5
 from .training import (
     PRETRAIN_CHECKPOINT_NAME,
     PRETRAIN_STAGE,
@@ -49,7 +49,7 @@ def pretrain(args) -> Path:
 
     dataset, train_loader = build_train_loader(args, cfg, encoder)
     print(
-        f"Loaded {len(dataset)} graphs for masked pretraining "
+        f"Loaded {len(dataset)} graphs for v5 masked pretraining "
         f"(encoder={args.encoder}, in_dim={cfg.model.in_dim}, "
         f"patches={cfg.model.num_patches}, batch_size={cfg.train.batch_size}, "
         f"gnn_backend={cfg.model.gnn_backend}, conv={cfg.model.conv})"
@@ -58,11 +58,11 @@ def pretrain(args) -> Path:
         args,
         cfg,
         len(dataset),
-        script="graph_jepa_v4.pretrain",
+        script="graph_jepa_v5.pretrain",
         checkpoint_name=PRETRAIN_CHECKPOINT_NAME,
     )
 
-    model = GraphJEPAv4(cfg.model).to(device)
+    model = GraphJEPAv5(cfg.model).to(device)
     optimizer = build_optimizer(model, cfg)
     train_epochs(
         model,
@@ -81,7 +81,7 @@ def pretrain(args) -> Path:
         cfg,
         args.out,
         checkpoint_name=PRETRAIN_CHECKPOINT_NAME,
-        config_name="config_v4_pretrain.json",
+        config_name="config_v5_pretrain.json",
     )
     if wandb_run:
         wandb_run.summary["checkpoint_path"] = str(ckpt_path)
@@ -90,12 +90,12 @@ def pretrain(args) -> Path:
 
 
 def build_arg_parser() -> argparse.ArgumentParser:
-    p = argparse.ArgumentParser(description="Pretrain Graph-JEPA v4 masked representations")
+    p = argparse.ArgumentParser(description="Pretrain Graph-JEPA v5 masked representations")
     add_data_args(p)
     add_runtime_args(p)
-    p.add_argument("--encoder", choices=["mock", "bge", "sapbert"], default="sapbert")
+    p.add_argument("--encoder", choices=["mock", "bge", "sapbert"], default="mock")
     p.add_argument("--mock-dim", type=int, default=256)
-    p.add_argument("--encoder-cache", default=".cache/graph_jepa_v4/encoder")
+    p.add_argument("--encoder-cache", default=".cache/graph_jepa_v5/encoder")
     p.add_argument("--conv", choices=["gine", "gat"], default="gine")
     p.add_argument("--gnn-backend", choices=["pyg", "torch"], default="pyg")
     p.add_argument("--num-patches", type=int, default=8)

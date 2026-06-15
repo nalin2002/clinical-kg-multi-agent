@@ -181,6 +181,10 @@ class MimicSubKGAdapterTests(unittest.TestCase):
         self.assertTrue(is_plausible_typed("PROCEDURE", "CONFIRMS", "SYMPTOM"))
         self.assertTrue(is_plausible_typed("MEDICATION", "USED_DURING", "PROCEDURE"))
         self.assertTrue(is_plausible_typed("PROCEDURE", "DETECTS", "MICROBIOLOGY"))
+        self.assertTrue(is_plausible_typed("MICROBIOLOGY", "CONFIRMS", "SYMPTOM"))
+        self.assertTrue(is_plausible_typed("MEDICATION", "CAUSES", "DIAGNOSIS"))
+        self.assertTrue(is_plausible_typed("PROCEDURE", "PERFORMED_FOR", "SYMPTOM"))
+        self.assertTrue(is_plausible_typed("PROCEDURE", "COMPLICATED_BY", "SYMPTOM"))
 
     def test_v3_score_loader_adapts_mimic_subkg_file(self):
         raw = {

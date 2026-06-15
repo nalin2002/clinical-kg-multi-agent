@@ -115,6 +115,10 @@ RELATION_SCHEMA: Dict[Tuple[str, str], Set[str]] = {
     },
     (NodeType.MICROBIOLOGY.value, EdgeType.CONFIRMS.value): {
         NodeType.DIAGNOSIS.value,
+        NodeType.SYMPTOM.value,
+    },
+    (NodeType.MEDICATION.value, EdgeType.CAUSES.value): {
+        NodeType.DIAGNOSIS.value,
     },
     (NodeType.MEDICATION.value, EdgeType.TARGETS_ORGANISM.value): {
         NodeType.MICROBIOLOGY.value,
@@ -124,6 +128,10 @@ RELATION_SCHEMA: Dict[Tuple[str, str], Set[str]] = {
     },
     (NodeType.PROCEDURE.value, EdgeType.PERFORMED_FOR.value): {
         NodeType.DIAGNOSIS.value,
+        NodeType.SYMPTOM.value,
+    },
+    (NodeType.PROCEDURE.value, EdgeType.COMPLICATED_BY.value): {
+        NodeType.SYMPTOM.value,
     },
     (NodeType.SERVICE.value, EdgeType.MANAGED_FOR.value): {
         NodeType.DIAGNOSIS.value,
