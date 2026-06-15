@@ -23,6 +23,39 @@ class TrainConfig(V4TrainConfig):
     ranking_neg_per_pos: int = 8
     ranking_max_pos: int = 256
     ranking_temperature: float = 0.2
+    llm_confidence_negatives: bool = False
+    llm_negative_threshold: float = 0.3
+    llm_positive_threshold: float = 0.8
+    llm_negative_threshold_by_relation: Dict[str, float] = field(
+        default_factory=lambda: {
+            "ASSOCIATED_WITH": 0.5,
+            "CAUSES": 0.5,
+            "CO_OCCURS_WITH": 0.5,
+            "COMPLICATED_BY": 0.5,
+            "CONFIRMS": 0.5,
+            "INDICATES": 0.5,
+            "PERFORMED_FOR": 0.5,
+            "TARGETS_ORGANISM": 0.5,
+            "TREATED_BY": 0.5,
+            "USED_DURING": 0.5,
+        }
+    )
+    llm_positive_threshold_by_relation: Dict[str, float] = field(
+        default_factory=lambda: {
+            "ASSOCIATED_WITH": 0.85,
+            "CAUSES": 0.9,
+            "CO_OCCURS_WITH": 0.85,
+            "COMPLICATED_BY": 0.9,
+            "CONFIRMS": 0.95,
+            "INDICATES": 0.9,
+            "PERFORMED_FOR": 0.9,
+            "TARGETS_ORGANISM": 0.9,
+            "TREATED_BY": 0.85,
+            "USED_DURING": 0.9,
+        }
+    )
+    llm_negative_weight: float = 0.2
+    clinical_artifact_filters: bool = False
 
 
 @dataclass
@@ -52,8 +85,23 @@ class Config:
             "ranking_neg_per_pos",
             "ranking_max_pos",
             "ranking_temperature",
+            "llm_confidence_negatives",
+            "llm_negative_threshold",
+            "llm_positive_threshold",
+            "clinical_artifact_filters",
         ):
             train_dict.setdefault(key, getattr(defaults, key))
+        for key in (
+            "llm_negative_threshold_by_relation",
+            "llm_positive_threshold_by_relation",
+        ):
+            merged = dict(getattr(defaults, key))
+            merged.update(train_dict.get(key, {}))
+            train_dict[key] = merged
+        train_dict.setdefault(
+            "llm_negative_weight",
+            defaults.llm_negative_weight,
+        )
         if "pretrain_epochs" not in train_dict:
             train_dict["pretrain_epochs"] = 0
         if "finetune_epochs" not in train_dict:

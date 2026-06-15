@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 
 import torch
+from torch_geometric.loader import DataLoader
 from tqdm.auto import tqdm
 
 from graph_jepa.encoders import build_encoder
@@ -15,19 +16,33 @@ from graph_jepa_v4.training import (
     apply_common_train_args,
     build_graphs,
     build_optimizer,
-    build_train_loader,
     ema_decay,
     init_wandb,
 )
 
 from .config import Config
-from .model import GraphJEPAv5, sanitized_graph_data
+from .data import PatientGraphDataset
+from .model import GraphJEPAv5, confidence_sanitized_graph_data, sanitized_graph_data
 from .patches import build_patch_data, sample_patch_task
 
 PRETRAIN_CHECKPOINT_NAME = "graph_jepa_v5_pretrain.pt"
 FINAL_CHECKPOINT_NAME = "graph_jepa_v5.pt"
 PRETRAIN_STAGE = "masked_pretrain"
 FINETUNE_STAGE = "candidate_rank_finetune"
+
+
+def build_train_loader(args, cfg: Config, encoder):
+    graphs = build_graphs(args, cfg)
+    dataset = PatientGraphDataset(graphs, encoder)
+    loader_gen = torch.Generator().manual_seed(cfg.train.seed)
+    loader = DataLoader(
+        dataset,
+        batch_size=cfg.train.batch_size,
+        shuffle=True,
+        num_workers=cfg.train.num_workers,
+        generator=loader_gen,
+    )
+    return dataset, loader
 
 
 def build_checkpoint_encoder(cfg: Config, encoder_cache: str):
@@ -87,9 +102,15 @@ def train_epochs(
             "ranking_ce": 0.0,
             "ranking_pos": 0.0,
             "ranking_neg": 0.0,
+            "ranking_llm_excluded": 0.0,
+            "ranking_artifact_excluded": 0.0,
             "patch_std": 0.0,
             "schema_dropped": 0.0,
+            "llm_dropped": 0.0,
             "revision_invalid_neg": 0.0,
+            "revision_llm_neg": 0.0,
+            "revision_artifact_neg": 0.0,
+            "revision_llm_ignored": 0.0,
         }
         n = 0
         progress = tqdm(
@@ -105,7 +126,31 @@ def train_epochs(
             if data.num_nodes < 2:
                 continue
             message_data = sanitized_graph_data(data)
-            schema_dropped = int(data.edge_index.size(1) - message_data.edge_index.size(1))
+            schema_dropped = int(
+                data.edge_index.size(1) - message_data.edge_index.size(1)
+            )
+            llm_dropped = 0
+            if use_revision and (
+                cfg.train.llm_confidence_negatives
+                or cfg.train.clinical_artifact_filters
+            ):
+                schema_edges = int(message_data.edge_index.size(1))
+                message_data = confidence_sanitized_graph_data(
+                    data,
+                    enabled=cfg.train.llm_confidence_negatives,
+                    negative_threshold=cfg.train.llm_negative_threshold,
+                    positive_threshold=cfg.train.llm_positive_threshold,
+                    negative_threshold_by_relation=(
+                        cfg.train.llm_negative_threshold_by_relation
+                    ),
+                    positive_threshold_by_relation=(
+                        cfg.train.llm_positive_threshold_by_relation
+                    ),
+                    clinical_artifact_filters=(
+                        cfg.train.clinical_artifact_filters
+                    ),
+                )
+                llm_dropped = schema_edges - int(message_data.edge_index.size(1))
 
             patch_data = build_patch_data(
                 message_data,
@@ -132,6 +177,19 @@ def train_epochs(
                     data,
                     mask_ratio=cfg.train.revision_mask_ratio,
                     neg_per_pos=cfg.train.revision_neg_per_pos,
+                    llm_confidence_negatives=cfg.train.llm_confidence_negatives,
+                    llm_negative_threshold=cfg.train.llm_negative_threshold,
+                    llm_positive_threshold=cfg.train.llm_positive_threshold,
+                    llm_negative_threshold_by_relation=(
+                        cfg.train.llm_negative_threshold_by_relation
+                    ),
+                    llm_positive_threshold_by_relation=(
+                        cfg.train.llm_positive_threshold_by_relation
+                    ),
+                    llm_negative_weight=cfg.train.llm_negative_weight,
+                    clinical_artifact_filters=(
+                        cfg.train.clinical_artifact_filters
+                    ),
                 )
                 ranking, klog = model.candidate_ranking_loss(
                     data,
@@ -139,6 +197,18 @@ def train_epochs(
                     neg_per_pos=cfg.train.ranking_neg_per_pos,
                     max_pos=cfg.train.ranking_max_pos,
                     temperature=cfg.train.ranking_temperature,
+                    llm_confidence_negatives=cfg.train.llm_confidence_negatives,
+                    llm_negative_threshold=cfg.train.llm_negative_threshold,
+                    llm_positive_threshold=cfg.train.llm_positive_threshold,
+                    llm_negative_threshold_by_relation=(
+                        cfg.train.llm_negative_threshold_by_relation
+                    ),
+                    llm_positive_threshold_by_relation=(
+                        cfg.train.llm_positive_threshold_by_relation
+                    ),
+                    clinical_artifact_filters=(
+                        cfg.train.clinical_artifact_filters
+                    ),
                 )
                 loss = (
                     cfg.train.jepa_weight * jepa
@@ -165,8 +235,20 @@ def train_epochs(
             agg["ranking_ce"] += klog["ranking_ce"]
             agg["ranking_pos"] += klog["ranking_pos"]
             agg["ranking_neg"] += klog["ranking_neg"]
+            agg["ranking_llm_excluded"] += klog.get("ranking_llm_excluded", 0.0)
+            agg["ranking_artifact_excluded"] += klog.get(
+                "ranking_artifact_excluded",
+                0.0,
+            )
             agg["schema_dropped"] += schema_dropped
+            agg["llm_dropped"] += llm_dropped
             agg["revision_invalid_neg"] += rlog.get("revision_invalid_neg", 0.0)
+            agg["revision_llm_neg"] += rlog.get("revision_llm_neg", 0.0)
+            agg["revision_artifact_neg"] += rlog.get(
+                "revision_artifact_neg",
+                0.0,
+            )
+            agg["revision_llm_ignored"] += rlog.get("revision_llm_ignored", 0.0)
             n += 1
             progress.set_postfix(
                 loss=f"{agg['loss']/n:.4f}",
@@ -186,8 +268,18 @@ def train_epochs(
             "train/ranking_ce": agg["ranking_ce"] / denom,
             "train/ranking_pos": agg["ranking_pos"] / denom,
             "train/ranking_neg": agg["ranking_neg"] / denom,
+            "train/ranking_llm_excluded": agg["ranking_llm_excluded"] / denom,
+            "train/ranking_artifact_excluded": (
+                agg["ranking_artifact_excluded"] / denom
+            ),
             "train/revision_invalid_neg": agg["revision_invalid_neg"] / denom,
+            "train/revision_llm_neg": agg["revision_llm_neg"] / denom,
+            "train/revision_artifact_neg": (
+                agg["revision_artifact_neg"] / denom
+            ),
+            "train/revision_llm_ignored": agg["revision_llm_ignored"] / denom,
             "train/schema_dropped_edges": agg["schema_dropped"] / denom,
+            "train/llm_dropped_edges": agg["llm_dropped"] / denom,
             "train/patch_std": agg["patch_std"] / denom,
             "train/lr": cfg.train.lr,
             "train/global_step": global_step,
