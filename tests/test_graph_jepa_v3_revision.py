@@ -200,11 +200,10 @@ class GraphJEPAv3RevisionTests(unittest.TestCase):
 
         self.assertNotIn((0, 1, EDGE_TYPE_TO_IDX["CONFIRMS"]), triples)
         self.assertTrue(
-            {
-                (0, 1, EDGE_TYPE_TO_IDX["RULES_OUT"]),
-                (0, 1, EDGE_TYPE_TO_IDX["PERFORMED_FOR"]),
-            }
-            & triples
+            any(
+                s == 0 and t == 1 and r != EDGE_TYPE_TO_IDX["CONFIRMS"]
+                for s, t, r in triples
+            )
         )
         self.assertIn((0, 2, EDGE_TYPE_TO_IDX["CONFIRMS"]), triples)
         self.assertTrue(

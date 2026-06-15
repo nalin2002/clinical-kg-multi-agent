@@ -296,6 +296,38 @@ def confidence_sanitized_graph_data(
     return masked
 
 
+def pretrain_sanitized_graph_data(
+    data,
+    *,
+    negative_threshold: float,
+    negative_threshold_by_relation: dict[str, float] | None = None,
+):
+    """Keep schema-valid edges except LLM weak negatives for pretraining."""
+
+    valid, _invalid, unconstrained = _schema_edge_masks(
+        data,
+        allow_unconstrained=True,
+    )
+    _trusted_positive, weak_negative, _ignored = _confidence_supervision_masks(
+        data,
+        enabled=True,
+        negative_threshold=negative_threshold,
+        positive_threshold=1.0,
+        negative_threshold_by_relation=negative_threshold_by_relation,
+    )
+    keep = (valid | unconstrained) & ~weak_negative
+    masked = _with_edge_mask(data, keep)
+    for field in (
+        "edge_llm_confidence",
+        "edge_is_llm",
+        "edge_clinical_artifact",
+    ):
+        values = getattr(data, field, None)
+        if values is not None and int(values.numel()) == int(keep.numel()):
+            setattr(masked, field, values[keep])
+    return masked
+
+
 def _weighted_relation_balanced_bce(
     logits: torch.Tensor,
     labels: torch.Tensor,
@@ -687,6 +719,7 @@ __all__ = [
     "TypedMessageLayer",
     "_sample_revision_negatives",
     "confidence_sanitized_graph_data",
+    "pretrain_sanitized_graph_data",
     "sanitized_graph_data",
     "update_ema",
     "vicreg_terms",

@@ -1,0 +1,855 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Graph-JEPA v5 Internal Workflow</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #15202b;
+      --muted: #5d6b78;
+      --line: #d9e2ea;
+      --panel: #f7f9fb;
+      --accent: #6552c7;
+      --accent-soft: #eeebff;
+      --good: #0f7b4f;
+      --warn: #9a5b00;
+      --bad: #a83232;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: #ffffff;
+      line-height: 1.58;
+    }
+
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 44px 28px 76px;
+    }
+
+    header {
+      padding-bottom: 28px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 5vw, 4rem);
+      line-height: 1.04;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 1.45rem;
+    }
+
+    h3 {
+      margin: 24px 0 9px;
+      font-size: 1.02rem;
+    }
+
+    p {
+      max-width: 900px;
+      margin: 0 0 14px;
+    }
+
+    section {
+      padding-top: 34px;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-bottom: 8px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .lede {
+      max-width: 950px;
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .toc {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      background: var(--panel);
+    }
+
+    .toc a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.92rem;
+    }
+
+    .toc a:hover {
+      text-decoration: underline;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin: 20px 0;
+    }
+
+    .box {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+      background: var(--panel);
+    }
+
+    .box h3 {
+      margin-top: 0;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+      margin: 18px 0 24px;
+    }
+
+    .step {
+      min-height: 145px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--accent);
+      border-radius: 8px;
+      background: #ffffff;
+    }
+
+    .formula {
+      margin: 16px 0 22px;
+      padding: 16px;
+      border-left: 4px solid var(--accent);
+      background: var(--accent-soft);
+      font-weight: 700;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0 24px;
+      font-size: 0.94rem;
+    }
+
+    th,
+    td {
+      padding: 10px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--panel);
+      font-weight: 700;
+    }
+
+    code,
+    pre {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    }
+
+    code {
+      padding: 1px 5px;
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      background: var(--panel);
+      font-size: 0.9em;
+    }
+
+    pre {
+      overflow-x: auto;
+      padding: 15px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #0e1621;
+      color: #edf4fb;
+      line-height: 1.45;
+    }
+
+    pre code {
+      display: block;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      color: inherit;
+      font-size: inherit;
+    }
+
+    ul,
+    ol {
+      max-width: 900px;
+      padding-left: 24px;
+    }
+
+    li {
+      margin-bottom: 7px;
+    }
+
+    .good {
+      color: var(--good);
+      font-weight: 700;
+    }
+
+    .warn {
+      color: var(--warn);
+      font-weight: 700;
+    }
+
+    .bad {
+      color: var(--bad);
+      font-weight: 700;
+    }
+
+    @media (max-width: 960px) {
+      .flow {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 760px) {
+      main {
+        padding: 30px 18px 54px;
+      }
+
+      .toc,
+      .grid,
+      .flow {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="tag">Detailed internals</div>
+      <h1>Graph-JEPA v5 Internal Workflow</h1>
+      <p class="lede">
+        This document follows the v5 clinical KG revision pipeline from JSON
+        metadata conversion through schema and confidence sanitation, masked
+        pretraining, tri-state revision learning, hidden-edge candidate ranking,
+        schema-guarded scoring, candidate addition, and pruning.
+      </p>
+      <p class="small">
+        Companion overview:
+        <a href="./graph_revision_v5.html">graph_revision_v5.html</a>
+      </p>
+    </header>
+
+    <nav class="toc" aria-label="Table of contents">
+      <a href="#goal">1. Goal</a>
+      <a href="#stack">2. Version Stack</a>
+      <a href="#conversion">3. Graph Conversion</a>
+      <a href="#sanitation">4. Edge Sanitation</a>
+      <a href="#architecture">5. Architecture</a>
+      <a href="#pretrain">6. Stage 1 Pretraining</a>
+      <a href="#finetune">7. Stage 2 Fine-tuning</a>
+      <a href="#revision">8. Revision Loss</a>
+      <a href="#ranking">9. Candidate Ranking</a>
+      <a href="#inference">10. Inference</a>
+      <a href="#commands">11. Commands and Metrics</a>
+      <a href="#limits">12. Limits</a>
+    </nav>
+
+    <section id="goal">
+      <h2>1. Goal</h2>
+      <p>
+        v5 keeps the edge-existence question used by v3 and v4:
+      </p>
+      <div class="formula">
+        <code>Should this typed edge exist in this specific patient graph?</code>
+      </div>
+      <p>
+        It adds a second question that more closely matches candidate generation:
+      </p>
+      <div class="formula">
+        <code>Does the hidden true edge rank above nearby schema-valid alternatives?</code>
+      </div>
+      <p>
+        During joint fine-tuning, the model optimizes three terms:
+      </p>
+      <pre><code>total_loss = jepa_weight * patch_jepa_loss
+           + revision_weight * relation_balanced_revision_bce
+           + ranking_weight * candidate_ranking_cross_entropy</code></pre>
+    </section>
+
+    <section id="stack">
+      <h2>2. Version Stack</h2>
+      <p>
+        v5 is intentionally incremental. It subclasses or imports the stable
+        parts of earlier versions instead of copying the full implementation.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Layer</th>
+            <th>Source</th>
+            <th>Responsibility</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Node encoder, patch transformer, predictor, edge head</td>
+            <td><code>graph_jepa_v3.model</code></td>
+            <td>Core architecture and typed message passing.</td>
+          </tr>
+          <tr>
+            <td>Schema masks, invalid negatives, schema guard</td>
+            <td><code>graph_jepa_v4</code></td>
+            <td>Schema-aware training and inference.</td>
+          </tr>
+          <tr>
+            <td>Confidence metadata and candidate ranking</td>
+            <td><code>graph_jepa_v5</code></td>
+            <td>Tri-state supervision, artifact handling, and ranking loss.</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="flow">
+        <div class="step">
+          <strong>JSON KG</strong><br>
+          Nodes, typed edges, confidence, evidence source.
+        </div>
+        <div class="step">
+          <strong>Sanitized tensors</strong><br>
+          Schema-valid and trusted message edges.
+        </div>
+        <div class="step">
+          <strong>Patch JEPA</strong><br>
+          Masked graph representation learning.
+        </div>
+        <div class="step">
+          <strong>Edge objectives</strong><br>
+          Revision BCE plus candidate ranking.
+        </div>
+        <div class="step">
+          <strong>Revision output</strong><br>
+          Keep, review, prune, and add decisions.
+        </div>
+      </div>
+    </section>
+
+    <section id="conversion">
+      <h2>3. Graph Conversion</h2>
+      <p>
+        <code>src/graph_jepa_v5/data.py</code> delegates the standard tensor
+        conversion to v4, then creates three aligned edge tensors.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Tensor</th>
+            <th>Shape</th>
+            <th>Meaning</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>edge_llm_confidence</code></td>
+            <td><code>[num_edges]</code></td>
+            <td>Finite numeric <code>confidence</code>, or NaN when absent or invalid.</td>
+          </tr>
+          <tr>
+            <td><code>edge_is_llm</code></td>
+            <td><code>[num_edges]</code></td>
+            <td>True only when the edge evidence string equals <code>llm</code>, case-insensitively.</td>
+          </tr>
+          <tr>
+            <td><code>edge_clinical_artifact</code></td>
+            <td><code>[num_edges]</code></td>
+            <td>True when either endpoint matches a known administration or cancelled-microbiology artifact.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        These tensors are appended only for edges retained by the base converter,
+        so their order stays aligned with <code>edge_index</code> and
+        <code>edge_type</code>, including after PyG batching.
+      </p>
+
+      <h3>Current artifact rules</h3>
+      <ul>
+        <li>Medication nodes named <code>bag</code>, <code>syringe</code>, or <code>vial</code>.</li>
+        <li>Medication text containing flush, sterile water, mini bag plus, iso-osmotic dextrose, or syringe.</li>
+        <li>Microbiology nodes named <code>cancelled</code>.</li>
+      </ul>
+      <p>
+        Detection and use are separate. Metadata is always created, but it only
+        changes fine-tuning when <code>--clinical-artifact-filters</code> is enabled.
+      </p>
+    </section>
+
+    <section id="sanitation">
+      <h2>4. Edge Sanitation and Tri-State Masks</h2>
+      <h3>Schema sanitation</h3>
+      <p>
+        v5 inherits <code>sanitized_graph_data</code> from v4. Typed-invalid
+        edges are removed from message passing. Unconstrained relations such as
+        <code>ASSOCIATED_WITH</code> and <code>CO_OCCURS_WITH</code> can remain
+        in the message graph, but they are not typed positive labels.
+      </p>
+      <pre><code>schema_valid, schema_invalid, unconstrained = _schema_edge_masks(data)
+schema_message_mask = schema_valid | unconstrained</code></pre>
+
+      <h3>Confidence masks</h3>
+      <p>
+        <code>_confidence_supervision_masks</code> returns three disjoint masks:
+        trusted positives, weak negatives, and ignored edges.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Condition</th>
+            <th>Mask</th>
+            <th>Behavior</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Non-LLM edge, or LLM confidence at or above the positive cutoff</td>
+            <td class="good">trusted_positive</td>
+            <td>Can enter message passing and positive labels.</td>
+          </tr>
+          <tr>
+            <td>LLM confidence at or below the negative cutoff</td>
+            <td class="bad">weak_negative</td>
+            <td>Excluded from messages and added to BCE negatives.</td>
+          </tr>
+          <tr>
+            <td>LLM confidence strictly between both cutoffs</td>
+            <td class="warn">ignored</td>
+            <td>Excluded from messages, positives, and negatives.</td>
+          </tr>
+          <tr>
+            <td>Artifact edge when artifact filtering is enabled</td>
+            <td class="bad">weak_negative</td>
+            <td>Overrides normal structured-positive treatment.</td>
+          </tr>
+        </tbody>
+      </table>
+      <pre><code>low = scored_llm &amp; (confidence &lt;= negative_cutoff)
+high = scored_llm &amp; (confidence &gt;= positive_cutoff) &amp; ~low
+ignored = is_llm &amp; ~low &amp; ~high
+
+trusted_positive = (~is_llm | high) &amp; ~artifact
+weak_negative = (low | artifact) &amp; ~trusted_positive</code></pre>
+      <p>
+        The global fallback cutoffs are <code>0.3</code> and <code>0.8</code>.
+        Relation-specific maps can replace either cutoff for relations such as
+        <code>CONFIRMS</code>, <code>INDICATES</code>, and <code>MANAGED_FOR</code>.
+      </p>
+    </section>
+
+    <section id="architecture">
+      <h2>5. Architecture</h2>
+      <p>
+        <code>GraphJEPAv5</code> subclasses <code>GraphJEPAv4</code>. No new
+        neural module is added; v5 changes how the existing edge head is trained.
+      </p>
+      <div class="grid">
+        <div class="box">
+          <h3>Typed node encoder</h3>
+          <p>
+            Encodes node text features with relation-aware GNN message passing
+            on the sanitized edge set.
+          </p>
+        </div>
+        <div class="box">
+          <h3>Patch JEPA</h3>
+          <p>
+            Pools nodes into balanced graph patches, predicts hidden target
+            representations, and updates the target branch by EMA.
+          </p>
+        </div>
+        <div class="box">
+          <h3>Shared edge head</h3>
+          <p>
+            Scores <code>(source latent, target latent, relation embedding)</code>
+            for both revision BCE and candidate ranking.
+          </p>
+        </div>
+      </div>
+      <pre><code>edge_logit = edge_head(z_source, z_target, relation_id)
+edge_probability = sigmoid(edge_logit)</code></pre>
+    </section>
+
+    <section id="pretrain">
+      <h2>6. Stage 1 Pretraining</h2>
+      <p>
+        <code>graph_jepa_v5.pretrain</code> trains only the masked patch objective.
+        The checkpoint is written as <code>graph_jepa_v5_pretrain.pt</code>.
+      </p>
+      <pre><code>use_revision = False
+loss = jepa_weight * patch_jepa_loss</code></pre>
+      <ol>
+        <li>Load a patient-graph batch with aligned confidence metadata.</li>
+        <li>Remove schema-invalid typed edges.</li>
+        <li>Remove LLM edges at or below the relation-specific negative cutoff.</li>
+        <li>Keep middle-confidence and high-confidence LLM edges for pretraining.</li>
+        <li>Build balanced BFS patches from the resulting message graph.</li>
+        <li>Predict masked target-patch representations and update the EMA branch.</li>
+      </ol>
+      <div class="box">
+        <h3>Important pretraining detail</h3>
+        <p>
+          The current v5 pretraining path always applies the low-confidence LLM
+          removal when confidence metadata exists. It does not require the
+          fine-tuning <code>--llm-tri-state-supervision</code> flag, and it does
+          not apply the clinical artifact mask.
+        </p>
+      </div>
+    </section>
+
+    <section id="finetune">
+      <h2>7. Stage 2 Fine-tuning</h2>
+      <p>
+        <code>graph_jepa_v5.finetune</code> loads the masked-pretrained checkpoint
+        and jointly optimizes JEPA, revision BCE, and candidate ranking.
+      </p>
+      <pre><code>model, cfg = load_model_checkpoint(pretrain_checkpoint)
+
+loss = cfg.train.jepa_weight * jepa
+     + cfg.train.revision_weight * revision
+     + cfg.train.ranking_weight * ranking</code></pre>
+      <p>
+        The message graph depends on the selected supervision mode:
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Flags</th>
+            <th>Fine-tuning message graph</th>
+            <th>Observed-edge labels</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Neither flag</td>
+            <td>Schema-valid and unconstrained edges.</td>
+            <td>Legacy v4 behavior: schema-valid observed edges are positive.</td>
+          </tr>
+          <tr>
+            <td><code>--llm-tri-state-supervision</code></td>
+            <td>Schema-valid trusted positives and unconstrained trusted edges.</td>
+            <td>High positive, low weak negative, middle ignored.</td>
+          </tr>
+          <tr>
+            <td><code>--clinical-artifact-filters</code></td>
+            <td>Schema-valid non-artifact edges.</td>
+            <td>Artifact edges become weak negatives.</td>
+          </tr>
+          <tr>
+            <td>Both flags</td>
+            <td>Only schema-valid, confidence-trusted, non-artifact messages.</td>
+            <td>Combines confidence tri-state and artifact weak negatives.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="revision">
+      <h2>8. Confidence-Aware Revision Loss</h2>
+      <p>
+        v5 keeps v4 relation-balanced BCE, but changes which observed edges are
+        positive and adds optional weak-negative weighting.
+      </p>
+
+      <h3>Positive examples</h3>
+      <pre><code>pos_mask = schema_valid &amp; trusted_positive</code></pre>
+      <p>
+        A random subset is hidden from message passing using
+        <code>revision_mask_ratio</code>, but every selected positive is still
+        scored with label 1.
+      </p>
+
+      <h3>Negative examples</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Negative source</th>
+            <th>Origin</th>
+            <th>Default weight</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Schema-valid absent triple</td>
+            <td>Sampled from the same graph.</td>
+            <td><code>1.0</code></td>
+          </tr>
+          <tr>
+            <td>Observed schema-invalid edge</td>
+            <td>Present in the source KG but type-incompatible.</td>
+            <td><code>1.0</code></td>
+          </tr>
+          <tr>
+            <td>Reversed schema-invalid edge</td>
+            <td>Directionally invalid reverse of a positive.</td>
+            <td><code>1.0</code></td>
+          </tr>
+          <tr>
+            <td>Low-confidence LLM edge</td>
+            <td>At or below its negative cutoff.</td>
+            <td><code>llm_negative_weight = 0.2</code></td>
+          </tr>
+          <tr>
+            <td>Clinical artifact edge</td>
+            <td>Matches the optional artifact mask.</td>
+            <td><code>llm_negative_weight = 0.2</code></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Weighted relation balancing</h3>
+      <p>
+        BCE is computed per edge. Examples are grouped by relation and label,
+        weak-negative weights are applied inside each cell, then relation losses
+        are averaged.
+      </p>
+      <pre><code>for relation in unique(relations):
+    positive_cell = mean(bce_positive * positive_weights)
+    negative_cell = mean(bce_negative * negative_weights)
+    relation_loss = mean(non_empty_cells)
+
+revision_loss = mean(relation_losses)</code></pre>
+    </section>
+
+    <section id="ranking">
+      <h2>9. Hidden-Edge Candidate Ranking</h2>
+      <p>
+        The ranking objective is the defining v5 addition. It creates a local
+        candidate list around each hidden trusted positive and asks the existing
+        edge head to place the true edge first.
+      </p>
+
+      <h3>1. Select hidden positives</h3>
+      <pre><code>positive_indices = indices(schema_valid &amp; trusted_positive)
+hidden_count = round(ranking_mask_ratio * positive_count)
+hidden_count = clamp(hidden_count, minimum=1, maximum=ranking_max_pos)</code></pre>
+      <p>
+        Defaults are <code>ranking_mask_ratio = 0.25</code> and
+        <code>ranking_max_pos = 256</code>.
+      </p>
+
+      <h3>2. Build hard distractors</h3>
+      <p>
+        For each hidden edge <code>(source, target, relation)</code>, v5 collects
+        up to <code>ranking_neg_per_pos = 8</code> absent, schema-valid triples
+        from three buckets.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Bucket</th>
+            <th>Fixed components</th>
+            <th>Varied component</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Target distractors</td>
+            <td>Source and relation</td>
+            <td>Another type-compatible target in the same patient graph.</td>
+          </tr>
+          <tr>
+            <td>Source distractors</td>
+            <td>Relation and target</td>
+            <td>Another source whose type permits that target.</td>
+          </tr>
+          <tr>
+            <td>Relation distractors</td>
+            <td>Source and target</td>
+            <td>Another relation allowed for those endpoint types.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        Existing graph triples are excluded. Sampling stays within graph bounds
+        in a PyG batch, so distractors never cross patient graphs.
+      </p>
+
+      <h3>3. Hide and encode</h3>
+      <pre><code>message_mask = (schema_valid | unconstrained)
+             &amp; trusted_positive
+             &amp; ~hidden_positive_mask
+
+z = context_node_encoder(
+    data.x,
+    data.edge_index[:, message_mask],
+    data.edge_type[message_mask],
+)</code></pre>
+
+      <h3>4. Rank with temperature-scaled cross entropy</h3>
+      <pre><code>candidate_logits = [positive_logit, negative_logit_1, ..., negative_logit_k]
+target_class = 0
+ranking_loss = cross_entropy(candidate_logits / temperature, target_class)</code></pre>
+      <p>
+        The default temperature is <code>0.2</code>. Losses are averaged across
+        hidden positives that have at least one available distractor.
+      </p>
+    </section>
+
+    <section id="inference">
+      <h2>10. Inference and Graph Revision</h2>
+      <p>
+        v5 scoring delegates to the v4 scorer. Confidence metadata changes the
+        learned weights during training, but the inference formula and schema
+        guard are unchanged.
+      </p>
+      <pre><code>p_head = sigmoid(edge_head(z_source, z_target, relation))
+structural = exp(-patch_prediction_energy / energy_temperature)
+score = alpha * p_head + (1 - alpha) * structural</code></pre>
+      <p>
+        The default <code>alpha</code> is <code>0.9</code>. After scoring, v4's
+        schema guard marks incompatible typed edges as
+        <code>jepa_schema_valid: false</code>, records
+        <code>jepa_schema_error</code>, caps their score, and sets the flag to
+        <code>inconsistent</code>.
+      </p>
+
+      <h3>Candidate addition</h3>
+      <ol>
+        <li>Enumerate absent triples allowed by the relation schema.</li>
+        <li>Apply same-encounter and negation filters unless explicitly disabled.</li>
+        <li>Score candidates with the same edge head and patch-energy formula.</li>
+        <li>Apply relation-specific candidate thresholds.</li>
+        <li>Keep the highest scoring candidates up to <code>max_candidate_edges</code>.</li>
+      </ol>
+      <p>
+        The current v5 scorer calls v4 candidate-generation helpers directly.
+        Consequently, added edges currently record
+        <code>jepa_source: graph_jepa_v4_candidate_generation</code>. This is an
+        implementation inheritance marker, not a separate v4 scoring pass.
+      </p>
+    </section>
+
+    <section id="commands">
+      <h2>11. Commands and Metrics</h2>
+      <h3>Pretrain on Fawkes MIMIC train graphs</h3>
+      <pre><code>PYTHONPATH=src python -m graph_jepa_v5.pretrain \
+  --data mimic-subkgs \
+  --mimic-subkg-path outputs/fawkes_mimic_graphs_4k_5k/sub_kgs/train \
+  --out ckpts/fawkes_global_v5 \
+  --encoder mock \
+  --gnn-backend pyg \
+  --epochs 40</code></pre>
+
+      <h3>Fine-tune with tri-state and artifact supervision</h3>
+      <pre><code>PYTHONPATH=src python -m graph_jepa_v5.finetune \
+  --data mimic-subkgs \
+  --mimic-subkg-path outputs/fawkes_mimic_graphs_4k_5k/sub_kgs/train \
+  --checkpoint ckpts/fawkes_global_v5/graph_jepa_v5_pretrain.pt \
+  --out ckpts/fawkes_global_v5 \
+  --epochs 40 \
+  --revision-weight 1.0 \
+  --ranking-weight 1.0 \
+  --ranking-mask-ratio 0.25 \
+  --ranking-neg-per-pos 8 \
+  --llm-tri-state-supervision \
+  --clinical-artifact-filters</code></pre>
+
+      <h3>Override confidence thresholds for one relation</h3>
+      <pre><code>--llm-negative-threshold-relation CONFIRMS=0.65 \
+--llm-positive-threshold-relation CONFIRMS=0.95</code></pre>
+
+      <h3>Score and add candidates</h3>
+      <pre><code>PYTHONPATH=src python -m graph_jepa_v5.score \
+  --input outputs/fawkes_mimic_graphs_4k_5k/sub_kgs/test \
+  --checkpoint ckpts/fawkes_global_v5/graph_jepa_v5.pt \
+  --output outputs/fawkes_mimic_graphs_4k_5k/sub_kgs_revised_v5 \
+  --add-candidates \
+  --max-candidates 50</code></pre>
+
+      <h3>Useful training metrics</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>Interpretation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>train/ranking_ce</code></td>
+            <td>Average candidate-ranking cross entropy.</td>
+          </tr>
+          <tr>
+            <td><code>train/ranking_pos</code>, <code>train/ranking_neg</code></td>
+            <td>Positive ranking groups and distractors used per batch.</td>
+          </tr>
+          <tr>
+            <td><code>train/ranking_llm_excluded</code></td>
+            <td>Low or uncertain LLM edges excluded from ranking positives.</td>
+          </tr>
+          <tr>
+            <td><code>train/ranking_artifact_excluded</code></td>
+            <td>Artifact edges excluded from ranking positives.</td>
+          </tr>
+          <tr>
+            <td><code>train/revision_llm_neg</code></td>
+            <td>Low-confidence LLM negatives included in revision BCE.</td>
+          </tr>
+          <tr>
+            <td><code>train/revision_llm_ignored</code></td>
+            <td>Uncertain LLM edges omitted from revision labels.</td>
+          </tr>
+          <tr>
+            <td><code>train/schema_dropped_edges</code></td>
+            <td>Schema-invalid edges removed from message passing.</td>
+          </tr>
+          <tr>
+            <td><code>train/llm_dropped_edges</code></td>
+            <td>Confidence or artifact edges removed after schema sanitation.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="limits">
+      <h2>12. Limits</h2>
+      <ul>
+        <li>Confidence thresholds encode a training policy; they do not prove that an edge is clinically correct or incorrect.</li>
+        <li>Artifact detection is deliberately narrow and lexical, so it will miss unlisted artifacts and may need dataset-specific updates.</li>
+        <li>The ranking objective only considers existing graph nodes and relations allowed by the current schema.</li>
+        <li>Graphs with no available hard distractors do not contribute a ranking group for that hidden edge.</li>
+        <li>Inference still uses v4 scoring logic and does not directly consume edge confidence.</li>
+        <li>Added candidates remain evidence-free and unverified until a downstream validation step accepts them.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

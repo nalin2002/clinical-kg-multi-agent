@@ -54,6 +54,7 @@ RELATION_SCHEMA: Dict[Tuple[str, str], Set[str]] = {
     },
     (NodeType.PROCEDURE.value, EdgeType.CONFIRMS.value): {
         NodeType.DIAGNOSIS.value,
+        NodeType.MICROBIOLOGY.value,
         NodeType.SYMPTOM.value,
     },
     (NodeType.PROCEDURE.value, EdgeType.LOCATED_AT.value): {
@@ -94,6 +95,14 @@ RELATION_SCHEMA: Dict[Tuple[str, str], Set[str]] = {
     (NodeType.PATIENT.value, EdgeType.MANAGED_BY_SERVICE.value): {
         NodeType.SERVICE.value,
     },
+    # Raw Fawkes parquet relations, including low-frequency LLM cross-type
+    # edges. These are retained as emitted rather than remapped during prep.
+    (NodeType.PATIENT.value, EdgeType.COMPLICATED_BY.value): {
+        NodeType.DIAGNOSIS.value,
+    },
+    (NodeType.PATIENT.value, EdgeType.MANAGED_FOR.value): {
+        NodeType.MEDICATION.value,
+    },
     (NodeType.DIAGNOSIS.value, EdgeType.TREATED_BY.value): {
         NodeType.MEDICATION.value,
     },
@@ -112,13 +121,46 @@ RELATION_SCHEMA: Dict[Tuple[str, str], Set[str]] = {
     },
     (NodeType.DIAGNOSIS.value, EdgeType.COMPLICATED_BY.value): {
         NodeType.DIAGNOSIS.value,
+        NodeType.MEDICATION.value,
+        NodeType.MICROBIOLOGY.value,
+        NodeType.PROCEDURE.value,
+    },
+    (NodeType.DIAGNOSIS.value, EdgeType.CONFIRMS.value): {
+        NodeType.DIAGNOSIS.value,
+    },
+    (NodeType.DIAGNOSIS.value, EdgeType.INDICATES.value): {
+        NodeType.DIAGNOSIS.value,
+        NodeType.MEDICATION.value,
+        NodeType.MICROBIOLOGY.value,
+        NodeType.PROCEDURE.value,
     },
     (NodeType.MICROBIOLOGY.value, EdgeType.CONFIRMS.value): {
         NodeType.DIAGNOSIS.value,
         NodeType.SYMPTOM.value,
     },
+    (NodeType.MICROBIOLOGY.value, EdgeType.COMPLICATED_BY.value): {
+        NodeType.DIAGNOSIS.value,
+    },
+    (NodeType.MICROBIOLOGY.value, EdgeType.INDICATES.value): {
+        NodeType.DIAGNOSIS.value,
+    },
     (NodeType.MEDICATION.value, EdgeType.CAUSES.value): {
         NodeType.DIAGNOSIS.value,
+    },
+    (NodeType.MEDICATION.value, EdgeType.COMPLICATED_BY.value): {
+        NodeType.DIAGNOSIS.value,
+    },
+    (NodeType.MEDICATION.value, EdgeType.CONFIRMS.value): {
+        NodeType.DIAGNOSIS.value,
+    },
+    (NodeType.MEDICATION.value, EdgeType.INDICATES.value): {
+        NodeType.DIAGNOSIS.value,
+    },
+    (NodeType.MEDICATION.value, EdgeType.MANAGED_FOR.value): {
+        NodeType.DIAGNOSIS.value,
+        NodeType.MEDICATION.value,
+        NodeType.MICROBIOLOGY.value,
+        NodeType.PROCEDURE.value,
     },
     (NodeType.MEDICATION.value, EdgeType.TARGETS_ORGANISM.value): {
         NodeType.MICROBIOLOGY.value,
@@ -131,7 +173,15 @@ RELATION_SCHEMA: Dict[Tuple[str, str], Set[str]] = {
         NodeType.SYMPTOM.value,
     },
     (NodeType.PROCEDURE.value, EdgeType.COMPLICATED_BY.value): {
+        NodeType.DIAGNOSIS.value,
+        NodeType.MICROBIOLOGY.value,
         NodeType.SYMPTOM.value,
+    },
+    (NodeType.PROCEDURE.value, EdgeType.INDICATES.value): {
+        NodeType.DIAGNOSIS.value,
+    },
+    (NodeType.PROCEDURE.value, EdgeType.MANAGED_FOR.value): {
+        NodeType.DIAGNOSIS.value,
     },
     (NodeType.SERVICE.value, EdgeType.MANAGED_FOR.value): {
         NodeType.DIAGNOSIS.value,

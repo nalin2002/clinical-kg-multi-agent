@@ -145,6 +145,26 @@ class MimicSubKGAdapterTests(unittest.TestCase):
             {"source_id": "M", "target_id": "D", "type": "TREATED_BY"},
         )
 
+    def test_adapter_preserves_raw_fawkes_relation_and_direction(self):
+        raw = {
+            "nodes": [
+                {"id": "M", "type": "MEDICATION", "name": "ceftriaxone"},
+                {"id": "D", "type": "DIAGNOSIS", "name": "pneumonia"},
+            ],
+            "edges": [
+                {"source": "M", "target": "D", "relation": "MANAGED_FOR"},
+            ],
+        }
+
+        graph = adapt_mimic_subkg(raw)
+
+        self.assertEqual(
+            (graph.edges[0]["source_id"], graph.edges[0]["type"], graph.edges[0]["target_id"]),
+            ("M", "MANAGED_FOR", "D"),
+        )
+        self.assertNotIn("jepa_normalized_from", graph.edges[0])
+        self.assertTrue(is_plausible_typed("MEDICATION", "MANAGED_FOR", "DIAGNOSIS"))
+
     def test_adapter_drops_unsupported_drg_metadata(self):
         raw = {
             "subject_id": "10000000",
@@ -185,6 +205,9 @@ class MimicSubKGAdapterTests(unittest.TestCase):
         self.assertTrue(is_plausible_typed("MEDICATION", "CAUSES", "DIAGNOSIS"))
         self.assertTrue(is_plausible_typed("PROCEDURE", "PERFORMED_FOR", "SYMPTOM"))
         self.assertTrue(is_plausible_typed("PROCEDURE", "COMPLICATED_BY", "SYMPTOM"))
+        self.assertTrue(is_plausible_typed("DIAGNOSIS", "INDICATES", "DIAGNOSIS"))
+        self.assertTrue(is_plausible_typed("MEDICATION", "MANAGED_FOR", "MICROBIOLOGY"))
+        self.assertTrue(is_plausible_typed("PROCEDURE", "CONFIRMS", "MICROBIOLOGY"))
 
     def test_v3_score_loader_adapts_mimic_subkg_file(self):
         raw = {

@@ -20,8 +20,8 @@ from typing import Any
 
 
 DEFAULT_ROOT = Path("outputs")
-DEFAULT_SOURCE_GLOB = "fawkes_mimic_graphs_*/sub_kgs"
-DEFAULT_OUT = Path("outputs/fawkes_mimic_global/sub_kgs")
+DEFAULT_SOURCE_GLOB = "fawkes_mimic_graphs_raw_*/sub_kgs"
+DEFAULT_OUT = Path("outputs/fawkes_mimic_raw_global/sub_kgs")
 
 
 @dataclass(frozen=True)

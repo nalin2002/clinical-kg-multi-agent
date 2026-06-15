@@ -78,10 +78,10 @@ class GraphJEPAv4ScoringTests(unittest.TestCase):
         graph = PatientGraph(
             nodes=[
                 {"id": "P", "type": "PATIENT", "text": "patient"},
-                {"id": "M", "type": "MEDICATION", "text": "ceftriaxone"},
+                {"id": "D", "type": "DIAGNOSIS", "text": "pneumonia"},
             ],
             edges=[
-                {"source_id": "P", "target_id": "M", "type": "MANAGED_FOR"},
+                {"source_id": "P", "target_id": "D", "type": "CONFIRMS"},
             ],
         )
 

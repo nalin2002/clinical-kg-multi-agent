@@ -15,6 +15,7 @@ from graph_jepa_v5.model import (
     _confidence_supervision_masks,
     _weighted_relation_balanced_bce,
     confidence_sanitized_graph_data,
+    pretrain_sanitized_graph_data,
 )
 
 
@@ -163,6 +164,18 @@ class GraphJEPAv5ConfidenceTests(unittest.TestCase):
         self.assertNotIn(2, clean.edge_index[0].tolist())
         self.assertNotIn(4, clean.edge_index[0].tolist())
 
+    def test_pretraining_drops_only_llm_weak_negatives(self):
+        data = _confidence_data()
+
+        clean = pretrain_sanitized_graph_data(
+            data,
+            negative_threshold=0.3,
+        )
+
+        self.assertEqual(clean.edge_index.size(1), 3)
+        self.assertEqual(clean.edge_index[0].tolist(), [0, 4, 6])
+        self.assertEqual(clean.edge_llm_confidence.size(0), 3)
+
     def test_relation_specific_thresholds_change_tri_state(self):
         data = _confidence_data()
         data.edge_type = torch.tensor(
@@ -289,6 +302,14 @@ class GraphJEPAv5ConfidenceTests(unittest.TestCase):
         self.assertEqual(
             cfg.train.llm_positive_threshold_by_relation["CONFIRMS"],
             0.95,
+        )
+        self.assertEqual(
+            cfg.train.llm_negative_threshold_by_relation["MANAGED_FOR"],
+            0.5,
+        )
+        self.assertEqual(
+            cfg.train.llm_positive_threshold_by_relation["MANAGED_FOR"],
+            0.8,
         )
         self.assertFalse(cfg.train.clinical_artifact_filters)
 

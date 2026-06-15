@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Graph-JEPA v5: Confidence-Aware Candidate Ranking</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #15202b;
+      --muted: #5d6b78;
+      --line: #d9e2ea;
+      --panel: #f7f9fb;
+      --accent: #6552c7;
+      --accent-soft: #eeebff;
+      --ok: #0f7b4f;
+      --warn: #9a5b00;
+      --bad: #a83232;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: #ffffff;
+      line-height: 1.55;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 44px 28px 72px;
+    }
+
+    header {
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 28px;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 6vw, 4.3rem);
+      line-height: 1;
+    }
+
+    h2 {
+      margin: 38px 0 12px;
+      font-size: 1.35rem;
+    }
+
+    h3 {
+      margin: 22px 0 8px;
+      font-size: 1rem;
+    }
+
+    p {
+      max-width: 860px;
+      margin: 0 0 14px;
+    }
+
+    .lede {
+      max-width: 940px;
+      color: var(--muted);
+      font-size: 1.12rem;
+    }
+
+    .label {
+      display: inline-block;
+      margin-bottom: 8px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin: 18px 0 26px;
+    }
+
+    .step,
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+      background: #ffffff;
+    }
+
+    .step {
+      border-top: 4px solid var(--accent);
+      min-height: 142px;
+    }
+
+    .panel {
+      background: var(--panel);
+    }
+
+    .panel h3 {
+      margin-top: 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin: 22px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0 24px;
+      font-size: 0.95rem;
+    }
+
+    th,
+    td {
+      border-bottom: 1px solid var(--line);
+      padding: 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--panel);
+      font-weight: 700;
+    }
+
+    code,
+    pre {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    }
+
+    code {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      padding: 1px 5px;
+      font-size: 0.9em;
+    }
+
+    pre {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      background: #0e1621;
+      color: #edf4fb;
+      line-height: 1.45;
+    }
+
+    pre code {
+      display: block;
+      border: 0;
+      border-radius: 0;
+      padding: 0;
+      background: transparent;
+      color: inherit;
+      font-size: inherit;
+    }
+
+    ul {
+      max-width: 880px;
+      padding-left: 22px;
+    }
+
+    li {
+      margin-bottom: 7px;
+    }
+
+    .ok {
+      color: var(--ok);
+      font-weight: 700;
+    }
+
+    .warn {
+      color: var(--warn);
+      font-weight: 700;
+    }
+
+    .bad {
+      color: var(--bad);
+      font-weight: 700;
+    }
+
+    @media (max-width: 900px) {
+      .flow,
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      main {
+        padding: 30px 18px 52px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="label">Graph-JEPA v5</div>
+      <h1>Confidence-Aware Candidate Ranking</h1>
+      <p class="lede">
+        Version 5 extends the staged, schema-aware v4 pipeline with a training
+        objective that directly ranks hidden true edges above plausible candidate
+        distractors. It can also use LLM confidence and known clinical artifacts
+        as tri-state supervision instead of treating every observed edge as truth.
+      </p>
+      <p>
+        For implementation details, see
+        <a href="./graph_revision_v5_internal_workflow.html">Graph-JEPA v5 Internal Workflow</a>.
+      </p>
+    </header>
+
+    <section>
+      <h2>Why v5 exists</h2>
+      <p>
+        v4 improved graph revision by separating masked pretraining from joint
+        fine-tuning and by converting schema-invalid observed edges into
+        negatives. Candidate generation, however, is a ranking problem: among
+        several schema-valid edges that could be added, the real patient edge
+        should outrank nearby alternatives.
+      </p>
+      <p>
+        v5 adds that ranking signal. It also preserves edge-level confidence
+        metadata from source KGs so low-confidence LLM edges, uncertain edges,
+        and trusted edges can play different training roles.
+      </p>
+    </section>
+
+    <section>
+      <h2>Core workflow</h2>
+      <div class="flow">
+        <div class="step">
+          <div class="label">1. Load</div>
+          Convert patient KGs to tensors while preserving confidence, LLM origin,
+          and clinical-artifact flags for every retained edge.
+        </div>
+        <div class="step">
+          <div class="label">2. Sanitize</div>
+          Remove schema-invalid edges from message passing. During pretraining,
+          low-confidence LLM edges are removed as well.
+        </div>
+        <div class="step">
+          <div class="label">3. Pretrain</div>
+          Learn masked patch representations and save
+          <code>graph_jepa_v5_pretrain.pt</code>.
+        </div>
+        <div class="step">
+          <div class="label">4. Revise</div>
+          Fine-tune relation-balanced BCE on trusted positives and several
+          negative sources.
+        </div>
+        <div class="step">
+          <div class="label">5. Rank</div>
+          Hide trusted edges and rank each one above schema-valid relation,
+          source, and target distractors from the same patient graph.
+        </div>
+        <div class="step">
+          <div class="label">6. Score</div>
+          Reuse v4 schema-guarded inference for keep, review, prune, and
+          candidate-addition decisions.
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Confidence supervision</h2>
+      <p>
+        With <code>--llm-tri-state-supervision</code>, LLM edges are divided
+        using fallback thresholds of <code>0.3</code> and <code>0.8</code>.
+        Relation-specific thresholds in the checkpoint override those fallbacks.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Observed edge</th>
+            <th>Training role</th>
+            <th>Message passing</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Non-LLM or high-confidence LLM edge</td>
+            <td class="ok">Trusted positive</td>
+            <td>Included when schema-valid.</td>
+          </tr>
+          <tr>
+            <td>Low-confidence LLM edge</td>
+            <td class="bad">Weak negative</td>
+            <td>Excluded; BCE weight defaults to <code>0.2</code>.</td>
+          </tr>
+          <tr>
+            <td>Middle-confidence LLM edge</td>
+            <td class="warn">Ignored</td>
+            <td>Excluded from fine-tuning message passing and labels.</td>
+          </tr>
+          <tr>
+            <td>Known clinical artifact</td>
+            <td class="bad">Weak negative</td>
+            <td>Excluded when <code>--clinical-artifact-filters</code> is enabled.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Fine-tuning objective</h2>
+      <pre><code>loss = jepa_weight * patch_jepa_loss
+     + revision_weight * relation_balanced_revision_bce
+     + ranking_weight * candidate_ranking_cross_entropy</code></pre>
+      <div class="grid">
+        <div class="panel">
+          <h3>Patch JEPA</h3>
+          <p>
+            Predicts hidden patch representations from visible graph context
+            using the online and EMA target branches inherited from v4.
+          </p>
+        </div>
+        <div class="panel">
+          <h3>Revision BCE</h3>
+          <p>
+            Separates trusted observed edges from absent schema-valid triples,
+            schema-invalid edges, reversed invalid edges, and optional weak negatives.
+          </p>
+        </div>
+        <div class="panel">
+          <h3>Candidate ranking</h3>
+          <p>
+            Places one hidden true edge ahead of up to eight hard distractors by
+            default, using temperature-scaled cross entropy.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Ranking distractors</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Distractor family</th>
+            <th>Example transformation</th>
+            <th>What it teaches</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Alternate relation</td>
+            <td>Keep source and target, replace the relation with another schema-valid relation.</td>
+            <td>Choose the correct clinical semantics.</td>
+          </tr>
+          <tr>
+            <td>Alternate target</td>
+            <td>Keep source and relation, select another type-compatible target in the same graph.</td>
+            <td>Link the correct patient entity.</td>
+          </tr>
+          <tr>
+            <td>Alternate source</td>
+            <td>Keep relation and target, select another compatible source in the same graph.</td>
+            <td>Distinguish nearby plausible causes or actors.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Fawkes MIMIC commands</h2>
+      <h3>1. Masked pretraining</h3>
+      <pre><code>PYTHONPATH=src python -m graph_jepa_v5.pretrain \
+  --data mimic-subkgs \
+  --mimic-subkg-path outputs/fawkes_mimic_graphs_4k_5k/sub_kgs/train \
+  --out ckpts/fawkes_global_v5 \
+  --encoder mock \
+  --gnn-backend pyg \
+  --epochs 40</code></pre>
+
+      <h3>2. Candidate-ranking fine-tuning</h3>
+      <pre><code>PYTHONPATH=src python -m graph_jepa_v5.finetune \
+  --data mimic-subkgs \
+  --mimic-subkg-path outputs/fawkes_mimic_graphs_4k_5k/sub_kgs/train \
+  --checkpoint ckpts/fawkes_global_v5/graph_jepa_v5_pretrain.pt \
+  --out ckpts/fawkes_global_v5 \
+  --epochs 40 \
+  --llm-tri-state-supervision \
+  --clinical-artifact-filters \
+  --ranking-neg-per-pos 8</code></pre>
+
+      <h3>3. Score the test split</h3>
+      <pre><code>PYTHONPATH=src python -m graph_jepa_v5.score \
+  --input outputs/fawkes_mimic_graphs_4k_5k/sub_kgs/test \
+  --checkpoint ckpts/fawkes_global_v5/graph_jepa_v5.pt \
+  --output outputs/fawkes_mimic_graphs_4k_5k/sub_kgs_revised_v5 \
+  --add-candidates \
+  --max-candidates 50</code></pre>
+    </section>
+
+    <section>
+      <h2>Improvements over v4</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Area</th>
+            <th>v4</th>
+            <th>v5</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Candidate learning</td>
+            <td>Binary edge revision only.</td>
+            <td>Additional listwise ranking against hard candidate distractors.</td>
+          </tr>
+          <tr>
+            <td>Observed-edge trust</td>
+            <td>Schema-valid observed edges are positives.</td>
+            <td>Optional high, middle, and low confidence training roles.</td>
+          </tr>
+          <tr>
+            <td>Clinical artifacts</td>
+            <td>No source-specific artifact mask.</td>
+            <td>Optional weak negatives for administration carriers and cancelled microbiology nodes.</td>
+          </tr>
+          <tr>
+            <td>Pretraining graph</td>
+            <td>Schema-sanitized.</td>
+            <td>Schema-sanitized and stripped of low-confidence LLM edges.</td>
+          </tr>
+          <tr>
+            <td>Monitoring</td>
+            <td>JEPA, revision, and schema metrics.</td>
+            <td>Adds ranking counts, confidence exclusions, artifact exclusions, and dropped-edge metrics.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Current limits</h2>
+      <ul>
+        <li>Confidence is supervision metadata, not calibrated clinical truth.</li>
+        <li>Artifact filters are narrow lexical rules for known data artifacts.</li>
+        <li>Candidate ranking only compares entities already present in the graph.</li>
+        <li>Scoring behavior is inherited from v4; confidence affects training, not the inference formula.</li>
+        <li>Added candidates remain unverified and do not gain transcript evidence automatically.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

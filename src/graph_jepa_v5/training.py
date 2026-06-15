@@ -22,7 +22,12 @@ from graph_jepa_v4.training import (
 
 from .config import Config
 from .data import PatientGraphDataset
-from .model import GraphJEPAv5, confidence_sanitized_graph_data, sanitized_graph_data
+from .model import (
+    GraphJEPAv5,
+    confidence_sanitized_graph_data,
+    pretrain_sanitized_graph_data,
+    sanitized_graph_data,
+)
 from .patches import build_patch_data, sample_patch_task
 
 PRETRAIN_CHECKPOINT_NAME = "graph_jepa_v5_pretrain.pt"
@@ -130,7 +135,17 @@ def train_epochs(
                 data.edge_index.size(1) - message_data.edge_index.size(1)
             )
             llm_dropped = 0
-            if use_revision and (
+            if not use_revision:
+                schema_edges = int(message_data.edge_index.size(1))
+                message_data = pretrain_sanitized_graph_data(
+                    data,
+                    negative_threshold=cfg.train.llm_negative_threshold,
+                    negative_threshold_by_relation=(
+                        cfg.train.llm_negative_threshold_by_relation
+                    ),
+                )
+                llm_dropped = schema_edges - int(message_data.edge_index.size(1))
+            elif (
                 cfg.train.llm_confidence_negatives
                 or cfg.train.clinical_artifact_filters
             ):
