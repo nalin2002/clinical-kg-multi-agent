@@ -19,8 +19,8 @@ from pathlib import Path
 from huggingface_hub import snapshot_download
 
 
-DATASET_ID = "wmatbooth/fawkes-mimic-notes-1k-v3-rows4000-5000-260612"
-DEFAULT_OUT = Path("data/fawkes-mimic-notes-1k-v3-rows4000-5000-260612")
+DATASET_ID = "wmatbooth/fawkes-aci-bench-eval-260616"
+DEFAULT_OUT = Path("data/fawkes-aci-bench-eval-260616")
 
 
 def _file_summary(out_dir: Path) -> list[dict[str, object]]:
