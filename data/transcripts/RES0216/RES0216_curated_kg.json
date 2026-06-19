@@ -1,0 +1,202 @@
+{
+  "nodes": [
+    {
+      "id": "N_001",
+      "text": "Chest tightness",
+      "type": "SYMPTOM",
+      "evidence": "feels a bit tight in my chest area",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_002",
+      "text": "Shortness of breath",
+      "type": "SYMPTOM",
+      "evidence": "harder to get a whole breath",
+      "turn_id": "P-7"
+    },
+    {
+      "id": "N_003",
+      "text": "Chest pain (absent)",
+      "type": "SYMPTOM",
+      "evidence": "not really pain",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_004",
+      "text": "Hoarseness",
+      "type": "SYMPTOM",
+      "evidence": "I feel a little more hoarse",
+      "turn_id": "P-11"
+    },
+    {
+      "id": "N_005",
+      "text": "Phlegm",
+      "type": "SYMPTOM",
+      "evidence": "maybe some more phlegm",
+      "turn_id": "P-11"
+    },
+    {
+      "id": "N_006",
+      "text": "Asthma",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "I have asthma",
+      "turn_id": "P-16"
+    },
+    {
+      "id": "N_007",
+      "text": "Hypertension",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "I have uh high blood pressure",
+      "turn_id": "P-24"
+    },
+    {
+      "id": "N_008",
+      "text": "Seasonal allergies",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "got some seasonal allergies",
+      "turn_id": "P-32"
+    },
+    {
+      "id": "N_009",
+      "text": "Non-smoker",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "No, never",
+      "turn_id": "P-30"
+    },
+    {
+      "id": "N_010",
+      "text": "Chest",
+      "type": "LOCATION",
+      "evidence": "tight in my chest area",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_011",
+      "text": "Salbutamol",
+      "type": "TREATMENT",
+      "evidence": "I take the, uh, salbutamol",
+      "turn_id": "P-25"
+    },
+    {
+      "id": "N_012",
+      "text": "Maintenance inhaler",
+      "type": "TREATMENT",
+      "evidence": "the one that um I take every day",
+      "turn_id": "P-17"
+    },
+    {
+      "id": "N_013",
+      "text": "Rescue puffer",
+      "type": "TREATMENT",
+      "evidence": "try having those rescue puffers",
+      "turn_id": "D-35"
+    },
+    {
+      "id": "N_014",
+      "text": "Ramipril",
+      "type": "TREATMENT",
+      "evidence": "I take um Ramipril",
+      "turn_id": "P-26"
+    },
+    {
+      "id": "N_015",
+      "text": "Tylenol",
+      "type": "TREATMENT",
+      "evidence": "sometimes a Tylenol",
+      "turn_id": "P-27"
+    },
+    {
+      "id": "N_016",
+      "text": "Physical exam",
+      "type": "PROCEDURE",
+      "evidence": "do a quick physical exam",
+      "turn_id": "D-35"
+    },
+    {
+      "id": "N_017",
+      "text": "Lung auscultation",
+      "type": "PROCEDURE",
+      "evidence": "take a listen to your lungs",
+      "turn_id": "D-35"
+    },
+    {
+      "id": "N_018",
+      "text": "Asthma exacerbation",
+      "type": "DIAGNOSIS",
+      "evidence": "might be your asthma reoccurring",
+      "turn_id": "D-35"
+    },
+    {
+      "id": "N_019",
+      "text": "Cardiac ischemia",
+      "type": "DIAGNOSIS",
+      "evidence": "cardiac ischemic pictures kind of lower",
+      "turn_id": "D-36"
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "N_001",
+      "target_id": "N_010",
+      "type": "LOCATED_AT",
+      "evidence": "tight in my chest area",
+      "turn_id": "P-1"
+    },
+    {
+      "source_id": "N_001",
+      "target_id": "N_018",
+      "type": "INDICATES",
+      "evidence": "might be your asthma reoccurring",
+      "turn_id": "D-35"
+    },
+    {
+      "source_id": "N_002",
+      "target_id": "N_018",
+      "type": "INDICATES",
+      "evidence": "might be your asthma reoccurring",
+      "turn_id": "D-35"
+    },
+    {
+      "source_id": "N_011",
+      "target_id": "N_006",
+      "type": "TAKEN_FOR",
+      "evidence": "I take the, uh, salbutamol",
+      "turn_id": "P-25"
+    },
+    {
+      "source_id": "N_012",
+      "target_id": "N_006",
+      "type": "TAKEN_FOR",
+      "evidence": "the one that um I take every day",
+      "turn_id": "P-17"
+    },
+    {
+      "source_id": "N_013",
+      "target_id": "N_018",
+      "type": "TAKEN_FOR",
+      "evidence": "try having those rescue puffers",
+      "turn_id": "D-35"
+    },
+    {
+      "source_id": "N_014",
+      "target_id": "N_007",
+      "type": "TAKEN_FOR",
+      "evidence": "I take um Ramipril",
+      "turn_id": "P-26"
+    },
+    {
+      "source_id": "N_003",
+      "target_id": "N_019",
+      "type": "RULES_OUT",
+      "evidence": "haven't had any pain associated with it",
+      "turn_id": "D-36"
+    },
+    {
+      "source_id": "N_001",
+      "target_id": "N_019",
+      "type": "RULES_OUT",
+      "evidence": "cardiac ischemic pictures kind of lower",
+      "turn_id": "D-36"
+    }
+  ]
+}

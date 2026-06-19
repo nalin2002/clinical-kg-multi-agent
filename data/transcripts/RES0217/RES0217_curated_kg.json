@@ -1,0 +1,244 @@
+{
+  "nodes": [
+    {
+      "id": "N_001",
+      "text": "tick bite",
+      "type": "DIAGNOSIS",
+      "evidence": "I found this tick",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_002",
+      "text": "behind left knee",
+      "type": "LOCATION",
+      "evidence": "behind my left uh knee",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_003",
+      "text": "redness",
+      "type": "SYMPTOM",
+      "evidence": "it's still kind of red",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_004",
+      "text": "tenderness",
+      "type": "SYMPTOM",
+      "evidence": "red and tender there",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_005",
+      "text": "soreness",
+      "type": "SYMPTOM",
+      "evidence": "starting to just feel a bit sore",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_006",
+      "text": "Lyme disease",
+      "type": "DIAGNOSIS",
+      "evidence": "a disease called Lyme disease",
+      "turn_id": "D-5"
+    },
+    {
+      "id": "N_007",
+      "text": "prophylactic antibiotics",
+      "type": "TREATMENT",
+      "evidence": "put you on antibiotics",
+      "turn_id": "D-6"
+    },
+    {
+      "id": "N_008",
+      "text": "tick species identification",
+      "type": "PROCEDURE",
+      "evidence": "send this tick off to the lab",
+      "turn_id": "D-6"
+    },
+    {
+      "id": "N_009",
+      "text": "Lyme serology",
+      "type": "PROCEDURE",
+      "evidence": "send some blood work",
+      "turn_id": "D-18"
+    },
+    {
+      "id": "N_010",
+      "text": "physical exam",
+      "type": "PROCEDURE",
+      "evidence": "after we do a quick physical exam",
+      "turn_id": "D-18"
+    },
+    {
+      "id": "N_011",
+      "text": "prior tick bite",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "I have actually had a tick in the past",
+      "turn_id": "P-3"
+    },
+    {
+      "id": "N_012",
+      "text": "prior bullseye rash",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "that kind of target rash thing",
+      "turn_id": "P-3"
+    },
+    {
+      "id": "N_013",
+      "text": "hiking exposure",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "I was hiking on Friday",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_014",
+      "text": "gardening exposure",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "Saturday I was out in my garden",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_015",
+      "text": "high cholesterol",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "just for my cholesterol",
+      "turn_id": "P-14"
+    },
+    {
+      "id": "N_016",
+      "text": "statin",
+      "type": "TREATMENT",
+      "evidence": "I take a uh statin",
+      "turn_id": "P-15"
+    },
+    {
+      "id": "N_017",
+      "text": "no drug allergies",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "So no drug allergies?",
+      "turn_id": "D-17"
+    },
+    {
+      "id": "N_018",
+      "text": "absent fever",
+      "type": "SYMPTOM",
+      "evidence": "feverish in the last little while",
+      "turn_id": "D-8"
+    },
+    {
+      "id": "N_019",
+      "text": "absent joint pain",
+      "type": "SYMPTOM",
+      "evidence": "do you have any other joint pain?",
+      "turn_id": "D-7"
+    },
+    {
+      "id": "N_020",
+      "text": "absent headache",
+      "type": "SYMPTOM",
+      "evidence": "So no headaches?",
+      "turn_id": "D-19"
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "N_001",
+      "target_id": "N_002",
+      "type": "LOCATED_AT",
+      "evidence": "behind my left uh knee",
+      "turn_id": "P-1"
+    },
+    {
+      "source_id": "N_003",
+      "target_id": "N_002",
+      "type": "LOCATED_AT",
+      "evidence": "it's still kind of red",
+      "turn_id": "P-1"
+    },
+    {
+      "source_id": "N_004",
+      "target_id": "N_002",
+      "type": "LOCATED_AT",
+      "evidence": "it's like tender where the tick was",
+      "turn_id": "P-6"
+    },
+    {
+      "source_id": "N_005",
+      "target_id": "N_002",
+      "type": "LOCATED_AT",
+      "evidence": "back of my knee was starting to just feel a bit",
+      "turn_id": "P-1"
+    },
+    {
+      "source_id": "N_001",
+      "target_id": "N_006",
+      "type": "INDICATES",
+      "evidence": "big concern for us is a disease called Lyme",
+      "turn_id": "D-5"
+    },
+    {
+      "source_id": "N_007",
+      "target_id": "N_006",
+      "type": "TAKEN_FOR",
+      "evidence": "put you on antibiotics",
+      "turn_id": "D-6"
+    },
+    {
+      "source_id": "N_016",
+      "target_id": "N_015",
+      "type": "TAKEN_FOR",
+      "evidence": "I take a uh statin",
+      "turn_id": "P-15"
+    },
+    {
+      "source_id": "N_009",
+      "target_id": "N_006",
+      "type": "INDICATES",
+      "evidence": "send some blood work",
+      "turn_id": "D-18"
+    },
+    {
+      "source_id": "N_008",
+      "target_id": "N_006",
+      "type": "INDICATES",
+      "evidence": "send this tick off to the lab",
+      "turn_id": "D-6"
+    },
+    {
+      "source_id": "N_013",
+      "target_id": "N_001",
+      "type": "CAUSES",
+      "evidence": "I was hiking on Friday",
+      "turn_id": "P-1"
+    },
+    {
+      "source_id": "N_014",
+      "target_id": "N_001",
+      "type": "CAUSES",
+      "evidence": "Saturday I was out in my garden",
+      "turn_id": "P-1"
+    },
+    {
+      "source_id": "N_003",
+      "target_id": "N_001",
+      "type": "INDICATES",
+      "evidence": "it's still kind of red and tender there",
+      "turn_id": "P-1"
+    },
+    {
+      "source_id": "N_004",
+      "target_id": "N_001",
+      "type": "INDICATES",
+      "evidence": "tender where the tick was",
+      "turn_id": "P-6"
+    },
+    {
+      "source_id": "N_012",
+      "target_id": "N_006",
+      "type": "INDICATES",
+      "evidence": "target rash thing that they talk about",
+      "turn_id": "P-3"
+    }
+  ]
+}

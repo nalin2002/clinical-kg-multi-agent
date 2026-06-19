@@ -1,0 +1,279 @@
+{
+  "nodes": [
+    {
+      "id": "N_001",
+      "text": "shortness of breath",
+      "type": "SYMPTOM",
+      "evidence": "feeling just a bit short of breath",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_002",
+      "text": "cough",
+      "type": "SYMPTOM",
+      "evidence": "I've just been coughing a lot more",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_003",
+      "text": "yellow sputum",
+      "type": "SYMPTOM",
+      "evidence": "this past week it's been more yellow",
+      "turn_id": "P-6"
+    },
+    {
+      "id": "N_004",
+      "text": "chest discomfort",
+      "type": "SYMPTOM",
+      "evidence": "I feel some discomfort",
+      "turn_id": "P-13"
+    },
+    {
+      "id": "N_005",
+      "text": "chills",
+      "type": "SYMPTOM",
+      "evidence": "I've been feeling a bit chilly",
+      "turn_id": "P-29"
+    },
+    {
+      "id": "N_006",
+      "text": "COPD",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "I do have a COPD diagnosis",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_007",
+      "text": "COPD exacerbation",
+      "type": "DIAGNOSIS",
+      "evidence": "sounds like a COPD exacerbation",
+      "turn_id": "D-52"
+    },
+    {
+      "id": "N_008",
+      "text": "high cholesterol",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "I have a like high cholesterol",
+      "turn_id": "P-33"
+    },
+    {
+      "id": "N_009",
+      "text": "COVID-19",
+      "type": "DIAGNOSIS",
+      "evidence": "overlap with those of Covid",
+      "turn_id": "D-52"
+    },
+    {
+      "id": "N_010",
+      "text": "smoking",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "Probably half a pack a day",
+      "turn_id": "P-44"
+    },
+    {
+      "id": "N_011",
+      "text": "family history lung cancer",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "My father had lung cancer",
+      "turn_id": "P-43"
+    },
+    {
+      "id": "N_012",
+      "text": "hypertension history",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "used to take blood pressure medications",
+      "turn_id": "P-34"
+    },
+    {
+      "id": "N_013",
+      "text": "Ventolin",
+      "type": "TREATMENT",
+      "evidence": "I'm on this one called Ventilin",
+      "turn_id": "P-11"
+    },
+    {
+      "id": "N_014",
+      "text": "Spiriva",
+      "type": "TREATMENT",
+      "evidence": "It's called spiriva",
+      "turn_id": "P-11"
+    },
+    {
+      "id": "N_015",
+      "text": "atorvastatin",
+      "type": "TREATMENT",
+      "evidence": "Just a Torva Staten",
+      "turn_id": "P-38"
+    },
+    {
+      "id": "N_016",
+      "text": "diuretic",
+      "type": "TREATMENT",
+      "evidence": "I was on like a diuretic",
+      "turn_id": "P-35"
+    },
+    {
+      "id": "N_017",
+      "text": "supplemental oxygen",
+      "type": "TREATMENT",
+      "evidence": "give you some extra oxygen if you need",
+      "turn_id": "D-52"
+    },
+    {
+      "id": "N_018",
+      "text": "steroids",
+      "type": "TREATMENT",
+      "evidence": "will also give you some steroids",
+      "turn_id": "D-52"
+    },
+    {
+      "id": "N_019",
+      "text": "antibiotics",
+      "type": "TREATMENT",
+      "evidence": "as well as antibiotics",
+      "turn_id": "D-52"
+    },
+    {
+      "id": "N_020",
+      "text": "CBC",
+      "type": "PROCEDURE",
+      "evidence": "basic blood work like CBC",
+      "turn_id": "D-52"
+    },
+    {
+      "id": "N_021",
+      "text": "electrolytes",
+      "type": "PROCEDURE",
+      "evidence": "CBC, electrolytes",
+      "turn_id": "D-52"
+    },
+    {
+      "id": "N_022",
+      "text": "kidney function test",
+      "type": "PROCEDURE",
+      "evidence": "your kidney function",
+      "turn_id": "D-52"
+    },
+    {
+      "id": "N_023",
+      "text": "ABG",
+      "type": "PROCEDURE",
+      "evidence": "ABG\u2019s",
+      "turn_id": "D-52"
+    },
+    {
+      "id": "N_024",
+      "text": "chest X-ray",
+      "type": "PROCEDURE",
+      "evidence": "as well as like a chest X Ray",
+      "turn_id": "D-52"
+    },
+    {
+      "id": "N_025",
+      "text": "pulse oximetry",
+      "type": "PROCEDURE",
+      "evidence": "take your oxygen saturation",
+      "turn_id": "D-52"
+    },
+    {
+      "id": "N_026",
+      "text": "COVID swab",
+      "type": "PROCEDURE",
+      "evidence": "also do a covid swab",
+      "turn_id": "D-52"
+    },
+    {
+      "id": "N_027",
+      "text": "chest",
+      "type": "LOCATION",
+      "evidence": "any chest pain",
+      "turn_id": "D-13"
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "N_001",
+      "target_id": "N_007",
+      "type": "INDICATES",
+      "evidence": "short of breath over the last few days",
+      "turn_id": "P-1"
+    },
+    {
+      "source_id": "N_002",
+      "target_id": "N_007",
+      "type": "INDICATES",
+      "evidence": "you have a cough and shortness of breath",
+      "turn_id": "D-52"
+    },
+    {
+      "source_id": "N_003",
+      "target_id": "N_007",
+      "type": "INDICATES",
+      "evidence": "this past week it's been more yellow",
+      "turn_id": "P-6"
+    },
+    {
+      "source_id": "N_004",
+      "target_id": "N_027",
+      "type": "LOCATED_AT",
+      "evidence": "I feel some discomfort",
+      "turn_id": "P-13"
+    },
+    {
+      "source_id": "N_010",
+      "target_id": "N_006",
+      "type": "CAUSES",
+      "evidence": "I also smoke",
+      "turn_id": "P-43"
+    },
+    {
+      "source_id": "N_013",
+      "target_id": "N_006",
+      "type": "TAKEN_FOR",
+      "evidence": "Ventilin for the which I\u2019ve been using",
+      "turn_id": "P-11"
+    },
+    {
+      "source_id": "N_014",
+      "target_id": "N_006",
+      "type": "TAKEN_FOR",
+      "evidence": "It's called spiriva",
+      "turn_id": "P-11"
+    },
+    {
+      "source_id": "N_015",
+      "target_id": "N_008",
+      "type": "TAKEN_FOR",
+      "evidence": "For your cholesterol",
+      "turn_id": "D-39"
+    },
+    {
+      "source_id": "N_016",
+      "target_id": "N_012",
+      "type": "TAKEN_FOR",
+      "evidence": "I was on like a diuretic",
+      "turn_id": "P-35"
+    },
+    {
+      "source_id": "N_018",
+      "target_id": "N_007",
+      "type": "TAKEN_FOR",
+      "evidence": "will also give you some steroids",
+      "turn_id": "D-52"
+    },
+    {
+      "source_id": "N_019",
+      "target_id": "N_007",
+      "type": "TAKEN_FOR",
+      "evidence": "as well as antibiotics",
+      "turn_id": "D-52"
+    },
+    {
+      "source_id": "N_026",
+      "target_id": "N_009",
+      "type": "RULES_OUT",
+      "evidence": "do a covid swab just to make sure",
+      "turn_id": "D-52"
+    }
+  ]
+}

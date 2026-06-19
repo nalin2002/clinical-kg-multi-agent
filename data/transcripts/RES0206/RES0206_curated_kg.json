@@ -1,0 +1,300 @@
+{
+  "nodes": [
+    {
+      "id": "N_001",
+      "text": "COPD",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "I have COPD",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_002",
+      "text": "worsening cough",
+      "type": "SYMPTOM",
+      "evidence": "coughing more often",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_003",
+      "text": "green-yellow sputum",
+      "type": "SYMPTOM",
+      "evidence": "green yellowy sputum",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_004",
+      "text": "hemoptysis",
+      "type": "SYMPTOM",
+      "evidence": "little bit of blood",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_005",
+      "text": "shortness of breath",
+      "type": "SYMPTOM",
+      "evidence": "harder to breathe than usual",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_006",
+      "text": "fever",
+      "type": "SYMPTOM",
+      "evidence": "may have had a fever last night",
+      "turn_id": "P-9"
+    },
+    {
+      "id": "N_007",
+      "text": "sinus pressure",
+      "type": "SYMPTOM",
+      "evidence": "pressure in the sinus area",
+      "turn_id": "P-12"
+    },
+    {
+      "id": "N_008",
+      "text": "headache",
+      "type": "SYMPTOM",
+      "evidence": "Maybe a little bit, yeah",
+      "turn_id": "P-14"
+    },
+    {
+      "id": "N_009",
+      "text": "hypertension",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "I have a high blood pressure",
+      "turn_id": "P-22"
+    },
+    {
+      "id": "N_010",
+      "text": "sick contact exposure",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "one of them was a bit sick",
+      "turn_id": "P-20"
+    },
+    {
+      "id": "N_011",
+      "text": "smoking history",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "smoked 1/2 pack a day for probably 20 years",
+      "turn_id": "P-40"
+    },
+    {
+      "id": "N_012",
+      "text": "prior ER visits",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "come to emerge a couple times",
+      "turn_id": "P-5"
+    },
+    {
+      "id": "N_013",
+      "text": "COPD exacerbation",
+      "type": "DIAGNOSIS",
+      "evidence": "COPD exacerbation",
+      "turn_id": "D-43"
+    },
+    {
+      "id": "N_014",
+      "text": "respiratory infection",
+      "type": "DIAGNOSIS",
+      "evidence": "an infection that you got",
+      "turn_id": "D-43"
+    },
+    {
+      "id": "N_015",
+      "text": "COVID-19",
+      "type": "DIAGNOSIS",
+      "evidence": "rule out covid",
+      "turn_id": "D-43"
+    },
+    {
+      "id": "N_016",
+      "text": "COVID swab",
+      "type": "PROCEDURE",
+      "evidence": "doing a covid swab",
+      "turn_id": "D-43"
+    },
+    {
+      "id": "N_017",
+      "text": "physical exam",
+      "type": "PROCEDURE",
+      "evidence": "do it physical exam",
+      "turn_id": "D-43"
+    },
+    {
+      "id": "N_018",
+      "text": "chest auscultation",
+      "type": "PROCEDURE",
+      "evidence": "listen to your chest",
+      "turn_id": "D-43"
+    },
+    {
+      "id": "N_019",
+      "text": "laboratory tests",
+      "type": "PROCEDURE",
+      "evidence": "your labs",
+      "turn_id": "D-43"
+    },
+    {
+      "id": "N_020",
+      "text": "vital signs",
+      "type": "PROCEDURE",
+      "evidence": "your vitals",
+      "turn_id": "D-43"
+    },
+    {
+      "id": "N_021",
+      "text": "inhalers",
+      "type": "TREATMENT",
+      "evidence": "manageable with my puffers",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_022",
+      "text": "maintenance inhaler",
+      "type": "TREATMENT",
+      "evidence": "one that I use every day",
+      "turn_id": "P-26"
+    },
+    {
+      "id": "N_023",
+      "text": "rescue inhaler",
+      "type": "TREATMENT",
+      "evidence": "the one that I use when",
+      "turn_id": "P-26"
+    },
+    {
+      "id": "N_024",
+      "text": "lifestyle modifications",
+      "type": "TREATMENT",
+      "evidence": "try to change my lifestyle",
+      "turn_id": "P-23"
+    },
+    {
+      "id": "N_025",
+      "text": "lungs",
+      "type": "LOCATION",
+      "evidence": "lung doctor",
+      "turn_id": "P-8"
+    },
+    {
+      "id": "N_026",
+      "text": "sinuses",
+      "type": "LOCATION",
+      "evidence": "sinus area",
+      "turn_id": "P-12"
+    },
+    {
+      "id": "N_027",
+      "text": "chest",
+      "type": "LOCATION",
+      "evidence": "listen to your chest",
+      "turn_id": "D-43"
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "N_011",
+      "target_id": "N_001",
+      "type": "CAUSES",
+      "evidence": "quit once they said I have COPD",
+      "turn_id": "P-40"
+    },
+    {
+      "source_id": "N_014",
+      "target_id": "N_013",
+      "type": "CAUSES",
+      "evidence": "an infection that you got, which worsened",
+      "turn_id": "D-43"
+    },
+    {
+      "source_id": "N_010",
+      "target_id": "N_014",
+      "type": "CAUSES",
+      "evidence": "one of them was a bit sick",
+      "turn_id": "P-20"
+    },
+    {
+      "source_id": "N_002",
+      "target_id": "N_013",
+      "type": "INDICATES",
+      "evidence": "coughing more often",
+      "turn_id": "P-1"
+    },
+    {
+      "source_id": "N_005",
+      "target_id": "N_013",
+      "type": "INDICATES",
+      "evidence": "harder to breathe than usual",
+      "turn_id": "P-1"
+    },
+    {
+      "source_id": "N_003",
+      "target_id": "N_013",
+      "type": "INDICATES",
+      "evidence": "producing more sputum",
+      "turn_id": "P-1"
+    },
+    {
+      "source_id": "N_003",
+      "target_id": "N_014",
+      "type": "INDICATES",
+      "evidence": "green yellowy sputum",
+      "turn_id": "P-1"
+    },
+    {
+      "source_id": "N_006",
+      "target_id": "N_014",
+      "type": "INDICATES",
+      "evidence": "may have had a fever last night",
+      "turn_id": "P-9"
+    },
+    {
+      "source_id": "N_007",
+      "target_id": "N_026",
+      "type": "LOCATED_AT",
+      "evidence": "pressure in the sinus area",
+      "turn_id": "P-12"
+    },
+    {
+      "source_id": "N_001",
+      "target_id": "N_025",
+      "type": "LOCATED_AT",
+      "evidence": "lung doctor",
+      "turn_id": "P-8"
+    },
+    {
+      "source_id": "N_021",
+      "target_id": "N_001",
+      "type": "TAKEN_FOR",
+      "evidence": "manageable with my puffers",
+      "turn_id": "P-1"
+    },
+    {
+      "source_id": "N_022",
+      "target_id": "N_001",
+      "type": "TAKEN_FOR",
+      "evidence": "one that I use every day",
+      "turn_id": "P-26"
+    },
+    {
+      "source_id": "N_023",
+      "target_id": "N_001",
+      "type": "TAKEN_FOR",
+      "evidence": "the one that I use when",
+      "turn_id": "P-26"
+    },
+    {
+      "source_id": "N_024",
+      "target_id": "N_009",
+      "type": "TAKEN_FOR",
+      "evidence": "try to change my lifestyle",
+      "turn_id": "P-23"
+    },
+    {
+      "source_id": "N_016",
+      "target_id": "N_015",
+      "type": "RULES_OUT",
+      "evidence": "rule out covid",
+      "turn_id": "D-43"
+    }
+  ]
+}

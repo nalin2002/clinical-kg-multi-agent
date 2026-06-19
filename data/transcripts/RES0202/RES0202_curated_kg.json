@@ -1,0 +1,202 @@
+{
+  "nodes": [
+    {
+      "id": "N_001",
+      "text": "dry cough",
+      "type": "SYMPTOM",
+      "evidence": "a bit of like a cough",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_002",
+      "text": "fever",
+      "type": "SYMPTOM",
+      "evidence": "today he actually has a fever",
+      "turn_id": "P-12"
+    },
+    {
+      "id": "N_003",
+      "text": "temperature ~101 F",
+      "type": "LAB_RESULT",
+      "evidence": "101 or something or maybe 100.1",
+      "turn_id": "P-2"
+    },
+    {
+      "id": "N_004",
+      "text": "fatigue",
+      "type": "SYMPTOM",
+      "evidence": "he was really tired",
+      "turn_id": "P-1"
+    },
+    {
+      "id": "N_005",
+      "text": "runny nose",
+      "type": "SYMPTOM",
+      "evidence": "a bit of like a look at runny nose",
+      "turn_id": "P-16"
+    },
+    {
+      "id": "N_006",
+      "text": "decreased appetite",
+      "type": "SYMPTOM",
+      "evidence": "doesn't seem to have a big appetite",
+      "turn_id": "P-15"
+    },
+    {
+      "id": "N_007",
+      "text": "loss of taste",
+      "type": "SYMPTOM",
+      "evidence": "losing his sense of taste",
+      "turn_id": "P-17"
+    },
+    {
+      "id": "N_008",
+      "text": "COVID-19",
+      "type": "DIAGNOSIS",
+      "evidence": "could have maybe got covid",
+      "turn_id": "P-2"
+    },
+    {
+      "id": "N_009",
+      "text": "viral illness",
+      "type": "DIAGNOSIS",
+      "evidence": "it could be another viral illness",
+      "turn_id": "D-44"
+    },
+    {
+      "id": "N_010",
+      "text": "infection",
+      "type": "DIAGNOSIS",
+      "evidence": "it sounds like an infection",
+      "turn_id": "D-45"
+    },
+    {
+      "id": "N_011",
+      "text": "asthma",
+      "type": "DIAGNOSIS",
+      "evidence": "add other things like asthma",
+      "turn_id": "D-45"
+    },
+    {
+      "id": "N_012",
+      "text": "COVID swab",
+      "type": "PROCEDURE",
+      "evidence": "need to do a covid swab",
+      "turn_id": "D-44"
+    },
+    {
+      "id": "N_013",
+      "text": "14-day isolation",
+      "type": "TREATMENT",
+      "evidence": "he isolate for 14 days",
+      "turn_id": "D-44"
+    },
+    {
+      "id": "N_014",
+      "text": "school exposure",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "he goes to school right now",
+      "turn_id": "P-38"
+    },
+    {
+      "id": "N_015",
+      "text": "immunizations up to date",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "up to date with all his immunizations",
+      "turn_id": "D-33"
+    },
+    {
+      "id": "N_016",
+      "text": "broken arm",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "he broke his arm once",
+      "turn_id": "P-27"
+    },
+    {
+      "id": "N_017",
+      "text": "no known allergies",
+      "type": "MEDICAL_HISTORY",
+      "evidence": "No, no, I don't think so",
+      "turn_id": "P-32"
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "N_001",
+      "target_id": "N_008",
+      "type": "INDICATES",
+      "evidence": "symptoms are allowed with symptoms of covid",
+      "turn_id": "D-44"
+    },
+    {
+      "source_id": "N_001",
+      "target_id": "N_010",
+      "type": "INDICATES",
+      "evidence": "it sounds like an infection",
+      "turn_id": "D-45"
+    },
+    {
+      "source_id": "N_002",
+      "target_id": "N_010",
+      "type": "INDICATES",
+      "evidence": "it sounds like it sounds like an infection",
+      "turn_id": "D-45"
+    },
+    {
+      "source_id": "N_002",
+      "target_id": "N_008",
+      "type": "INDICATES",
+      "evidence": "symptoms are allowed with symptoms of covid",
+      "turn_id": "D-44"
+    },
+    {
+      "source_id": "N_007",
+      "target_id": "N_008",
+      "type": "INDICATES",
+      "evidence": "losing his sense of taste",
+      "turn_id": "P-17"
+    },
+    {
+      "source_id": "N_012",
+      "target_id": "N_008",
+      "type": "INDICATES",
+      "evidence": "need to do a covid swab",
+      "turn_id": "D-44"
+    },
+    {
+      "source_id": "N_013",
+      "target_id": "N_008",
+      "type": "TAKEN_FOR",
+      "evidence": "he isolate for 14 days",
+      "turn_id": "D-44"
+    },
+    {
+      "source_id": "N_014",
+      "target_id": "N_008",
+      "type": "CAUSES",
+      "evidence": "could have maybe got covid",
+      "turn_id": "P-2"
+    },
+    {
+      "source_id": "N_002",
+      "target_id": "N_011",
+      "type": "RULES_OUT",
+      "evidence": "he didn't have the fever, we would add",
+      "turn_id": "D-45"
+    },
+    {
+      "source_id": "N_003",
+      "target_id": "N_002",
+      "type": "CONFIRMS",
+      "evidence": "It was like over 100 though",
+      "turn_id": "P-1"
+    },
+    {
+      "source_id": "N_005",
+      "target_id": "N_009",
+      "type": "INDICATES",
+      "evidence": "it could be another viral illness",
+      "turn_id": "D-44"
+    }
+  ]
+}
