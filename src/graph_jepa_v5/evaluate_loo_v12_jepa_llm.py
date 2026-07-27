@@ -597,6 +597,26 @@ def _print_three_way(loo: dict, v5: dict, llm: dict) -> None:
         )
 
 
+def _print_two_way(loo: dict, v5: dict) -> None:
+    loo_by_rel = {row["rel"]: row for row in loo["per_rel"]}
+    v5_by_rel = {row["rel"]: row for row in v5["per_rel"]}
+    print(
+        "[PER-REL] relation                 n     C    chance  "
+        "LOO_MRR LOO_H@1  V5_MRR V5_H@1"
+    )
+    relations = sorted(v5_by_rel, key=lambda rel: -v5_by_rel[rel]["n"])
+    for relation in relations:
+        lr = loo_by_rel.get(relation)
+        vr = v5_by_rel[relation]
+        if lr is None:
+            continue
+        print(
+            f"[PER-REL] {relation:<22} {vr['n']:<5} {vr['C']:<4.0f} "
+            f"{vr['chance_mrr']:<7.3f} {lr['mrr']:<7.3f} {lr['h1']:<8.3f} "
+            f"{vr['mrr']:<6.3f} {vr['h1']:<7.3f}"
+        )
+
+
 def run(args) -> dict:
     device = torch.device(args.device)
     v5_model, v5_cfg = load_model_checkpoint(args.checkpoint, device)
@@ -642,27 +662,31 @@ def run(args) -> dict:
     if skipped:
         print(f"[SAMPLE] skipped_for_loo={dict(skipped)}")
 
-    llm_model = args.llm_model or os.environ.get(f"{args.provider.upper()}_MODEL", "")
-    if not llm_model:
-        raise SystemExit(
-            f"Pass --llm-model or set {args.provider.upper()}_MODEL in the environment."
+    if args.skip_llm:
+        llm_model = ""
+        ranker = None
+    else:
+        llm_model = args.llm_model or os.environ.get(f"{args.provider.upper()}_MODEL", "")
+        if not llm_model:
+            raise SystemExit(
+                f"Pass --llm-model or set {args.provider.upper()}_MODEL in the environment."
+            )
+        ranker = ChatRanker(
+            provider=args.provider,
+            model=llm_model,
+            api_key=_api_key(args.provider),
+            base_url=args.api_base or _api_base(args.provider),
+            temperature=args.temperature,
+            max_tokens=args.max_tokens,
+            reasoning_effort=(
+                None if args.reasoning_effort == "none" else args.reasoning_effort
+            ),
+            reasoning_format=(
+                None if args.reasoning_format == "none" else args.reasoning_format
+            ),
+            retries=args.retries,
+            sleep=args.retry_sleep,
         )
-    ranker = ChatRanker(
-        provider=args.provider,
-        model=llm_model,
-        api_key=_api_key(args.provider),
-        base_url=args.api_base or _api_base(args.provider),
-        temperature=args.temperature,
-        max_tokens=args.max_tokens,
-        reasoning_effort=(
-            None if args.reasoning_effort == "none" else args.reasoning_effort
-        ),
-        reasoning_format=(
-            None if args.reasoning_format == "none" else args.reasoning_format
-        ),
-        retries=args.retries,
-        sleep=args.retry_sleep,
-    )
 
     results: list[ComparisonResult] = []
     records_path = Path(args.records_output) if args.records_output else None
@@ -681,25 +705,32 @@ def run(args) -> dict:
             device,
         )
         v5_rank = jepa_rank_query(v5_model, data, query, v5_cfg, device)
-        prompt = build_prompt(
-            graph,
-            data,
-            v5_cfg,
-            query,
-            context_mode=args.context,
-            max_context_edges=args.max_context_edges,
-        )
-        response, usage = ranker.rank(prompt)
-        order, parse_ok, parse_complete = parse_ranking(
-            response,
-            len(query.candidates),
-        )
-        true_position = query.candidates.index(query.target)
-        llm_rank = (
-            _rank_from_order(order, true_position)
-            if parse_ok
-            else len(query.candidates)
-        )
+        if args.skip_llm:
+            response = ""
+            usage = {}
+            parse_ok = False
+            parse_complete = False
+            llm_rank = 0
+        else:
+            prompt = build_prompt(
+                graph,
+                data,
+                v5_cfg,
+                query,
+                context_mode=args.context,
+                max_context_edges=args.max_context_edges,
+            )
+            response, usage = ranker.rank(prompt)
+            order, parse_ok, parse_complete = parse_ranking(
+                response,
+                len(query.candidates),
+            )
+            true_position = query.candidates.index(query.target)
+            llm_rank = (
+                _rank_from_order(order, true_position)
+                if parse_ok
+                else len(query.candidates)
+            )
         result = ComparisonResult(
             graph_index=query.graph_index,
             edge_index=query.edge_index,
@@ -733,34 +764,39 @@ def run(args) -> dict:
 
     loo_metrics = _summarize(results, "loo_jepa_rank")
     v5_metrics = _summarize(results, "v5_jepa_rank")
-    llm_metrics = _summarize(results, "llm_rank")
-    parse_failures = sum(1 for result in results if not result.llm_parse_ok)
-    incomplete = sum(1 for result in results if not result.llm_parse_complete)
-    token_usage = {
-        "prompt_tokens": sum(result.prompt_tokens for result in results),
-        "completion_tokens": sum(result.completion_tokens for result in results),
-        "reasoning_tokens": sum(result.reasoning_tokens for result in results),
-        "total_tokens": sum(result.total_tokens for result in results),
-    }
-    finish_reasons = Counter(result.finish_reason for result in results)
 
     print("[RESULTS]")
     _print_summary("LOO-JEPA", loo_metrics)
     _print_summary("V5-JEPA", v5_metrics)
-    _print_summary("LLM", llm_metrics)
-    print(
-        f"[LLM] parse_failures={parse_failures}/{len(results)} "
-        f"incomplete_rankings={incomplete}/{len(results)}"
-    )
-    print(
-        "[LLM] tokens "
-        f"prompt={token_usage['prompt_tokens']} "
-        f"completion={token_usage['completion_tokens']} "
-        f"reasoning={token_usage['reasoning_tokens']} "
-        f"total={token_usage['total_tokens']}"
-    )
-    print(f"[LLM] finish_reasons={dict(finish_reasons)}")
-    _print_three_way(loo_metrics, v5_metrics, llm_metrics)
+
+    if args.skip_llm:
+        llm_metrics = None
+        _print_two_way(loo_metrics, v5_metrics)
+    else:
+        llm_metrics = _summarize(results, "llm_rank")
+        parse_failures = sum(1 for result in results if not result.llm_parse_ok)
+        incomplete = sum(1 for result in results if not result.llm_parse_complete)
+        token_usage = {
+            "prompt_tokens": sum(result.prompt_tokens for result in results),
+            "completion_tokens": sum(result.completion_tokens for result in results),
+            "reasoning_tokens": sum(result.reasoning_tokens for result in results),
+            "total_tokens": sum(result.total_tokens for result in results),
+        }
+        finish_reasons = Counter(result.finish_reason for result in results)
+        _print_summary("LLM", llm_metrics)
+        print(
+            f"[LLM] parse_failures={parse_failures}/{len(results)} "
+            f"incomplete_rankings={incomplete}/{len(results)}"
+        )
+        print(
+            "[LLM] tokens "
+            f"prompt={token_usage['prompt_tokens']} "
+            f"completion={token_usage['completion_tokens']} "
+            f"reasoning={token_usage['reasoning_tokens']} "
+            f"total={token_usage['total_tokens']}"
+        )
+        print(f"[LLM] finish_reasons={dict(finish_reasons)}")
+        _print_three_way(loo_metrics, v5_metrics, llm_metrics)
 
     payload = {
         "config": {
@@ -779,18 +815,20 @@ def run(args) -> dict:
             "allow_duplicate_triples": args.allow_duplicate_triples,
             "reasoning_effort": args.reasoning_effort,
             "reasoning_format": args.reasoning_format,
+            "skip_llm": args.skip_llm,
         },
         "sample_counts": dict(counts),
         "skipped_for_loo": dict(skipped),
         "loo_jepa": loo_metrics,
         "v5_jepa": v5_metrics,
-        "llm": llm_metrics,
-        "llm_parse_failures": parse_failures,
-        "llm_incomplete_rankings": incomplete,
-        "llm_token_usage": token_usage,
-        "llm_finish_reasons": dict(finish_reasons),
         "records": [asdict(result) for result in results],
     }
+    if not args.skip_llm:
+        payload["llm"] = llm_metrics
+        payload["llm_parse_failures"] = parse_failures
+        payload["llm_incomplete_rankings"] = incomplete
+        payload["llm_token_usage"] = token_usage
+        payload["llm_finish_reasons"] = dict(finish_reasons)
     if args.output:
         output_path = Path(args.output)
         output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -851,6 +889,11 @@ def build_arg_parser() -> argparse.ArgumentParser:
         "--allow-duplicate-triples",
         action="store_true",
         help="Allow exact duplicate triples that can leak the hidden edge",
+    )
+    parser.add_argument(
+        "--skip-llm",
+        action="store_true",
+        help="Only compare the two JEPA methods; skip all LLM calls.",
     )
     parser.add_argument(
         "--provider",
